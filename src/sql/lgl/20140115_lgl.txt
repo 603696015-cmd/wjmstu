@@ -1,0 +1,7 @@
+alter table resume add(school varchar(100));
+
+alter table resume add(startdate date);
+
+alter table resume add(enddate date);
+
+alter table resume add(xueli varchar(100));

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+	<!-- txt word pdf html xml xlsx等 -->
+
+	<!-- 文档位置 可以配置多个 支持递归-->
+	<docPaths>
+			<docPath>e:/目录二</docPath>
+	</docPaths>
+	<indexPath>
+		e:/索引
+	</indexPath>
+</properties>

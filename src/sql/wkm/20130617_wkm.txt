@@ -1,0 +1,23 @@
+-- Create table
+create table EXAM_ROOM_PRICE
+(
+  EXAMROOMID       NUMBER not null,
+  EXAMROOMNOWPRICE NUMBER(14,4),
+  EXAMROOMOLDPRICE NUMBER(14,4),
+  STATUS           NUMBER,
+  USERID           NUMBER
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+ insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4090,'考场定价管理','考场定价','9考场定价',854,0,'rightFrame');
+ insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4091,'piece_applyfor_examroom','定价申请','1定价申请',4090,0,'rightFrame');
+  insert into elfunc(id,funccode,name,description,parentid,needcheck,params,target) values(4092,'peice_audit_examroom','定价审核','2定价审核',4090,0,'ifadmin=2','rightFrame');

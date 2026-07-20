@@ -1,0 +1,148 @@
+@charset "gb2312";
+/* CSS Document */
+.NTES_nav_{overflow:hidden}
+.pArea{width:960px; clear:both; margin:0 auto;}
+.pAreabg{ background:url(http://img1.cache.netease.com/sports/2010/zonghe/p_bg_03.png) repeat-y right;width:960px; clear:both; margin:0 auto;}
+.pAreaEnd {background:url(http://img1.cache.netease.com/sports/img10/sy0104/bg_y.gif) -960px top no-repeat; height:1px; font-size:1px; display:block; clear:both; overflow:hidden; margin:0 auto; width:960px;}
+.headerArea{margin:0 auto;width:960px;border:none}
+.headerArea-inner{width:960px; margin:0 auto;border:none}
+.colLM{ overflow:hidden; float:left; width:735px;}
+.colL{ overflow:hidden; float:left; width:310px; }
+.colM{ overflow:hidden; float:left; width:415px; margin-left:15px;}
+.colR{ overflow:hidden; float:right; width:210px; border-top:1px solid #9fc1de;}
+.colR1{
+	overflow:hidden;
+	float:left;
+	width:268px;
+	background:url(http://img1.cache.netease.com/video/img10/index0920/rbg2_03.png) top  no-repeat;
+	margin-left:6px;
+	height: 480px;
+}
+.colR_bg{ background:none;overflow:hidden}
+.con-top{ background:url(http://img1.cache.netease.com/video/img10/index0920/v_v_03.png) repeat-x top; height:299px; padding-top:5px;}
+.con-top h1{ float:left; margin-left:-5px;}
+.con-top .lcon{ float:left; width:730px; text-align:left }
+.con-top .lcon p{ padding:10px; margin:0px; line-height:24px; font-size:14px; clear:both; text-indent:24px;}
+.con-top .rimg{ float:right; margin:10px 10px 0px 0px}
+.picText { color:#727171; clear:both; margin:0 auto;  text-align:left; line-height:18px;}
+.picText h5 { text-align:left; font-size:12px; line-height:21px; padding-bottom:3px; color:#2b2b2b}
+.picText h6{text-align:left; font-size:12px; line-height:18px;  color:#223c45 }
+.picText img { float:left; border:1px solid #ccc; margin:0 8px 3px 0;}
+.gray-b-line{ background:url(http://img1.cache.netease.com/video/img10/index0920/v_v_10.png) repeat-x; height:6px; display:block; clear:both}
+.titleBar1 h1{ float:left;line-height:28px;}
+.titleBar1 .more {float:right; padding-right:8px;}
+.titleBar1 h2,.titleBar1 h3 {float:left; color:#000; font-weight:bold; line-height:28px;}
+.titleBar1 h2 a,.titleBar1 h2 a:visited,.titleBar h3 a,.titleBar h3 a:visited {color:#000;}
+.titleBar1 h2 a:hover,.titleBar1 h3 a:hover {color:#BA2636;}
+.lession-list{ background:url(http://img1.cache.netease.com/video/img10/index0920/v_v_03.png) repeat-x top; border-top:1px solid #c1c1c1;border-bottom:1px solid #fff; margin:0 auto; *float:left;}
+.lession-list li{ border-bottom:1px solid #b2b2b2;border-top:1px solid #e4e6e1; clear:both; padding:10px 0px;float:left; width:100%}
+.lession-list li .h2title{ height:20px;}
+.lession-list li .imgleft{ float:left; margin-left:10px; border:1px solid #fff;}
+.lession-list li .unitcon{ float:right; margin-right:10px; width:580px; text-align:left; line-height:22px;}
+.lession-list2{ margin:0 auto; overflow:hidden; width:920px;}
+.lession-list2 li{ float:left;width:149px; height:71px; line-height:21px; font-size:12px; padding-top:12px;color:#223c45; margin-left:3px; margin-top:3px; }
+.lession-list2 li a{ text-decoration:none}
+.lession-list2 .odd_li{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_3_18.png) no-repeat; }
+.lession-list2 .even_li{background:url(http://img1.cache.netease.com/video/img10/index0920/vv_3_21.png) no-repeat;}
+.vote-list{ width:440px; margin-left:10px; float:left}
+.vote-list li{ text-align:left; line-height:22px; padding:6px 4px; border-bottom:1px dotted #a7a7a7;overflow:hidden;zoom:1; height:72px;}
+.vote-list li h4{ line-height:24px; padding-bottom:3px; }
+.vote-list .sco{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_index_08.png) no-repeat; width:64px; height:63px;margin:0 8px 3px 0; float:left; text-align:center; color:#fff}
+.t-vote-bg{ padding-left:20px; background:url(http://img1.cache.netease.com/video/img10/index0920/dotttot_07.png) repeat-y left; margin-left:25px;}
+.f14bla li {background:url(http://img1.cache.netease.com/sports/img10/sy0104/bg_n.gif) left -264px no-repeat; padding-left:9px; line-height:25px; font-size:14px; clear:both; text-align:left}
+.f14bla li .f12px {line-height:21px;}
+.cdblan{color:#223c45 }
+.cghui{ color:#686868;}
+.cdY{ color:#ff6203}
+.cbdr{ color:#a60000; font-size:18px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; line-height:39px; }
+.rightContent{ width:188px; margin:0 auto; overflow: hidden;}
+.ptext{ text-align:left; margin:0px; line-height:20px;}
+.w-content{ background:url(http://img1.cache.netease.com/video/img10/index0920/vindex_03.png) repeat-x; height:375px; width:100%; position:relative}
+.w-content .arrow-img{
+	position:absolute; cursor:pointer;	
+}
+.lcon-list{float:left; width:500px; overflow:hidden; background:url(http://img1.cache.netease.com/video/img10/index0920/dotttot_07.png) center repeat-y;}
+.normal-content{ width:960px; overflow:hidden; margin:0 auto}
+.con-bg1{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_bg_03.png) top no-repeat;}
+.con-bg3{ background:url(http://img1.cache.netease.com/video/img10/index0920/v_index_03.png) no-repeat; width:960px; height:265px;}
+.con-bg2{ background:url(http://img1.cache.netease.com/video/img10/index0920/oobg_05.jpg) repeat-x top; overflow:hidden; padding-top:12px;}
+.con-bg4{background:url(http://img1.cache.netease.com/video/img10/index0920/v_v_03.png) repeat-x top;  border-top:1px solid #c1c1c1;}
+.img-conbg1{ background:url(http://img1.cache.netease.com/video/img10/index0920/bgggg_07.jpg) no-repeat left; width:950px; height:151px; overflow:hidden; float: left; margin-left:10px; overflow:hidden;}
+.imglist-con{float:right; width:840px; overflow:hidden; margin-top:18px;}
+.imglist-con1{float:right; width:840px; overflow:hidden; margin-top:8px;}
+.focusimg-con{ width:800px; margin:0 auto; overflow:hidden}
+.imgcon{ width:800px; overflow:hidden; margin:0 auto}
+.imgcon li{ display:none; position:relative}
+.imgcon .tit-area-bg{position:absolute; right:0px; top:0px; background:#000; width:185px; height:350px; 
+filter:alpha(opacity=75);
+ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; 
+ opacity: .75}
+.imgcon .tit-area{ position:absolute; right:0px; top:0px; background:none; width:175px; height:350px;}
+.imgcon .tit-area .mctit{ font-size:20px; font-weight:bold; color:#fff; text-align:left; margin-top:65px; margin-bottom:10px;}
+.imgcon .tit-area p{ margin:0; text-align:left; line-height:20px; color:#3abce9;} 
+.imgcon .on{ display:block }
+.imgmenu{ margin:0 auto; width:200px;}
+.imgmenu li{ width:18px; height:13px; background:url(http://img1.cache.netease.com/video/img10/index0920/vindex_20.png) no-repeat; float:left; margin-left:3px; cursor:pointer}
+.imgmenu .on{ background:url(http://img1.cache.netease.com/video/img10/index0920/vindex_22.png) no-repeat;}
+.hot-title{float:left; margin-top:18px; width:80px; line-height:36px; font-size:14px; font-weight:bold; color:#000; text-align:left; margin-left:30px; display:inline}
+.lh20{ line-height:24px; margin-top:8px;}
+.imgListM120_160{ width:110%; margin:0 auto; overflow:hidden}
+.imgListM120_160 li{ width:126px; float:left; margin-right:40px;}
+.imgListM120_160 li h5 {width:120px; clear:both; margin:0 auto; line-height:160%; padding-top:2px; text-align:left; font-weight:bold}
+.imgListM120_160 li h6 { width:120px; clear:both; margin:0 auto; line-height:160%; padding-top:2px; text-align:left;}
+.imgListM120_160 li img{ border:3px solid #fff}
+.imgListMnormal{ width:900px; margin:0 auto; overflow:hidden}
+.imgListMnormal li{  float:left; margin-right:30px; width:85px; overflow:hidden}
+.imgListMnormal li h5 {clear:both; margin:0 auto; line-height:160%; padding-top:2px; text-align:left; font-weight:bold}
+.imgListMnormal li h6 {  clear:both; margin:0 auto; line-height:160%; padding-top:2px; text-align:left;}
+.imgListMnormal li img{ border:3px solid #fff}
+.imgListMnormal .lastnote{ margin-right:0px;}
+.btn-black{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_3_10.png); width:113px; height:24px; line-height:24px; color:#fff; cursor:pointer; border:none; margin-left:8px;display:inline }
+.btn-black a{ color:#fff}
+.btn-black a:hover{ text-decoration:none}
+.btn-vote{ background:url(http://img1.cache.netease.com/video/img10/index0920/btn_vote_03.png) no-repeat; width:64px; height:24px; border:none; color:#fff; cursor:pointer}
+.imgfl{ float:left; margin-left:15px;}
+/*skin*/
+.ui_s1{ padding-left:8px;}
+.ui_s1 h2{ background:url(http://img1.cache.netease.com/video/img10/index0920/v_v_15.png) left no-repeat; padding-left:20px; font-size:12px;}
+.ui_m_tit{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_3_13.png) no-repeat; height:34px;}
+.ui_m_tit h2{ color:#fff; padding-left:26px; line-height:34px;}
+.ui_m_tit h2 a{ color:#fff} 
+.ui_l_tit{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_index_03.png) repeat-x; height:32px; padding-left:10px;line-height:42px; overflow:hidden}
+.ui_l_tit h2{ background:url(http://img1.cache.netease.com/video/img10/index0920/v_v_15.png) left no-repeat; padding-left:18px; font-size:12px;line-height:42px;}
+.dotLine{ display:block; overflow:hidden; clear:both; height:1px; background:url(http://img1.cache.netease.com/video/img10/hd/dotLine.png) repeat-x ; font-size:1px;}
+.ssolid-line{ background:url(http://img1.cache.netease.com/video/img10/index0920/vv_3_07.png) no-repeat; width:236px; margin:0 auto; clear:both; height:5px; display:block}
+.bgdotLine{ background:url(http://img1.cache.netease.com/video/img10/hd/dotLine.png) repeat-x ;}
+.naviBar{clear:both; margin:0 auto 0;width:960px; }
+.mainul{ clear:both; margin:0 auto 0; width:962px; height:35px;background:transparent url(http://img1.cache.netease.com/video/img10/index0920/naviBar13.gif) no-repeat left 5px;_background-position:left 8px; margin-top:9px;_ margin-top:7px; z-index:1000; position:relative    }
+.mainul li { display:inline; float:left; line-height:33px; height:33px; text-indent:-9999px; margin-top:5px; }
+.mainul li a { margin-top:-1px; display:block; width:96px; background:none}
+.mainul li.on a { _position:relative;}
+.mainul .gkl{ position:relative}
+.mainul .gkl a{background:transparent url(http://img1.cache.netease.com/video/img10/index0920/naviBar13.gif) no-repeat -769px -32px; width:96px; height:35px; margin-left:1px; margin-top:-2px;_ margin-top:0px;}
+.mainul li a.hidefocus { outline: none; }
+.sub-nav{ float:left; font-weight:bold;position:relative; z-index:1000;}
+.sub-nav dt{ float:left; color:#000; position:relative; }
+.sub-nav dd{  float:left; background:url(http://img1.cache.netease.com/video/img10/index0920/sqx_03.gif) right no-repeat; width:34px; margin:0px 8px;}
+.sub-nav dd a{color:#3d3d3d}
+.sub-nav dd a:hover{ color:#A50A05; text-decoration:underline}
+.sub-sublist-div{ position:absolute; top:12px; display:none; padding-top:10px; width:960px;}
+.sub-sublist-div h5{ width:185px; height:24px; line-height:24px; border-top:1px solid #d5d5d5; border-bottom:1px solid #a7a7a7; border-left:1px solid #a7a7a7; border-right:1px solid #a7a7a7;   background:#cbcbcb; padding-left:5px; font-family:Î¢ÈíÑÅºÚ; float:left}
+.sub-nav dd .on{ display:block}
+#sublist_a .sub-sublist-div{left:0px;}
+#sublist_b .sub-sublist-div{left:-350px;}
+#sublist_b dd{ width:60px;}
+.mainul span.new {
+	background:url("http://img1.cache.netease.com/video/img/vnav1019/new.gif") no-repeat scroll left top transparent;
+	display:block;
+	height:14px;
+	position:absolute;
+	right:0px;
+	top:-4px;
+	width:27px;
+	z-index:9999;
+}
+
+
+.headerArea-searchBtn{ float:right}
+.headerArea-inputArea{ float:left}

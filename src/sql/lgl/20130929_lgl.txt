@@ -1,0 +1,3 @@
+alter table exam_room add(islink number default 1)
+
+commit

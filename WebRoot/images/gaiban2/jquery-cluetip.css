@@ -1,0 +1,78 @@
+#cluetip-close IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+#cluetip-title {
+	
+}
+#cluetip-outer {
+	
+}
+#cluetip-title #cluetip-close {
+	POSITION: relative; FLOAT: right
+}
+#cluetip-waitimage {
+	BACKGROUND-IMAGE: url(../image/wait.gif); POSITION: absolute; WIDTH: 43px; HEIGHT: 11px
+}
+.cluetip-arrows {
+	POSITION: absolute; WIDTH: 11px; DISPLAY: none; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 0px; HEIGHT: 22px; TOP: 0px; LEFT: -11px
+}
+#cluetip-extra {
+	DISPLAY: none
+}
+.cluetip-default {
+	BACKGROUND-COLOR: #d90952
+}
+.cluetip-default #cluetip-outer {
+	POSITION: relative; BACKGROUND-COLOR: #d90952; MARGIN: 0px
+}
+.cluetip-default H3#cluetip-title {
+	PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #d4dde2; MARGIN: 0px 0px 5px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #fff; FONT-SIZE: 1.1em; FONT-WEIGHT: normal; PADDING-TOP: 8px
+}
+.cluetip-default #cluetip-title A {
+	COLOR: #d90952; FONT-SIZE: 0.95em
+}
+.cluetip-default #cluetip-inner {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.cluetip-default DIV#cluetip-close {
+	TEXT-ALIGN: right; MARGIN: 0px 5px 5px; COLOR: #900
+}
+.cluetip-jtip {
+	BACKGROUND-COLOR: #d4dde2; FONT-SIZE: 13px
+}
+.cluetip-jtip #cluetip-outer {
+	BORDER-BOTTOM: #ccc 2px solid; POSITION: relative; BORDER-LEFT: #ccc 2px solid; BACKGROUND-COLOR: #d4dde2; BORDER-TOP: #ccc 2px solid; BORDER-RIGHT: #ccc 2px solid
+}
+.cluetip-jtip H3#cluetip-title {
+	BORDER-BOTTOM: #555 1px dashed; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #ccc; MARGIN: 0px 0px 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; HEIGHT: 20px; COLOR: #da4709; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 2px
+}
+.cluetip-jtip #cluetip-inner {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline-block; PADDING-TOP: 0px
+}
+.cluetip-jtip #cluetip-inner A {
+	COLOR: #111
+}
+.cluetip-jtip #cluetip-inner A:hover {
+	COLOR: #da4709
+}
+.cluetip-jtip DIV#cluetip-close {
+	TEXT-ALIGN: right; MARGIN: 0px 5px 5px; COLOR: #900
+}
+.clue-right-jtip .cluetip-arrows {
+	BACKGROUND-IMAGE: url(../image/arrowleft.gif)
+}
+.clue-left-jtip .cluetip-arrows {
+	BACKGROUND-IMAGE: url(../image/arrowright.gif); MARGIN-RIGHT: -11px; LEFT: 100%
+}
+.clue-top-jtip .cluetip-arrows {
+	BACKGROUND-IMAGE: url(../image/arrowdown.gif); WIDTH: 22px; HEIGHT: 11px; MARGIN-LEFT: -11px; TOP: 100%; LEFT: 50%
+}
+.clue-bottom-jtip .cluetip-arrows {
+	BACKGROUND-IMAGE: url(../image/arrowup.gif); WIDTH: 22px; HEIGHT: 11px; MARGIN-LEFT: -11px; TOP: -11px; LEFT: 50%
+}
+.cluetip-rounded #cluetip-title {
+	ZOOM: 1
+}
+.cluetip-rounded #cluetip-inner {
+	ZOOM: 1
+}

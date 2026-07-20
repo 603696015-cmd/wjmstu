@@ -1,0 +1,23 @@
+alter table Userdemocolumn add(show_register  number  );
+alter table Userdemocolumn add(show_user_update  number  );
+alter table Userdemocolumn add(show_user_view  number  );
+alter table Userdemocolumn add(show_need  number  );
+alter table Userdemocolumn add(show_page_type  number default(0) );
+
+
+-- Create table
+create table ELUSER_PAGE_TYPE
+(
+  COLUMN_NAME    VARCHAR2(200) not null,
+  RANGE          VARCHAR2(1000) not null,
+  DEFAULT_SELECT VARCHAR2(1000) not null,
+  Modify  number
+);
+
+-- Create table
+create table ELUSER_PAGE_INFO
+( 
+  PAGEID  NUMBER not null,
+  JSPNAME VARCHAR2(100),
+  upload number(1) 
+);

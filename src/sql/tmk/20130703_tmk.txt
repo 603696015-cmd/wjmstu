@@ -1,0 +1,3 @@
+alter table exam_room add(cpid  number  );
+
+alter table exam_room add(autoassign number(1));

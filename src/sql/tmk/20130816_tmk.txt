@@ -1,0 +1,146 @@
+//登录加分
+
+-- Create table
+create table INTELLIGENT_LOGIN
+(
+  USERID    NUMBER not null,
+  BEGINTIME TIMESTAMP(6) not null,
+  ENDTIME   TIMESTAMP(6),
+  LOGINTIME NUMBER,
+  TODAY     VARCHAR2(50),
+  SCORE     NUMBER(12,1),
+  ID        NUMBER not null,
+  CLASSID   NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table INTELLIGENT_LOGIN
+  add constraint INTELLIGENT_LOGIN_ID primary key (ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  -- Create sequence 
+create sequence INTELLIGENT_LOGIN_SEQUENCE
+minvalue 1
+maxvalue 9999999999
+start with 1
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_intelligent_login  before insert on  intelligent_login  for each row
+when (new.id is null)
+begin  select intelligent_login_sequence.nextval into :new.id from dual ;   end;
+
+
+-- Create table
+create table INTELLIGENT_LOGIN_T
+(
+  USERID     NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null,
+  CLASSID    NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+
+  
+create or replace procedure intelligent_login_pro(userid_ number,notLogin3day_ number,classid_ number,flag_ out number,returnloginid_ out number)
+as
+today_ varchar2(50);
+count_ number;
+loginid_ number;
+score_ number;--每次登录得分
+maxscore_ number;--总分
+begin
+     count_:=0;
+     loginid_:=0;
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     score_:=0.0;
+     maxscore_:=0.0;
+     
+     if notLogin3day_=1 then--3天未登陆
+        score_:=-0.1;
+        insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+        flag_:=-1;
+     else--不是3天未登录
+        select count(1) into count_ from intelligent_login where today=today_ and userid=userid_;
+        if count_=0 then--当天第一次登陆
+           score_:=0.1;
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=1;
+        else--当天不是第一次登陆
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=0;
+        end if;
+     end if;
+     select intelligent_login_sequence.currval into loginid_ from dual;
+     returnloginid_:=loginid_;
+     
+     --判断分数是否已经达到饱和
+     select max(score) into maxscore_ from intelligent_login where userid=userid_ and begintime<sysdate;
+     if maxscore_ IS NULL then
+        maxscore_:=0.0;
+     end if;
+     maxscore_:=maxscore_+score_;
+     if maxscore_>=10  then
+        maxscore_:=10.0;
+     else if maxscore_<=0 then
+        maxscore_:=0.0;  
+     end if;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_;
+     if count_=0 then
+        insert into intelligent_login_t (userid,totalscore,classid) values (userid_,maxscore_,classid_);
+     else 
+        update intelligent_login_t set totalscore=maxscore_ where userid=userid_;
+     end if;
+     
+end;
+
+
+
+
+
+
+create or replace procedure intelligent_loginout_pro(userid_ number,loginid_ number)
+as
+--between_min_ number;
+between_sec_ number;
+begin
+     --between_min_:=0;
+     between_sec_:=0;
+     update intelligent_login set endtime=sysdate where id=loginid_;--更新退出时间
+     --计算登录时间和退出时间差
+     select (cast(endtime as date)-cast(begintime as date))*86400 interval into between_sec_ from  intelligent_login  where id=loginid_;
+     if between_sec_>0 then
+        --between_min_ := round(between_sec_/60,0);
+        update intelligent_login set logintime = between_sec_ where id=loginid_;
+     end if;
+end;
+

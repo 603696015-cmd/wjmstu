@@ -1,0 +1,2 @@
+alter table question add(stem_text  varchar2(4000));
+alter table question add(front_half_media_file  varchar2(4000));

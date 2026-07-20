@@ -1,0 +1,55 @@
+
+.Div_Init{
+	  background:url(image/toolsbar_bg.png);
+	  background-repeat:repeat-x;
+	  width:100%;
+	  cursor:default;
+	  height:32px;
+	  border-bottom:1px solid #336699;
+}
+	
+/*************** ToolsBar 移上去状态 ***********/
+.tb_left_up{
+	background-image: url(image/tb_left_up.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	border: none;
+}
+
+.tb_center_up{
+	font-size:9pt;
+	background-image: url(image/tb_center_up.gif);
+	background-repeat: repeat-x;
+	height: 25px;
+	border: none;
+}
+
+.tb_right_up{
+	background-image: url(image/tb_right_up.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	border: none;
+}
+
+/*************** ToolsBar 按下状态 ***********/
+.tb_left_down{
+	background-image: url(image/tb_left_down.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	border: none;
+}
+
+.tb_center_down{
+	font-size:9pt;
+	background-image: url(image/tb_center_down.gif);
+	background-repeat: repeat-x;
+	height: 25px;
+	border: none;
+}
+
+.tb_right_down{
+	background-image: url(image/tb_right_down.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	border: none;
+}

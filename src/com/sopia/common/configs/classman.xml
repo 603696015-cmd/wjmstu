@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_classman" extends="elearning">
+		<action name="cltype_list"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_list">
+			<result name="cltype_list">
+				admin/class/cltype_list.jsp
+			</result>
+		</action>
+		<action name="cltype_addInit"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_addInit">
+			<result name="cltype_add">
+				admin/class/cltype_add.jsp
+			</result>
+		</action>
+		<action name="cltype_add"
+			class="com.sopia.classman.action.ClTypeAction" method="cltype_add">
+			<!-- <result name="cltype_add_success">
+				admin/class/cltype_add_success.jsp
+			</result>-->
+			<result name="cltype_add_success" type="redirectAction">
+				cltype_view.action?cltype.id=${cltype.id}
+			</result>
+		</action>
+		<action name="cltype_view"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_view">
+			<result name="cltype_view">
+				admin/class/cltype_view.jsp
+			</result>
+		</action>
+		<action name="cltype_alterInit"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_alterInit">
+			<result name="cltype_alter">
+				admin/class/cltype_alter.jsp
+			</result>
+		</action>
+		<action name="cltype_alter"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_alter">
+			<!-- <result name="cltype_alter_success">
+				admin/class/cltype_alter_success.jsp
+			</result> -->
+			<result name="cltype_alter_success" type="redirectAction">
+				cltype_view.action?cltype.id=${cltype.id}
+			</result>
+		</action>
+		
+		<action name="cltype_delete_user"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_delete_user">
+		</action>
+		<!-- 删除培训班类别初始化 -->
+		<action name="cltype_deleteInit"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_deleteInit">
+			<result name="cltype_delete">
+				admin/class/cltype_delete.jsp
+			</result>
+		</action>
+		<!-- 删除培训班类别 -->
+		<action name="cltype_delete"
+			class="com.sopia.classman.action.ClTypeAction"
+			method="cltype_delete">
+			<result name="cltype_delete_success">
+				admin/class/cltype_delete_success.jsp
+			</result>
+		</action>
+		
+		<action name="coursetype_delete"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_delete">
+			<result name="coursetype_delete_success">
+				admin/course/coursetype_delete_success.jsp
+			</result>
+		</action>
+		<!-- 班级管理 -->
+		<action name="elclass_addInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_addInit">
+			<result name="elclass_add">
+				admin/class/elclass_add.jsp
+			</result>
+		</action>
+		<action name="elclass_add"
+			class="com.sopia.classman.action.ClassAction" method="elclass_add">
+			<result name="elclass_add_success">
+				admin/class/elclass_add_success.jsp
+			</result>
+			<result name="elclass_edit">
+				admin/class/elclass_add.jsp
+			</result> 
+			<result name="elclass_alllist" type="redirectAction">
+				elclass_alllist
+			</result>
+			<result name="elclass_view" type="redirectAction">
+				elclass_view_man.action?elclass.id=${elclass.id}
+			</result>
+			<result type="redirectAction" name="elclass_list">
+				elclass_list.action
+			</result>
+			<result name="sta_elclass_view" type="redirectAction">
+				elclass_view_man.action?elclass.id=${elclass.id}&amp;staid=${staid}
+			</result>
+			<result name="elclass_newassign2user_add" type="redirectAction">
+				elclass_newassign2user_add?elclass.id=${elclass.id}&amp;staid=${staid}
+			</result>
+		</action>
+		<action name="elclass_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_list">
+			<result name="elclass_list">
+				admin/class/elclass_list.jsp
+			</result>
+		</action>
+		<action name="elclass_alllist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_alllist">
+			<result name="elclass_alllist">
+				admin/class/elclass_alllist.jsp
+			</result>
+			<result name="sta_elclass_alllist">
+				admin/class/sta_elclass_alllist.jsp
+			</result>
+		</action>
+		<action name="elclass_hotsetlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_hotsetlist">
+			<result name="elclass_hotsetlist">
+				admin/class/elclass_hotsetlist.jsp
+			</result>
+		</action>
+		<action name="elclass_hotset"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_hotset">
+			<result name="elclass_alllist" type="redirectAction">
+				elclass_hotsetlist.action
+			</result>
+		</action>
+		
+		<action name="elclass_sh_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_sh_list">
+			<result name="elclass_sh_list">
+				admin/class/elclass_sh_list.jsp
+			</result>
+		</action>
+		<action name="elclass_primash_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_primash_list">
+			<result name="elclass_primash_list">
+				admin/class/elclass_primash_list.jsp
+			</result>
+		</action>
+		<action name="elclass_timeover_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_timeover_list">
+			<result name="elclass_timeover_list">
+				admin/class/elclass_timeover_list.jsp
+			</result>
+		</action>
+		<action name="elclass_suspended_recovery"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_suspended_recovery">
+			<result name="elclass_suspended_recovery">
+				admin/class/elclass_suspended_recovery.jsp
+			</result>
+		</action>
+		<action name="elclass_applyDelete_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_applyDelete_list">
+			<result name="elclass_applyDelete_list">
+				admin/class/elclass_applyDelete_list.jsp
+			</result>
+		</action>
+		<action name="elclass_applyAlter_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_applyAlter_list">
+			<result name="elclass_applyAlter_list">
+				admin/class/elclass_applyAlter_list.jsp
+			</result>
+		</action>
+		<action name="elclass_sh_apply"
+			class="com.sopia.classman.action.ClassAction" method="elclass_sh_apply">
+			<result name="elclass_list" type="redirectAction">
+				elclass_list
+			</result>
+		</action>
+		<action name="elclass_sh"
+			class="com.sopia.classman.action.ClassAction" method="elclass_sh">
+			<result name="elclass_sh_list" type="redirectAction">
+				elclass_sh_list
+			</result>
+			<result name="elclass_applyDelete_list" type="redirectAction"> 
+				elclass_applyDelete_list
+			</result>
+			<result name="elclass_uvalidlist" type="redirectAction">
+				elclass_uvalidlist
+			</result>
+			<result name="elclass_assignlist2" type="redirectAction">
+				elclass_assignlist2
+			</result>
+			<result name="elclass_primash_list" type="redirectAction">
+				elclass_primash_list
+			</result>
+			<result name="elclass_applyAlter_list" type="redirectAction">
+				elclass_applyAlter_list
+			</result>
+			<result name="elclass_delete_apply_list" type="redirectAction">
+				elclass_delete_apply_list
+			</result>
+			<result name="elclass_alter_list" type="redirectAction">
+				elclass_alter_list
+			</result>
+			<result name="elclass_alter_list" type="redirectAction">
+				elclass_alter_list
+			</result>
+			<result name="elclass_suspended_recovery" type="redirectAction">
+				elclass_suspended_recovery
+			</result>
+			<result name="elclass_list" type="redirectAction">
+				elclass_list?pN=0&amp;pS=10
+			</result>
+			<result name="combinationSearchClass" type="redirectAction">
+				combinationSearchClass?pN=0&amp;pS=10
+			</result>
+			<result name="elclass_alllist" type="redirectAction">
+				elclass_alllist.action
+			</result>
+			<result name="elclass_view" type="redirectAction">
+				elclass_view_man.action?elclass.id=${elclass.id}
+			</result>
+			<result name="elclass_newassign2user_add" type="redirectAction">
+				elclass_newassign2user_add?elclass.id=${elclass.id}&amp;staid=${staid}
+			</result>
+		</action>
+		<action name="elclass_view_man"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_view_man">
+			<result name="elclass_view_man">
+				admin/class/elclass_view.jsp
+			</result>
+			<result name="sta_elclass_view_man">
+				admin/class/sta_elclass_view.jsp
+			</result>
+		</action>
+		<action name="elclass_alterInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_alterInit">
+			<result name="elclass_alter">
+				admin/class/elclass_alter.jsp
+			</result>
+			<result name="sta_elclass_alter">
+				admin/class/sta_elclass_alter.jsp
+			</result>
+		</action>
+		<!-- 培训班复制 -->
+		<action name="elclass_copy"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_copy">
+			<result name="elclass_copy" type="redirectAction">
+				elclass_alterInit.action?elclass.id=${elclass.id}
+			</result>
+		</action>
+		
+		<action name="elclass_alter"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_alter">
+			<result name="elclass_alter_success">
+				admin/class/elclass_alter_success.jsp
+			</result>
+			<result name="elclass_addInit"  type="redirectAction">
+				elclass_addInit?elclassId=${elclass.id}
+			</result>
+			<result type="redirectAction" name="elclass_alterInit">
+				elclass_alterInit.action?elclass.id=${elclass.id}
+			</result>
+			<result name="elclass_view" type="redirectAction">
+				elclass_view_man.action?elclass.id=${elclass.id}
+			</result>
+			<result name="sta_elclass_view" type="redirectAction">
+				elclass_view_man.action?elclass.id=${elclass.id}&amp;staid=${staid}
+			</result>
+		</action>
+		<action name="elclass_assignlistInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assignlistInit">
+			<result name="elclass_assignlistInit">
+				admin/class/elclass_assignlistInit.jsp
+			</result>
+		</action>
+		<action name="elclass_assignlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assignlist">
+			<result name="elclass_assignlist">
+				admin/class/elclass_assignlist.jsp
+			</result>
+		</action>
+		<action name="elclass_assignlist2"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assignlist2">
+			<result name="elclass_assignlist2">
+				admin/class/elclass_assignlist2.jsp
+			</result>
+		</action>
+		<action name="elclass_assignRoom"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assignRoom">
+			<result name="elclass_assignRoom">
+				admin/class/elclass_assignRoom.jsp
+			</result>
+		</action>
+		<action name="quitAssignRoom"
+			class="com.sopia.classman.action.ClassAction"
+			method="quitAssignRoom">
+			<result name="quitAssignRoom" type="redirectAction">
+				elclass_assignRoom.action
+			</result>
+		</action>
+		<action name="elclass_uvalidlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_uvalidlist">
+			<result name="elclass_uvalidlist">
+				admin/class/elclass_uvalidlist.jsp
+			</result>
+		</action>
+		<action name="elclass_examroom_validlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_examroom_validlist">
+			<result name="elclass_examroom_validlist">
+				admin/class/elclass_examroom_validlist.jsp
+			</result>
+		</action>
+		<action name="elclass_examroom_selectinglist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_examroom_selectinglist">
+			<result name="elclass_examroom_selectinglist">
+				admin/class/elclass_examroom_selectinglist.jsp
+			</result>
+		</action>
+		<action name="elclass_examroom_selecting_prima_shlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_examroom_selecting_prima_shlist">
+			<result name="elclass_examroom_selecting_prima_shlist">
+				admin/class/elclass_examroom_selecting_prima_shlist.jsp
+			</result>
+		</action>
+		<action name="elclass_examroom_selecting_shlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_examroom_selecting_shlist">
+			<result name="elclass_examroom_selecting_shlist">
+				admin/class/elclass_examroom_selecting_shlist.jsp
+			</result>
+		</action>
+		<action name="elclass_course"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_course">
+			<result name="elclass_course">
+				admin/class/elclass_course.jsp
+			</result>
+			<result name="sta_elclass_course">
+				admin/class/sta_elclass_course.jsp
+			</result>
+		</action>
+		<!-- 必修课action -->
+		<action name="elclass_course_bx" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_bx">
+			<result name="elclass_course_bx">
+				admin/class/elclass_course_bx.jsp
+			</result>
+		</action>
+		<action name="elclass_course_alterinit" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_alterinit">
+			<result name="elclass_course_alter">
+				admin/class/elclass_course_alter.jsp
+			</result>
+		</action>
+		<!--  选修课action -->
+		<action name="elclass_course_xx" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_xx">
+			<result name="elclass_course_xx">
+				admin/class/elclass_course_xx.jsp
+			</result>
+		</action>
+		<!--  主修课action -->
+		<action name="elclass_course_zx" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_zx">
+			<result name="elclass_course_zx">
+				admin/class/elclass_course_zx.jsp
+			</result>
+		</action>
+		
+		<!-- 必修课删除action -->
+		<action name="elclass_course_bx_del" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_bx_del">
+			<result name="elclass_course_bx" type="redirectAction">
+				elclass_course_bx?elclassId=${elclassId}
+			</result>
+		</action>
+		<!-- 课程恢复 -->
+		<action name="elclass_course_xx_restoration" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_xx_restoration">
+			<result name="elclass_course_bx" type="redirectAction">
+				elclass_course_bx?elclassId=${elclassId}
+			</result>
+			<result name="elclass_course_xx" type="redirectAction">
+				elclass_course_xx?elclassId=${elclassId}
+			</result>
+		</action>
+		<!--  选修课删除action -->
+		<action name="elclass_course_xx_del" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_xx_del">
+			<result name="elclass_course_xx" type="redirectAction">
+				elclass_course_xx?elclassId=${elclassId}
+			</result>
+		</action>
+		<!--  主修课删除action -->
+		<action name="elclass_course_zx_del" class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_zx_del">
+			<result name="elclass_course_zx" type="redirectAction">
+				elclass_course_zx?elclassId=${elclassId}
+			</result>
+		</action>
+		<!-- 线下课程数据导入 -->
+		<action name="elclass_xianxiacourse_import" class="com.sopia.classman.action.ClassAction"
+			method="elclass_xianxiacourse_import">
+			<result name="elclass_xianxiacourse_import">
+				admin/class/elclass_xianxiacourse_import.jsp
+			</result>
+		</action>
+		<action name="xianxiaCourseImportCheck" class="com.sopia.classman.action.ClassAction"
+			method="xianxiaCourseImportCheck">
+			<result name="accountImportInfo">
+				admin/class/importInfo.jsp
+			</result>
+			<result name="coursemes_import">
+				admin/class/coursemes_import.jsp
+			</result>
+		</action>
+		<action name="xianxiaCourseImport" class="com.sopia.classman.action.ClassAction" method="xianxiaCourseImport">
+		<!-- <result name="elclass_course" type="redirectAction">
+				elclass_course.action?elclass.id=${elclass.id}
+			</result> -->	
+			<result name="elclass_course">
+				admin/class/success.jsp
+			</result>
+		</action>
+		
+		<!--  课程选择列表action -->
+		<action name="elclass_course_selectList" class="com.sopia.classman.action.ClassAction" method="elclass_course_selectList">
+			<result name="elclass_course_selectList">
+				admin/class/elclass_course_selectList.jsp
+			</result>
+		</action>
+		<action name="elclass_course_modify" class="com.sopia.classman.action.ClassAction" method="elclass_course_modify">
+			<result name="elclass_course_xx" type="redirectAction">
+				elclass_course_xx?elclassId=${elclassId}
+			</result>
+			<result name="elclass_course_bx" type="redirectAction">
+				elclass_course_bx?elclassId=${elclassId}
+			</result>
+		</action>
+		<action name="elclass_course_add"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_add">
+			<result name="elclass_course_selectList" type="redirectAction">
+				elclass_course_selectList?elclassId=${elclassId}&amp;status=${status}
+			</result>
+		</action>
+		<action name="elclass_course_delete"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_delete">
+			<result name="elclass_course" type="redirectAction">
+				elclass_course?elclass.id=${elclass.id}
+			</result>
+		</action>
+		<action name="elclass_course_credit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_credit">
+			<result name="elclass_course_credit">
+				admin/class/elclass_course_credit.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="elclass_course_credit_alter"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_course_credit_alter">
+			<result name="elclass_course_credit_alter_success">
+				admin/class/elclass_course_credit_alter_success.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="elclass_applydeleteInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_applydeleteInit">
+			<result name="elclass_applydelete">
+				admin/class/elclass_applydelete.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="elclass_applydelete"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_applydelete">
+			<result name="elclass_applydelete_success">
+				admin/class/elclass_applydelete_success.jsp
+			</result>
+		</action>
+		<action name="elclass_check_students"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_check_students">
+			<result name="elclass_check_students">
+				admin/class/elclass_check_students.jsp
+			</result> 
+		</action>  
+		<action name="elclass_assign2userInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2userInit">
+			<result name="elclass_assign2user">
+				admin/class/elclass_assign2user.jsp
+			</result>
+			<result name="elclass_assign2userInit">
+				admin/class/class_listAssignedUser.jsp
+			</result>
+		</action> 
+		<action name="elclass_assign2userInit2"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2userInit2">
+			<result name="elclass_assign2user2">
+				admin/class/elclass_assign2user2.jsp
+			</result>
+			<result name="elclass_assign2userInit2">
+				admin/class/class_listAssignedUser2.jsp
+			</result>
+		</action>
+		<action name="elclass_newassign2user_add"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_newassign2user_add">
+			<result name="elclass_assign2userInit">
+				admin/class/class_listAssignedUser.jsp
+			</result>
+			<result name="sta_elclass_view_man" type="redirectAction">
+				elclass_view_man?elclass.id=${elclass.id}&amp;staid=${staid}
+			</result>
+			<result name="elclass_sh" type="redirectAction">
+				elclass_sh?elclass.id=${elclass.id}&amp;staid=${staid}&amp;state=1
+			</result>
+		</action>
+		<action name="elclass_newassign2user_add2"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_newassign2user_add2">
+			<result name="elclass_assign2userInit2">
+				admin/class/class_listAssignedUser2.jsp
+			</result>
+		</action>
+		<action name="elclass_assignUserAll"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assignUserAll">
+		</action>
+		<action name="examroom_seachUser_class"
+			class="com.sopia.classman.action.ClassAction"
+			method="examroom_seachUser_class">
+		</action>
+		<action name="elclass_newassign2user_addAll"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_newassign2user_addAll">
+			<result name="elclass_assign2userInit">
+				admin/class/class_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="elclass_newassign2user_delete"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_newassign2user_delete">
+			<result name="elclass_assign2userInit">
+				admin/class/class_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="elclass_assign2user_add"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2user_add">
+			<result name="elclass_assign2user" type="redirectAction">
+				elclass_assign2userInit?elclass.id=${elclass.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="elclass_assign2user_delete"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2user_delete">
+			<result name="elclass_assign2user" type="redirectAction">
+				elclass_assign2userInit?elclass.id=${elclass.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="elclass_assign2depInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2depInit">
+			<result name="elclass_assign2dep">
+				admin/class/elclass_assign2dep.jsp
+			</result>
+		</action>
+		<action name="elclass_assign2dep_add"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2dep_add">
+			<result name="elclass_assign2dep" type="redirectAction">
+				elclass_assign2depInit?elclass.id=${elclass.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="elclass_assign2dep_delete"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_assign2dep_delete">
+			<result name="elclass_assign2dep" type="redirectAction">
+				elclass_assign2depInit?elclass.id=${elclass.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="listCanApplyClass"
+			class="com.sopia.classman.action.ClassAction"
+			method="listCanApplyClass">
+			<result name="listCanApplyClass">
+				admin/class/listCanApplyClass.jsp
+			</result>
+		</action>
+		<action name="applyClass"
+			class="com.sopia.classman.action.ClassAction" method="applyClass">
+			<result name="listCanApplyClass">
+				admin/class/listCanApplyClass.jsp
+			</result>
+		</action>
+		<action name="submitAppalyClass_front"
+			class="com.sopia.classman.action.ClassAction"
+			method="submitAppalyClass_front">
+			<result name="submitAppalyClass_front">
+				elstudentman/submitAppalyClass_front.jsp
+			</result>
+		</action>
+		<action name="elclass_selectInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_selectInit">
+			<result name="elclass_select">
+				admin/class/elclass_select.jsp
+			</result>
+		</action>
+		<action name="applyedClass_op"
+			class="com.sopia.classman.action.ClassAction"
+			method="applyedClass_op">
+			<result name="elclass_select">
+				admin/class/elclass_select.jsp
+			</result>
+		</action>
+		<action name="elclass_graduate_apply_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_graduate_apply_list">
+			<result name="elclass_graduate_apply_list">
+				admin/class/elclass_graduate_apply_list.jsp
+			</result>
+		</action>
+		<action name="elclass_graduate_apply_op"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_graduate_apply_op">
+			<result name="elclass_graduate_apply_op"
+				type="redirectAction">
+				elclass_graduate_apply_list?pN=0&amp;pS=10
+			</result>
+		</action>
+		<action name="elclass_delete_applyInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_delete_applyInit">
+			<result name="elclass_delete_apply">
+				admin/class/elclass_delete_apply.jsp
+			</result>
+		</action>
+		<action name="elclass_delete_apply"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_delete_apply">
+			<result name="elclass_delete_apply_success">
+				admin/class/elclass_delete_apply_success.jsp
+			</result>
+		</action>
+		<action name="elclass_delete_apply_list"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_delete_apply_list">
+			<result name="elclass_delete_apply_list">
+				admin/class/elclass_delete_apply_list.jsp
+			</result>
+		</action>
+		<action name="elclass_delete_apply_op"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_delete_apply_op">
+			<result name="elclass_delete_apply_list">
+				admin/class/elclass_delete_apply_list.jsp
+			</result>
+		</action>
+		<action name="elclass_delete_sh"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_delete_sh">
+			<result name="elclass_sh_list" type="redirectAction">
+				elclass_sh_list
+			</result>
+		</action>
+		<action name="class_stat_list" class="com.sopia.classman.action.ClassAction" method="class_stat_list">
+			<result name="class_stat_list">
+				admin/statistic/class_stat_list.jsp
+			</result>
+		</action>
+		<action name="class_student" class="com.sopia.classman.action.ClassAction" method="class_student">
+			<result name="class_student">
+				admin/statistic/class_student.jsp
+			</result>
+			<result name="class_student_EXCEL">
+				admin/statistic/class_student_EXCEL.jsp
+			</result>
+		</action>
+		<action name="class_quiz_stat_eval" class="com.sopia.classman.action.ClassAction" method="class_quiz_stat_eval">
+			<result name="class_quiz_stat_eval">
+				admin/statistic/class_quiz_stat_eval.jsp
+			</result> 
+		</action>
+		<!-- 培训班组合搜索 -->
+		<action name="combinationSearchclassInit" class="com.sopia.classman.action.ClassAction" method="combinationSearchclassInit">
+			<result name="combinationSearchclassInit">
+				admin/class/combinationSearchclass.jsp
+			</result>
+		</action>
+		
+		<action name="combinationSearchClass" class="com.sopia.classman.action.ClassAction" method="combinationSearchClass">
+			<result name="combinationSearchclass">
+				admin/class/combinationSearchClasslist.jsp
+			</result>
+		</action>
+		
+		<action name="elclass_Modify_applicationInit" class="com.sopia.classman.action.ClassAction" method="elclass_Modify_applicationInit">
+			<result name="elclass_Modify_applicationInit">
+				admin/class/elclass_Modify_application.jsp
+			</result>
+		</action>
+		<action name="elclass_Modify_application" class="com.sopia.classman.action.ClassAction" method="elclass_Modify_application">
+			<result name="elclass_Modify_application" type="redirectAction">
+				elclass_list
+			</result>
+		</action>
+		<action name="elclass_alter_list" class="com.sopia.classman.action.ClassAction" method="elclass_alter_list">
+			<result name="elclass_alter_list">
+				admin/class/elclass_alter_list.jsp
+			</result>
+		</action>
+		<action name="elclass_alter_sh"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_alter_sh">
+			<result name="elclass_alter_sh" type="redirectAction">
+				elclass_alter_list
+			</result>
+		</action>
+		<action name="elclass_delete_sh_NOInit" class="com.sopia.classman.action.ClassAction" method="elclass_delete_sh_NOInit">
+			<result name="elclass_delete_sh_NOInit">
+				admin/class/elclass_delete_sh_NO.jsp
+			</result>
+		</action>
+		<action name="elclass_delete_sh_Init" class="com.sopia.classman.action.ClassAction" method="elclass_delete_sh_Init">
+			<result name="elclass_delete_sh_Init">
+				admin/class/elclass_delete_sh_Init.jsp
+			</result>
+		</action>
+		<action name="elclass_delete_sh_NO" class="com.sopia.classman.action.ClassAction" method="elclass_delete_sh_NO">
+			<result name="elclass_delete_sh_NO" type="redirectAction">
+				elclass_sh_list
+			</result>
+		</action>
+		<action name="elclass_details" class="com.sopia.classman.action.ClassAction" method="elclass_details">
+			<result name="elclass_details">
+				admin/class/elclass_details.jsp
+			</result>
+		</action>
+		<action name="elclass_details_sh" class="com.sopia.classman.action.ClassAction" method="elclass_details_sh">
+			<result name="elclass_details_sh">
+				admin/class/elclass_details_sh.jsp
+			</result>
+		</action>
+		<action name="elclass_details_xx" class="com.sopia.classman.action.ClassAction" method="elclass_details_xx">
+			<result name="elclass_details_xx">
+				admin/class/elclass_details_xx.jsp
+			</result>
+		</action>
+		<action name="elclass_details_xx_sh" class="com.sopia.classman.action.ClassAction" method="elclass_details_xx_sh">
+			<result name="elclass_details_xx_sh">
+				admin/class/elclass_details_xx_sh.jsp
+			</result>
+		</action>
+		<action name="elclass_details_bx_sh" class="com.sopia.classman.action.ClassAction" method="elclass_details_bx_sh">
+			<result name="elclass_details_bx_sh">
+				admin/class/elclass_details_bx_sh.jsp
+			</result>
+		</action> 
+		<action name="elclass_details_bx" class="com.sopia.classman.action.ClassAction" method="elclass_details_bx">
+			<result name="elclass_details_bx">
+				admin/class/elclass_details_bx.jsp
+			</result>
+		</action> 
+		<action name="examroom_class_shInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="examroom_class_shInit">
+			<result name="examroom_class_shInit">
+				admin/class/examroom_class_sh.jsp
+			</result>
+		</action>
+		<action name="optionDep"
+			class="com.sopia.classman.action.ClassAction"
+			method="optionDep">
+			<result name="optionDep">
+				admin/class/optionDep.jsp
+			</result>
+		</action>
+		<action name="optionBaseDatat"
+			class="com.sopia.classman.action.ClassAction"
+			method="optionBaseDatat">
+			<result name="optionBaseDatat">
+				admin/class/optionBaseDatat.jsp
+			</result>
+		</action>
+		<action name="classWriteUserInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="classWriteUserInit">
+			<result name="importUserToClass">
+				admin/class/importUserToClass.jsp
+			</result>
+		</action>
+		<action name="classWriteUser"
+			class="com.sopia.classman.action.ClassAction"
+			method="classWriteUser">
+			<result name="importUserToClass">
+				admin/class/importUserToClass.jsp
+			</result>
+		</action>
+		<action name="elclass_userAudit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_userAudit">
+			<result name="elclass_userAudit">
+				admin/class/elclass_userAudit.jsp
+			</result>
+		</action>
+		<action name="elclass_auditUserlist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_auditUserlist">
+			<result name="elclass_auditUserlist">
+				admin/class/elclass_auditUserlist.jsp
+			</result>
+		</action>
+		<action name="updateStudyClassStatus"
+			class="com.sopia.classman.action.ClassAction"
+			method="updateStudyClassStatus">
+			<result name="elclass_auditUserlist" type="redirectAction">
+				elclass_auditUserlist.action?elClass.id=${elClass.id}
+			</result>
+		</action>
+		<action name="deleteStudyClassApplyStatus"
+			class="com.sopia.classman.action.ClassAction"
+			method="deleteStudyClassApplyStatus">
+			<result name="elclass_auditUserlist" type="redirectAction">
+				elclass_auditUserlist.action?elClass.id=${elClass.id}
+			</result>
+		</action>
+		<action name="deleteStudysClassApplyStatus"
+			class="com.sopia.classman.action.ClassAction"
+			method="deleteStudysClassApplyStatus">
+			<result name="elclass_auditUserlist" type="redirectAction">
+				elclass_auditUserlist.action?elClass.id=${elClass.id}
+			</result>
+		</action>
+		
+		<action name="elclass_record_rankinglist"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_record_rankinglist">
+			<result name="elclass_record_rankinglist">
+				admin/class/elclass_record_rankinglist.jsp
+			</result>
+		</action>
+		
+		<action name="elclass_UnitRanking_PointsInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_UnitRanking_PointsInit">
+			<result name="elclass_UnitRanking_Points">
+				admin/class/elclass_UnitRanking_Points.jsp
+			</result>
+		</action>
+		
+		<action name="elclass_UnitRanking_DegreeScoreInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_UnitRanking_DegreeScoreInit">
+			<result name="elclass_UnitRanking_DegreeScore">
+				admin/class/elclass_UnitRanking_DegreeScore.jsp
+			</result>
+		</action>
+		<action name="elclass_UnitRanking_TitleScoreInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="elclass_UnitRanking_TitleScoreInit">
+			<result name="elclass_UnitRanking_TitleScore">
+				admin/class/elclass_UnitRanking_TitleScore.jsp
+			</result>
+		</action>
+		<action name="checkOrderidIsExist"
+			class="com.sopia.classman.action.ClassAction"
+			method="checkOrderidIsExist">
+		</action>
+		
+		<!-- sd1227 -->
+		<action name="trainPassList" class="com.sopia.classman.action.ClassAction" method="trainPassList">
+			<result name="trainPassList">
+				admin/statistic/trainPassList.jsp
+			</result>
+			<result name="class_student_EXCEL">
+				admin/statistic/class_student_EXCEL1.jsp
+			</result>
+		</action>
+		<!-- sd0217 -->
+		<action name="trainPassList_two" class="com.sopia.classman.action.ClassAction" method="trainPassList_two">
+			<result name="trainPassList_two">
+				admin/statistic/trainPassList_two.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+
+</struts>

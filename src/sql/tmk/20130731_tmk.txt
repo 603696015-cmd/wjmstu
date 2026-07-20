@@ -1,0 +1,128 @@
+create or replace procedure sr_questionscore_set_save
+( sqid_ number,blockid_ number,qid_ number ,qindex_ number,voice_ number,similary_ number ) as
+--qindex_ number
+--TMK添加，判断该问题是第一次答还是第二次答
+--第一次答对，分数全得，第二次答对分数为设置的大题第二次答对得分
+status_ number default 0;score_ number;q_answeri varchar2(4000);q_rulestri varchar2(4000); u_myanswer varchar2(4000);
+u_myansweri varchar2(4000);l_idx number ;u_age number;qcid_ number;qctype_ number;qcanswer_ varchar(4000);qscoreper_ number;
+qtype_ number;q_rulestr varchar(4000);random_ number;qscore_ number;q_answer varchar(4000);secondscore_ number;atime_ number;oldscore_ number;
+cursor question_subs is select id,qtype,answer,scoreper from question where parentid = qid_;
+begin
+      score_:=0;
+      l_idx:=1;
+      --if qindex_ = 1 then --第一次答对
+         select random, rulestring, eachscore, type,secondscore into random_,q_rulestr,qscore_,qtype_,secondscore_ from exampaperblock where id = blockid_;
+     -- else  --第二次答对
+         --select random, rulestring, secondscore, type into random_,q_rulestr,qscore_,qtype_ from exampaperblock where id = blockid_;
+      --end if;
+      if random_=0 then
+        select rulestring into q_rulestr from exampaperblockquestion where blockid = blockid_ and questionid = qid_;
+      end if;
+      
+      
+      select answer,qtype into q_answer,qtype_ from question where id = qid_;
+      
+     
+      select myanswer,atime,myscore into u_myanswer,atime_,oldscore_  from study_questions where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+      
+     
+      
+      if qtype_ =1 or qtype_ =2 or qtype_ =3 or qtype_  =4 or qtype_ =5 or qtype_=10 or qtype_=15 then
+             if q_answer=u_myanswer then
+                score_:=qscore_;
+                status_:=1;
+             else
+                status_:=0;
+             end if;
+        elsif qtype_=19 or qtype_=20 then---排序，拖拽
+        --如果用户有语音上传，那么只需要判断相似度即可
+             
+             score_:=oldscore_;
+             if atime_<2 then
+                 if voice_=1 then
+                     if similary_>=30 then 
+                         if atime_=0 then
+                            score_:=qscore_;
+                         else
+                            score_:=secondscore_;
+                         end if;
+                         status_:=1;
+                     else
+                       status_:=0;
+                     end if;
+                 else
+                     if q_answer=u_myanswer then
+                         if atime_=0 then
+                            score_:=qscore_;
+                         else
+                            score_:=secondscore_;
+                         end if;
+                         status_:=1;
+                     else
+                         status_:=0;
+                     end if;
+                 end if;
+                 
+               /**
+               if q_answer=u_myanswer then
+                   if atime_=0 then
+                      score_:=qscore_;
+                   else
+                      score_:=secondscore_;
+                   end if;
+                   status_:=1;
+               else
+                   status_:=0;
+               end if;
+               */
+             end if;
+             update study_questions set atime=atime+1 where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+       elsif qtype_ = 7 then
+             open question_subs;
+             loop
+                fetch question_subs into qcid_,qctype_,qcanswer_,qscoreper_;
+                exit when question_subs%notfound;
+                sr_questionsubscore_set( sqid_,blockid_,qcid_,qctype_,qscore_*qscoreper_/100,qcanswer_);
+                l_idx:=l_idx+1;
+             end loop;
+             CLOSE question_subs;
+             select sum(sq.myscore) into score_ from study_questions sq left join question q on q.id = sq.qid where q.parentid = qid_ and
+                                 sq.sqid =sqid_ and sq.blockid=blockid_;
+             status_:=0;
+       elsif qtype_ = 8 then
+             select nvl( floor(to_char(sysdate,'yyyy' ))-floor(to_char(u.shengri,'yyyy')),-1) into u_age from eluser u join study_quizinfo sqi on sqi.userid=u.id where sqi.id = sqid_;
+             if u_age =-1 then
+                status_:=-4 ;
+                score_:=0;
+             else
+               if trim(q_rulestr)='' then
+                  score_:=0;
+                  status_:=-7;
+               else
+                 u_myansweri := getdzscoreandstatus( u_myanswer ,q_rulestr ,u_age,qscore_);
+                 score_:= getsub(u_myansweri,':',1) ;
+                 status_:= nvl( getsub(u_myansweri,':',2),0) ;
+               end if;
+             end if;
+       elsif qtype_ = 9 then
+            while l_idx <=6 loop
+                   q_answeri := trim(getSub(q_answer,'-=SpEl=-',l_idx));
+                   u_myansweri := trim(getSub(u_myanswer,'-=SpEl=-',l_idx));
+                   q_rulestri := trim(getSub(q_rulestr,'-=SpRule-',l_idx));
+                   l_idx:=l_idx+1;
+                   if q_answeri = u_myansweri then
+                       score_:=score_+to_number( q_rulestri );
+                   end if;
+             end loop;
+             status_:=1;
+       elsif qtype_ = 11 or  qtype_ = 6 then
+             status_:=-1;
+       else
+             status_:=-2;
+       end if;
+       if  qtype_ != 11 and qtype_ != 6 then
+       --dbms_output.put_line(qscore_);
+       update study_questions set myscore = nvl(score_,0) ,status= nvl(status_,0) where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+       end if;
+       sr_questionscore_block_set(sqid_ ,blockid_ );
+end ;

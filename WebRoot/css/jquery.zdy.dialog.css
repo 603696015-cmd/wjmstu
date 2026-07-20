@@ -1,0 +1,40 @@
+/* Custom dialog styles */
+#popup_container.style_1 {
+	font-family: "¿¬Ìå", Arial;
+	font-size:13px;
+	color: yellow;
+	background: #005294;
+	border-color: #113F66;
+	
+}
+
+#popup_container.style_1 #popup_title {
+	color: #FFF;
+	font-weight: normal;
+	text-align: left;
+	background: #76A5CC;
+	border: solid 1px #005294;
+	padding-left: 1em;
+}
+
+#popup_container.style_1 #popup_content {
+	background: none;
+}
+
+#popup_container.style_1 #popup_message {
+	padding-left: 0em;
+	font-size:18px;
+	color:#FFFFFF;
+}
+
+#popup_container.style_1 INPUT[type='button'] {
+	border: outset 2px #76A5CC;
+	color: #000000;
+	background: yellow;
+	margin-left:15px;
+	margin-right:15px;
+	font-size:18px;
+	line-height:25px;
+	min-width:90px;
+	max-width:90px;
+}

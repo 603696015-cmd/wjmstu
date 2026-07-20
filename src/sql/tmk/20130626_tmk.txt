@@ -1,0 +1,48 @@
+//创建测试eluser表，表名为eluser_tmk
+-- Create table
+create table ELUSER_TMK
+(
+  ID           NUMBER not null,
+  USERNAME     VARCHAR2(200) not null,
+  REALNAME     VARCHAR2(200),
+  PASSWORD     VARCHAR2(200) not null,
+  SHENFENZHENG VARCHAR2(200) not null,
+  DEPID        NUMBER not null,
+  ROLEID       NUMBER not null,
+  STAID        NUMBER not null,
+  VALID        NUMBER default 0 not null,
+  JINGZHONG NUMBER ,
+  ZHIWU NUMBER,
+  ZHIJI NUMBER,
+  DISHI NUMBER
+)；
+-- Create sequence 
+create sequence ELUSER_TMK_SEQUENCE
+minvalue 1
+maxvalue 9999999999
+start with 1
+increment by 1
+cache 10;
+create or replace trigger auto_id_eluser_tmk  before insert on  eluser_tmk  for each row
+when (new.id is null)
+begin  select eluser_tmk_sequence.nextval into :new.id from dual ;   end;
+
+//创建userdemocolumn表，保存字段信息
+-- Create table
+create table USERDEMOCOLUMN
+(
+  TYPE        NUMBER not null,
+  COLUMN_NAME VARCHAR2(200) not null,
+  DESCRIPTION VARCHAR2(200),
+  SHOW_ADD    NUMBER not null,
+  SHOW_UPDATE NUMBER not null,
+  SHOW_VIEW   NUMBER not null,
+  SHOW_LIST   NUMBER not null,
+  COLUMN_TYPE VARCHAR2(20) not null,
+  FORMAT      VARCHAR2(200)
+)；
+
+
+
+
+

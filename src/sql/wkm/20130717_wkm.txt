@@ -1,0 +1,7 @@
+alter   table question modify voice_path varchar2(4000);
+alter   table question modify MODEL_VOICE varchar2(4000);
+alter   table question modify MEDIA_FILE varchar2(4000);
+alter   table question modify RIGHT_ANSWER varchar2(4000);
+alter   table question modify FASHENG_QUESTION varchar2(4000);
+
+alter table question add fen_content clob;

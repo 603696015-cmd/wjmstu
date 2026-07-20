@@ -1,0 +1,39 @@
+create or replace procedure getFinishExamRoom
+ (userid_ number,courseid_ number,cpid_ number,roomid_ out number,roomsortid_ out number)
+ as
+ id_ number;
+ sortid_ number;
+ ispassed_ number;
+ maxsortid_ number;
+ tempid_ number;
+ tempsortid_ number;
+ cursor studycpages is
+ select  er.id erid ,er.sortid ,se.ispassed
+					from exam_room er
+					left join study_room se on se.roomid = er.id and se.userid =userid_
+					 where er.courseid=courseid_ and er.cpid=cpid_  order by er.sortid asc;
+ begin
+      select max(er.sortid) into maxsortid_ from exam_room er
+					left join study_room se on se.roomid = er.id and se.userid =userid_
+					 where er.courseid=courseid_ and er.cpid=cpid_;
+       open studycpages;
+         loop
+            fetch studycpages into id_,sortid_,ispassed_ ;
+            exit when studycpages%notfound;
+            if ispassed_=1 then
+               roomid_:=id_;
+               roomsortid_:=sortid_;
+               if sortid_=1 then
+                  tempid_:=id_;
+                  tempsortid_:=sortid_;
+               end if;
+               exit;
+            else
+               if sortid_=maxsortid_ then
+                  roomid_:=tempid_;
+                  sortid_:=tempsortid_;
+               end if;
+            end if;
+         end loop;
+       close studycpages;
+ end;

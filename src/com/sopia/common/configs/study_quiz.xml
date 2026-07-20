@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="study_quiz" extends="elearning">
+		<action name="myquiz_list"
+			class="com.sopia.studyman.action.StudyQuiz" method="myquiz_list">
+			<result name="myquiz_list">
+				study/quiz/myquiz_list.jsp
+			</result>
+			<result name="myquiz_list_phone">
+				wsj_phone/study/quiz/myquiz_list.jsp
+			</result>
+		</action>
+		<action name="myquiz_list_xbs"
+			class="com.sopia.studyman.action.StudyQuiz" method="myquiz_list_xbs">
+			<result name="myquiz_list_xbs">
+				study/quiz/myquiz_list_xbs.jsp
+			</result>
+			
+			<result name="myquiz_list_xbs_phone">
+				wsj_phone/study/quiz/myquiz_list_xbs.jsp
+			</result>
+		</action>
+		<action name="mysim_list"
+			class="com.sopia.studyman.action.StudyQuiz" method="mysim_list">
+			<result name="mysim_list">study/quiz/mysim_list.jsp</result>
+			
+			<result name="mysim_list_phone">wsj_phone/study/quiz/mysim_list.jsp</result>
+		</action>
+		<action name="myprac_list"
+			class="com.sopia.studyman.action.StudyQuiz" method="myprac_list">
+			<result name="myprac_list">
+				study/quiz/myprac_list.jsp
+			</result>
+			
+			<result name="myprac_list_phone">
+				wsj_phone/study/quiz/myprac_list.jsp
+			</result>
+		</action>
+		<action name="myrecentquiz_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="myrecentquiz_list">
+			<result name="myrecentquiz_list">
+				study/quiz/myrecentquiz_list.jsp
+			</result>
+			
+			<result name="myrecentquiz_list_phone">
+				wsj_phone/study/quiz/myrecentquiz_list.jsp
+			</result>
+		</action>
+		<action name="quizpaperinto"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinto">
+			<result name="quizpaper" type="redirectAction">
+				quizpaper?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="myquizpaperlist"
+			class="com.sopia.studyman.action.StudyQuiz" method="myquizpaperlist">
+			<result name="myquizpaperlist">
+				study/quiz/myquizpaperlist.jsp
+			</result>
+			
+			<result name="myquizpaperlist_phone">
+				wsj_phone/study/quiz/myquizpaperlist.jsp
+			</result>
+		</action>
+		<action name="lookStudyQuizpaperlist"
+			class="com.sopia.studyman.action.StudyQuiz" method="lookStudyQuizpaperlist">
+			<result name="lookStudyQuizpaperlist">
+				study/quiz/lookStudyQuizpaperlist.jsp
+			</result>
+			
+			<result name="lookStudyQuizpaperlist_phone">
+				wsj_phone/study/quiz/lookStudyQuizpaperlist.jsp
+			</result>
+		</action>
+		<action name="quizpaperinit"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit">
+			<result name="quizpaperinit">
+				study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="quizpaperinit_pwd">
+				study/quiz/quizpaperinit_pwd.jsp
+			</result>
+			
+			<result name="quizpaperinit_phone">
+				wsj_phone/study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="xianxia">
+				study/quiz/xianxia.jsp
+			</result>
+		</action>
+		<action name="quizpaperinit2"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit2">
+			<result name="quizpaperinit2">
+				study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="quizpaperinit_pwd">
+				study/quiz/quizpaperinit_pwd.jsp
+			</result>
+			
+			<result name="quizpaperinit2_phone">
+				wsj_phone/study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="quizpaperinit_pwd_phone">
+				wsj_phone/study/quiz/quizpaperinit_pwd.jsp
+			</result>
+		</action>
+		<action name="quizpaperinit_pwd"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit_pwd">
+			<result name="quizpaperinit_pwd_succ">
+				study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="quizpaperinit_pwd">
+				study/quiz/quizpaperinit_pwd.jsp
+			</result>
+			
+			<result name="quizpaperinit_pwd_succ_phone">
+				wsj_phone/study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="quizpaperinit_pwd_phone">
+				wsj_phone/study/quiz/quizpaperinit_pwd.jsp
+			</result>
+		</action>
+		<action name="lookStudyEroom"
+			class="com.sopia.studyman.action.StudyQuiz" method="lookStudyEroom">
+			<result name="lookStudyEroom">
+				study/quiz/lookStudyEroom.jsp
+			</result>
+			
+			<result name="lookStudyEroom_phone">
+				wsj_phone/study/quiz/lookStudyEroom.jsp
+			</result>
+		</action>
+		<action name="quizpaperinit_byepid"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit_byepid">
+			<result name="quizpaper" type="redirect">
+				quizpaper.action?myExamPaper.id=${myExamPaper.id}&amp;datetime=${myExamPaper.begintime}&amp;ipAddr=${ipAddr}&amp;macAddr=${macAddr}
+			</result>
+			<result name="quizpaper1b1">
+				study/quiz/quizpaper1b1.jsp
+			</result>
+			<result name="quizpaper1b1_phone">
+				wsj_phone/study/quiz/quizpaper1b1.jsp
+			</result>
+			<result name="quizpaper_contest">
+				study/quiz/quizpaper_contest.jsp
+			</result>
+			
+			
+			<result name="quizpaper_contest_phone">
+				wsj_phone/study/quiz/quizpaper_contest.jsp
+			</result>
+		</action>
+		<action name="quizpaperinit_byepid2"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit_byepid2">
+	<!--  <result name="questionnaire_quizpaper1b1">
+				 study/quiz/questionnaire_quizpaper1b1.jsp 
+			</result> -->	
+		<!--	<result name="questionnaire_quizpaper1b1">study/quiz/questionnaire_quizpaper.jsp</result>	 -->
+		<result name="questionnaire_quizpaper1b1">study/quiz/questionnaire_quizpaper2.jsp</result>
+		</action>
+		<action name="qpracInit"
+			class="com.sopia.studyman.action.StudyQuiz" method="qpracInit">
+			<result name="qpracInit">
+				study/quiz/qpracInit.jsp
+			</result>
+			
+			<result name="qpracInit_phone">
+				wsj_phone/study/quiz/qpracInit.jsp
+			</result>
+		</action>
+		<!-- 问卷考试 -->
+		<action name="quizpaper2" class="com.sopia.studyman.action.StudyQuiz" method="quizpaper2">
+			<result name="questionnaire_quizpaper1b1">
+				 study/quiz/questionnaire_quizpaper1b1.jsp 
+			</result>
+		</action>
+		
+		<action name="quizpaper"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaper">
+			<result name="quizpaper">study/quiz/quizpaper.jsp</result>
+			<result name="quizpaper1b1">
+				study/quiz/quizpaper1b1.jsp
+			</result>
+			
+			<result name="quizpaper_phone">wsj_phone/study/quiz/quizpaper.jsp</result>
+			<result name="quizpaper1b1_phone">
+				wsj_phone/study/quiz/quizpaper1b1.jsp
+			</result>
+		</action>
+		<action name="quizpaper_blockquestions"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaper_blockquestions">
+			<result name="quizpaper_blockquestions">
+				study/quiz/quizpaper_blockquestions.jsp
+			</result>
+			
+			<result name="quizpaper_blockquestions_phone">
+				wsj_phone/study/quiz/quizpaper_blockquestions.jsp
+			</result>
+		</action>
+		<action name="quizpaper_oneQuestion"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaper_oneQuestion">
+			<result name="quizpaper_oneQuestion">
+				study/quiz/quizpaper_oneQuestion.jsp
+			</result>
+			
+			<result name="quizpaper_oneQuestion_phone">
+				wsj_phone/study/quiz/quizpaper_oneQuestion.jsp
+			</result>
+		</action>
+		<!-- 问卷提交 -->
+		<action name="questionnaire_quizpaper_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="questionnaire_quizpaper_submit">
+			<result name="quizpaper_submit">success.jsp</result>
+			<result name="myquizpaperview" type="redirectAction">
+				myquizpaperview_questionnaire.action?myExamPaper.id=${myExamPaper.id}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="myquizpaperview_questionnaire"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="myquizpaperview_questionnaire">
+			<result name="myquizpaperviewall">
+				study/quiz/myquizpaperviewall_questionnaire.jsp
+			</result>
+			
+		</action>
+		
+		<action name="quizpaper_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizpaper_submit">
+			<result name="quizpaper_submit">success.jsp</result>
+			<result name="myquizpaperview" type="redirectAction">
+				myquizpaperview?myExamPaper.id=${myExamPaper.id}&amp;elclass.id=${elclass.id}&amp;elmessage=${elmessage}
+			</result>
+			<result name="myquizpapergradeview" type="redirectAction">
+				myquizpapergradeview?myExamPaper.id=${myExamPaper.id}
+			</result>
+			<result name="quizpaper_submit_succ">study/quiz/myquizpaperepview.jsp</result>
+			<result name="wjm_user_center" type="redirectAction">
+				wjm_user_center.action
+			</result>
+			<result name="quizpaper_submit_phone">wsj_phone/success.jsp</result>
+			<result name="quizpaper_submit_succ_phone">wsj_phone/study/quiz/myquizpaperepview.jsp</result>
+		</action>
+		<action name="quizpaper_submit_contest"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizpaper_submit_contest">
+			<result name="quizpaper_submit_contest_succ" type="redirectAction">
+				myquizpaperview?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="myquizpapergradeview" class="com.sopia.studyman.action.StudyQuiz"
+			method="myquizpapergradeview">
+			<result name="myquizpapergradeview" >
+				study/quiz/myquizpapergradeview.jsp
+			</result>
+			
+			<result name="myquizpapergradeview_phone" >
+				wsj_phone/study/quiz/myquizpapergradeview.jsp
+			</result>
+		</action>
+		<action name="quizquestion_save"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizquestion_save">
+			<result name="quizquestion_save">success.jsp</result>
+			
+			<result name="quizquestion_save_phone">wsj_phone/success.jsp</result>
+		</action>
+		<action name="quizquestiondazi_save"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizquestiondazi_save">
+			<result name="quizquestiondazi_save">success.jsp</result>
+			
+			<result name="quizquestiondazi_save_phone">wsj_phone/success.jsp</result>
+		</action>
+		<action name="quizpaper_save"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizpaper_save">
+			<result name="quizpaper_save">success.jsp</result>
+			
+			<result name="quizpaper_save_phone">wsj_phone/success.jsp</result>
+		</action>
+		<action name="quizblockhelpinit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizblockhelpinit">
+			<result name="quizblockhelpinit">study/quiz/quizblockhelp.jsp</result>
+		</action>
+		<action name="quizquestioninit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizquestioninit">
+			<result name="quizquestion_email">
+				study/quiz/quizquestion_email.jsp
+			</result>
+			<result name="quizquestion_dazi">
+				study/quiz/quizquestion_dazi.jsp
+			</result>
+			<result name="quizquestion_search">
+				study/quiz/quizquestion_search.jsp
+			</result>
+			<result name="quizquestion_tz"><!-- 拖拽 -->
+				study/quiz/quizquestion_tz.jsp
+			</result>
+			<result name="quizquestion_px"><!-- 排序 -->
+				study/quiz/quizquestion_px.jsp
+			</result>
+			<result name="quizquestion_tyxt"><!-- 听音选图 -->
+				study/quiz/quizquestion_tyxt.jsp
+			</result>
+			<result name="quizquestion_ktxz"><!-- 看图选择 -->
+				study/quiz/quizquestion_ktxz.jsp
+			</result>
+			<result name="quizquestion_ktxz2"><!-- 看图选择2 -->
+				study/quiz/quizquestion_ktxz2.jsp
+			</result>
+			<result name="quizquestion_kdhxz"><!-- 看动画选择 -->
+				study/quiz/quizquestion_kdhxz.jsp
+			</result>
+			<result name="quizquestion_jsby"><!-- 角色扮演 -->
+				study/quiz/quizquestion_jsby.jsp
+			</result>
+			
+			<result name="quizquestion_email_phone">
+				wsj_phone/study/quiz/quizquestion_email.jsp
+			</result>
+			<result name="quizquestion_dazi_phone">
+				wsj_phone/study/quiz/quizquestion_dazi.jsp
+			</result>
+			<result name="quizquestion_search_phone">
+				wsj_phone/study/quiz/quizquestion_search.jsp
+			</result>
+			<result name="quizquestion_tz_phone"><!-- 拖拽 -->
+				wsj_phone/study/quiz/quizquestion_tz.jsp
+			</result>
+			<result name="quizquestion_px_phone"><!-- 排序 -->
+				wsj_phone/study/quiz/quizquestion_px.jsp
+			</result>
+			<result name="quizquestion_tyxt_phone"><!-- 听音选图 -->
+				wsj_phone/study/quiz/quizquestion_tyxt.jsp
+			</result>
+			<result name="quizquestion_ktxz_phone"><!-- 看图选择 -->
+				wsj_phone/study/quiz/quizquestion_ktxz.jsp
+			</result>
+			<result name="quizquestion_ktxz2_phone"><!-- 看图选择2 -->
+				wsj_phone/study/quiz/quizquestion_ktxz2.jsp
+			</result>
+			<result name="quizquestion_kdhxz_phone"><!-- 看动画选择 -->
+				wsj_phone/study/quiz/quizquestion_kdhxz.jsp
+			</result>
+			<result name="quizquestion_jsby_phone"><!-- 角色扮演 -->
+				wsj_phone/study/quiz/quizquestion_jsby.jsp
+			</result>
+			<result name="qerror">study/quiz/qerror.jsp</result>
+		</action>
+		<action name="quizquestion_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizquestion_submit">
+			<result name="quizquestion_email_succ">
+				study/quiz/quizquestion_email_succ.jsp
+			</result>
+			<result name="quizquestion_dazi_succ">
+				study/quiz/quizquestion_dazi_succ.jsp
+			</result>
+			<result name="quizquestion_search_succ">
+				study/quiz/quizquestion_search_succ.jsp
+			</result>
+			
+			<result name="quizquestion_email_succ_phone">
+				wsj_phone/study/quiz/quizquestion_email_succ.jsp
+			</result>
+			<result name="quizquestion_dazi_succ_phone">
+				wsj_phone/study/quiz/quizquestion_dazi_succ.jsp
+			</result>
+			<result name="quizquestion_search_succ_phone">
+				wsj_phone/study/quiz/quizquestion_search_succ.jsp
+			</result>
+		</action>
+		<action name="quizquestion_search"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizquestion_search">
+			<result name="quizquestion_search_list">
+				study/quiz/quizquestion_search_list.jsp
+			</result>
+		</action>
+		<action name="quizquestion_email"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizquestion_email">
+			<result name="quizquestion_email">email/ldmmapp.jsp</result>
+		</action>
+		<action name="listErsWithoutC"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="listErsWithoutC">
+			<result name="listErsWithoutC">
+				study/quiz/listErsWithoutC.jsp
+			</result>
+		</action> 
+		<action name="listBuyErooms"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="listBuyErooms">
+			<result name="listBuyErooms">
+				study/quiz/listBuyErooms.jsp
+			</result>
+		</action> 
+		<action name="listErsWithoutC_xbs"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="listErsWithoutC_xbs">
+			<result name="listErsWithoutC_xbs">
+				study/quiz/listErsWithoutC_xbs.jsp
+			</result>
+			<result name="listErsWithoutC_xbs_phone">
+				wsj_phone/study/quiz/listErsWithoutC_xbs.jsp
+			</result>
+		</action> 
+		<action name="onloadUcenter"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter">
+			<result name="onloadUcenter">
+				study/study_index.jsp
+			</result>
+			
+			<result name="onloadUcenter_phone">
+				wsj_phone/study/study_index.jsp
+			</result>
+		</action>
+		<action name="onloadUcenter_kaoshi"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_kaoshi">
+			<result name="onloadUcenter_kaoshi">
+				study/study_index_kaoshi.jsp
+			</result>
+			
+			<result name="onloadUcenter_kaoshi_phone">
+				wsj_phone/study/study_index_kaoshi.jsp
+			</result>
+		</action>
+		<action name="onloadUcenter_pxb"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_pxb">
+			<result name="onloadUcenter_pxb">
+				study/study_index_pxb.jsp
+			</result> 
+			
+			<result name="onloadUcenter_pxb_phone">
+				wsj_phone/study/study_index_pxb.jsp
+			</result> 
+		</action>
+		<action name="onloadUcenter_message"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_message">
+			<result name="onloadUcenter_message">
+				study/study_index_message.jsp
+			</result> 
+			
+			<result name="onloadUcenter_message_phone">
+				wsj_phone/study/study_index_message.jsp
+			</result> 
+		</action>
+		
+		
+		<!-- 个人中心首页个人未审核和个人待审核 -->
+		<action name="onloadUcenter_gerenweishenhe"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_gerenweishenhe">
+		</action>
+		<action name="onloadUcenter_gerendaishenhe"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_gerendaishenhe">
+		</action>
+		<action name="onloadUcenter_message"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_message">
+			<result name="onloadUcenter_message">
+				study/study_index_message.jsp
+			</result> 
+		</action>
+		<action name="onloadUcenter_course"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="onloadUcenter_course">
+		</action>
+		
+		<action name="choose_class_results"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="choose_class_results">
+			<result name="choose_class_results">
+				study/quiz/choose_class_results.jsp
+			</result> 
+		</action>
+		<action name="choose_course_results"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="choose_course_results">
+			<result name="choose_course_results">
+				study/quiz/choose_course_results.jsp
+			</result> 
+			
+			<result name="choose_course_results_phone">
+				wsj_phone/study/quiz/choose_course_results.jsp
+			</result> 
+		</action>
+		<action name="listcanapplyrooms"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="listcanapplyrooms">
+			<result name="listcanapplyrooms">
+				study/quiz/listcanapplyrooms.jsp
+			</result>
+			
+			<result name="listcanapplyrooms_phone">
+				wsj_phone/study/quiz/listcanapplyrooms.jsp
+			</result>
+		</action>
+		<action name="applyroomsinit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="applyroomsinit">
+			<result name="applyrooms_success">
+				study/quiz/applyrooms_success.jsp
+			</result>
+			
+			<result name="applyrooms_success_phone">
+				wsj_phone/study/quiz/applyrooms_success.jsp
+			</result>
+			<result name="applyrooms_epaper_list"
+				type="redirectAction">
+				applyrooms_epaper_list?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="applyrooms_epaper"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="applyrooms_epaper">
+			<result name="applyrooms_epaper_list"
+				type="redirectAction">
+				applyrooms_epaper_list?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="applyrooms_epaper_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="applyrooms_epaper_list">
+			<result name="applyrooms_epaper_list">
+				study/quiz/applyrooms_epaper_list.jsp
+			</result>
+			
+			<result name="applyrooms_epaper_list_phone">
+				wsj_phone/study/quiz/applyrooms_epaper_list.jsp
+			</result>
+		</action>
+		<action name="applyrooms_epaper_delete"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="applyrooms_epaper_delete">
+			<result name="applyrooms_epaper_list"
+				type="redirectAction">
+				applyrooms_epaper_list?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="quizpapwithoutC_result_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizpapwithoutC_result_list">
+			<result name="quizpapwithoutC_result_list">
+				study/quiz/quizpapwithoutC_result_list.jsp
+			</result>
+		</action>
+		<action name="quizpapwithoutC_result_list_detail"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizpapwithoutC_result_list_detail">
+			<result name="quizpapwithoutC_result_list_detail">
+				study/quiz/quizpapwithoutC_result_list_detail.jsp
+			</result>
+			
+			<result name="quizpapwithoutC_result_list_detail_phone">
+				wsj_phone/study/quiz/quizpapwithoutC_result_list_detail.jsp
+			</result>
+		</action><!-- 模考 -->
+		<action name="simpaperlist"
+			class="com.sopia.studyman.action.StudyQuiz" method="simpaperlist">
+			<result name="simpaperlist">
+				study/quiz/simpaperlist.jsp
+			</result>
+		</action>
+		<action name="simpaper"
+			class="com.sopia.studyman.action.StudyQuiz" method="simpaper">
+			<result name="simpaper">study/quiz/simpaper.jsp</result>
+		</action>
+		<action name="simpaper_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="simpaper_submit">
+			<result name="simpaper_submit">success.jsp</result>
+			<result name="mysimpaperview" type="redirectAction">
+				mysimpaperview?course.id=${myExamPaper.course.id}&amp;examPaper.id=${myExamPaper.examPaper.id}
+			</result>
+		</action>
+		<action name="simpaper_save"
+			class="com.sopia.studyman.action.StudyQuiz" method="simpaper_save">
+			<result name="simpaper_save">success.jsp</result>
+		</action>
+		<action name="mysimexam_result"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="mysimexam_result">
+			<result name="mysimexam_result">
+				study/quiz/mysimexam_result.jsp
+			</result>
+		</action>
+		<action name="mysimpaperview"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="mysimpaperview">
+			<result name="mysimpaperview">
+				study/quiz/myquizpaperview.jsp
+			</result>
+		</action>
+		<action name="myquiz_result"
+			class="com.sopia.studyman.action.StudyQuiz" method="myquiz_result">
+			<result name="myquiz_result">
+				study/quiz/myquiz_result.jsp
+			</result>
+		</action>
+		<action name="myquizpaperview"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="myquizpaperview">
+			<result name="myquizpaperview">
+				study/quiz/myquizpaperview.jsp
+			</result>
+			<result name="myquizpaperviewall">
+				study/quiz/myquizpaperviewall.jsp
+			</result>
+			<result name="myquizpaper1b1view">
+				study/quiz/myquizpaper1b1view.jsp
+			</result>
+			
+			<result name="myquizpaperview_phone">
+				wsj_phone/study/quiz/myquizpaperview.jsp
+			</result>
+			<result name="myquizpaperviewall_phone">
+				wsj_phone/study/quiz/myquizpaperviewall.jsp
+			</result>
+			<result name="myquizpaper1b1view_phone">
+				wsj_phone/study/quiz/myquizpaper1b1view.jsp
+			</result>
+		</action>
+		<action name="practice_listInit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="practice_listInit">
+			<result name="practice_list">
+				study/quiz/practice_list.jsp
+			</result>
+		</action>
+		<!-- <action name="practice_paper"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="practice_paper">
+			<result name="practice_paper">
+				study/quiz/practice_paper.jsp
+			</result>
+		</action> -->
+		<action name="practice_result"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="practice_result">
+			<result name="practice_result">
+				study/quiz/practice_result.jsp
+			</result>
+		</action>
+
+
+
+
+
+
+
+
+		<action name="myexamprac_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="myexamprac_list">
+			<result name="myexamprac_list">
+				study/quiz/myexamprac_list.jsp
+			</result>
+			
+			<result name="myexamprac_list_phone">
+				wsj_phone/study/quiz/myexamprac_list.jsp
+			</result>
+		</action>
+		<action name="examprac_detail_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="examprac_detail_list">
+			<result name="examprac_detail_list">
+				study/quiz/examprac_detail_list.jsp
+			</result>
+			
+			<result name="examprac_detail_list_phone">
+				wsj_phone/study/quiz/examprac_detail_list.jsp
+			</result>
+		</action>
+		<action name="examprac"
+			class="com.sopia.studyman.action.StudyQuiz" method="examprac">
+			<result name="examprac">study/quiz/examprac.jsp</result>
+			<result name="examprac1b1">
+				study/quiz/examprac1b1.jsp
+			</result>
+			
+			<result name="examprac_phone">wsj_phone/study/quiz/examprac.jsp</result>
+			<result name="examprac1b1_phone">
+				wsj_phone/study/quiz/examprac1b1.jsp
+			</result>
+		</action>
+		<action name="exampracinto"
+			class="com.sopia.studyman.action.StudyQuiz" method="exampracinto">
+			<result name="examprac" type="redirectAction">
+				examprac?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+
+		<action name="examprac_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="examprac_submit">
+			<result name="examprac_result">
+				study/quiz/examprac_result.jsp
+			</result>
+			
+			<result name="examprac_result_phone">
+				wsj_phone/study/quiz/examprac_result.jsp
+			</result>
+			<result name="examprac_result1b1" type="redirectAction">
+				examprac_view?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="examprac_view"
+			class="com.sopia.studyman.action.StudyQuiz" method="examprac_view">
+			<result name="examprac_view">
+				study/quiz/examprac_view.jsp
+			</result>
+			<result name="examprac_viewall_phone">
+				wsj_phone/study/quiz/examprac_viewall.jsp
+			</result>
+			
+			<result name="examprac_view_phone">
+				wsj_phone/study/quiz/examprac_view.jsp
+			</result>
+			<result name="examprac_viewall">
+				study/quiz/examprac_viewall.jsp
+			</result>
+		</action>
+		<action name="pracquestioninit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestioninit">
+			<result name="pracquestion_email">
+				study/quiz/pracquestion_email.jsp
+			</result>
+			<result name="pracquestion_dazi">
+				study/quiz/pracquestion_dazi.jsp
+			</result>
+			<result name="pracquestion_search">
+				study/quiz/pracquestion_search.jsp
+			</result>
+			
+			<result name="pracquestion_email_phone">
+				wsj_phone/study/quiz/pracquestion_email.jsp
+			</result>
+			<result name="pracquestion_dazi_phone">
+				wsj_phone/study/quiz/pracquestion_dazi.jsp
+			</result>
+			<result name="pracquestion_search_phone">
+				wsj_phone/study/quiz/pracquestion_search.jsp
+			</result>
+			<result name="qerror">study/quiz/qerror.jsp</result>
+		</action>
+		<action name="pracquestion_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestion_submit">
+			<result name="pracquestion_email_succ">
+				study/quiz/pracquestion_email_succ.jsp
+			</result>
+			<result name="pracquestion_dazi_succ">
+				study/quiz/pracquestion_dazi_succ.jsp
+			</result>
+			<result name="pracquestion_search_succ">
+				study/quiz/pracquestion_search_succ.jsp
+			</result>
+			
+			<result name="pracquestion_email_succ_phone">
+				wsj_phone/study/quiz/pracquestion_email_succ.jsp
+			</result>
+			<result name="pracquestion_dazi_succ_phone">
+				wsj_phone/study/quiz/pracquestion_dazi_succ.jsp
+			</result>
+			<result name="pracquestion_search_succ_phone">
+				wsj_phone/study/quiz/pracquestion_search_succ.jsp
+			</result>
+		</action>
+		<action name="pracquestion_search"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestion_search">
+			<result name="pracquestion_search_list">
+				study/quiz/pracquestion_search_list.jsp
+			</result>
+			
+			<result name="pracquestion_search_list_phone">
+				wsj_phone/study/quiz/pracquestion_search_list.jsp
+			</result>
+		</action>
+		<action name="pracquestion_email"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestion_email">
+			<result name="pracquestion_email">
+				email/pracldmmapp.jsp
+			</result>
+			
+			<result name="pracquestion_email_phone">
+				wsj_phone/email/pracldmmapp.jsp
+			</result>
+		</action>
+		<action name="quiz_searchanswer"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quiz_searchanswer">
+			<result name="quiz_searchanswer">
+				study/quiz/quiz_searchanswer.jsp
+			</result>
+			
+			<result name="quiz_searchanswer_phone">
+				wsj_phone/study/quiz/quiz_searchanswer.jsp
+			</result>
+		</action>
+		
+		<action name="download_office_stuff"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="download_office_stuff">
+			<result type="stream" name="download_office_stuff">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${filename}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="examprac_detail_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="examprac_detail_list">
+			<result name="examprac_detail_list">
+				study/quiz/examprac_detail_list.jsp
+			</result>
+			
+			<result name="examprac_detail_list_phone">
+				wsj_phone/study/quiz/examprac_detail_list.jsp
+			</result>
+		</action>
+		<action name="examprac"
+			class="com.sopia.studyman.action.StudyQuiz" method="examprac">
+			<result name="examprac">study/quiz/examprac.jsp</result>
+			<result name="examprac1b1">
+				study/quiz/examprac1b1.jsp
+			</result>
+			
+			<result name="examprac_phone">study/quiz/examprac.jsp</result>
+			<result name="examprac1b1_phone">
+				wsj_phone/study/quiz/examprac1b1.jsp
+			</result>
+		</action>
+		<action name="exampracinto"
+			class="com.sopia.studyman.action.StudyQuiz" method="exampracinto">
+			<result name="examprac" type="redirectAction">
+				examprac?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+
+	  <!-- <action name="pracquestioninit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestioninit">
+			<result name="pracquestion_email">
+				study/quiz/pracquestion_email.jsp
+			</result>
+			<result name="pracquestion_dazi">
+				study/quiz/pracquestion_dazi.jsp
+			</result>
+			<result name="pracquestion_search">
+				study/quiz/pracquestion_search.jsp
+			</result>
+		</action>
+		<action name="pracquestion_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestion_submit">
+			<result name="pracquestion_email_succ">
+				study/quiz/pracquestion_email_succ.jsp
+			</result>
+			<result name="pracquestion_dazi_succ">
+				study/quiz/pracquestion_dazi_succ.jsp
+			</result>
+			<result name="pracquestion_search_succ">
+				study/quiz/pracquestion_search_succ.jsp
+			</result>
+		</action>
+		<action name="pracquestion_search"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestion_search">
+			<result name="pracquestion_search_list">
+				study/quiz/pracquestion_search_list.jsp
+			</result>
+		</action>
+		<action name="pracquestion_email"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="pracquestion_email">
+			<result name="pracquestion_email">
+				email/pracldmmapp.jsp
+			</result>
+		</action> -->
+		<action name="examqprac_detail_list"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="examqprac_detail_list">
+			<result name="examqprac_detail_list">
+				study/quiz/examqprac_detail_list.jsp
+			</result>
+			<result name="examqprac_detail_list_phone">
+				wsj_phone/study/quiz/examqprac_detail_list.jsp
+			</result>
+		</action>
+		<action name="examqprac"
+			class="com.sopia.studyman.action.StudyQuiz" method="examqprac">
+			<result name="examqprac">study/quiz/examqprac.jsp</result>
+			<result name="examqprac1b1">
+				study/quiz/qprac1b1.jsp
+			</result>
+			
+			<result name="examqprac_phone">wsj_phone/study/quiz/examqprac.jsp</result>
+			<result name="examqprac1b1_phone">
+				wsj_phone/study/quiz/qprac1b1.jsp
+			</result>
+		</action>
+		<action name="examqpracinto"
+			class="com.sopia.studyman.action.StudyQuiz" method="examqpracinto">
+			<result name="examqprac" type="redirectAction">
+				examqprac?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="examqprac_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="examqprac_submit">
+			<result name="examqprac_result">
+				study/quiz/examqprac_result.jsp
+			</result>
+			
+			<result name="examqprac_result_phone">
+				wsj_phone/study/quiz/examqprac_result.jsp
+			</result>
+			<result name="examqprac_result1b1" type="redirectAction">
+				examqprac_view?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="examqprac_view"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="examqprac_view">
+			<result name="examqprac_view">
+				study/quiz/examqprac_view.jsp
+			</result>
+			
+			<result name="examqprac_view_phone">
+				wsj_phone/study/quiz/examqprac_view.jsp
+			</result>
+		</action>
+		<action name="qpracquestioninit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="qpracquestioninit">
+			<result name="qpracquestion_email">
+				study/quiz/qpracquestion_email.jsp
+			</result>
+			<result name="qpracquestion_dazi">
+				study/quiz/qpracquestion_dazi.jsp
+			</result>
+			<result name="qpracquestion_search">
+				study/quiz/qpracquestion_search.jsp
+			</result>
+			
+			<result name="qpracquestion_email_phone">
+				wsj_phone/study/quiz/qpracquestion_email.jsp
+			</result>
+			<result name="qpracquestion_dazi_phone">
+				wsj_phone/study/quiz/qpracquestion_dazi.jsp
+			</result>
+			<result name="qpracquestion_search_phone">
+				wsj_phone/study/quiz/qpracquestion_search.jsp
+			</result>
+		</action>
+		<action name="qpracquestion_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="qpracquestion_submit">
+			<result name="qpracquestion_email_succ">
+				study/quiz/qpracquestion_email_succ.jsp
+			</result>
+			<result name="qpracquestion_dazi_succ">
+				study/quiz/qpracquestion_dazi_succ.jsp
+			</result>
+			<result name="qpracquestion_search_succ">
+				study/quiz/qpracquestion_search_succ.jsp
+			</result>
+			
+			<result name="qpracquestion_email_succ_phone">
+				wsj_phone/study/quiz/qpracquestion_email_succ.jsp
+			</result>
+			<result name="qpracquestion_dazi_succ_phone">
+				wsj_phone/study/quiz/qpracquestion_dazi_succ.jsp
+			</result>
+			<result name="qpracquestion_search_succ_phone">
+				wsj_phone/study/quiz/qpracquestion_search_succ.jsp
+			</result>
+		</action>
+		<action name="qpracquestion_search"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="qpracquestion_search">
+			<result name="qpracquestion_search_list">
+				study/quiz/qpracquestion_search_list.jsp
+			</result>
+			
+			<result name="qpracquestion_search_list_phone">
+				wsj_phone/study/quiz/qpracquestion_search_list.jsp
+			</result>
+		</action>
+		<action name="qpracquestion_email"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="qpracquestion_email">
+			<result name="qpracquestion_email">
+				email/qpracldmmapp.jsp
+			</result>
+			
+			<result name="qpracquestion_email_phone">
+				wsj_phone/email/qpracldmmapp.jsp
+			</result>
+		</action>
+		<!-- 课程练习 -->
+		<action name="practice_paper"
+			class="com.sopia.studyman.action.StudyQuiz" method="practice_paper">
+			<result name="courseprac">study/quiz/courseprac.jsp</result>
+			<result name="courseprac1b1">
+				study/quiz/cprac1b1.jsp
+			</result>
+		</action>
+		<action name="coursepracinto"
+			class="com.sopia.studyman.action.StudyQuiz" method="coursepracinto">
+			<result name="courseprac" type="redirectAction">
+				courseprac?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="courseprac_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="courseprac_submit">
+			<result name="courseprac_result">
+				study/quiz/courseprac_result.jsp
+			</result>
+			<result name="courseprac_result1b1" type="redirectAction">
+				courseprac_view?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="courseprac_view"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="courseprac_view">
+			<result name="courseprac_view">
+				study/quiz/courseprac_view.jsp
+			</result>
+			<result name="courseprac_viewall">
+				study/quiz/courseprac_viewall.jsp
+			</result>
+		</action>
+		<action name="cpracquestioninit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="cpracquestioninit">
+			<result name="cpracquestion_email">
+				study/quiz/cpracquestion_email.jsp
+			</result>
+			<result name="cpracquestion_dazi">
+				study/quiz/cpracquestion_dazi.jsp
+			</result>
+			<result name="cpracquestion_search">
+				study/quiz/cpracquestion_search.jsp
+			</result>
+			<result name="qerror">study/quiz/qerror.jsp</result>
+		</action>
+		<action name="cpracquestion_submit"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="cpracquestion_submit">
+			<result name="cpracquestion_email_succ">
+				study/quiz/cpracquestion_email_succ.jsp
+			</result>
+			<result name="cpracquestion_dazi_succ">
+				study/quiz/cpracquestion_dazi_succ.jsp
+			</result>
+			<result name="cpracquestion_search_succ">
+				study/quiz/cpracquestion_search_succ.jsp
+			</result>
+		</action>
+		<action name="cpracquestion_search"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="cpracquestion_search">
+			<result name="cpracquestion_search_list">
+				study/quiz/cpracquestion_search_list.jsp
+			</result>
+		</action>
+		<action name="cpracquestion_email"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="cpracquestion_email">
+			<result name="cpracquestion_email">
+				email/cpracldmmapp.jsp
+			</result>
+		</action>
+		<!-- 课程练习 -->
+		
+		<action name="getquizstatus"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="getquizstatus">
+		</action>
+		<action name="upload_office_stuff"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="upload_office_stuff">
+		</action>
+		
+		<!-- 申请参加考场 --> 
+		<action name="exam_listbytitle"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="exam_listbytitle">
+			<result name="exam_listbytitle">
+				elfrontman/exam_listbytitle.jsp
+			</result>
+			<result name="exam_listbytitle_isPass">
+				elfrontman/exam_listbytitle_isPass.jsp
+			</result>
+			
+			<result name="exam_listbytitle_phone">
+				wsj_phone/elfrontman/exam_listbytitle.jsp
+			</result>
+			<result name="exam_listbytitle_isPass_phone">
+				wsj_phone/elfrontman/exam_listbytitle_isPass.jsp
+			</result>
+		</action>
+		<action name="exam_listbytitle_isPass"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="exam_listbytitle_isPass">
+			<result name="exam_listbytitle_isPass">
+				elfrontman/exam_listbytitle_isPass.jsp
+			</result>
+			
+			<result name="exam_listbytitle_isPass_phone">
+				wsj_phone/elfrontman/exam_listbytitle_isPass.jsp
+			</result>
+		</action>
+		<action name="exam_view"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="exam_view">
+			<result name="exam_view">
+				elfrontman/exam_view.jsp
+			</result>
+			
+			<result name="exam_view_phone">
+				wsj_phone/elfrontman/exam_view.jsp
+			</result>
+		</action>
+		<action name="submitAppalyExamRoom"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="submitAppalyExamRoom">
+			<result name="exam_view" type="redirectAction">
+				exam_view?examRoom.id=${examRoom.id}
+			</result>
+		</action> 
+		<action name="choose_exam_results"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="choose_exam_results">
+			<result name="choose_exam_results">
+				study/quiz/choose_exam_results.jsp
+			</result> 
+			
+			<result name="choose_exam_results_phone">
+				wsj_phone/study/quiz/choose_exam_results.jsp
+			</result> 
+		</action>
+		<action name="study_room_record_list"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="study_room_record_list">
+			<result name="study_room_record_list">
+				study/quiz/study_room_record_list.jsp
+			</result> 
+			
+			<result name="study_room_record_list_phone">
+				wsj_phone/study/quiz/study_room_record_list.jsp
+			</result> 
+		</action>
+		<action name="study_room_record_add"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="study_room_record_add">
+			<result type="redirectAction" name="study_room_record_list">
+				study_room_record_list.action?myroom.examroom.id=${myroom.examroom.id}
+			</result> 
+		</action>
+		<action name="MyIntegraInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegraInit">
+			<result name="MyIntegra">
+				study/quiz/MyIntegra.jsp
+			</result> 
+			
+			<result name="MyIntegra_phone">
+				wsj_phone/study/quiz/MyIntegra.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_LX_MK_BJ_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_LX_MK_BJ_viewInit">
+			<result name="MyIntegra_LX_MK_BJ_view">
+				study/quiz/MyIntegra_LX_MK_BJ_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_LX_MK_BJ_view_phone">
+				wsj_phone/study/quiz/MyIntegra_LX_MK_BJ_view.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_Dl_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_Dl_viewInit">
+			<result name="MyIntegra_Dl_view">
+				study/quiz/MyIntegra_Dl_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_Dl_view_phone">
+				wsj_phone/study/quiz/MyIntegra_Dl_view.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_FTJH_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_FTJH_viewInit">
+			<result name="MyIntegra_FTJH_view">
+				study/quiz/MyIntegra_FTJH_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_FTJH_view_phone">
+				wsj_phone/study/quiz/MyIntegra_FTJH_view.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_XZ_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_XZ_viewInit">
+			<result name="MyIntegra_XZ_view">
+				study/quiz/MyIntegra_XZ_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_XZ_view_phone">
+				wsj_phone/study/quiz/MyIntegra_XZ_view.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_knowledge_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_knowledge_viewInit">
+			<result name="MyIntegra_knowledge_view">
+				study/quiz/MyIntegra_knowledge_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_knowledge_view_phone">
+				wsj_phone/study/quiz/MyIntegra_knowledge_view.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_BXZ_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_BXZ_viewInit">
+			<result name="MyIntegra_BXZ_view">
+				study/quiz/MyIntegra_BXZ_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_BXZ_view_phone">
+				wsj_phone/study/quiz/MyIntegra_BXZ_view.jsp
+			</result> 
+		</action>
+		<action name="MyIntegra_BXZ_XQ_viewInit"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="MyIntegra_BXZ_XQ_viewInit">
+			<result name="MyIntegra_BXZ_XQ_view">
+				study/quiz/MyIntegra_BXZ_XQ_view.jsp
+			</result> 
+			
+			<result name="MyIntegra_BXZ_XQ_view_phone">
+				wsj_phone/study/quiz/MyIntegra_BXZ_XQ_view.jsp
+			</result> 
+		</action>
+		<action name="checkMyQuestionIsGetScore"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="checkMyQuestionIsGetScore">
+		</action>
+		<action name="quizpaperinit_byepid_wjm"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit_byepid_wjm">
+			<result name="quizpaper" type="redirect">
+				quizpaper.action?myExamPaper.id=${myExamPaper.id}&amp;datetime=${myExamPaper.begintime}&amp;ipAddr=${ipAddr}&amp;macAddr=${macAddr}
+			</result>
+			<result name="quizpaper1b1">
+				study/quiz/quizpaper1b1.jsp
+			</result>
+			<result name="quizpaper_contest">
+				study/quiz/quizpaper_contest.jsp
+			</result>
+			
+			<result name="quizpaper1b1_phone">
+				wsj_phone/study/quiz/quizpaper1b1.jsp
+			</result>
+			<result name="quizpaper_contest_phone">
+				wsj_phone/study/quiz/quizpaper_contest.jsp
+			</result>
+		</action>
+		<!-- 智能辅导分之学习习惯==复听、录音 -->
+		<action name="intelligent_proportion"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="intelligent_proportion">
+		</action>
+		<action name="intelligent_recoding"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="intelligent_recoding">
+		</action>
+		
+		<action name="quizpaper_begin"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="quizpaper_begin">
+		</action>
+		
+		<!-- 外经贸允许跳转下一题的条件 -->
+		<action name="checkQuestionCanNext"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="checkQuestionCanNext">
+		</action>
+	<!-- wsj1023修改 -->
+	<action name="quizpaper_submit_wsj"
+			class="com.sopia.studyman.action.StudyQuiz"
+			method="quizpaper_submit_wsj">
+			<result name="quizpaper_submit">success.jsp</result>
+			<result name="myquizpaperview" type="redirectAction">
+				myquizpaperview?myExamPaper.id=${myExamPaper.id}&amp;elmessage=${elmessage}
+			</result>
+			<result name="myquizpapergradeview" type="redirectAction">
+				myquizpapergradeview?myExamPaper.id=${myExamPaper.id}
+			</result>
+			<result name="quizpaper_submit_succ">study/quiz/myquizpaperepview.jsp</result>
+			
+			<result name="quizpaper_submit_phone">wsj_phone/success.jsp</result>
+			<result name="quizpaper_submit_succ_phone">wsj_phone/study/quiz/myquizpaperepview.jsp</result>
+		</action>
+		
+		<action name="quizpaperinit_byepid_wsj"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit_byepid_wsj">
+			<result name="quizpaper" type="redirect">
+				quizpaper.action?myExamPaper.id=${myExamPaper.id}&amp;datetime=${myExamPaper.begintime}&amp;ipAddr=${ipAddr}&amp;macAddr=${macAddr}
+			</result>
+			<result name="quizpaper1b1">
+				study/quiz/quizpaper1b1.jsp
+			</result>
+			<result name="quizpaper1b1_phone">
+				wsj_phone/study/quiz/quizpaper1b1.jsp
+			</result>
+			<result name="quizpaper_contest">
+				study/quiz/quizpaper_contest.jsp
+			</result>
+			
+			
+			<result name="quizpaper_contest_phone">
+				wsj_phone/study/quiz/quizpaper_contest.jsp
+			</result>
+		</action>
+<!--        wsj修改结束             -->
+		<action name="getVoiceText"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="getVoiceText">
+		</action>
+		<action name="checkVoiceFileIsExist"
+			class="com.sopia.studyman.action.StudyQuiz" 
+			method="checkVoiceFileIsExist">
+		</action>
+		
+		<!-- 山东项目 -->
+	<action name="quizpaperinit_sd"
+			class="com.sopia.studyman.action.StudyQuiz" method="quizpaperinit_sd">
+			<result name="quizpaperinit_sd">
+				study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="quizpaperinit_pwd">
+				study/quiz/quizpaperinit_pwd.jsp
+			</result>
+			
+			<result name="quizpaperinit_phone">
+				wsj_phone/study/quiz/quizpaperinit.jsp
+			</result>
+			<result name="xianxia">
+				study/quiz/xianxia.jsp
+			</result>
+		</action>
+			<!-- 山东项目 -->
+		
+	</package>
+	<!-- 22个 -->
+	
+</struts>

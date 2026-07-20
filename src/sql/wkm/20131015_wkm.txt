@@ -1,0 +1,9 @@
+update  basedatatype set name='学历' ,remack='学历描述' where id=5;
+commit;
+
+delete from basedatat where typeid=5;
+------------------以上为安全员定制功能，酌情执行----------------------------
+
+alter table exam_room add jiangeshijian number(4,1);
+alter table exam_room add examsforday number;
+alter table exam_room add isxianzhikaopin number;

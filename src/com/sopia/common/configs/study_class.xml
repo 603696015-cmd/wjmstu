@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="study_class" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="myelclass_list"
+			class="com.sopia.studyman.action.StudyClass"
+			method="myelclass_list">
+			<result name="myelclass_list">
+				study/myelclass_list.jsp
+			</result>
+			<result name="myelclass_list_phone">
+				wsj_phone/study/myelclass_list.jsp
+			</result>
+		</action>
+		<action name="myelclass_view"
+			class="com.sopia.studyman.action.StudyClass"
+			method="myelclass_view">
+			<result name="myelclass_view">
+				study/myelclass_view.jsp
+			</result>
+			<result name="myelclass_view_phone"><!-- 前台显示 -->
+				wsj_phone/study/myelclass_view.jsp
+			</result>
+			<result name="myelclass_view_front"><!-- 前台显示 -->
+				study/myelclass_view_front.jsp
+			</result>
+			<result name="myelclass_view_front_phone"><!-- 前台显示 -->
+				wsj_phone/study/myelclass_view_front.jsp
+			</result>
+		</action>
+		<action name="myelclass_view_wjm"
+			class="com.sopia.studyman.action.StudyClass"
+			method="myelclass_view_wjm">
+			<result name="myelclass_view_wjm">
+				study/myelclass_view_front_wjm.jsp
+			</result>
+		</action>
+		<action name="mystaelclass_view"
+			class="com.sopia.studyman.action.StudyClass"
+			method="mystaelclass_view">
+			<result name="mystaelclass_view">
+				study/mystaelclass_view.jsp
+			</result>
+			<result name="mystaelclass_view_phone">
+				wsj_phone/study/mystaelclass_view.jsp
+			</result>
+		</action>
+		<action name="elclass_view"
+			class="com.sopia.studyman.action.StudyClass"
+			method="elclass_view">
+			<result name="myelclass_view">
+				study/myelclass_view.jsp
+			</result>
+			<result name="myelclass_view_phone">
+				wsj_phone/study/myelclass_view.jsp
+			</result>
+		</action>
+		<action name="classNoPassRemack"
+			class="com.sopia.studyman.action.StudyClass"
+			method="classNoPassRemack">
+			<result name="classNoPassRemack">
+				study/classNoPassRemack.jsp
+			</result>
+			<result name="classNoPassRemack_phone">
+				wsj_phone/study/classNoPassRemack.jsp
+			</result>
+		</action>	 
+		<action name="myclass_course_result"
+			class="com.sopia.studyman.action.StudyClass"
+			method="myclass_course_result">
+			<result name="myclass_course_result">
+				study/myclass_course_result.jsp
+			</result>
+			<result name="myclass_course_result_phone">
+				wsj_phone/study/myclass_course_result.jsp
+			</result>
+		</action>
+		
+		<action name="graduate_applyInit"
+			class="com.sopia.studyman.action.StudyClass"
+			method="graduate_applyInit">
+			<result name="graduate_apply">
+				study/graduate_apply.jsp
+			</result>
+			<result name="graduate_apply_phone">
+				wsj_phone/study/graduate_apply.jsp
+			</result>
+		</action>
+		<action name="graduate_apply"
+			class="com.sopia.studyman.action.StudyClass"
+			method="graduate_apply">
+			<result name="graduate_apply" type="redirectAction">
+				graduate_applyInit
+			</result>
+		</action>
+		<action name="mydiploma_result_np"
+			class="com.sopia.studyman.action.StudyClass"
+			method="mydiploma_result_np">
+			<result name="mydiploma_result_np">
+				study/mydiploma_result_np.jsp
+			</result>
+			<result name="mydiploma_result_np_phone">
+				wsj_phone/study/mydiploma_result_np.jsp
+			</result>
+		</action>
+		<action name="mydiploma_result_p"
+			class="com.sopia.studyman.action.StudyClass"
+			method="mydiploma_result_p">
+			<result name="mydiploma_result_p">
+				study/mydiploma_result_p.jsp
+			</result>
+			<result name="mydiploma_result_p_phone">
+				wsj_phone/study/mydiploma_result_p.jsp
+			</result>
+		</action>
+		<action name="mydiploma_view"
+			class="com.sopia.studyman.action.StudyClass"
+			method="mydiploma_view">
+			<result name="mydiploma_view">
+				study/mydiploma_view.jsp
+			</result>
+			<result name="mydiploma_view_phone">
+				wsj_phone/study/mydiploma_view.jsp
+			</result>
+		</action>
+		<action name="diploma_view"
+			class="com.sopia.studyman.action.StudyClass"
+			method="diploma_view">
+			<result name="mydiploma_view">
+				study/mydiploma_view.jsp
+			</result>
+			<result name="mydiploma_view_phone">
+				wsj_phone/study/mydiploma_view.jsp
+			</result>
+		</action>
+				<action name="studyOverviewInfo"
+			class="com.sopia.studyman.action.StudyClass"
+			method="studyOverviewInfo">
+			<result name="studyOverviewInfo">
+				study/studyOverviewInfo.jsp
+			</result>
+			<result name="studyOverviewInfo_phone">
+				wsj_phone/study/studyOverviewInfo.jsp
+			</result>
+		</action>
+		<!-- 个人学籍 -->
+		<action name="findenrollment"
+			class="com.sopia.studyman.action.StudyClass"
+			method="findenrollment">
+			<result name="findenrollment">
+				study/findenrollment_list.jsp
+			</result>
+			<result name="findenrollment_phone">
+				wsj_phone/study/findenrollment_list.jsp
+			</result>
+		</action>
+		<action name="findenrollment_info"
+			class="com.sopia.studyman.action.StudyClass"
+			method="findenrollment_info">
+			<result name="findenrollment_info">
+				study/findenrollment_info.jsp
+			</result>
+			<result name="findenrollment_info_phone">
+				wsj_phone/study/findenrollment_info.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecord_addInt"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecord_addInt">
+			<result name="lineTrainRecord_addInt">
+				study/lineTrainRecord_addInt.jsp
+			</result>
+			<result name="lineTrainRecord_addInt_phone">
+				wsj_phone/study/lineTrainRecord_addInt.jsp
+			</result>
+		</action>
+		<action name="schoolrolls"
+			class="com.sopia.studyman.action.StudyClass"
+			method="schoolrolls">
+			<result name="schoolrolls">
+				study/schoolrolls_list.jsp
+			</result>
+			<result name="schoolrolls_phone">
+				wsj_phone/study/schoolrolls_list.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecord_list"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecord_list">
+			<result name="lineTrainRecord_list">
+				study/lineTrainRecord_list.jsp
+			</result>
+			<result name="lineTrainRecord_list_phone">
+				wsj_phone/study/lineTrainRecord_list.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecord_delete"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecord_delete">
+			<result name="lineTrainRecord_list">
+				study/lineTrainRecord_list.jsp
+			</result>
+			<result name="lineTrainRecord_list_phone">
+				wsj_phone/study/lineTrainRecord_list.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecordLook"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecordLook">
+			<result name="lineTrainRecordInfo">
+				study/lineTrainRecordInfo.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecordStuffDownload"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecordStuffDownload">
+			<result type="stream" name="fileDownload">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downFileName}"</param>
+				<param name="bufferSize">4096</param>
+	      	</result>
+		</action>
+		<action name="updateState"
+			class="com.sopia.studyman.action.StudyClass"
+			method="updateState">
+			<result name="lineTrainRecord_list">
+				study/lineTrainRecord_list.jsp
+			</result>
+			<result name="linetrainingmanagement">
+				study/linetrainingmanagement_list.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecord_add"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecord_add">
+			<result name="lineTrainRecord_add">
+				study/lineTrainRecord_addInt.jsp
+			</result>
+		</action>
+		<action name="lineTrainRecordStuff_delete"
+			class="com.sopia.studyman.action.StudyClass"
+			method="lineTrainRecordStuff_delete">
+			<result type="redirectAction" name="lineTrainRecord_addInt">
+				lineTrainRecord_addInt.action?linetrainrecord.trainid=${linetrainrecord.trainid}
+			</result>
+		</action>
+		<action name="linetrainingmanagement"
+			class="com.sopia.studyman.action.StudyClass"
+			method="linetrainingmanagement">
+			<result name="linetrainingmanagement">
+				study/linetrainingmanagement_list.jsp
+			</result>
+		</action>
+		<!-- 申请培训班 -->
+		<action name="submitAppalyClass"
+			class="com.sopia.studyman.action.StudyClass"
+			method="submitAppalyClass">
+			<result name="class_view2" type="redirectAction">
+				class_view2?elclass.id=${elclass.id}
+			</result>
+		</action>	
+		<action name="deleteCourse"
+			class="com.sopia.studyman.action.StudyClass"
+			method="deleteCourse">
+			<result name="deleteCourseSuccess" type="redirectAction">
+				myelclass_view?elclass.id=${elclass.id}
+			</result>
+		</action> 
+		<!-- 培训班类别 -->
+		<action name="changeElclass"
+			class="com.sopia.studyman.action.StudyClass"
+			method="changeElclass">
+			<result name="changeElclass" >
+				elfrontman/changeElclass.jsp
+			</result>
+			<result name="changeElclass_phone" >
+				elfrontman/changeElclass.jsp
+			</result>
+		</action> 
+	</package>
+	<!-- 8tiao -->
+</struts>

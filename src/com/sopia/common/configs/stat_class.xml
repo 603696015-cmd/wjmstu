@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="stat_class" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="user_class"
+			class="com.sopia.statman.action.StatisticClass"
+			method="user_class">
+			<result name="user_class">
+				admin/statistic/user_class.jsp
+			</result>
+		</action>
+		<action name="user_class_create"
+			class="com.sopia.statman.action.StatisticClass"
+			method="user_class_create">
+			<result name="user_class_create">
+				admin/statistic/user_class_create.jsp
+			</result>
+		</action>
+		<action name="dep_class_list"
+			class="com.sopia.statman.action.StatisticClass"
+			method="dep_class_list">
+			<result name="dep_class_list">
+				admin/statistic/dep_class_list.jsp
+			</result>
+		</action>
+		<action name="dep_class_view"
+			class="com.sopia.statman.action.StatisticClass"
+			method="dep_class_view">
+			<result name="dep_class_view">
+				admin/statistic/dep_class_view.jsp
+			</result>
+			<result name="dep_class_view_EXCEL">
+				admin/statistic/dep_class_view_EXCEL.jsp
+			</result>
+		</action>
+		<action name="dep_class_view3"
+			class="com.sopia.statman.action.StatisticClass"
+			method="dep_class_view3">
+			<result name="dep_class_view3">
+				admin/statistic/dep_class_view3.jsp
+			</result>
+			<result name="dep_class_view_EXCEL">
+				admin/statistic/dep_class_view_EXCEL.jsp
+			</result>
+		</action>	
+		<action name="sta_class_view"
+			class="com.sopia.statman.action.StatisticClass"
+			method="sta_class_view">
+			<result name="sta_class_view">
+				admin/statistic/sta_class_view.jsp
+			</result>
+			<result name="dep_class_view_EXCEL">
+				admin/statistic/dep_class_view_EXCEL.jsp
+			</result>
+		</action>
+		<action name="dep_classstudy_view"
+			class="com.sopia.statman.action.StatisticClass"
+			method="dep_classstudy_view">
+			<result name="dep_classstudy_view">
+				admin/statistic/dep_classstudy_view.jsp
+			</result>
+		</action>
+		<action name="gclass_stat_list" class="com.sopia.statman.action.StatisticClass" method="gclass_stat_list">
+			<result name="gclass_stat_list">
+				admin/statistic/gclass_stat_list.jsp
+			</result>
+		</action><action name="gclass_dep_list" class="com.sopia.statman.action.StatisticClass" method="gclass_dep_list">
+			<result name="gclass_dep_list">
+				admin/statistic/gclass_dep_list.jsp
+			</result>
+		</action>
+		<action name="class_searchlist" class="com.sopia.statman.action.StatisticClass"
+			method="class_searchlist">
+			<result name="class_searchlist">
+				admin/statistic/class_searchlist.jsp
+			</result>
+		</action>
+		<action name="stat_class_batch_list" class="com.sopia.statman.action.StatisticClass"
+			method="stat_class_batch_list">
+			<result name="stat_class_batch_list">
+				admin/statistic/stat_class_batch_list.jsp
+			</result>
+		</action>
+		<action name="stat_class_batch_view" class="com.sopia.statman.action.StatisticClass"
+			method="stat_class_batch_view">
+			<result name="stat_class_batch_view">
+				admin/statistic/stat_class_batch_view.jsp
+			</result>
+			<result name="stat_class_batch_view_EXCEL">
+				admin/statistic/stat_class_batch_view_EXCEL.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>

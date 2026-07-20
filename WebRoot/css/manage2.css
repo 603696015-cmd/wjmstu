@@ -1,0 +1,200 @@
+body {
+	width: 100%;
+	scrollbar-face-color: #E7F5FE;
+	scrollbar-highlight-color: #006699;
+	scrollbar-shadow-color: #006699;
+	scrollbar-3dlight-color: #E7F5FE;
+	scrollbar-arrow-color: #006699;
+	scrollbar-track-color: #E7F5FE;
+	scrollbar-darkshadow-color: #E7F5FE;
+	scrollbar-base-color: #E7F5FE;
+	text-align: left;
+	margin-left: 20px;
+	/*margin-top:5px;*/
+	background: url("../images/main_36.gif");
+	background-repeat: repeat-x;
+}
+caption{ margin-top:10px; line-height:25px; height:25px; text-align:left; padding-left:14px;}
+caption,#admin_main h3 {
+	border:1px solid #99d3fb;
+	border-bottom-width:0;
+	color:#077ac7;
+	height:27px;
+	line-height:27px;
+	margin:10px auto 0;
+	font-size:14px;
+	font-family:"ËÎÌו";
+	background-image: url(../images/bg_table.jpg);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+}
+caption{border-bottom:1px solid #99d3fb !important; border:1px solid #99d3fb; border-bottom-width:0; font-weight:bold; }
+caption span{float:right; padding-right:10px;}
+
+.nav{
+	width: 100%;
+	margin: 0px;
+	padding:0px;
+}
+.nav li{
+	height:28px;
+	display: inline;
+	margin:0px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:2px;
+}
+.sep{
+	padding:0px;
+	width:3px;
+	background: url("../images/leftmenu/main_34.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+input button{
+	border: solid 1px blue;
+
+}
+.splittd {
+	BORDER-BOTTOM: #efefef 1px solid;
+	font-size: 12px;
+	line-height: 28px;
+}
+.contenttitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #6699cc
+}
+.contenttitle A:link {
+	FONT-SIZE: 14px; COLOR: #006699; TEXT-DECORATION: underline
+}
+.contenttitle A:visited {
+	COLOR: #006699; TEXT-DECORATION: underline
+}
+.contenttitle A:hover {
+	FONT-SIZE: 14px; COLOR: #6699cc; TEXT-DECORATION: underline
+}
+.textbg {
+	background-image: url(../images/textbg.gif);
+	line-height:18px;
+	background-repeat: repeat-x;
+	padding: 3px;margin: 5px;
+	color:#000000;
+}
+.textbg {
+	background-image: url(../images/textbg.gif);
+	line-height:18px;
+	background-repeat: repeat-x;
+	padding: 3px;margin: 5px;
+	color:#000000;
+}
+.textbg {
+	background-image: url(../images/textbg.jpg);
+	line-height:25px;
+	background-repeat: repeat-x;
+	padding-bottom: 0px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+A.textbg:link {
+	color:#FFFFFF;
+}
+A.textbg:visited {
+	color:#FFFFFF;
+}
+A.textbg:hover {
+	color:#003366;
+}
+A.textbg:active {
+	color:#FFFFFF;
+}
+
+.textbg6 {
+	background-image: url(../images/textbg.gif);
+	padding-top:2px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+	width: 95px;
+	text-align: center;
+
+}
+A.textbg6:link {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:visited {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:hover {
+	color:#003366;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:active {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+.textbg3 {
+	background-image: url(../images/textbg.gif);
+	padding-top:3px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+
+.textbg4 {
+	background-image: url(../images/textbg.gif);
+	padding-top:2px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+	width: 50px;
+	text-align: center;
+
+}
+A.textbg4:link {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4:visited {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4:hover {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4:active {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+.textbg5 {
+	background-image: url(../images/textbg.gif);
+	line-height:25px;
+	background-repeat: repeat-x;
+	padding-top: 2px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+A.textbg5:link {
+	color:#FFFFFF;
+}
+A.textbg5:visited {
+	color:#003366;
+}
+A.textbg5:hover {
+	color:#003366;
+}
+A.textbg5:active {
+	color:#FFFFFF;
+}

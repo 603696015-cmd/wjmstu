@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="examroom_peice" extends="elearning">
+		<!-- 价格设置模块 --> 
+		<action name="piece_applyfor_examroom" class="com.sopia.examroompeice.action.ExamRoomPeiceAction" method="piece_applyfor_examroom">
+			<result name="peice_applyfor_examroom_success">
+				admin/examroomPeice/peice_examroomlist.jsp
+			</result>
+		</action>
+		<!-- 价格审核 -->
+		<action name="peice_audit_examroom" class="com.sopia.examroompeice.action.ExamRoomPeiceAction" method="peice_audit_examroom">
+			<result name="peice_audit_examroom_success">
+				admin/examroomPeice/peice_examroomAudit.jsp
+			</result>
+		</action>
+		<!-- 总搜索--> 
+		<action name="examRoomShoppping" class="com.sopia.examroompeice.action.ExamRoomPeiceAction" method="examRoomShoppping">
+			<result name="examRoomShopppingindex_success">
+				admin/examroomshopping/examroomshoppingindex.jsp
+			</result>
+			<result name="courseIndex_success">
+				elfrontman/newcourseindex.jsp
+			</result>
+			<result name="forum_getAllclass_success">
+				elfrontman/newclass_listbytypeid_isPass.jsp
+			</result>
+			<result name="examRoomShopppingindex_phone_success">
+				wsj_phone/admin/examroomshopping/examroomshoppingindex.jsp
+			</result>
+			
+		</action>
+		<action name="newexamroom_view" class="com.sopia.examroompeice.action.ExamRoomPeiceAction" method="newexamroom_view">
+			<result name="newclass_view2">
+				admin/examroomshopping/newclass_view2.jsp
+			</result>
+			</action>
+			
+			<action name="forum_getAllRoom" class="com.sopia.examroompeice.action.ExamRoomPeiceAction" method="forum_getAllclass">
+			<result name="forum_getAllclass_success">
+				admin/examroomshopping/newclass_list.jsp
+			</result>
+		</action>
+		
+		<action name="serchExamRoom" class="com.sopia.examroompeice.action.ExamRoomPeiceAction" method="serchExamRoom">
+			<result name="serchExamRoom">
+				admin/examroomshopping/newclass_list.jsp
+			</result>
+		</action>
+	</package> 
+</struts>

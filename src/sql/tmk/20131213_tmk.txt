@@ -1,0 +1,22 @@
+alter table lable_circulation add(createtime  timestamp(6) );
+alter table lable_search add(createtime  timestamp(6) );
+
+
+
+
+create or replace procedure intoModeInfo(id_ number)
+as
+modulename_ varchar2(200);
+tablename_ varchar2(200);
+count_ number;
+begin
+  select count(1) into count_ from mode_info where id=id_;
+  if count_=0 then
+    select modulename,tablename into modulename_,tablename_ from TB_MODULE_MANAGE where id=id_;
+    insert into mode_info (id,name,tablename,key) values (id_ ,modulename_,tablename_,'ID');
+  end if;
+end;
+
+
+
+commit;

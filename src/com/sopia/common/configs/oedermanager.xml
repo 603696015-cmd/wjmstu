@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="ordermanager" extends="elearning">
+		<!-- 得到我的所有个人订单信息 --> 
+		<action name="order_myorderlistinit" class="com.sopia.shopping.action.OederManagerAction" method="order_myorderlistinit">
+			<result name="order_myorderlistinit_success">
+				admin/order/myordermanage_list.jsp
+			</result>
+			<result name="balance_myorderlistinit_success">
+				admin/balance/balance_myorderlistinit.jsp
+			</result>
+		</action>
+		<!-- 得到所有个人订单信息 -->
+		<action name="order_allorderlistinit" class="com.sopia.shopping.action.OederManagerAction" method="order_allorderlistinit">
+			<result name="order_allorderlistinit_success">
+				admin/order/allordermanage_list.jsp
+			</result>
+			
+		</action>
+		<!-- 得到订单中商品信息 -->
+		<action name="order_ordercommodity" class="com.sopia.shopping.action.OederManagerAction" method="order_ordercommodity">
+			<result name="ordercommodity_success">
+				admin/order/ordercommodity_list.jsp
+			</result>
+		</action>
+		<!-- 修改订单信息 -->
+		<action name="order_orderstatusupd" class="com.sopia.shopping.action.OederManagerAction" method="order_orderstatusupd">
+			<result name="ordercommodity_success">
+				admin/order/ordercommodity_list.jsp
+			</result>
+		</action>
+		<!-- 删除个人订单信息 -->
+		<action name="order_orderdele" class="com.sopia.shopping.action.OederManagerAction" method="order_orderdele">
+			<result name="order_myorderlistinit_success">
+				admin/order/myordermanage_list.jsp
+			</result>
+		</action>	
+		<!-- 支付提示信息 -->
+		<action name="order_ordercommodityinfo" class="com.sopia.shopping.action.OederManagerAction" method="order_ordercommodityinfo">
+			<result name="order_ordercommodityinfo_success">
+				admin/order/ordercommodityinfo.jsp
+			</result>
+		</action>	
+		<action name="order_chongzhi" class="com.sopia.shopping.action.OederManagerAction" method="order_chongzhi">
+			<result name="order_chongzhi_success">
+				admin/order/chongzhi.jsp
+			</result>
+		</action>
+		<action name="chongzhi" class="com.sopia.shopping.action.OederManagerAction" method="chongzhi">
+			<result name="chongzhi">
+				pay.jsp
+			</result>
+		</action>
+		<action name="doChongzhi" class="com.sopia.shopping.action.OederManagerAction" method="doChongzhi">
+			<result name="doChongzhi_success">
+				admin/order/doChongzhi_success.jsp
+			</result>
+		</action>
+		<action name="reload_money" class="com.sopia.shopping.action.OederManagerAction" method="reload_money">
+		</action>	
+	</package> 
+</struts>

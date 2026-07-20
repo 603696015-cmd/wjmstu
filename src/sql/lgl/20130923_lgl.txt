@@ -1,0 +1,7 @@
+alter table COURSE_PAGE add(islive number,isfree number)
+
+alter table knowledge_stuff add(cpageid number)
+
+alter table COURSE_PAGE add(roomid number default 0)
+
+commit

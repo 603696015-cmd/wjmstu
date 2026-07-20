@@ -1,0 +1,82 @@
+.txtArea {
+	border-bottom: medium none;
+	position: absolute;
+	border-left: medium none;
+	padding-bottom: 0px;
+	line-height: 60px;
+	overflow-y: hidden;
+	background-color: white;
+	margin: 0px;
+	padding-left: 0px;
+	width: 760px;
+	padding-right: 0px;
+	font-family: "\u5b8b\u4f53";
+	word-wrap: break-word;
+	letter-spacing: 0px;
+	height: 540px;
+	color: blue;
+	font-size: 24px;
+	word-break: break-all;
+	border-top: medium none;
+	top: 0px;
+	border-right: medium none;
+	word-spacing: normal;
+	padding-top: 28px;
+	left: 0px
+}
+
+.txtDiv {
+	z-index: 2;
+	position: absolute;
+	padding-bottom: 0px;
+	line-height: 60px;
+	margin: 0px;
+	padding-left: 0px;
+	width: 760px;
+	padding-right: 0px;
+	font-family: "\u5b8b\u4f53";
+	word-wrap: break-word;
+	letter-spacing: 0px;
+	color: #333333;
+	font-size: 24px;
+	word-break: break-all;
+	word-spacing: 0px;
+	padding-top: 0px;
+	left: 0px
+}
+
+.dazidiv {
+	border-bottom: #0096cd 5px solid;
+	position: relative;
+	border-left: #0096cd 5px solid;
+	overflow-y: scroll;
+	background-color: white;
+	width: 780px;
+	height: 540px;
+	border-top: #0096cd 5px solid;
+	border-right: #0096cd 5px solid
+}
+.text{
+	border: 0px;
+}
+.menu {
+	background-color: #f7f7f7;
+	text-align: center;
+	position: fixed;
+	_position: absolute;
+	width: 100px;
+	height: 80px;
+	top: 0px;
+	_top: expression(eval(document .   documentElement .   scrollTop) );
+	right: 20px;
+	border: green 1px solid;
+	z-index: 4000;
+}
+
+#examtime {
+	background-color: #FFCC00;
+	height: 20px;
+	text-align: center;
+	color: red;
+	font-size: 14px;
+}

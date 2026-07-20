@@ -1,0 +1,421 @@
+@charset "utf-8";
+body {margin:0; font-family:"寰蒋闆呴粦","Arial";}
+html { overflow:-moz-scrollbars-vertical; }
+html { overflow-y: scroll; }
+
+a img {border:0px;}
+a:hover img {filter:alpha(opacity=60);-moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;}
+a:hover {filter:alpha(opacity=60);-moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;}
+
+.main_out {width:1000px; height:auto; min-height:500px; margin:0 auto 0 auto; background:#FFF;}
+
+.top_form {height:auto; position:relative; height:57px; z-index:100;}
+.top_login {font-size:12px; color:#397300; text-align:right; padding:5px 20px 0 0; height:17px;}
+.top_login a {font-size:12px; color:#397300; text-decoration:none;}
+.top_login a:hover {text-decoration:underline;}
+
+.main_menu_out {height:29px; padding-left:268px;}
+.main_menu {position:relative; height:29px; width:485px; background:#e9e9e9;}
+.main_menu a {display:block; width:120px; height:29px; float:left; text-align:center; line-height:29px; text-decoration:none; font-size:16px; font-weight:bold; color:#999; background:#e9e9e9 url("../../mock/image/mn004.png")/*tpa=http://mock.tangce.cn/images/mn004.png*/ no-repeat left; margin-left:1px;}
+.main_menu a:hover {background:#77ad49; color:#FFF; filter:alpha(opacity=100);-moz-opacity:1; -khtml-opacity:1; opacity:1;}
+.main_menu a.sel {background:#77ad49; color:#FFF;}
+.main_menu a.fir {background-image:none;}
+.menu_left {background:url("../../mock/image/mn003.png")/*tpa=http://mock.tangce.cn/images/mn003.png*/; width:6px; height:29px; position:absolute; left:-6px; top:0;}
+.menu_right {background:url("../../mock/image/mn002.png")/*tpa=http://mock.tangce.cn/images/mn002.png*/; width:6px; height:29px; position:absolute; right:-6px; top:0;}
+
+.logo {background:url("../../mock/image/mn001.png")/*tpa=http://mock.tangce.cn/images/mn001.png*/; width:247px; height:94px; position:absolute; top:0; left:15px;}
+.bigpic {background:url("../../mock/image/mn001.jpg")/*tpa=http://mock.tangce.cn/images/mn001.jpg*/; width:1000px; height:260px;}
+.bigpic_login {background:url("../../mock/image/mn003.jpg")/*tpa=http://mock.tangce.cn/images/mn003.jpg*/; width:1000px; height:150px;}
+.bigpic_reg {background:url("../../mock/image/mn005.jpg")/*tpa=http://mock.tangce.cn/images/mn005.jpg*/; width:1000px; height:150px;}
+.bigpic_find {background:url("../../mock/image/mn006.jpg")/*tpa=http://mock.tangce.cn/images/mn006.jpg*/; width:1000px; height:150px;}
+.bigpic_members {background:url("../../mock/image/mn007.jpg")/*tpa=http://mock.tangce.cn/images/mn007.jpg*/; width:1000px; height:150px;}
+.bigpic_aboutus {background:url("../../mock/image/mn011.jpg")/*tpa=http://mock.tangce.cn/images/user/mn011.jpg*/; width:1000px; height:150px;}
+.bigpic_privacy {background:url("../../mock/image/mn013.jpg")/*tpa=http://mock.tangce.cn/images/user/mn013.jpg*/; width:1000px; height:150px;}
+.bigpic_help {background:url("../../mock/image/mn014.jpg")/*tpa=http://mock.tangce.cn/images/mn014.jpg*/; width:1000px; height:150px;}
+
+.index_body {background: url("../../mock/image/mn002.jpg")/*tpa=http://mock.tangce.cn/images/mn002.jpg*/ repeat-x #FFF;}
+.login_body {background: url("../../mock/image/mn004.jpg")/*tpa=http://mock.tangce.cn/images/mn004.jpg*/ repeat-x #FFF;}
+
+.cont_out {position:relative; height:auto; width:1000px;}
+.search_out {width:580px; height:49px; position:absolute; top:-49px; left:30px; background:#FFF url("../../mock/image/mn007.png")/*tpa=http://mock.tangce.cn/images/mn007.png*/ no-repeat 5px 10px;}
+.sea_left {background:url("../../mock/image/mn005.png")/*tpa=http://mock.tangce.cn/images/mn005.png*/; width:14px; height:49px; position:absolute; left:-14px;}
+.sea_right {background:url("../../mock/image/mn006.png")/*tpa=http://mock.tangce.cn/images/mn006.png*/; width:14px; height:49px; position:absolute; right:-14px;}
+.sea_form {position:absolute; left:30px; top:15px;}
+.sea_select {width:120px; height:23px; border:1px solid #ccc; color:#555; float:left; margin-left:5px;}
+.sea_btn { float:left; margin-left:5px; width:150px;}
+.sea_btn a {display:block; float:left; color:#FFF; text-align:center; text-decoration:none; height:23px; font-size:12px; line-height:23px; margin-right:5px;}
+
+.sea_sure {background:url("../../mock/image/mn008.png")/*tpa=http://mock.tangce.cn/images/mn008.png*/; width:60px;}
+.sea_show {background:url("../../mock/image/mn009.png")/*tpa=http://mock.tangce.cn/images/mn009.png*/; width:72px;}
+
+.cont_tit_out {margin:10px 30px 5px 30px; font-size:12px; color:#333; background:#dedddd url("../../mock/image/mn010.png")/*tpa=http://mock.tangce.cn/images/mn010.png*/ no-repeat left; height:23px; line-height:23px; position:relative;}
+.cont_tit_out div {float:left; height:23px;}
+.cont_tit_out div a {margin:3px;}
+.cont_type {width:120px; text-align:center;}
+.cont_tit {width:420px;}
+.cont_date {width:120px; text-align:center;}
+.cont_time {width:100px; text-align:center;}
+.cont_tit_right {background:url("../../mock/image/mn011.png")/*tpa=http://mock.tangce.cn/images/mn011.png*/; width:6px; height:23px; position:absolute; right:0; top:0;}
+
+.list_out {margin:5px 30px 5px 30px; height:auto; overflow:hidden; background-image:url("../../mock/image/mn015.png")/*tpa=http://mock.tangce.cn/images/mn015.png*/; color:#666; font-size:16px; position:relative;}
+.list_out div {float:left; height:36px; line-height:36px;}
+.list_type {width:120px; text-align:center; background:url("../../mock/image/mn013.png")/*tpa=http://mock.tangce.cn/images/mn013.png*/; color:#FFF;}
+.list_tit {width:490px; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
+.list_tit a {color:#666; font-size:16px; text-decoration:none;}
+.list_tit a:hover {color:#090; text-decoration:underline;}
+.list_date {width:120px; text-align:center; background:url("../../mock/image/mn016.png")/*tpa=http://mock.tangce.cn/images/mn016.png*/;}
+.list_time {width:100px; text-align:center;}
+.list_control {width:100px; background:url("../../mock/image/mn016.png")/*tpa=http://mock.tangce.cn/images/mn016.png*/; padding-left:10px;}
+
+.list_control a {display:block; width:72px; height:23px; font-size:12px; text-decoration:none; text-align:center; line-height:23px; margin:5px 0 0 5px; float:left; line-height:23px; color:#FFF;}
+.list_control a:hover {color:#CF0;}
+.list_control a.list_detail {background:url("../../mock/image/mn018.png")/*tpa=http://mock.tangce.cn/images/mn018.png*/;}
+.list_control a.list_test {background:url("../../mock/image/mn019.png")/*tpa=http://mock.tangce.cn/images/mn019.png*/;}
+
+.list_right {background:url("../../mock/image/mn017.png")/*tpa=http://mock.tangce.cn/images/mn017.png*/; width:8px; height:36px; position:absolute; right:0; top:0;}
+
+.end_form {background:url("../../mock/image/mn025.png")/*tpa=http://mock.tangce.cn/images/mn025.png*/ no-repeat center top; height:100px; padding-top:10px; margin-top:30px; text-align:center; font-size:12px; color:#666; line-height:22px;}
+.end_form a {font-size:12px; color:#666; text-decoration:none;}
+.end_form a:hover {color:#060; text-decoration:underline;}
+
+.txt_btn {background:url("../../mock/image/mn029.png")/*tpa=http://mock.tangce.cn/images/mn029.png*/; width:105px; height:20px; font-size:12px; color:#FFF; line-height:20px; padding-left:20px;}
+.txt_btn a {color:#FFF; text-decoration:none;}
+.txt_btn a:hover {color:#9F0;}
+
+.regInfo {background:url("../../mock/image/thsk_020.png")/*tpa=http://mock.tangce.cn/images/thsk_020.png*/ no-repeat right; width:750px; height:110px; padding-left:10px; font-size:14px; color:#555;}
+.regInfo b {font-size:20px;}
+.regStep {background:url("../../mock/image/thsk_023.png")/*tpa=http://mock.tangce.cn/images/thsk_023.png*/; height:55px; width:725px; margin:10px auto 10px auto; position:relative;}
+.regStep_1 {background:url("../../mock/image/thsk_024.png")/*tpa=http://mock.tangce.cn/images/thsk_024.png*/; width:185px; height:69px; position:absolute; top:-6px;}
+.regStep_2 {background:url("../../mock/image/thsk_025.png")/*tpa=http://mock.tangce.cn/images/thsk_025.png*/; width:185px; height:69px; position:absolute; top:-6px; left:180px;}
+.regStep_3 {background:url("../../mock/image/thsk_026.png")/*tpa=http://mock.tangce.cn/images/thsk_026.png*/; width:185px; height:69px; position:absolute; top:-6px; left:360px;}
+.regStep_4 {background:url("../../mock/image/thsk_027.png")/*tpa=http://mock.tangce.cn/images/thsk_027.png*/; width:185px; height:69px; position:absolute; top:-6px; left:540px;}
+.regStep_blank {height:45px; width:725px; margin:10px auto 10px auto; position:relative; background-color:#eee;}
+.regStep_title {font-weight:bold;line-height:45px;font-size:18px;text-align:center;}
+
+.reg_out {width:750px; margin:20px auto 20px auto;}
+.grayForm {background:#f1f1f1; font-size:14px; color:#333; padding:10px; margin:2px 20px 20px 20px;}
+.contForm {border:1px solid #CCC; margin:0px 20px 0px 20px; padding:20px; height:200px; overflow-x:hidden; overflow-y:auto; font-size:12px; color:#666;}
+.scrollSty {scrollbar-shadow-color: #ffffff; scrollbar-highlight-color: #ffffff; scrollbar-face-color: #d9d9d9; scrollbar-3dlight-color: #d9d9d9; scrollbar-darkshadow-color: #d9d9d9; scrollbar-track-color: #EEE; scrollbar-arrow-color: #999;}
+.stepTit {background:url("../../mock/image/thsk_029.png")/*tpa=http://mock.tangce.cn/images/thsk_029.png*/ no-repeat left 5px; height:30px; padding-left:20px; font-size:16px; font-weight:bold; color:#333; margin:10px 20px 10px 20px; line-height:26px;}
+
+.infoTab {margin-left:20px;  border-bottom:1px solid #ccc; border-top:2px solid #c1c1c1; width:710px;}
+.infoTab td {border-bottom:1px solid #c1c1c1; color:#333; height:26px; padding-top:2px; padding-bottom:2px;}
+.nor_td { font-size:12px; padding-left:10px;}
+.grayTd_1 {background:#ddd; font-size:14px; padding-left:20px;}
+.grayTd_2 {background:#ebebeb; font-size:14px; padding-left:20px;}
+.grayTd_3 {background:#ddd; font-size:14px; font-weight:bold; text-align:center;}
+.infotab_margin {margin-left:5px;}
+
+.infoTab2 {margin-left:20px;  border-bottom:1px solid #ccc; border-top:2px solid #c1c1c1;}
+.infoTab2 td {border-bottom:1px solid #c1c1c1; color:#333; height:26px; padding-top:2px; padding-bottom:2px;}
+.reg_note {font-size:12px; color:#C00; margin:30px 20px 10px 20px;}
+.nor_input {border:1px solid #CCC; margin:2px;}
+
+.find_idpw {background:url("../../mock/image/thsk_071.png")/*tpa=http://mock.tangce.cn/images/thsk_071.png*/ repeat-x bottom; border:2px solid #c1c1c1; position:relative; width:634px; min-height:124px; height:auto; margin:0px auto 10px auto; text-align:center;}
+.find_tl {background:url("../../mock/image/thsk_067.png")/*tpa=http://mock.tangce.cn/images/thsk_067.png*/; width:13px; height:13px; position:absolute; top:-2px; left:-2px;}
+.find_tr {background:url("../../mock/image/thsk_068.png")/*tpa=http://mock.tangce.cn/images/thsk_068.png*/; width:13px; height:13px; position:absolute; top:-2px; right:-2px;}
+.find_bl {background:url("../../mock/image/thsk_069.png")/*tpa=http://mock.tangce.cn/images/thsk_069.png*/; width:13px; height:13px; position:absolute; bottom:-2px; left:-2px;}
+.find_br {background:url("../../mock/image/thsk_070.png")/*tpa=http://mock.tangce.cn/images/thsk_070.png*/; width:13px; height:13px; position:absolute; bottom:-2px; right:-2px;}
+
+.contDiv {background:url("../../mock/image/mn028.png")/*tpa=http://mock.tangce.cn/images/mn028.png*/ no-repeat 5px; font-size:12px; padding-left:16px; line-height:16px; margin:10px 20px 10px 20px;}
+
+.mm_left_out {width:230px; float:left; height:auto; min-height:200px; margin:10px 10px 10px 20px;}
+.user_info {height:150px; background:#77ad49; position:relative;}
+.u_tl {background:url("../../mock/image/mn034.png")/*tpa=http://mock.tangce.cn/images/mn034.png*/; width:5px; height:5px; position:absolute; top:0; left:0;}
+.u_tr {background:url("../../mock/image/mn035.png")/*tpa=http://mock.tangce.cn/images/mn035.png*/; width:5px; height:5px; position:absolute; top:0; right:0;}
+.u_bl {background:url("../../mock/image/mn037.png")/*tpa=http://mock.tangce.cn/images/mn037.png*/; width:5px; height:5px; position:absolute; bottom:0; left:0;}
+.u_br {background:url("../../mock/image/mn036.png")/*tpa=http://mock.tangce.cn/images/mn036.png*/; width:5px; height:5px; position:absolute; bottom:0; right:0;}
+.user_pic {width:93px; height:125px; overflow:hidden; margin:10px 5px auto 10px; float:left;}
+.user_name {font-size:14px; height:100px; width:115px; overflow:auto; margin-top:10px; color:#0c3b00; float:left; line-height:22px; margin-left:3px;}
+
+.clear {clear:both;}
+
+.mm_left_menu {margin:10px auto 10px auto;}
+.mm_left_menu a {display:block; background:url("../../mock/image/mn033.png")/*tpa=http://mock.tangce.cn/images/mn033.png*/ bottom #e0e0e0; width:230px; height:33px; text-align:center; line-height:33px; text-decoration:none; color:#333; margin-bottom:8px; font-size:16px;}
+.mm_left_menu a:hover{background-position:top; color:#FFF;}
+.mm_left_menu a.ml_sel{background-position:top; color:#FFF; font-weight:bold;}
+
+.mm_right_out {float:left; margin:10px auto 10px auto; height:auto; width:720px;}
+.right_info {text-align:right; font-size:12px; color:#C00; height:22px;}
+.mm_sel_out {background:url("../../mock/image/mn045.png")/*tpa=http://mock.tangce.cn/images/mn045.png*/; height:44px; position:relative; border:1px solid #dfdfdf;}
+.mm_sel_tl {background:url("../../mock/image/mn042.png")/*tpa=http://mock.tangce.cn/images/mn042.png*/; width:8px; height:8px; position:absolute; top:-1px; left:-1px;}
+.mm_sel_tr {background:url("../../mock/image/mn043.png")/*tpa=http://mock.tangce.cn/images/mn043.png*/; width:8px; height:8px; position:absolute; top:-1px; right:-1px;}
+.mm_sel_ico {background:url("../../mock/image/mn044.png")/*tpa=http://mock.tangce.cn/images/mn044.png*/; width:21px; height:30px; position:absolute; top:5px; left:10px;}
+.mm_sea_form {position:absolute; left:35px; top:10px;}
+.mm_sea_select {height:23px; border:1px solid #ccc; color:#555; float:left; margin-left:5px;}
+
+.mm_tab {border-left:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf;}
+.mm_tab tr:hover {background-color:#f7f7f7;}
+.mm_tab td,.mm_tab th {border-top:1px solid #dfdfdf; border-right:1px solid #dfdfdf; padding:5px; font-size:12px; color:#666; text-align:center;}
+.mm_tab tr.fir_tr td {background:#eee; font-weight:bold; color:#333;}
+.mm_tab tr.fir_tr td a {color:#333; text-decoration:none;}
+.mm_tab tr.fir_tr td a:hover {color:#060;}
+.mm_tab a {color:#060; text-decoration:none;}
+.mm_tab a:hover {color:#090; text-decoration:underline;}
+.mm_tab td.left_td {text-align:left;}
+.left_align {text-align:left; width:300px; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+.mm_btn { float:left; margin:5px;}
+.mm_btn a {display:block; float:left; color:#FFF; text-align:center; text-decoration:none; height:23px; font-size:12px; line-height:23px; margin-right:5px;}
+.mm_btn a:hover {color:#CF0;}
+.mm_btn a.yellow_btn {background:url("yellow_btn.gif")/*tpa=http://mock.tangce.cn/images/yellow_btn.gif*/; width:76px; height:23px; color:#900;}
+.mm_btn a.yellow_btn:hover {color:#F00;}
+
+.big_tit {font-size:25px; text-align:right; color:#57901f; margin-right:20px;}
+.bigpic_emp{width:1000px; height:150px; background:url("../../mock/image/mn076.png")/*tpa=http://mock.tangce.cn/images/mn076.png*/; position:relative; z-index:1;}
+.report_info {width:238px; height:90px; background:#d3e1ca; position:absolute; left:20px; top:48px;}
+.report_info_tl {background:url("../../mock/image/mn047.png")/*tpa=http://mock.tangce.cn/images/mn047.png*/; width:10px; height:10px; position:absolute; top:0; left:0;}
+.report_info_tr {background:url("../../mock/image/mn048.png")/*tpa=http://mock.tangce.cn/images/mn048.png*/; width:10px; height:10px; position:absolute; top:0; right:0;}
+.report_info_bl {background:url("../../mock/image/mn049.png")/*tpa=http://mock.tangce.cn/images/mn049.png*/; width:10px; height:10px; position:absolute; bottom:0; left:0;}
+.report_info_br {background:url("../../mock/image/mn050.png")/*tpa=http://mock.tangce.cn/images/mn050.png*/; width:10px; height:10px; position:absolute; bottom:0; right:0;}
+.report_txt {width:220px; height:80px; overflow:auto; margin:5px auto auto 10px; font-size:12px; line-height:20px; text-align:center;}
+
+.report_tab_out {width:710px; height:130px; background:#d3e1ca; position:relative; position:absolute; top:10px; left:270px;}
+.report_tab {background:#d3e1ca; height:130px;}
+.report_tab td {border-bottom:1px solid #538d1f; border-left:1px solid #538d1f; font-size:14px;}
+.report_tab td strong {color:#3f7f1e;}
+
+.left_guid_space {width:136px; float:left; height:auto; min-height:200px; margin:10px 10px 10px 20px;}
+#left_guid {position:absolute; width:136px; height:580px; top:10px; border:1px solid #CCC; z-index:1000;}
+
+.show_all {background:url("../../mock/image/mn070.png")/*tpa=http://mock.tangce.cn/images/mn070.png*/ bottom; width:69px; height:32px; padding-top:3px; position:absolute; top:-1px; left:-1px; font-size:12px; color:#333; text-align:center; line-height:14px; cursor:pointer;}
+.show_all a {font-size:12px; color:#333; text-align:center; line-height:14px;text-decoration:none;}
+.show_err {background:url("../../mock/image/mn071.png")/*tpa=http://mock.tangce.cn/images/mn071.png*/ bottom; width:69px; height:32px; padding-top:3px; position:absolute; top:-1px; right:-1px; font-size:12px; color:#333; text-align:center; line-height:14px; cursor:pointer;}
+.show_err a {font-size:12px; color:#333; text-align:center; line-height:14px;text-decoration:none;}
+.show_all_act {background:url("../../mock/image/mn070.png")/*tpa=http://mock.tangce.cn/images/mn070.png*/; width:69px; height:32px; padding-top:3px; position:absolute; top:-1px; left:-1px; font-size:12px; color:#FFF; text-align:center; line-height:14px; cursor:pointer;}
+.show_err_act {background:url("../../mock/image/mn071.png")/*tpa=http://mock.tangce.cn/images/mn071.png*/; width:69px; height:32px; padding-top:3px; position:absolute; top:-1px; right:-1px; font-size:12px; color:#FFF; text-align:center; line-height:14px; cursor:pointer;}
+.show_all_act a {font-size:12px; color:#fff; text-align:center; line-height:14px;text-decoration:none;}
+.show_err_act a {font-size:12px; color:#fff; text-align:center; line-height:14px;text-decoration:none;}
+
+.lg_bl {background:url("../../mock/image/mn077.png")/*tpa=http://mock.tangce.cn/images/mn077.png*/; width:10px; height:10px; position:absolute; bottom:-1px; left:-1px;}
+.lg_br {background:url("../../mock/image/mn078.png")/*tpa=http://mock.tangce.cn/images/mn078.png*/; width:10px; height:10px; position:absolute; bottom:-1px; right:-1px;}
+
+.left_menu_in {margin:0 auto 10px auto; padding-top:10px; width:134px; height:520px; overflow-y: auto; overflow-x:hidden;}
+.left_menu_in div { line-height:25px; font-size:12px; margin-bottom:3px;}
+.class_one {background:url("../../mock/image/mn066.png")/*tpa=http://mock.tangce.cn/images/mn066.png*/; width:95px; height:25px; font-weight:bold; color:#333; padding-left:20px; cursor:pointer; margin-left:3px;}
+.class_two {background:url("../../mock/image/mn067.png")/*tpa=http://mock.tangce.cn/images/mn067.png*/; width:85px; height:25px; margin-left:10px; padding-left:20px; cursor:pointer;}
+.class_thr {background:url("../../mock/image/mn068.png")/*tpa=http://mock.tangce.cn/images/mn068.png*/; width:75px; height:25px; padding-left:20px; cursor:pointer;}
+.class_thr_list {margin-left:20px; height:auto;}
+.o_icon {display:block; width:12px; height:12px; float:left; left:5px; top:5px; background:url("../../mock/image/mn069.png")/*tpa=http://mock.tangce.cn/images/mn069.png*/;margin-left:-10px;margin-top:5px;margin-right:6px;}
+.c_icon {display:block; width:12px; height:12px; float:left; left:5px; top:5px; background:url("../../mock/image/mn069-2.png")/*tpa=http://mock.tangce.cn/images/mn069-2.png*/;margin-left:-10px;margin-top:5px;margin-right:6px;}
+.now_point {background:url("../../mock/image/thsk_029.png")/*tpa=http://mock.tangce.cn/images/thsk_029.png*/; width:15px; height:15px; position:absolute; left:3px; top:5px; display:none;}
+.scroll_style{scrollbar-arrow-color: #333; scrollbar-face-color: #ddd; scrollbar-darkshadow-color: #ffffff; scrollbar-highlight-color: #eee; scrollbar-shadow-color: #999; scrollbar-track-color: #eee; scrollbar-3dlight-color: #ffffff;}
+
+.report_right_out {float:left; margin:10px auto 10px auto; height:auto; width:820px;}
+.quz_out {width:813px; height:auto; position:relative; border:1px solid #ccc; border-top:0; font-size:14px; color:#666; line-height:22px; margin-bottom:10px;}
+.quz_tit {background:url("../../mock/image/mn055.png")/*tpa=http://mock.tangce.cn/images/mn055.png*/; height:35px;}
+.quz_tit_left {background:url("../../mock/image/mn054.png")/*tpa=http://mock.tangce.cn/images/mn054.png*/; height:35px; min-width:80px; width:auto; position:relative; float:left;}
+.quz_mp3Player {width:440px; height:30px; float:left; margin-left:15px;padding-top:5px}
+.quz_shbtn { float:left; padding-top:5px; padding-left:40px}
+.quz_shbtn a {-moz-outline:none; outline:none; ie-dummy:expression(this.hideFocus=true);}
+.quz_shbtn a {display:block; background:url("../../mock/image/mn065.png")/*tpa=http://mock.tangce.cn/images/mn065.png*/ #060; width:99px; height:23px; font-size:12px; line-height:23px; text-align:center; text-decoration:none; color:#FFF;}
+.quz_tit_l {background:url("../../mock/image/mn052.png")/*tpa=http://mock.tangce.cn/images/mn052.png*/; width:10px; height:35px; position:absolute; left:-1px; top:0;}
+.quz_tit_r {background:url("../../mock/image/mn053.png")/*tpa=http://mock.tangce.cn/images/mn053.png*/; width:10px; height:35px; position:absolute; right:-9px; top:0;}
+.quz_tit_m {height:35px; width:auto; margin-left:10px; font-size:26px; font-weight:bold; font-family:Arial; color:#FFF; text-align:center; line-height:35px;}
+.quz_tit_rig {background:url("../../mock/image/mn056.png")/*tpa=http://mock.tangce.cn/images/mn056.png*/; width:10px; height:35px; position:absolute; right:-1px; top:0;}
+.quz_info {margin:20px; padding-bottom:10px; border-bottom:1px solid #ddd;}
+.listen_text {margin:20px; padding-bottom:10px; border-bottom:1px solid #ddd;}
+.quz_body {margin:20px; margin-top:10px;margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #ddd;padding-left:0px;}
+.quz_options {margin:20px; margin-top:10px; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #ddd; overflow:hidden;}
+.quz_options b {padding-right:15px;}
+.quz_exp {margin:20px; margin-top:10px; margin-bottom:10px; height:auto;}
+.quz_exp_tit {background:url("../../mock/image/mn072.png")/*tpa=http://mock.tangce.cn/images/mn072.png*/; width:120px; height:26px; line-height:26px; text-align:center; color:#333; float:left;}
+.quz_exp_btn {float:left; padding-left:10px; font-size:12px;}
+.quz_exp_btn a {-moz-outline:none; outline:none; ie-dummy:expression(this.hideFocus=true);}
+.quz_exp_btn a {background:url("../../mock/image/mn065.png")/*tpa=http://mock.tangce.cn/images/mn065.png*/; display:block; width:99px; height:23px; line-height:23px; text-align:center; text-decoration:none; color:#FFF; float:left; margin-right:10px;}
+.quz_exp_btn span {color:#C00;}
+.quz_exp_btn .underRead {float:left;}
+
+.quz_exp_txt {position:relative; background:#eee; min-height:10px; padding:10px; color:#555; font-size:14px;}
+.quz_exp_tr {background:url("../../mock/image/mn073.png")/*tpa=http://mock.tangce.cn/images/mn073.png*/; width:5px; height:5px; position:absolute; top:0; right:0px;}
+.quz_exp_br {background:url("../../mock/image/mn074.png")/*tpa=http://mock.tangce.cn/images/mn074.png*/; width:5px; height:5px; position:absolute; bottom:0; right:0px;}
+.quz_exp_bl {background:url("../../mock/image/mn075.png")/*tpa=http://mock.tangce.cn/images/mn075.png*/; width:5px; height:5px; position:absolute; bottom:0; left:0px;}
+.quz_bl {background:url("../../mock/image/mn077.png")/*tpa=http://mock.tangce.cn/images/mn077.png*/; width:10px; height:10px; position:absolute; bottom:-1px; left:-1px;}
+.quz_br {background:url("../../mock/image/mn078.png")/*tpa=http://mock.tangce.cn/images/mn078.png*/; width:10px; height:10px; position:absolute; bottom:-1px; right:-1px;}
+
+.quz_ans_out {position:absolute; width:110px; height:auto; right:-122px; top:0;}
+.quz_high_err {background:url("../../mock/image/mn064.png")/*tpa=http://mock.tangce.cn/images/mn064.png*/; width:68px; height:27px; line-height:27px; text-align:center; color:#C00; padding-left:10px; font-size:12px; margin:0px auto 10px -8px;}
+.quz_ans_show {background:#f4f4f4; border:1px solid #ddd; position:relative; min-height:50px; height:auto;}
+.quz_ans_tl {background:url("../../mock/image/mn060.png")/*tpa=http://mock.tangce.cn/images/mn060.png*/; width:16px; height:20px; position:absolute; left:-10px; top:-1px;}
+.quz_ans_tr {background:url("../../mock/image/mn061.png")/*tpa=http://mock.tangce.cn/images/mn061.png*/; width:8px; height:8px; position:absolute; top:-1px; right:-1px;}
+.quz_ans_bl {background:url("../../mock/image/mn063.png")/*tpa=http://mock.tangce.cn/images/mn063.png*/; width:8px; height:8px; position:absolute; bottom:-1px; left:-1px;}
+.quz_ans_br {background:url("../../mock/image/mn062.png")/*tpa=http://mock.tangce.cn/images/mn062.png*/; width:8px; height:8px; position:absolute; bottom:-1px; right:-1px;}
+
+.quz_ans_itm {background:url("../../mock/image/mn057.png")/*tpa=http://mock.tangce.cn/images/mn057.png*/ no-repeat; height:25px; margin:5px auto 5px 7px; position:relative;}
+.quz_ans_itm_num {font-size:16px; font-weight:bold; color:#333; width:23px; text-align:center; float:left; line-height:25px;}
+.quz_ans_itm_per {color:#333; width:60px; text-align:center; float:left; line-height:25px;}
+.quz_ans_itm_rig {background:url("../../mock/image/mn058.png")/*tpa=http://mock.tangce.cn/images/mn058.png*/; width:33px; height:25px; position:absolute; top:0; right:5px;}
+.quz_ans_itm_err {background:url("../../mock/image/mn059.png")/*tpa=http://mock.tangce.cn/images/mn059.png*/; width:33px; height:25px; position:absolute; top:0; right:5px;}
+.examp_data {display:none;}
+
+.quz_small_out {width:813px; height:auto; position:relative; font-size:14px; color:#666; line-height:22px; margin-bottom:10px;}
+.quz_small_tit {height:30px; margin-top:5px;margin-left:20px;margin-right:20px;}
+.quz_small_tit_left {background:url("../../mock/image/mn079-3.png")/*tpa=http://mock.tangce.cn/images/report/mn079-3.png*/; height:30px; width:80px; font-size:22px; font-weight:bold; font-family:Arial; color:#FFF; text-align:center; line-height:30px; float:left; cursor:pointer; margin-right:2px;}
+.qstl_focused{background:url("../../mock/image/mn079-2.png")/*tpa=http://mock.tangce.cn/images/report/mn079-2.png*/;}
+.qstl_hover{background:url("../../mock/image/mn079-2.png")/*tpa=http://mock.tangce.cn/images/report/mn079-2.png*/;}
+
+.quz_myans {margin:35px 20px 20px 20px; height:auto;}
+.quz_myans_tit {background:url("../../mock/image/mn080.png")/*tpa=http://mock.tangce.cn/images/mn080.png*/; width:120px; height:27px; line-height:27px; text-align:center; color:#333; position:absolute; left:-1px; top:-27px;}
+.quz_myans_txt {position:relative; background:#FFF; padding:10px; color:#555; font-size:14px; border:1px solid #ccc;}
+.quz_myans_tr {background:url("../../mock/image/mn081.png")/*tpa=http://mock.tangce.cn/images/mn081.png*/; width:5px; height:5px; position:absolute; top:-1px; right:-1px;}
+.quz_myans_br {background:url("../../mock/image/mn082.png")/*tpa=http://mock.tangce.cn/images/mn082.png*/; width:5px; height:5px; position:absolute; bottom:-1px; right:-1px;}
+.quz_myans_bl {background:url("../../mock/image/mn083.png")/*tpa=http://mock.tangce.cn/images/mn083.png*/; width:5px; height:5px; position:absolute; bottom:-1px; left:-1px;}
+
+.play_btn {width:23px; height:23px; float:left; background:url("../../mock/image/play_btn.png")/*tpa=http://mock.tangce.cn/images/play_btn.png*/ no-repeat bottom; cursor:pointer; padding:5px 0 0 2px;}
+.stop_btn {width:23px; height:23px; float:left; background:url("../../mock/image/stop_btn.png")/*tpa=http://mock.tangce.cn/images/stop_btn.png*/ no-repeat bottom; cursor:pointer; padding:5px 0 0 2px;}
+.mask {background-color:#000; filter:alpha(opacity=50);-moz-opacity:0.5; -khtml-opacity:0.6; opacity:0.5; display:none; width:100%; position:absolute; top:0; left:0; z-index:1000;}
+.isCorrect {
+	display:none;
+}
+.correctAns {
+	margin:20px; margin-top:10px; margin-bottom:10px; height:auto;
+}
+
+.correctAns .ansOption {
+	color:#f15a24;
+	font-weight:bold;
+}
+
+.quesError {
+	/*color:red;*/
+	background:url("../../mock/image/mn068_x.png")/*tpa=http://mock.tangce.cn/images/report/mn068_x.png*/;
+}
+
+.play_icon {
+	background:url("../../mock/image/audio_play.png")/*tpa=http://mock.tangce.cn/images/exam/audio_play.png*/ no-repeat; width:23px; height:24px;float:left;cursor:pointer;
+}
+
+.audio_pic {
+	background:url("../../mock/image/audio_pic.png")/*tpa=http://mock.tangce.cn/images/exam/audio_pic.png*/ no-repeat; width:447px; height:24px;float:left;
+}
+
+.help_left_tit {width:230px; height:33px; position:relative; background:#bdbdbd; line-height:33px; font-size:16px; font-weight:bold; color:#333; cursor:pointer;}
+.help_o_ico {background:url("../../mock/image/thsk_083.png")/*tpa=http://mock.tangce.cn/images/thsk_083.png*/ no-repeat; width:9px; height:7px; margin:12px; display:block; float:left;}
+.help_c_ico {background:url("../../mock/image/thsk_084.png")/*tpa=http://mock.tangce.cn/images/thsk_084.png*/ no-repeat; width:7px; height:9px; margin:11px 12px auto 14px; display:block; float:left;}
+.hlt_tl {background:url("../../mock/image/thsk_074.png")/*tpa=http://mock.tangce.cn/images/thsk_074.png*/; width:3px; height:3px; position:absolute; top:0; left:0;}
+.hlt_tr {background:url("../../mock/image/thsk_075.png")/*tpa=http://mock.tangce.cn/images/thsk_075.png*/; width:3px; height:3px; position:absolute; top:0; right:0;}
+.hlt_bl {background:url("../../mock/image/thsk_077.png")/*tpa=http://mock.tangce.cn/images/thsk_077.png*/; width:3px; height:3px; position:absolute; bottom:0; left:0;}
+.hlt_br {background:url("../../mock/image/thsk_076.png")/*tpa=http://mock.tangce.cn/images/thsk_076.png*/; width:3px; height:3px; position:absolute; bottom:0; right:0;}
+
+.help_sub_tit_out {width:230px; height:auto; background:#e0e0e0; position:relative; padding:5px 0 5px 0;}
+.hst_tl {background:url("../../mock/image/thsk_078.png")/*tpa=http://mock.tangce.cn/images/thsk_078.png*/; width:3px; height:3px; position:absolute; top:0; left:0;}
+.hst_tr {background:url("../../mock/image/thsk_079.png")/*tpa=http://mock.tangce.cn/images/thsk_079.png*/; width:3px; height:3px; position:absolute; top:0; right:0;}
+.hst_bl {background:url("../../mock/image/thsk_081.png")/*tpa=http://mock.tangce.cn/images/thsk_081.png*/; width:3px; height:3px; position:absolute; bottom:0; left:0;}
+.hst_br {background:url("../../mock/image/thsk_080.png")/*tpa=http://mock.tangce.cn/images/thsk_080.png*/; width:3px; height:3px; position:absolute; bottom:0; right:0;}
+
+.help_sub_tit_out a {display:block; line-height:30px; padding-left:40px; background:url("../../mock/image/thsk_082.png")/*tpa=http://mock.tangce.cn/images/thsk_082.png*/ no-repeat 28px 12px; font-size:14px; color:#333; text-decoration:none;}
+.help_sub_tit_out a:hover {background:url("../../mock/image/thsk_082.png")/*tpa=http://mock.tangce.cn/images/thsk_082.png*/ no-repeat 28px 12px #eee;}
+.bold_txt {font-weight:bold;}
+.help_rig_tit {line-height:33px; height:33px; padding-left:20px; background:#f0f0f0; font-size:16px; color:#599832;}
+.help_right_cont {font-size:14px; color:#555; padding:10px;}
+.help_right_cont p {text-indent:28px;};
+
+
+.suggest_right_out {margin:10px auto 10px auto; height:auto; width:960px;}
+.suggest_cont_out {height:auto; position:relative; border:1px solid #ccc; border-top:0; font-size:14px; color:#666; line-height:22px; margin-bottom:10px; width:960px; margin-left:20px;}
+.suggest_tit_m {height:35px; width:auto; margin-left:20px; margin-right:20px; font-size:20px; font-weight:bold; font-family:Arial; color:#FFF; text-align:center; line-height:35px;}
+.suggest_exp_tit {background:#eee; width:auto; padding:0 10px 0 10px; font-weight:bold; height:26px; line-height:26px; text-align:center; color:#333; float:left;}
+.suggest_tab {border-left:1px solid #ccc; border-bottom:1px solid #ccc; background:#fff; margin:20px;}
+.suggest_tab td {border-right:1px solid #ccc; border-top:1px solid #ccc; padding:8px;}
+.suggest_tab tr:hover {background:#f3f3f3;}
+.suggest_tab2 {border-left:1px solid #ccc; border-bottom:1px solid #ccc; background:#fff; margin:20px;}
+.suggest_tab2 td {border-right:1px solid #ccc; border-top:1px solid #ccc; padding:8px;}
+
+
+.exminfo_tab {border-top:1px solid #c5c5c5; border-left:1px solid #c5c5c5; width:660px; margin:10px auto;}
+.exminfo_tab a {color:#007e5c; font-weight:bold; text-decoration:none;}
+.exminfo_tab a:hover {color:#F90; text-decoration:underline;}
+.exminfo_tab td {border-bottom:1px solid #c5c5c5; border-right:1px solid #c5c5c5; padding:10px 5px 10px 5px; color:#555; font-size:14px;}
+.exminfo_tab td.right_td {border-right:0;}
+.exminfo_tab td.gray_td {background:#e3e3e3; color:#333; font-size:14px;}
+.exminfo_tab td.gray_td2 {background:#ececec; color:#333; font-size:14px;}
+
+.exm_tit {width:660px; margin:20px auto 0 auto; font-size:16px; color:#47851c;}
+.exm_btn {background:url("../../mock/image/thsk_086.png")/*tpa=http://mock.tangce.cn/images/thsk_086.png*/ top; width:120px; height:33px; line-height:33px; color:#FFF; font-size:16px; font-weight:bold; border:0; cursor:pointer;}
+.exm_btn_act {background:url("../../mock/image/thsk_086.png")/*tpa=http://mock.tangce.cn/images/thsk_086.png*/ bottom; width:92px; height:33px; line-height:33px; color:#FFF; font-size:16px; font-weight:bold; border:0; cursor:pointer;}
+.pay_btn {background:url("../../mock/image/thsk_087.png")/*tpa=http://mock.tangce.cn/images/thsk_087.png*/ top; width:92px; height:33px; line-height:33px; color:#FFF; font-size:16px; font-weight:bold; border:0; cursor:pointer;}
+.pay_btn_act {background:url("../../mock/image/thsk_087.png")/*tpa=http://mock.tangce.cn/images/thsk_087.png*/ bottom; width:92px; height:33px; line-height:33px; color:#FFF; font-size:16px; font-weight:bold; border:0; cursor:pointer;}
+
+.exm_btn_dis {background:url("../../mock/image/thsk_086.png")/*tpa=http://mock.tangce.cn/images/thsk_086.png*/ top; width:120px; height:33px; line-height:33px; color:#FFF; font-size:16px; font-weight:bold; border:0; filter: Alpha(opacity=20);-moz-opacity:.2;opacity:0.2;}
+
+.charge_info {background:url("../../mock/image/thsk_088.png")/*tpa=http://mock.tangce.cn/images/thsk_088.png*/ no-repeat; width:205px; height:185px; padding:10px; color:#FFF; line-height:26px; font-size:14px; position:absolute; right:-50px; top:-205px;}
+.charge_info a {color:#FC0;}
+.charge_info a:hover {color:#FF6;}
+
+.menu{width:1000px; height:300px; position:relative; padding:20px 0 20px 0; font-size: 16px; font-style: normal; font-weight: bold; text-align:center;}
+/*.item{position:relative; background-color:#f0f0f0; display:inline-block; vertical-align:top; width:300px; height:240px; margin:0px 5px; overflow:hidden;}*/
+.item{position:relative; background-color:#f0f0f0; float:left; vertical-align:top; width:300px; height:230px; margin:0px 7px; overflow:hidden;}
+
+.icon{width:50px; height:34px; padding-top:50px; margin:auto;}
+.icon_s {width:50px; height:34px; margin:10px auto 0 auto;}
+.icon_tit {font-size:18px; text-align:center; padding-top:10px;}
+.icon_txt {font-size:13px; line-height:20px; text-align:center; padding-top:10px; color:#777; font-weight:normal;}
+.icon_1 {background:transparent url("../../mock/image/icon_1.jpg")/*tpa=http://mock.tangce.cn/images/icon_1.jpg*/ no-repeat center bottom;}
+.icon_2 {background:transparent url("../../mock/image/icon_2.jpg")/*tpa=http://mock.tangce.cn/images/icon_2.jpg*/ no-repeat center bottom;}
+.icon_3 {background:transparent url("../../mock/image/icon_3.jpg")/*tpa=http://mock.tangce.cn/images/icon_3.jpg*/ no-repeat center bottom;}
+
+.item_content{position:absolute; height:130px; width:470px; overflow:hidden; left:5px; top:80px; padding:10px; background:#fff; display:none; text-align:left;}
+.item_content a{background-color:#236c13; display:inline-block; color:#fff; padding:1px 5px 1px 5px; text-decoration:none; font-size:12px;}
+.item_content a:hover{background-color:#F90; color:#fff; filter:alpha(opacity=100);-moz-opacity:1; -khtml-opacity:1; opacity:1;}
+.item_txt {font-size:12px; line-height:22px; font-weight:normal; color:#666; display:none;}
+
+.type_left {width:703px; height:200px; text-align:left; float:left; margin:10px 0 10px 35px;}
+.type_sogo {float:left; width:420px; height:200px; font-size:12px; line-height:22px; font-weight:normal; background:url("../../mock/image/mn016.jpg")/*tpa=http://mock.tangce.cn/images/mn016.jpg*/ no-repeat right bottom #d6edbf; padding:10px 20px 10px 20px; color:#115500;}
+.type_set {font-size:12px; line-height:26px; height:200px; padding:10px; background:#bfdca2; float:left; word-break:break-all; width:220px;color:#115500;}
+.type_tit {font-size:18px; padding-bottom:10px; font-weight:bold; color:#000;}
+
+.center_btn {text-align:center;}
+.center_btn a{background-color:#115500; display:inline-block; color:#fff; padding:1px 10px 1px 10px; text-decoration:none; font-size:13px; margin:10px auto 0 auto; font-weight:bold;}
+.center_btn a:hover{background-color:#F90; color:#fff; filter:alpha(opacity=100);-moz-opacity:1; -khtml-opacity:1; opacity:1;}
+
+.type_right {width:200px; height:200px; padding:10px; background:#d6edbf; font-size:12px; font-weight:normal; line-height:22px; float:left; margin:10px auto 0 8px; text-align:left; color:#115500;}
+.type_btn {text-align:center;}
+.type_btn a{background:#115500 url("../../mock/image/thsk_089.png")/*tpa=http://mock.tangce.cn/images/thsk_089.png*/ no-repeat 10px 3px; display:inline-block; color:#fff; padding:1px 10px 1px 40px; text-decoration:none; font-size:14px; margin:10px auto 0 auto; font-weight:bold;}
+.type_btn a:hover{background-color:#F90; color:#fff; filter:alpha(opacity=100);-moz-opacity:1; -khtml-opacity:1; opacity:1;}
+
+.item_btn {position:absolute; bottom:30px; left:0; text-align:center; width:100%;}
+.item_btn a{background-color:#999; display:inline-block; color:#fff; padding:2px 15px 2px 15px; text-decoration:none; font-size:13px; font-weight:normal;}
+.item_btn a:hover{background-color:#F90; color:#fff; filter:alpha(opacity=100);-moz-opacity:1; -khtml-opacity:1; opacity:1;}
+
+.py_left {height:100px; padding:15px 0 0 35px; float:left;}
+.py_left a {display:block; float:left; margin-right:10px; height:50px; width:150px; border:5px solid #eee; background-repeat:no-repeat; background-position:0px 5px; padding:30px 0 0 65px; line-height:22px; font-size:15px; color:#666; text-align:left; text-decoration:none;}
+.py_left a:hover {color:#000; filter:alpha(opacity=100);-moz-opacity:1; -khtml-opacity:1; opacity:1; background-color:#fff; border:5px solid #ccc;}
+.py_left a.sogo_set {background-image:url("../../mock/image/thsk_095.png")/*tpa=http://mock.tangce.cn/images/thsk_095.png*/;}
+.py_left a.sogo_set:hover {background-image:url("../../mock/image/thsk_095_2.png")/*tpa=http://mock.tangce.cn/images/thsk_095_2.png*/;}
+.py_left a.sogo_tip {background-image:url("../../mock/image/thsk_096.png")/*tpa=http://mock.tangce.cn/images/thsk_096.png*/;}
+.py_left a.sogo_tip:hover {background-image:url("../../mock/image/thsk_096_2.png")/*tpa=http://mock.tangce.cn/images/thsk_096_2.png*/;}
+.py_left a.qp_set {background-image:url("../../mock/image/thsk_097.png")/*tpa=http://mock.tangce.cn/images/thsk_097.png*/;}
+.py_left a.qp_set:hover {background-image:url("../../mock/image/thsk_097_2.png")/*tpa=http://mock.tangce.cn/images/thsk_097_2.png*/;}
+.py_left a.train {background-image:url("type_anima.gif")/*tpa=http://mock.tangce.cn/images/type_anima.gif*/; background-position:right; font-size:30px; padding:0 0 0 20px; line-height:80px; height:80px; width:195px; font-weight:normal;}
+.py_left a.train:hover {color:#3f8014; border:5px solid #3f8014;background-image:url("type_anima2.gif")/*tpa=http://mock.tangce.cn/images/type_anima2.gif*/;}
+
+
+
+
+.py_left a.check {background-image:url("../../mock/image/check.jpg")/*tpa=http://mock.tangce.cn/images/check.jpg*/;}
+.py_left a.check:hover {background-image:url("../../mock/image/check1.jpg")/*tpa=http://mock.tangce.cn/images/check1.jpg*/;}
+
+.right_more {text-align:right; margin-right:30px; padding-top:10px;}
+.right_more a {display:inline-block; background:url("../../mock/image/mn018.png")/*tpa=http://mock.tangce.cn/images/mn018.png*/; width:72px; height:23px; line-height:23px; text-align:center; text-decoration:none; color:#FFF; font-size:14px; font-weight:bold; border:0; cursor:pointer;}
+
+.words_outline {display:block; float:left; height:80px; width:685px; border:5px solid #eee; background-repeat:no-repeat; background-position:0px 5px; line-height:22px; font-size:16px; color:#666; text-align:left; text-decoration:none;}
+.w_tit {background:url("../../mock/image/level_left.jpg")/*tpa=http://mock.tangce.cn/images/level_left.jpg*/ right 6px; width:170px; padding-right:7px; height:80px; text-align:center; font-size:16px; color:#666; line-height:80px; font-weight:normal; float:left;}
+.words_outline a {display:block; float:left; margin-right:10px; height:30px; width:70px; line-height:30px; font-size:16px; color:#fff; text-align:center; text-decoration:none; background:#63962a; padding:0; border:0; margin:25px 2px 0 10px;}
+.words_outline a:hover {background-color:#f90; color:#fff; padding:0; border:0;}
+
+.level_bigout {width:930px; height:auto; overflow:hidden; margin:10px auto;}
+.level_out {float:left; width:150px; height:500px; overflow:auto; overflow-x:hidden; overflow-y:auto; border:1px solid #CCC;}
+.level_out div {border-bottom:1px dashed #ccc; padding:10px; text-align:center;}
+.level_out div:hover {background:#fff; cursor:default;}
+
+.tit_out {float:left; width:150px; height:60px; padding-top:10px; overflow:auto; overflow-x:hidden; overflow-y:auto; border:1px solid #CCC; text-align:center; font-size:12px; color:#999; cursor:default;}
+.tit_out strong {font-size:14px; color:#666;}
+.tit_out_focus {background:#E6F5B4; border:1px solid #8DCC73;}
+.bigpic_small {background:url("../../mock/image/mn015.jpg")/*tpa=http://mock.tangce.cn/images/mn015.jpg*/; width:1000px; height:80px;}
+.type_ctit_out {width:930px; min-height:30px; height:auto; margin:20px auto 0 auto; border-bottom:1px solid #207400;}
+.type_ctit {float:left; padding:0 20px 0 20px; background:#207400; color:#fff; font-size:18px; text-align:center; line-height:30px;}
+
+
+.help_tab { margin-top:10px;}
+.help_tab td {padding:5px 5px 5px 25px; background:url("icon_faq_q.gif")/*tpa=http://mock.tangce.cn/images/icon_faq_q.gif*/ no-repeat left; border-bottom:1px dotted #ccc;}
+

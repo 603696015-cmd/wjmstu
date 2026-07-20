@@ -1,0 +1,1 @@
+alter table message add(forumid number default 0)

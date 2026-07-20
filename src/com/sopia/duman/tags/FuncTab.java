@@ -1,0 +1,128 @@
+package com.sopia.duman.tags;
+
+import java.util.List;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.TagSupport;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.sopia.common.AuthorityUtil;
+import com.sopia.common.ElTag;
+import com.sopia.courseman.entities.CourseType;
+import com.sopia.duman.entities.ElFunc;
+import com.sopia.duman.entities.ElRole;
+
+public class FuncTab extends ElTag{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5714530967503948064L;
+	private static final Log logger = LogFactory.getLog(FuncTab.class);
+	private int roleid;
+	@SuppressWarnings("unchecked")
+	public int doStartTag() {
+		try {
+			JspWriter out = pageContext.getOut();
+			ServletRequest request = pageContext.getRequest();
+			roleid=0;
+			if (null != request.getAttribute("role")) {
+				ElRole er = (ElRole ) request.getAttribute("role");
+				roleid= er.getId();
+			}
+			ElFunc cts = (ElFunc) request.getAttribute("funcTree");
+			if(getNodeIndex()>=cts.getChild().size()){
+				return SKIP_PAGE;
+			}
+			cts=cts.getChild().get(getNodeIndex());
+			out.println("<script type=\"text/javascript\">\n" + "<!--\n");
+			out.println("var d"	+ getDid()+ " = new dTree('d" + getDid() + "');\n");
+			writeChilds(out,cts) ;
+			out.println("document.write(d" + getDid() + ");\n" + "//-->\n" + "</script>");
+		} catch (Exception ex) {
+			logger.error("功能树显示错误",ex);
+		}
+		return TagSupport.SKIP_BODY;
+	}
+	
+	int n=0;
+	public void writeChilds(JspWriter out, Object obj) throws Exception {
+		ElFunc qlb = (ElFunc)obj;
+		List<ElFunc> qlbChild= qlb.getChild();
+		String href1 = getHref()==null||"".equals(getHref())?"":getHref()+qlb.getId();
+		String desc=qlb.getName()+"-"+qlb.getDescription()+"==="+AuthorityUtil.checkAuthor(roleid, qlb.getId(),0);
+		desc=desc.replace("\n", "");
+		desc=desc.replace("\r", "");
+		if(n==0){
+			out.println("d" + getDid() + ".add(0,-1,'"+qlb.getName() +"模块功能');");
+			n=1;
+		}
+		out.print("d" + getDid() + ".add2("+qlb.getId()+","+qlb.getParent().getId()+",'"+desc+"','"+href1+"','0','qlib');\n");
+		for (int i = 0; i < qlbChild.size(); i++) {
+			ElFunc qlbi = qlbChild.get(i);
+			writeChilds(out, qlbi );
+			if(qlbi.getLevel()==1){
+				break;
+			}
+		}
+	}
+	@Override
+	public int doEndTag() throws JspException {
+		// TODO Auto-generated method stub
+		n=0;
+		return EVAL_PAGE;
+	}
+	
+	public void writeChildsCb_2(JspWriter out, Object obj) throws Exception {
+		CourseType qlb = (CourseType)obj;
+		if(qlb!=null){
+			List<CourseType> qlbChild= qlb.getChild();
+			String href1 = getHref()==null||"".equals(getHref())?"":getHref()+qlb.getId();
+			if(qlb.getLevel()==0){
+				if(!getRootAble()){
+					out.print("d" + getDid() + ".add("+qlb.getId()+",-1,'"+qlb.getName()+"');\n"); 
+				}
+				else{
+					out.print("d" + getDid() + ".add("+qlb.getId()+",-1,'"+qlb.getName()+"','"+href1+"');\n");
+				}
+			}
+			else{
+				//判断是否已有该权限，来决定chkbox的是否选中
+				List treeAllId=(List)pageContext.getRequest().getAttribute("treeAllId");
+				int ischk=0;
+				if(treeAllId.contains(qlb.getId())==true){
+					ischk=1;
+				}
+				out.print("d" + getDid() + ".add2("+qlb.getId()+","+qlb.getParent().getId()+",'"+qlb.getName()+"','"+href1+"','"+ischk+"','"+this.getTreeType()+"');\n");
+			}
+			for (int i = 0; i < qlbChild.size(); i++) {
+				CourseType qlbi = qlbChild.get(i);
+				writeChildsCb_2(out, qlbi );
+			}
+		} 
+	}
+	
+	public void writeChilds(JspWriter out, Object obj,int i) throws Exception {
+		ElFunc qlb = (ElFunc)obj;
+		List<ElFunc> qlbChild= qlb.getChild();
+		String href1 = getHref()==null||"".equals(getHref())?"":getHref()+qlb.getId();
+		String desc=qlb.getName()+"-"+qlb.getDescription()+"==="+AuthorityUtil.checkAuthor(roleid, qlb.getFunccode(),0);
+		desc=desc.replace("\n", "");
+		desc=desc.replace("\r", "");
+		if(n==0){
+			out.println("d" + i + ".add(0,-1,'"+qlb.getName() +"模块功能');");
+			n=1;
+		}
+		out.println("d" + i + ".add("+qlb.getId()+","+qlb.getParent().getId()+",'"+desc+"','"+href1+"');\n");
+		for (int j = 0; j < qlbChild.size(); j++) {
+			ElFunc qlbi = qlbChild.get(j);
+			writeChilds(out, qlbi ,i);
+			if(qlbi.getLevel()==1){
+				break;
+			}
+		}
+	}
+}

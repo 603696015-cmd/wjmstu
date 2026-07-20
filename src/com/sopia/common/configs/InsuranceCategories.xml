@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="InsuranceCategories" extends="elearning"> 
+		<!-- 自定义险种模块 -->
+		<action name="IC_ListInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_ListInit">
+			<result name="IC_List">
+				pfms/InsuranceCategories/IC_List.jsp 
+			</result>
+		</action>
+		<action name="IC_addInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_addInit">
+			<result name="IC_add">
+				pfms/InsuranceCategories/IC_add.jsp 
+			</result>
+		</action>
+		<action name="IC_add"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_add">
+			<result name="IC_add">
+				pfms/InsuranceCategories/IC_add.jsp 
+			</result>
+			<result name="IC_add_success">
+				pfms/InsuranceCategories/IC_add_success.jsp 
+			</result>
+		</action> 
+		<action name="IC_U_columns_manageInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_columns_manageInit">
+			<result name="IC_U_columns_manage">
+				pfms/InsuranceCategories/IC_U_columns_manage.jsp 
+			</result> 
+		</action> 
+		<action name="updateColumnInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="updateColumnInit">
+			<result name="updateColumnInit">
+				pfms/InsuranceCategories/IC_U_columns_updateInit.jsp 
+			</result> 
+		</action> 
+		<action name="updateColumn"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="updateColumn">
+			<result name="updateColumn_success" type="redirectAction">
+				IC_U_columns_manageInit.action?IC.id=${IC.id}&amp;IC.tableName=${IC.tableName} 
+			</result> 
+			<result name="updateColumnInit" type="redirectAction">
+				updateColumnInit.action?column_name=${column_name}&amp;tablename=${IC.tableName} 
+			</result> 
+			
+		</action> 
+		<action name="IC_U_AddColumn"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_AddColumn">
+			<result name="IC_U_columns_manage">
+				pfms/InsuranceCategories/IC_U_columns_manage.jsp 
+			</result> 
+		</action>
+		<action name="IC_U_UpdateDemo"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_UpdateDemo">
+			<result name="IC_U_UpdateDemo" type="redirectAction">
+				IC_ListInit
+			</result> 
+		</action>
+		<action name="IC_U_UpdateDemo_CSS"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_UpdateDemo_CSS">
+			<result name="IC_U_UpdateDemo_CSS" type="redirectAction">
+				IC_ListInit
+			</result> 
+		</action>
+		<action name="IC_U_Demo_downloadInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_Demo_downloadInit"> 
+			<result type="stream" name="IC_U_Demo_download">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="IC_Delete"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_Delete">
+			<result name="IC_ListInit" type="redirectAction">
+				IC_ListInit
+			</result> 
+		</action>
+		<!-- 自定义bean显示 -->
+		<action name="IC_U_InfoInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_InfoInit">
+			<result name="IC_U_Info">
+				pfms/InsuranceCategories/IC_U_demo/${IC.tableName}.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean提交新增或者提交修改 -->
+		<action name="IC_U_addOrAlter"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_addOrAlter">
+			<result name="IC_U_addOrAlter_success">
+				pfms/InsuranceCategories/IC_U_demo/IC_U_addOrAlter_success.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean数据修改显示 -->
+		<action name="IC_U_Info_AlertInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_Info_AlertInit">
+			<result name="IC_U_Info_Alert">
+				pfms/InsuranceCategories/IC_U_demo/${policy.IC_TABLENAME}.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean数据显示 -->
+		<action name="IC_U_Info_ViewInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_Info_ViewInit">
+			<result name="IC_U_Info_View">
+				pfms/InsuranceCategories/IC_U_demo/${policy.IC_TABLENAME}.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean数据显示 -->
+		<action name="IC_U_Info_View_Init"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="IC_U_Info_View_Init">
+			<result name="IC_U_Info_View_">
+				pfms/InsuranceCategories/IC_U_demo/${IC.tableName}.jsp 
+			</result> 
+		</action>
+		
+		<!-- 相关表数据获取设置 -->
+		<action name="searchRelateTableInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="searchRelateTableInit">
+			<result name="searchRelateTableInit">
+				pfms/InsuranceCategories/IC_searchRelateTable.jsp 
+			</result> 
+			<result name="searchRelateTable_moduleManage_init">
+				schedule/searchRelateTable_moduleManage.jsp 
+			</result> 
+		</action>
+		
+		<!-- 相关列数据获取设置 -->
+		<action name="relateColumnsInit"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="relateColumnsInit">
+			<result name="relateColumnsInit">
+				pfms/InsuranceCategories/IC_searchRelateTable.jsp
+			</result> 
+		</action>
+		<action name="relateColumnsInit2"
+			class="com.sopia.pfms.action.InsuranceCategoriesAction"
+			method="relateColumnsInit2">
+			<result name="relateColumnsInit2">
+				pfms/InsuranceCategories/IC_searchColumnByTable.jsp
+			</result> 
+		</action>
+		
+		<action name="searchShebei"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="searchShebei">
+			<result name="searchShebei">
+				pfms/InsuranceCategories/IC_searchShebei.jsp
+			</result>
+		</action>
+		
+		
+		<!-- 自动获取数据 -->
+		<action name="getInformationByAuto"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="getInformationByAuto">
+		</action>
+		
+		<!-- 投保时选择需要绑定数据在数据表的id -->
+		<action name="searchRelateId"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="searchRelateId">
+			<result name="searchRelateId">
+				pfms/InsuranceCategories/IC_searchRelateId.jsp
+			</result>
+		</action>
+		
+		<!-- 选择求积关联字段 -->
+		<action name="selectQiujiRelateColumn"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="selectQiujiRelateColumn">
+			<result name="selectQiujiRelateColumn">
+				pfms/InsuranceCategories/IC_selectQiujiRelateColumn.jsp
+			</result>
+		</action>
+		<!-- 选择求和关联字段 -->
+		<action name="selectQiuheRelateColumn"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="selectQiujiRelateColumn">
+			<result name="selectQiujiRelateColumn">
+				pfms/InsuranceCategories/IC_selectQiujiRelateColumn.jsp
+			</result>
+		</action>
+		
+		
+		<action name="checkColumnNameIsQiuji"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="checkColumnNameIsQiuji">
+		</action>
+		
+		<!-- 修改页面显示和范围 -->
+		<action name="changeValueByCname"
+				 class="com.sopia.pfms.action.InsuranceCategoriesAction"
+				 method="changeValueByCname">
+		</action>
+		
+		
+	</package>
+</struts>

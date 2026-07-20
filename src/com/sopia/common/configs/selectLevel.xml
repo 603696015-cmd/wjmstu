@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="selectLevel" extends="elearning">
+		
+		<action name="list_selectLevel"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="list_selectLevel">
+			<result name="list_selectLevel_success">
+				admin/etcperfect/xialajibie/list_selectLevel.jsp
+			</result>
+			<result name="list_selectLevel_showDialog_success">
+				admin/etcperfect/xialajibie/list_selectLevel_showDialog.jsp
+			</result>
+		</action>
+		<action name="list_selectlevel_childs"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="list_selectlevel_childs">
+		</action>
+		<action name="select_level_addInit"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_addInit">
+			<result name="select_level_addInit_success">
+				admin/etcperfect/xialajibie/select_level_addInit.jsp
+			</result>
+		</action>
+		<action name="select_level_add"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_add">
+			<result name="select_level_add_success">
+				admin/etcperfect/xialajibie/select_level_add_success.jsp
+			</result>
+		</action>
+		<action name="select_level_view"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_view">
+			<result name="select_level_view_success">
+				admin/etcperfect/xialajibie/select_level_view.jsp
+			</result>
+		</action>
+		<action name="select_level_alterInit"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_alterInit">
+			<result name="select_level_alterInit_success">
+				admin/etcperfect/xialajibie/select_level_alterInit.jsp
+			</result>
+		</action>
+		<action name="select_level_alter"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_alter">
+			<result name="select_level_alter_success">
+				admin/etcperfect/xialajibie/select_level_alter_success.jsp
+			</result>
+		</action>
+		<action name="select_level_deleteInit"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_deleteInit">
+			<result name="select_level_deleteInit_success">
+				admin/etcperfect/xialajibie/select_level_deleteInit.jsp
+			</result>
+		</action>
+		<action name="select_level_delete"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="select_level_delete">
+			<result name="select_level_delete_success">
+				admin/etcperfect/xialajibie/select_level_delete_success.jsp
+			</result>
+		</action>
+		
+		<action name="checkJibieshu"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="checkJibieshu">
+		</action>
+		<action name="getselectLevelListByParentId"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="getselectLevelListByParentId">
+		</action>
+		<action name="getParentid"
+			class="com.sopia.schedule.action.xialajibie.SelectLevelAction"
+			method="getParentid">
+		</action>
+		
+	</package>
+
+</struts>

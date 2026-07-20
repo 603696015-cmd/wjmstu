@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="dataallocation" extends="elearning">
+		
+		<action name="dataAllocationInit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataAllocationInit">
+			<result name="dataAllocationInit_success" >
+				admin/etcperfect/dataallocation/dataAllocationInit.jsp
+			</result>
+		</action>
+		<action name="dataAllocationFenpeiInit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataAllocationFenpeiInit">
+			<result name="dataAllocationFenpeiInit_success" >
+				admin/etcperfect/dataallocation/dataAllocationFenpeiInit.jsp
+			</result>
+		</action>
+		<action name="dataAllocationFenpei"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataAllocationFenpei">
+			<result name="dataAllocationFenpei_success" type="redirectAction">
+				dataAllocationFenpeiInit.action?tablename=${tablename}&amp;elmessage=${elmessage}&amp;id=${id}
+			</result>
+		</action>
+		<action name="dataAllocationUnFenpei"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataAllocationUnFenpei">
+			<result name="dataAllocationUnFenpei_success" type="redirectAction">
+				dataAllocationFenpeiInit.action?tablename=${tablename}&amp;elmessage=${elmessage}&amp;id=${id}
+			</result>
+		</action>
+		<action name="dataAllocationAudit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataAllocationAudit">
+			<result name="dataAllocationAudit_success" type="redirectAction">
+				dataAllocationFenpeiInit.action?tablename=${tablename}&amp;elmessage=${elmessage}&amp;id=${id}
+			</result>
+		</action>
+		<action name="dataAllocationUnAudit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataAllocationUnAudit">
+			<result name="dataAllocationUnAudit_success" type="redirectAction">
+				dataAllocationFenpeiInit.action?tablename=${tablename}&amp;elmessage=${elmessage}&amp;id=${id}
+			</result>
+		</action>
+		
+		
+		
+		<action name="myGetDataAllocationInit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="myGetDataAllocationInit">
+			<result name="myGetDataAllocationInit_success" >
+				admin/etcperfect/dataallocation/myGetDataAllocationInit.jsp
+			</result>
+		</action>
+		<action name="data_view"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="data_view">
+			<result name="data_view_success" >
+				admin/etcperfect/dataallocation/data_view.jsp
+			</result>
+		</action>
+		<action name="data_learn"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="data_learn">
+			<result name="data_learn_success" >
+				admin/etcperfect/dataallocation/data_learn.jsp
+			</result>
+		</action>
+		
+		
+		<action name="dataApplicationInit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataApplicationInit">
+			<result name="dataApplicationInit_success" >
+				admin/etcperfect/dataallocation/dataApplicationInit.jsp
+			</result>
+		</action>
+		<action name="dataApplication"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="dataApplication">
+			<result name="dataApplication_success" type="redirectAction">
+				dataApplicationInit.action?tablename=${tablename}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		
+		<action name="addLearnTimeInit"
+			class="com.sopia.schedule.action.dataallocation.DataAllocationAction"
+			method="addLearnTimeInit">
+			<result name="addLearnTimeInit_success" >
+				admin/etcperfect/dataallocation/addLearnTime.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

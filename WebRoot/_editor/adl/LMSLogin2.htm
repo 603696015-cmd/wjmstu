@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="expires" content="Tue, 20 Aug 1999 01:00:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<title>ADL Sample RTE Login</title>
+<script language=javascript>
+
+/****************************************************************************
+**
+** Function:  submit1_onclick()
+** Input:   none
+** Output:  none
+**
+** Description:  This method checks to see if both text boxes, password and
+**               username have something populating them.
+**
+***************************************************************************/
+function submit1_onclick() 
+{
+   var username = new String(loginform.uname.value);
+   var password = new String(loginform.pwd.value);
+    
+   if (username == "" || password == "")
+   {
+      alert("请输入用户名和密码");
+      return false;
+   }
+   return true;
+}
+
+</script>
+</HEAD>
+<body>
+   <font face="tahoma" size="2" color="Red"><b>
+	 用户名或密码不正确!
+   <br />
+	请重新输入.
+   </b></font>
+    
+   <form action="LMSLogin.jsp" method="Get" id="loginform" name="loginform" 
+         onSubmit="return submit1_onclick()"> 
+      <br />
+      <label><font face="tahoma" size="2" color="purple"><b>
+		用户名
+      </b></font></label>&nbsp;&nbsp;
+      <input type="text" id="uname" name="uname" value="">
+      <br />
+      <label><font face="tahoma" size="2" color="purple"><b>
+		密&nbsp;&nbsp;&nbsp;码
+      </b></font></label>&nbsp;&nbsp;
+      <input type="password" id="pwd" name="pwd" value="">
+      <br />
+      <br />
+      <input type="Submit" value="提交" id="submit1" name="submit1">
+   </form>
+</body>
+</html>

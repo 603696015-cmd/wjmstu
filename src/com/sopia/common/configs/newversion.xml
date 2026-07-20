@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="newversion" extends="elearning">
+		<!-- 新版个人中心和管理中心 -->
+		<action name="user_center_login"
+			class="com.sopia.newversion.action.NewVersionAction" method="user_center_login">
+			<result name="user_center_login_success" type="redirectAction">
+				user_center.action
+			</result>
+			<result name="user_admin_login_success" type="redirectAction">
+				user_admin.action
+			</result>
+			<result name="user_center_login_failure" >
+				user/login.jsp
+			</result>
+			<result name="user_admin_login_failure" >
+				admin/login.jsp
+			</result>
+			<result name="login_logout">
+				login_logout.jsp
+			</result>
+			<result name="user_center_login">
+				login_logout.jsp
+			</result>
+		</action>
+		<action name="cisco_user_center_login"
+			class="com.sopia.newversion.action.NewVersionAction" method="cisco_user_center_login">
+			<result name="cisco_user_center_login">
+				admin/newversion/cisco_user_center_login.jsp
+			</result>
+			
+			<result name="cisco_user_center_login_phone">
+				wsj_phone/admin/newversion/cisco_user_center_login.jsp
+			</result>
+			<result name="cisco_user_center_login_success" type="redirectAction">
+				cisco_user_center.action
+			</result>
+		</action>
+		<action name="wjm_user_center_login"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_user_center_login">
+			<result name="wjm_user_center_login">
+				admin/newversion/wjm_user_center_login.jsp
+			</result>
+			<!-- 董克2015-8-22修改wjm_user_center_navigation.action?init=1 -->
+			<result name="wjm_user_center_login_success" type="redirectAction">
+				wjm_user_center_navigation.action?init=1
+			</result>
+		</action>
+		
+		<action name="user_center"
+			class="com.sopia.newversion.action.NewVersionAction" method="user_center">
+			<result name="user_center" >
+				admin/newversion/user_center.jsp
+			</result>
+			<result name="user_center_login" >
+				user/login.jsp
+			</result>
+		</action>
+		<action name="cisco_user_center"
+			class="com.sopia.newversion.action.NewVersionAction" method="cisco_user_center">
+			<result name="cisco_user_center" >
+				admin/newversion/cisco_user_center.jsp
+			</result>
+			<result name="cisco_user_center_phone" >
+				wsj_phone/admin/newversion/cisco_user_center.jsp
+			</result>
+		</action>
+		<action name="user_admin"
+			class="com.sopia.newversion.action.NewVersionAction" method="user_admin">
+			<result name="user_admin" >
+				admin/user_admin.jsp
+			</result>
+			<result name="user_admin_login" type="redirectAction">
+				user_admin_login.action
+			</result>
+		</action>
+		
+		<action name="user_center_index"
+			class="com.sopia.newversion.action.NewVersionAction" method="user_center_index">
+			<result name="user_center_index">
+				admin/newversion/user_center_index.jsp
+			</result>
+			<result name="user_center_login">
+				login_logout.jsp
+			</result>
+		</action>
+		<action name="cisco_user_center_index"
+			class="com.sopia.newversion.action.NewVersionAction" method="cisco_user_center_index">
+			<result name="cisco_user_center_index">
+				admin/newversion/cisco_user_center_index.jsp
+			</result>
+			<result name="cisco_user_center_index_phone">
+				wsj_phone/admin/newversion/cisco_user_center_index.jsp
+			</result>
+		</action>
+		
+		<action name="listChildFunc"
+			class="com.sopia.newversion.action.NewVersionAction" method="listChildFunc">
+		</action>
+		
+		<action name="rolefunc_addInit_only_can_check_one"
+			class="com.sopia.newversion.action.NewVersionAction" method="rolefunc_addInit_only_can_check_one">
+			<result name="rolefunc_addInit_only_can_check_one">
+				admin/newversion/rolefunc_addInit_only_can_check_one.jsp
+			</result>
+		</action>
+		
+		<action name="can_selected"
+			class="com.sopia.newversion.action.NewVersionAction" method="can_selected">
+		</action>
+		<action name="getFuncById_newVersion"
+			class="com.sopia.newversion.action.NewVersionAction" method="getFuncById_newVersion">
+		</action>
+		
+		<action name="showallWeishen"
+			class="com.sopia.newversion.action.NewVersionAction" method="showallWeishen">
+			<result name="showallWeishen">
+				admin/newversion/showallWeishen.jsp
+			</result>
+		</action>
+		<action name="cisco_registerInit"
+			class="com.sopia.newversion.action.NewVersionAction" method="cisco_registerInit">
+			<result name="cisco_registerInit">
+				admin/newversion/cisco_register.jsp
+			</result>
+			<result name="cisco_registerInit_phone">
+				wsj_phone/admin/newversion/cisco_register.jsp
+			</result>
+		</action>
+		<action name="wjm_registerInit"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_registerInit">
+			<result name="wjm_registerInit">
+				admin/newversion/wjm_register.jsp
+			</result>
+		</action>
+		<action name="jg_registerInit"
+			class="com.sopia.newversion.action.NewVersionAction" method="jg_registerInit">
+			<result name="jg_registerInit">
+				test.jsp
+			</result>
+		</action>
+		<action name="sendcode" class="com.sopia.newversion.action.NewVersionAction" method="sendcode">
+		</action>
+		<action name="jg_register"
+			class="com.sopia.newversion.action.NewVersionAction" method="jg_register">
+			<result name="jg_register">
+				test.jsp
+			</result>
+		<!-- <result name="login" type="redirectAction">
+				index_jg.action?department.id=${department.id}
+			</result> -->	
+		</action>
+		<action name="jg_login" class="com.sopia.duman.action.UserAction"
+			method="jg_login">
+			<result name="login_success" type="redirectAction">
+				admin.action?module=studentman
+			</result>
+			<result name="login_study" type="redirectAction">
+				index_jg.action?department.id=${department.id}
+			</result>
+			<result name="login_logout">login_logout.jsp</result>
+			<result name="index" type="redirectAction">
+				index_jg.action?department.id=${department.id}
+			</result>
+			<result name="ie_set">admin/security/ie_set.jsp</result>
+		</action>
+		<action name="cisco_register"
+			class="com.sopia.newversion.action.NewVersionAction" method="cisco_register">
+			<result name="cisco_register_success">register_success.jsp</result>
+			<result name="cisco_register" type="redirectAction">cisco_registerInit.action</result>
+			<result name="cisco_user_center_login" type="redirectAction">
+				cisco_user_center_login.action?elUser.username=${elUser.username}&amp;elUser.password=${elUser.password}&amp;myLogin.ipAddr=${myLogin.ipAddr}
+			</result>
+		</action>
+		<action name="wjm_register"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_register">
+			<result name="wjm_register_success">register_success.jsp</result>
+			<result name="wjm_register" type="redirectAction">wjm_registerInit.action</result>
+			<result name="wjm_user_center_login" type="redirectAction">
+				wjm_user_center_login.action?elUser.username=${elUser.username}&amp;elUser.password=${elUser.password}&amp;myLogin.ipAddr=${myLogin.ipAddr}
+			</result>
+		</action>
+		<action name="frontZhengshuSearch"
+			class="com.sopia.newversion.action.NewVersionAction" method="frontZhengshuSearch">
+			<result name="frontZhengshuSearch">
+				elfrontman/cisco_frontZhengshuSearch.jsp
+			</result>
+		</action>
+		<action name="wjm_student_myinfo" class="com.sopia.newversion.action.NewVersionAction" method="wjm_student_myinfo">
+			<result name="wjm_student_myinfo">
+				admin/newversion/wjm_student_myinfo.jsp
+			</result>
+		</action>
+		<action name="wjm_student_myalterInit" class="com.sopia.newversion.action.NewVersionAction" method="wjm_student_myalterInit">
+			<result name="wjm_student_myalterInit">
+				admin/newversion/wjm_student_myalterInit.jsp
+			</result>
+		</action>
+		<action name="wjm_student_myalter" class="com.sopia.newversion.action.NewVersionAction" method="wjm_student_myalter">
+			<result name="wjm_student_myalter_success" >
+				admin/newversion/wjm_student_myalter_success.jsp
+			</result>
+		</action>
+		<action name="wjm_account_importInit"
+			class="com.sopia.newversion.action.NewVersionAction"
+			method="wjm_account_importInit">
+			<result name="wjm_account_importInit">
+				admin/newversion/wjm_account_import.jsp
+			</result>
+		</action>
+		<action name="wjm_accountImportCheck"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_accountImportCheck">
+			<result name="account_import">
+				admin/newversion/wjm_account_import.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/newversion/wjm_account_importBydep.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/newversion/wjm_accountImportInfo.jsp
+			</result>
+		</action>
+		
+		<action name="wjm_account_import"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_import">
+			<result name="account_import_success">
+				admin/newversion/wjm_account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/newversion/wjm_account_import.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				wjm_account_search.action
+			</result>
+		</action>
+		
+		<action name="wjm_account_search"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_search">
+			<result name="account_result">
+				admin/newversion/wjm_account_list.jsp
+			</result>
+			<result name="account_search_Excel">
+				admin/duman/account_search_Excel.jsp
+			</result>
+		</action>
+		<action name="wjm_account_addInit"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_addInit">
+			<result name="wjm_account_addInit">
+				admin/newversion/wjm_account_addInit.jsp
+			</result>
+		</action>
+		<action name="wjm_account_add"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_add">
+			<result name="wjm_account_add" type="redirectAction">
+				wjm_account_search.action
+			</result>
+		</action>
+		<action name="wjm_account_view"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_view">
+			<result name="wjm_account_view" >
+				admin/newversion/wjm_account_view.jsp
+			</result>
+		</action>
+		<action name="wjm_account_alterInit"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_alterInit">
+			<result name="wjm_account_alterInit" >
+				admin/newversion/wjm_account_alterInit.jsp
+			</result>
+		</action>
+		<action name="wjm_account_alter"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_account_alter">
+			<result name="wjm_account_alter_success" type="redirectAction">
+				wjm_account_view.action?elUser.id=${elUser.id}
+			</result>
+		</action>
+			<!-- 短信验证 -->
+		<action name="sendSMSCode"
+			class="com.sopia.newversion.action.NewVersionAction" method="sendSMSCode">
+		</action>
+		<action name="checkSMSCode"
+			class="com.sopia.newversion.action.NewVersionAction" method="checkSMSCode">
+		</action>
+		<!-- 外联用户 -->
+		<action name="wailian_user_center_login"
+			class="com.sopia.newversion.action.NewVersionAction" method="wailian_user_center_login">
+			<result name="wailian_user_center_login">
+				admin/login_wailianyonghu.jsp
+			</result>
+			
+			<result name="wailian_user_center_login_phone">
+				wsj_phone/admin/login_wailianyonghu.jsp
+			</result>
+			<result name="wailian_user_center_login_success" type="redirectAction">
+				wailian_user_center_index.action
+			</result>
+		</action>
+		<action name="wailian_user_center"
+			class="com.sopia.newversion.action.NewVersionAction" method="wailian_user_center">
+			<result name="wailian_user_center" >
+				admin/newversion/cisco_user_center.jsp
+			</result>
+			<result name="wailian_user_center_phone" >
+				wsj_phone/admin/newversion/cisco_user_center.jsp
+			</result>
+		</action>
+		<action name="wailian_user_center_index"
+			class="com.sopia.newversion.action.NewVersionAction" method="wailian_user_center_index">
+			<result name="wailian_user_center_index">
+				admin/newversion/index_wailian.jsp
+			</result>
+			<result name="wailian_user_center_index_phone">
+				wsj_phone/admin/newversion/cisco_user_center_index.jsp
+			</result>
+		</action>
+		<!-- 外联结束 -->
+		
+		<!-- 山东项目 -->
+		<action name="sd_user_center_login"
+			class="com.sopia.newversion.action.NewVersionAction" method="sd_user_center_login">
+			<result name="sd_user_center_login_success" type="redirectAction">
+				sd_user_center.action
+			</result>
+			<result name="study" type="redirectAction">
+				study.action
+			</result>
+			<result name="sd_user_admin_login_success" type="redirectAction">
+				sd_user_admin.action
+			</result>
+			<result name="sd_user_center_login_failure" >
+				user/login.jsp
+			</result>
+			<result name="sd_user_admin_login_failure" >
+				admin/login.jsp
+			</result>
+			<result name="login_logout">
+				login_logout.jsp
+			</result>
+			<result name="sd_user_center_login">
+				login_logout.jsp
+			</result>
+		</action>
+		
+		<action name="sd_user_center"
+			class="com.sopia.newversion.action.NewVersionAction" method="sd_user_center">
+			<result name="sd_user_center" >
+				user/sd_user_center.jsp
+			</result>
+			<result name="sd_user_center_login" >
+				user/login.jsp
+			</result>
+		</action>
+		
+		<action name="sd_user_center_index"
+			class="com.sopia.newversion.action.NewVersionAction" method="sd_user_center_index">
+			<result name="sd_user_center_index">
+				user/sd_user_center_index.jsp
+			</result>
+			<result name="sd_user_center_index_phone">
+				wsj_phone/admin/newversion/cisco_user_center_index.jsp
+			</result>
+		</action>
+		
+		
+		<!-- 山东项目 -->
+		<action name="sd_registerInit"
+			class="com.sopia.newversion.action.NewVersionAction" method="sd_registerInit">
+			<result name="sd_registerInit">
+				user/sd_register.jsp
+			</result>
+		</action>
+		<action name="sendcode" class="com.sopia.newversion.action.NewVersionAction" method="sendcode">
+		</action>
+		<action name="jg_register"
+			class="com.sopia.newversion.action.NewVersionAction" method="jg_register">
+			<result name="jg_register">
+				test.jsp
+			</result>
+		</action>
+		
+		
+		<!-- 山东项目 -->
+		<action name="sd_register"
+			class="com.sopia.newversion.action.NewVersionAction" method="sd_register">
+			<result name="sd_register_success">register_success.jsp</result>
+			<result name="sd_register" type="redirectAction">sd_registerInit.action</result>
+			<result name="sd_user_center_login" type="redirectAction">
+				sd_user_center_login.action?elUser.username=${elUser.username}&amp;elUser.password=${elUser.password}&amp;myLogin.ipAddr=${myLogin.ipAddr}
+			</result>
+		</action>
+		
+		<!-- 山东项目导航 -->
+		
+		<action name="sd_navigation"
+			class="com.sopia.newversion.action.NewVersionAction" method="sd_navigation">
+			<result name="sd_navigation">
+				user/sd_navigation.jsp
+			</result>
+		</action>
+		
+		<!-- 招聘模块 -->
+		<action name="resume_baseinfo" class="com.sopia.recruit.action.RecruitAction" method="resume_baseinfo">
+			<result name="resume_baseinfo">
+				admin/newversion/resume_baseinfo.jsp
+			</result>
+		</action>
+		<action name="resume_baseinfo_save" class="com.sopia.recruit.action.RecruitAction" method="resume_baseinfo_save">
+			<result name="resume_baseinfo_save">
+				admin/newversion/resume_baseinfo2.jsp
+			</result>
+		</action>
+		<action name="resume_baseinfo_save_next" class="com.sopia.recruit.action.RecruitAction" method="resume_baseinfo_save_next">
+			<result name="resume_baseinfo_save_next">
+				admin/newversion/resume_finish.jsp
+			</result>
+		</action>
+		<action name="resume_alterInit" class="com.sopia.recruit.action.RecruitAction" method="resume_alterInit">
+			<result name="resume_alterInit">
+				admin/newversion/resume_alterInit.jsp
+			</result>
+		</action>
+		<action name="resume_alterUserInfoInit" class="com.sopia.recruit.action.RecruitAction" method="resume_alterUserInfoInit">
+			<result name="resume_alterUserInfoInit">
+				admin/newversion/resume_contactinfo.jsp
+			</result>
+		</action>
+		<action name="resume_alterUserInfo" class="com.sopia.recruit.action.RecruitAction" method="resume_alterUserInfo">
+			<result name="resume_alterUserInfo" type="redirectAction">
+				resume_alterInit.action?recruit.id=${recruit.id}
+			</result>
+		</action>
+		<action name="resume_alterWorkInit" class="com.sopia.recruit.action.RecruitAction" method="resume_alterWorkInit">
+			<result name="resume_alterWorkInit" >
+				admin/newversion/resume_alterWork.jsp
+			</result>
+		</action>
+		<action name="resume_alterWork" class="com.sopia.recruit.action.RecruitAction" method="resume_alterWork">
+			<result name="resume_alterWork" type="redirectAction">
+				resume_alterInit.action?recruit.id=${recruit.id}
+			</result>
+		</action>
+		<action name="resume_alterAssessInit" class="com.sopia.recruit.action.RecruitAction" method="resume_alterAssessInit">
+			<result name="resume_alterAssessInit" >
+				admin/newversion/resume_alterAssessInit.jsp
+			</result>
+		</action>
+		<action name="resume_alterAssess" class="com.sopia.recruit.action.RecruitAction" method="resume_alterAssess">
+			<result name="resume_alterAssess" type="redirectAction">
+				resume_alterInit.action?recruit.id=${recruit.id}
+			</result>
+		</action>
+		
+		<action name="resume_alterWorkExpInit" class="com.sopia.recruit.action.RecruitAction" method="resume_alterWorkExpInit">
+			<result name="resume_alterWorkExpInit" >
+				admin/newversion/resume_alterWorkExpInit.jsp
+			</result>
+		</action>
+		<action name="alterWorkExpInit" class="com.sopia.recruit.action.RecruitAction" method="alterWorkExpInit">
+			<result name="alterWorkExpInit" >
+				admin/newversion/alterWorkExpInit.jsp
+			</result>
+		</action>
+		<action name="alterWorkExp" class="com.sopia.recruit.action.RecruitAction" method="alterWorkExp">
+			<result name="alterWorkExp" type="redirectAction">
+				resume_alterWorkExpInit.action?recruit.id=${recruit.id}
+			</result>
+		</action>
+		<action name="resume_addWorkExp" class="com.sopia.recruit.action.RecruitAction" method="resume_addWorkExp">
+			<result name="resume_addWorkExp" type="redirectAction">
+				resume_alterInit.action?recruit.id=${recruit.id}
+			</result>
+		</action>
+		<action name="resume_alterSchoolInit" class="com.sopia.recruit.action.RecruitAction" method="resume_alterSchoolInit">
+			<result name="resume_alterSchoolInit" >
+				admin/newversion/resume_alterSchoolInit.jsp
+			</result>
+		</action>
+		<action name="resume_alterSchool" class="com.sopia.recruit.action.RecruitAction" method="resume_alterSchool">
+			<result name="resume_alterSchool" type="redirectAction">
+				resume_alterInit.action?recruit.id=${recruit.id}
+			</result>
+		</action>
+		
+		
+			<!-- 三级菜单导航 -->
+		
+		<action name="three_menu"
+			class="com.sopia.newversion.action.NewVersionAction" method="three_menu">
+			<result name="three_menu">
+				admin/newversion/three_menu.jsp
+			</result>
+		</action>
+		
+		
+		<!--20141008 wjm_admin_login -->
+		
+		<action name="wjm_admin_login"
+			class="com.sopia.newversion.action.NewVersionAction" method="wjm_admin_login">
+			<result name="wjm_admin_login">
+				admin/newversion/admin_login.jsp
+			</result>
+			
+			<result name="wjm_admin_login_phone">
+				wsj_phone/admin/newversion/admin_login.jsp
+			</result>
+			<result name="wjm_admin_login_success" type="redirectAction">
+				study.action
+			</result>
+		</action>
+	</package>
+</struts>

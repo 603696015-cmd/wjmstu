@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="lableTree" extends="elearning">
+		<action name="list_lableTree_childs"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="list_lableTree_childs">
+		</action>
+	
+		<action name="list_lableTree"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="list_lableTree">
+			<result name="list_lableTree">
+				admin/mode/labletree/list_lableTree.jsp
+			</result>
+		</action>
+		<action name="addLableTreeInit"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="addLableTreeInit">
+			<result name="addLableTreeInit">
+				admin/mode/labletree/addLableTreeInit.jsp
+			</result>
+		</action>
+		<action name="addLableTree"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="addLableTree">
+			<result name="addLableTree_success">
+				admin/mode/labletree/addLableTree_success.jsp
+			</result>
+		</action>
+		<action name="viewLableTree"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="viewLableTree">
+			<result name="viewLableTree_success">
+				admin/mode/labletree/viewLableTree.jsp
+			</result>
+		</action>
+		<action name="alterLableTreeInit"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="alterLableTreeInit">
+			<result name="alterLableTreeInit">
+				admin/mode/labletree/alterLableTreeInit.jsp
+			</result>
+		</action>
+		<action name="alterLableTree"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="alterLableTree">
+			<result name="alterLableTree_success">
+				admin/mode/labletree/alterLableTree_success.jsp
+			</result>
+		</action>
+		<action name="deleteLableTreeInit"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="deleteLableTreeInit">
+			<result name="deleteLableTreeInit">
+				admin/mode/labletree/deleteLableTreeInit.jsp
+			</result>
+		</action>
+		<action name="deleteLableTree"
+			class="com.sopia.lable.action.LableTreeAction"
+			method="deleteLableTree">
+			<result name="deleteLableTree_success">
+				admin/mode/labletree/deleteLableTree_success.jsp
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0115)http://10.40.28.70/coremail/fcg/ldapapp?funcid=toppage&tempname=simple_top.htm&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB -->
+<!-- simple_top.htm -->
+<HTML>
+	<HEAD>
+		<TITLE>Top</TITLE>
+		<META http-equiv=Content-Type content="text/html; charset=utf-8">
+		<LINK href="ldapapp.files/simple_folder.css" type=text/css
+			rel=stylesheet>
+		<SCRIPT src="ldapapp.files/simple_top.js" type=text/javascript></SCRIPT>
+
+		<SCRIPT language=javascript>
+function showSubMenu(obj,flag) {
+	var toolbar = document.getElementById("toolbar");
+	var toolbar_link = document.getElementById("toolbar_link");
+	toolbar.style.display='';	
+	toolbar.style.top="20px";
+	toolbar_link.innerHTML="";
+	toolbar.style.left=f_GetX(obj) + "px";
+
+	var html="";
+	switch(flag){
+		case "address":
+			html = '<a >联系人</a> <a>联系组</a> <a>搜索/打印</a>  <a >导入/导出</a>';
+			break;
+		case "options":
+			html='<a >参数设置</a> <a  >修改资料</a> <a  >修改密码</a>  <a>更多选项</a>';
+			break;
+		case "POP":
+			html='<a  >POP设置</a> <a >POP收信</a>';
+			break;
+		default:
+			html='';
+	}
+	toolbar_link.innerHTML = html;
+}
+</SCRIPT>
+
+		<META content="MSHTML 6.00.2900.3268" name=GENERATOR>
+	</HEAD>
+	<BODY
+		onmousemove="fMouseMove(document.all ? event.srcElement : event.target)"
+		style="MARGIN-TOP: 0px; MARGIN-LEFT: 0px">
+		<TABLE class=tablecolor5 height=51 cellSpacing=0 cellPadding=0
+			width="100%" border=0>
+			<TBODY>
+				<TR>
+					<TD class=css id=defaultLogo style="DISPLAY: block" noWrap
+						width="7%" height=50>
+						<IMG alt=LOGO src="ldapapp.files/logo.gif" border=0>
+					</TD>
+					<TD class=css vAlign=top align=right width="93%" height=50>
+						您好,123456@gat.gd
+						<!--StripedByPackage-->
+						<A onmouseover="showSubMenu(this,'address');"
+							style="CURSOR: pointer"
+							target=main>通讯录▼ </A> &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						<A onmouseover="showSubMenu(this,'options');"
+							target=main>邮箱选项▼ </A> &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						<A onmouseover="showSubMenu(this,'POP');"
+							target=main>POP收信▼ </A> &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						<A  target=_blank>帮助</A>
+						&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						<A >退出</A>
+					</TD>
+				</TR>
+				<TR>
+					<TD class=tablecolor3 colSpan=3 height=1></TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+		<DIV class=menubgcolor1 id=toolbar onmouseover=bOver=true
+			style="PADDING-RIGHT: 1px; MARGIN-TOP: 3px; DISPLAY: none; PADDING-LEFT: 1px; Z-INDEX: 100; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; POSITION: absolute; TOP: 26px">
+			<DIV class=menubgcolor2 id=toolbar_link></DIV>
+		</DIV>
+		<!--StripedByPackage-->
+		<!-- CoreMail Version 3.0.7a Copyright (c) 2002-2011 www.mailtech.cn -->
+	</BODY>
+</HTML>

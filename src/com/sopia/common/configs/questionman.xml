@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_question" extends="elearning">
+		<!--试题试卷库管理 -->
+		<action name="question_lib_list"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_list">
+			<result name="question_lib_list">
+				admin/question/question_lib_list.jsp
+			</result>
+		</action>
+		<action name="question_lib_addInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_addInit">
+			<result name="question_lib_add">
+				admin/question/question_lib_add.jsp
+			</result>
+		</action>
+		<action name="question_lib_add"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_add">
+			<!-- <result name="question_lib_add_success">
+				admin/question/question_lib_add_success.jsp
+			</result> -->
+			<result name="question_lib_add_success" type="redirectAction">
+				question_lib_view.action?questionLib.id=${questionLib.id}
+			</result>
+		</action>
+		<action name="qlib_delete_user"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="qlib_delete_user">
+		</action>
+		<action name="question_lib_view"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_view">
+			<result name="question_lib_view">
+				admin/question/question_lib_view.jsp
+			</result>
+		</action>
+		<action name="question_lib_alterInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_alterInit">
+			<result name="question_lib_alter">
+				admin/question/question_lib_alter.jsp
+			</result>
+		</action>
+		<action name="question_lib_alter"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_alter">
+			<!-- <result name="question_lib_alter_success">
+				admin/question/question_lib_alter_success.jsp
+			</result>-->
+			<result name="question_lib_alter_success" type="redirectAction">
+				question_lib_view.action?questionLib.id=${questionLib.id}
+			</result>
+		</action>
+		<action name="question_lib_deleteInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_deleteInit">
+			<result name="question_lib_delete">
+				admin/question/question_lib_delete.jsp
+			</result>
+		</action>
+		<action name="question_lib_delete"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_delete">
+			<result name="question_lib_delete_success">
+				admin/question/question_lib_delete_success.jsp
+			</result>
+		</action>
+		<action name="questionlib_importInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionlib_importInit">
+			<result name="questionlib_import">
+				admin/question/questionlib_import.jsp
+			</result>
+		</action>
+		<action name="questionlib_import"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionlib_import">
+			<result name="questionlib_import_success">
+				admin/question/questionlib_import_success.jsp
+			</result>
+			<result name="questionlib_import">
+				admin/question/questionlib_import.jsp
+			</result>
+		</action>
+		<action name="question_importInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_importInit">
+			<result name="question_import">
+				admin/question/question_import.jsp
+			</result>
+		</action>
+		<action name="question_import"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_import">
+			<result name="question_import_success">
+				admin/question/question_import_success.jsp
+			</result>
+			<result name="question_import">
+				admin/question/question_import.jsp
+			</result>
+			<result name="question_list" type="redirectAction">
+				question_list.action
+			</result>
+		</action>
+		<action name="question_importByqlibInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_importByqlibInit">
+			<result name="question_importByqlib">
+				admin/question/question_importByqlib.jsp
+			</result>
+		</action>
+		<action name="question_importByqlib"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_importByqlib">
+			<result name="question_import_success">
+				admin/question/question_import_success.jsp
+			</result>
+			<result name="question_importByqlib">
+				admin/question/question_importByqlib.jsp
+			</result>
+			<result name="question_list" type="redirectAction">
+				question_list.action
+			</result>
+			<result name="question_import_result">
+				admin/question/question_import_result.jsp
+			</result>
+		</action>
+		<action name="question_importByqlibcheck"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_importByqlibcheck">
+			<result name="question_importByqlibcheck">
+				admin/question/question_importByqlibcheck.jsp
+			</result>
+		</action>
+		<!-- 试题管理 -->
+		<action name="question_add_type" class="com.sopia.questionman.action.QuestionAction" method="question_add_type">
+			<result name="question_add_type">admin/question/question_add_type.jsp</result>
+		</action>
+		<action name="question_addInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_addInit">
+			<result name="question_add">
+				admin/question/question_add.jsp
+			</result>
+			<result name="question_view_cailiao_add">
+				admin/question/question_view_cailiao_add.jsp
+			</result>
+		</action>
+		<action name="question_add"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_add">
+			<result name="question_add_success">
+				admin/question/question_add_success.jsp
+			</result>
+			<result name="question_list" type="redirectAction">
+				question_list.action?question.qlib.id=${question.qlib.id}&amp;question.status=-1
+			</result>
+			<result name="question_alterInit" type="redirectAction">
+				question_alterInit.action?question.id=${question.parent.id}&amp;isCaiLiao=1
+			</result>
+		</action>
+		<action name="question_alter_scorepre"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_alter_scorepre">
+		</action>
+		<action name="questionartlist"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionartlist">
+			<result name="questionartlist">
+				admin/question/questionartlist.jsp
+			</result>
+		</action>
+		<action name="questionartdelete"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionartdelete">
+			<result name="questionartlist">
+				admin/question/questionartlist.jsp
+			</result>
+		</action>
+		<action name="questionartalterinit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionartalterinit">
+			<result name="questionartalter">
+				admin/question/questionartalter.jsp
+			</result>
+		</action>
+		<action name="questionartalter"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionartalter">
+			<result name="questionartlist">
+				admin/question/questionartlist.jsp
+			</result>
+		</action>
+		<action name="questionartaddinit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionartaddinit">
+			<result name="questionartadd">
+				admin/question/questionartadd.jsp
+			</result>
+		</action>
+		<action name="questionartadd"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionartadd">
+			<result name="questionartlist">
+				admin/question/questionartlist.jsp
+			</result>
+		</action>
+		<action name="qanswer_search"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="qanswer_search">
+			<result name="qanswer_searchlist">
+				admin/question/qanswer_searchlist.jsp
+			</result>
+		</action>
+		<action name="question_listInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_listInit">
+			<result name="question_listInit">
+				admin/question/question_listInit.jsp
+			</result>
+		</action>
+		<action name="question_list"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_list">
+			<result name="question_list">
+				admin/question/question_list.jsp
+			</result>
+			<result name="question_exportExcel">
+				admin/question/question_exportExcel.jsp
+			</result>
+		</action>
+		<action name="question_select_impExecelInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_select_impExecelInit">
+			<result name="question_select_impExecel" >
+				admin/question/question_select_impExecel.jsp
+			</result> 
+			<result name="question_exportExcel">
+				admin/question/question_exportExcel.jsp
+			</result>
+		</action>
+		<action name="question_delete_impExecel"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_delete_impExecel">
+			<result name="question_select_impExecel" type="redirectAction">
+				question_select_impExecelInit.action
+			</result> 
+		</action>
+		<action name="question_listInC"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_listInC">
+			<result name="question_cailiao_list">
+				admin/question/question_cailiao_list.jsp
+			</result>
+		</action>
+		<action name="addQuestionToC"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="addQuestionToC">
+			<result name="question_alterInit" type="redirectAction">
+				question_alterInit.action?question.id=${questionParid}&amp;isCaiLiao=1
+			</result>
+		</action>
+		<action name="question_delete"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_delete">
+			<result name="question_delete">
+				admin/question/question_list.jsp
+			</result>
+		</action>
+		<action name="question_delete_status"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_delete_status">
+			<result name="question_delete">
+				admin/question/question_list.jsp
+			</result>
+		</action>
+		<!-- 修改试题状态 -->
+		<action name="question_update_status"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_update_status">
+			<result name="question_update">
+				admin/question/question_list.jsp
+			</result>
+		</action>
+		<action name="question_alterInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_alterInit">
+			<result name="question_alter">
+				admin/question/question_alter.jsp
+			</result>
+			<result name="question_view_cailiao_alter">
+				admin/question/question_view_cailiao_alter.jsp
+			</result>
+		</action>
+		<action name="question_alter"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_alter">
+			<result name="question_alter_success">
+				admin/question/question_alter_success.jsp
+			</result>
+			<result name="question_list" type="redirectAction">
+				question_list.action?question.qlib.id=${question.qlib.id}&amp;question.status=-1
+			</result>
+		</action>
+		<action name="question_view"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_view">
+			<result name="question_view">
+				admin/question/question_view.jsp
+			</result>
+		</action>
+		<action name="question_view_status"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_view_status">
+			<result name="question_view_status">
+				admin/question/question_view_status.jsp
+			</result>
+		</action>
+		<action name="questionchild_add_type"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_add_type">
+			<result name="questionchild_add_type">
+				admin/question/questionchild_add_type.jsp
+			</result>
+		</action>
+		<action name="questionchild_addInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_addInit">
+			<result name="questionchild_add">
+				admin/question/questionchild_add.jsp
+			</result>
+		</action>
+		<action name="questionchild_add"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_add">
+			<result name="questionchild_add_success">
+				admin/question/questionchild_add_success.jsp
+			</result>
+		</action>
+		<action name="questionchild_alterInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_alterInit">
+			<result name="questionchild_alter">
+				admin/question/questionchild_alter.jsp
+			</result>
+		</action>
+		<action name="questionchild_alter"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_alter">
+			<result name="questionchild_alter_success">
+				admin/question/questionchild_alter_success.jsp
+			</result>
+			<result name="question_list" type="redirectAction">
+				question_list.action?question.qlib.id=${question.qlib.id}
+			</result>
+			<result name="question_alterInit" type="redirectAction">
+				question_alterInit.action?question.id=${question.parent.id}&amp;isCaiLiao=1
+			</result>
+		</action>
+		<action name="questionchild_view"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_view">
+			<result name="questionchild_view">
+				admin/question/questionchild_view.jsp
+			</result>
+		</action>
+		<action name="questionchild_delete"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_delete">
+			<result name="question_view" type="redirectAction">
+				question_view?question.id=${question.parent.id}
+			</result>
+			<result name="question_alterInit" type="redirectAction">
+				question_alterInit.action?question.id=${question.parent.id}&amp;isCaiLiao=1
+			</result>
+		</action>
+		<action name="questionchild_upSort"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_upSort">
+			<result name="question_view" type="redirectAction">
+				question_view?question.id=${question.parent.id}
+			</result>
+		</action>
+		<action name="questionchild_downSort"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionchild_downSort">
+			<result name="question_view" type="redirectAction">
+				question_view?question.id=${question.parent.id}
+			</result>
+		</action>
+		<!-- 试卷已创建 -->
+		<action name="exampaper_update_status"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_update_status">
+			<result name="exampaper_update_status">
+				admin/exampaper/exampaper_update_status.jsp
+			</result>
+		</action>
+		<!-- 试卷管理 -->
+		<action name="exampaperLib_addInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_addInit">
+			<result name="exampaperLib_add">
+				admin/exampaper/exampaperlib_add.jsp
+			</result>
+		</action>
+		<action name="eplib_delete_user"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="eplib_delete_user">
+		</action>
+
+		<action name="exampaperLib_add"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_add">
+			<!-- <result name="exampaperLib_add_success">
+				admin/exampaper/exampaperlib_add_success.jsp
+			</result>-->
+			<result name="exampaperLib_add_success" type="redirectAction">
+				exampaperLib_view.action?examPaperLib.id=${examPaperLib.id}
+			</result>
+		</action>
+		<action name="exampaperLib_list"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_list">
+			<result name="exampaperLib_list">
+				admin/exampaper/exampaperlib_list.jsp
+			</result>
+		</action>
+		<action name="course_exam_readlistInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="course_exam_readlistInit">
+			<result name="course_exam_readlist">
+				admin/exampaper/course_exam_readlist.jsp
+			</result>
+		</action>
+		<action name="course_exam_readlistInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="course_exam_readlistInit">
+			<result name="course_exam_readlist">
+				admin/exampaper/course_exam_readlist.jsp
+			</result>
+		</action>
+		<action name="exampaperLib_view"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_view">
+			<result name="exampaperLib_view">
+				admin/exampaper/exampaperlib_view.jsp
+			</result>
+		</action>
+		<action name="exampaperLib_alterInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_alterInit">
+			<result name="exampaperLib_alter">
+				admin/exampaper/exampaperlib_alter.jsp
+			</result>
+		</action>
+		<action name="exampaperLib_alter"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_alter">
+			<!-- <result name="exampaperLib_alter_success">
+				admin/exampaper/exampaperlib_alter_success.jsp
+			</result>-->
+			<result name="exampaperLib_alter_success" type="redirectAction">
+				exampaperLib_view.action?examPaperLib.id=${examPaperLib.id}
+			</result>
+		</action>
+		<action name="exampaperLib_deleteInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_deleteInit">
+			<result name="exampaperLib_delete">
+				admin/exampaper/exampaperlib_delete.jsp
+			</result>
+		</action>
+		<action name="exampaperLib_delete"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperLib_delete">
+			<result name="exampaperLib_delete_success">
+				admin/exampaper/exampaperlib_delete_success.jsp
+			</result>
+		</action>
+		<action name="exampaper_addInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_addInit">
+			<result name="exampaper_add">
+				admin/exampaper/exampaper_add.jsp
+			</result>
+		</action>
+		<action name="exampaper_add"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_add">
+			<result name="exampaper_add">
+				admin/exampaper/exampaper_add.jsp
+			</result>
+			<result name="exampaper_add_success">
+				admin/exampaper/exampaper_add_success.jsp
+			</result>
+		</action>
+		<action name="exampaper_view"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_view">
+			<result name="exampaper_view">
+				admin/exampaper/exampaper_view.jsp
+			</result>
+		</action>
+		<!-- 试卷复制 -->
+		<action name="exampaper_copy"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_copy">
+			<result name="exampaper_copy" type="redirectAction">
+				exampaper_all_alterinit?examPaper.id=${examPaper.id}
+			</result>
+		</action>
+		<action name="exampaper_all_alterinit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_all_alterinit">
+			<result name="exampaper_all_alter">
+				admin/exampaper/exampaper_all_alter.jsp
+			</result>
+		</action>
+		<action name="exampaper_preview"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_preview">
+			<result name="exampaper_preview">
+				admin/exampaper/exampaper_preview.jsp
+			</result>
+		</action>
+		<action name="exampaper_preview_1b1"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_preview_1b1">
+			<result name="exampaper_preview_1b1">
+				admin/exampaper/exampaper_preview_1b1.jsp
+			</result>
+		</action>
+		<action name="exampaper_alterInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_alterInit">
+			<result name="exampaper_alter">
+				admin/exampaper/exampaper_alter.jsp
+			</result>
+		</action>
+		<action name="exampaper_alter"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_alter">
+			<result name="exampaper_view" type="redirectAction">
+				exampaper_view?examPaper.id=${examPaper.id}
+			</result>
+		</action>
+		<action name="exampaper_listInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_listInit">
+			<result name="exampaper_listInit">
+				admin/exampaper/exampaper_listInit.jsp
+			</result>
+		</action>
+		<action name="exampaper_list"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_list">
+			<result name="exampaper_list">
+				admin/exampaper/exampaper_list.jsp
+			</result>
+		</action>
+		<action name="epread_quizlist"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="epread_quizlist">
+			<result name="epread_quizlist">
+				admin/exampaper/epread_quizlist.jsp
+			</result>
+		</action>
+		<action name="exampaper_delete"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_delete">
+			<result name="exampaper_list">
+				admin/exampaper/exampaper_list.jsp
+			</result>
+		</action>
+		<action name="exampaper_delete_status"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_delete_status">
+			<result name="exampaper_list">
+				admin/exampaper/exampaper_list.jsp
+			</result>
+		</action>
+		<!-- 大题管理 -->
+		<action name="exampaperblock_list"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_list">
+			<result name="exampaperblock_list">
+				admin/exampaper/exampaperblock_list.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_details_list"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_details_list">
+			<result name="exampaperblock_details_list">
+				admin/exampaper/exampaperblock_details_list.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_upsort"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_upsort">
+			<result name="exampaperblock_list" type="redirectAction">
+				exampaperblock_list?examPaper.id=${examPaper.id}
+			</result>
+		</action>
+		<action name="exampaperblock_downsort"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_downsort">
+			<result name="exampaperblock_list" type="redirectAction">
+				exampaperblock_list?examPaper.id=${examPaper.id}
+			</result>
+		</action>
+		<action name="exampaperblock_addInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_addInit">
+			<result name="exampaperblock_add">
+				admin/exampaper/exampaperblock_add.jsp
+			</result>
+		</action>
+		<action name="questionCountInfo"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="questionCountInfo">
+			<result name="questionCountInfo">
+				admin/question/questionCountInfo.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_add"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_add">
+			<result name="exampaperblock_add_success">
+				admin/exampaper/exampaperblock_add_success.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_view"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_view">
+			<result name="exampaperblock_view">
+				admin/exampaper/exampaperblock_view.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_alterInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_alterInit">
+			<result name="exampaperblock_alter">
+				admin/exampaper/exampaperblock_alter.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_alter"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_alter">
+			<result name="exampaperblock_view" type="redirectAction">
+				exampaperblock_view?epBlock.id=${epBlock.id}
+			</result>
+		</action>
+		<action name="exampaperblock_delete"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_delete">
+			<result name="exampaperblock_list" type="redirectAction">
+				exampaperblock_list?examPaper.id=${examPaper.id}
+			</result>
+			<!-- <result name="exampaperblock_list">
+				admin/exampaper/exampaperblock_list.jsp</result> -->
+		</action>
+		<action name="exampaperblockquestion_list"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_list">
+			<result name="exampaperblockquestion_list">
+				admin/exampaper/exampaperblockquestion_list.jsp
+			</result>
+			<result name="exampaperblockquestion_randomlist">
+				admin/exampaper/exampaperblockquestion_randomlist.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_details_list"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_details_list">
+			<result name="exampaperblockquestion_details_list">
+				admin/exampaper/exampaperblockquestion_details_list.jsp
+			</result>
+			<result name="exampaperblockquestion_details_randomlist">
+				admin/exampaper/exampaperblockquestion_details_randomlist.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_deleteRandom"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_deleteRandom">
+			<result name="exampaperblockquestion_list"
+				type="redirectAction">
+				exampaperblockquestion_list?epBlock.id=${epBlock.id}
+			</result>
+		</action>
+
+		<action name="exampaperblockquestion_upsort"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_upsort">
+			<result name="exampaperblockquestion_sort">
+				admin/exampaper/exampaperblockquestion_list.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_rulealterinit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_rulealterinit">
+			<result name="exampaperblockquestion_rulealter">
+				admin/exampaper/exampaperblockquestion_rulealter.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_rulealter"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_rulealter">
+			<result name="exampaperblockquestion_rulealter">
+				admin/exampaper/exampaperblockquestion_rulealter.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_rulealterinit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_rulealterinit">
+			<result name="exampaperblock_rulealter">
+				admin/exampaper/exampaperblock_rulealter.jsp
+			</result>
+		</action>
+		<action name="exampaperblock_rulealter"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblock_rulealter">
+			<result name="exampaperblock_rulealter">
+				admin/exampaper/exampaperblock_rulealter.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_upsort"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_upsort">
+			<result name="exampaperblockquestion_sort">
+				admin/exampaper/exampaperblockquestion_list.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_downsort"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_downsort">
+			<result name="exampaperblockquestion_sort">
+				admin/exampaper/exampaperblockquestion_list.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_addSearchInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_addSearchInit">
+			<result name="exampaperblockquestion_addSearch">
+				admin/exampaper/exampaperblockquestion_addSearch.jsp
+			</result>
+			<result name="exampaperblockquestion_addSearchRandom">
+				admin/exampaper/exampaperblockquestion_addSearchRandom.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_addSearchList"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_addSearchList">
+			<result name="exampaperblockquestion_addSearchList">
+				admin/exampaper/exampaperblockquestion_addSearchList.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_add"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_add">
+			<result name="exampaperblockquestion_add">
+				admin/exampaper/exampaperblockquestion_addSearchList.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_addRandomInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_addRandomInit">
+			<result name="exampaperblockquestion_addRandom">
+				admin/exampaper/exampaperblockquestion_addRandom.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_addRandom"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_addRandom">
+			<result name="exampaperblockquestion_addRandom_success">
+				admin/exampaper/exampaperblockquestion_addRandom_success.jsp
+			</result>
+			<result name="exampaperblockquestion_addRandom">
+				admin/exampaper/exampaperblockquestion_addRandom.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_alterRandomInit"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_alterRandomInit">
+			<result name="exampaperblockquestion_alterRandom">
+				admin/exampaper/exampaperblockquestion_alterRandom.jsp
+			</result>
+			<result name="exampaperblockquestion_alterRandom2">
+				admin/exampaper/exampaperblockquestion_alterRandom2.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_alterRandom"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_alterRandom">
+			<result name="exampaperblockquestion_alterRandom_success">
+				admin/exampaper/exampaperblockquestion_alterRandom_success.jsp
+			</result>
+		</action>
+		<action name="exampaperblockquestion_delete"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaperblockquestion_delete">
+			<result name="exampaperblockquestion_delete">
+				admin/exampaper/exampaperblockquestion_list.jsp
+			</result>
+		</action>
+		<!-- <action name="question_stuffList"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffList">
+			<result name="question_stuffList">
+				admin/question/question_stuffList.jsp
+			</result>
+			<result name="to_stuff_url">admin/question/question_stuffto.jsp</result>
+		</action>
+		<action name="question_stuff_mylist"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuff_mylist">
+			<result name="question_stuff_mylist">
+				/admin/question/question_stuff_mylist.jsp
+			</result>
+		</action>
+		<action name="question_stuffaddInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffaddInit">
+			<result name="question_stuffadd">
+				admin/question/question_stuffadd.jsp
+			</result>
+		</action>
+		<action name="question_stuffwjjadd"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffwjjadd">
+			<result name="question_stuffwjjadd_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="question_stuffwjjsizeset"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffwjjsizeset">
+			<result name="question_stuffwjjsizeset_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="question_stuffsizeset"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffsizeset">
+			<result name="question_stuffsizeset_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="question_stuffuseradd"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffuseradd">
+			<result name="question_stuffuseradd_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="question_stuffshared"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffshared">
+			<result name="question_stuffshared_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="qstuff_delete_user"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="qstuff_delete_user">
+		</action>
+		
+		<action name="question_stuffunzip"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffunzip">
+			<result name="question_stuffunzip_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="question_stuffadd"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffadd">
+			<result name="question_stuffadd">
+				admin/question/question_stuffList.jsp
+			</result>
+			<result name="question_stuffadd_success"
+				type="redirectAction">
+				< !- - admin/question/question_stuffadd_success.jsp - - >
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action>
+		<action name="question_stuffalter"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffalter">
+			<result name="question_stuffalter_success">
+				admin/question/question_stuffalter_success.jsp
+			</result>
+		</action>
+		<action name="question_stuffalterInit"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffalterInit">
+			<result name="question_stuffalter">
+				admin/question/question_stuffalter.jsp
+			</result>
+		</action>
+		<action name="question_stuffDownload"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffDownload">
+			<result type="stream" name="fileDownload">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downFileName}"</param>
+				<param name="bufferSize">4096</param>
+	      	</result>
+		</action>
+		<action name="question_stuffdelete"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_stuffdelete">
+			<result name="question_stuffList" type="redirectAction">
+				<! - - admin/question/question_stuffList.jsp - - >
+				question_stuffList?qpstuff.id=${qpstuff.id}
+			</result>
+		</action> -->
+		<!--  导出试题 -->
+		<action name="question_exportExcel"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_exportExcel">
+			<result name="question_exportExcel">
+				admin/question/question_exportExcel.jsp
+			</result>
+		</action>
+		<!--  导出试题库目录 
+		-->
+		<action name="question_lib_exportExcel"
+			class="com.sopia.questionman.action.QuestionAction"
+			method="question_lib_exportExcel">
+			<result name="question_lib_exportExcel">
+				admin/question/question_lib_exportExcel.jsp
+			</result>
+		</action>
+		<!-- 试卷概括及详情 -->
+		<action name="exampaper_details"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_details">
+			<result name="exampaper_details">
+				admin/exampaper/exampaper_details.jsp
+			</result>
+		</action>
+		
+		<!-- 打印预览模式 -->
+		<action name="exampaper_quizpaperviewall"
+			class="com.sopia.questionman.action.ExamPaperAction"
+			method="exampaper_quizpaperviewall">
+			<result name="exampaper_quizpaperviewall">
+				admin/exampaper/exampaper_quizpaperviewall.jsp
+			</result>
+		</action>
+	</package>
+</struts>

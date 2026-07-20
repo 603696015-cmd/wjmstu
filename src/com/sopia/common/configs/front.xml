@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="front" extends="elearning">
+		 <action name="user_center_list"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="user_center_list">
+			<result name="user_center_list_success">
+				front/user_center_list.jsp
+			</result>
+		</action> 
+		<action name="jg_center_list"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="user_center_list">
+			<result name="user_center_list_success">
+				front/supplier_list.jsp
+			</result>
+		</action>
+		<action name="shopIndex_jianjie"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_jianjie">
+			<result name="shopIndex_jianjie">
+				front/shopIndex_jianjie.jsp
+			</result>
+		</action>
+		<action name="shopIndex_product_tuijian"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_product_tuijian">
+			<result name="shopIndex_product_tuijian">
+				front/shopIndex_product_tuijian.jsp
+			</result>
+		</action>
+		<action name="shopIndex_contact"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_contact">
+			<result name="shopIndex_contact">
+				front/shopIndex_contact.jsp
+			</result>
+		</action>
+		<action name="shopIndex_zhengjian"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_zhengjian">
+			<result name="shopIndex_zhengjian">
+				front/shopIndex_zhengjian.jsp
+			</result>
+		</action>
+		
+		<action name="shopIndex_messageBoard"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_messageBoard">
+			<result name="shopIndex_messageBoard">
+				front/shopIndex_messageBoard.jsp
+			</result>
+		</action>
+		
+		
+		<action name="shopIndex"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex">
+			<result name="shopIndex">
+				front/shopIndex.jsp
+			</result>
+		</action>
+		<action name="shopIndex_news"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_news">
+			<result name="shopIndex_news">
+				front/shopIndex_news.jsp
+			</result>
+		</action> 
+		
+		
+		<action name="shopIndex_content"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_content">
+			<result name="shopIndex_content">
+				front/shopIndex_content.jsp
+			</result>
+		</action>
+		
+		<action name="product_center_list"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="product_center_list">
+			<result name="product_center_list_success">
+				front/product_center_list.jsp
+			</result>
+		</action>
+		
+		<action name="baoxianProduct_center_list"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="baoxianProduct_center_list">
+			<result name="baoxianProduct_center_list_success">
+				front/baoxianProduct_center_list.jsp
+			</result>
+		</action>
+		
+		<action name="baoxianProduct_content"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="baoxianProduct_content">
+			<result name="baoxianProduct_content">
+				front/baoxianProduct_content.jsp
+			</result>
+		</action>
+		
+		<action name="shopIndex_product_zhantin"
+				 class="com.sopia.pfms.action.PfmsFrontAction"
+				 method="shopIndex_product_zhantin">
+			<result name="shopIndex_product_zhantin">
+				front/shopIndex_product_zhantin.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>

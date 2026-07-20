@@ -1,0 +1,218 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+<%@taglib prefix="wysLib" uri="/WEB-INF/wysLib.tld"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<HTML>
+	<HEAD>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<TITLE>日志查看</TITLE>
+		<base href="<%=basePath%>">
+		<link rel="stylesheet" type="text/css" href="css/system.css" />
+		<link rel="stylesheet" type="text/css" href="css/manage.css" />
+		
+		<script type="text/javascript">
+			function doSubmit(){
+				var basevalue=document.getElementById("basevalue");
+				basevalue.value = basevalue.value.replace(/^\s+|\s+$/g,"");//去除2头空格
+				if(basevalue.value==""){
+					alert("名称不能为空！");
+					return false;
+				}
+				if($("#bh").val()==''){alert("编号不要为空");return false;}
+				return true;
+			}
+		</script>
+		<style type="text/css"> 
+		td {font-size:12px;color:#333333;line-height:150%}
+		tr {background-color:expression((this.sectionRowIndex%2==0)?"#ffffff":"#f4f4f4")} 
+		</style>
+	</HEAD>
+	<body>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  			<tr>
+    			<td valign="middle" class="tablequiz">
+    				<ul class="nav">
+			<li>
+				<div style="padding-top:3px;color:#077ac7;font-size:12px;"><wysLib:Navigation ivalue="日程查询" /></div>
+			</li>
+		</ul>
+				</td>
+    			<td width="120" valign="middle" class="tablequiz">
+    				<A id=quit  href="javascript:window.parent.full_screen(false);" class="textbg6" style="display:none">退出全屏</A>
+    			</td>
+  			</tr>
+		</table>
+		
+		<s:form action="eluser_alterBasedb.action" method="post" theme="simple" onsubmit="return doSubmit();">
+			<s:hidden name="baseDatat.id" id="basedbId" />
+			<s:hidden name="baseDatat.typeid" />
+			<table width="700px" cellpadding="2" cellspacing="1" >
+				<tr>
+					<td width="120" height="30" align="center" >
+						日期
+					</td>
+					<td >
+						<s:property value="log.log_createtime"/>
+					</td>
+				</tr>
+				<tr>
+					<td width="120" height="30" align="center" >
+						日志标题
+					</td>
+					<td >
+						<label>
+							<s:textfield name="log.log_title" />
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="120" height="30" align="center" >
+						工作计划
+					</td>
+					<td >
+						<label>
+							<s:textfield name="log.log_plan" />
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="120" height="30" align="center" >
+						工作结果
+					</td>
+					<td >
+						<label>
+							<s:textfield name="log.log_result" />
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="120" height="30" align="center" >
+						工作分析
+					</td>
+					<td >
+						<label>
+							<s:textfield name="log.log_analysis" />
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+						<td width="160" height="30" align="center" >
+							关联客户：
+						</td>
+						<td >
+							<label>
+							<s:textfield name="log.log_co_client" size="40" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td width="160" height="30" align="center" >
+							关联计划：
+						</td>
+						<td >
+							<label>
+							<s:textfield name="log.log_co_plan" size="40" />
+							</label>
+						</td>
+					</tr>
+	                
+				
+				<tr>
+						<td height="30" align="center" bgcolor="#FFFFFF" style="padding-left:8px;color:blue;"><span class="STYLE2">
+							  附件					  </span></td>
+							<td bgcolor="#FFFFFF" >
+								<span class="STYLE2">
+								<script type="text/javascript">
+								
+									function addStufff(i) {
+										/*width=600;
+										height=400;
+									   var sFeature="dialogWidth:"+width+"px;dialogHeight:"+height+"px;Status:0;resizable:1;help:0";
+										var   rv   =  window.showModalDialog("question_stuff_mylist.action?pN=0&pS=10",
+										 null,sFeature);
+										 //if("undefined"!=rv)
+										 document.getElementById("stufft_"+i).innerHTML=rv;
+										rv= rv.substring(rv.lastIndexOf("/")+1);
+										rv = rv.substring(0,rv.lastIndexOf("."));
+										*/
+										width=600;
+										height=400;
+									   	var sFeature="dialogWidth:"+width+"px;dialogHeight:"+height+"px;Status:0;resizable:1;help:0";
+										//var rv = window.showModalDialog("editor/editor/filemanager/browser/default/browser.html?Type=&Connector=connectors/jsp/connector",null,sFeature);
+										var rv = window.showModalDialog("question_stuffList.action",null,sFeature);
+										
+										 if(null==rv){
+										 	alert("您没选择东西！");
+										 	return ;
+										 }
+										 //alert(rv);
+										 document.getElementById("stufft_"+i).innerHTML=rv;
+										 document.getElementById("stuff_"+i).value=rv;
+										 }
+									var ii = 0;
+									function addSt(){
+										ii++;
+										var stuff = document.createElement("div");
+										stuff.id= "ds_"+ii;
+										stuff.innerHTML="名称：<input type='text' style='width:200px;' name='knowledge.stuffs.title' id='stufftt_"+ii+"'/>地址：<input type='hidden' style='width:200px;' name='knowledge.stuffs.description' id='stuff_"+ii+"'/><span style='width:200px;'  id='stufft_"+ii+"'></span>&nbsp;&nbsp;&nbsp;<a onclick='addStufff("+ii+")'>浏览资源库</a>";
+										document.getElementById("stuff").appendChild(stuff);
+										
+									}
+									function deleteSt(){
+										if(ii<=0)return ;
+										var stuff = document.getElementById("ds_"+ii);
+										document.getElementById("stuff").removeChild(stuff);
+										ii--;
+											
+									}
+									function getT(){
+									var o = document.getElementsByTagName("input");
+										for(var i=0;i<o.length;i++){
+											if(o[i].name=='knowledge.stuffs.description')
+											alert(o[i].name+"=="+o[i].value);
+										}
+									}
+								</script>
+								</span>
+								<div class="STYLE2" id="stuff">
+									<s:iterator value="list_logstuff" status="stst">
+										<div id="ds_">
+											<span id='stufft_'>名称：<input type="hidden"
+													name='knowledge.stuffs.description'
+													value="<s:property value="title"/>" />
+												<input type="hidden" name='knowledge.stuffs.id'
+													value="<s:property value="id"/>" />
+												<input type='text' style='width: 200px;'
+													name='knowledge.stuffs.title'
+													value="<s:property value="title"/>" />地址：<s:property
+													value="stuffaddr" />
+											</span>&nbsp;&nbsp;&nbsp;
+											<!--  <a href="deleteKstuff.action?knowledge.id=<s:property value="knowledge.id"/>&stuff.id=<s:property value="id"/>">删除</a>									</div>
+											-->
+									</s:iterator>
+								</div>
+								<span class="STYLE2">
+							<!-- 								
+								<input type="button" onClick="addSt();" value="添加">
+								<input type="button" onClick="deleteSt();" value="删除">
+								 -->	
+		              </span></td>
+				  </tr>
+				
+	
+			</table>
+			<br>
+		</s:form>
+	
+	</body>
+</HTML>

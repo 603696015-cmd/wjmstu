@@ -1,0 +1,10 @@
+alter table lable_circulation add(keyword  varchar2(400));
+alter table lable_search add(keyword  varchar2(400));
+
+commit;
+
+
+select * From study_room for update;
+select * From study_class for update;
+select * From study_course for update;
+select * From study_exampaper for update;

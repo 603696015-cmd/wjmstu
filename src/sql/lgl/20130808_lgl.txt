@@ -1,0 +1,5 @@
+insert into ELFUNC ( FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values ( 'return_url', '支付宝返回jsp', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+注：parentid为“前台页面”，将“return_url”分配给除“游客”以外的所有角色
+

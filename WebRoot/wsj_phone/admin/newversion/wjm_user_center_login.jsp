@@ -1,0 +1,128 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<base href="<%=basePath%>">
+		<title>中国食品安全培训网</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link href="css/index.css" type="text/css" rel=stylesheet>
+		<script type="text/javascript">
+			function load(){
+				if(document.parentWindow.name=='rightFrame') 
+				this.parent.location.href='admin/newversion/cisco_user_center_login.jsp';
+				document.getElementById("username").focus();
+			}
+	</script>
+	
+	</HEAD>
+	<body  style="text-align: center;">
+	
+	<DIV id=wrap>
+			<DIV class=head>
+			  <DIV class=headlink> <A href="wjm_registerInit.action">注册</A>&nbsp;&nbsp;|&nbsp;&nbsp;<!--<A href="forumIndex.action">论 坛</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="knowledge_center_list.action">知识库</A> &nbsp;&nbsp;|&nbsp;&nbsp;<A href="wjm_user_center.action?intelligentLogin.loginType=0">个人中心</A>--></DIV>
+			  <DIV class=clearit></DIV>
+			</DIV>
+			<DIV class=main>
+	
+
+				<DIV class=main_top style="text-align: left;">
+					<div class=name></div>
+				</DIV>
+				<form name="myform" method="post" action="wjm_user_center_login.action" style="padding: 0px;margin: 0px;">
+				<input type="hidden" name="ipAddress" id="ipAddress"/>
+				<input type="hidden" name="myLogin.ipAddr" id="ipAddr" value="${requestScope.myLogin.ipAddr }" />
+								<DIV class=main_cen>
+					<P class=title style="text-align: left;">
+						用户登录 &gt;&gt;&gt;</P>
+					<UL class=maintable>
+
+						<li>
+							<DIV class=mt_l>
+								<SPAN class=red>* </SPAN>帐 号&nbsp;
+							</DIV>
+							<DIV class=mt_r>
+								<DIV class=inputbox>
+									<SPAN class=input><CITE><INPUT id=username type="text"
+												maxLength=16 name="elUser.username" value="${elUser.username}"> 
+									</CITE> </SPAN>
+								</DIV>
+								
+								<SPAN id=usernametip></SPAN>
+							</DIV>
+						</li>
+
+						<li>
+							<DIV class=mt_l>
+								<SPAN class=red>* </SPAN>密 码&nbsp;
+							</DIV>
+							<DIV class=mt_r>
+								<DIV class=inputbox>
+									<SPAN class=input><CITE><INPUT type="password"
+												maxLength=16 name="elUser.password"> 
+									</CITE> </SPAN>
+								</DIV>
+							</DIV>
+						</li>
+						<li>
+							
+								<DIV class=mt_l>
+									<SPAN class=red>* </SPAN>验&nbsp;&nbsp;&nbsp;证&nbsp;&nbsp;&nbsp;码&nbsp;
+								</DIV>
+								<DIV class=mt_r>
+									<DIV class=inputbox>
+										<SPAN class=input><CITE><INPUT type="text"
+													maxLength=16 name="yzCode"> </CITE></SPAN>
+										
+									</DIV>
+									<span><IMG style="cursor: hand;margin-top:5px;margin-right:200px;" height="24" width="100" src="image.jsp" onClick="this.src='image.jsp?'+Math.random()" title="点击刷新验证码" ></span>
+								</DIV>
+							
+							<DIV class=mt_r>
+							 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+   <td width="175" height="50"></td>
+    <td width="120" align="left"><INPUT class=btn_submit type=submit value=登　陆 name=submit></td>
+    <td align="left" valign="bottom"> </td>
+  </tr>
+</table>
+
+							 
+							  
+							 
+							</DIV>
+						</LI>
+					</UL>
+					<br>
+<br>
+
+
+				</DIV>
+				</form>
+				<DIV class=main_bottom></DIV>
+			</DIV>
+			<br>
+			<br>
+	  <DIV class=Footer style="line-height:25px;">
+        <P><span class="foot">中国食品安全培训网版权所有 copyright 2013-2018 all rights reserved <br />
+地址：北京市海淀区长远天地B2810&nbsp;&nbsp;&nbsp;&nbsp;电话：010-66887799 </span><br>
+</P>
+	  </DIV>
+	</DIV>
+	
+		<SCRIPT type="text/javascript">
+			if("${elmessage}"!='null'&&"${elmessage}"!='')
+				 alert("${elmessage}!");
+		</SCRIPT>
+</html>

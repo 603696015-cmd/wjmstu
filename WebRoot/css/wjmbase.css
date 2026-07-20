@@ -1,0 +1,84 @@
+/*
+CSS Reset based on YUI 3.4.1 (build 4118)
+By xjm
+*/
+
+body{
+	font: 12px/1.5 tahoma, arial, simsun, sans-serif;
+	color:#333}
+input:focus, a:focus {
+	outline:none}
+
+fieldset, img {
+	border:0}
+address, caption, cite, code, dfn, em,strong, th, var {
+	font-style:normal;
+	font-weight:normal}
+ol, ul {
+	list-style:none}
+caption, th {
+	text-align:left}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal}
+q:before, q:after {
+	content:''}
+sup {
+	vertical-align:baseline}
+sub {
+	vertical-align:baseline}
+button, input, textarea, select {
+	font-family:tahoma, arial, simsun, sans-serif;
+	font-size:inherit;
+	font-weight:inherit;
+	line-height:1.5;
+	vertical-align:middle}
+button, input, textarea, select {
+	*font-size:100%}
+textarea {
+	resize:none;
+}
+legend {
+	color:#000}
+a{
+	vertical-align:baseline}
+a,a:visited{
+	color:#333;
+	text-decoration:none}
+a:hover{
+	color:#285aaa;
+	text-decoration:underline}
+/*functions*/
+.clear {
+	clear:both;
+	overflow:hidden;
+	visibility:hidden;
+	width:0;
+	height:0;
+	border:none;
+	font-size:0}
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0}
+.clearfix{
+	zoom:1}
+.main{
+	width:1000px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+.left{
+	float:left;
+	display:inline}
+.right{
+	float:right;
+	display:inline}
+.hide{
+	display:none}
+	

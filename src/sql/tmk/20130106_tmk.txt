@@ -1,0 +1,3 @@
+alter table question_stuff add(fromchange  number(1) default 0);
+
+commit;

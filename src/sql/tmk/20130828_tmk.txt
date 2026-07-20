@@ -1,0 +1,302 @@
+create or replace procedure intelligent_login_pro(userid_ number,notLogin3day_ number,classid_ number,flag_ out number,returnloginid_ out number)
+as
+today_ varchar2(50);
+count_ number;
+loginid_ number;
+score_ number;--每次登录得分
+sumscore_ number;--总分
+begin
+     count_:=0;
+     loginid_:=0;
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     score_:=0.0;
+     sumscore_:=0.0;
+     
+     if notLogin3day_=1 then--3天未登陆
+        score_:=-0.1;
+        insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+        flag_:=-1;
+     else--不是3天未登录
+        select count(1) into count_ from intelligent_login where today=today_ and userid=userid_ and classid=classid_; 
+        if count_=0 then--当天第一次登陆
+           score_:=0.1;
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=1;
+        else--当天不是第一次登陆
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=0;
+        end if;
+     end if;
+     select intelligent_login_sequence.currval into loginid_ from dual;
+     returnloginid_:=loginid_;
+     
+     --判断分数是否已经达到饱和
+     select sum(score) into sumscore_ from intelligent_login where userid=userid_ and classid=classid_ and begintime<sysdate;
+     if sumscore_ IS NULL then
+        sumscore_:=0.0;
+     end if;
+     sumscore_:=sumscore_+score_;
+     if sumscore_>=10  then
+        sumscore_:=10.0;
+     else if sumscore_<=0 then
+        sumscore_:=0.0;  
+     end if;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into intelligent_login_t (userid,totalscore,classid) values (userid_,sumscore_,classid_);
+     else 
+        update intelligent_login_t set totalscore=sumscore_ where userid=userid_ and classid=classid_;
+     end if;
+     
+end;
+
+
+
+
+
+create or replace procedure intelligent_points(userid_ number,classid_ number,points_ out float)
+as
+totalpoints_ float;
+sql_ varchar2(4000);
+begin
+     totalpoints_:=0.0f;
+     sql_ := 'select totalscore from intelligent_login_t where userid='||userid_||' and classid='||classid_||
+             'union all select totalscore from intelligent_week_t_t where userid='||userid_||' and classid='||classid_||
+             'union all select totalscore from intelligent_class_t where userid='||userid_||' and classid='||classid_||
+             'union all select totalscore from intelligent_proportion_t where userid='||userid_||' and classid='||classid_||
+             'union all select totalscore from intelligent_recoding_t where userid='||userid_||' and classid='||classid_||
+             'union all select totalscore from intelligent_academic_t_t where userid='||userid_||' and classid='||classid_||
+             'union all select totalscore from intelligent_academic_cou_t_t where userid='||userid_||' and classid='||classid_;
+     sql_ := 'select sum(totalscore) from ('||sql_||')';
+     execute immediate sql_ into totalpoints_;
+     points_:=round(totalpoints_,1);
+end;
+
+
+
+
+create or replace function get_cpage_examrooms_passed( userid_ number,courseid_ number,cpid_ number)
+return number
+is
+ispassed_ number default 0 ;
+temp_ number default 0 ;
+cursor  studyrooms is
+  select ispassed from exam_room er
+  left join study_room sr on er.id=sr.roomid and sr.userid=userid_
+  where er.courseid=courseid_ and er.classid=0 and er.cpid=cpid_;
+begin
+    open studyrooms;
+       loop
+       fetch studyrooms into ispassed_ ;
+          exit when studyrooms%notfound;
+          if ispassed_=1 then
+            if temp_=-1 then
+              ispassed_:=0;
+            else
+              ispassed_:=1;
+            end if;
+          else
+            ispassed_:=-1;
+          end if;
+          temp_ := ispassed_;
+       end loop;
+   close studyrooms;
+   if ispassed_>0 then
+     ispassed_:=1;
+   else
+     ispassed_:=0;
+   end if;
+   dbms_output.put_line(ispassed_);
+   return ispassed_;
+end ;
+
+
+
+
+create or replace procedure sc_setmycpage(userid_ number,
+                                              roomid_ number)
+as
+cpid_ number;--章节id
+ispassed_ number;--用户是否考试通过
+courseid_ number;--章节对应的课程id
+course_roomid_ number;--课程对应的结业考场id
+classid_ number;--章节对应课程对应的培训班id
+begin
+  cpid_:=0;
+  ispassed_:=0;
+  courseid_:=0;
+  classid_:=0;
+  course_roomid_:=0;
+  --1判断考场是否通过
+  select ispassed into ispassed_ from study_room where userid=userid_ and roomid=roomid_;
+  if ispassed_=1 then
+    select cpid into cpid_ from exam_room where id=roomid_;--章节id
+    if cpid_!=0 then
+      select courseid into courseid_ from course_page where id=cpid_;
+      --获取课程结业考场有问题
+      --如果一个课程绑定多个培训班和考场的情况
+      select classid into classid_ from study_course where courseid=courseid_ and userid=userid_;
+      --select id into course_roomid_ from exam_room where courseid=courseid_ and isnormal=1  and (cpid=0 or cpid is null);
+  	  --if course_roomid_!=0 then
+  	      --select classid into classid_ from class_course where courseid =courseid_ and eroomid=course_roomid_;
+  		  --判断该章节对应考场是否都通过
+    		  ispassed_:=get_cpage_examrooms_passed(userid_,courseid_,cpid_);
+    		  dbms_output.put_line(ispassed_);
+          if ispassed_=1 then
+              update study_cpage set passed2=1,process=100.00,process_t=50.00 where userid=userid_ and cpid=cpid_;
+              if classid_>0 then
+        			   sc_cpage_tprocess(userid_,cpid_,classid_);
+        		  end if;
+          else
+              update study_cpage set passed2=0 where userid=userid_ and cpid=cpid_;
+          end if;
+  	  --end if;
+    end if;
+  end if;
+end;
+
+
+
+
+create or replace procedure checkClassExamRoomCanExam
+(userid_ number,classid_ number,roomid_ number,flag_ out number )
+as
+count_ number;
+process_ number;
+totalpoints_ float;
+sql_ varchar2(4000);
+standardline_ number;
+begin
+     count_:=0;
+     flag_:=0;
+     select count(1) into count_ from study_class where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select process into process_ from study_class where userid=userid_ and classid=classid_;
+        if process_=100 then
+           sql_ := 'select totalscore from intelligent_login_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_week_t_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_class_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_proportion_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_recoding_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_academic_t_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_academic_cou_t_t where userid='||userid_||' and classid='||classid_;
+           sql_ := 'select sum(totalscore) from ('||sql_||')';
+           execute immediate sql_ into totalpoints_;
+           totalpoints_:=round(totalpoints_,1);--智能辅导分
+
+           select standardline into standardline_ from elclass_assign_examroom where classid=classid_ and examroomid=roomid_;
+           if totalpoints_>=standardline_ then--用户智能辅导分>等级考场必须达到的智能辅导分
+                 flag_:=1;
+           end if;
+        end if;
+     end if;
+end;
+
+
+
+
+
+create or replace procedure checkClassExamIsPass(classid_ number,userid_ number,flag_ out number)
+as
+roomid_ number;--保存培训班结业考场
+ispassed_ number;--保存考场是否通过
+count_ number;--保存用户是否考过试了
+begin
+  roomid_:=0;
+  ispassed_:=0;
+  count_:=0;
+  select count(1) into count_ from elclass_assign_examroom where classid=classid_;
+  if count_=0 then
+     flag_:=1;
+  else
+      select examroomid into roomid_ from elclass_assign_examroom where classid=classid_;
+      --dbms_output.put_line(roomid_);
+      if roomid_>0 then--存在培训班结业考场
+        select count(1) into count_ from study_room where userid=userid_ and roomid=roomid_;
+        --dbms_output.put_line(count_);
+        if count_>0 then--用户考过试
+          select ispassed into ispassed_ from study_room where userid=userid_ and roomid=roomid_;
+          --dbms_output.put_line(ispassed_);
+          if ispassed_=1 then--用户就考试通过
+            flag_:=1;
+          end if;
+        end if;
+      end if;
+  end if;
+end;
+
+
+
+
+create or replace procedure intelligent_academic_cou_pro
+ (userid_ number,roomid_ number,classid_ number,courseid_ number,myexampaperid_ number,classtype_ number)
+ as
+ count_ number;
+ myscore_ number;
+ totalscore_ number;
+ avgscore_ number;
+ bl_ number;
+ countcoursequiz_ number;
+ begin
+      --得到这次考试的成绩
+      select myscore into myscore_ from study_quizinfo where id=myexampaperid_ ;
+      myscore_:=round(myscore_,1);
+      --插入单次课程考试得分表
+      insert into intelligent_academic_course(userid,classid,courseid,roomid,score,myexampaperid)
+                values (userid_,classid_,courseid_,roomid_,myscore_,myexampaperid_);
+      select round(sum(score),1),round(avg(score),1) into totalscore_,avgscore_ from intelligent_academic_course
+             where userid=userid_ and classid=classid_ and courseid=courseid_  and roomid=roomid_;
+      --插入课程考试记录表
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_course_t where userid=userid_ and classid=classid_ and courseid=courseid_  and roomid=roomid_;
+      if count_=0 then
+         insert into intelligent_academic_course_t(userid,classid,courseid,roomid,myexampaperid,avgscore,totalscore)
+                values (userid_,classid_,courseid_,roomid_,myexampaperid_,avgscore_,totalscore_);
+      else
+          update intelligent_academic_course_t set totalscore=totalscore_,avgscore=avgscore_ where userid=userid_ and classid=classid_ and courseid=courseid_  and roomid=roomid_;
+      end if;
+      --课程考场数
+      select count(1) into countcoursequiz_ from
+      (
+        select erps.epid from class_course cc ,exam_room er,exam_reps erps
+        where cc.classid=er.classid and cc.courseid=er.courseid
+        and er.id=erps.roomid and cc.classid=classid_
+      );
+      --获取培训班下，所有章节考试总成绩
+      totalscore_:=0.0;
+      select sum(avgscore) into totalscore_ from intelligent_academic_course_t where userid=userid_ and classid=classid_ ;
+      --获取章节考试智能辅导分
+      if countcoursequiz_>0 then
+         bl_:=totalscore_/countcoursequiz_ ;
+         if classtype_ = 0 then--1A到3B
+            if bl_>100 then
+               bl_:= 100.0;
+            end if;
+            totalscore_:=round(bl_ * 0.1,1);
+            if totalscore_>10 then
+               totalscore_:=10.0;
+            end if;
+         else--4A到6B
+            if bl_>150 then
+               bl_:= 150.0;
+            end if;
+            totalscore_:=round(bl_ * 0.07,1);
+            if totalscore_>10 then
+               totalscore_:=10.0;
+            end if;
+         end if;
+      end if;
+
+      --插入或更新考试智能辅导分
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_cou_t_t where userid=userid_ and classid=classid_;
+      if count_=0 then
+          insert into intelligent_academic_cou_t_t(userid,totalscore,classid)
+                values(userid_,totalscore_,classid_);
+      else
+          update intelligent_academic_cou_t_t set totalscore=totalscore_
+                 where userid=userid_ and classid=classid_;
+      end if;
+ end;

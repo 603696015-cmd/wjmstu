@@ -1,0 +1,31 @@
+.textbg {
+	background-image: url(../images/textbg.gif);
+	line-height:18px;
+	background-repeat: repeat-x;
+	padding: 3px;margin: 5px;
+	color:#000000;
+}
+.textbg {
+	background-image: url(../images/textbg.jpg);
+	line-height:25px;
+	background-repeat: repeat-x;
+	padding-bottom: 0px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+A.textbg:link {
+	color:#FFFFFF;
+}
+A.textbg:visited {
+	color:#FFFFFF;
+}
+A.textbg:hover {
+	color:#003366;
+}
+A.textbg:active {
+	color:#FFFFFF;
+}

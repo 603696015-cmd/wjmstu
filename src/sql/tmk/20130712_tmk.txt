@@ -1,0 +1,387 @@
+--说明：所有存储过程请单独执行，并按照先后顺序执行
+create or replace function get_cpage_examrooms_passed( userid_ number,courseid_ number,cpid_ number)
+return number
+is
+ispassed_ number default 0 ;
+cursor  studyrooms is
+  select ispassed from exam_room er
+  left join study_room sr on er.id=sr.roomid and sr.userid=userid_
+  where er.courseid=courseid_ and er.classid=0 and er.cpid=cpid_;
+begin
+    open studyrooms;
+       loop
+       fetch studyrooms into ispassed_ ;
+          exit when studyrooms%notfound;
+          if ispassed_=1 then
+            if ispassed_=-1 then
+              ispassed_:=0;
+            else
+              ispassed_:=1;
+            end if;
+          else
+            ispassed_:=-1;
+          end if;
+       end loop;
+   close studyrooms;
+   if ispassed_>0 then
+     ispassed_:=1;
+   else
+     ispassed_:=0;
+   end if;
+   return ispassed_;
+end ;
+
+
+
+
+create or replace function get_course_examroom_passed( userid_ number,courseid_ number,classid_ number)
+return number
+is
+ispassed_ number default 0 ;
+roomid_ number default 0;
+count_ number default 0;
+getcredit_ number default 0;
+begin
+    select getcredit into getcredit_ from class_course where courseid=courseid_ and classid=classid_;
+	if getcredit_ = 3 or getcredit_=2 then
+	    select id into roomid_ from exam_room where courseid=courseid_ and isnormal=1 and (cpid=0 or cpid is not null);
+		select count(1) into count_ from study_room where roomid=roomid_ and userid=userid_;
+		if count_=1 then
+		  select ispassed into ispassed_ from study_room where roomid=roomid_ and userid=userid_;
+		  if ispassed_=1 then
+			  ispassed_:=1;
+		  end if;
+		else
+		  ispassed_:=0;
+		end if;
+    else
+	   ispassed_:=1;
+	end if;
+    
+    return ispassed_;
+end ;
+
+
+
+
+
+
+
+create or replace procedure checkcoursecanlearn (courseid_ number,classid_ number,userid_ number,flag_ out number)
+as
+class_id number;--循环保存classid
+course_id number;--循环保存courseid
+order_id number;--循环保存orderid
+c_id number;--保存上一门课程的id
+ord_id number;--当前课程的序号
+learnByOrder_ number;--表示培训班是否开始循序学习
+passed_ number;--表示课程是否通过
+course_examroom_passed_ number;--保存课程对应结业考场是否通过
+rn number;
+count_ number; --表示能否查询到当前课程前面序号的课程数量
+cursor classcourse is
+    select classid, courseid,orderid from class_course where classid = classid_ order by orderid asc ;
+begin
+     class_id:=0;
+     course_id:=0;
+     order_id:=0;
+     ord_id:=0;
+     c_id:=0;
+     learnByOrder_:=0;
+     passed_:=0;
+     flag_:=0;
+     count_:=0;
+     course_examroom_passed_:=0;
+     --获取当前课程的序号
+     select orderid into ord_id from class_course where classid = classid_ and courseid=courseid_ ;
+     --获取培训班是否开通顺序学习
+     select learnByOrder into learnByOrder_ from elclass where id=classid_;
+     if learnByOrder_=1 then
+       open classcourse;--循环培训班课程列表--判断当前课程的上一门课程是否已经学完
+         loop
+            fetch classcourse into class_id,course_id,order_id ;
+            exit when classcourse%notfound;
+
+            --找到当前学习的课程的上一门课程
+            select count(1) into count_ from (select m.courseid,rownum rn from (select courseid from class_course  where classid=classid_ and orderid<ord_id  order by orderid desc ) m where rownum=1);
+            if count_>0 then 
+               select m.courseid,rownum rn into c_id,rn from (select courseid from class_course  where classid=classid_ and orderid<ord_id   order by orderid desc ) m where rownum=1;
+                if c_id !=0 then--不是第一门课程
+                   --判断上一门课程是否学习通过
+                  select passed into passed_ from study_course where userid=userid_ and courseid=c_id;
+                  if passed_=1 then
+                     --判断上一门课程对应结业考场是否通过
+                     course_examroom_passed_:=get_course_examroom_passed(userid_,c_id,classid_);
+                     if course_examroom_passed_=1 then
+                       flag_:=1;
+                     end if;
+                  else
+                      flag_:=0;
+                  end if;
+                end if;
+            else
+                flag_:=1;
+            end if;
+      
+         end loop;
+       close classcourse;
+     else
+        flag_:=1;
+     end if;
+end;
+
+
+
+
+
+create or replace procedure checkCoursesIsAllPass
+(roomid_ number,classid_ number,userid_ number,flag_ out number)
+as
+count_ number;
+passed_ number;
+temp_ number;
+cursor studycourse is
+    select passed from study_course where userid = userid_ and classid=classid_;
+begin
+     count_:=0;
+     passed_:=0;
+     temp_:=0;
+     select count(1) into count_ from elclass_assign_examroom where examroomid=roomid_ and classid=classid_ ;
+     if count_>0 then     --培训班绑定考场
+        open studycourse;--循环培训班课程列表--判断每一门课程是否都学习完成
+         loop
+            fetch studycourse into passed_ ;
+            exit when studycourse%notfound;
+
+            if passed_=1 then--课程学完
+               temp_:=1;
+            else--课程未学完
+               temp_:=0;
+            end if;
+         end loop;
+        close studycourse;
+        if temp_=1 then -- 所有课程都学完
+           flag_:=1;
+        else
+           flag_:=0;
+        end if;
+     else
+        flag_:=0;
+     end if;
+end;
+
+
+
+
+
+create or replace procedure checkexamroomcanExam
+(roomid_ number,cpid_ number,sortid_ number,courseid_ number,userid_ number,flag_ out number)
+as
+beginroomid_ number;
+count_ number;
+ispassed_ number;
+count1_ number;
+begin
+  beginroomid_ :=0;
+  count_ :=0;
+  ispassed_:=0;
+  count1_:=0;
+  select id into beginroomid_ from exam_room where courseid=courseid_ and classid=0 and cpid=cpid_ and sortid=sortid_-1;
+  if beginroomid_!=0 then
+    select count(1) into count_ from study_room where roomid=beginroomid_ and userid=userid_ ;
+    if count_>0 then
+      select ispassed into ispassed_ from study_room where roomid=beginroomid_ and userid=userid_;
+      if ispassed_=1 then
+        flag_:=1;
+      end if;
+    end if;
+  end if;
+end;
+
+
+
+
+
+create or replace procedure checkpagecanlearn(sortid_ number,courseid_ number,cpid_ number,userid_ number,flag_ out number)
+as
+id_ number;--保存章节id
+skipable_ number;--保存是否可跳过
+getcredit_ number;--保存章节通过类型
+passed_ number;--保存章节完成情况
+passed2_ number;--保存考试是否通过（多个考场）
+count_ number;--保存是否有该章节的学习情况
+roomid_ number;--保存章节分配的考场
+roompassed_ number;--保存章节是否通过考场（有多个考场）
+countrooms_ number;--保存章节考场数量
+cursor rooms is
+	select id  from exam_room where courseid=courseid_ and classid=0 and cpid=cpid_ order by sortid desc;
+begin
+  skipable_:=0;
+  passed_:=0;
+  passed2_:=0;
+  count_:=0;
+  getcredit_:=0;
+  id_:=0;
+  roomid_:=0;
+  roompassed_:=0;
+  countrooms_:=0;
+  select id,skipable,getcredit into id_,skipable_,getcredit_ from course_page where id=cpid_;--courseid=courseid_ and sortid=sortid_;
+  if getcredit_=1 then --学完
+    if skipable_=1 then--可跳过
+       flag_:=1;
+    else--不可跳过
+       select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+       if count_>0 then--用户有学习情况
+            --判断是否学完该章节
+            select passed into passed_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+            if passed_=1 then --学完
+                flag_:=1;
+            end if;
+      end if;
+    end if;
+  else  --学完且考过\考过
+     select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+     if count_>0 then--用户有学习情况
+          --判断是否学完该章节
+          select passed,passed2 into passed_,passed2_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+          if passed_=1 then --学完
+              --判断章节考试是否通过(这里有多个章节考场)
+              --checkpageroomispassed(courseid_,id_,userid_,flag_);
+            if passed2_=1 then--考过
+              flag_:=1;
+            end if;
+			      /**
+    				open rooms;
+    				 loop
+    					fetch rooms into roomid_ ;
+    					exit when rooms%notfound;
+    					if roomid_!=0 then
+                select count(1) into countrooms_ from study_room where userid=userid_ and roomid=roomid_;
+                if countrooms_>0 then
+                  select ispassed into roompassed_ from study_room where userid=userid_  and roomid=roomid_;
+      					  if roompassed_=1 then
+      						  flag_:=1;
+      					  else
+      						  flag_:=0;
+      					  end if;
+                end if;
+    					end if;
+    				 end loop;
+    			  close rooms;
+            **/
+          end if;
+     end if;
+  end if;
+end;
+
+
+
+
+
+
+create or replace procedure checkpageisallpass
+  (courseid_ number,classid_ number,userid_ number,flag_ out number)
+  as
+    passed_ number;--所有章节是否都学完
+    cursor studypages is
+           select sc.passed
+           from course_page cp left join study_cpage sc on cp.id=sc.cpid and sc.userid=userid_ and sc.classid=classid_
+           where  cp.courseid=courseid_;
+
+  begin
+       passed_:=0;
+       open studypages;
+         loop
+            fetch studypages into passed_ ;
+            exit when studypages%notfound;
+            if passed_=1 then
+               if flag_=-1  then
+                 flag_:=0;
+               else 
+                 flag_:=1;
+               end if;
+            else
+               flag_:=-1;
+            end if;
+         end loop;
+       close studypages;
+       if passed_>0 then
+         flag_:=1;
+       else 
+         flag_:=0;
+       end if;
+  end;
+
+  
+  
+  
+  
+  create or replace procedure checkpageroomispassed(courseid_ number,cpid_ number,userid_ number,flag_ out number)
+as
+roomid_ number;
+roompassed_ number;
+cursor rooms is
+  select id  from exam_room where courseid=courseid_ and classid=0 and cpid=cpid_ order by sortid desc;
+begin
+  roomid_:=0;
+  open rooms;
+     loop
+        fetch rooms into roomid_ ;
+        exit when rooms%notfound;
+        if roomid_!=0 then
+          select ispassed into roompassed_ from study_room where userid=userid_  and roomid=roomid_;
+          if roompassed_=1 then
+            flag_:=1;
+          else
+            flag_:=0;
+          end if;
+        end if;
+     end loop;
+   close rooms;
+end;
+
+
+
+
+
+create or replace procedure sc_setmycpage(userid_ number,
+                                              roomid_ number)
+as
+cpid_ number;--章节id
+ispassed_ number;--用户是否考试通过
+courseid_ number;--章节对应的课程id
+course_roomid_ number;--课程对应的结业考场id
+classid_ number;--章节对应课程对应的培训班id
+begin
+  cpid_:=0;
+  ispassed_:=0;
+  courseid_:=0;
+  classid_:=0;
+  course_roomid_:=0;
+  --1判断考场是否通过
+  select ispassed into ispassed_ from study_room where userid=userid_ and roomid=roomid_;
+  if ispassed_=1 then
+    select cpid into cpid_ from exam_room where id=roomid_;--章节id
+    if cpid_!=0 then
+      select courseid into courseid_ from course_page where id=cpid_;
+	  select id into course_roomid_ from exam_room where courseid=courseid_ and isnormal=1  and (cpid=0 or cpid is null);
+	  if course_roomid_!=0 then
+	      select classid into classid_ from class_course where courseid =courseid_ and eroomid=course_roomid_;
+		  --判断该章节对应考场是否都通过
+		  ispassed_:=get_cpage_examrooms_passed(userid_,courseid_,cpid_);
+		  dbms_output.put_line(classid_);
+		  if classid_>0 then
+			 update study_cpage set passed2=1,process=100.00,process_t=50.00 where userid=userid_ and cpid=cpid_;
+			 sc_cpage_tprocess(userid_,cpid_,classid_);
+		  end if;
+	  end if;
+    end if;
+  end if;
+end;
+
+
+
+
+
+
+COMMIT;

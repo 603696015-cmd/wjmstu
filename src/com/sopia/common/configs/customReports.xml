@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="customReports" extends="elearning">
+		<action name="addCustomReportInit"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="addCustomReportInit">
+			<result name="addCustomReportInitSuccess">
+				admin/customReports/addCustomReportInit.jsp
+			</result>
+		</action>
+		<action name="addCustomReport"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="addCustomReport">
+			<result name="addCustomReport_success" >
+				admin/customReports/addCustomReportsetInit1.jsp
+			</result>
+		</action>
+		
+		<action name="customReportList"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="customReportList">
+			<result name="customReportList">
+				admin/customReports/customReportList.jsp
+			</result>
+		</action>
+		
+		<action name="queryCustomReportById"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="queryCustomReportById">
+			<result name="queryCustomReportById_success" >
+				admin/customReports/addCustomReportsetInit1.jsp
+			</result>
+		</action>
+		
+		<action name="updateCustomReportBytree"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="updateCustomReportBytree">
+			<result name="updateCustomReportBytree_success" >
+				admin/customReports/addCustomReportsetInit2.jsp
+			</result>
+		</action>
+		<action name="updateCustomReportById"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="updateCustomReportById">
+			<result name="updateCustomReportById_success" >
+				admin/customReports/addCustomReportsetInit3.jsp
+			</result>
+		</action>
+		<action name="updateCustomReportFinal"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="updateCustomReportFinal">
+			<result name="updateCustomReportFinal_success" >
+				admin/customReports/addCustomReportsetInit4.jsp
+			</result>
+		</action>
+		<action name="setover"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="setover">
+			<result name="setover_success" type="redirectAction">
+				customReportList.action
+			</result>
+		</action>
+		
+		
+		<action name="customReportZDYInit"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="customReportZDYInit">
+			<result name="customReportZDYInit_success">
+				<!-- admin/customReports/demo/${resultPage} -->
+				admin/customReports/customReportZDYInit.jsp
+			</result>
+		</action>
+		<action name="uploadJspInit"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="uploadJspInit">
+			<result name="uploadJspInit_success">
+				admin/customReports/uploadJspInit.jsp
+			</result>
+		</action>
+		<action name="uploadJsp"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="uploadJsp">
+			<result name="uploadJsp_success" type="redirectAction">
+				customReportList.action
+			</result>
+			<result name="uploadJspInit" type="redirectAction">
+				uploadJspInit.action?customReport.id={customReport.id}
+			</result>
+			
+		</action>
+		<action name="getJSZByLableid"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="getJSZByLableid">
+			<result name="getJSZByLableid_success">
+				admin/customReports/getJSZByLableidInit.jsp
+			</result>
+		</action>
+		
+		
+		
+		<action name="deleteLableById"
+				 class="com.sopia.schedule.action.CustomReportsAction"
+				 method="deleteLableById">
+			<result name="deleteLableById_success" type="redirectAction">
+				customReportList.action?elmessage=${elmessage}
+			</result>
+		</action>
+		
+		
+		<action name="getLableById"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="getLableById">
+		</action>
+		<action name="checklablename"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="checklablename">
+		</action>
+		<action name="fieldaddlable"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="fieldaddlable">
+		</action>
+		<action name="updateorder"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="updateorder">
+		</action>
+		<action name="addorderfield"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="addorderfield">
+		</action>
+		<action name="addgroupfield"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="addgroupfield">
+		</action>
+		<action name="getallorderfield"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="getallorderfield">
+		</action>
+		<action name="getnewsql"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="getnewsql">
+		</action>
+		<action name="updorderfielddele"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="updorderfielddele">
+		</action>
+		<action name="updgroupfielddele"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="updgroupfielddele">
+		</action>
+		<action name="insertjisuanzu"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="insertjisuanzu">
+		</action>
+		<action name="showzijisuan"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="showzijisuan">
+		</action>
+		<action name="formula_insert"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="formula_insert">
+		</action>
+		<action name="formula_insert_biaojian"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="formula_insert_biaojian">
+		</action>
+		
+		<action name="list_modulemanage"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="list_modulemanage">
+		</action>
+		<action name="list_field_by_tablename"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="list_field_by_tablename">
+		</action>
+		<action name="checkJSZNameIsExist"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="checkJSZNameIsExist">
+		</action>
+		<action name="changeJSZId"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="changeJSZId">
+		</action>
+		<action name="deleteJSZById"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="deleteJSZById">
+		</action>
+		<action name="select_relatetype2"
+			class="com.sopia.schedule.action.CustomReportsAjaxAction" 
+			method="select_relatetype2">
+		</action>
+		
+	</package>
+</struts>

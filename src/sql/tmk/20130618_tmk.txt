@@ -1,0 +1,92 @@
+//添加购买的考场菜单
+insert into elfunc (funccode,name,description,parentid,needcheck,params,target,dyimg,bgimg,linkimg) 
+ values ('listBuyErooms','购买的考场','购买的考场',2393,0,'10','rightFrame','default_dy.jpg','default_bg.jpg','default_link.jpg');
+insert into elfunc (funccode,name,description,parentid,needcheck,params,target,dyimg,bgimg,linkimg) 
+ values ('list_lableTree','自定义标签类别管理','自定义标签类别管理',3570,0,'10','rightFrame','default_dy.jpg','default_bg.jpg','default_link.jpg');
+commit;
+ 
+ 
+ //自定义标签类别sql
+-- Create table
+create table LABLETREE
+(
+  ID          NUMBER not null,
+  PARENTID    NUMBER,
+  LID         NUMBER,
+  RID         NUMBER,
+  NAME        VARCHAR2(200) not null,
+  DESCRIPTION VARCHAR2(400),
+  BH          VARCHAR2(400),
+  STATUS      NUMBER default 0 not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table LABLETREE
+  add constraint LABLETRE_PRIMARY_ID primary key (ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  -- Create sequence 
+create sequence LABLETREE_SEQUENCE
+minvalue 1
+maxvalue 9999999999
+start with 10
+increment by 1
+cache 10;
+
+
+--单独执行--
+create or replace trigger auto_id_labletree  before insert on  labletree  for each row
+when (new.id is null)
+begin  select labletree_sequence.nextval into :new.id from dual ;   end;
+
+-------------
+
+
+
+
+-- Create table
+create table LABLETREE_OP_USER
+(
+  USERID      NUMBER not null,
+  LABLETREEID NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+  insert into labletree (id,parentid,lid,rid,name,description,bh,status) 
+   values (1,0,0,0,'自定义标签类别','自定义标签类别','00000000',0);
+  commit;
+  
+  
+alter table lable_circulation add(labletreeid  number);
+alter table LABLE_SEARCH add(labletreeid  number);
+commit;
+  

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gdgat" default="war" basedir=".">
+	<property name="src" value="src" />
+	<property name="WebContent" value="WebRoot" />
+	<property name="dist" value="D:/gdgat" />
+	<property name="warDest" value="warDest" />
+	<property name="classDest" value="class" />
+	<property name="source-encoding" value="GBK" />
+	<property name="tomcat-lib" value="D:/elearning/tomcat/lib" />
+	<property name="warName" value="gdgat.war" />
+	<!--编译java源文件所需的jar文件 -->
+	<path id="build-classpath">
+		<fileset dir="${WebContent}\WEB-INF\lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${tomcat-lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!--清理-->
+	<target name="clean">
+		<delete dir="${dist}" />
+	</target>
+
+	<!-- 初始化，建立相关的文件夹-->
+	<target name="init">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${dist}/${warDest}" />
+		<mkdir dir="${dist}/${classDest}" />
+	</target>
+
+	<!-- 编译java源文件并拷贝到相应的文件夹-->
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${dist}/${classDest}" target="1.6" classpathref="build-classpath" encoding="${source-encoding}" debug="true" debuglevel="source,lines,vars">
+		</javac>
+	</target>
+
+	<!--拷贝webcontent文件到相应的文件夹-->
+	<target name="copy">
+		<copy todir="${dist}/${warDest}">
+			<fileset dir="${WebContent}">
+				<exclude name="**/*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}/${classDest}">
+			<fileset dir="${src}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!--打包-->
+	<target name="war" depends="compile, copy">
+		<war destfile="${dist}/${warName}" webxml="${WebContent}/WEB-INF/web.xml">
+			<fileset dir="${dist}/${warDest}" />
+			<classes dir="${dist}/${classDest}">
+			</classes>
+		</war>
+		<delete dir="${dist}/${warDest}">
+		</delete>
+		<delete dir="${dist}/${classDest}">
+		</delete>
+	</target>
+
+</project>

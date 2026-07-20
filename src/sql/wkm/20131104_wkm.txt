@@ -1,0 +1,2 @@
+insert into elfunc (funccode,name,parentid,needcheck,target,dyimg,bgimg,linkimg) values('index_wsj','安全员前台登陆口',761,0,'rightFrame','default_dy.jpg','default_bg.jpg','default_link.jpg');
+分配给超管、学员、游客

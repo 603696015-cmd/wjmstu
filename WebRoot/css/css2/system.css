@@ -1,0 +1,67 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,   
+form,fieldset,input,textarea,p,blockquote,th,td {padding:0; margin:0;}
+html, body { height:100%;} /* 同时设置html是为了兼容FF */
+body { font-size: 13px; color: black; line-height: 150%; background-color:#fff; text-align: center; height:100%; width:98%;}
+img { border:0;}
+ul li { list-style:none;}
+a:link,a:visited { text-decoration:none; color:#077ac7;}
+a:hover,a:active { text-decoration:none;}
+/*表单相关*/
+input, textarea, select, button{ font-size:12px; padding-left:2px;}
+textarea {overflow:auto;}
+button{ padding-left:0;}
+input {font-size:12px; border:1px solid #dcdcdc; padding-left:2px;vertical-align: middle;}
+.inputtitle{ background:url("../images/ruler.gif") repeat-x 0 5px; height:20px;padding-left:2px;}
+/*列表菜单 文本区域*/
+select,textarea,input,.textarea_style{border:1px solid #dcdcdc;}
+/*单选框复选框*/
+.radio_style, .checkbox_style { border:0;}
+/*按钮样式*/
+.button_style { background:url(../images/btn_bg.gif) repeat-x 0 0; text-align:center; border:1px solid #9cc9e0; padding:3px 4px; *padding:0 4px; color:#077ac7; cursor:pointer; height:21px; line-height:21px; overflow:hidden;}
+.file_style{ height:20px; line-height:20px;border:1px solid #dcdcdc; }
+
+/*按钮区域*/
+.button_box { text-align:left; padding:5px;}
+/*后台头部*/
+#header {
+	height:58px;
+	width:100%;
+	border-bottom:5px solid #069;
+	background-image: url(../images/bg_admin.jpg);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+}
+.logo { width:220px; float:left; margin: 0px;clear:none;border: none;}
+/*菜单*/
+#menu {font-size:12px;clear: both;float: right; margin-bottom:0px; margin-top:8px;margin-right: 5px;}
+#menu li { float:left; list-style:none; text-align:center;}
+#menu li a { cursor:pointer; float:left; color:#fff; background:url(../images/menu_l.gif) no-repeat 0 0; height:29px; line-height:29px;}
+#menu li a span { background:url(../images/menu_r.gif) no-repeat right 0; padding:0 10px; display:block; float:left;}
+#menu li a:hover,.menu li a.selected { color:#ff0; background:url(../images/menu_l.gif) no-repeat 0 -29px; height:29px; line-height:29px;}
+#menu li a:hover span,.menu li a.selected span { color:#ff0; background-position:right -29px; padding:0 10px;}
+h4 {
+	border:1px solid #069;
+	border-width:0 1px 1px 0;
+	margin-top:0;
+	font-size:14px;
+	text-align:left;
+	height:28px;
+	line-height:28px;
+	color:#fff;
+	width:219px;
+	background-image: url(../images/bg_admin.jpg);
+	background-repeat: repeat-x;
+	background-position: 0 -58px;
+}
+h4 span{ background:url(../images/bg_arrow.gif) no-repeat 5px -1px; padding-left:30px;}
+h4 img{ cursor:pointer;}
+/*右上管理信息*/
+#info_bar {float:right;margin-right:5px;font-size:12px; margin-top:5px; color:#fff; clear: both;}
+a.orange:link, a.orange:visited {color:orange;}
+a.orange:hover, a.orange:active {color:orange;}
+a.white:link, a.white:visited {color:#fff;}
+a.white:hover, a.white:active {color:#fff;}
+/*布尔样式*/ 
+/*输入法模式禁止ie支持*/
+.noime{ime-mode:disabled;} 
+

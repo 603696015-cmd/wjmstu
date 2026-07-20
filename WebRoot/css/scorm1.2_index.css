@@ -1,0 +1,173 @@
+
+
+body {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+	background: #DFE8F6 none repeat scroll 0 0;
+	font-family: "宋体", tahoma, arial, verdana, sans-serif;
+}
+
+a:link,a:visited,a:hover {
+	color: blue;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	vertical-align: middle;
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+.no {
+	display: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+#ptop {
+	background: #1E4176;
+	border: 0 none;
+	height: 100px;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+#pside {
+	float: left;
+	width: 200px;
+}
+
+#pbody {
+	margin: 0 0 0 205px;
+	background: #FFFFFF;
+	border: 1px solid #8DB2E3;
+	position: relative;
+	width: auto;
+	z-index: 30;
+}
+
+#pfoot {
+	text-align: center;
+	margin-top: 5px;
+}
+
+/*左侧菜单begin*/
+.leftMenuHeader {
+	background: transparent
+		url(../images/layout-images/white-top-bottom.gif) repeat-x scroll 0
+		-1px;
+	border: 1px solid #99BBE8;
+	color: #15428B;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 15px;
+	padding: 5px 3px 4px 5px;
+}
+
+.leftMenuBody {
+	background: white;
+	border-right: 1px solid #99BBE8;
+	border-bottom: 1px solid #99BBE8;
+}
+
+.leftMenuBody .col .head1 {
+	cursor: pointer;
+	background: transparent url(../images/layout-images/light-hd.gif)
+		repeat-x scroll 0 -9px;
+	color: #222222;
+	border-bottom: 1px solid #99BBE8;
+	line-height: 15px;
+	padding: 4px 3px 3px 5px;
+	font-size: 12px;
+}
+
+.leftMenuBody .col .head2 {
+	line-height: 18px;
+	padding-left: 16px
+}
+
+
+.head2 a,.head2 a:link,.head2 a:visited {
+	color: black;
+	padding: 1px 3px 1px 2px;
+	line-height: 18px;
+}
+
+.head2 a:hover,.head2.cur a:link,.head2.cur a:visited {
+	background: #3366CC;
+	color: white;
+}
+
+/*左侧菜单end*/ /*伸缩小按钮begin*/
+.tool {
+	background: url(../images/layout-images/tool-sprites.gif) no-repeat
+		scroll 0 0;
+	cursor: pointer;
+	float: right;
+	height: 15px;
+	margin-left: 2px;
+	overflow: hidden;
+	width: 15px;
+}
+
+.leftMenuHeader .tool {
+	background-position: 0 -180px;
+}
+
+.leftMenuBody .col .head1 .tool {
+	background-position: 0 -255px;
+}
+
+.leftMenuBody .col .head1 .tool.collapse {
+	background-position: 0 -240px;
+}
+
+/*伸缩小按钮end*/ /*右侧主体*/
+#curinfobar {
+	border-bottom: 1px solid #8DB2E3;
+	background: #DEECFD;
+	font-size: 12px;
+	line-height:20px;
+	padding-bottom: 2px;
+}
+
+#curinfobar div {
+	border-bottom: 1px solid #8DB2E3;
+}
+
+#pcontent {
+	background: white;
+	border-bottom: 1px solid #99BBE8;
+}
+
+#midbar {
+	background-color: #D2E0F2;
+	border: 1px solid #98C0F4;
+	width: 20px;
+	display: none;
+	float: left;
+	margin-left: 2px;
+}
+
+#sTool {
+	background-position: 0 -165px;
+	float: none;
+}

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_stuff" extends="elearning">
+		<action name="question_stuffList"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffList">
+			<result name="question_stuffList">
+				admin/question/question_stuffList.jsp
+			</result>
+			<result name="to_stuff_url">admin/question/question_stuffto.jsp</result>
+			<result name="question_stuffList_win">
+				admin/question/question_stuffList_win.jsp
+			</result>
+		</action>
+		<!-- 首页资源库 -->
+		<action name="question_stuffList_index"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffList_index">
+			<result name="question_stuffList_index">
+				elfrontman/question_stuffList_index.jsp
+			</result>
+			<result name="to_stuff_url">admin/question/question_stuffto.jsp</result>
+			<result name="question_stuffList_win">
+				admin/question/question_stuffList_win.jsp
+			</result>
+			<result name="question_stuffList_search">
+				elfrontman/question_stuffList_search.jsp
+			</result>
+		</action>
+		<action name="question_stuffPreview_index"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffPreview_index">
+			<result name="question_stuffPreview_index">
+				elfrontman/question_stuffPreview_index.jsp
+			</result>
+			<result name="imageStuffPreview">
+				elfrontman/imageStuffPreview_index.jsp
+			</result>
+		</action>
+		<action name="stufftree" class="com.sopia.questionman.action.StuffAction" method="stufftree">
+			<result name="stufftree">
+				elfrontman/stufftree.jsp
+			</result>
+		</action>
+		<action name="mess_getStuffLibInfoJson" class="com.sopia.questionman.action.StuffAction" method="mess_getStuffLibInfoJson">
+		</action>
+		
+		<action name="qstuffRename"
+			class="com.sopia.questionman.action.StuffAction"
+			method="qstuffRename">
+			<result name="question_stuffList" type="redirectAction">
+				question_stuffList.action?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="question_stuffPath"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffPath">
+		</action>
+		<action name="question_stuff_mylist"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuff_mylist">
+			<result name="question_stuff_mylist">
+				/admin/question/question_stuff_mylist.jsp
+			</result>
+		</action>
+		<action name="question_stuffaddInit"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffaddInit">
+			<result name="question_stuffadd">
+				admin/question/question_stuffadd.jsp
+			</result>
+		</action>
+		<action name="question_stuffwjjadd"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffwjjadd">
+			<result name="question_stuffwjjadd_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="question_stufftoswf"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stufftoswf">
+			<result name="question_stufftoswf_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="question_stuffwjjsizeset"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffwjjsizeset">
+			<result name="question_stuffwjjsizeset_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="question_stuffsizeset"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffsizeset">
+			<result name="question_stuffsizeset_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="question_stuffuseradd"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffuseradd">
+			<result name="question_stuffuseradd_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}
+			</result>
+		</action>
+		<action name="question_stuffshared"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffshared">
+			<result name="question_stuffshared_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;elmessage=${elmessage}&amp;isWbrowse=${isWbrowse}
+			</result>
+		</action>
+		<action name="qstuff_delete_user"
+			class="com.sopia.questionman.action.StuffAction"
+			method="qstuff_delete_user">
+		</action>
+		
+		<action name="question_stuffunzip"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffunzip">
+			<result name="question_stuffunzip_succ"
+				type="redirectAction">
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}
+			</result>
+		</action>
+		<action name="question_stuffadd"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffadd">
+			<result name="question_stuffadd">
+				admin/question/question_stuffList.jsp
+			</result>
+			<result name="ftp_success">
+				admin/question/question_ftpresult.jsp
+			</result>
+			<result name="question_stuffadd_success"
+				type="redirectAction">
+				<!-- admin/question/question_stuffadd_success.jsp -->
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}
+			</result>
+			<result name="question_stuffList" type="redirectAction">
+				question_stuffList.action?qpstuff.id=${qpstuff.id}&amp;isWbrowse=${isWbrowse}
+			</result>
+		</action>
+		<action name="question_stuffalter"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffalter">
+			<result name="question_stuffalter_success">
+				admin/question/question_stuffalter_success.jsp
+			</result>
+		</action>
+		<action name="question_stuffalterInit"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffalterInit">
+			<result name="question_stuffalter">
+				admin/question/question_stuffalter.jsp
+			</result>
+		</action>
+		<action name="getImageStream"
+			class="com.sopia.questionman.action.StuffAction"
+			method="getImageStream">
+			<result type="stream" name="imageStream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downFileName}"</param>
+				<param name="bufferSize">4096</param>
+	      	</result>
+		</action>
+		<action name="question_stuffDownload"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffDownload">
+			<result type="stream" name="fileDownload">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downFileName}"</param>
+				<param name="bufferSize">4096</param>
+	      	</result>
+		</action>
+		<action name="question_stuffdelete"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffdelete">
+			<result name="question_stuffList" type="redirectAction">
+				<!-- admin/question/question_stuffList.jsp -->
+				question_stuffList?qpstuff.id=${qpstuff.id}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="question_stuffPreview"
+			class="com.sopia.questionman.action.StuffAction"
+			method="question_stuffPreview">
+			<result name="question_stuffPreview">
+				admin/question/question_stuffPreview.jsp
+			</result>
+			<result name="imageStuffPreview">
+				admin/question/imageStuffPreview.jsp
+			</result>
+		</action> 
+	</package>
+</struts>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>  
+	<package name="lablecustomlable_s2" extends="elearning">
+		<!-- 添加列表标签页面 -->
+		  <action name="lable_cirulationListLableNameAddInit" class="com.sopia.lable.action.CustomLableAction"  method="lable_cirulationListLableNameAddInit">
+			<result name="lable_cirulationListLableNameAddInit_success" >
+				admin/lable/lable_cirulationListLableNameAdd.jsp
+			</result>
+		  </action>
+	  <!-- 添加列表标签名称 -->
+	  <action name="lable_cirulationListLableNameAdd" class="com.sopia.lable.action.CustomLableAction"  method="lable_cirulationListLableNameAdd">
+			<!-- 添加成功 -->
+			<result name="lable_cirulationListLableAddInit_success" >
+				admin/lable/lable_cirulationListLableAdd.jsp
+			</result>
+			<!-- 添加不成功 -->
+			<result name="lable_cirulationListLableNameAddInit_success" >
+				admin/lable/lable_cirulationListLableNameAdd.jsp
+			</result>
+		  </action>
+		  <!-- 添加列表标签内容页面 -->
+		  <action name="lable_cirulationListLableinfoAddInit" class="com.sopia.lable.action.CustomLableAction"  method="lable_cirulationListLableinfoAddInit">
+			<result name="lable_cirulationListLableAddInit_success" >
+				admin/lable/lable_cirulationListLableAdd.jsp
+			</result>
+		  </action>
+		    <!-- 添加列表标签内容页面 -->
+		  <action name="lable_lable_cirulationListLableSQLAdd" class="com.sopia.lable.action.CustomLableAction"  method="lable_lable_cirulationListLableSQLAdd">
+			<result name="lable_lable_cirulationListLableSQLAdd_success" >
+				admin/lable/lable_cirulationListLableSQLAdd.jsp
+			</result>
+		  </action>
+		    <!-- 添加列表标签循环体 -->
+		  <action name="lable_cirualtionListLableHTML" class="com.sopia.lable.action.CustomLableAction"  method="lable_cirualtionListLableHTML">
+			<result name="lable_cirualtionListLableHTML_success" >
+				admin/lable/lable_addsuccess.jsp
+			</result>
+		  </action>
+		  
+		    <!-- 得到标签列表 -->
+		  <action name="lable_getalllable" class="com.sopia.lable.action.CustomLableAction"  method="lable_getalllable">
+			<result name="lable_getalllable_success" >
+				admin/lable/lable_lablelist.jsp
+			</result>
+		  </action>
+		  <action name="copylableToDb" class="com.sopia.lable.action.CustomLableAction"  method="copylableToDb">
+			<result name="copylableToDb_success" type="redirectAction">
+				lable_getalllable.action?elmessage=${elmessage}
+			</result>
+		  </action>
+		  <!-- 添加搜索标签页面 -->
+		  <action name="lable_searchLableNameAddInit" class="com.sopia.lable.action.CustomLableAction"  method="lable_searchLableNameAddInit">
+			<result name="lable_searchLableNameAddInit_success" >
+				admin/lable/search/lable_searchLableNameAdd.jsp
+			</result>
+		  </action>
+		    <!-- 添加搜索标签名称 -->
+	  <action name="lable_searchLableNameAdd" class="com.sopia.lable.action.CustomLableAction"  method="lable_searchLableNameAdd">
+			<!-- 添加成功 -->
+			<result name="lable_searchLableinfoAddInit_success" >
+				admin/lable/search/lable_searchLableAdd.jsp
+			</result>
+			<!-- 添加不成功 -->
+			<result name="lable_searchLableNameAddInit_success" >
+				admin/lable/search/lable_searchLableNameAdd.jsp
+			</result>
+		  </action>  
+		   <action name="lable_searchLableinfoAddInit" class="com.sopia.lable.action.CustomLableAction"  method="lable_searchLableinfoAddInit">
+			  <result name="lable_searchLableinfoAddInit_success" >
+					admin/lable/search/lable_searchLableAdd.jsp
+				</result>
+			</action>  
+		  <!-- 添加搜索标签页面 -->
+		  <action name="lable_searchLablesearchAdd" class="com.sopia.lable.action.CustomLableAction"  method="lable_searchLablesearchAdd">
+			<result name="lable_searchLablesearchAdd_success" >
+				admin/lable/search/lable_searchLablesearchadd.jsp
+			</result>
+		  </action>
+		  <!-- 搜索标签搜索框设置 -->
+		  <action name="lable_searchLablesearchsetAdd" class="com.sopia.lable.action.CustomLableAction"  method="lable_searchLablesearchsetAdd">
+			<result name="lable_searchLablesearchsetAdd_success" >
+				admin/lable/search/lable_searchLableSQLAdd.jsp
+			</result>
+		  </action>
+		  
+		    <!-- 添加列表标签循环体 -->
+		  <action name="lable_searchLableHTML" class="com.sopia.lable.action.CustomLableAction"  method="lable_searchLableHTML">
+			<result name="lable_searchLableHTML_success" >
+				admin/lable/lable_addsuccess.jsp
+			</result>
+		  </action>
+    </package> 
+</struts>

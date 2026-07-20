@@ -1,0 +1,87 @@
+-- Create table
+create table INTELLIGENT_WEEK_T
+(
+  USERID     NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null,
+  CLASSID    NUMBER not null,
+  COURSEID   NUMBER not null,
+  PAGEID     NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+  
+-- Create table
+create table INTELLIGENT_WEEK
+(
+  ID        NUMBER not null,
+  USERID    NUMBER not null,
+  BEGINTIME TIMESTAMP(6) not null,
+  ENDTIME   TIMESTAMP(6),
+  LEARNTIME NUMBER,
+  CLASSID   NUMBER not null,
+  COURSEID  NUMBER not null,
+  PAGEID    NUMBER not null,
+  SCORE     NUMBER(12,1) not null,
+  TODAY     VARCHAR2(50) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+create or replace procedure intelligentweeklearnbegin
+(userid_ number,classid_ number,courseid_ number,cpid_ number,studyCourseRecordId_ number)
+as
+today_ varchar2(50);
+begin
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     --插入周学习记录表
+     insert into intelligent_week(id,userid,begintime,classid,courseid,pageid,score,today)
+            values (studyCourseRecordId_,userid_,sysdate,classid_,courseid_,cpid_,0.0,today_);
+     --插入培训班学习记录表
+     --TODO
+end;
+  
+  
+  
+
+  create or replace procedure intelligentweeklearnend
+(userid_ number,classid_ number,courseid_ number,cpid_ number,studyCourseRecordId_ number)
+as
+today_ varchar2(50);
+count_ number;
+between_sec_ number;
+begin
+     count_:=0;
+     between_sec_:=0;
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     select count(1) into count_ from intelligent_week where id=studyCourseRecordId_;
+     if count_>0 then
+        update intelligent_week set endtime=sysdate where id=studyCourseRecordId_;
+        select (cast(endtime as date)-cast(begintime as date))*86400 interval into between_sec_ from  intelligent_week  where id=studyCourseRecordId_;
+        update intelligent_week set learntime=between_sec_ where id=studyCourseRecordId_;
+     end if;
+     count_:=0;
+end;
+
+
+  
+  
+
+

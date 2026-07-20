@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_mock" extends="elearning">
+		<!-- 模拟考试管理 -->
+		<action name="mockpaer_list" class="com.sopia.mock.action.MockExamAction"
+			method="mockExamList">
+			<result name="mockpapger_list">
+				mock/index.jsp
+			</result>
+		</action>
+	</package>
+</struts>

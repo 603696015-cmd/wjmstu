@@ -1,0 +1,1 @@
+alter table question add voice_path varchar2(100);

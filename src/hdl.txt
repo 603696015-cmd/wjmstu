@@ -1,0 +1,1245 @@
+2012-5-29
+
+---------手工阅卷
+create or replace procedure sr_setscore_marking(mepid number) as
+roomid_ number; epid_ number;userid_ number;ep_score number;passgrade_ number;
+ispassed_ number default 0;blockid_ number;classid_ number;courseid_ number;
+cursor epblocks is select id from exampaperblock where exampaperid = epid_;
+begin
+     -- 第一步骤 读取考生考卷信息
+     select roomid,epid,userid,classid into roomid_,epid_,userid_,classid_ from study_quizinfo where id = mepid;
+     --2 设置试卷各个大题分值
+         open epblocks;
+             loop
+                fetch epblocks into blockid_ ; --取值
+                exit when epblocks%notfound; --当没有记录时退出循环
+                sr_blockscore_set_marking(mepid,blockid_ );
+             end loop;
+         close epblocks;
+     -- 3 得到大题总分值
+     select sum(myscore) into ep_score from study_blocks where sqid = mepid;
+     select rep.passgrade into passgrade_ from study_quizinfo sqi,exam_reps rep where rep.epid=sqi.epid and rep.roomid= sqi.roomid and sqi.id = mepid;
+     if ep_score >=passgrade_ then
+        ispassed_ := 1;
+     end if;
+     -- 4 记录试卷分值
+     update study_quizinfo set myscore = nvl(ep_score,0),status =3,ispassed =nvl(ispassed_,0) where id = mepid ;
+     -- 5 记录考场分值
+     sr_seteroom(userid_ ,roomid_);
+     --6 调用设置学分的过程
+     -----1首先查看该答卷有没有培训班
+     -----2如果有就调用
+     if classid_ > 0 then
+        user_ispass_class2(classid_,userid_);
+     end if;
+end ;
+
+
+----------------版块分值设定
+create or replace procedure sr_blockscore_set_marking(sqid_ number,blockid_ number) as
+ispassed_ number default 0;qid_ number;qtype_ number;u_myanswer varchar2(4000) ;q_rulestr varchar2(4000);
+q_answer varchar2(4000);bl_score number;bl_size number;score_ number;
+cursor questions is select q.id,ebq.rulestring,q.answer,q.qtype from question q left join exampaperblockquestion ebq on ebq.questionid=
+      q.id where ebq.blockid = blockid_ and q.qtype = 7;
+begin
+     -- ???? ????????
+     --select random, eachscore,type,rulestring into bl_random , bl_eachscore, bl_type,bl_rulestr  from exampaperblock where id = u_bl_id;
+     --2 ????????
+       open questions;
+           loop
+              fetch questions into qid_,q_rulestr,q_answer,qtype_ ; --??
+              exit when questions%notfound; --??????????
+              select sum(sq.myscore) into score_ from study_questions sq left join question q on q.id = sq.qid where q.parentid = qid_ and sq.sqid =sqid_ and sq.blockid=blockid_;
+              update study_questions set myscore = nvl(score_,0) ,status= 1 where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+           end loop;
+        close questions;
+     -- 3 ???????
+     select sum(myscore) into bl_score from (select sq.* from study_questions sq left join question q on q.id = sq.qid where q.parentid=0) where sqid =sqid_    and blockid= blockid_;
+     -- 4 ??????
+     update study_blocks set myscore = nvl(bl_score,0) where blockid = blockid_ and sqid= sqid_;
+end ;
+
+
+2012-5-30
+
+----------------试题库
+alter table QUESTIONLIB_OP_USER
+  add constraint questionlib_op_user_pk_depid foreign key (DEPID)
+  references question_lib (ID) on delete cascade;
+
+----------------考场库
+alter table EROOMLIB_OP_USER
+  add constraint eroomlib_op_user_pk_depid foreign key (DEPID)
+  references eroom_lib (ID) on delete cascade;
+
+----------------课程库
+alter table COURSE_OP_TYPE
+  add constraint course_op_user_pk_ctypeid foreign key (ctypeid)
+  references course_type (ID) on delete cascade;
+
+---------------培训班库
+alter table CLASS_OP_TYPE
+  add constraint class_op_user_pk_ctypeid foreign key (ctypeid)
+  references elclasstype (ID) on delete cascade;
+
+----------------资料中心
+alter table KNOWLEDGE_OP_TYPE
+  add constraint knowledge_op_user_pk_ctypeid foreign key (ctypeid)
+  references knowledgetype (ID) on delete cascade;
+
+----------------新闻库
+alter table NEWSTYPE_OP_TYPE
+  add constraint newstype_op_user_pk_ctypeid foreign key (ctypeid)
+  references newstype (ID) on delete cascade;
+
+----------------试卷库
+alter table EXAMPAPERLIB_OP_USER
+  add constraint exampaperlib_op_user_pk_depid foreign key (DEPID)
+  references exampaperlib (ID) on delete cascade;
+
+----------------部门库
+alter table DEPARTMENT_OP_USER
+  add constraint department_op_user_pk_depid foreign key (DEPID)
+  references department (ID) on delete cascade;
+
+2012-6-2
+alter table busilogs add opid number(8) default 0 not null;-------------------------
+  
+  
+2012-6-5
+  
+--创建学员考场的记录表
+create table study_room_record
+(
+  ID         number not null primary key,
+  ROOMID     NUMBER not null,
+  USERID     NUMBER not null,
+  ISPASSED   NUMBER default 0 not null,
+  STATUS     NUMBER default 0 not null,
+  MYSCORE    NUMBER(20,2) default 0 not null
+);
+
+create sequence study_room_record_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 10;
+
+create trigger auto_id_study_room_record before insert on study_room_record for each row 
+when (new.id is null)
+begin
+     select study_room_record_sequence.nextval into :new.id from dual;
+end;
+
+--学员分配的试卷表
+create table study_exampaper
+(
+  userid     number not null,
+  epid       NUMBER not null,
+  roomid     number not null,
+  classid    number default 0 not null
+);
+
+
+alter table study_quizinfo add mrrid number(8) default 0 not null;----------------------
+
+2012-6-6
+
+
+alter table exam_room add passmanner number(1) default 0 not null;-------------------------通过方式
+alter table study_questions add opstatus number(1) default 0 not null;---------------
+
+
+----------------------------------设置考场成绩
+create or replace procedure sr_seteroom_score(userid_ number,roomid_ number) as
+  er_pg_ number;
+  er_tscore_ number;
+  qp_ispassed number;qp_tscore number; er_ispassed number default 0 ;
+   courseid_ number; classid_ number;passmanner_ number;passedcount number default 0;
+   maxScore_ float;avgScore_ float;er_score float;
+--关联的培训班课程
+cursor class_courses is SELECT  cc.courseid,cc.classid FROM class_course cc left join study_room sr on sr.classid = cc.classid and  cc.eroomid=sr.roomid where sr.roomid = roomid_ and isdel!=-1;
+ begin
+     select passgrade,passmanner into er_pg_,passmanner_ from exam_room where id = roomid_ ;
+     --查询是否有记录通过
+     select count(ispassed) into passedcount from study_room_record where roomid=roomid_ and userid=userid_ and ispassed=1;
+     --判断是否有记录通过
+     if passedcount >0 then
+        select max(myscore),avg(myscore) into maxScore_,avgScore_ from study_room_record where roomid=roomid_ and userid=userid_ and ispassed=1;
+        er_ispassed:=1;
+     else
+        select max(myscore),avg(myscore) into maxScore_,avgScore_ from study_room_record where roomid=roomid_ and userid=userid_ and ispassed=0;
+     end if;
+     
+     if passmanner_ =0  then--最高分
+        er_score:=maxScore_;
+     else --平均分
+        er_score:=avgScore_;
+     end if;
+     update study_room set myscore = nvl(er_score,0),status =2,ispassed =nvl(er_ispassed,0) where roomid = roomid_ and userid = userid_;
+     --相关绑定的考场的课程进度计算
+     open class_courses;
+             loop
+                fetch class_courses into  courseid_, classid_ ; --取值
+                exit when class_courses%notfound; --当没有记录时退出循环
+                s_course_tprocess(userid_,courseid_,classid_ );
+             end loop;
+     close class_courses;
+end ;
+
+
+------------------------------设置考场记录
+create or replace procedure sr_seteroom_record(userid_ number,roomid_ number,mrrid_ number) as
+  er_pg_ number;
+  er_tscore_ number;
+  qp_ispassed number;qp_tscore number; er_ispassed number default 0 ;recordispassed number default 1;
+   courseid_ number; classid_ number; mycount_ number default 0;curcount_ number default 0; status_ number;recordStatus_ number default 1;
+cursor quizpassed is select ispassed,status from study_quizinfo where roomid = roomid_ and userid = userid_ and mrrid=mrrid_;
+--关联的培训班课程
+ begin
+     select passgrade into er_pg_ from exam_room where id = roomid_ ;
+     --select sum(ep.ep_tscore) into er_tscore_ from exam_reps reps left join exampaper ep on ep.id = reps.epid where reps.roomid =roomid_;
+     select sum(ep.ep_tscore) into er_tscore_ from study_exampaper se left join exampaper ep on ep.id = se.epid where se.roomid =roomid_ and se.userid=userid_;
+     select sum(myscore) into qp_tscore from study_quizinfo where roomid = roomid_ and userid = userid_ and mrrid=mrrid_;
+     open quizpassed;
+             loop
+                fetch quizpassed into qp_ispassed,status_; --取值
+                exit when quizpassed%notfound; --当没有记录时退出循环
+                --exit when qp_ispassed =0;
+                if status_=1 then
+                  mycount_:=mycount_+1;
+                end if;
+                if status_>1 then
+                  mycount_:=mycount_+2;
+                end if;
+                if qp_ispassed=0 then
+                  recordispassed:=-1;
+                end if;
+                curcount_:=curcount_+1;
+             end loop;
+     close quizpassed;
+     if er_tscore_ =0 then
+        er_tscore_ := 1;
+     end if;
+     if recordispassed = 1 and curcount_>0 and qp_tscore * 100 / er_tscore_ >= er_pg_ then
+        er_ispassed := 1;
+     end if;
+     if mycount_=curcount_*2 then
+       recordStatus_:=2;
+     end if;
+     update study_room_record set myscore = nvl(qp_tscore,0),status =recordStatus_,ispassed =nvl(er_ispassed,0) where id=mrrid_;
+end ;
+
+
+
+-------------------------设置成绩
+create or replace procedure sr_setscore(mepid number) as
+roomid_ number; epid_ number;userid_ number;ep_score number;passgrade_ number;
+ispassed_ number default 0;blockid_ number;random_ number;b_rulestr varchar2(4000);qscore_ number;btype_ number ;mrrid_ number;
+cursor epblocks is select id,random,rulestring,eachscore,type from exampaperblock where exampaperid = epid_;
+begin
+     -- 第一步骤 读取考生考卷信息
+     select roomid,epid,userid,mrrid into roomid_,epid_,userid_,mrrid_ from study_quizinfo where id = mepid;
+     --2 设置试卷各个大题分值
+         open epblocks;
+             loop
+                fetch epblocks into blockid_  ,random_  , b_rulestr  ,qscore_  ,btype_ ; --取值
+                exit when epblocks%notfound; --当没有记录时退出循环
+                sr_blockscore_set(mepid,userid_ ,blockid_  ,random_  , b_rulestr  ,qscore_  ,btype_  );
+             end loop;
+         close epblocks;
+     -- 3 得到大题总分值
+     select sum(myscore) into ep_score from study_blocks where sqid = mepid;
+     select rep.passgrade into passgrade_ from study_quizinfo sqi,exam_reps rep where rep.epid=sqi.epid and rep.roomid= sqi.roomid and sqi.id = mepid;
+     if ep_score >=passgrade_ then
+        ispassed_ := 1;
+     end if;
+     -- 4 记录试卷分值
+     update study_quizinfo set myscore = nvl(ep_score,0),status =2,ENDTIME= sysdate,ispassed =nvl(ispassed_,0) where id = mepid ;
+     -- 5 记录考场记录分值
+     sr_seteroom_record(userid_ ,roomid_,mrrid_);
+     -- 6 记录考场分值
+     --select passgrade into passgrade_ from exam_room where id = roomid_ ;
+     --select sum(myscore) into ep_score from study_quizinfo where roomid = roomid_ and userid = userid_;
+     --if ep_score >=passgrade_ then
+     --   ispassed_ := 1;
+     --end if;
+     sr_seteroom_score(userid_ ,roomid_);
+     --update study_room set myscore = nvl(ep_score,0),status =2,ispassed =nvl(ispassed_,0) where roomid = roomid_ and userid = userid_;
+end ;
+
+
+2012-6-8
+
+--------------------阅卷
+create or replace procedure sr_setscore_marking(mepid number) as
+roomid_ number; epid_ number;userid_ number;ep_score number;passgrade_ number;
+ispassed_ number default 0;blockid_ number;classid_ number;courseid_ number;mrrid_ number;
+cursor epblocks is select id from exampaperblock where exampaperid = epid_;
+begin
+     -- 第一步骤 读取考生考卷信息
+     select roomid,epid,userid,classid,mrrid into roomid_,epid_,userid_,classid_,mrrid_ from study_quizinfo where id = mepid;
+     --2 设置试卷各个大题分值
+         open epblocks;
+             loop
+                fetch epblocks into blockid_ ; --取值
+                exit when epblocks%notfound; --当没有记录时退出循环
+                sr_blockscore_set_marking(mepid,blockid_ );
+             end loop;
+         close epblocks;
+     -- 3 得到大题总分值
+     select sum(myscore) into ep_score from study_blocks where sqid = mepid;
+     select rep.passgrade into passgrade_ from study_quizinfo sqi,exam_reps rep where rep.epid=sqi.epid and rep.roomid= sqi.roomid and sqi.id = mepid;
+     if ep_score >=passgrade_ then
+        ispassed_ := 1;
+     end if;
+     -- 4 记录试卷分值
+     update study_quizinfo set myscore = nvl(ep_score,0),status =3,ispassed =nvl(ispassed_,0) where id = mepid ;
+     -- 5 记录考场分值
+     --sr_seteroom(userid_ ,roomid_);
+     sr_seteroom_record(userid_ ,roomid_,mrrid_);
+     sr_seteroom_score(userid_ ,roomid_);
+     --6 调用设置学分的过程
+     -----1首先查看该答卷有没有培训班
+     -----2如果有就调用
+     if classid_ > 0 then
+        user_ispass_class2(classid_,userid_);
+     end if;
+end ;
+
+
+2012-6-14
+
+alter table study_room add avgscore number(10,2) default 0 not null;--------------平均成绩
+alter table study_room add maxscore number(10,2) default 0 not null;--------------最高成绩
+alter table study_room add eroomcount number(4) default 0 not null;---------------已考次数
+
+---------------设置考场成绩(修改了已考次数规则)
+create or replace procedure sr_seteroom_score(userid_ number,roomid_ number) as
+  er_pg_ number;
+  er_tscore_ number;
+  qp_ispassed number;qp_tscore number; er_ispassed number default 0 ;
+   courseid_ number; classid_ number;passmanner_ number;passedcount number default 0;
+   maxScore_ float;avgScore_ float;er_score float;srrcount_ number default 0;
+--关联的培训班课程
+cursor class_courses is SELECT  cc.courseid,cc.classid FROM class_course cc left join study_room sr on sr.classid = cc.classid and  cc.eroomid=sr.roomid where sr.roomid = roomid_ and isdel!=-1;
+ begin
+     select passgrade,passmanner into er_pg_,passmanner_ from exam_room where id = roomid_ ;
+     --查询是否有记录通过
+     select count(ispassed) into passedcount from study_room_record where roomid=roomid_ and userid=userid_ and ispassed=1;
+     --判断是否有记录通过
+     if passedcount >0 then
+        select max(myscore),avg(myscore) into maxScore_,avgScore_ from study_room_record where roomid=roomid_ and userid=userid_ and ispassed=1;
+        er_ispassed:=1;
+     else
+        select max(myscore),avg(myscore) into maxScore_,avgScore_ from study_room_record where roomid=roomid_ and userid=userid_ and ispassed=0;
+     end if;
+
+     if passmanner_ =0  then--最高分
+        er_score:=maxScore_;
+     else --平均分
+        er_score:=avgScore_;
+     end if;
+     --计算学员考场的平均分和最高分（不过是否通过）
+     select max(myscore),avg(myscore) into maxScore_,avgScore_ from study_room_record where roomid=roomid_ and userid=userid_;
+     --计算学员考场的已考次数  --（记录已答完状态的数量）
+     --select count(id) into srrcount_ from study_room_record where roomid=roomid_ and userid=userid_ and status=2;
+     select count(id) into srrcount_ from study_room_record where roomid=roomid_ and userid=userid_;
+     --更新学员考场信息
+     update study_room set myscore = nvl(er_score,0),status =2,ispassed =nvl(er_ispassed,0),avgscore=avgScore_,maxscore=maxScore_,eroomcount=srrcount_ where roomid = roomid_ and userid = userid_;
+     --相关绑定的考场的课程进度计算
+     open class_courses;
+             loop
+                fetch class_courses into  courseid_, classid_ ; --取值
+                exit when class_courses%notfound; --当没有记录时退出循环
+                s_course_tprocess(userid_,courseid_,classid_ );
+             end loop;
+     close class_courses;
+end ;
+
+
+
+2012-6-29
+
+------------------线下培训附件表
+create table linetrainrecord_stuff
+(
+  ID            NUMBER not null,
+  trainid       NUMBER not null,
+  title         varchar(200), --附件标题
+  stuffaddr     varchar(200) --附件地址
+);
+
+alter table linetrainrecord_stuff
+  add constraint linetrainrecord_stuff_ID_PK primary key (ID); 
+
+create sequence linetrainrecord_stuff_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_linetrainrecord_stuff  before insert on linetrainrecord_stuff for each row
+when (new.id is null)
+begin
+      select linetrainrecord_stuff_sequence.nextval into :new.id from dual;
+end;
+
+
+----------------线下培训附件
+alter table linetrainrecord_stuff
+  add constraint LINETRAINRECORD_STUFF_ID_FK foreign key (trainid)
+  references linetrainrecord(trainid) on delete cascade;
+
+-----2012-7-16
+-------------资料库的左右id添加
+alter table knowledgetype add lid number default 0 not null;-------------------------
+alter table knowledgetype add rid number default 0 not null;-------------------------
+
+
+
+-----2012-7-18
+
+---------------改了更新study_course的时候 ，结束时间不动
+create or replace procedure s_course_cp2 (userid_ number, courseid_ number ,classid_ number)
+AS  ispassed_ number; c_time_ number; c_credit_ number; c_creditmod_ number;
+    yxc_time_ number;  process_ number; mycredit_ number;
+BEGIN
+  -- ??????
+  select  passed into ispassed_  from study_course where userid=userid_ and courseid =courseid_ and classid =classid_;
+  if ispassed_= 0 then
+      -- ??????
+      select  during,credit,creditmod into  c_time_,c_credit_,  c_creditmod_ from course where id = courseid_ ;
+      select sum(passtime) into yxc_time_ from (select * from study_cpage where userid =userid_ and classid=classid_) sc left join course_page cp on cp.id = sc.cpid where  cp.courseid=courseid_;
+
+      process_ := (yxc_time_*100)/(60*c_time_);
+      if  c_creditmod_=1 then
+          mycredit_ := c_credit_*process_/100;
+      else
+          mycredit_ := 0;
+      end if;
+      update study_course set passtime = yxc_time_,process=process_,mycredit=mycredit_ where userid = userid_ and courseid=courseid_ and classid =classid_;
+
+      -- ????????
+      if yxc_time_>=c_time_*60 then
+          mycredit_:= c_credit_;
+          update study_course set passtime = c_time_*60 ,passed = 1,process = 100,mycredit=mycredit_ where userid = userid_ and courseid=courseid_ and classid =classid_;
+      end if;
+    end if;
+END ;
+
+-----------------------------改了更新study_course的时候 ，结束时间不动
+create or replace procedure s_course2(   userid_ number, courseid_ number, passtime_ number,classid_ number)
+AS
+ ispassed_ number ; c_time_  number ;yxc_time_ number ; process_ number;
+BEGIN
+ select  passed into ispassed_ from study_course where userid=userid_ and courseid =courseid_ and classid=classid_;
+  if ispassed_ = 0 then
+      -- 学习未完成 记录进度
+      select during into c_time_ from course where id = courseid_;
+      select passtime into yxc_time_ from study_course where userid =  userid_ and courseid= courseid_ and classid=classid_;
+      yxc_time_ := yxc_time_+passtime_;
+      process_ := (yxc_time_*100)/(60*c_time_);
+      update study_course set passtime = yxc_time_,process= process_ where userid =  userid_ and courseid= courseid_ and classid=classid_;
+      -- 完毕
+      if  yxc_time_>=c_time_*60 then
+          update study_course set passtime = c_time_*60 ,passed = 1,process = 100 where userid =userid_ and courseid=courseid_ and classid=classid_;
+      end if;
+      --记录总进度
+
+    end if;
+    s_course_tprocess(userid_,courseid_,classid_);
+END ;
+
+--2012-7-19
+
+--删除基础数据表主键(原因是可能没启用)
+alter table BASEDATAT
+  drop constraint BASEDATAT_ID_PK;
+--创建基础数据表主键
+alter table BASEDATAT
+  add constraint BASEDATAT_ID_PK primary key (ID);
+--把用户表的工种字段改成整形
+alter table ELUSER add tempcol number default 1;
+update eluser set tempcol = jingzhong ;------如果报错，可能是用户表工种字段有字符串数据
+commit;
+alter table ELUSER drop column JINGZHONG;
+alter table ELUSER rename column tempcol to JingZhong;
+alter table ELUSER
+ add constraint ELUSER_jingzhong_fk foreign key (JINGZHONG)
+  references basedatat (ID) on delete cascade;
+
+--把用户表的职务字段改成整形
+alter table ELUSER add tempcol number default 1;
+update eluser set tempcol = zhiwu ;------如果报错，可能是用户表职务字段有字符串数据
+commit;
+alter table ELUSER drop column zhiwu;
+alter table ELUSER rename column tempcol to zhiwu;
+alter table ELUSER
+ add constraint ELUSER_zhiwu_fk foreign key (zhiwu)
+  references basedatat (ID) on delete cascade;
+
+--把用户表的职级字段改成整形
+alter table ELUSER add tempcol number default 1;
+update eluser set tempcol = zhiji ;------如果报错，可能是用户表职级字段有字符串数据
+commit;
+alter table ELUSER drop column zhiji;
+alter table ELUSER rename column tempcol to zhiji;
+alter table ELUSER
+  add constraint ELUSER_zhiji_fk foreign key (zhiji)
+  references basedatat (ID) on delete cascade;
+
+--把用户表的地市字段改成整形
+alter table ELUSER add tempcol number default 1;
+update eluser set tempcol = dishi ;------如果报错，可能是用户表地市字段有字符串数据
+commit;
+alter table ELUSER drop column dishi;
+alter table ELUSER rename column tempcol to dishi;
+alter table ELUSER
+  add constraint ELUSER_dishi_fk foreign key (dishi)
+  references basedatat (ID) on delete cascade;
+  
+  --2012-7-24
+  
+  --------练习分配给部门，部门学员自动获取练习分配
+create or replace procedure examprac_dep_set(userid_ number,depid_ number)
+as
+pracid_ number;exist_ number;
+cursor pracids is select t1.pracid from (
+select epd.pracid,dep.lid,dep.rid from examprac_dep epd inner join (select id from examprac where valid=1) ep on epd.pracid=ep.id left join department dep on epd.depid=dep.id
+) t1,(select lid,rid from department where id=depid_) t2 where t2.lid>=t1.lid and t2.rid<=t1.rid;
+begin
+  open pracids;
+    loop
+      fetch pracids into pracid_;
+      exit when pracids%notfound;
+           select count(*) into exist_ from examprac_assign where eprid = pracid_ and userid = userid_;
+           if exist_=0 then --判断该练习有没有分配给该学员
+             insert into examprac_assign(eprid,userid)values(pracid_,userid_); --把此练习分配给该学员
+           end if;
+    end loop;
+  close pracids;
+end;
+
+--2012-7-25
+
+alter table study_exampaper add temp number(1) default 0 not null;------------
+update study_exampaper set temp=status;-------------
+alter table study_exampaper drop column status;----------------
+alter table study_exampaper rename column temp to status;---------------
+
+
+--2012-8-1
+alter table study_quizinfo add activitystatus number(1) default 0 not null;---------------------
+
+------------创建学员学习记录表
+create table study_course_record
+(  
+     id number not null,
+     courseid number not null,--课程id
+     classid number not null,--培训班id
+     cpid number default 0 not null,--章节id
+     userid number not null,
+     begintime date not null,
+     endtime date,
+     status number(1) default 0 not null
+);
+alter table study_course_record  add constraint study_course_record_pk primary key (id) ;
+
+create  sequence study_course_record_sequence
+	increment by 1 -- 每次加几个
+	start with 1 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_study_course_record before insert on study_course_record for each row 
+when (new.id is null)
+begin
+     select study_course_record_sequence.nextval into :new.id from dual;
+end;
+
+alter table study_exampaper add isdel number(1) default 0 not null;---------------是否被删除
+
+
+--2012-8-2
+
+---------------改了考场成绩等于学员试卷总分和（除了已删除的试卷）
+create or replace procedure sr_seteroom_score(userid_ number,
+                                              roomid_ number) as
+  er_pg_      number;
+  er_tscore_  number;
+  qp_ispassed number; --答卷试卷通过
+  qp_tscore   number; --答卷试卷总分
+  er_ispassed number default 0;
+  courseid_   number;
+  classid_    number;
+  er_score    float;
+  --关联的培训班课程
+  cursor class_courses is
+    SELECT cc.courseid, cc.classid
+      FROM class_course cc
+      left join study_room sr on sr.classid = cc.classid
+                             and cc.eroomid = sr.roomid
+     where sr.roomid = roomid_
+       and isdel != -1;
+  cursor seppassed is select ispassed from study_exampaper where roomid = roomid_ and userid = userid_ and isdel!=1;
+begin
+  select passgrade
+    into er_pg_
+    from exam_room
+    where id = roomid_;
+  --获取答卷总体信息
+    select sum(ep.ep_tscore) into er_tscore_ from (select * from study_exampaper where roomid=roomid_ and userid=userid_ and isdel!=1) reps  left join exampaper ep on ep.id = reps.epid where reps.roomid =roomid_;
+     select sum(myscore) into qp_tscore from study_exampaper where roomid = roomid_ and userid = userid_  and isdel!=1;
+     open seppassed;
+             loop
+                fetch seppassed into qp_ispassed;
+                exit when seppassed%notfound;
+                exit when qp_ispassed =0;
+             end loop;
+     close seppassed;
+     if er_tscore_ =0 then
+        er_tscore_ := 1;
+     end if;
+     if qp_ispassed = 1 and qp_tscore * 100 / er_tscore_ >= er_pg_ then
+        er_ispassed := 1;
+     end if;
+  --更新学员考场信息
+  update study_room
+     set myscore    = nvl(qp_tscore, 0),
+         status     = 2,
+         ispassed   = nvl(er_ispassed, 0)
+   where roomid = roomid_
+     and userid = userid_;
+  --相关绑定的考场的课程进度计算
+  open class_courses;
+  loop
+    fetch class_courses
+      into courseid_, classid_; --取值
+    exit when class_courses%notfound; --当没有记录时退出循环
+    s_course_tprocess(userid_, courseid_, classid_);
+  end loop;
+  close class_courses;
+end;
+
+
+
+
+--2012-8-10
+
+alter table eprac_quizinfo add ispassed number(1) default 0 not null;-----------练习是否通过
+
+-----------修改了练习通过后设置字段ispassed为1
+create or replace procedure eprac_setscore(mepid number) as
+roomid_ number; epid_ number;userid_ number;ep_score number;
+blockid_ number;random_ number;b_rulestr varchar2(4000);qscore_ number;btype_ number ;pracScore_ number;ispassed_ number default 0;
+cursor epblocks is select eb.id,eb.random,eb.rulestring,eb.eachscore,eb.type from eprac_quizinfo eq left join examprac pra
+       on pra.id = eq.pracid left join exampaperblock eb on eb.exampaperid = pra.epid where eq.id = mepid;
+begin
+     -- ???? ????????
+      select userid into  userid_ from eprac_quizinfo where id = mepid;
+      select ep.ep_tscore*epr.passgrade/100 into pracScore_ from examprac epr left join eprac_quizinfo eq on epr.id=eq.pracid left join exampaper ep on epr.epid=ep.id where eq.id=mepid;--得到及格的分数
+              --2 ??????????
+         open epblocks;
+             loop
+                fetch epblocks into blockid_  ,random_  , b_rulestr  ,qscore_  ,btype_ ; --??
+                exit when epblocks%notfound; --??????????
+               eprac_blockscore_set(mepid ,userid_  ,blockid_  ,random_  , b_rulestr  ,qscore_  ,btype_  );
+               end loop;
+         close epblocks;
+     -- 3 ???????
+     select sum(myscore) into ep_score from eprac_blocks where pracqid = mepid;
+     if ep_score>=pracScore_ then
+       ispassed_:=1;
+     end if;
+     -- 4 ??????
+     update eprac_quizinfo set myscore = nvl(ep_score,0), ENDTIME= sysdate,ispassed=ispassed_ where id = mepid ;
+end ;
+
+--2012-8-15
+
+------弹窗信息-学员表
+create table pop_eluser
+(
+  POPID  NUMBER not null,
+  userid NUMBER not null
+);
+/
+------弹窗信息-考场表
+create table pop_room
+(
+  POPID  NUMBER not null,
+  ROOMID NUMBER not null
+);
+/
+------弹窗信息-培训班表
+create table pop_class
+(
+  POPID  NUMBER not null,
+  classid NUMBER not null
+);
+/
+------弹窗信息-部门表
+create table pop_department
+(
+  POPID  NUMBER not null,
+  depid NUMBER not null
+);
+
+------------弹窗用户表外键约束（级联删除）
+alter table POP_ELUSER
+  add constraint FK_POPELUSER_POPINFO_POPID foreign key (POPID)
+  references popinfo (ID) on delete cascade;
+------------弹窗部门表外键约束（级联删除）
+alter table POP_DEPARTMENT
+  add constraint FK_POPDEPARTMENT_POPINFO_POPID foreign key (POPID)
+  references popinfo (ID) on delete cascade;
+------------弹窗考场表外键约束（级联删除）
+alter table POP_ROOM
+  add constraint FK_POPROOM_POPINFO_POPID foreign key (POPID)
+  references popinfo (ID) on delete cascade;
+------------弹窗培训班表外键约束（级联删除）
+alter table POP_CLASS
+  add constraint FK_POPCLASS_POPINFO_POPID foreign key (POPID)
+  references popinfo (ID) on delete cascade;
+  
+  
+--2012-8-17
+
+------------创建学员考试记录表
+create table study_quizinfo_record
+(  
+     id number not null,
+     sqid number not null,
+     begintime date not null,
+     endtime date,
+     status number(1) default 0 not null
+);
+alter table study_quizinfo_record  add constraint study_quizinfo_record_pk primary key (id) ;--设置主键
+--创建序列对象
+create  sequence study_quizinfo_record_sequence
+	increment by 1 -- 每次加几个
+	start with 1 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+--创建id自动填写触发器
+create trigger auto_id_study_quizinfo_record before insert on study_quizinfo_record for each row 
+when (new.id is null)
+begin
+     select study_quizinfo_record_sequence.nextval into :new.id from dual;
+end;
+/
+------------创建学员练习记录表
+create table eprac_quizinfo_record
+(  
+     id number not null,
+     sqid number not null,
+     begintime date not null,
+     endtime date,
+     status number(1) default 0 not null
+);
+alter table eprac_quizinfo_record  add constraint eprac_quizinfo_record_pk primary key (id) ;--设置主键
+--创建序列对象
+create  sequence eprac_quizinfo_record_sequence
+	increment by 1 -- 每次加几个
+	start with 1 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+--创建id自动填写触发器
+create trigger auto_id_eprac_quizinfo_record before insert on eprac_quizinfo_record for each row 
+when (new.id is null)
+begin
+     select eprac_quizinfo_record_sequence.nextval into :new.id from dual;
+end;
+/
+------------创建学员课程练习记录表
+create table cprac_quizinfo_record
+(  
+     id number not null,
+     sqid number not null,
+     begintime date not null,
+     endtime date,
+     status number(1) default 0 not null
+);
+alter table cprac_quizinfo_record  add constraint cprac_quizinfo_record_pk primary key (id) ;--设置主键
+--创建序列对象
+create  sequence cprac_quizinfo_record_sequence
+	increment by 1 -- 每次加几个
+	start with 1 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+--创建id自动填写触发器
+create trigger auto_id_cprac_quizinfo_record before insert on cprac_quizinfo_record for each row 
+when (new.id is null)
+begin
+     select cprac_quizinfo_record_sequence.nextval into :new.id from dual;
+end;
+
+--2012-8-21
+--如果培训班毕业了，设置学员培训班的状态等相关信息
+create or replace procedure user_p_class_set2 (  classid_ number,userid_ number,diplomatime_ date , certificateno_ number)
+as
+ispassed_ int;iscf_ int;
+BEGIN
+    select count(*) into ispassed_ from study_class where classid= classid_ and userid=userid_ ;
+    select count(*) into iscf_ from study_class where classid=classid_ and userid=userid_ and certificateno is not null ;
+    if nvl(ispassed_,0)=0 then
+       insert into study_class(classid,userid,applydate,status,certificateno) values(classid_,userid_,diplomatime_,2,nvl(certificateno_,0)+1) ;
+    else
+      if nvl(iscf_,0)=0 then
+         update study_class set applydate= diplomatime_,status=2,certificateno=nvl(certificateno_,0)+1 where classid = classid_ and userid = userid_;
+      else
+         update study_class set status=2,certificateno=nvl(certificateno_,0) where classid = classid_ and userid = userid_;
+      end if;
+    end if;
+END ;
+
+alter table exampaper add isEditor number(1) default 0 not null;-----------试卷是否可编辑
+
+--2012-8-22
+alter table eroom_registration add isAudit number(1) default 0 not null;-------------可申请的考场是否需要审核
+alter table elclass_registration add isAudit number(1) default 0 not null;-------------可申请的培训班是否需要审核
+
+--2012-8-24
+alter table study_course_record add passtime number default 0 not null;-----------------学员学习记录的时长
+
+
+--2012-9-4
+--加了异常捕获
+create or replace procedure s_course_tprocess(  userid_ number,courseid_ number,classid_  number)
+as
+    getcredit_ number; sispassed_ number;cispassed_ number;passed_ number;process_ number;cprocess_ number;
+begin
+    begin
+      SELECT getcredit into getcredit_ FROM class_course where classid =classid_ and courseid= courseid_ and isdel!=-1;
+      exception
+         when no_data_found then
+          cispassed_:=0;
+          cprocess_:=0;
+      end;
+    begin
+    select sc.passed,sc.process into cispassed_,cprocess_ from study_course sc where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    exception
+        when no_data_found then
+        cispassed_:=0;
+        cprocess_:=0;
+    end;
+    begin
+      select sr.ispassed into sispassed_ from study_room sr left join class_course cc on sr.roomid = cc.eroomid where  cc.courseid= courseid_ and sr.userid= userid_ and sr.classid=classid_;
+      exception
+      when no_data_found then
+          sispassed_:=0;
+    end;
+    cispassed_ := nvl(cispassed_,0);
+    sispassed_ := nvl(sispassed_,0);
+    if getcredit_ = 1 then
+        process_ := cprocess_;
+    elsif getcredit_ = 2 and sispassed_ =1 then
+        process_:= 100;
+    elsif getcredit_ = 3 then
+        if sispassed_ =1 and cispassed_=1 then
+          process_ := 100;
+        elsif sispassed_=1 or cispassed_=1 then
+          process_ := 50;
+        end if;
+    else
+        process_:=0;
+    end if;
+    update study_course set tprocess = process_ where userid =userid_ and courseid=courseid_ and classid=classid_;
+end;
+
+--2012-9-5
+
+---------------------------------备注表
+create table simpleRemack
+(
+  ID            NUMBER not null,
+  type          NUMBER not null,--1代表考场，2代表培训班
+  typeid        NUMBER not null,
+  createid      NUMBER not null,
+  touserid      number not null,--接收人id
+  createtime    date not null,
+  title         varchar2(200) not null,
+  phone         varchar2(20),
+  content       varchar2(2000)
+);
+alter table simpleRemack add constraint simpleRemack_ID_PK primary key (ID);
+create sequence simpleRemack_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 10;
+create or replace trigger auto_id_simpleRemack  before insert on simpleRemack for each row
+when (new.id is null)
+begin
+      select simpleRemack_sequence.nextval into :new.id from dual;
+end;
+/
+------------------------------考场报名临时存储表
+create table study_room_apply
+(
+  roomid          NUMBER not null,
+  userid          NUMBER not null,
+  status          NUMBER not null,
+  createtime      date not null
+);
+------------------------------培训班报名临时存储表
+create table study_class_apply
+(
+  classid          NUMBER not null,
+  userid          NUMBER not null,
+  status          NUMBER not null,
+  createtime      date not null
+);
+
+
+--2012-9-11
+create or replace procedure s_course_tprocess(  userid_ number,courseid_ number,classid_  number)
+as
+    getcredit_ number; sispassed_ number;cispassed_ number;passed_ number;process_ number;cprocess_ number;
+begin
+    begin
+      SELECT getcredit into getcredit_ FROM class_course where classid =classid_ and courseid= courseid_ and isdel!=-1;
+      exception
+         when no_data_found then
+          cispassed_:=0;
+          cprocess_:=0;
+      end;
+    begin
+    select sc.passed,sc.process into cispassed_,cprocess_ from study_course sc where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    exception
+        when no_data_found then
+        cispassed_:=0;
+        cprocess_:=0;
+    end;
+    begin
+      select sr.ispassed into sispassed_ from study_room sr left join class_course cc on sr.roomid = cc.eroomid where  cc.courseid= courseid_ and sr.userid= userid_ and sr.classid=classid_;
+      exception
+      when no_data_found then
+          sispassed_:=0;
+    end;
+    cispassed_ := nvl(cispassed_,0);
+    sispassed_ := nvl(sispassed_,0);
+    if getcredit_ = 1 then
+        process_ := cprocess_;
+    elsif getcredit_ = 2 and sispassed_ =1 then
+        process_:= 100;
+    elsif getcredit_ = 3 then
+        if sispassed_ =1 and cispassed_=1 then
+          process_ := 100;
+        elsif sispassed_=1 or cispassed_=1 then
+          process_ := 50;
+        end if;
+    else
+        process_:=0;
+    end if;
+    sispassed_:=0;
+    if process_=100 then
+      sispassed_:=1;
+    end if;
+    update study_course set tprocess = process_,passed=sispassed_ where userid =userid_ and courseid=courseid_ and classid=classid_;
+<<<<<<< .mine
+end;
+
+
+--2012-10-19
+------------考场分配工种表
+create table exam_jingzhong(
+   roomid int not null,
+   jingzhong int not null,
+   status int default 0 not null
+);
+
+--------------考场分配给工种学员自动获取工种所对应的考场
+create or replace procedure exam_jingzhong_set(userid_ number)
+ as
+  roomid_ number;exist_ number;classid_ number;epid_ number;
+  cursor roomids is select roomid from exam_jingzhong where jingzhong=(select jingzhong from eluser where id=userid_);
+  cursor epids is select epid from exam_reps where roomid=roomid_ and status=0;
+begin
+  open roomids;
+    loop
+      fetch roomids into roomid_;
+      exit when roomids%notfound;
+        select count(*) into exist_ from study_room where userid=userid_ and roomid=roomid_;
+        if exist_=0 then-----判断考场是否已经分配给该学员
+          select classid into classid_ from exam_room where id=roomid_;
+          insert into study_room(roomid,userid,classid) values(roomid_,userid_,classid_);
+          ---查出考场所有未删除的试卷
+          open epids;
+            loop
+              fetch epids into epid_;
+              exit when epids%notfound;
+                 select count(*) into exist_ from study_exampaper where userid=userid_ and roomid=roomid_ and epid=epid_;
+                 if exist_=0 then
+                   insert into study_exampaper(userid,epid,roomid,classid) values(userid_,epid_,roomid_,classid_);
+                 end if;
+            end loop;
+          close epids;
+        end if;
+    end loop;
+  close roomids;
+end;
+
+--2012-10-25
+-----------资源分配部门表
+create table knowledge_dep(
+   id int not null,
+   status int default 0 not null
+);
+
+
+
+--2012-11-5
+alter table eluser add email varchar2(50);
+
+----------解决进度100变成99.99999999999999问题
+create or replace procedure s_course_tprocess(  userid_ number,courseid_ number,classid_  number)
+as
+    getcredit_ number; sispassed_ number;cispassed_ number;passed_ number;process_ number;cprocess_ number(3,0);
+begin
+    begin
+      SELECT getcredit into getcredit_ FROM class_course where classid =classid_ and courseid= courseid_ and isdel!=-1;
+      exception
+         when no_data_found then
+          cispassed_:=0;
+          cprocess_:=0;
+      end;
+    begin
+    select sc.passed,sc.process into cispassed_,cprocess_ from study_course sc where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    exception
+        when no_data_found then
+        cispassed_:=0;
+        cprocess_:=0;
+    end;
+    begin
+      select sr.ispassed into sispassed_ from study_room sr left join class_course cc on sr.roomid = cc.eroomid where  cc.courseid= courseid_ and sr.userid= userid_ and sr.classid=classid_;
+      exception
+      when no_data_found then
+          sispassed_:=0;
+    end;
+    cispassed_ := nvl(cispassed_,0);
+    sispassed_ := nvl(sispassed_,0);
+    if getcredit_ = 1 then
+        process_ := cprocess_;
+    elsif getcredit_ = 2 and sispassed_ =1 then
+        process_:= 100;
+    elsif getcredit_ = 3 then
+        if sispassed_ =1 and cispassed_=1 then
+          process_ := 100;
+        elsif sispassed_=1 or cispassed_=1 then
+          process_ := 50;
+        end if;
+    else
+        process_:=0;
+    end if;
+    sispassed_:=0;
+    if process_=100 then
+      sispassed_:=1;
+    end if;
+    update study_course set tprocess = process_,passed=sispassed_ where userid =userid_ and courseid=courseid_ and classid=classid_;
+end;
+
+
+
+--2012-11-19
+alter table exam_room add depName varchar2(400);
+alter table exam_room add jingzhong varchar2(50);
+alter table elclass add depName varchar2(400);
+alter table elclass add jingzhong varchar2(50);
+----wsy
+alter table exam_room add pwdneed number default 0 not null ;
+alter table exam_room add pwd varchar(400)  ;
+alter table exam_room add pwdtime date default sysdate;
+
+--2012-11-22  wsy
+alter table exam_room add cacheepsize number default -1 not null;
+alter table exam_room add cacheeprefresh number default 0 not null;
+
+--2012-11-23
+<<<<<<< .mine
+alter table study_room add begintime date;=======
+end;
+
+
+--2012-10-19
+------------考场分配工种表
+create table exam_jingzhong(
+   roomid int not null,
+   jingzhong int not null,
+   status int default 0 not null
+);
+
+--------------考场分配给工种学员自动获取工种所对应的考场
+create or replace procedure exam_jingzhong_set(userid_ number)
+ as
+  roomid_ number;exist_ number;classid_ number;epid_ number;
+  cursor roomids is select roomid from exam_jingzhong where jingzhong=(select jingzhong from eluser where id=userid_);
+  cursor epids is select epid from exam_reps where roomid=roomid_ and status=0;
+begin
+  open roomids;
+    loop
+      fetch roomids into roomid_;
+      exit when roomids%notfound;
+        select count(*) into exist_ from study_room where userid=userid_ and roomid=roomid_;
+        if exist_=0 then-----判断考场是否已经分配给该学员
+          select classid into classid_ from exam_room where id=roomid_;
+          insert into study_room(roomid,userid,classid) values(roomid_,userid_,classid_);
+          ---查出考场所有未删除的试卷
+          open epids;
+            loop
+              fetch epids into epid_;
+              exit when epids%notfound;
+                 select count(*) into exist_ from study_exampaper where userid=userid_ and roomid=roomid_ and epid=epid_;
+                 if exist_=0 then
+                   insert into study_exampaper(userid,epid,roomid,classid) values(userid_,epid_,roomid_,classid_);
+                 end if;
+            end loop;
+          close epids;
+        end if;
+    end loop;
+  close roomids;
+end;
+
+--2012-10-25
+-----------资源分配部门表
+create table knowledge_dep(
+   id int not null,
+   status int default 0 not null
+);
+
+
+
+--2012-11-5
+alter table eluser add email varchar2(50);
+
+----------解决进度100变成99.99999999999999问题
+create or replace procedure s_course_tprocess(  userid_ number,courseid_ number,classid_  number)
+as
+    getcredit_ number; sispassed_ number;cispassed_ number;passed_ number;process_ number;cprocess_ number(3,0);
+begin
+    begin
+      SELECT getcredit into getcredit_ FROM class_course where classid =classid_ and courseid= courseid_ and isdel!=-1;
+      exception
+         when no_data_found then
+          cispassed_:=0;
+          cprocess_:=0;
+      end;
+    begin
+    select sc.passed,sc.process into cispassed_,cprocess_ from study_course sc where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    exception
+        when no_data_found then
+        cispassed_:=0;
+        cprocess_:=0;
+    end;
+    begin
+      select sr.ispassed into sispassed_ from study_room sr left join class_course cc on sr.roomid = cc.eroomid where  cc.courseid= courseid_ and sr.userid= userid_ and sr.classid=classid_;
+      exception
+      when no_data_found then
+          sispassed_:=0;
+    end;
+    cispassed_ := nvl(cispassed_,0);
+    sispassed_ := nvl(sispassed_,0);
+    if getcredit_ = 1 then
+        process_ := cprocess_;
+    elsif getcredit_ = 2 and sispassed_ =1 then
+        process_:= 100;
+    elsif getcredit_ = 3 then
+        if sispassed_ =1 and cispassed_=1 then
+          process_ := 100;
+        elsif sispassed_=1 or cispassed_=1 then
+          process_ := 50;
+        end if;
+    else
+        process_:=0;
+    end if;
+    sispassed_:=0;
+    if process_=100 then
+      sispassed_:=1;
+    end if;
+    update study_course set tprocess = process_,passed=sispassed_ where userid =userid_ and courseid=courseid_ and classid=classid_;
+end;
+
+
+
+--2012-11-19
+alter table exam_room add depName varchar2(400);
+alter table exam_room add jingzhong varchar2(50);
+alter table elclass add depName varchar2(400);
+alter table elclass add jingzhong varchar2(50);
+----wsy
+alter table exam_room add pwdneed number default 0 not null ;
+alter table exam_room add pwd varchar(400)  ;
+alter table exam_room add pwdtime date default sysdate;
+
+--2012-11-22  wsy
+alter table exam_room add cacheepsize number default -1 not null;
+alter table exam_room add cacheeprefresh number default 0 not null;
+
+--2012-11-23
+alter table study_room add begintime date;
+
+--2012-12-10
+alter table exam_reps add sortid number default 0 not null;--考场试卷排序
+
+--2012-12-11
+alter table message add isreply number(1) default 0 not null;--是否回复>>>>>>> .r2953
+=======
+alter table study_room add begintime date;
+
+--2012-12-10
+alter table exam_reps add sortid number default 0 not null;--考场试卷排序
+
+--2012-12-11
+alter table message add isreply number(1) default 0 not null;--是否回复
+
+--投票信息表
+create table pollInfo(
+  id  number not null primary key,
+  qid number not null,
+  createrid number not null,
+  title varchar2(100) not null,
+  remack varchar2(500),
+  stuViewResult number default 0 not null,--结果是否可看
+  createtime date default sysdate not null,
+  begintime date not null,
+  endtime date not null,
+  status number default 0 not null
+);
+--投票分配人员表
+create table poll_assign(
+  pollid number not null,
+  userid number not null
+);
+--学员投票选择信息表
+create table poll_quizinfo(
+  pollid number not null,
+  userid number not null,
+  answer varchar(20)
+);
+/
+create sequence pollInfo_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 10;
+/
+create or replace trigger auto_id_pollInfo  before insert on pollInfo for each row
+when (new.id is null)
+begin
+      select pollInfo_sequence.nextval into :new.id from dual;
+end;
+
+<<<<<<< .mine
+>>>>>>> .r2974
+=======
+
+--2012-12-19
+alter table elrole add createrid number default 1 not null;>>>>>>> .r3011

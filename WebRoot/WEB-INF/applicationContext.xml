@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="SpringContextUtil" class="com.sopia.common.spring.SpringContextUtil" /> 
+	<bean id="elnodesql" class="com.sopia.common.ElNodeSQL"></bean>
+	<bean id="userDao" class="com.sopia.duman.dao.impl.UserDaoImpl" />
+	<bean id="funcDao" class="com.sopia.duman.dao.impl.FuncDaoImpl" />
+	<bean id="ctypeDao"
+		class="com.sopia.courseman.dao.impl.CourseTypeDaoImpl" />
+	<bean id="departmentDao"
+		class="com.sopia.duman.dao.impl.DepartmentDaoImpl" />
+	<bean id="stationDao"
+		class="com.sopia.duman.dao.impl.StationDaoImpl" />
+	<bean id="courseDao"
+		class="com.sopia.courseman.dao.impl.CourseDaoImpl" />
+	<bean id="courseTypeDao"
+		class="com.sopia.courseman.dao.impl.CourseTypeDaoImpl" />
+	<bean id="eroomDao"
+		class="com.sopia.courseman.dao.impl.EroomDaoImpl" />
+	<bean id="questionDao"
+		class="com.sopia.questionman.dao.impl.QuestionDaoImpl" />
+	<bean id="examPaperDao"
+		class="com.sopia.questionman.dao.impl.ExamPaperDaoImpl" />
+	<bean id="studyCourseDao"
+		class="com.sopia.studyman.dao.impl.StudyCourseDaoImpl" />
+	<bean id="studyQuizDao"
+		class="com.sopia.studyman.dao.impl.StudyQuizDaoImpl" />
+	<bean id="studyClassDao"
+		class="com.sopia.studyman.dao.impl.StudyClassDaoImpl" />
+	<bean id="statisticDao"
+		class="com.sopia.statman.dao.impl.StatisticDaoImpl" />
+	<bean id="statisticCourseDao"
+		class="com.sopia.statman.dao.impl.StatisticCourseDaoImpl" />
+	<bean id="statisticClassDao"
+		class="com.sopia.statman.dao.impl.StatisticClassDaoImpl" />
+	<bean id="statisticQuizDao"
+		class="com.sopia.statman.dao.impl.StatisticQuizDaoImpl" />
+	<bean id="messageDao"
+		class="com.sopia.newsandmess.dao.impl.MessageDaoImpl" />
+	<bean id="coursePageDao"
+		class="com.sopia.courseman.dao.impl.CoursePageDaoImpl" />
+	<bean id="knowledgeDao"
+		class="com.sopia.knowledgeman.dao.impl.KnowledgeDaoImpl" />
+	<bean id="elClTypeDao"
+		class="com.sopia.classman.dao.impl.ElClTypeDaoImpl" />
+	<bean id="classDao"
+		class="com.sopia.classman.dao.impl.ClassDaoImpl" />
+	<bean id="newsDao"
+		class="com.sopia.newsandmess.dao.impl.NewsDaoImpl">
+	</bean>
+	<bean id="frontDao"
+		class="com.sopia.frontman.dao.impl.FrontDaoImpl">
+	</bean>
+	<bean id="planDao"
+		class="com.sopia.assistman.dao.impl.PlanDaoImpl">
+	</bean>
+	<bean id="surveyAndPollDao"
+		class="com.sopia.assistman.dao.impl.SurveyAndPollDaoImpl">
+	</bean>
+	<bean id="forumAdminDao"
+		class="com.sopia.forumman.dao.impl.ForumAdminDaoImpl" />
+	<bean id="roleDao" class="com.sopia.duman.dao.impl.RoleDaoImpl" />
+	<bean id="talentDao"
+		class="com.sopia.talentman.dao.impl.TalentDaoImpl" />
+	<bean id="bookDao" class="com.sopia.bookman.dao.impl.BookDaoImpl" />
+	<bean id="offlineDao"
+		class="com.sopia.assistman.dao.impl.OfflineDaoImpl" />
+	<bean id="omDao" class="com.sopia.openmeetings.OmDaoImpl" />
+	<!-- 培训批次DAO -->
+	<bean id="batchDao" class="com.sopia.batchman.dao.impl.BatchDaoImpl" />
+	<bean id="linetrainDao" class="com.sopia.studyman.dao.impl.LineTrainRecordDaoIImpl" />
+	<!--考试练习 -->
+	<bean id="exampracDao" class="com.sopia.courseman.dao.impl.ExampracDaoImpl" />
+	<!-- 资源管理 -->
+	<bean id="stuffDao" class="com.sopia.questionman.dao.impl.StuffDaoImpl" />
+	<!-- 练习答题统计管理 -->
+	<bean id="exampracQuestionDao" class="com.sopia.courseman.dao.impl.ExampracQuestionDaoImpl" />
+	<!-- 流量统计和资源统计管理 -->
+	<bean id="sfrDao" class="com.sopia.statman.dao.impl.StatisticFlowAndResourseDaoImpl" />
+	<!-- 首页显示数据管理 -->
+	<bean id="indexDataUtil" class="com.sopia.common.IndexDataUtil" />
+	<!-- 词汇管理 -->
+	<bean id="wordDao" class="com.sopia.wordman.dao.impl.WordDaoImpl"></bean>
+	<!-- 学习计划管理 -->
+	<bean id="learnPlanDao" class="com.sopia.wordman.dao.impl.LearnPlanDaoImpl"></bean>
+	<bean id="indexDao"
+		class="com.sopia.pfms.impl.IndexDaoImpl" />
+		
+	<bean id="sheBeiDao"
+		class="com.sopia.pfms.impl.SheBeiDaoImpl" />
+		
+	<bean id="productDao"
+		class="com.sopia.pfms.impl.ProductDaoImpl" />
+		
+	<bean id="baoxianProductDao"
+		class="com.sopia.pfms.impl.BaoxianProductDaoImpl" />
+		
+	<bean id="damageMemberDao"
+		class="com.sopia.pfms.impl.DamageMemberDaoImpl" />
+		
+	<bean id="messageBoardDao"
+		class="com.sopia.pfms.impl.MessageBoardDaoImpl" />
+		
+	<bean id="pfmsFrontDao"
+		class="com.sopia.pfms.impl.PfmsFrontDaoImpl" />
+	
+	<!-- 线下培训班 -->
+	<bean id="lineTrainingCourseDao"
+		class="com.sopia.lineTrainingCourse.impl.LineTrainingCourseDaoImpl" />	
+	<bean id="lineTrainingCourseTreeDao"
+		class="com.sopia.lineTrainingCourse.impl.LineTrainingCourseTreeDaoImpl" />
+	
+	<!-- 新闻管理 -->
+	<bean id="pfmsNewsDao"
+		class="com.sopia.pfms.impl.PfmsNewsDaoImpl" />
+	<!-- 在线投保 -->
+	<bean id="insureDao"
+		class="com.sopia.pfms.impl.InsureDaoImpl" />
+		
+	<!-- 自定义险种 -->	
+	<bean id="ICDao"
+		class="com.sopia.pfms.impl.InsuranceCategoriesDaoImpl" />
+	<bean id="policyDao"
+		class="com.sopia.pfms.impl.PolicyDaoImpl" />
+	
+	<!-- 评估保单管理 -->
+	<bean id="PG_ICDao"
+		class="com.sopia.shebeipinggu.impl.PG_InsuranceCategoriesDaoImpl" />
+	<bean id="PG_policyDao"
+		class="com.sopia.shebeipinggu.impl.PG_PolicyDaoImpl" />	
+	<bean id="PG_baoxianProductDao"
+		class="com.sopia.shebeipinggu.impl.PG_BaoxianProductDaoImpl" />	
+		
+		
+	<!-- 日程管理 -->
+	<bean id="scheduleDao" class="com.sopia.schedule.dao.impl.ScheduleDaoImpl" />
+	<!-- 日志管理 -->
+	<bean id="logDao" class="com.sopia.schedule.dao.impl.LogDaoImpl" />
+	<!-- 客户管理 -->
+	<bean id="clientDao" class="com.sopia.schedule.dao.impl.ClientDaoImpl" />
+	<!-- 自定义模块设计 -->
+	<bean id="tagsDao" class="com.sopia.schedule.dao.impl.TagsDaoImpl" />
+	<!-- 自定义模板管理 -->
+	<bean id="clientTemplateDao" class="com.sopia.schedule.dao.impl.ClientTemplateDaoImpl" />
+	<!-- 模块复制 -->
+	<bean id="moduleManageDao" class="com.sopia.schedule.dao.impl.ModuleManageDaoImpl" />
+	<!-- 自定义报表管理 -->
+	<bean id="customReportsDao" class="com.sopia.schedule.dao.impl.CustomReportsDaoImpl" />
+	<!-- 数据分配 -->
+	<bean id="dataAllocationDao" class="com.sopia.schedule.dao.impl.dataallocation.DataAllocationDaoImpl" />
+	
+	<!-- 考勤设置 -->
+	<bean id="attendanceDao" class="com.sopia.attendance.dao.impl.AttendanceDaoImpl" />
+	
+	<!-- 模块复制综合查询 -->
+	<bean id="scheduleGlobleDao" class="com.sopia.schedule.dao.impl.ScheduleGlobleDaoImpl" />
+	
+	<!--购物模块 -->
+	<bean id="shoppingDao" class="com.sopia.shopping.dao.impl.ShoppingDaoImpl" />
+	<!--价格模块 -->
+	<bean id="peiceDao" class="com.sopia.peice.dao.impl.PeiceDaoImpl" />
+	<!--财务模块 -->
+	<bean id="balanceDao" class="com.sopia.balance.dao.impl.BalanceDaoImpl" />
+	<!--前台课程导航 -->
+	<bean id="forumcourseDao" class="com.sopia.forumman.dao.impl.ForumCourseDaoImpl" />
+	<!--购物车类 -->
+	<bean id="shoppingCartDao" class="com.sopia.statman.dao.impl.ShoppingCartDaoImpl" />
+	<!--课程评论 -->
+	<bean id="courseCommentDao" class="com.sopia.courseman.dao.impl.CourseCommentDaoImpl" />
+	<!-- 图书管理 -->
+	<bean id="bookInfoDao" class="com.sopia.bookinfo.dao.impl.BookInfoDaoImpl" />	
+	<!-- 留言管理 -->
+	<bean id="mmDao" class="com.sopia.message.dao.impl.MessageManagementDaoImpl" />
+	<!-- 学分模块 -->
+	<bean id="statisticscoreDao" class="com.sopia.statman.dao.impl.StatisticscoreDaoImpl" />
+	<!--考试答卷统计 -->
+	<bean id="examDao" class="com.sopia.courseman.dao.impl.ExamDaoImpl" />
+	<!-- 考试答题统计管理 -->
+	<bean id="examQuestionDao" class="com.sopia.courseman.dao.impl.ExamQuestionDaoImpl" />
+	<!-- 转swf文件帮助类 -->
+	<bean id="swfUtil" class="com.sopia.common.SwfUtil" />
+
+	<!-- 自定义标签操作 -->
+	<bean id="customLableDao" class="com.sopia.lable.dao.impl.CustomLableDaoImpl" />
+	<!-- 模块绑定-->
+	<bean id="modeBindDao" class="com.sopia.lable.dao.impl.ModeBindDaoImpl" />
+	<!-- 投票管理 -->
+	<bean id="pollDao" class="com.sopia.assistman.dao.impl.PollDaoImpl" />
+	<!-- 问卷调查 -->
+	<bean id="questionnaireDao" class="com.sopia.assistman.dao.impl.QuestionnaireDaoImpl" />
+	<!-- scorm学习-->
+	<bean id="studyScormDao" class="com.sopia.studyman.dao.impl.StudyScormDaoImpl" />
+	<!-- 安全配置-->
+	<bean id="securityDao" class="com.sopia.security.dao.impl.SecurityDaoImpl" />
+	<!-- 模块管理-->
+	<bean id="erblockDao" class="com.sopia.courseman.dao.impl.ErblockDaoImpl" />
+	<!-- 转swf文件帮助类 -->
+	<bean id="office2pdf" class="com.sopia.common.Office2pdf" />
+	
+	<!-- 下拉选项管理 -->
+	<bean id="selectLevelDao" class="com.sopia.schedule.dao.impl.xialajibie.SelectLevelDaoImpl" />
+	<!-- 新版个人中心和管理中心 -->
+	<bean id="newVersionDao" class="com.sopia.newversion.dao.impl.NewVersionDaoImpl" />
+	<!-- 知识管理 -->
+	<bean id="knowledgeTreeDao" class="com.sopia.knowledgeManage.dao.impl.KnowledgeTreeDaoImpl" />
+	<bean id="knowledgeManageDao" class="com.sopia.knowledgeManage.dao.impl.KnowledgeManageDaoImpl" />
+	<!-- 问答管理 -->
+	<bean id="answeringTypeDao" class="com.sopia.answeringsystem.dao.impl.AnsweringTypeDaoImpl" />
+	<bean id="answeringSystemDao" class="com.sopia.answeringsystem.dao.impl.AnsweringSystemDaoImpl" />
+	
+	<!-- 培训班定价 -->
+	<bean id="elClassPeiceDao" class="com.sopia.elclasspeice.dao.impl.ElClassPeiceDaoImpl"></bean>
+	<!-- 考场定价 -->
+	<bean id="examRoomPeiceDao" class="com.sopia.examroompeice.dao.impl.ExamRoomPeiceDaoImpl"></bean>
+	<!-- 培训批次管理 -->
+	<bean id="peixunBatchDao" class="com.sopia.peixunBatch.dao.impl.PeixunBatchDaoImpl"></bean>
+	<!-- 新版用户表管理 -->
+	<bean id="usereDemoDao" class="com.sopia.userDemo.dao.impl.UserDemoDaoImpl"></bean>
+	<!-- 外经贸定级管理 -->
+	<bean id="classificationDao" class="com.sopia.wjm.dao.impl.ClassificationDaoImpl"></bean>
+	
+	<!-- 提醒定时任务 -->
+	<!-- 
+	<bean  class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+       <property name="triggers">  
+           <list>  
+              <ref bean="testTrigger"/>  
+           </list>  
+       </property>  
+       <property name="autoStartup" value="true"/>  
+	</bean>
+	<bean id="testTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+       <property name="jobDetail" ref="testJobDetail"/>  
+       <property name="cronExpression" value="*/1 * * * * ?"/>
+	</bean>
+	<bean id="testJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">   
+        <property name="targetObject" ref="testJob"/>  
+        <property name="targetMethod" value="execute"/>  
+        <property name="concurrent" value="false"/>
+	</bean> 
+	<bean id="testJob" class="com.sopia.common.RemindUtil"/>
+	 -->
+	 
+	 <!-- 自定义标签类别 -->
+	<bean id="lableTreeDao" class="com.sopia.lable.dao.impl.LableTreeDaoImpl"></bean>
+	<!-- 判断访问终端类型帮助类 -->
+	<bean id="httpRequestDeviceUtils" class="com.sopia.common.HttpRequestDeviceUtils" /> 
+	<!-- Mac地址管理 -->
+	<bean id="macDao" class="com.sopia.duman.dao.impl.MacDaoImpl" />
+	<!-- 智能辅导分开始 -->
+	<bean id="intelligentTutoringPointsDao" class="com.sopia.intelligentTutoringPoints.dao.impl.IntelligentTutoringPointsDaoImpl" />
+	<!-- 登录加分减分 -->
+	<bean id="intelligentLoginDao" class="com.sopia.intelligentTutoringPoints.dao.impl.IntelligentLoginDaoImpl" />
+	<!-- 周学习时间、等级总学习时间 -->
+	<bean id="intelligentWeekDao" class="com.sopia.intelligentTutoringPoints.dao.impl.IntelligentWeekDaoImpl" />
+	<!-- 学习习惯智能辅导分 -->
+	<bean id="intelligentProportionDao" class="com.sopia.intelligentTutoringPoints.dao.impl.IntelligentProportionDaoImpl" />
+	<!-- 学习成绩智能辅导分 -->
+	<bean id="intelligentAcademicDao" class="com.sopia.intelligentTutoringPoints.dao.impl.IntelligentAcademicDaoImpl" />
+	<!-- 智能辅导分结束 -->
+	<!-- 语音识别接口 -->
+	<!-- <bean id="mscRecodService" class="com.sopia.record.service.MscRecodServiceImpl" /> -->
+	<!-- sd1223修改 -->
+	<bean id="workCourseDao" class="com.sopia.workcourseset.dao.impl.WorkCourseDaoImpl"></bean>
+	<!-- 招聘模块 -->
+	<bean id="recruitDao" class="com.sopia.recruit.dao.impl.RecruitDaoImpl"></bean>
+	<!-- wjm0221修改 -->
+	<bean id="WordDao" class="com.sopia.wordman.dao.impl.WordDaoImpl"></bean>
+	<!-- 20140827指纹识别 -->
+	<!-- <bean id="fingerUtil" class="com.kf.finger"></bean> -->
+	<!-- wjm模拟考试模块 -->
+	<bean id="simulationDao" class="com.sopia.simulation.dao.impl.SimulationDaoImpl"></bean>
+</beans>
+     

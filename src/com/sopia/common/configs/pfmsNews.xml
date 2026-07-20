@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="pfmsNews" extends="elearning">
+		<action name="newsList"
+				 class="com.sopia.pfms.action.PfmsNewsAction"
+				 method="newsList">
+			<result name="pfmsNews_success">
+				pfms/newsList.jsp
+			</result>
+		</action>
+		
+		<action name="pfms_news_addInit"
+				 class="com.sopia.pfms.action.PfmsNewsAction"
+				 method="pfms_news_addInit">
+			<result name="pfms_news_addInit">
+				pfms/pfms_add_news.jsp
+			</result>
+		</action>
+		
+		<action name="pfms_news_add"
+				 class="com.sopia.pfms.action.PfmsNewsAction"
+				 method="pfms_news_add">
+			<result name="pfms_news_add_success" type="redirectAction">
+				newsList.action
+			</result>
+		</action>
+		
+		<action name="alterPicture_init"
+				 class="com.sopia.pfms.action.PfmsNewsAction"
+				 method="alterPicture_init">
+			<result name="alterPicture_init">
+				pfms/alterPicture.jsp
+			</result>
+		</action>
+		
+		<action name="alterPicture"
+				 class="com.sopia.pfms.action.PfmsNewsAction"
+				 method="alterPicture">
+			<result name="alterPicture_success">
+				pfms/alterPicture_success.jsp
+			</result>
+		</action>
+		
+		<action name="deleteNewses"
+				 class="com.sopia.pfms.action.PfmsNewsAction"
+				 method="deleteNewses">
+			<result name="deleteNewses" type="redirectAction">
+				newsList.action
+			</result>
+		</action>
+		
+		<action name="myMessageList"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="myMessageList">
+			<result name="myMessageList">
+				pfms/myMessageList.jsp
+			</result>
+		</action>
+		
+		<action name="deleMessageComment"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="deleMessageComment">
+			<result name="deleMessageComment_success" type="redirectAction">
+				myMessageList.action?type1=${type1}
+			</result>
+			<result name="deleMessageComment_inall_success" type="redirectAction">
+				allMessageList.action
+			</result>
+		</action>
+		
+		<action name="courseCommentPass"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="courseCommentPass">
+			<result name="courseCommentPass_success" type="redirectAction">
+				myMessageList.action?type1=${type1}
+			</result>
+			<result name="courseCommentPass_inall_success" type="redirectAction">
+				allMessageList.action
+			</result>
+		</action>
+		
+		<action name="courseCommentNotPass"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="courseCommentNotPass">
+			<result name="courseCommentNotPass_success" type="redirectAction">
+				myMessageList.action?type1=${type1}
+			</result>
+			<result name="courseCommentNotPass_inall_success" type="redirectAction">
+				allMessageList.action
+			</result>
+		</action>
+		
+		<action name="allMessageList"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="allMessageList">
+			<result name="allMessageList">
+				pfms/allMessageList.jsp
+			</result>
+		</action>
+		
+		<action name="myProductMessageList"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="myMessageList">
+			 <result name="myMessageList">
+				pfms/myMessageList.jsp
+			</result>
+		</action>
+		
+		<action name="messageView"
+				 class="com.sopia.pfms.action.MessageBoardAction"
+				 method="showMessageInit">
+			 <result name="showMessageInit_success">
+				pfms/messageView.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>

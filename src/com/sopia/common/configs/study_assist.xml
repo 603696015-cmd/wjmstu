@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="study_other" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="student_poll_list"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_poll_list">
+			<result name="student_poll_list">
+				study/student_poll_list.jsp
+			</result>
+		</action>
+		<action name="student_poll_doInit"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_poll_doInit">
+			<result name="student_poll_do">
+				study/student_poll_do.jsp
+			</result>
+		</action>
+		<action name="student_poll_do"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_poll_do">
+			<result name="assist_poll_result" type="redirectAction">
+				assist_poll_result?poll.id=${mySurvyEP.poll.id}
+			</result>
+		</action>
+		<action name="student_survey_list"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_survey_list">
+			<result name="student_survey_list">
+				study/student_survey_list.jsp
+			</result>
+		</action>
+		<action name="student_survey_doInit"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_survey_doInit">
+			<result name="student_survey_do">
+				study/student_survey_do.jsp
+			</result>
+		</action>
+		<action name="student_survey_do"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_survey_do">
+			<result name="assist_survey_result"
+				type="redirectAction">
+				assist_survey_result?survey.id=${mySurvyEP.survey.id}
+			</result>
+		</action>
+		<action name="student_talent_troom_list"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_troom_list">
+			<result name="student_talent_troom_list">
+				study/student_talent_troom_list.jsp
+			</result>
+		</action>
+		<action name="student_talent_troom_view"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_troom_view">
+			<result name="student_talent_troom_view">
+				study/student_talent_troom_view.jsp
+			</result>
+		</action>
+		<action name="student_talent_troom_evalInit"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_troom_evalInit">
+			<result name="student_talent_troom_eval">
+				study/student_talent_troom_eval.jsp
+			</result>
+		</action>
+		<action name="student_talent_troom_eval"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_troom_eval">
+			<result name="student_talent_troom_eval" type="redirectAction">
+				student_talent_troom_evalInit?myztroom.ztroom.id=${myztroom.ztroom.id}&amp;myztroom.evaltype=${myztroom.evaltype}
+			</result>
+		</action>
+		<action name="student_talent_quiz"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_quiz">
+			<result name="student_talent_quiz">
+				study/student_talent_quiz.jsp
+			</result>
+		</action>
+		<action name="student_talent_quiz_save"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_quiz_save">
+			<result name="student_talent_quiz_save">
+			success.jsp
+			</result>
+		</action>
+		<action name="student_talent_quiz_submit"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_quiz_submit">
+			<result name="student_talent_quiz_submit">
+				success.jsp
+			</result>
+		</action>
+		<action name="student_talent_mytroom_list"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_mytroom_list">
+			<result name="student_talent_mytroom_list">
+				study/student_talent_mytroom_list.jsp
+			</result>
+		</action>
+		<action name="student_talent_mytroom_view"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_mytroom_view">
+			<result name="student_talent_mytroom_view">
+				study/student_talent_mytroom_view.jsp
+			</result>
+		</action>
+		<action name="student_talent_mytroom_result"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_mytroom_result">
+			<result name="student_talent_mytroom_result">
+				study/student_talent_mytroom_result.jsp
+			</result>
+		</action>
+		<action name="student_talent_mytroom_result_view"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_mytroom_result_view">
+			<result name="student_talent_mytroom_result_view">
+				study/student_talent_mytroom_result_view.jsp
+			</result>
+		</action>
+				<action name="student_talent_mytroom_paper_view"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_mytroom_paper_view">
+			<result name="student_talent_mytroom_paper_view">
+				study/myquizpaperview.jsp
+			</result>
+		</action>
+		<action name="student_talent_ztroom_list"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_ztroom_list">
+			<result name="student_talent_ztroom_list">
+				study/student_talent_ztroom_list.jsp
+			</result>
+		</action>
+		<action name="student_talent_ztroom_view"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_ztroom_view">
+			<result name="student_talent_ztroom_view">
+				study/student_talent_ztroom_view.jsp
+			</result>
+		</action>
+		<action name="student_talent_myztroom_list"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_myztroom_list">
+			<result name="student_talent_myztroom_list">
+				study/student_talent_myztroom_list.jsp
+			</result>
+		</action>
+		<action name="student_talent_myztroom_view"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_myztroom_view">
+			<result name="student_talent_myztroom_view">
+				study/student_talent_myztroom_view.jsp
+			</result>
+		</action>
+			<action name="student_talent_myztroom_result"
+			class="com.sopia.studyman.action.StudyAssist"
+			method="student_talent_myztroom_result">
+			<result name="student_talent_myztroom_result">
+				study/student_talent_myztroom_result.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

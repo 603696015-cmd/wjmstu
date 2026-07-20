@@ -1,0 +1,217 @@
+/*
+*website:21cn.com
+*author:xjm
+*update:2012-7-16
+*/
+/*边距*/
+body{
+	font:12px/1.5 "宋体"}
+a img{
+	vertical-align:middle}
+
+}
+/*文字*/
+.f12{
+	font-size:12px}
+.f14{
+	font-size:14px}
+.f16{
+	font-size:16px}
+.fb{
+	font-weight:bold}
+.fn{
+	font-weight:normal}
+.lh150{
+	line-height:150%}
+.lh180{
+	line-height:180%}
+.lh200{
+	line-height:200%}
+/*定位*/
+.tl{
+	text-align:left}
+.tc{
+	text-align:center}
+.tr{
+	text-align:right}
+.bc{
+	margin-left:auto;
+	margin-right:auto}
+.hd,.bd{
+	overflow:hidden;
+	zoom:1}
+
+/*学校区块*/
+.schoolItem li{
+	float:left;
+	display:inline;
+	overflow:hidden;
+	margin:15px 28px 0 0;}
+.schoolItem li.lst-item{
+	margin-right:0}
+.schoolItem li a{
+	display:block;
+	width:217px;
+	height:115px;
+	padding-top:2px;
+	text-align:center;
+	border:1px solid #8aadce;
+	background:#f2f9fd}
+.schoolItem li a:link,.schoolItem li a:visited{
+	color:#666}
+.schoolItem li a:hover{
+	color:#fff;
+	text-decoration:none;
+	border-color:#2f83d2;
+	background:#2f83d2}
+.schoolItem li span{
+	display:block;
+	padding:7px 2px 0;
+	width:213px;
+	white-space:nowrap;
+	overflow:hidden}
+/*课程导航*/
+.kcNav{
+	height:500px;
+	border:1px solid #2783d9}
+.kcNav .navsech{
+	height:42px;
+	background:url(../images/newversion/bg-nav.png) repeat-x 0 0}
+.kcNav .navsech .inp{
+	margin:7px 10px 0 0}
+.kcNav .navsech .search_text{
+	padding-left:10px;
+	height:22px;
+	line-height:22px;
+	width:270px;
+	border:1px solid #ccc}
+.kcNav .navsech .sea-btn{
+	width:86px;
+	height:27px;
+	border:none;
+	cursor:pointer;
+	background:url(../images/newversion/min-btn.png) no-repeat 0 0}
+	.contWrap{
+	background-color:#FFFFFF;
+	}
+.contWrap div.left{
+	position:relative;
+	width:205px;
+	height:457px;
+	background:url(../images/newversion/bg-slideNav.png) repeat-y 0 0}
+.contWrap .slideNav{
+	position:absolute;
+	top:-38px;
+	width:185px}
+.contWrap .slideNav dt{
+	height:47px;
+	background:url(../images/newversion/nav-top.png) no-repeat 0 0}
+.contWrap .slideNav dt h2{
+	padding-left:55px;
+	font:bold 18px/47px "微软雅黑","黑体";
+	color:#2e89dd;
+	background:url(../images/newversion/navIco.png) no-repeat 5px 10px}
+.contWrap .slideNav dd{
+	line-height:40px;
+	width:160px;
+	padding-right:25px;
+	background:url(../images/newversion/slideNav-meun.png) no-repeat 0 -42px}
+.contWrap .slideNav dd a{
+	display:block;
+	height:40px;
+	padding-left:45px;
+	font-size:14px;
+	background:url(../images/newversion/navIco.png) no-repeat 0 0}
+.contWrap .slideNav .hot-kc{
+	background-position:-4px -41px}
+.contWrap .slideNav .jz-kc{
+	background-position:-12px -81px}
+.contWrap .slideNav .kj-kc{
+	background-position:-10px -123px}
+.contWrap .slideNav .wy-kc{
+	background-position:-9px -162px}
+.contWrap .slideNav .xl-kc{
+	background-position:-9px -205px}
+.contWrap .slideNav .wm-kc{
+	background-position:-11px -244px}
+.contWrap .slideNav .yy-kc{
+	background-position:-11px -287px}
+.contWrap .slideNav .zy-kc{
+	background-position:-13px -328px}
+.contWrap .slideNav .pp-kc{
+	color:#fff;
+	background-color:#4ca2f1;
+	background-position:-10px -368px}
+.contWrap .slideNav dd.on{
+	background:url(../images/newversion/slideNav-meun.png) no-repeat 0 0}
+.contWrap .slideNav dd.on a{
+	color:#fff;
+	background-color:transparent}
+/*右边课程列表*/
+.contWrap div.right{
+	width:750px}
+.contWrap .kcList li,.schList li{
+	position:relative;
+	z-index:1;
+	float:left;
+	*display:inline;
+	width:170px;
+	margin:26px 17px 0 0;
+	background-color:#FFFFFF}
+.contWrap .kcList li{
+	height:60px}
+.kcList .kcList-in{
+	position:absolute;
+	z-index:5;
+	top:0;
+	left:0;
+	height:46px;
+	width:156px;
+	padding:5px;
+	overflow:hidden;
+	border: 1px solid #66CCFF;
+	background-color: #CCEBEC;
+}
+.contWrap .kcList li:hover,.contWrap .kcList li.hover{
+	z-index:3;}
+.contWrap .kcList li:hover .kcList-in,.contWrap .kcList li.hover .kcList-in{
+	height:auto;
+	border:2px solid;
+	border-color:#2c87dd;
+	background-color: #F4FBFF;
+}
+.contWrap .kcList-in .pic{
+	float:left;
+	width:60px}
+.contWrap .kcList-in .info{
+	padding:15px 5px 5px;}
+.kcList-in .info dt{
+	padding-bottom:5px;
+	margin-bottom:5px;
+	border-bottom:1px solid #ddd}
+.kcList-in .info dt a{
+	font-weight:bold;
+	color:#136abb}
+.kcList-in .info dd{
+	padding-left:20px;
+	background:url(../images/newversion/ico.png) no-repeat -4px -215px}
+.kcList-in .pic img{
+	width:50px;
+	height:50px}
+/*品牌学校*/
+.schList li a{
+	display:block;
+	width:140px;
+	text-align:center}
+.schList li img{
+	width:137px;
+	height:58px;
+	border:1px solid #ccc}
+.schList li span{
+	display:block;
+	padding-top1:5px;
+	margin:5px auto 0;
+	width:135px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis}

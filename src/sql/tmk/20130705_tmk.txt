@@ -1,0 +1,14 @@
+create or replace procedure addBatchClass_course(batchid_ number,userid_ number,joinway_ number)
+as
+classid_ number;
+cursor classes is
+    select elclassid from BATCH_ELCLASS_FENPEI where batchid = batchid_ order by sortid asc ;
+begin
+     open classes;
+         loop
+            fetch classes into classid_ ;
+            exit when classcourse%notfound;
+            assign_class3 (classid_,userid_,joinway_);
+         end loop;
+       close classes;
+end;

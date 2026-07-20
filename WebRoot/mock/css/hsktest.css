@@ -1,0 +1,319 @@
+@charset "utf-8";
+body {margin:0; font-family:"寰蒋闆呴粦"}
+a img {border:0px;}
+a:hover img {filter:alpha(opacity=60);-moz-opacity:0.6; -khtml-opacity: 0.6; opacity: 0.6;}
+
+.top_outer {background: url(../../mock/image/exam/hsk_002.png); height:75px; width:100%; position:relative; z-index:1;}
+.top_tit {background:url(../../mock/image/exam/hsk_001.png); width:598px; height:75px; position:absolute; left:0px; top:0px;}
+.top_time {background:url(../../mock/image/exam/hsk_025.png); min-width:400px; width:40%; height:75px; position:absolute; right:0px; bottom:0px;}
+.top_time_left {background:url(../../mock/image/exam/hsk_024.png) no-repeat left; height:75px; position:relative;}
+
+.time_rem {font-size:22px; color:#069; position:absolute; left:63%; top:15px;}
+.time_rem b {color:#C00;}
+.time_rem2 {font-size:30px; color:#069; position:absolute; left:35%; top:430px; z-index:120; font-weight:bold;}
+.time_rem_info {font-size:12px; color:#069; position:absolute; left:63%; top:45px;}
+.time_rem_info2 {font-size:14px; color:#069; position:absolute; left:35%; top:470px; z-index:120;}
+
+
+.fir_outer {background:url(../../mock/image/exam/BG.jpg) repeat-x center top; width:100%; height:auto; position:relative;}
+.fir_bot_info {text-align:center; font-size:12px; color:#005372; width:100%; height:100px;}
+.fir_bot_info b {font-size:16px; font-weight:normal;}
+
+.main_outer {background:url(../../mock/image/exam/hsk_006.png) repeat-x top #FFF; width:100%; height:auto; position:relative;}
+.bot_info {position:absolute; bottom:0px; text-align:center; font-size:16px; color:#005372; width:100%; height:40px;}
+
+.lan_outer {width:720px; min-height:251px; margin:0px auto auto auto; position:relative;}
+.lan_tit {background:url(../../mock/image/exam/msg_title.png) no-repeat; font-size:16px; color:#005372; width:720px; height:55px;}
+.lan_tit b {font-size:20px; font-weight:normal;}
+.lan_chose {background:url(../../mock/image/exam/msg_back.png) repeat-y; width:720px;}
+.lan_chose a {background:url(../../mock/image/exam/hsk_005.png); width:99px; height:33px; display:block; text-align:center; line-height:33px; color:#FFF; text-decoration:none; float:left; margin:5px;}
+.lan_chose a:hover {background:url(../../mock/image/exam/hsk_004.png);}
+.lan_chose a.lan_cn {background:url(../../mock/image/exam/hsk_004.png);}
+.lan_chose a.lan_cn:hover {background:url(../../mock/image/exam/hsk_017.png);}
+.lan_bottom {background:url(../../mock/image/exam/msg_bottom.png) no-repeat; width:720px; height:12px;}
+
+.lan_chose span {background:url(../../mock/image/exam/hsk_005.gif); filter:alpha(opacity=50);-moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5; width:99px; height:33px; display:block; text-align:center; line-height:33px; color:#FFF; float:left; margin:5px; cursor:default;}
+
+.cont_outer{background:url(../../mock/image/exam/hsk_018.png) repeat-x bottom #FFF; position:relative; width:50%; margin-left:10px; border:1px solid #24a1d3; float:left;}
+.cont_tit {background:url(../../mock/image/exam/hsk_007.png) no-repeat; height:40px; width:180px; padding-left:20px; font-weight:bold; position:absolute; left:-1px; top:-1px;}
+.cont_tit_1 {background:url(../../mock/image/exam/hsk_007.png) no-repeat; height:40px; width:100px; padding-left:20px; font-weight:bold; position:absolute; left:-1px; top:-1px;}
+.cont_tit_in {background:url(../../mock/image/exam/hsk_008.png) no-repeat right; font-size:18px; color:#005372; line-height:40px;}
+.cont_tr {background:url(../../mock/image/exam/hsk_009.png); width:12px; height:12px; position:absolute; right:-1px; top:-1px;}
+.cont_br {background:url(../../mock/image/exam/hsk_011.png); width:12px; height:12px; position:absolute; right:-1px; bottom:-1px;}
+.cont_bl {background:url(../../mock/image/exam/hsk_012.png); width:12px; height:12px; position:absolute; left:-1px; bottom:-1px;}
+.kc_cont {margin:60px 20px 20px 20px; min-height:200px; font-size:14px; line-height:26px; color:#1a1a1a; padding:20px; border:1px solid #a3d1e3; background:#FFF; float:left;}
+
+.login_outer {background:url(../../mock/image/exam/loginBG.jpg) no-repeat bottom #ccf2fb; border:1px solid #24a1d3; position:relative; min-height:420px; width:466px; float:left; margin-left:10px;}
+.login_tit {background:url(../../mock/image/exam/hsk_007.png) no-repeat; height:40px; width:180px; padding-left:20px; font-weight:bold; position:absolute; left:-1px; top:-1px;}
+.login_tit_in {background:url(../../mock/image/exam/hsk_013.png) no-repeat right; font-size:18px; color:#005372; line-height:40px;}
+.login_tr {background:url(../../mock/image/exam/hsk_014.png); width:12px; height:12px; position:absolute; right:-1px; top:-1px;}
+.login_br {background:url(../../mock/image/exam/hsk_015.png); width:12px; height:12px; position:absolute; right:-1px; bottom:-1px;}
+.login_bl {background:url(../../mock/image/exam/hsk_016.png); width:12px; height:12px; position:absolute; left:-1px; bottom:-1px;}
+
+.log_cont {margin:60px 20px 20px 30px; min-height:300px; font-size:16px; font-weight:bold; line-height:46px; color:#1a1a1a;}
+.log_input {background:url(../../mock/image/exam/hsk_019.png) repeat-x; height:24px; font-size:18px; border:1px solid #24a1d3;}
+
+.log_btn {width:220px; height:33px; margin:20px auto auto auto;}
+.log_btn a {display:block; width:99px; height:33px; line-height:33px; font-size:18px; color:#FFF; text-decoration:none; text-align:center; float:left; margin-left:10px;}
+
+.confirm_cont {margin:0 auto 20px auto; min-height:300px; width:400px; font-size:16px; font-weight:bold; line-height:30px; color:#1a1a1a; padding:80px 20px 20px 240px; background:url(../../mock/image/exam/hsk_020.png) no-repeat 0 80px;}
+.confirm_btn {width:220px; height:33px; margin:20px auto auto 0px;}
+.confirm_btn a {display:block; width:99px; height:33px; line-height:33px; font-size:18px; color:#FFF; text-decoration:none; text-align:center; float:left; margin-left:10px;}
+
+.btn_green:link,.btn_green:visited {background:url(../../mock/image/exam/hsk_004.png)}
+.btn_green:hover {background:url(../../mock/image/exam/hsk_004_2.png)}
+.btn_yellow:link,.btn_yellow:visited {background:url(../../mock/image/exam/hsk_017.png)}
+.btn_yellow:hover {background:url(../../mock/image/exam/hsk_017_2.png)}
+.btn_blue:link,.btn_blue:visited {background:url(../../mock/image/exam/hsk_005.png)}
+.btn_blue:hover {background:url(../../mock/image/exam/hsk_005_2.png)}
+
+.snd_outer {width:360px; height:33px; margin:20px auto auto 0px;}
+.snd_outer a {display:block; width:99px; height:33px; line-height:33px; font-size:18px; color:#FFF; text-decoration:none; text-align:center; float:left; margin-left:10px;}
+.snd_cont {background:url(../../mock/image/exam/hsk_022.png) no-repeat 0 80px; margin:0 auto 20px auto; min-height:300px; width:600px; font-size:16px; font-weight:bold; line-height:30px; color:#1a1a1a; padding:80px 20px 20px 220px;}
+.snd_btn:link,.snd_btn:visited {background:url(../../mock/image/exam/hsk_021.png); display:block; width:229px; height:33px;}
+.snd_btn:hover {background:url(../../mock/image/exam/hsk_021_2.png);}
+
+.tr_btn_outer {position:absolute; right:26px; top:20px;}
+.tr_btn_outer a {display:block; width:99px; height:33px; line-height:33px; font-size:18px; color:#FFF; text-decoration:none; text-align:center; float:left; margin-left:10px;}
+
+.main_tab {margin-left:5px;}
+
+.stu_info {width:250px; height:160px; position:relative; border:1px solid #24a1d3; background:url(../../mock/image/exam/hsk_031.png) bottom repeat-x #cbeffa; margin:0 auto 10px auto;}
+.stu_info_tl {background:url(../../mock/image/exam/hsk_027.png); width:10px; height:10px; position:absolute; left:-1px; top:-1px;}
+.stu_info_tr {background:url(../../mock/image/exam/hsk_028.png); width:10px; height:10px; position:absolute; right:-1px; top:-1px;}
+.stu_info_br {background:url(../../mock/image/exam/hsk_030.png); width:10px; height:10px; position:absolute; bottom:-1px; right:-1px;}
+.stu_info_bl {background:url(../../mock/image/exam/hsk_029.png); width:10px; height:10px; position:absolute; left:-1px; bottom:-1px;}
+
+.stu_btn {height:21px; padding:10px 8px 5px 5px;}
+.stu_btn a {background:url(../../mock/image/exam/hsk_026.png); width:85px; height:21px; display:block; text-align:center; line-height:21px; color:#FFF; float:right; margin-left:5px; font-size:14px; text-decoration:none;}
+.stu_btn a:hover {background:url(../../mock/image/exam/hsk_026_2.png);}
+
+.stu_pic {background:url(../../mock/image/exam/user_pic.jpg); width:79px; height:92px; position:absolute; left:10px; top:40px;}
+.stu_cont {width:136px; height:100px; font-size:12px; line-height:24px; position:absolute; left:95px; top:40px;}
+
+.left_menu {width:250px; min-height:200px; margin:0px auto 10px auto; position:relative; background-color:#FFF; border:1px solid #24a1d3;}
+.com_tl {background:url(../../mock/image/exam/hsk_032.png); width:10px; height:10px; position:absolute; top:-1px; left:-1px;}
+.com_tr {background:url(../../mock/image/exam/hsk_033.png); width:10px; height:10px; position:absolute; top:-1px; right:-1px;}
+.com_bl {background:url(../../mock/image/exam/hsk_035.png); width:10px; height:10px; position:absolute; bottom:-1px; left:-1px;}
+.com_br {background:url(../../mock/image/exam/hsk_034.png); width:10px; height:10px; position:absolute; bottom:-1px; right:-1px;}
+.com_tl2 {background:url(../../mock/image/exam/hsk_045.png); width:10px; height:10px; position:absolute; top:-1px; left:-1px;}
+.com_tr2 {background:url(../../mock/image/exam/hsk_046.png); width:10px; height:10px; position:absolute; top:-1px; right:-1px;}
+
+
+.left_menu_in {margin:0 auto 10px auto; margin-top:10px; padding-top:0px; width:232px; overflow-y: auto; overflow-x:hidden; padding-right:5px;}
+.left_menu_in div { line-height:29px; font-size:14px; margin-bottom:3px;}
+.class_one {background:url(../../mock/image/exam/hsk_036.png); width:195px; height:29px; font-weight:bold; color:#005969; padding-left:19px; cursor:pointer;}
+.class_one_dis {background:url(../../mock/image/exam/hsk_039.png); width:195px; height:29px; font-weight:bold; color:#999; padding-left:19px;}
+.class_two {background:url(../../mock/image/exam/hsk_037.png); width:170px; height:29px; margin-left:10px; padding-left:34px; cursor:pointer; line-height:29px;}
+.class_thr {background:url(../../mock/image/exam/hsk_038.png); width:194px; height:29px; cursor:pointer;}
+.class_thr_list {margin-left:20px; height:auto;}
+.o_icon {display:block; width:19px; height:19px; float:left;left:5px; top:5px; background:url(../../mock/image/exam/hsk_043.png);margin-left:-20px;margin-top:5px;margin-right:10px;}
+.c_icon {display:block; width:19px; height:19px; float:left;left:5px; top:5px; background:url(../../mock/image/exam/hsk_044.png);margin-left:-20px;margin-top:5px;margin-right:10px;}
+.part_title {float:left;}
+.quesTit {padding-left:39px;padding-right:39px;}
+.now_play {background:url(../../mock/image/exam/hsk_049.png); width:18px; height:17px;display:none; float:left;margin-top:6px; margin-left:10px;}
+.ansed {background:url(../../mock/image/exam/hsk_050.png); width:20px; height:20px;display:none; float:right;margin-top:5px; margin-right:15px;}
+.scroll_style{scrollbar-arrow-color: #007287; scrollbar-face-color: #a9e7ff; scrollbar-darkshadow-color: #a9e7ff; scrollbar-highlight-color: #a9e7ff; scrollbar-shadow-color: #a9e7ff; scrollbar-track-color: #ddf4fd; scrollbar-3dlight-color: #ddf4fd;}
+
+.ques_out {min-height:200px; position:relative; border:1px solid #24a1d3; background:#FFF; padding:10px; padding-right:8px;}
+.ques_in {overflow-y: auto; overflow-x:hidden;padding-right:5px;}
+
+.examp_out {min-height:50px; height:auto; border:1px solid #a3d1e3; border-top:0px; padding-bottom:10px;}
+.examp_btn {height:25px; position:absolute; top:20px;right:40px;}
+.examp_btn a {display:block;text-align:center; color:#FFF; font-size:12px; text-decoration:none; margin:0px;padding:0px;padding-left:10px;padding-right:10px;}
+.examp_btn a:hover {}
+.examp_btn .left {background:url(../../mock/image/exam/example_left.png);width:9px;height:21px; float:left;}
+.examp_btn .right {background:url(../../mock/image/exam/example_right.png);width:9px;height:21px;float:left;}
+.examp_btn .middle {background:url(../../mock/image/exam/example_middle.png);height:21px;float:left;line-height:23px;}
+.examp_tit {font-size:14px; color:#0d8fc9; margin-bottom:10px;}
+.exam_tit_left {float:left;}
+.examp_data {display:none;}
+.examp_cont {margin-left:70px;}
+.example_ques_list {height:auto; border-top:1px solid #a3d1e3; background-color:#FFF; overflow:hidden; margin-top:2px; position:relative;}
+
+.ques_list {height:auto; border:1px solid #a3d1e3; margin-top:10px; background-color:#FFF; overflow:hidden;}
+.ques_in_list {height:auto; border-top:0px solid #a3d1e3; border-bottom:0px solid #a3d1e3; margin-bottom:2px; overflow:hidden;}
+.ques_sub {height:auto; border-top:1px solid #a3d1e3; border-bottom:0px solid #a3d1e3; margin-bottom:2px; overflow:hidden;}
+.ans_list {overflow:hidden; padding:5px 0 0 3px; font-size:14px;}
+.pad_l {padding-left:30px;}
+
+.ques_num {
+	background:url(../../mock/image/exam/hsk_042.png); height:42px; min-width:65px; 
+	border-bottom:1px solid #a3d1e3; border-right:1px solid #a3d1e3; float:left; 
+	text-align:center; font-size:22px; font-weight:bold; line-height:42px;
+}
+
+.num_bar{
+	margin:0px; padding:0px;
+	overflow:hidden;
+	border-bottom:1px solid #a3d1e3;
+}
+
+.ques_num div{
+	padding-left:5px; padding-right:5px;
+}
+
+.sub_ans_out .ques_num {
+	margin-right:0px;	
+}
+.ques_num_long {background:url(../../mock/image/exam/hsk_042.png); height:42px; width:100%; border-bottom:1px solid #a3d1e3; border-right:1px solid #a3d1e3; text-align:left; padding-left:25px; font-size:20px; font-weight:bold; line-height:42px;}
+.ques_num_outlong {background:url(../../mock/image/exam/hsk_042.png); height:42px; border:1px solid #a3d1e3; text-align:left; padding-left:25px; font-size:20px; font-weight:bold; line-height:42px;}
+.ques_num_short {background:url(../../mock/image/exam/hsk_042.png); height:42px; width:40px; border:1px solid #a3d1e3; border-top:0; float:left; text-align:center; font-size:18px; font-weight:bold; line-height:42px;}
+
+.ques_cont {
+	line-height:26px; font-size:16px; font-weight:normal;
+	word-break: break-all; padding:8px; 
+	width:auto;
+}
+.ques_cont_in { margin-left:3px;}
+.short_cont {
+	margin:0px; padding:0px ; border-right:1px solid #a3d1e3; 
+	word-break:break-all; float:left;
+}
+.short_cont .ques_cont_in {
+	margin:8px;
+}
+.hCols {
+	overflow-y: auto; overflow-x:hidden;
+}
+.row_opt {
+	line-height:25px;
+}
+
+.ques_cont p, .short_cont p {text-indent:0px;padding:0px;margin:0px;}
+.sub_ques_cont {margin-left:67px;padding:8px;}
+ 
+.page_btn {height:26px; margin-top:6px; overflow:hidden;}
+.page_btn a {background:url(../../mock/image/exam/hsk_040.png); width:79px; height:26px; text-align:center; text-decoration:none; color:#FFF; font-size:14px; line-height:26px; display:block; float:right; margin-left:10px;}
+.page_btn a:hover {background:url(../../mock/image/exam/hsk_040_2.png);}
+.page_btn a.next_part {background:url(../../mock/image/exam/hsk_058.png); display:none;}
+.page_btn a.next_part:hover {background:url(../../mock/image/exam/hsk_058_2.png);}
+
+.player_out {float:left;margin-top:12px;height:30px; padding-left:10px;}
+.snd_bar {width:350px; height:17px; border:1px solid #42addd; float:left;}
+.snd_pross {background:url(../../mock/image/exam/snd_pross.png) repeat-x; width:0px; height:17px; border-right:0px solid #a3d1e3;}
+.snd_spk {background:url(../../mock/image/exam/hsk_049.png) no-repeat;width:26px; height:17px; float:left; margin-top:1px;}
+.jw_out {float:left;}
+.line_one {float:left; margin:10px 8px 5px 3px;}
+.line_two {float:left; margin:10px auto 10px 20px; width:230px;}
+.line_four {margin:5px 5px 0px 0px; width:auto; }
+.line_hor {margin:5px 5px 0px 0px; width:auto; float:left;white-space:nowrap;}
+
+/* Firefox */
+@-moz-document url-prefix(){
+	.examp_btn .middle {line-height:21px;}
+	/*.player_out {margin-top:9px;height:33px; margin-left:65px; border-bottom:1px solid #a3d1e3;padding-left:10px;}*/
+}
+
+.opt_cont img{border-bottom:1px solid #fff;}
+.opt_cont {padding-bottom:3px;}
+.opt_cont:hover{color:#f05a24;}
+.s_chose{margin-bottom:2px;}
+.s_chosed {color:#000;}
+.s_chosed_t {background:url(../../mock/image/exam/selected_circle.png) 0 4px no-repeat}
+.s_chosed img{}
+.opt_title div{display:inline-block;width:20px;height:19px;text-align:center;}
+.opt_title {display:block;width:20px;height:22px;text-align:center;cursor:pointer;padding-bottom:3px;}
+
+
+.all_time {font-size:16px; font-weight:bold; color:#007287; position:absolute; left:65%; top:16px;}
+.part_time {font-size:16px; font-weight:bold; color:#007287; position:absolute; left:65%; top:39px;}
+.part_time b {color:#C00;}
+.hand_in {width:104px; height:31px; position:absolute; right:15px; top:22px; cursor:pointer;}
+.hand_in a {background:url(../../mock/image/exam/hsk_051.png); width:104px; height:31px; display:block; text-align:center; font-size:18px; font-weight:bold; color:#FFF; text-decoration:none; line-height:31px;}
+.hand_in a:hover {background:url(../../mock/image/exam/hsk_051_2.png);}
+
+.hand_in_dis {background:url(../../mock/image/exam/hsk_052.png); width:104px; height:31px; position:absolute; text-align:center; font-size:18px; font-weight:bold; color:#EEE; cursor:default; line-height:31px; right:15px; top:22px;}
+
+
+.time_note {background:url(TimeBG.gif); width:214px; height:133px; position:absolute; top:60px; left:72%; z-index:100; display:none;}
+.time_note_close {width:23px; height:23px; position:absolute; top:30px; right:6px;}
+.time_note_close a {background:url(../../mock/image/exam/hsk_054.png); display:block; width:23px; height:23px;}
+.time_note_close a:hover {background:url(../../mock/image/exam/hsk_054_2.png);}
+.time_note_txt {font-size:16px; font-weight:bold; color:#000; position:absolute; top:55px; left:20px; width:80%; height:auto;}
+
+.emp_item {font-size:12px;color:#000;}
+.emp_item b {color:#C00;}
+
+.quz_info {background:url(../../mock/image/exam/hsk_042.png); height:42px; width:auto; border:1px solid #a3d1e3; text-align:left; padding-left:25px; font-size:20px; font-weight:bold; line-height:42px;}
+.chose_list {border-top:1px solid  #a3d1e3; padding:10px; margin-top:10px; height:auto; overflow:hidden; word-break:break-all;}
+.opt_cont {cursor:pointer;}
+.ans_out {padding-left:0px;}
+.short_ans_out {width:318px; float:left; overflow-y: auto; overflow-x:hidden; overflow:hidden; border-right:1px solid #a3d1e3;}
+.sub_ans_out {border-top:1px solid #a3d1e3;}
+
+.bord_RL {border-right:1px solid #a3d1e3; border-left:1px solid #a3d1e3;}
+
+.img_right {float:right; margin-left:10px;}
+
+.ans_tit {padding:10px 0 0 10px; float:left;}
+.now_tit {font-weight:bold; color:#06C;}
+.writ_cont {text-align:right; font-size:16px; line-height:20px; width:590px;}
+
+.spacing_10px {clear:both; height:10px;}
+.spacing_15px {clear:both; height:25px;}
+
+.dragFrom {border:1px solid #a3d1e3; height:32px; padding:5px; margin-bottom:5px;overflow:hidden;}
+.dragTag {border:1px solid #a3d1e3; height:32px; padding:5px; margin-bottom:5px;overflow:hidden;}
+.dragTag div.dragElem{ margin:2px;  padding:5px; border:1px solid #72a031; background-color:#dff0bb; height: 18px; min-width:50px; width:auto; font-size:18px; float:left; cursor:pointer; text-align:center; line-height:18px;}
+.dragFrom div.dragElem { margin:2px; padding:5px; border:1px solid #91cee8; background-color:#eaf8fe; height: 18px; min-width:50px; width:auto; font-size:18px; float:left; cursor:pointer; text-align:center; line-height:18px;}
+.dragOut{ padding:5px;overflow:hidden;}
+.dragIng {background-color:#FFF; border:1px dashed #090; margin:1px; padding:5px;  height: 18px; min-width:50px; width:auto; float:left; font-size:16px; text-align:center;}
+.ans_input{ border:1px solid #91cee8; height:28px; width:400px; font-size:20px; padding:2px 0 0 2px; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:28px;}
+.ans_input1{ border:1px solid #91cee8; height:30px;width:100px;  font-size:20px; padding:5px 0 0 5px; margin-left:5px; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:25px;}
+.ans_input_muti{ border:1px solid #91cee8; height:100px; width:100%; font-size:20px; padding:10px; margin-left:5px; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:30px;}
+.example_input {readonly:true;}
+
+.quz_out {padding:10px 0 0 10px; float:left; font-size:18px;}
+.quz_input {border:1px solid #91cee8; height:20px; width:30px; vertical-align:middle; font-size:20px; text-align:center; padding-top:3px; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:20px; margin:0 5px 0 5px;}
+
+.drag_keyword {padding:5px; border:1px solid #91cee8; background-color:#eaf8fe; height: 18px; width:80px; font-size:18px; cursor:pointer; text-align:center; line-height:18px; position:absolute; bottom:0px; right:-100px;}
+.drag_inline {padding:5px; border:1px solid #91cee8; background-color:#eaf8fe; height: 18px; font-size:18px; cursor:pointer; text-align:center; line-height:18px; float:left; margin-right:10px;}
+.drag_out {width:auto; min-width:10px; height:auto; min-height:10px; float:left; margin:10px;}
+.drag_cont {width:auto; padding-bottom:10px; overflow:hidden;}
+.drag_cont p {padding-top:0px; margin-top:0px;}
+.sent_input{ border:1px solid #91cee8; height:30px; width:600px; font-size:20px; padding:5px 0 0 5px; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:30px;}
+.sent_area{ border:1px solid #91cee8; font-size:20px; padding:5px 0 0 5px; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:30px;}
+.drophover { background:url(../../mock/image/exam/hsk_006.png) repeat-x top;}
+.drag_keyword_examp {padding:5px; border:1px solid #91cee8; background-color:#eaf8fe; height: 18px; width:80px; font-size:18px; cursor:default; text-align:center; line-height:18px; position:absolute; bottom:0px; right:-100px;}
+
+.mask {width:100%; min-height:500px; z-index:200; position:absolute; top:0; left:0; display:none; background:#06C; filter:alpha(opacity=30);-moz-opacity:0.3; -khtml-opacity: 0.3; opacity: 0.3;}
+.conf_bar {background:url(../../mock/image/exam/hsk_056.png); width:372px; height:233px; position:absolute; left:40%; top:30%; display:none; z-index:210;}
+.conf_tit {font-size:14px; line-height:32px; height:32px; padding-left:20px;}
+.conf_txt {font-size:16px; line-height:26px; color:#036; margin:30px; height:80px;}
+.conf_btn {text-align:center; width:75%;}
+.conf_btn a {background:url(../../mock/image/exam/hsk_026.png); display:block; float:right; margin-left:10px; width:85px; height:21px; line-height:21px; text-align:center; text-decoration:none; color:#FFF; font-size:14px;}
+.conf_btn a:hover {background:url(../../mock/image/exam/hsk_026_2.png);}
+
+.info_bar {background:url(../../mock/image/exam/hsk_056.png); width:372px; height:233px; position:absolute; left:40%; top:30%; display:none; z-index:210;}
+.info_tit {font-size:14px; line-height:32px; height:32px; padding-left:20px;}
+.info_txt {font-size:16px; line-height:26px; color:#036; margin:30px; height:80px;}
+.info_btn {text-align:center; width:60%;}
+.info_btn a {background:url(../../mock/image/exam/hsk_026.png); display:block; float:right; margin-left:10px; width:85px; height:21px; line-height:21px; text-align:center; text-decoration:none; color:#FFF; font-size:14px;}
+.info_btn a:hover {background:url(../../mock/image/exam/hsk_026_2.png);}
+
+
+.examp_img {float:left; margin:10px auto auto 10px;}
+.examp_txt {padding:5px; color:#188a99; font-size:14px; overflow:hidden;}
+.examp_txt img {vertical-align:middle;}
+.examp_txt2 {color:#188a99; line-height:26px;}
+.examp_txt2 img {vertical-align:middle;}
+
+.exam_intxt {margin-left:20px;}
+.exam_intxt strong {margin-right:10px;}
+
+
+.exam_num_short {background:url(../../mock/image/exam/hsk_042.png); height:42px; width:40px; border:1px solid #a3d1e3; border-top:0; float:left; text-align:center; font-size:14px; font-weight:bold; line-height:42px; color:#2697bc;}
+
+
+.order_input{ border:1px solid #91cee8; height:30px; width:120px; font-size:20px; padding:5px 0 0 5px; margin:10px 0 10px 0; background:url(../../mock/image/exam/hsk_055.png) repeat-x top; line-height:30px; text-transform:uppercase;}
+.now_txt_num {text-align:right; width:600px; font-size:14px; line-height:26px;}
+
+#rig_exam,#err_exam,#emp_exam {color:#C00;}
+
+.class_chose_out {position:absolute; top:100px; left:30px;}
+.class_tit {width:55px; height:16px; margin-left:8px; text-align:center;}
+.class_chose {background:url("../../mock/image/exam/hsk_060.png"); width:97px; height:78px; float:left; margin-right:16px;}
+.class_chose a {background:url(../../mock/image/exam/hsk_067.png); width:86px; height:22px; display:block; text-align:center; line-height:20px; color:#FFF; text-decoration:none; margin:5px auto 0 auto; font-size:14px;}
+.class_chose a:hover {background:url(../../mock/image/exam/hsk_068.png);}
+.class_note {padding-top:20px; font-size:14px; color:#00628d;}

@@ -1,0 +1,71 @@
+/*公共样式*/
+@charset "utf-8";
+body,div,ul,li,img,a,h2,h1,h3,p,input,form,dl,dt,dd{
+	margin:0;
+	padding:0;
+	border:0;
+	color: #FFF;}
+body{font-family: "楷体";}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#fff; cursor:pointer;}
+img,input{background:none;}
+
+.clearFix:after{
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	line-height:0;
+	conter:0;
+}
+.clearFix{zoom:1;}
+
+#all{margin:100px auto 0px;width:1044px; background:url(../images/index_top_bg.png) no-repeat center bottom;}
+
+
+/*头部样式开始*/
+#bluebg_top{overflow:auto;}
+#head{width:1039px;height:126px;margin:0 auto;}
+#head #schedule{background:url(../images/schedule_bg.png) no-repeat  left 14px;width:834px;height:44px; margin-left:105px;}
+#head #schedule table p{background:url(../images/schedule.png) no-repeat left 13px; height:42px;}
+#zhang_w{float: left; width: 772px;height:61px; background:url(../images/zhang_bg.png) no-repeat center;margin-left:16px;margin-top:18px;}
+#zhang{margin-top:10px; width:748px;float:right; overflow:hidden;zoom:1;}
+#zhang ul p span{display:block; width:46px;text-align:center;height:40px;line-height:40px; color:#076179;}
+#zhang ul p span:hover{color:red;}
+#zhang ul li{float:left;margin-right:12px;background:url(../images/jibie_bgh.png) no-repeat;width:49px;height:42px; text-align:left;}
+#zhang ul li p{background:url(../images/jibie_bgb.png) no-repeat;width:49px; height:42px;font-size:2em; text-align:center;}
+#fanhui{float:left; width:80px;height:80px; margin-left:40px;display:inline;}
+#JZ{margin-top:5px; float:right;width:748px;}	
+#JZ ul{ margin:0 auto;width:748px;}
+#JZ ul li{float:left; width:31px; height:30px;background:url(../images/xing.png) no-repeat; text-align:left; margin-left:31px; display:inline;}
+#JZ ul li p{height:30px;background:url(../images/xing_z.png) no-repeat;}
+#danyuan{height:42px;}
+#danyuan_cent{width:1000px;margin:0 auto;height:42px;}
+#danyuan_cent ul{margin:0 auto;}
+#danyuan_cent li{float:left; background:url(../images/xing_h.png) no-repeat 0 3px; width:36px;margin-left:6px;}
+#danyuan_cent li p{ background:url(../images/xing_g.png) no-repeat 0 3px;height:40px;line-height:40px;color: #000; font-size:20px; font-weight:bold;}
+#danyuan_cent li p span{ display:block; width:30px;margin-left:3px; text-align:center; padding-top:2px;}
+#danyuan_cent li p span:hover{color:red; font-size:24px;}
+#danyuan #danyuan_cent #four_anniu{float:right;width:220px;}
+#danyuan #danyuan_cent #four_anniu div{width:48px;float:left;}
+#danyuan #danyuan_cent #four_anniu div a img:hover{ width:40px;height:42px;}
+/*中部样式开始 主要是五个按钮的样式*/
+#center{}	
+#center_r{background:url(../images/cent_bg.png) no-repeat;width:100%;height:498px;}
+#center #center_r #center_bg{height:498px; overflow:hidden;}
+#center #center_r #center_bg td{height:65px; line-height:65px; font:bold;}
+#center #center_r #center_bg td p{margin-left:15px;}
+#center #center_r #center_bg td p a{ color:#076179; font-weight:bold; font-size:26px;}
+
+#bluebg_bot{background:url(../images/bluebg_bot.png) no-repeat; height:500px;}
+
+.test{margin:30px 0px 0px 80px;}
+.test:hover{width:160px; height:44px;}
+
+/*底部样式开始*/
+#bottom{background:url(../images/bottom.png) no-repeat center;width:100%;height:75px;float:left; margin-top:5px;line-height:70px;text-align:center;}
+#bottom h1{ font-size:3em;}
+#bottom #bottom_b{margin-top:6px;margin-right:5px; overflow:auto;zoom:1;width:100%;display:inline-block; }
+#bottom #bottom_b ul li{background:url(../images/bt_anh.png) no-repeat;width:63px;height:57px;float:left; text-align:left;overflow:hidden;}
+#bottom #bottom_b ul li p{background:url(../images/bt_an.png) no-repeat left;height:57px; width:63px; font-size:2em;text-align:left; }
+#bottom #bottom_b ul li p span{display:block;width:30px; margin-left:15px;}

@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_du" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="dep_list"
+			class="com.sopia.duman.action.DepartmentAction" method="dep_list">
+			<result name="dep_list">admin/duman/dep_list.jsp</result>
+		</action>
+		<action name="list_dep_childs"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="list_dep_childs">
+		</action>
+		<action name="dep_addInit"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="dep_addInit">
+			<result name="dep_add">admin/duman/dep_add.jsp</result>
+		</action>
+		<action name="dep_add"
+			class="com.sopia.duman.action.DepartmentAction" method="dep_add">
+			<result name="dep_add_success">
+				admin/duman/dep_add_success.jsp
+			</result>
+			<result name="dep_add">admin/duman/dep_add.jsp</result>
+		</action>
+		<action name="dep_update"
+			class="com.sopia.duman.action.DepartmentAction" method="dep_update">
+			<result name="dep_view" type="redirectAction">
+				dep_view?department.id=${department.id}&amp;sub_operate=${sub_operate}
+			</result>
+		</action>
+		<action name="dep_updateuser"
+			class="com.sopia.duman.action.DepartmentAction" method="dep_updateuser">
+			<result name="dep_view" type="redirectAction">
+				dep_view?department.id=${department.id}&amp;sub_operate=${sub_operate}
+			</result>
+		</action>
+		<action name="depDisplayByName"
+			class="com.sopia.duman.action.DepartmentAction" method="depDisplayByName">
+			<result name="depDisplayPage">
+				admin/duman/depDisplayPage.jsp
+			</result>
+		</action>
+		<action name="dep_view"
+			class="com.sopia.duman.action.DepartmentAction" method="dep_view">
+			<result name="dep_view">admin/duman/dep_view.jsp</result>
+		</action>
+		<action name="dep_alterInit"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="dep_alterInit">
+			<result name="dep_alter">admin/duman/dep_alter.jsp</result>
+		</action>
+		<action name="dep_alter"
+			class="com.sopia.duman.action.DepartmentAction" method="dep_alter">
+			<result name="dep_alter_success">
+				admin/duman/dep_alter_success.jsp
+			</result>
+			<result name="dep_alter">admin/duman/dep_alter.jsp</result>
+		</action>
+		<action name="dep_deleteInit"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="dep_deleteInit">
+			<result name="dep_delete">
+				admin/duman/dep_delete.jsp
+			</result>
+		</action>
+		<action name="dep_delete_user"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="dep_delete_user">
+		</action>
+		<action name="dep_delete"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="dep_delete">
+			<result name="dep_delete_success">
+				admin/duman/dep_delete_success.jsp
+			</result>
+		</action>
+		<!-- 用户管理 -->
+		<action name="account_importInit"
+			class="com.sopia.duman.action.UserAction"
+			method="account_importInit">
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+		</action>
+		<!-- 部门导入 -->
+		<action name="account_importInit2"
+			class="com.sopia.duman.action.UserAction"
+			method="account_importInit2">
+			<result name="account_import2">
+				admin/duman/account_import2.jsp
+			</result>
+		</action>
+		<!-- 企业用户导入 -->
+		<action name="company_importInit"
+			class="com.sopia.duman.action.UserAction"
+			method="company_importInit">
+			<result name="company_import">
+				admin/duman/company_import.jsp
+			</result>
+		</action>
+		<action name="companyImportCheck"
+			class="com.sopia.duman.action.UserAction" method="companyImportCheck">
+			<result name="account_importBydep">
+				admin/duman/account_importBydep3.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/duman/companyImportInfo.jsp
+			</result>
+		</action>
+		<action name="company_import"
+			class="com.sopia.duman.action.UserAction" method="company_import">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				account_search.action
+			</result>
+		</action>
+		
+		<action name="account_importInit3"
+			class="com.sopia.duman.action.UserAction"
+			method="account_importInit3">
+			<result name="account_import3">
+				admin/duman/account_import3.jsp
+			</result>
+		</action>
+		<action name="accountImportCheck"
+			class="com.sopia.duman.action.UserAction" method="accountImportCheck">
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/duman/account_importBydep.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/duman/accountImportInfo.jsp
+			</result>
+		</action>
+		
+		<action name="accountImportCheck2"
+			class="com.sopia.duman.action.UserAction" method="accountImportCheck2">
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/duman/account_importBydep2.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/duman/accountImportInfo2.jsp
+			</result>
+		</action>
+		
+		<action name="accountImportCheck3"
+			class="com.sopia.duman.action.UserAction" method="accountImportCheck3">
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/duman/account_importBydep3.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/duman/accountImportInfo3.jsp
+			</result>
+		</action>
+		
+		<action name="account_import"
+			class="com.sopia.duman.action.UserAction" method="account_import">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				account_search.action
+			</result>
+		</action>
+		
+		<action name="account_import2"
+			class="com.sopia.duman.action.UserAction" method="account_import2">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/duman/account_import2.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				dep_list.action
+			</result>
+		</action>
+		
+		<action name="account_import3"
+			class="com.sopia.duman.action.UserAction" method="account_import3">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/duman/account_import.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				account_search.action
+			</result>
+		</action>
+		
+		<action name="account_importBydepInit"
+			class="com.sopia.duman.action.UserAction"
+			method="account_importBydepInit">
+			<result name="account_importBydep">
+				admin/duman/account_importBydep.jsp
+			</result>
+		</action>
+		
+		<action name="account_importBydepInit2"
+			class="com.sopia.duman.action.UserAction"
+			method="account_importBydepInit2">
+			<result name="account_importBydep">
+				admin/duman/account_importBydep3.jsp
+			</result>
+		</action>
+		
+		<action name="account_importBydep"
+			class="com.sopia.duman.action.UserAction" method="account_importBydep">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/duman/account_importBydep.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				account_search.action
+			</result>
+		</action>
+		<action name="account_addInit"
+			class="com.sopia.duman.action.UserAction" method="account_addInit">
+			<result name="account_add">
+				admin/duman/account_add.jsp
+			</result>
+			<result name="account_add_noall">
+				admin/duman/account_add_noall.jsp
+			</result>
+		</action>
+		<action name="account_addInit_cisco"
+			class="com.sopia.duman.action.UserAction" method="account_addInit_cisco">
+			<result name="account_addInit_cisco">
+				admin/duman/account_addInit_cisco.jsp
+			</result>
+		</action>
+		<action name="account_addInit2"
+			class="com.sopia.duman.action.UserAction" method="account_addInit2">
+			<result name="account_add2">
+				admin/duman/account_add2.jsp
+			</result>
+			<result name="account_add_noall">
+				admin/duman/account_add_noall.jsp
+			</result>
+		</action>
+		<action name="account_add2"
+			class="com.sopia.duman.action.UserAction" method="account_add2">
+			<result name="register_error">
+				admin/duman/account_add2.jsp
+			</result>
+			<result name="account_add_success2">
+				admin/duman/account_add_success2.jsp
+			</result>
+			<result name="account_search2" type="redirectAction">
+				account_search2.action
+			</result>
+		</action>
+		<action name="account_add"
+			class="com.sopia.duman.action.UserAction" method="account_add">
+			<result name="register_error">
+				admin/duman/account_add.jsp
+			</result>
+			<result name="account_add_success">
+				admin/duman/account_add_success.jsp
+			</result>
+			<result name="account_search" type="redirectAction">
+				account_search.action
+			</result>
+		</action>
+		<action name="account_add_cisco"
+			class="com.sopia.duman.action.UserAction" method="account_add_cisco">
+			<result name="account_add_cisco" type="redirectAction">
+				account_search.action
+			</result>
+		</action>
+		<action name="account_searchInit"
+			class="com.sopia.duman.action.UserAction"
+			method="account_searchInit">
+			<result name="account_searchInit">
+				admin/duman/account_search.jsp
+			</result>
+		</action>
+		<!-- 岗位导入 -->
+		<action name="sta_accountImportInit"
+			class="com.sopia.duman.action.UserAction"
+			method="sta_accountImportInit">
+			<result name="account_import">
+				admin/duman/sta_account_import.jsp
+			</result>
+		</action>
+		<!-- 
+		<action name="sta_accountImportInit2"
+			class="com.sopia.duman.action.UserAction"
+			method="sta_accountImportInit2">
+			<result name="account_import">
+				admin/duman/sta_account_import2.jsp
+			</result>
+		</action> -->
+		<action name="sta_accountImportCheck"
+			class="com.sopia.duman.action.UserAction" method="sta_accountImportCheck">
+			<result name="account_import">
+				admin/duman/sta_account_import.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/duman/sta_account_importBydep.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/duman/sta_accountImportInfo.jsp
+			</result>
+		</action>
+		<!-- 
+		<action name="sta_accountImportCheck2"
+			class="com.sopia.duman.action.UserAction" method="sta_accountImportCheck2">
+			<result name="account_import">
+				admin/duman/sta_account_import.jsp
+			</result>
+			<result name="account_importBydep">
+				admin/duman/sta_account_importBydep.jsp
+			</result>
+			<result name="accountImportInfo">
+				admin/duman/sta_accountImportInfo2.jsp
+			</result>
+		</action> -->
+		<action name="sta_account_import"
+			class="com.sopia.duman.action.UserAction"
+			method="sta_account_import">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/duman/sta_account_import.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				station_list.action
+			</result>
+		</action>
+		<!-- 
+		<action name="sta_account_import2"
+			class="com.sopia.duman.action.UserAction"
+			method="sta_account_import2">
+			<result name="account_import_success">
+				admin/duman/account_import_success.jsp
+			</result>
+			<result name="account_import">
+				admin/duman/sta_account_import.jsp
+			</result>
+			<result name="account_list" type="redirectAction">
+				station_list.action
+			</result>
+		</action> -->
+		<!-- 用户授权管理 -->
+		<action name="showUserGrant"
+			class="com.sopia.duman.action.UserAction"
+			method="showUserGrant">
+			<result name="showUserGrant">
+				admin/duman/showUserGrant.jsp
+			</result>
+		</action>
+		<action name="userGrantManageInit"
+			class="com.sopia.duman.action.UserAction"
+			method="userGrantManageInit">
+			<result name="userGrantManageInit">
+				admin/duman/userGrantManageInit.jsp
+			</result>
+		</action>
+		<action name="userGrant"
+			class="com.sopia.duman.action.UserAction"
+			method="userGrant">
+			<result name="userGrant">
+				admin/duman/userGrant.jsp
+			</result>
+		</action>
+		<!-- 基础数据维护 --> 
+		<action name="eluser_addBasedbInit"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_addBasedbInit">
+			<result name="eluser_addBasedbInit">
+				admin/duman/eluser_addBasedb.jsp
+			</result>
+		</action>
+		<action name="eluser_addBasedb"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_addBasedb">
+			<result name="eluser_BasedbList" type="redirectAction">
+				eluser_BasedbList.action?baseDatat.typeid=${baseDatat.typeid}
+			</result>
+		</action>
+		<action name="baseDb_jingzhong_up"
+			class="com.sopia.duman.action.UserAction"
+			method="baseDb_jingzhong_up">
+			<result name="eluser_BasedbList" type="redirectAction">
+				eluser_BasedbList.action?baseDatat.typeid=${baseDatat.typeid}
+			</result>
+		</action>
+		<action name="eluser_BasedbList"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_BasedbList">
+			<result name="eluser_BasedbList">
+				admin/duman/eluser_BasedbList.jsp
+			</result>
+		</action>
+		<action name="userLoginInfo_list"
+			class="com.sopia.duman.action.UserAction"
+			method="userLoginInfo_list">
+			<result name="userLoginInfo_list">
+				admin/duman/userLoginInfo_list.jsp
+			</result>
+		</action>
+		<action name="delUserLoginInfo"
+			class="com.sopia.duman.action.UserAction"
+			method="delUserLoginInfo">
+			<result name="userLoginInfo_list" type="redirectAction">
+				userLoginInfo_list.action
+			</result>
+		</action>
+		<action name="eluser_BasedbDel"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_BasedbDel">
+			<result name="eluser_BasedbList" type="redirectAction">
+				eluser_BasedbList.action?baseDatat.typeid=${baseDatat.typeid}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="eluser_BasedbImp"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_BasedbImp">
+			<result name="eluser_BasedbList">
+				admin/duman/eluser_BasedbList.jsp
+			</result>
+		</action>
+		<action name="eluser_alterBasedbInit"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_alterBasedbInit">
+			<result name="eluser_alterBasedb">
+				admin/duman/eluser_alterBasedb.jsp
+			</result>
+		</action>
+		<action name="eluser_alterBasedb"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_alterBasedb">
+			<result name="eluser_BasedbList" type="redirectAction">
+				eluser_BasedbList.action?baseDatat.typeid=${baseDatat.typeid}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="eluser_BasedbSort"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_BasedbSort">
+			<result name="eluser_BasedbList" type="redirectAction">
+				eluser_BasedbList.action?baseDatat.typeid=${baseDatat.typeid}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="update_BasedbType"
+			class="com.sopia.duman.action.UserAction"
+			method="update_BasedbType">
+		</action>
+		<action name="student_headerAlterInit"
+			class="com.sopia.duman.action.UserAction"
+			method="student_headerAlterInit">
+			<result name="student_headerAlter">
+				admin/duman/student_headerAlter.jsp
+			</result>
+		</action>
+		<action name="student_headerAlter"
+			class="com.sopia.duman.action.UserAction"
+			method="student_headerAlter">
+			<result name="student_myinfo2" type="redirectAction">
+				student_myinfo2
+			</result>
+			<result name="student_headerAlter">
+				admin/duman/student_headerAlter.jsp
+			</result>
+		</action>
+		<action name="account_search"
+			class="com.sopia.duman.action.UserAction" method="account_search">
+			<result name="account_result">
+				admin/duman/account_list.jsp
+			</result>
+			<result name="account_search_Excel">
+				admin/duman/account_search_Excel.jsp
+			</result>
+		</action>
+		<action name="account_search2"
+			class="com.sopia.duman.action.UserAction" method="account_search2">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result>
+			<result name="account_search_Excel">
+				admin/duman/account_search_Excel.jsp
+			</result>
+		</action>
+		<action name="displayNoValidUser"
+			class="com.sopia.duman.action.UserAction" method="displayNoValidUser">
+			<result name="noValidUser_list">
+				admin/duman/noValidUser_list.jsp
+			</result>
+		</action>
+		<action name="assignUser"
+			class="com.sopia.duman.action.UserAction" method="assignUser">
+			<result name="account_result">
+				admin/duman/account_list.jsp
+			</result>
+			<result name="noValidUser_list">
+				admin/duman/noValidUser_list.jsp
+			</result>
+			<result name="userlist" type="redirectAction">
+				userlist.action
+			</result>
+		</action>
+		<action name="assignUser2"
+			class="com.sopia.duman.action.UserAction" method="assignUser2">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result> 
+		</action>
+		<action name="delUser"
+			class="com.sopia.duman.action.UserAction" method="delUser">
+			<result name="account_result">
+				admin/duman/account_list.jsp
+			</result>
+		</action>
+		<action name="delUser2"
+			class="com.sopia.duman.action.UserAction" method="delUser2">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result>
+		</action>
+		<action name="account_view"
+			class="com.sopia.duman.action.UserAction" method="account_view">
+			<result name="account_view">
+				admin/duman/account_view.jsp
+			</result>
+		</action>
+		<action name="account_view2"
+			class="com.sopia.duman.action.UserAction" method="account_view2">
+			<result name="account_view2">
+				admin/duman/account_view2.jsp
+			</result>
+		</action>
+		<action name="account_view_cisco"
+			class="com.sopia.duman.action.UserAction" method="account_view_cisco">
+			<result name="account_view_cisco">
+				admin/duman/account_view_cisco.jsp
+			</result>
+		</action>
+		<action name="account_alterInit"
+			class="com.sopia.duman.action.UserAction"
+			method="account_alterInit">
+			<result name="account_alter">
+				admin/duman/account_alter.jsp
+			</result>
+			<result name="account_alter_noall">
+				admin/duman/account_alter_noall.jsp
+			</result>
+		</action>
+		<action name="account_alterInit_cisco"
+			class="com.sopia.duman.action.UserAction"
+			method="account_alterInit_cisco">
+			<result name="account_alterInit_cisco">
+				admin/duman/account_alterInit_cisco.jsp
+			</result>
+		</action>
+		<action name="account_alterInit2"
+			class="com.sopia.duman.action.UserAction"
+			method="account_alterInit2">
+			<result name="account_alter2">
+				admin/duman/account_alter2.jsp
+			</result>
+			<result name="account_alter_noall">
+				admin/duman/account_alter_noall.jsp
+			</result>
+		</action>
+		<action name="account_alter2"
+			class="com.sopia.duman.action.UserAction" method="account_alter2">
+			<result name="account_alter_success2">
+				admin/duman/account_alter_success2.jsp
+			</result>
+			<result name="account_alterInit2" type="redirectAction">
+				account_alterInit2.action?elUser.id=${elUser.id}&amp;upOk=${upOk}
+			</result>
+		</action>
+		<action name="account_alter"
+			class="com.sopia.duman.action.UserAction" method="account_alter">
+			<result name="account_alter_success">
+				admin/duman/account_alter_success.jsp
+			</result>
+			<result name="account_alterInit" type="redirectAction">
+				account_alterInit.action?elUser.id=${elUser.id}&amp;upOk=${upOk}
+			</result>
+			<result name="account_view" type="redirectAction">
+				account_view.action?elUser.id=${elUser.id}
+			</result>
+			<result name="account_alter">
+				admin/duman/account_alter.jsp
+			</result>
+		</action>
+		<action name="account_alter_cisco"
+			class="com.sopia.duman.action.UserAction" method="account_alter_cisco">
+			<result name="account_alter_cisco_success" type="redirectAction">
+				account_view_cisco.action?elUser.id=${elUser.id}
+			</result>
+		</action>
+		<action name="account_deleteInit"
+			class="com.sopia.duman.action.UserAction"
+			method="account_deleteInit">
+			<result name="account_delete">
+				admin/duman/account_delete.jsp
+			</result>
+		</action>
+		<action name="account_delete"
+			class="com.sopia.duman.action.UserAction" method="account_delete">
+			<result name="account_delete_success">
+				admin/duman/account_delete_success.jsp
+			</result>
+		</action>
+		<action name="systemInit"
+			class="com.sopia.duman.action.UserAction" method="systemInit">
+		</action>
+		<action name="login" class="com.sopia.duman.action.UserAction"
+			method="login">
+			<result name="login_success" type="redirectAction">
+				admin.action?module=studentman
+			</result>
+			<result name="login_study" type="redirectAction">
+				  index.action  
+				<!--  study.action-->
+			</result>
+			<result name="login_logout">login_logout.jsp</result>
+			<result name="index" type="redirectAction">
+				index.action
+			</result>
+			<result name="ie_set">admin/security/ie_set.jsp</result>
+		</action>
+		<action name="login_logout" class="com.sopia.duman.action.UserAction"
+			method="login_logout"> 
+			<result name="login_logout">login_logout.jsp</result>
+		</action>
+		<action name="loginpki" class="com.sopia.duman.action.UserAction"
+			method="loginpki">
+			<result name="login_success" type="redirectAction">
+				admin.action?module=studentman
+			</result>
+			<result name="login_study" type="redirectAction">
+				study.action
+			</result>
+			<result name="pkiregister">
+				pkiregister.jsp
+			</result>
+			<result name="register3">
+				register3.jsp
+			</result>
+			<result name="login_logout">login_logout.jsp</result>
+		</action>
+		
+		<action name="registerInitpki" class="com.sopia.duman.action.UserAction" method="registerInitpki">
+			<result name="register">
+				register.jsp
+			</result>
+			<result name="register3">
+				register3.jsp
+			</result>
+		</action>
+		
+		<action name="pkiregister" class="com.sopia.duman.action.UserAction"
+			method="pkiregister">
+			<result name="login_success" type="redirectAction">
+				admin.action?module=studentman
+			</result>
+			<result name="login_study" type="redirectAction">
+				study.action
+			</result>
+			<result name="login" type="redirectAction">
+				login.action?elUser.username=${elUser.username}&amp;elUser.password=${elUser.username}&amp;myLogin.ipAddr=${myLogin.ipAddr}
+			</result>
+			<result name="index" type="redirectAction">
+				index.action
+			</result>
+		</action>
+		<action name="myinfo_complete"
+			class="com.sopia.duman.action.UserAction" method="myinfo_complete">
+			<result name="study_index" type="redirectAction">
+				study_index
+			</result>
+		</action>
+		<action name="myinfo_completeinit"
+			class="com.sopia.duman.action.UserAction"
+			method="myinfo_completeinit">
+			<result name="myinfo_complete">myinfo_complete.jsp</result>
+		</action>
+		<action name="getpasswordinit"
+			class="com.sopia.duman.action.UserAction" method="getpasswordinit">
+			<result name="getpassword">getpassword.jsp</result>
+		</action>
+		<action name="getpassword"
+			class="com.sopia.duman.action.UserAction" method="getpassword">
+			<result name="getpassword_err">getpassword.jsp</result>
+			<result name="getpassword_succ">
+				getpassword_succ.jsp
+			</result>
+		</action>
+		<action name="registerInit"
+			class="com.sopia.duman.action.UserAction" method="registerInit">
+			<result name="register...">register(temp).jsp</result>
+			<result name="register">register.jsp</result>
+			<result name="register1">register1.jsp</result>
+			<result name="register2">register2.jsp</result>
+			<result name="register4">register4.jsp</result>
+			<!-- <result name="login">index.jsp</result> -->
+		</action>
+		<action name="register"
+			class="com.sopia.duman.action.UserAction" method="register">
+			<result name="register_success">
+				register_success.jsp
+			</result>
+			<result name="register_error1">register1.jsp</result>
+			<result name="register_error12">register2.jsp</result>
+			<result name="register_error">register.jsp</result>
+			<result name="register_error2">register(temp).jsp</result>
+			<result name="register_error4">register4.jsp</result>
+			<result name="login_success" type="redirectAction">
+				index.action
+			</result>
+			<result name="login" type="redirectAction">
+				login.action?elUser.username=${elUser.username}&amp;elUser.password=${elUser.password}&amp;myLogin.ipAddr=${myLogin.ipAddr}&amp;isFromRegister=${isFromRegister}
+			</result>
+		</action>
+		<!-- 部门管理员注册 -->
+		<action name="register1"
+			class="com.sopia.duman.action.UserAction" method="register1">
+			<result name="register_success">
+				register_success.jsp
+			</result>
+			<result name="register_error">register.jsp</result>
+			<result name="register_error2">register(temp).jsp</result>
+			<result name="register_error4">register4.jsp</result>
+			<result name="login_success" type="redirectAction">
+				index.action
+			</result>
+			<result name="login" type="redirectAction">
+				login.action?elUser.username=${elUser.username}&amp;elUser.password=${elUser.password}&amp;myLogin.ipAddr=${myLogin.ipAddr}
+			</result>
+		</action>
+		<action name="userRegister"
+			class="com.sopia.duman.action.UserAction" method="userRegister">
+			<result name="userRegister">
+				userRegister.jsp
+			</result>
+		</action>
+		<action name="userRegister2"
+			class="com.sopia.duman.action.UserAction" method="userRegister2">
+			<result name="userRegister2">
+				userRegister2.jsp
+			</result>
+		</action>
+		<action name="logout" class="com.sopia.duman.action.UserAction"
+			method="logout">
+			<!-- 
+			<result name="logout" type="redirectAction">index.action</result>
+			 -->
+			 <result name="logout" >admin/newversion/wjm_user_center_login.jsp</result>
+			  <result name="logout_admin" >admin/newversion/admin_login.jsp</result>
+			 
+			<result name="winClose">winClose.jsp</result>
+		</action>
+		<action name="role_addInit"
+			class="com.sopia.duman.action.UserAction" method="role_addInit">
+			<result name="role_add">admin/duman/role_add.jsp</result>
+		</action>
+		<action name="role_add"
+			class="com.sopia.duman.action.UserAction" method="role_add">
+			<!-- result name="role_add_success">
+				admin/duman/role_add_success.jsp
+			</result> -->
+			<result name="role_add_success" type="redirectAction">
+				role_list.action
+			</result>
+		</action>
+		<action name="role_alterInit"
+			class="com.sopia.duman.action.UserAction" method="role_alterInit">
+			<result name="role_alter">
+				admin/duman/role_alter.jsp
+			</result>
+		</action>
+		<action name="role_alter"
+			class="com.sopia.duman.action.UserAction" method="role_alter">
+			<result name="role_list" type="redirectAction">
+				role_list
+			</result>
+		</action>
+		<action name="role_delete"
+			class="com.sopia.duman.action.UserAction" method="role_delete">
+			<result name="role_delete_error">
+				admin/duman/role_list.jsp
+			</result>
+			<result name="role_list" type="redirectAction">
+				role_list
+			</result>
+		</action>
+		<action name="role_list"
+			class="com.sopia.duman.action.UserAction" method="role_list">
+			<result name="role_list">admin/duman/role_list.jsp</result>
+		</action>
+		<action name="rolefunc_addInit"
+			class="com.sopia.duman.action.UserAction"
+			method="rolefunc_addInit">
+			<result name="rolefunc_add">
+				admin/duman/rolefunc_add.jsp
+			</result>
+		</action>
+
+		
+		
+		<action name="rolefunc_add"
+			class="com.sopia.duman.action.UserAction" method="rolefunc_add">
+			<result name="role_list" type="redirectAction">
+				role_list
+			</result>
+		</action>
+		
+		<!-- 用户权限 -->
+		<action name="userRole"
+			class="com.sopia.duman.action.UserAction"
+			method="userRole">
+			<result name="userRole_Select">
+				admin/duman/userRole.jsp
+			</result>
+		</action>
+		<action name="userRole_Select"
+			class="com.sopia.duman.action.UserAction" method="userRole_Select">
+			<result name="userRole" type="redirectAction">
+				userRole
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="func_list"
+			class="com.sopia.duman.action.UserAction" method="func_list">
+			<result name="func_list">admin/duman/func_list.jsp</result>
+		</action>
+		<action name="func_addInit"
+			class="com.sopia.duman.action.UserAction" method="func_addInit">
+			<result name="func_add">admin/duman/func_add.jsp</result>
+		</action>
+		<action name="func_add"
+			class="com.sopia.duman.action.UserAction" method="func_add">
+			<result name="func_list" type="redirectAction">
+				func_list
+			</result>
+		</action>
+		<action name="func_alterInit"
+			class="com.sopia.duman.action.UserAction" method="func_alterInit">
+			<result name="func_alter">
+				admin/duman/func_alter.jsp
+			</result>
+		</action>
+		<action name="func_alter"
+			class="com.sopia.duman.action.UserAction" method="func_alter">
+			<result name="func_list" type="redirectAction">
+				func_list
+			</result>
+		</action>
+		<action name="func_delete"
+			class="com.sopia.duman.action.UserAction" method="func_delete">
+			<result name="func_list" type="redirectAction">
+				func_list
+			</result>
+		</action>
+		<action name="group_alterInit"
+			class="com.sopia.duman.action.UserAction" method="group_alterInit">
+			<result name="group_alter">
+				admin/duman/group_alter.jsp
+			</result>
+		</action>
+		<action name="group_alter"
+			class="com.sopia.duman.action.UserAction" method="group_alter">
+			<result name="group_list" type="redirectAction">
+				group_list
+			</result>
+		</action>
+		<action name="group_delete"
+			class="com.sopia.duman.action.UserAction" method="group_delete">
+			<result name="group_list" type="redirectAction">
+				group_list
+			</result>
+		</action>
+		<action name="group_addInit"
+			class="com.sopia.duman.action.UserAction" method="group_addInit">
+			<result name="group_add">admin/duman/group_add.jsp</result>
+		</action>
+		<action name="group_add"
+			class="com.sopia.duman.action.UserAction" method="group_add">
+			<result name="group_list" type="redirectAction">
+				group_list
+			</result>
+		</action>
+		<action name="group_list"
+			class="com.sopia.duman.action.UserAction" method="group_list">
+			<result name="group_list">
+				admin/duman/group_list.jsp
+			</result>
+		</action>
+		<action name="group_assign_search"
+			class="com.sopia.duman.action.UserAction"
+			method="group_assign_search">
+			<result name="group_assign_search">
+				admin/duman/group_assign_search.jsp
+			</result>
+		</action>
+		<action name="group_assign_search_list"
+			class="com.sopia.duman.action.UserAction"
+			method="group_assign_search_list">
+			<result name="group_assign_search_list">
+				admin/duman/group_assign_search_list.jsp
+			</result>
+		</action>
+		<action name="group_assign_list"
+			class="com.sopia.duman.action.UserAction"
+			method="group_assign_list">
+			<result name="group_assign_list">
+				admin/duman/group_assign_list.jsp
+			</result>
+		</action>
+		<action name="group_assign_add"
+			class="com.sopia.duman.action.UserAction"
+			method="group_assign_add">
+			<result name="group_assign_search_list">
+				admin/duman/group_assign_search_list.jsp
+			</result>
+		</action>
+		<action name="group_assign_delete"
+			class="com.sopia.duman.action.UserAction"
+			method="group_assign_delete">
+			<result name="group_assign_list" type="redirectAction">
+				group_assign_list?pN=${pN}&amp;pS=${pS}&amp;group.id=${group.id}
+			</result>
+		</action>
+		<action name="systemGrantInfo"
+			class="com.sopia.duman.action.UserAction"
+			method="systemGrantInfo">
+		</action>
+		
+		<!-- 判断所选部门节点是否是三级节点 -->
+		<action name="checkDepidIsThreeNode"
+			class="com.sopia.duman.action.DepartmentAction"
+			method="checkDepidIsThreeNode">
+		</action>
+		
+		<!-- 岗位管理 -->
+		<action name="station_list"
+			class="com.sopia.duman.action.StationAction"
+			method="station_list">
+			<result name="station_list">admin/duman/station_list.jsp</result>
+		</action>
+		<action name="list_sta_childs"
+			class="com.sopia.duman.action.StationAction"
+			method="list_sta_childs">
+		</action>
+		
+		<action name="station_addInit"
+			class="com.sopia.duman.action.StationAction"
+			method="station_addInit">
+			<result name="sta_add">admin/duman/sta_add.jsp</result>
+		</action>
+		<action name="sta_add"
+			class="com.sopia.duman.action.StationAction" method="sta_add">
+			<result name="sta_add_success">
+				admin/duman/sta_add_success.jsp
+			</result>
+			<result name="sta_add">admin/duman/sta_add.jsp</result>
+		</action>
+		<action name="sta_view"
+			class="com.sopia.duman.action.StationAction" method="sta_view">
+			<result name="sta_view">admin/duman/sta_view.jsp</result>
+		</action>
+		<action name="sta_alterInit"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_alterInit">
+			<result name="sta_alter">admin/duman/sta_alter.jsp</result>
+		</action>
+		<action name="sta_alter"
+			class="com.sopia.duman.action.StationAction" method="sta_alter">
+			<result name="sta_alter_success">
+				admin/duman/sta_alter_success.jsp
+			</result>
+			<result name="sta_alter">admin/duman/sta_alter.jsp</result>
+		</action>
+		<action name="sta_deleteInit"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_deleteInit">
+			<result name="sta_delete">
+				admin/duman/sta_delete.jsp
+			</result>
+		</action>
+		<action name="sta_delete"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_delete">
+			<result name="sta_delete_success">
+				admin/duman/sta_delete_success.jsp
+			</result>
+		</action>
+		<action name="sta_delete_user"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_delete_user">
+		</action>
+		<action name="sta_addCourseInit"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_addCourseInit">
+		<!-- 	<result name="sta_addCourseInit">
+				admin/duman/sta_addCourseInit.jsp
+			</result> -->
+			<result name="sta_addCourseInit">
+				admin/duman/sta_course_selectlist.jsp
+			</result>
+		</action>
+		<action name="sta_addCourseInit_bx"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_addCourseInit_bx">
+		<!-- 	<result name="sta_addCourseInit">
+				admin/duman/sta_addCourseInit.jsp
+			</result> -->
+			<result name="sta_addCourseInit_bx">
+				admin/duman/sta_course_bx.jsp
+			</result>
+		</action>
+		<action name="sta_addCourseInit_xx"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_addCourseInit_xx">
+			<result name="sta_addCourseInit_xx">
+				admin/duman/sta_course_xx.jsp
+			</result>
+		</action>
+		
+		<action name="sta_addCourse"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_addCourse">
+			<result name="sta_addCourse" type="redirectAction">
+				station_list
+			</result>
+		</action>
+		<action name="sta_addAll"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_addAll">
+			<result name="sta_addAll">
+				
+			</result>
+		</action>
+		
+		<action name="stageneral"
+			class="com.sopia.duman.action.StationAction"
+			method="stageneral">
+			<result name="stageneral">
+				admin/duman/stageneral.jsp
+			</result>
+		</action>
+	<!-- <action name="sta_course"
+			class="com.sopia.duman.action.StationAction"
+			method="sta_course">
+			<result name="sta_course">
+				admin/duman/sta_course.jsp
+			</result>
+		</action> -->
+		<action name="sta_elclass_addInit"
+			class="com.sopia.classman.action.ClassAction"
+			method="sta_elclass_addInit">
+			<result name="elclass_add">
+				admin/class/sta_elclass_add.jsp
+			</result>
+			<result name="elclass_alterInit" type="redirectAction">
+				elclass_alterInit.action?elclass.id=${classid}&amp;staid=${staid}
+			</result>
+		</action>
+		
+		<action name="account_headerAlterInit"
+			class="com.sopia.duman.action.UserAction"
+			method="account_headerAlterInit">
+			<result name="account_headerAlter">
+				admin/duman/account_headerAlter.jsp
+			</result>
+		</action>
+		<action name="account_headerAlter"
+			class="com.sopia.duman.action.UserAction"
+			method="account_headerAlter">
+			<result name="account_view2" type="redirectAction"> 
+			account_view2?elUser.id=${elUser.id}
+			</result>
+		</action> 
+			<!-- 账号锁定 以及 解锁 --> 
+		<action name="unlock"
+			class="com.sopia.duman.action.UserAction" method="unlock">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result> 
+		</action>
+		<action name="toLockfor"
+			class="com.sopia.duman.action.UserAction" method="toLockfor">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result> 
+		</action>
+		
+		<action name="MustOpenAssignUser"
+			class="com.sopia.duman.action.UserAction" method="MustOpenAssignUser">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result>
+			<result name="noValidUser_list">
+				admin/duman/noValidUser_list.jsp
+			</result>
+		</action>
+		<action name="ApplicationAssignUser"
+			class="com.sopia.duman.action.UserAction" method="ApplicationAssignUser">
+			<result name="account_result2">
+				admin/duman/account_list2.jsp
+			</result>
+			<result name="noValidUser_list">
+				admin/duman/noValidUser_list.jsp
+			</result>
+		</action>
+		<action name="checkIdcardnoIsExist"
+			class="com.sopia.duman.action.UserAction" method="checkIdcardnoIsExist">
+		</action>
+		<action name="checkmyNameIsExist"
+			class="com.sopia.duman.action.UserAction" method="checkmyNameIsExist">
+		</action>
+		
+		<action name="chooseMenu"
+			class="com.sopia.duman.action.UserAction" method="chooseMenu">
+			<result name="chooseMenu">
+				admin/duman/chooseMenu.jsp
+			</result>
+		</action>
+		
+		<action name="elf_view"
+			class="com.sopia.duman.action.UserAction" method="elf_view">
+		</action>
+		
+		<!-- sd1230 -->
+		<action name="student_listInit"
+			class="com.sopia.duman.action.UserAction"
+			method="student_listInit">
+			<result name="student_listInit">
+				admin/duman/student_list.jsp
+			</result>
+		</action>	
+		
+			<action name="student_list"
+			class="com.sopia.duman.action.UserAction" method="student_list">
+			<result name="student_list">
+				admin/duman/student_list.jsp
+			</result>
+			<result name="student_list_Excel">
+				admin/duman/student_list_Excel.jsp
+			</result>
+		</action>
+		<action name="student_addInit"
+			class="com.sopia.duman.action.UserAction" method="student_addInit">
+			<result name="student_add">
+				admin/duman/student_add.jsp
+			</result>
+		</action>
+		<action name="student_add"
+			class="com.sopia.duman.action.UserAction" method="student_add">
+			<result name="student_add" type="redirectAction">
+				student_list.action
+			</result>
+		</action>
+		<action name="student_alterInit"
+			class="com.sopia.duman.action.UserAction"
+			method="student_alterInit">
+			<result name="student_alter">
+				admin/duman/student_alter.jsp
+			</result>
+		</action>
+		<action name="student_alter"
+			class="com.sopia.duman.action.UserAction" method="student_alter">
+			<result name="student_alter_success" type="redirectAction">
+			<!--  	account_view_cisco.action?elUser.id=${elUser.id}-->
+			student_list.action
+			</result>
+		</action>
+		
+		<action name="student_view"
+			class="com.sopia.duman.action.UserAction" method="student_view">
+			<result name="student_view" >
+			<!--  	account_view_cisco.action?elUser.id=${elUser.id}-->
+			admin/duman/student_view.jsp
+			</result>
+		</action>
+		
+		<action name="delUser_stu"
+			class="com.sopia.duman.action.UserAction" method="delUser_stu">
+			<result name="student_list">
+				admin/duman/student_list.jsp
+			</result>
+		</action>
+		
+		<!-- sd0109 -->
+		<action name="eluser_BaseTypeList"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_BaseTypeList">
+			<result name="eluser_BaseTypeList">
+				admin/duman/eluser_BaseTypeList.jsp
+			</result>
+		</action>
+		<!-- 基础数据维护 --> 
+		<action name="eluser_addBaseTypeInit"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_addBaseTypeInit">
+			<result name="eluser_addBaseTypeInit">
+				admin/duman/eluser_addBaseType.jsp
+			</result>
+		</action>
+		<action name="eluser_addBaseType"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_addBaseType">
+			<result name="eluser_BaseTypeList" type="redirectAction">
+				eluser_BaseTypeList.action
+			</result>
+		</action>
+		
+		<action name="eluser_BaseTypeDel"
+			class="com.sopia.duman.action.UserAction"
+			method="eluser_BaseTypeDel">
+			<result name="eluser_BaseTypeList" type="redirectAction">
+				eluser_BaseTypeList.action
+			</result>
+		</action>
+		
+	</package>
+</struts>

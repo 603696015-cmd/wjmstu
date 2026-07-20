@@ -1,0 +1,7 @@
+alter table elclass add(year  number(4) );
+alter table elclass add(nazhengornianjian  number(1) );
+
+
+
+
+

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="classification" extends="elearning">
+		<action name="init_classification_standard" class="com.sopia.wjm.action.ClassificationAction" method="init_classification_standard">
+			<result name="init_classification_standard">
+				admin/wjm/classification/list_classification.jsp
+			</result>
+		</action>	
+		<action name="setClassification" class="com.sopia.wjm.action.ClassificationAction" method="setClassification">
+		</action>	
+		<action name="updateRoomid" class="com.sopia.wjm.action.ClassificationAction" method="updateRoomid">
+		</action>	
+		<action name="assign_batch" class="com.sopia.wjm.action.ClassificationAction" method="assign_batch">
+		</action>	
+		
+		<action name="examroom_alllist_wjm" class="com.sopia.wjm.action.ClassificationAction" method="examroom_alllist_wjm">
+			<result name="examroom_alllist_wjm">
+				admin/wjm/classification/examroom_alllist_wjm.jsp
+			</result>
+		</action>	
+		
+		<action name="wjm_user_center_navigation"
+			class="com.sopia.wjm.action.ClassificationAction" method="wjm_user_center_navigation">
+			<result name="wjm_user_center_navigation" >
+				admin/wjm/wjm_user_center_navigation.jsp
+			</result>
+		</action>
+		<action name="wjm_user_center"
+			class="com.sopia.wjm.action.ClassificationAction" method="wjm_user_center">
+			<result name="wjm_user_center" >
+				admin/wjm/wjm_user_center.jsp
+			</result>
+		</action>
+		<!-- 董克2015-8-22修改admin/wjm/wjm_user_center_index.jsp   wjm_user_center_navigation-->
+		<action name="wjm_user_center_index"
+			class="com.sopia.wjm.action.ClassificationAction" method="wjm_user_center_index">
+			<result name="wjm_user_center_index">
+				admin/wjm/wjm_user_center_index.jsp
+			</result>
+		</action>	
+		<action name="wjm_user_center_new"
+			class="com.sopia.wjm.action.ClassificationAction" method="wjm_user_center_new">
+			<result name="wjm_user_center_new" >
+				admin/wjm/wjm_user_center_new.jsp
+			</result>
+		</action>
+		<action name="wjm_user_center_index_new"
+			class="com.sopia.wjm.action.ClassificationAction" method="wjm_user_center_index_new">
+			<result name="wjm_user_center_index_new">
+				admin/wjm/wjm_user_center_index_new.jsp
+			</result>
+		</action>
+		<action name="mystudy_class_view_wjm"
+			class="com.sopia.wjm.action.ClassificationAction" method="mystudy_class_view_wjm">
+			<result name="mystudy_class_view_wjm">
+				admin/wjm/mystudy_class_view_wjm.jsp
+			</result>
+		</action>	
+		<action name="mystudy_course_view_wjm"
+			class="com.sopia.wjm.action.ClassificationAction" method="mystudy_course_view_wjm">
+			<result name="mystudy_course_view_wjm">
+				admin/wjm/mystudy_course_view_wjm.jsp
+			</result>
+		</action>	
+		<action name="mystudy_page_view_wjm"
+			class="com.sopia.wjm.action.ClassificationAction" method="mystudy_page_view_wjm">
+			<result name="mystudy_page_view_wjm">
+				admin/wjm/mystudy_page_view_wjm.jsp
+			</result>
+		</action>	
+		<action name="showIntelligent"
+			class="com.sopia.wjm.action.ClassificationAction" method="showIntelligent">
+			<result name="showIntelligent">
+				admin/wjm/showIntelligent.jsp
+			</result>
+		</action>	
+		<!-- 外经贸统计action -->
+		<action name="studentInquiry"
+			class="com.sopia.wjm.action.ClassificationAction" method="studentInquiry">
+			<result name="studentInquiry">
+				admin/wjm/studentInquiry.jsp
+			</result>
+		</action>	
+		<action name="studentClassInfo"
+			class="com.sopia.wjm.action.ClassificationAction" method="studentClassInfo">
+			<result name="studentClassInfo">
+				admin/wjm/studentClassInfo.jsp
+			</result>
+		</action>
+		<action name="studentCourseInfo"
+			class="com.sopia.wjm.action.ClassificationAction" method="studentCourseInfo">
+			<result name="studentCourseInfo">
+				admin/wjm/studentCourseInfo.jsp
+			</result>
+		</action>
+		<action name="studentInfoByClassid"
+			class="com.sopia.wjm.action.ClassificationAction" method="studentInfoByClassid">
+			<result name="studentInfoByClassid">
+				admin/wjm/studentInfoByClassid.jsp
+			</result>
+		</action>
+		<action name="studentClassInfoPersonal"
+			class="com.sopia.wjm.action.ClassificationAction" method="studentClassInfoPersonal">
+			<result name="studentClassInfoPersonal">
+				admin/wjm/studentClassInfoPersonal.jsp
+			</result>
+		</action>
+		<action name="studentCpageInfo"
+			class="com.sopia.wjm.action.ClassificationAction" method="studentCpageInfo">
+			<result name="studentCpageInfo">
+				admin/wjm/studentCpageInfo.jsp
+			</result>
+		</action>
+		<action name="pageexamInfoIquiry"
+			class="com.sopia.wjm.action.ClassificationAction" method="pageexamInfoIquiry">
+			<result name="pageexamInfoIquiry">
+				admin/wjm/pageexamInfoIquiry.jsp
+			</result>
+		</action>
+		<action name="courseexamInfoIquiry"
+			class="com.sopia.wjm.action.ClassificationAction" method="courseexamInfoIquiry">
+			<result name="courseexamInfoIquiry">
+				admin/wjm/courseexamInfoIquiry.jsp
+			</result>
+		</action>
+		<action name="getElUserClassificationByUserid"
+			class="com.sopia.wjm.action.ClassificationAction" method="getElUserClassificationByUserid">
+		</action>
+		<action name="addOrUpdateElUserClassificationByUserid"
+			class="com.sopia.wjm.action.ClassificationAction" method="addOrUpdateElUserClassificationByUserid">
+		</action>
+		
+		<!-- 以下为模拟考试 -->
+		<action name="simulationExam"
+			class="com.sopia.wjm.action.ClassificationAction" method="simulationExam">
+			<result name="simulationExam">
+				admin/wjm/simulationExam.jsp
+			</result>
+		</action>
+		<action name="listEroomsByErbatchid"
+			class="com.sopia.wjm.action.ClassificationAction" method="listEroomsByErbatchid">
+			<result name="listEroomsByErbatchid">
+				admin/wjm/listEroomsByErbatchid.jsp
+			</result>
+		</action>
+		<action name="learnPinyin"
+			class="com.sopia.wjm.action.ClassificationAction" method="learnPinyin">
+			<result name="learnPinyin" type="redirectAction">
+				myelclass_view_wjm.action?elclass.id=${elClass.id}&amp;type=1
+			</result>
+		</action>
+		<action name="learnHanzi"
+			class="com.sopia.wjm.action.ClassificationAction" method="learnHanzi">
+			<result name="learnHanzi" type="redirectAction">
+				myelclass_view_wjm.action?elclass.id=${elClass.id}&amp;type=1
+			</result>
+		</action>
+		
+		<!-- wjm20140327修改 -->
+		<action name="mystudy_course_view_wjm_front"
+			class="com.sopia.wjm.action.ClassificationAction" method="mystudy_course_view_wjm_front">
+			<result name="mystudy_course_view_wjm_front">
+				admin/wjm/mystudy_course_view_wjm_front.jsp
+			</result>
+		</action>	
+		
+		
+		<action name="mystudy_page_view_wjm_front"
+			class="com.sopia.wjm.action.ClassificationAction" method="mystudy_page_view_wjm_front">
+			<result name="mystudy_page_view_wjm_front">
+				admin/wjm/mystudy_page_view_wjm_front.jsp
+			</result>
+		</action>	
+	</package> 
+</struts>

@@ -1,0 +1,78 @@
+BODY {
+	MARGIN: 0px; FONT-FAMILY: Tahoma, Verdana, sans-serif, simsun; COLOR: #333; FONT-SIZE: 12px
+}
+.dibian {
+	BORDER-BOTTOM: #e9e9e9 1px solid
+}
+A {
+	COLOR: #0063dc; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.tbbg001 {
+	BACKGROUND-IMAGE: url(../images/dangqian.jpg); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center center
+}
+.tbbg002 {
+	BACKGROUND-IMAGE: url(../images/head_box.jpg); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center center
+}
+.tbbg003 {
+	BACKGROUND-IMAGE: url(../images/head_box2.jpg); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center center
+}
+.tbbg004 {
+	BACKGROUND-IMAGE: url(bg.jpg); BACKGROUND-REPEAT: repeat-x
+}
+.rightbg {
+	BACKGROUND-IMAGE: url(../login/013.jpg); BACKGROUND-REPEAT: repeat-y; BACKGROUND-POSITION: right top
+}
+.input_002 {
+	BORDER-BOTTOM: #d4c6ac 1px solid; BORDER-LEFT: #d4c6ac 1px solid; WIDTH: 189px; HEIGHT: 24px; BORDER-TOP: #d4c6ac 1px solid; BORDER-RIGHT: #d4c6ac 1px solid
+}
+.l_btn {
+	BACKGROUND-IMAGE: url(../login/loginbtn2.jpg); WIDTH: 100px; HEIGHT: 26px; COLOR: #ffffff; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 13px
+}
+.login-panel {
+	BORDER-BOTTOM: #b8d4e8 1px solid; BORDER-LEFT: #b8d4e8 1px solid; BACKGROUND-COLOR: #f0f5f8; BORDER-TOP: #b8d4e8 1px solid; BORDER-RIGHT: #b8d4e8 1px solid
+}
+.input-text {
+	WIDTH: 144px; HEIGHT: 22px
+}
+.input-text2 {
+	WIDTH: 200px; HEIGHT: 22px
+}
+.input-submit {
+	BORDER-BOTTOM: #0e1f5b 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #d8dfea 1px solid; BACKGROUND-COLOR: #005eac; WIDTH: 92px; HEIGHT: 30px; COLOR: #fff; FONT-SIZE: 14px; BORDER-TOP: #d8dfea 1px solid; CURSOR: pointer; BORDER-RIGHT: #0e1f5b 1px solid
+}
+.reg-holder {
+	BORDER-BOTTOM: #005eac 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.bannertext {
+	LINE-HEIGHT: 20px; COLOR: #333; FONT-SIZE: 16px
+}
+.form_row {
+	LINE-HEIGHT: 1.6em; COLOR: #333; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.inputsubmit {
+	BACKGROUND-IMAGE: url(jihuo.png); WIDTH: 166px; HEIGHT: 40px
+}
+.dibian {
+	BORDER-BOTTOM: #ed3037 1px dashed
+}
+.rightbian {
+	BORDER-RIGHT: #ed3037 1px dashed
+}
+.topbian {
+	BORDER-TOP: #ed3037 1px dashed
+}
+.copyright {
+	PADDING-BOTTOM: 5px; MARGIN: 10px 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: gray; OVERFLOW: hidden; BORDER-TOP: #b8d4e8 1px solid; PADDING-TOP: 5px
+}
+.rightbian2 {
+	BORDER-RIGHT: #b8d4e8 1px solid
+}
+.sxbian {
+	BORDER-BOTTOM: #b8d4e8 1px solid; BORDER-TOP: #b8d4e8 1px solid
+}
+.tbbg001 {
+	BORDER-BOTTOM: #b8d4e8 1px solid; BORDER-TOP: #b8d4e8 1px solid
+}

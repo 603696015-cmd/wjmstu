@@ -1,0 +1,3 @@
+alter table vocabulary add(yingwen varchar(200));
+
+commmit

@@ -1,0 +1,2 @@
+
+alter table course_registration add isaudit number;

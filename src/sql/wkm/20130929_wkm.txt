@@ -1,0 +1,1 @@
+insert into elrole(name,description) values('外联用户','外联用户');

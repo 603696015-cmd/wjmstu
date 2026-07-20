@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elclass_peice" extends="elearning">
+		<!-- 价格设置模块 --> 
+		<action name="peice_applyfor_elclass" class="com.sopia.elclasspeice.action.ElClassPeiceAction" method="peice_applyfor_elclass">
+			<result name="peice_applyfor_elclass_success">
+				admin/elclassPeice/peice_elclasslist.jsp
+			</result>
+		</action>
+		<!-- 价格审核 -->
+		<action name="peice_audit_elclass" class="com.sopia.elclasspeice.action.ElClassPeiceAction" method="peice_audit_elclass">
+			<result name="peice_audit_elclass_success">
+				admin/elclassPeice/peice_elclassAudit.jsp
+			</result>
+		</action>
+	</package> 
+</struts>

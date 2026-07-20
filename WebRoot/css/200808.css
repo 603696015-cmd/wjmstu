@@ -1,0 +1,1038 @@
+HTML {
+	BACKGROUND: #ffffff
+}
+BODY {
+	FONT: 12px/1.6em simsun, Verdana, Lucida, Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-ALIGN: left
+}
+OL {
+	LIST-STYLE-TYPE: none
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+LI {
+	LIST-STYLE-TYPE: none
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+SELECT {
+	VERTICAL-ALIGN: middle
+}
+FORM {
+	VERTICAL-ALIGN: middle
+}
+BUTTON {
+	VERTICAL-ALIGN: middle
+}
+BUTTON {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; CURSOR: pointer; BORDER-RIGHT-WIDTH: 0px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+EM {
+	FONT-STYLE: normal
+}
+.flt_l {
+	FLOAT: left
+}
+.flt_r {
+	FLOAT: right
+}
+.flt_c {
+	FLOAT: left; MARGIN: 0px auto; WIDTH: 950px
+}
+.text_r {
+	TEXT-ALIGN: right
+}
+.text_c {
+	TEXT-ALIGN: center
+}
+.text_950 {
+	FLOAT: left; WIDTH: 950px; HEIGHT: auto; TEXT-ALIGN: center
+}
+.en {
+	FONT-FAMILY: Arial, Helvetica, sans-serif, "ËÎÌו"
+}
+.margin-top_6 {
+	MARGIN-TOP: 6px
+}
+.margin-top_10 {
+	MARGIN-TOP: 10px
+}
+.margin-b_10 {
+	MARGIN-BOTTOM: 5px
+}
+.margin-l_10 {
+	MARGIN-LEFT: 63px
+}
+.padding_8 {
+	PADDING-TOP: 8px
+}
+.padding_12 {
+	PADDING-TOP: 12px
+}
+.padding_15 {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px
+}
+.padding_5 {
+	PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.padding_66 {
+	PADDING-RIGHT: 28px; PADDING-LEFT: 173px; PADDING-BOTTOM: 20px; PADDING-TOP: 55px
+}
+.padding_8 {
+	PADDING-LEFT: 5px; PADDING-TOP: 10px
+}
+.wth950 {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: auto
+}
+.wth860 {
+	MARGIN: 0px auto; WIDTH: 860px; HEIGHT: auto
+}
+.wth950_863 {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 864px
+}
+.wth950_753 {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 754px
+}
+.wth950_727 {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 728px
+}
+.wth950_5 {
+	FONT-SIZE: 0px; FLOAT: left; MARGIN: 0px auto; WIDTH: 950px; LINE-HEIGHT: 0; HEIGHT: 8px
+}
+.foot_5 {
+	WIDTH: 950px; HEIGHT: 8px
+}
+.wth950_15 {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 15px
+}
+.topNav {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 90px
+}
+.topNav1 {
+	MARGIN-TOP: 5px; FLOAT: right; HEIGHT: 80px
+}
+.logo {
+	FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/index_20111216_08.gif); WIDTH: 358px; HEIGHT: 90px
+}
+.logo A {
+	FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/index_20111216_08.gif); WIDTH: 358px; HEIGHT: 90px
+}
+.topNav2 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/index_93.gif); WIDTH: 73px; CURSOR: pointer; MARGIN-RIGHT: 4px; BACKGROUND-REPEAT: no-repeat; TEXT-ALIGN: center
+}
+.topNav3 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/index_92.gif); WIDTH: 36px; CURSOR: pointer; MARGIN-RIGHT: 4px; BACKGROUND-REPEAT: no-repeat; TEXT-ALIGN: center
+}
+.topNav4 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/home/lipei.gif); WIDTH: 88px; CURSOR: pointer; MARGIN-RIGHT: 10px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 19px; TEXT-ALIGN: center
+}
+.topNav4 A {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/home/lipei.gif); WIDTH: 88px; CURSOR: pointer; MARGIN-RIGHT: 10px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 19px; TEXT-ALIGN: center
+}
+.topNav5 {
+	BACKGROUND-POSITION: left top; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a77.gif); MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 13px
+}
+.topmenu {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 34px
+}
+.menu1 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a42.gif); MARGIN-LEFT: 16px; WIDTH: 111px; MARGIN-RIGHT: 6px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 34px; TEXT-ALIGN: center
+}
+.menu1 A {
+	FONT-WEIGHT: bold; COLOR: #a2483f
+}
+.menu2 {
+	BACKGROUND-POSITION: left top; FONT-WEIGHT: bold; FONT-SIZE: 14px; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a43.gif); WIDTH: 111px; COLOR: #ffffff; LINE-HEIGHT: 34px; MARGIN-RIGHT: 6px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 34px; TEXT-ALIGN: center
+}
+.menu3 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a42.gif); WIDTH: 111px; MARGIN-RIGHT: 6px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 34px; TEXT-ALIGN: center
+}
+.menu3 A {
+	FONT-WEIGHT: bold; COLOR: #a2483f
+}
+.menu4 {
+	MARGIN: 0px auto; WIDTH: 950px; BORDER-BOTTOM: #d96357 3px solid; HEIGHT: 0px
+}
+.menu5 {
+	BORDER-TOP: #c71201 3px solid; MARGIN: 0px auto 10px; WIDTH: 950px; HEIGHT: 0px
+}
+.menu6 {
+	BACKGROUND-POSITION: left top; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a76.gif); MARGIN: 0px auto; WIDTH: 950px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 35px
+}
+.menu7 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.menu7 UL LI {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 20px; FLOAT: left; WIDTH: 49px; LINE-HEIGHT: 35px
+}
+.menu7 UL LI A {
+	FLOAT: left; COLOR: #ffffff
+}
+.menu7 UL LI A:hover {
+	FLOAT: left; COLOR: #ffffff
+}
+.menu8 {
+	FLOAT: left; WIDTH: 49px; CURSOR: hand; COLOR: #ffffff; LINE-HEIGHT: 35px; HEIGHT: 35px
+}
+.menu9 {
+	BORDER-RIGHT: #d7d7d7 1px solid; BORDER-TOP: #d7d7d7 1px solid; BORDER-LEFT: #d7d7d7 1px solid; WIDTH: 90px; BORDER-BOTTOM: #d7d7d7 1px solid; HEIGHT: auto; BACKGROUND-COLOR: #ffffff
+}
+.menu9 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 90px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.menu9 UL LI {
+	WIDTH: 90px; LINE-HEIGHT: 25px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+#ML1 {
+	Z-INDEX: 1; LEFT: 334px; FLOAT: left; WIDTH: 93px; POSITION: absolute; TOP: 120px; HEIGHT: 115px
+}
+#ML2 {
+	Z-INDEX: 1; WIDTH: 0px; POSITION: absolute; HEIGHT: 0px
+}
+.search {
+	BORDER-RIGHT: #ede5ce 1px solid; BORDER-TOP: #ede5ce 1px solid; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a44.gif); MARGIN: 0px auto; BORDER-LEFT: #ede5ce 1px solid; WIDTH: 950px; BORDER-BOTTOM: #ede5ce 1px solid; HEIGHT: 62px
+}
+.search1 {
+	FONT-SIZE: 14px; WIDTH: 366px; LINE-HEIGHT: 23px; HEIGHT: 23px
+}
+.search2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; HEIGHT: 25px
+}
+.search3 {
+	POSITION: relative; TOP: 25%
+}
+.search4 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a78.jpg); WIDTH: 526px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 218px
+}
+.search5 {
+	PADDING-LEFT: 28px; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a79.gif); WIDTH: 292px; COLOR: #8e8e8e; LINE-HEIGHT: 21px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 21px
+}
+.search6 {
+	MARGIN-TOP: 12px; MARGIN-BOTTOM: 30px; WIDTH: 320px
+}
+.search7 {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 14px; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a80.gif); BORDER-BOTTOM-WIDTH: 0px; WIDTH: 80px; COLOR: #5f5f5f; LINE-HEIGHT: 23px; HEIGHT: 23px; BORDER-RIGHT-WIDTH: 0px
+}
+.search8 {
+	WIDTH: 320px; COLOR: #454746; LINE-HEIGHT: 23px
+}
+.search9 {
+	LINE-HEIGHT: 62px; HEIGHT: 62px
+}
+.search10 {
+	BORDER-RIGHT: #ecf0f1 1px solid; BACKGROUND-POSITION: left top; BORDER-TOP: #ecf0f1 1px solid; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a101.gif); MARGIN: 0px auto 8px; BORDER-LEFT: #ecf0f1 1px solid; WIDTH: 948px; LINE-HEIGHT: 38px; BORDER-BOTTOM: #ecf0f1 1px solid; HEIGHT: 38px; TEXT-ALIGN: center
+}
+.search11 {
+	MARGIN-TOP: 4px; PADDING-LEFT: 28px; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a79.gif); WIDTH: 292px; COLOR: #8e8e8e; LINE-HEIGHT: 21px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 21px
+}
+.search12 {
+	PADDING-LEFT: 25px; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a121.gif); MARGIN: 0px auto 8px; WIDTH: 925px; LINE-HEIGHT: 36px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 36px
+}
+.search13 {
+	FONT-WEIGHT: bold; BACKGROUND: url(http://images.hzins.com/web/a122.gif); FLOAT: left; WIDTH: 137px; COLOR: #ffffff; LINE-HEIGHT: 30px; HEIGHT: 30px; TEXT-ALIGN: center
+}
+.search14 {
+	FLOAT: left; WIDTH: 137px; MARGIN-RIGHT: 8px; HEIGHT: auto
+}
+.search15 {
+	FLOAT: left; WIDTH: 805px; HEIGHT: auto
+}
+.search16 {
+	PADDING-LEFT: 26px; BACKGROUND: url(http://images.hzins.com/web/a123.gif) left top; FLOAT: left; WIDTH: 111px; LINE-HEIGHT: 24px; HEIGHT: auto
+}
+.search17 {
+	BACKGROUND: url(http://images.hzins.com/web/a124.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 137px; HEIGHT: 12px
+}
+.search18 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #5f5f5f
+}
+.search19 {
+	BORDER-BOTTOM: #e1e1e1 1px solid; TEXT-ALIGN: center
+}
+.search20 {
+	BORDER-BOTTOM: #e1e1e1 1px solid
+}
+.search21 {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a127.gif); COLOR: #ffffff; BACKGROUND-REPEAT: repeat-x; TEXT-ALIGN: center
+}
+.bannerA {
+	MARGIN: 0px auto; WIDTH: 950px; HEIGHT: 76px
+}
+.bannerB {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/a47.gif); MARGIN: 0px auto; WIDTH: 879px; HEIGHT: 56px
+}
+.bannerC {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/a81.gif); WIDTH: 414px; HEIGHT: 110px
+}
+.index1 {
+	FLOAT: right; WIDTH: 414px; HEIGHT: 218px
+}
+.index2 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a82.gif); WIDTH: 414px; HEIGHT: 108px
+}
+.index3 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 14px; PADDING-BOTTOM: 0px; PADDING-TOP: 32px
+}
+.index4 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.index4 UL LI {
+	FLOAT: left; WIDTH: 195px; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.index5 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a85.gif); WIDTH: 526px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 232px
+}
+.index6 {
+	FLOAT: right; WIDTH: 414px; HEIGHT: 232px
+}
+.index7 {
+	PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 14px; WIDTH: 506px; COLOR: #cd230c; LINE-HEIGHT: 35px; HEIGHT: 35px
+}
+.index8 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.index8 UL LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 98px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 155px; LINE-HEIGHT: 18px; PADDING-TOP: 10px
+}
+.index9 {
+	FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a86.gif); WIDTH: 414px; HEIGHT: 161px
+}
+.index10 {
+	FLOAT: left; WIDTH: 83px; LINE-HEIGHT: 26px; HEIGHT: 26px; TEXT-ALIGN: center
+}
+.index11 {
+	PADDING-RIGHT: 10px; FLOAT: right; WIDTH: 238px; LINE-HEIGHT: 26px; HEIGHT: 26px; TEXT-ALIGN: right
+}
+.index12 {
+	FLOAT: left; WIDTH: 414px
+}
+.index12 UL {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 389px; PADDING-TOP: 15px; LIST-STYLE-TYPE: none
+}
+.index12 UL LI {
+	FLOAT: left; WIDTH: 389px; LINE-HEIGHT: 22px
+}
+.index13 {
+	MARGIN-TOP: 4px; WIDTH: 205px; HEIGHT: 67px
+}
+.index14 {
+	FLOAT: left; WIDTH: 526px; HEIGHT: auto
+}
+.index15 {
+	FLOAT: right; WIDTH: 414px; HEIGHT: auto
+}
+.index16 {
+	PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 14px; FLOAT: left; WIDTH: 506px; COLOR: #cd230c; LINE-HEIGHT: 35px; BORDER-BOTTOM: #e2e2e2 1px solid; HEIGHT: 35px
+}
+.index16 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 506px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.index16 UL LI {
+	FLOAT: left; HEIGHT: 35px
+}
+.index17 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; WIDTH: 253px; PADDING-TOP: 10px; BORDER-BOTTOM: #e2e2e2 1px solid; HEIGHT: 80px; BACKGROUND-COLOR: #fafafa
+}
+.index18 {
+	FLOAT: right; WIDTH: 173px; HEIGHT: 80px
+}
+.index19 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; WIDTH: 253px; PADDING-TOP: 10px; BORDER-BOTTOM: #e2e2e2 1px solid; HEIGHT: 80px
+}
+.index20 {
+	PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 14px; FLOAT: left; WIDTH: 394px; COLOR: #cd230c; LINE-HEIGHT: 35px; BORDER-BOTTOM: #e2e2e2 1px solid; HEIGHT: 35px
+}
+.index20 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 394px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.index20 UL LI {
+	FLOAT: left; HEIGHT: 35px
+}
+.index21 {
+	PADDING-RIGHT: 18px; PADDING-LEFT: 18px; FLOAT: left; PADDING-BOTTOM: 12px; WIDTH: 378px; PADDING-TOP: 12px; BORDER-BOTTOM: #e2e2e2 1px solid; HEIGHT: 170px; BACKGROUND-COLOR: #fafafa
+}
+.index22 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 378px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.index22 UL LI {
+	FLOAT: left; WIDTH: 378px
+}
+.index23 {
+	FLOAT: left; WIDTH: 378px; TEXT-ALIGN: right
+}
+.index24 {
+	PADDING-RIGHT: 18px; PADDING-LEFT: 18px; FLOAT: left; PADDING-BOTTOM: 12px; WIDTH: 378px; LINE-HEIGHT: 22px; PADDING-TOP: 12px; BORDER-BOTTOM: #e2e2e2 1px solid; HEIGHT: 129px; BACKGROUND-COLOR: #fafafa
+}
+.index25 {
+	FLOAT: left; WIDTH: 100px; HEIGHT: 69px
+}
+.index26 {
+	FLOAT: left; WIDTH: 350px; LINE-HEIGHT: 23px; HEIGHT: 69px; TEXT-ALIGN: center
+}
+.index27 {
+	FLOAT: left; WIDTH: 230px; LINE-HEIGHT: 23px; HEIGHT: 69px; TEXT-ALIGN: center
+}
+.index28 {
+	FLOAT: left; WIDTH: 270px; LINE-HEIGHT: 23px; HEIGHT: 69px; TEXT-ALIGN: center
+}
+.index29 {
+	BACKGROUND: url(http://images.hzins.com/web/a1000.gif); FLOAT: left; WIDTH: 950px; HEIGHT: 130px
+}
+.index30 {
+	PADDING-LEFT: 30px; FLOAT: left; WIDTH: 127px; LINE-HEIGHT: 20px; PADDING-TOP: 6px; HEIGHT: 124px
+}
+.index31 {
+	PADDING-LEFT: 30px; FLOAT: left; WIDTH: 198px; LINE-HEIGHT: 20px; PADDING-TOP: 6px; HEIGHT: 124px
+}
+.index32 {
+	PADDING-LEFT: 30px; FLOAT: left; WIDTH: 217px; LINE-HEIGHT: 20px; PADDING-TOP: 6px; HEIGHT: 124px
+}
+.index33 {
+	PADDING-LEFT: 30px; FLOAT: left; WIDTH: 158px; LINE-HEIGHT: 20px; PADDING-TOP: 6px; HEIGHT: 124px
+}
+.index34 {
+	PADDING-LEFT: 30px; FLOAT: left; WIDTH: 131px; LINE-HEIGHT: 20px; PADDING-TOP: 6px; HEIGHT: 124px
+}
+.index35 {
+	MARGIN-TOP: 10px; FONT-SIZE: 0px; FLOAT: left; WIDTH: 950px; LINE-HEIGHT: 0; BORDER-BOTTOM: #da1502 3px solid
+}
+.index36 {
+	FLOAT: left; WIDTH: 950px; PADDING-TOP: 6px; HEIGHT: 22px; BACKGROUND-COLOR: #f1f2f6; TEXT-ALIGN: center
+}
+.index37 {
+	FLOAT: left; WIDTH: 414px; HEIGHT: 71px
+}
+.index38 {
+	FLOAT: left; WIDTH: 414px; HEIGHT: 26px
+}
+.index39 {
+	FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a111.gif); WIDTH: 414px; HEIGHT: 161px
+}
+.index40 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 77px; PADDING-TOP: 15px
+}
+.index41 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 865px; PADDING-TOP: 5px
+}
+.Accid1 {
+	FLOAT: left; WIDTH: 179px; HEIGHT: auto
+}
+.Accid2 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FLOAT: left; WIDTH: 495px; HEIGHT: auto
+}
+.Accid3 {
+	FLOAT: left; WIDTH: 260px; HEIGHT: auto
+}
+.Accid4 {
+	PADDING-LEFT: 26px; FONT-WEIGHT: bold; BACKGROUND: url(http://images.hzins.com/web/a102.gif); FLOAT: left; WIDTH: 151px; COLOR: #ffffff; LINE-HEIGHT: 32px; HEIGHT: 32px
+}
+.Accid5 {
+	PADDING-LEFT: 26px; BACKGROUND: url(http://images.hzins.com/web/a103.gif) left top; FLOAT: left; WIDTH: 151px; LINE-HEIGHT: 24px; HEIGHT: auto
+}
+.Accid6 {
+	PADDING-LEFT: 26px; FONT-WEIGHT: bold; BACKGROUND: url(http://images.hzins.com/web/a104.gif); FLOAT: left; WIDTH: 151px; COLOR: #ffffff; LINE-HEIGHT: 32px; HEIGHT: 32px
+}
+.Accid7 {
+	BACKGROUND: url(http://images.hzins.com/web/a105.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 177px; HEIGHT: 8px
+}
+.Accid8 {
+	FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 177px; HEIGHT: auto
+}
+.Accid9 {
+	FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 119px
+}
+.Accid10 {
+	BACKGROUND: url(http://images.hzins.com/web/a107.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 181px
+}
+.Accid11 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 14px; FLOAT: left; WIDTH: 395px; COLOR: #d53d28; LINE-HEIGHT: 32px; HEIGHT: 32px
+}
+.Accid12 {
+	PADDING-RIGHT: 8px; FLOAT: left; WIDTH: 82px; LINE-HEIGHT: 32px; HEIGHT: 32px; TEXT-ALIGN: right
+}
+.Accid13 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 10px; WIDTH: 74px; PADDING-TOP: 10px; HEIGHT: auto
+}
+.Accid14 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 391px; LINE-HEIGHT: 25px; PADDING-TOP: 10px; HEIGHT: auto
+}
+.Accid15 {
+	BACKGROUND: url(http://images.hzins.com/web/a108.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 256px
+}
+.Accid16 {
+	BACKGROUND: url(http://images.hzins.com/web/a109.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 156px
+}
+.Accid17 {
+	BACKGROUND: url(http://images.hzins.com/web/a110.gif) no-repeat; FLOAT: left; WIDTH: 495px; HEIGHT: 131px
+}
+.Accid18 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; BACKGROUND: url(http://images.hzins.com/web/news/a13.gif) left top; FLOAT: left; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 0px; WIDTH: 245px; PADDING-TOP: 5px; HEIGHT: 118px
+}
+.Accid18 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.Accid18 UL LI {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 245px; LINE-HEIGHT: 22px; WHITE-SPACE: nowrap; HEIGHT: 22px; TEXT-OVERFLOW: ellipsis
+}
+.Accid19 {
+	BACKGROUND: url(http://images.hzins.com/web/a112.gif); FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 260px; HEIGHT: 293px
+}
+.Accid20 {
+	PADDING-RIGHT: 8px; FLOAT: left; WIDTH: 169px; LINE-HEIGHT: 26px; HEIGHT: 26px; TEXT-ALIGN: right
+}
+.Accid21 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 10px; WIDTH: 240px; PADDING-TOP: 10px; HEIGHT: auto
+}
+.Accid21 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 240px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.Accid21 UL LI {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 240px; LINE-HEIGHT: 24px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.Accid22 {
+	PADDING-RIGHT: 8px; FLOAT: left; WIDTH: 86px; LINE-HEIGHT: 26px; HEIGHT: 26px; TEXT-ALIGN: right
+}
+.Accid23 {
+	BACKGROUND: url(http://images.hzins.com/web/a113.gif); FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 260px; HEIGHT: 293px
+}
+.Accid24 {
+	FONT-SIZE: 0px; FLOAT: left; WIDTH: 391px; LINE-HEIGHT: 0; HEIGHT: 1px
+}
+.Accid25 {
+	BACKGROUND: url(http://images.hzins.com/web/a116.gif); FLOAT: left; WIDTH: 177px; HEIGHT: 6px
+}
+.Travel1 {
+	BACKGROUND: url(http://images.hzins.com/web/a117.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 231px
+}
+.Travel2 {
+	BACKGROUND: url(http://images.hzins.com/web/a118.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 156px
+}
+.Travel3 {
+	BACKGROUND: url(http://images.hzins.com/web/a119.gif) no-repeat; FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 495px; HEIGHT: 206px
+}
+.Travel4 {
+	BACKGROUND: url(http://images.hzins.com/web/a119.gif) no-repeat; FLOAT: left; WIDTH: 495px; HEIGHT: 206px
+}
+.Travel5 {
+	BACKGROUND: url(http://images.hzins.com/web/a117.gif) no-repeat; FLOAT: left; WIDTH: 495px; HEIGHT: 231px
+}
+.faq1 {
+	BORDER-RIGHT: #ede5ce 1px solid; BORDER-TOP: #ede5ce 1px solid; FLOAT: left; BORDER-LEFT: #ede5ce 1px solid; WIDTH: 188px; MARGIN-RIGHT: 15px; BORDER-BOTTOM: #ede5ce 1px solid; HEIGHT: 502px
+}
+.faq2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; WIDTH: 188px; COLOR: #e0240b; LINE-HEIGHT: 27px; HEIGHT: 27px; BACKGROUND-COLOR: #fffbf0
+}
+.faq3 {
+	WIDTH: 188px; COLOR: #0e9d03; LINE-HEIGHT: 27px; HEIGHT: 27px
+}
+.faq4 {
+	FLOAT: left; WIDTH: 511px; MARGIN-RIGHT: 15px
+}
+.faq5 {
+	BORDER-RIGHT: #ede5ce 1px solid; BORDER-TOP: #ede5ce 1px solid; BACKGROUND: url(http://images.hzins.com/web/a48.gif) no-repeat left top; MARGIN-BOTTOM: 5px; BORDER-LEFT: #ede5ce 1px solid; WIDTH: 509px; BORDER-BOTTOM: #ede5ce 1px solid; HEIGHT: 82px
+}
+.faq6 {
+	MARGIN-BOTTOM: 5px; WIDTH: 511px; HEIGHT: 63px
+}
+.faq7 {
+	FLOAT: left; WIDTH: 219px
+}
+.faq8 {
+	BORDER-RIGHT: #ede5ce 1px solid; BORDER-TOP: #ede5ce 1px solid; MARGIN-BOTTOM: 5px; BORDER-LEFT: #ede5ce 1px solid; WIDTH: 217px; BORDER-BOTTOM: #ede5ce 1px solid
+}
+.faq9 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; WIDTH: 217px; COLOR: #e0240b; LINE-HEIGHT: 27px; HEIGHT: 27px; BACKGROUND-COLOR: #fffbf0
+}
+.faq10 {
+	WIDTH: 217px; LINE-HEIGHT: 20px
+}
+.faq11 {
+	FLOAT: left; WIDTH: 716px; MARGIN-RIGHT: 15px
+}
+.faq12 {
+	BORDER-RIGHT: #ede5ce 1px solid; BORDER-TOP: #ede5ce 1px solid; BORDER-LEFT: #ede5ce 1px solid; WIDTH: 217px; BORDER-BOTTOM: #ede5ce 1px solid
+}
+.bbs1 {
+	BACKGROUND-POSITION: left top; FONT-WEIGHT: bold; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a67.gif); WIDTH: 142px; CURSOR: pointer; COLOR: #575656; LINE-HEIGHT: 25px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.bbs2 {
+	BACKGROUND-POSITION: left top; FONT-WEIGHT: bold; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a68.gif); WIDTH: 102px; CURSOR: pointer; COLOR: #575656; LINE-HEIGHT: 25px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.bbs3 {
+	PADDING-BOTTOM: 25px; PADDING-TOP: 10px
+}
+.border_1 {
+	BORDER-RIGHT: #dedede 1px solid; BORDER-TOP: #dedede 1px solid; BORDER-LEFT: #dedede 1px solid; BORDER-BOTTOM: #dedede 1px solid
+}
+.f_bottom {
+	MARGIN-BOTTOM: 10px; WIDTH: 100%; BORDER-BOTTOM: #da1502 3px solid
+}
+.td_center {
+	POSITION: relative; TOP: 22%
+}
+#imgTitle {
+	FILTER: ALPHA(opacity=70); LEFT: 0px; OVERFLOW: hidden; POSITION: relative; TEXT-ALIGN: left
+}
+#imgTitle_up {
+	LEFT: 0px; HEIGHT: 1px; TEXT-ALIGN: left
+}
+#imgTitle_down {
+	LEFT: 0px; TEXT-ALIGN: right
+}
+.imgClass {
+	BORDER-RIGHT: #000 0px solid; BORDER-TOP: #000 0px solid; BORDER-LEFT: #000 0px solid; BORDER-BOTTOM: #000 0px solid
+}
+#txtFrom {
+	VERTICAL-ALIGN: middle; TEXT-ALIGN: center
+}
+.button_1 {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; BACKGROUND: #7b7b63; PADDING-BOTTOM: 2px; MARGIN: 0px; FONT: bold 9px sans-serif; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+A.button_1 {
+	COLOR: #ffffff; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #000000; TEXT-DECORATION: none
+}
+A.button_1:link {
+	COLOR: #ffffff; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #000000; TEXT-DECORATION: none
+}
+A.button_1:visited {
+	COLOR: #ffffff; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #000000; TEXT-DECORATION: none
+}
+A.button_1:hover {
+	BACKGROUND: #fff; COLOR: #fff; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+.buttonDiv {
+	BACKGROUND: #000000; FLOAT: left; VERTICAL-ALIGN: middle; WIDTH: 21px; HEIGHT: 1px; TEXT-ALIGN: center
+}
+.trans {
+	FILTER: progid:DXImageTransform.Microsoft.Alpha(startX=0, startY=0, finishX=100, finishY=100,style=1,opacity=0,finishOpacity=40); WIDTH: 90px; BACKGROUND-COLOR: #000
+}
+.kf1 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 12px; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/bk_zxkf.gif); PADDING-BOTTOM: 0px; WIDTH: 283px; PADDING-TOP: 18px; HEIGHT: 72px
+}
+.kf2 {
+	FLOAT: left; WIDTH: 283px; HEIGHT: 25px
+}
+.kf3 {
+	FLOAT: left; WIDTH: 283px; COLOR: #666666; LINE-HEIGHT: 20px; HEIGHT: auto
+}
+#ML3 {
+	Z-INDEX: 1; LEFT: 655px; FLOAT: left; WIDTH: 305px; POSITION: absolute; TOP: 50px; HEIGHT: 90px
+}
+#ML4 {
+	Z-INDEX: 1; WIDTH: 0px; POSITION: absolute; HEIGHT: 0px
+}
+#ML5 {
+	Z-INDEX: 1; LEFT: 310px; FLOAT: left; WIDTH: 305px; POSITION: absolute; TOP: 25px; HEIGHT: 40px
+}
+#ML6 {
+	Z-INDEX: 1; WIDTH: 0px; POSITION: absolute; HEIGHT: 0px
+}
+#ML7 {
+	Z-INDEX: 1; LEFT: 525px; FLOAT: left; WIDTH: 305px; POSITION: absolute; TOP: 250px; HEIGHT: 40px
+}
+#ML8 {
+	Z-INDEX: 1; WIDTH: 0px; POSITION: absolute; HEIGHT: 0px
+}
+#ML9 {
+	Z-INDEX: 1; LEFT: 700px; FLOAT: left; WIDTH: 90px; POSITION: absolute; TOP: 23px; HEIGHT: 40px
+}
+#ML10 {
+	Z-INDEX: 1; WIDTH: 0px; POSITION: absolute; HEIGHT: 0px
+}
+.bannerD {
+	FLOAT: right; WIDTH: 414px; HEIGHT: 110px
+}
+#MainPromotionBanner1 {
+	FLOAT: right; OVERFLOW: hidden; WIDTH: 414px; MARGIN-RIGHT: 0px; HEIGHT: 110px
+}
+#MainPromotionBanner1 #SlidePlayer {
+	MARGIN: 0px auto; POSITION: relative
+}
+#MainPromotionBanner1 .Slides {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 110px
+}
+#MainPromotionBanner1 .Slides LI {
+	FLOAT: left; WIDTH: 414px; HEIGHT: 110px
+}
+#MainPromotionBanner1 .Slides IMG {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 414px; HEIGHT: 110px; BORDER-RIGHT-WIDTH: 0px
+}
+#MainPromotionBanner1 .SlideTriggers {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; RIGHT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 85px; HEIGHT: 25px
+}
+#MainPromotionBanner1 .SlideTriggers LI {
+	DISPLAY: inline; FONT-SIZE: 0.9em; BACKGROUND: url(http://www.hzins.com/images/home/bg1.gif) no-repeat center center; FLOAT: left; MARGIN: 3px 6px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; COLOR: #939393; LINE-HEIGHT: 16px; FONT-FAMILY: Arial; HEIGHT: 16px; TEXT-ALIGN: center
+}
+#MainPromotionBanner1 .SlideTriggers LI.Current {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.4em; BACKGROUND: url(http://www.hzins.com/images/home/bg2.gif) no-repeat center center; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 6px; WIDTH: 21px; COLOR: #fff; LINE-HEIGHT: 21px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px
+}
+.margin-l_150 {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 150px
+}
+.search22 {
+	PADDING-LEFT: 25px; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a170.gif); MARGIN: 0px auto 5px; WIDTH: 925px; LINE-HEIGHT: 36px; PADDING-TOP: 15px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 63px
+}
+.search23 {
+	FLOAT: left; WIDTH: 215px; LINE-HEIGHT: 25px; HEIGHT: 50px
+}
+.search24 {
+	FLOAT: left; WIDTH: 710px; HEIGHT: 50px
+}
+.search25 {
+	PADDING-LEFT: 28px; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a79.gif); WIDTH: 210px; COLOR: #8e8e8e; LINE-HEIGHT: 21px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 21px
+}
+.search26 {
+	BACKGROUND: url(http://images.hzins.com/web/a205.gif); MARGIN: 0px auto 5px; WIDTH: 950px; LINE-HEIGHT: 30px; HEIGHT: 47px; TEXT-ALIGN: center
+}
+.Accid26 {
+	BORDER-RIGHT: #e0e0e0 1px solid; BORDER-TOP: #e0e0e0 1px solid; FLOAT: left; BORDER-LEFT: #e0e0e0 1px solid; WIDTH: 493px; BORDER-BOTTOM: #e0e0e0 1px solid
+}
+.Accid27 {
+	BACKGROUND: url(http://images.hzins.com/web/a184.gif); FLOAT: left; WIDTH: 493px; HEIGHT: 30px
+}
+.Accid28 {
+	PADDING-LEFT: 15px; FLOAT: left; WIDTH: 430px; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.Accid29 {
+	FLOAT: left; WIDTH: 48px; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.Accid30 {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FLOAT: left; PADDING-BOTTOM: 10px; WIDTH: 463px; PADDING-TOP: 15px
+}
+.Accid31 {
+	FLOAT: left; WIDTH: 231px
+}
+.Accid31 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 231px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.Accid31 UL LI {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 231px; LINE-HEIGHT: 25px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis; TEXT-ALIGN: center
+}
+.Accid32 {
+	FLOAT: left; WIDTH: 463px; HEIGHT: 30px
+}
+.Accid33 A {
+	FONT-WEIGHT: bold; FLOAT: left; WIDTH: 463px; COLOR: #ff0000; LINE-HEIGHT: 30px; HEIGHT: 30px; TEXT-ALIGN: right; TEXT-DECORATION: underline
+}
+.Accid34 {
+	BACKGROUND: url(http://images.hzins.com/web/a191.gif); FLOAT: left; WIDTH: 260px; HEIGHT: 27px
+}
+.Accid35 {
+	BORDER-RIGHT: #e0e0e0 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #e0e0e0 1px; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 10px; BORDER-LEFT: #e0e0e0 1px solid; WIDTH: 241px; PADDING-TOP: 10px; BORDER-BOTTOM: #e0e0e0 1px; HEIGHT: auto
+}
+.Accid35 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.Accid35 UL LI {
+	FLOAT: left; WIDTH: 241px; LINE-HEIGHT: 18px
+}
+.Accid36 {
+	BACKGROUND: url(http://images.hzins.com/web/a192.gif); FLOAT: left; MARGIN-BOTTOM: 5px; WIDTH: 260px; HEIGHT: 3px
+}
+.Accid37 {
+	FLOAT: left; WIDTH: 238px; TEXT-ALIGN: right
+}
+.Accid38 {
+	MARGIN-TOP: 30px; FONT-WEIGHT: bold; FONT-SIZE: 22px; FLOAT: left; LINE-HEIGHT: 35px; HEIGHT: 60px
+}
+.pr1 {
+	PADDING-LEFT: 20px; FONT-WEIGHT: bold; COLOR: #c70102
+}
+.pr2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.pr3 {
+	BORDER-RIGHT: #848683 1px solid
+}
+.pr4 {
+	PADDING-LEFT: 20px; FONT-WEIGHT: bold; COLOR: #c70102
+}
+.pr5 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.pr6 {
+	FONT-WEIGHT: bold; COLOR: #ff8d00; TEXT-ALIGN: right; TEXT-DECORATION: underline
+}
+.pr7 {
+	PADDING-LEFT: 20px
+}
+.pr8 {
+	FONT-WEIGHT: bold; COLOR: #fe9901
+}
+.pr9 {
+	FONT-WEIGHT: bold; COLOR: #669acc
+}
+.pr10 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; LINE-HEIGHT: 22px; PADDING-TOP: 8px
+}
+.pr11 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/icon_ddfk.gif); WIDTH: 94px; HEIGHT: 94px
+}
+.xj11 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/x_090923_1.gif); WIDTH: 94px; HEIGHT: 94px
+}
+.pr12 {
+	PADDING-LEFT: 20px; HEIGHT: 24px; BACKGROUND-COLOR: #f0f0f0
+}
+.pr13 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #fd0100
+}
+.pr14 {
+	BORDER-RIGHT: #eeeeee 2px solid; BORDER-TOP: #eeeeee 2px solid; BORDER-LEFT: #eeeeee 2px solid; BORDER-BOTTOM: #eeeeee 2px solid
+}
+.pr15 {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 10px; LINE-HEIGHT: 22px; PADDING-TOP: 15px; BACKGROUND-COLOR: #f3f3f3
+}
+.pr16 {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 10px; PADDING-TOP: 15px; BACKGROUND-COLOR: #f9f9f9
+}
+.pr17 {
+	COLOR: #019935
+}
+.pr18 {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 116px; BACKGROUND: url(http://images.hzins.com/web/a202.gif); PADDING-BOTTOM: 0px; WIDTH: 462px; PADDING-TOP: 80px; HEIGHT: 291px
+}
+.pr19 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; WIDTH: 550px; LINE-HEIGHT: 30px; PADDING-TOP: 80px; HEIGHT: 255px; TEXT-ALIGN: center
+}
+.index42 {
+	FLOAT: left; WIDTH: 527px; HEIGHT: 209px
+}
+.index43 {
+	BACKGROUND-POSITION: left top; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a209.gif); MARGIN-BOTTOM: 3px; WIDTH: 414px; HEIGHT: 101px
+}
+.index44 {
+	FLOAT: right; WIDTH: 414px; HEIGHT: 209px
+}
+.index45 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 14px; PADDING-BOTTOM: 0px; PADDING-TOP: 25px
+}
+.index46 {
+	FLOAT: left; WIDTH: 414px; HEIGHT: 106px
+}
+.index47 {
+	FLOAT: left; WIDTH: 527px; HEIGHT: 185px
+}
+.index48 {
+	WIDTH: 261px; HEIGHT: 90px
+}
+.index49 {
+	FLOAT: right; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a215.gif); WIDTH: 414px; HEIGHT: 185px
+}
+.index50 {
+	FLOAT: right; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a216.gif); WIDTH: 414px; HEIGHT: 185px
+}
+.index51 {
+	BORDER-RIGHT: #d7d7d7 1px solid; BORDER-TOP: #d7d7d7 1px solid; BORDER-LEFT: #d7d7d7 1px solid; WIDTH: 75px; BORDER-BOTTOM: #d7d7d7 1px solid; HEIGHT: auto; BACKGROUND-COLOR: #ffffff
+}
+.index51 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 75px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.index51 UL LI {
+	WIDTH: 75px; LINE-HEIGHT: 25px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.index52 {
+	FLOAT: left; WIDTH: 79px; LINE-HEIGHT: 22px; TEXT-ALIGN: center
+}
+.index53 {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 310px; LINE-HEIGHT: 22px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.index54 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 389px; PADDING-TOP: 15px
+}
+.index55 {
+	FLOAT: left; WIDTH: 79px; LINE-HEIGHT: 22px; TEXT-ALIGN: center
+}
+.index56 {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 299px; LINE-HEIGHT: 22px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.nprice1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #ff0000; FONT-FAMILY: "Georgia"
+}
+.study_1 {
+	BORDER-RIGHT: #d8d8d8 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #d8d8d8 1px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; BORDER-LEFT: #d8d8d8 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #d8d8d8 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.study_2 {
+	OVERFLOW: hidden; WIDTH: 300px; LINE-HEIGHT: 24px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.study_2 UL {
+	OVERFLOW: hidden; WIDTH: 300px; LINE-HEIGHT: 24px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.study_2 LI {
+	OVERFLOW: hidden; WIDTH: 300px; LINE-HEIGHT: 24px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.study_red {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.faq_1 {
+	BORDER-RIGHT: #ede5ce 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #ede5ce 1px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; BORDER-LEFT: #ede5ce 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #ede5ce 1px solid; BACKGROUND-COLOR: #fefdf9
+}
+.ali_1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FLOAT: left; BACKGROUND-IMAGE: url(http://images.hzins.com/web/a326.gif); MARGIN: 0px 16px 0px 20px; WIDTH: 102px; COLOR: #cd250b; LINE-HEIGHT: 40px; HEIGHT: 40px; TEXT-ALIGN: center
+}
+.ali_1 A {
+	COLOR: #cd250b
+}
+.ali_1 A:hover {
+	COLOR: #cd250b
+}
+.ali_2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 14px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 16px 0px 20px; WIDTH: 60px; COLOR: #ffffff; LINE-HEIGHT: 25px; PADDING-TOP: 10px; HEIGHT: 30px; TEXT-ALIGN: center
+}
+.ali_2 A {
+	COLOR: #ffffff
+}
+.ali_2 A:hover {
+	COLOR: #ffffff
+}
+.ali_3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; COLOR: #ffffff; LINE-HEIGHT: 25px; PADDING-TOP: 10px; HEIGHT: 30px
+}
+.ali_4 {
+	BORDER-RIGHT: #de6643 3px solid; PADDING-RIGHT: 10px; BORDER-TOP: #de6643 3px; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #de6643 3px solid; PADDING-TOP: 15px; BORDER-BOTTOM: #de6643 3px solid
+}
+.ali_5 {
+	PADDING-BOTTOM: 5px
+}
+.ali_6 {
+	BORDER-RIGHT: #d1d1d1 1px solid; BORDER-TOP: #d1d1d1 1px solid; BORDER-LEFT: #d1d1d1 1px solid; BORDER-BOTTOM: #d1d1d1 1px
+}
+.ali_7 {
+	FONT-WEIGHT: bold; COLOR: #333333; BORDER-BOTTOM: #d1d1d1 1px solid; HEIGHT: 23px; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: center
+}
+.ali_8 {
+	COLOR: #333333; BORDER-BOTTOM: #d1d1d1 1px solid; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.ali_9 {
+	BORDER-BOTTOM: #d1d1d1 1px solid; HEIGHT: 30px
+}
+.ali_10 {
+	BORDER-RIGHT: #7bb90c 3px solid; PADDING-RIGHT: 10px; BORDER-TOP: #7bb90c 3px; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #7bb90c 3px solid; PADDING-TOP: 15px; BORDER-BOTTOM: #7bb90c 3px solid
+}
+.ali_11 {
+	BORDER-RIGHT: #206be0 3px solid; PADDING-RIGHT: 10px; BORDER-TOP: #206be0 3px; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #206be0 3px solid; PADDING-TOP: 15px; BORDER-BOTTOM: #206be0 3px solid
+}
+.ali_12 {
+	BORDER-RIGHT: #f0bfb0 1px solid; PADDING-RIGHT: 16px; BORDER-TOP: #f0bfb0 1px solid; PADDING-LEFT: 16px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 16px; BORDER-LEFT: #f0bfb0 1px solid; PADDING-TOP: 16px; BORDER-BOTTOM: #f0bfb0 1px solid; BACKGROUND-COLOR: #fffff7
+}
+.topic_1 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/topic.jpg); WIDTH: 950px; HEIGHT: 200px
+}
+.topic_2 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/topic1.jpg); WIDTH: 950px; HEIGHT: 97px
+}
+.topic_3 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/topic2.gif); WIDTH: 950px; HEIGHT: 649px
+}
+.jifen_1 {
+	BORDER-RIGHT: #e8e8e8 1px solid; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #e8e8e8 1px solid; PADDING-TOP: 10px
+}
+.jifen_2 {
+	FONT-WEIGHT: bold; COLOR: #fe4d00
+}
+.jifen_3 {
+	FONT-WEIGHT: bold; COLOR: #c10000; TEXT-ALIGN: center
+}
+.jifen_4 {
+	OVERFLOW: hidden; WIDTH: 120px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.jifen_5 {
+	FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: underline
+}
+.jifen_6 {
+	FONT-SIZE: 24px; COLOR: #ff6600; LINE-HEIGHT: 35px; PADDING-TOP: 0.5em; FONT-FAMILY: "Microsoft YaHei",STHeiti,Verdana
+}
+.study_a1 {
+	BORDER-LEFT: #a81203 6px solid
+}
+.study_a2 {
+	BORDER-RIGHT: #7f7d80 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #433127; HEIGHT: 37px; BACKGROUND-COLOR: #e3e3e3; TEXT-ALIGN: center
+}
+.study_a3 {
+	BORDER-RIGHT: #7f7d80 1px solid
+}
+.study_a4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 5px; LINE-HEIGHT: 18px; PADDING-TOP: 10px; BORDER-BOTTOM: #7f7d80 1px dotted
+}
+.study_a5 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-BOTTOM: #e8e8e8 1px solid
+}
+.study_a6 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #433127
+}
+.study_a7 {
+	BORDER-RIGHT: #a81203 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #a81203 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #a81203 1px solid; COLOR: #a81203; PADDING-TOP: 1px; BORDER-BOTTOM: #a81203 1px solid
+}
+.study_a8 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/study_b1.gif); COLOR: #fffaf0; LINE-HEIGHT: 38px; HEIGHT: 38px; TEXT-ALIGN: center
+}
+.study_a9 {
+	WIDTH: 152px
+}
+.study_a10 {
+	BORDER-BOTTOM: #e8e8e8 1px solid
+}
+.study_a11 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/study_b4.gif); HEIGHT: 160px
+}
+.study_a12 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #a81003
+}
+.study_a13 {
+	PADDING-LEFT: 10px; LINE-HEIGHT: 18px
+}
+.study_a14 {
+	COLOR: #692d25
+}
+.study_a15 {
+	PADDING-LEFT: 10px; OVERFLOW: hidden; WIDTH: 318px; LINE-HEIGHT: 18px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.study_a16 {
+	PADDING-LEFT: 5px; OVERFLOW: hidden; WIDTH: 194px; LINE-HEIGHT: 18px; PADDING-TOP: 10px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.study_a17 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 0px; PADDING-TOP: 7px
+}
+.study_a18 {
+	BACKGROUND-IMAGE: url(http://images.hzins.com/web/study_b7.gif); HEIGHT: 27px
+}
+.study_a19 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 15px; LINE-HEIGHT: 18px; PADDING-TOP: 8px
+}
+.study_a20 {
+	PADDING-TOP: 7px
+}
+.study_a21 {
+	COLOR: #ffffff
+}
+.study_a21:hover {
+	COLOR: #ffffff
+}
+.study_a22 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 9px; PADDING-TOP: 8px; BACKGROUND-COLOR: #e7e7e7
+}
+.study_a23 {
+	OVERFLOW: hidden; WIDTH: 233px; LINE-HEIGHT: 18px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.list_1 {
+	BORDER-RIGHT: #c1c1c1 1px solid; BORDER-TOP: #c1c1c1 1px solid; BORDER-LEFT: #c1c1c1 1px; BORDER-BOTTOM: #c1c1c1 1px
+}
+.list_2 {
+	BORDER-TOP: #c1c1c1 1px solid; BACKGROUND-COLOR: #d23417
+}
+.hea_1 {
+	BACKGROUND-POSITION: 50% bottom; BACKGROUND-IMAGE: url(http://images.hzins.com/web/h_091217_10.gif); COLOR: #525252; BACKGROUND-REPEAT: repeat-x; HEIGHT: 30px
+}
+.hea_2 {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FLOAT: left; PADDING-BOTTOM: 15px; WIDTH: 463px; PADDING-TOP: 10px
+}
+.home_12 {
+	FONT-WEIGHT: bold; COLOR: #00a52e
+}

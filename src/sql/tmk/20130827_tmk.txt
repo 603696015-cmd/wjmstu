@@ -1,0 +1,55 @@
+-- Create table
+create table QUIZPAPER_LOG_INFO
+(
+  USERID        NUMBER not null,
+  CLASSID       NUMBER not null,
+  COURSEID      NUMBER not null,
+  PAGEID        NUMBER not null,
+  MYEXAMPAPERID NUMBER not null,
+  SCORE         NUMBER(12,2) not null,
+  BEGINTIME     TIMESTAMP(6) not null,
+  ENDTIME       TIMESTAMP(6),
+  PASSTIME      NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+  
+  
+  
+  create or replace procedure quizpaper_begin
+(userid_ number,classid_ number,courseid_ number,pageid_ number,myexampaperid_ number)
+as
+score_ number;
+begintime_ timestamp;
+begin
+     score_:=0.0f;
+     select myscore,begintime into score_,begintime_ from study_quizinfo where id=myexampaperid_;
+     insert into quizpaper_log_info (userid,classid,courseid,pageid,myexampaperid,score,begintime,passtime)
+            values (userid_,classid_,courseid_,pageid_,myexampaperid_,score_,begintime_,0) ;
+end;
+ 
+ 
+ 
+ 
+ create or replace procedure quizpaper_end
+(myexampaperid_ number)
+as
+score_ number;
+endtime_ timestamp;
+passtime_ number;
+begin
+     score_:=0.0f;
+     passtime_:=0;
+     select myscore,endtime,passtime into score_,endtime_,passtime_ from study_quizinfo where id=myexampaperid_;
+     update  quizpaper_log_info set score=score_ ,endtime=endtime_,passtime=passtime_ where myexampaperid=myexampaperid_;
+end;
+ 

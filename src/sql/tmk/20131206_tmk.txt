@@ -1,0 +1,19 @@
+   select * from exampaper
+   select * from exampaperblock where id=992
+   select * from exampaperblockquestion where blockid=992
+   select * from study_questions order by sqid desc
+   
+   
+    select id, random,fwsize,type from exampaperblock where exampaperid = 637 for update;--…Ë÷√random=0
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13191,1,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13183,2,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13185,3,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13186,4,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13190,5,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13184,6,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13189,7,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13187,8,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13188,9,10);
+    insert into exampaperblockquestion(blockid,questionid,sortid,score) values (993,13182,10,10);
+    commit;
+    call set_exampapers(1);

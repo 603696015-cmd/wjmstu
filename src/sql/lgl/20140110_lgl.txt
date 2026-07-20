@@ -1,0 +1,51 @@
+alter table resume add(name varchar(200));
+
+alter table resume add(sex  VARCHAR2(10) default '?' not null);
+
+alter table resume add(shengri date);
+
+alter table resume add(canjiagongzuoshijian date);
+
+alter table resume add(hunyinzhuangkuang varchar2(100));
+
+alter table resume add(zhengjianleixing varchar2(100));
+
+alter table resume add(zhengjianhao varchar2(100));
+
+alter table resume add(haiwaigongzuojingli varchar2(100));
+
+alter table resume add(zhengjianhao varchar2(100));
+
+alter table resume add(zhengzhimianmao varchar2(200));
+
+alter table resume add(hukou varchar2(100));
+
+alter table resume add(juzhuchengshi varchar2(100));
+
+alter table resume add(dizhi varchar2(200));
+
+alter table resume add(youbian varchar2(100));
+
+alter table resume add(lianxifangshi varchar2(100));
+
+alter table resume add(dianhua varchar2(100));
+
+alter table resume add(youxiang varchar2(100));
+
+alter table resume add(gerenzhuye varchar2(100));
+
+alter table resume add(biaoti varchar2(100));
+
+alter table resume add(neirong BLOB);
+
+alter table resume add(gongzuoxingzhi varchar2(100));
+
+alter table resume add(gongzuodidian varchar2(1000));
+
+alter table resume add(congshihangye varchar2(1000));
+
+alter table resume add(congshizhiye varchar2(1000));
+
+alter table resume add(yuexin varchar2(200));
+
+alter table resume add(status number);

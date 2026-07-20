@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="knowledgeManage" extends="elearning">
+		<!-- 知识类别 -->
+		
+		<action name="listKnowledgeTree"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="listKnowledgeTree">
+			<result name="listKnowledgeTree">
+				admin/knowledgeManage/listKnowledgeTree.jsp
+			</result>
+		</action>
+		<action name="addKnowledgeTreeInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="addKnowledgeTreeInit">
+			<result name="addKnowledgeTreeInit">
+				admin/knowledgeManage/addKnowledgeTreeInit.jsp
+			</result>
+		</action>
+		<action name="addKnowledgeTree"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="addKnowledgeTree">
+			<result name="addKnowledgeTree_success">
+				admin/knowledgeManage/addKnowledgeTree_success.jsp
+			</result>
+		</action>
+		<action name="alterKnowledgeTreeInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="alterKnowledgeTreeInit">
+			<result name="alterKnowledgeTreeInit">
+				admin/knowledgeManage/alterKnowledgeTreeInit.jsp
+			</result>
+		</action>
+		<action name="alterKnowledgeTree"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="alterKnowledgeTree">
+			<result name="alterKnowledgeTree_success">
+				admin/knowledgeManage/alterKnowledgeTree_success.jsp
+			</result>
+		</action>
+		<action name="deleteKnowledgeTreeInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="deleteKnowledgeTreeInit">
+			<result name="deleteKnowledgeTreeInit">
+				admin/knowledgeManage/deleteKnowledgeTreeInit_success.jsp
+			</result>
+		</action>
+		<action name="deleteKnowledgeTree"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="deleteKnowledgeTree">
+			<result name="deleteKnowledgeTree_success">
+				admin/knowledgeManage/deleteKnowledgeTree_success.jsp
+			</result>
+		</action>
+		
+		<action name="viewKnowledgeTree"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="viewKnowledgeTree">
+			<result name="viewKnowledgeTree_success">
+				admin/knowledgeManage/viewKnowledgeTree.jsp
+			</result>
+		</action>
+		
+		<action name="list_knowledgeTree_childs"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageTreeAction"
+			method="list_knowledgeTree_childs">
+		</action>
+		
+		
+		
+		<!-- 知识管理 -->
+		<action name="addKledgeInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="addKledgeInit">
+			<result name="addKledgeInit">
+				admin/knowledgeManage/manage/addKledgeInit.jsp
+			</result>
+		</action>
+		<action name="selectKnowledgeTreeInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="selectKnowledgeTreeInit">
+			<result name="selectKnowledgeTreeInit">
+				admin/knowledgeManage/manage/selectKnowledgeTreeInit.jsp
+			</result>
+		</action>
+		
+		<action name="addKledge"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="addKledge">
+			<result name="addKledge_success" type="redirectAction">
+				listMyKledge.action
+			</result>
+		</action>
+		<action name="listMyKledge"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="listMyKledge">
+			<result name="listMyKledge" >
+				admin/knowledgeManage/manage/listMyKledge.jsp
+			</result>
+		</action>
+		<action name="kledgeChushen"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="kledgeChushen">
+			<result name="kledgeChushen" >
+				admin/knowledgeManage/manage/kledgeChushen.jsp
+			</result>
+		</action>
+		<action name="kledge_hotset"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="kledge_hotset">
+			<result name="kledge_hotset" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<action name="kledgeZhongshen"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="kledgeZhongshen">
+			<result name="kledgeZhongshen" >
+				admin/knowledgeManage/manage/kledgeZhongshen.jsp
+			</result>
+		</action>
+		<action name="kledgeSearch"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="kledgeSearch">
+			<result name="kledgeSearch" >
+				admin/knowledgeManage/manage/kledgeSearch.jsp
+			</result>
+		</action>
+		<action name="competenceByUserInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="competenceByUserInit">
+			<result name="competenceByUserInit" >
+				admin/knowledgeManage/manage/competenceByUserInit.jsp
+			</result>
+		</action>
+		<action name="competenceByDepartmentInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="competenceByDepartmentInit">
+			<result name="competenceByDepartmentInit" >
+				admin/knowledgeManage/manage/competenceByDepartmentInit.jsp
+			</result>
+			<result name="competenceByDepartmentInit_add" >
+				admin/knowledgeManage/manage/competenceByDepartmentInit_add.jsp
+			</result>
+		</action>
+		<action name="copyKnowledgeManage"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="copyKnowledgeManage">
+			<result name="copyKnowledgeManage" type="redirectAction">
+				updateKledgeInit?kledge.id=${kledge.id}
+			</result>
+		</action>
+		<!-- 查看 -->
+		<action name="viewKledge"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="viewKledge">
+			<result name="viewKledge" >
+				admin/knowledgeManage/manage/viewKledge.jsp
+			</result>
+		</action>
+		<!-- 删除 -->
+		<action name="deleteKledge"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="deleteKledge">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 修改Init -->
+		<action name="updateKledgeInit"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="updateKledgeInit">
+			<result name="updateKledgeInit">
+				admin/knowledgeManage/manage/updateKledgeInit.jsp
+			</result>
+		</action>
+		<!-- 修改 -->
+		<action name="updateKledge"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="updateKledge">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 申请修改 -->
+		<action name="myaddApplyUpate"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="myaddApplyUpate">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 申请删除 -->
+		<action name="myaddApplyDel"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="myaddApplyDel">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 个人提交审核 -->
+		<action name="commitBySelf"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="commitBySelf">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 初审通过 -->
+		<action name="verifypass"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="verifypass">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 初审不通过 -->
+		<action name="verifynopass"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="verifynopass">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 终审通过 -->
+		<action name="verifypassFinal"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="verifypassFinal">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 终审不通过 -->
+		<action name="verifynopassFinal"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="verifynopassFinal">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 允许修改 -->
+		<action name="myaddAllowUpate"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="myaddAllowUpate">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 允许删除 -->
+		<action name="myaddAllowDel"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="myaddAllowDel">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 不允许修改 -->
+		<action name="myaddNoAllowUpate"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="myaddNoAllowUpate">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<!-- 不允许删除 -->
+		<action name="myaddNoAllowDel"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="myaddNoAllowDel">
+			<result name="listMyKledge" type="redirectAction">
+				listMyKledge.action
+			</result>
+			<result name="kledgeChushen" type="redirectAction">
+				kledgeChushen.action
+			</result>
+			<result name="kledgeZhongshen" type="redirectAction">
+				kledgeZhongshen.action
+			</result>
+		</action>
+		<action name="getKnowledgeMark"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="getKnowledgeMark">
+			<result name="getKnowledgeMark">
+				admin/etcperfect/select_audit_mark_by_entityid.jsp
+			</result>
+		</action>
+		<action name="depGrant"
+			class="com.sopia.knowledgeManage.action.KnowledgeManageAction"
+			method="depGrant">
+			<result name="depGrant">
+				admin/knowledgeManage/manage/depGrant.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

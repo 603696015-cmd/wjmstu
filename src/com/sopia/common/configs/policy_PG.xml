@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="policy_pinggu" extends="elearning">
+		 <action name="PG_policyLibListInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="policyLibListInit">
+			<result name="policyLibList">
+				shebeipinggu/policy/policyLibList.jsp
+			</result>
+		</action> 
+		 <action name="PG_policyLib_addInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="policyLib_addInit">
+			<result name="policyLib_add">
+				shebeipinggu/policy/policyLib_add.jsp
+			</result>
+		</action> 
+		 <action name="PG_policyLib_add"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="policyLib_add">
+			<result name="policyLib_add_success">
+				shebeipinggu/policy/policyLib_add_success.jsp
+			</result>
+		</action> 
+		 <action name="PG_policyLib_view"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="policyLib_view">
+			<result name="policyLib_view">
+				shebeipinggu/policy/policyLib_view.jsp
+			</result>
+		</action> 
+		 <action name="PG_policyLib_alterInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="policyLib_alterInit">
+			<result name="policyLib_alter">
+				shebeipinggu/policy/policyLib_alter.jsp
+			</result>
+		</action> 
+		 <action name="PG_policyLib_alter"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="policyLib_alter">
+			<result name="policyLib_alter_success">
+				shebeipinggu/policy/policyLib_alter_success.jsp
+			</result>
+		</action>  
+		<action name="PG_policyLib_delete"
+			class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+			method="policyLib_delete">
+			<result name="policyLibListInit" type="redirectAction">
+				PG_policyLibListInit.action
+			</result>
+		</action>
+		<!-- 投保信息 --> 
+		 <action name="PG_buyPolicyListInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="buyPolicyListInit">
+			<result name="buyPolicyList">
+				shebeipinggu/policy/buyPolicyList.jsp
+			</result>
+		</action> 
+		 <action name="PG_MyPolicyListInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="MyPolicyListInit">
+			<result name="MyPolicyList">
+				shebeipinggu/policy/MyPolicyList.jsp
+			</result>
+		</action> 
+		 <action name="PG_Policy_AuditListInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="Policy_AuditListInit">
+			<result name="Policy_AuditList">
+				shebeipinggu/policy/Policy_AuditList.jsp
+			</result>
+		</action> 
+		 <action name="PG_Policy_Audit2ListInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="Policy_Audit2ListInit">
+			<result name="Policy_Audit2List">
+				shebeipinggu/policy/Policy_Audit2List.jsp
+			</result>
+		</action> 
+		 <action name="PG_Policy_AuditInit"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="Policy_AuditInit">
+			<result name="Policy_Audit" type="redirectAction">
+				PG_${actionName}.action
+			</result>
+		</action> 
+		 <action name="PG_Policy_UpdateScanning"
+				 class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+				 method="Policy_UpdateScanning">
+			<result name="Policy_UpdateScanning" type="redirectAction">
+				PG_${actionName}.action
+			</result>
+		</action>  
+		<action name="PG_Policy_downloadScanningInit"
+			class="com.sopia.shebeipinggu.action.PG_PolicyAction"
+			method="Policy_downloadScanningInit"> 
+			<result type="stream" name="Policy_downloadScanning">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>

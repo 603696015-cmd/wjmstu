@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_forum" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="forum_blocktype_list" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_list">
+			<result name="forum_blocktype_list">
+				admin/forum/admin/forum_blocktype_list.jsp
+			</result>
+		</action>
+		<action name="forum_blocktype_addInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_addInit">
+			<result name="forum_blocktype_add">
+				admin/forum/admin/forum_blocktype_add.jsp
+			</result>
+		</action>
+		<action name="forum_blocktype_add" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_add">
+			<result name="forum_blocktype_add_success" type="redirectAction">
+				forum_blocktype_list
+			</result>
+		</action>
+		<action name="forum_blocktype_upSort" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_upSort">
+			<result name="forum_blocktype_upSort" type="redirectAction">
+				forum_blocktype_list
+			</result>
+		</action>
+		<action name="forum_blocktype_downSort" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_downSort">
+			<result name="forum_blocktype_downSort" type="redirectAction">
+				forum_blocktype_list
+			</result>
+		</action>
+		<action name="forum_blocktype_delete" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_delete">
+			<result name="forum_blocktype_delete" type="redirectAction">
+				forum_blocktype_list
+			</result>
+		</action>
+		<action name="forum_blocktype_alterInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_alterInit">
+			<result name="forum_blocktype_alter">
+				admin/forum/admin/forum_blocktype_alter.jsp
+			</result>
+		</action>
+		<action name="forum_blocktype_alter" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_blocktype_alter">
+			<result name="forum_blocktype_alter_success" type="redirectAction">
+				forum_blocktype_list
+			</result>
+		</action>
+		<action name="forum_block_list" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_list">
+			<result name="forum_block_list">
+				admin/forum/admin/forum_block_list.jsp
+			</result>
+		</action>
+		
+		<action name="fblock_delete_user" class="com.sopia.forumman.action.ForumAdminAction"
+			method="fblock_delete_user">
+		</action>
+		<action name="forum_block_addInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_addInit">
+			<result name="forum_block_add">
+				admin/forum/admin/forum_block_add.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_block_add" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_add">
+			<result name="forum_block_add_success" type="redirectAction">
+				forum_block_list
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_searchUsersInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_searchUsersInit">
+			<result name="forum_searchUsers">
+				admin/forum/admin/forum_searchUsers.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_searchUserslist" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_searchUserslist">
+			<result name="forum_searchUserslist">
+				admin/forum/admin/forum_searchUserslist.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_block_alterInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_alterInit">
+			<result name="forum_block_alter">
+				admin/forum/admin/forum_block_alter.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_block_alter" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_alter">
+			<result name="forum_block_alter_success" type="redirectAction">
+				forum_block_list
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_block_delete" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_delete">
+			<result name="forum_block_delete" type="redirectAction">
+				forum_block_list
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_block_upSort" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_upSort">
+			<result name="forum_block_upSort" type="redirectAction">
+				forum_block_list
+			</result>
+
+
+
+
+		</action>
+		<action name="forum_block_downSort" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_block_downSort">
+			<result name="forum_block_downSort" type="redirectAction">
+				forum_block_list
+			</result>
+
+		</action>
+		<action name="forum_list_byblockid" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_list_byblockid">
+			<result name="forum_list_byblockid">
+				admin/forum/admin/forum_list_byblockid.jsp
+			</result>
+		</action>
+		<action name="forum_jhset" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_jhset">
+			<result name="forum_jhset" type="redirectAction">
+				forum_list_byblockid?forum.title=${forum.title}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="forum_delete" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_delete">
+			<result name="forum_delete" type="redirectAction">
+				forum_list_byblockid?forum.title=${forum.title}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="forum_list_byuid" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_list_byuid">
+			<result name="forum_list_byuid">
+				admin/forum/admin/forum_list_byuid.jsp
+			</result>
+		</action>
+		<action name="upTopicValid"
+			class="com.sopia.frontman.action.FrontAction" method="upTopicValid">
+			<result name="displayMyTopicList" type="redirectAction">
+				displayMyTopicList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="TopicList" type="redirectAction">
+				TopicList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<!-- 我的所有回帖 -->
+		<action name="displayMyTopicList"
+			class="com.sopia.frontman.action.FrontAction" method="displayMyTopicList">
+			<result name="displayMyTopicList">
+				admin/forum/admin/displayMyTopicList.jsp
+			</result>
+		</action>
+		<action name="forum_alterInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_alterInit">
+			<result name="forum_alter">
+				admin/forum/admin/forum_alter.jsp
+			</result>
+		</action>
+		<!-- 帖子组合搜索 -->
+		<action name="combinationSearchforumInit" class="com.sopia.forumman.action.ForumAdminAction"
+			method="combinationSearchforumInit">
+			<result name="combinationSearchforumInit">
+				admin/forum/admin/combinationSearchForum.jsp
+			</result>
+		</action>
+		<action name="combinationSearchforum" class="com.sopia.forumman.action.ForumAdminAction" method="combinationSearchforum">
+			<result name="forum_list_byuid">
+				admin/forum/admin/combinationSearchForumlist.jsp
+			</result>
+		</action>
+		<action name="forum_alter" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_alter">
+			<result name="forum_alter" type="redirectAction">
+				forum_list_byuid
+			</result>
+		</action>
+		<action name="forum_deletebyuid" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_deletebyuid">
+			<result name="forum_deletebyuid" type="redirectAction">
+				forum_list_byuid?forum.title=${forum.title}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="forum_shlist" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_shlist">
+			<result name="forum_shlist">
+				admin/forum/admin/forum_shlist.jsp
+			</result>
+		</action>
+		<action name="TopicList" class="com.sopia.forumman.action.ForumAdminAction"
+			method="TopicList">
+			<result name="TopicList">
+				admin/forum/admin/TopicList.jsp
+			</result>
+		</action>
+		<action name="forum_sh" class="com.sopia.forumman.action.ForumAdminAction"
+			method="forum_sh">
+			<result name="forum_shlist" type="redirectAction">
+				forum_shlist?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		
+		<!-- 外联我的所有回帖 -->
+		<action name="myTopicList"
+			class="com.sopia.frontman.action.FrontAction" method="myTopicList">
+			<result name="myTopicList">
+				admin/forum/admin/myTopicList.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

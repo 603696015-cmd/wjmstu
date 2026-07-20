@@ -1,0 +1,33 @@
+-- Create table
+create table YZCODE_TEMP
+(
+  ID        NUMBER not null,
+  MOVEPHONE NUMBER,
+  YZCODE    VARCHAR2(500),
+  STATUS    NUMBER
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+
+  
+  
+ ------ 
+create sequence YZCODE_TEMP_SEQUENCE
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 20;
+
+create or replace trigger auto_id_yzcode_temp before insert on yzcode_temp for each row 
+begin select yzcode_temp_sequence.nextval into :new.id from dual; end;
+ 

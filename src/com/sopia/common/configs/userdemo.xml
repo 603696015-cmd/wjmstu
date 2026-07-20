@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="userdemo" extends="elearning">
+	
+		<action name="listUserDemoColumns"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="listUserDemoColumns">
+			<result name="listUserDemoColumns">
+				admin/userdemo/listUserDemoColumns.jsp
+			</result>
+		</action>
+		<action name="updateUserDemoColumns"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="updateUserDemoColumns">
+			<result name="updateUserDemoColumns_success">
+				admin/userdemo/updateUserDemoColumns_success.jsp
+			</result>
+		</action>
+		<action name="addUserDemoColumnInit"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="addUserDemoColumnInit">
+			<result name="addUserDemoColumnInit">
+				admin/userdemo/addUserDemoColumnInit.jsp
+			</result>
+		</action>
+		<action name="addUserDemoColumn"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="addUserDemoColumn">
+			<result name="addUserDemoColumn_success" type="redirectAction">
+				listUserDemoColumns.action?elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="listElUserDemo"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="listElUserDemo">
+			<result name="listElUserDemo" >
+				
+			</result>
+		</action>
+		<action name="listAllJsTypes"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="listAllJsTypes">
+		</action>
+		<action name="addColumnJsInit"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="addColumnJsInit">
+			<result name="addColumnJsInit">
+				admin/userdemo/addColumnJsInit.jsp
+			</result>
+		</action>
+		<action name="addColumnJs"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="addColumnJs">
+			<result name="addColumnJs" type="redirectAction">
+				listUserDemoColumns.action?elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="setPageTypeInit"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="setPageTypeInit">
+			<result name="setPageTypeInit" >
+				admin/userdemo/setPageTypeInit.jsp
+			</result>
+		</action>
+		<action name="listELUserPage"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="listELUserPage">
+			<result name="listELUserPage" >
+				admin/userdemo/listELUserPage.jsp
+			</result>
+		</action>
+		<action name="uploadPageJspInit"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="uploadPageJspInit">
+			<result name="uploadPageJspInit" >
+				admin/userdemo/uploadPageJspInit.jsp
+			</result>
+		</action>
+		<action name="uploadPageJsp"
+			class="com.sopia.userDemo.action.UserDemoAction" 
+			method="uploadPageJsp">
+			<result name="uploadPageJsp" type="redirectAction">
+				listELUserPage.action
+			</result>
+		</action>
+	</package>
+
+</struts>

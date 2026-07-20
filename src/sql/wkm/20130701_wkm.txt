@@ -1,0 +1,79 @@
+-- Create table
+create table PEIXUN_BATCH
+(
+  ID          NUMBER not null,
+  NAME        VARCHAR2(50),
+  DESCRIPTION VARCHAR2(500),
+  TYPEID      NUMBER,
+  CREATETIME  TIMESTAMP(6),
+  CREATERID   NUMBER,
+  STATUS      NUMBER,
+  ENDTIME     TIMESTAMP(6)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create sequence 
+create sequence PEIXUN_BATCH_SEQUENCE
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 20;
+
+create or replace trigger auto_id_PEIXUN_BATCH before insert on PEIXUN_BATCH for each row 
+begin select PEIXUN_BATCH_sequence.nextval into :new.id from dual; end;
+
+
+------------------------------------------------
+-- Create table
+create table BATCH_ELCLASS_FENPEI
+(
+  BATCHID   NUMBER not null,
+  ELCLASSID NUMBER,
+  SORTID    NUMBER
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column BATCH_ELCLASS_FENPEI.SORTID
+  is '≈‡—µ∞‡À≥–Ú∫≈';
+
+
+-------------------------------------
+
+-- Create table
+create table BATCH_USER_FENPEI
+(
+  BATCHID   NUMBER not null,
+  USERID    NUMBER,
+  BEGINTIME TIMESTAMP(6),
+  ENDTIME   TIMESTAMP(6)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  

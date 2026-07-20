@@ -1,0 +1,441 @@
+/* CSS Document */
+/*------------------------  Globa ------------------------------*/
+
+body {
+	margin:0;
+	padding:0;
+}
+
+
+
+
+
+
+	
+.bg011{
+	background-position: bottom;
+	background-repeat: repeat-x;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+}
+.bgright{
+	background-image: url(../images/split2.jpg);
+	background-position: right;
+	background-repeat: repeat-y;
+}
+.border1{
+	border:1px #afafaf solid;
+}
+
+.bgbtn{
+	background-image: url(../images/bgbtn.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+
+li{ list-style:none;}
+
+#menu_bg {
+	WIDTH: 100%;
+	HEIGHT: 40px;
+	
+	background-repeat: repeat-x;
+	background-position: left -105px;
+}
+.menu LI {
+	TEXT-ALIGN: center; WIDTH: 115px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left -5px; FLOAT: left; HEIGHT: 90px
+}
+.menu LI A {
+	LINE-HEIGHT: 40px; DISPLAY: block; HEIGHT: 90px; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.menu LI A:link {
+	COLOR: #fff
+}
+.menu LI A:visited {
+	COLOR: #fff
+}
+.menu LI A.here {
+	background-image: url(../images/bgbtn.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.menu LI A:hover {
+	background-image: url(../images/bgbtn.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.menu LI A.libg {
+	background-image: url(../images/bgbtn.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.border-white {
+	border: 1px dashed #FFFFFF;
+}
+
+.zp {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #15679c; FONT-FAMILY: "宋体"
+}
+
+.zp02 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0033FF; FONT-FAMILY: "宋体"
+}
+.zc01 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #0159a1; FONT-FAMILY: "宋体"
+}
+.zc02 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #0159a1; FONT-FAMILY: "宋体"
+}
+.di {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #4a9cce; LINE-HEIGHT: 2em; FONT-FAMILY: "宋体"
+}
+A.ba:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.ba:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.ba:hover {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.bat:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.bat:link {
+	COLOR: #0159a1; TEXT-DECORATION: none
+}
+A.bat:visited {
+	COLOR: #0159a1; TEXT-DECORATION: none
+}
+A.bat:hover {
+	COLOR: #0159a1; TEXT-DECORATION: none
+}
+A.bat:active {
+	COLOR: #0159a1; TEXT-DECORATION: none
+}
+
+.bline2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 15pt; COLOR: #ff6600; BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: center
+}
+.blineno {
+	FONT-WEIGHT: bold; FONT-SIZE: 15pt; COLOR: #ff6600; TEXT-ALIGN: center
+}
+.yellow {
+	FONT-WEIGHT: bold; FONT-SIZE: 15pt; COLOR: #ff6600
+}
+.bline {
+	FONT-SIZE: 10pt; BORDER-BOTTOM: #ccc 1px dashed
+}
+.bt001 {
+	FONT-SIZE: 13px; COLOR: #0000ff; 
+}
+A.bt001:link {
+	FONT-SIZE: 13px; COLOR: #0099FF; 
+}
+A.bt001:visited {
+	FONT-SIZE: 13px; COLOR: #0099FF;
+}
+A.bt001:hover {
+	FONT-SIZE: 13px; COLOR: #FF3300;
+}
+A.bt001:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #0099FF;
+}
+.txt001 {
+	FONT-SIZE: 12px; COLOR: #666; LINE-HEIGHT: 26px
+}
+A.txt001:link {
+	FONT-SIZE: 12px; COLOR: #666; LINE-HEIGHT: 26px
+}
+A.txt001:visited {
+	FONT-SIZE: 12px; COLOR: #666; LINE-HEIGHT: 26px
+}
+A.txt001:hover {
+	FONT-SIZE: 12px; COLOR: #ff2121; LINE-HEIGHT: 26px
+}
+A.txt001:active {
+	FONT-SIZE: 12px; COLOR: #ff2121; LINE-HEIGHT: 26px
+}
+A.txt00002:link {
+	FONT-SIZE: 15px; COLOR: #333333; LINE-HEIGHT: 36px
+}
+A.txt00002:visited {
+	FONT-SIZE: 15px; COLOR: #0000ff; LINE-HEIGHT: 36px
+}
+A.txt00002:hover {
+	FONT-SIZE: 15px; COLOR: #ff0000; LINE-HEIGHT: 36px
+}
+A.txt00002:active {
+	FONT-SIZE: 15px; COLOR: #0000ff; LINE-HEIGHT: 36px
+}
+.lh26 {
+	FONT-SIZE: 12px; COLOR: #444; LINE-HEIGHT: 22px
+}
+.bt003 {
+	FONT-SIZE: 13px; COLOR: #444; LINE-HEIGHT: 26px
+}
+A.bt003:link {
+	FONT-SIZE: 13px; COLOR: #333; LINE-HEIGHT: 26px
+}
+A.bt003:visited {
+	FONT-SIZE: 13px; COLOR: #333; LINE-HEIGHT: 26px
+}
+A.bt003:hover {
+	FONT-SIZE: 13px; COLOR: #ff2121; LINE-HEIGHT: 26px
+}
+A.bt003:active {
+	FONT-SIZE: 13px; COLOR: #ff2121; LINE-HEIGHT: 26px
+}
+.sx {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #369fd6
+}
+.tbwz {
+	FONT-SIZE: 12px; COLOR: #32546f
+}
+A.tbwz:link {
+	FONT-SIZE: 12px; COLOR: #32546f
+}
+A.tbwz:visited {
+	FONT-SIZE: 12px; COLOR: #32546f
+}
+A.tbwz:hover {
+	FONT-SIZE: 12px; COLOR: #ff6600
+}
+A.tbwz:active {
+	FONT-SIZE: 12px; COLOR: #32546f
+}
+.fz14 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #444
+}
+
+#menu2_bg {
+	WIDTH: 100%;
+	HEIGHT: 40px;
+	background-image: url(http://www.ccunc.com/images/xtb/index_x.jpg);
+	background-repeat: repeat-x;
+	background-position: left -105px;
+}
+.menu2 LI {
+	BACKGROUND-IMAGE: url(http://www.ccunc.com/images/xtb/index_x.jpg); TEXT-ALIGN: center; WIDTH: 120px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left -5px; FLOAT: left; HEIGHT: 40px
+}
+.menu2 LI A {
+	LINE-HEIGHT: 40px; DISPLAY: block; HEIGHT: 40px; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.menu2 LI A:link {
+	COLOR: #fff
+}
+.menu2 LI A:visited {
+	COLOR: #fff
+}
+.menu2 LI A.here {
+	COLOR: #fff;
+	background-image: url(http://www.ccunc.com/images/xtb/menu_hover.gif);
+	background-repeat: no-repeat;
+	background-position: -5px;
+}
+.menu2 LI A:hover {
+	BACKGROUND: url(http://www.ccunc.com/images/xtb/menu_hover.gif) no-repeat; COLOR: #fff
+}
+.menu2 LI A.libg {
+	BACKGROUND: url(http://www.ccunc.com/images/xtb/libg.gif) no-repeat; COLOR: #fff
+}
+.menu2 LI A:hover {
+	BACKGROUND: url(http://www.ccunc.com/images/xtb/menu_hover.gif) no-repeat; COLOR: #fff
+}
+.textbg {
+	background-image: url(../images/textbg.gif);
+	line-height:18px;
+	background-repeat: repeat-x;
+	padding: 3px;margin: 5px;
+	color:#000000;
+}
+.textbg {
+	background-image: url(../images/textbg.jpg);
+	line-height:25px;
+	background-repeat: repeat-x;
+	padding-bottom: 0px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+A.textbg:link {
+	color:#FFFFFF;
+}
+A.textbg:visited {
+	color:#FFFFFF;
+}
+A.textbg:hover {
+	color:#003366;
+}
+A.textbg:active {
+	color:#FFFFFF;
+}
+
+.textbg6 {
+	background-image: url(../images/textbg.gif);
+	padding-top:2px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+	width: 95px;
+	text-align: center;
+	text-decoration: none;
+}
+A.textbg6:link {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:visited {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:hover {
+	color:#003366;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:active {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+.textbg3 {
+	background-image: url(../images/textbg.gif);
+	padding-top:3px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+
+.textbg4 {
+	background-image: url(../images/textbg.gif);
+	padding-top:2px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+	width: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+A.textbg4:link {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4:visited {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4:hover {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4:active {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+.textbg4_2 {
+	background-image: url(../images/textbg.gif);
+	padding-top:2px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+	width: 80px;
+	text-align: center;
+}
+A.textbg4_2:link {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4_2:visited {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4_2:hover {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg4_2:active {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+.textbg5 {
+	background-image: url(../images/textbg.gif);
+	line-height:25px;
+	background-repeat: repeat-x;
+	padding-top: 2px;margin: 5px;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+A.textbg5:link {
+	color:#003366;
+}
+A.textbg5:visited {
+	color:#003366;
+}
+A.textbg5:hover {
+	color:#003366;
+}
+A.textbg5:active {
+	color:#003366;
+}
+
+.textbg6 {
+	background-image: url(../images/textbg.gif);
+	padding-top:2px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+	width: 65px;
+	text-align: center;
+}
+A.textbg6:link {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:visited {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:hover {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+A.textbg6:active {
+	color:#FFFFFF;	font-size: 13px;
+	font-weight:bold;
+}
+.textbg7 {
+	background-image: url(../images/textbg.gif);
+	line-height:25px;
+	background-repeat: repeat-x;
+	color:#FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	height: 28px;
+	width: 95px;
+	text-align: center;
+}
+A.textbg7:link {
+	color:#003366;
+}
+A.textbg7:visited {
+	color:#003366;
+}
+A.textbg7:hover {
+	color:#003366;
+}
+A.textbg7:active {
+	color:#003366;
+}

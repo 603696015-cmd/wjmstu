@@ -1,0 +1,234 @@
+body {
+	margin: 0px; color: rgb(71, 104, 133); line-height: 20px; font-size: 12px; 
+}
+img {
+	border-width: 0px;
+}
+.sc {
+	color: rgb(4, 125, 216); font-size: 12px;
+}
+.dl {
+	color: rgb(134, 136, 133); font-size: 12px;
+}
+.bt {
+	color: rgb(38, 117, 154); font-size: 14px; font-weight: bold;
+}
+.bai {
+	color: rgb(255, 255, 255); font-size: 12px;
+}
+.hui {
+	color: rgb(82, 83, 85); font-size: 14px; font-weight: bold;
+}
+.kc {
+	color: rgb(0, 120, 135); line-height: 27px; font-size: 12px; font-weight: bold;
+}
+.bq {
+	color: rgb(71, 104, 133); line-height: 20px; font-size: 12px;
+}
+.sc1:link {
+	color: rgb(4, 125, 216); font-size: 12px; text-decoration: none;
+}
+.sc1:visited {
+	color: rgb(4, 125, 216); font-size: 12px; text-decoration: none;
+}
+.sc1:hover {
+	color: rgb(51, 51, 51); font-size: 12px; text-decoration: none;
+}
+.sc1:active {
+	color: rgb(4, 125, 216); font-size: 12px; text-decoration: none;
+}
+.dh:link {
+	color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; text-decoration: none;
+}
+.dh:visited {
+	color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; text-decoration: none;
+}
+.dh:hover {
+	color: rgb(228, 240, 127); font-size: 14px; font-weight: bold; text-decoration: none;
+}
+.dh:active {
+	color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; text-decoration: none;
+}
+.a:link {
+	color: rgb(0, 120, 136); line-height: 31px; font-size: 12px; text-decoration: none;
+}
+.a:visited {
+	color: rgb(0, 120, 136); line-height: 31px; font-size: 12px; text-decoration: none;
+}
+.a:hover {
+	color: rgb(51, 51, 51); line-height: 31px; font-size: 12px; text-decoration: none;
+}
+.a:active {
+	color: rgb(0, 120, 136); line-height: 31px; font-size: 12px; text-decoration: none;
+}
+.more:link {
+	color: rgb(38, 116, 154); font-size: 12px; text-decoration: none;
+}
+.more:visited {
+	color: rgb(38, 116, 154); font-size: 12px; text-decoration: none;
+}
+.more:hover {
+	color: rgb(51, 51, 51); font-size: 12px; text-decoration: none;
+}
+.more:active {
+	color: rgb(38, 116, 154); font-size: 12px; text-decoration: none;
+}
+.jj:link {
+	color: rgb(71, 104, 133); line-height: 23px; font-size: 12px; text-decoration: none;
+}
+.jj:visited {
+	color: rgb(71, 104, 133); line-height: 23px; font-size: 12px; text-decoration: none;
+}
+.jj:hover {
+	color: rgb(51, 51, 51); line-height: 23px; font-size: 12px; text-decoration: none;
+}
+.jj:active {
+	color: rgb(71, 104, 133); line-height: 23px; font-size: 12px; text-decoration: none;
+}
+.news:link {
+	color: rgb(0, 0, 0); line-height: 28px; font-size: 12px; text-decoration: none;
+}
+.news:visited {
+	color: rgb(0, 0, 0); line-height: 28px; font-size: 12px; text-decoration: none;
+}
+.news:hover {
+	color: rgb(0, 0, 0); line-height: 28px; font-size: 12px; text-decoration: none;
+}
+.news:active {
+	color: rgb(0, 0, 0); line-height: 28px; font-size: 12px; text-decoration: none;
+}
+.kc1:link {
+	color: rgb(0, 120, 135); line-height: 27px; font-size: 12px; text-decoration: none;
+}
+.kc1:visited {
+	color: rgb(0, 120, 135); line-height: 27px; font-size: 12px; text-decoration: none;
+}
+.kc1:hover {
+	color: rgb(51, 51, 51); line-height: 27px; font-size: 12px; text-decoration: none;
+}
+.kc1:active {
+	color: rgb(0, 120, 135); line-height: 27px; font-size: 12px; text-decoration: none;
+}
+.xx:link {
+	color: rgb(0, 120, 136); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.xx:visited {
+	color: rgb(0, 120, 136); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.xx:hover {
+	color: rgb(51, 51, 51); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.xx:active {
+	color: rgb(0, 120, 136); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.x1:link {
+	color: rgb(0, 120, 136); line-height: 25px; font-size: 12px; text-decoration: none;
+}
+.x1:visited {
+	color: rgb(0, 120, 136); line-height: 25px; font-size: 12px; text-decoration: none;
+}
+.x1:hover {
+	color: rgb(51, 51, 51); line-height: 25px; font-size: 12px; text-decoration: none;
+}
+.x1:active {
+	color: rgb(0, 120, 136); line-height: 25px; font-size: 12px; text-decoration: none;
+}
+.x2:link {
+	color: rgb(0, 120, 136); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.x2:visited {
+	color: rgb(0, 120, 136); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.x2:hover {
+	color: rgb(51, 51, 51); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.x2:active {
+	color: rgb(0, 120, 136); line-height: 26px; font-size: 12px; text-decoration: none;
+}
+.ms:link {
+	color: rgb(38, 117, 154); line-height: 24px; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.ms:visited {
+	color: rgb(38, 117, 154); line-height: 24px; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.ms:hover {
+	color: rgb(51, 51, 51); line-height: 24px; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.ms:active {
+	color: rgb(38, 117, 154); line-height: 24px; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.xm:link {
+	color: rgb(71, 104, 133); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.xm:visited {
+	color: rgb(71, 104, 133); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.xm:hover {
+	color: rgb(51, 51, 51); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.xm:active {
+	color: rgb(71, 104, 133); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.b:link {
+	color: rgb(255, 255, 255); font-size: 12px; text-decoration: none;
+}
+.b:visited {
+	color: rgb(255, 255, 255); font-size: 12px; text-decoration: none;
+}
+.b:hover {
+	color: rgb(51, 51, 51); font-size: 12px; text-decoration: none;
+}
+.b:active {
+	color: rgb(255, 255, 255); font-size: 12px; text-decoration: none;
+}
+.db1 {
+	border: 1px solid rgb(182, 217, 245); width: 85px; height: 18px; font-size: 12px;
+}
+.db2 {
+	border: 1px solid rgb(51, 51, 51); width: 130px; height: 16px; color: rgb(72, 103, 132); font-size: 12px;
+}
+.db3 {
+	border: 1px solid rgb(209, 222, 228); width: 200px; height: 16px; color: rgb(72, 103, 132); font-size: 12px; background-color: rgb(242, 242, 242);
+}
+.db4 {
+	border: 1px solid rgb(255, 255, 255); width: 120px; height: 21px; color: rgb(72, 103, 132); font-size: 12px; vertical-align: middle; background-color: rgb(242, 242, 242);
+}
+.bd {
+	border-right-color: rgb(255, 255, 255); border-left-color: rgb(255, 255, 255); border-right-width: 10px; border-left-width: 10px; border-right-style: solid; border-left-style: solid;
+}
+.bd1 {
+	border-right-color: rgb(212, 222, 224); border-left-color: rgb(212, 222, 224); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.bd2 {
+	margin-top: 6px; margin-bottom: 6px;
+}
+.bd3 {
+	margin-bottom: 9px;
+}
+.bd4 {
+	padding: 8px 12px; border-right-color: rgb(212, 221, 226); border-left-color: rgb(212, 221, 226); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.bd5 {
+	border-right-color: rgb(212, 221, 226); border-left-color: rgb(212, 221, 226); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.bd6 {
+	border: 1px solid rgb(156, 213, 222);
+}
+.bd7 {
+	border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.bd8 {
+	border-right-color: rgb(212, 221, 226); border-bottom-color: rgb(212, 221, 226); border-left-color: rgb(212, 221, 226); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;
+}
+.bd9 {
+	padding: 3px; border: 1px solid rgb(179, 213, 234);
+}
+.bd10 {
+	margin-top: 13px; margin-bottom: 10px;
+}
+.bd11 {
+	margin-top: 2px; margin-bottom: 1px;
+}
+.bj {
+	background-image: url("../img/img_12.jpg"); background-repeat: repeat-x; background-color: rgb(230, 232, 245);
+}

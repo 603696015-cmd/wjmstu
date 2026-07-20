@@ -1,0 +1,115 @@
+body ,html{
+	font: 12px/ 22px tahoma, arial, 'ËÎÌו', sans-serif;
+	background-color: #fff;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td,span
+	{
+	margin: 0;
+	padding: 0;
+}
+a {
+	list-style: none;
+	text-decoration: none;
+}
+body {
+	height: 100%;
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img,a img {
+	border: 0px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+ul,ol,dl {
+	list-style: none
+}
+
+.bt {
+	FONT-SIZE: 23px;
+	font-weight: bolder;
+	COLOR: #ffffff;
+	LINE-HEIGHT: 26px;
+	FONT-FAMILY: "÷ÚÌו";
+	COLOR: #ffffff;
+}
+
+.STYLE5 {
+	color: #0000FF;
+	font-size: 12px;
+}
+
+A.LI:link {
+	FONT-SIZE: 12px;
+	COLOR: #ff0000;
+	TEXT-DECORATION: none
+}
+
+A.LI:visited {
+	FONT-SIZE: 12px;
+	COLOR: #ff0000;
+	TEXT-DECORATION: none
+}
+
+A.LI:hover {
+	FONT-SIZE: 12px;
+	COLOR: #ff0000;
+	TEXT-DECORATION: underline
+}
+
+A.LI:active {
+	FONT-SIZE: 12px;
+	COLOR: #ff0000;
+	TEXT-DECORATION: underline
+}
+
+.leibie {
+	PADDING-RIGHT: 20px;
+	FONT-SIZE: 12px;
+	OVERFLOW: auto;
+	WIDTH: 100%;
+	PADDING-TOP: 0px;
+	TEXT-ALIGN: right
+}
+
+.unnamed1 {
+	FONT-SIZE: 12px;
+	LINE-HEIGHT: 24px;
+	FONT-FAMILY: "ËÎÌו"
+}
+
+.STYLE8 {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 14px
+}
+
+.STYLE10 {
+	FONT-SIZE: 12px;
+	LINE-HEIGHT: 24px
+}
+.process{
+	margin-top:15px;
+	font-size: 12px;
+	color: blue;
+	text-align: center;
+}
+#processDiv {
+	margin-left:50px;
+	width: 200px;
+	height:25px;
+	background: buttonface;
+	background-position: 20px;
+}

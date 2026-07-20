@@ -1,0 +1,83 @@
+1.去除班级新增时候的ID生成触发器，改为手动查询处理id生成
+
+2.select userid from elgroup2user 表或者视图不存在
+
+3.修改表，添加共享字段
+ALTER TABLE ELCLASSTYPE
+ ADD (ISSHARED  NUMBER);
+
+4.可管理可使用添加表
+--培训班类型管理权限
+CREATE TABLE CLASS_OP_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+--培训班类型使用权限
+CREATE TABLE CLASS_USE_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+
+5.培训班和课程关联表中添加学分设置字段：
+--建议学分
+ALTER TABLE CLASS_COURSE
+ ADD (SUGGESTCREDIT  NUMBER);
+--设置学分
+ALTER TABLE CLASS_COURSE
+ ADD (SETCREDIT  NUMBER);
+--学分获得方式
+ALTER TABLE CLASS_COURSE
+ ADD (GETCREDIT  NUMBER);
+
+6.创建培训批次表
+create table batch
+(
+  id          NUMBER not null,
+  name        VARCHAR2(500) not null,
+  description VARCHAR2(4000)
+ 
+);
+
+create  SEQUENCE batch_sequence
+	increment by 1 -- 每次加几个
+	start with 1 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_batch before insert on batch for each row 
+when (new.id is null)
+begin
+     select batch_sequence.nextval into :new.id from dual;
+end;
+
+7.创建培训批次和培训班关联表
+CREATE TABLE BATCH_CLASS
+(
+  BATCHID      	 NUMBER                         NOT NULL,
+  CLASSID        NUMBER                         NOT NULL
+)
+
+--------
+8.论坛版面管理可共享
+ALTER TABLE FORUMBLOCK ADD (ISSHARED NUMBER)
+
+9.论坛版面可使用权限
+CREATE TABLE FBLOCK_USE_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  FBLOCKID  NUMBER                               NOT NULL
+);
+
+-----------------------------------
+SCORM相关
+1.数据库脚本，详见src目录下scorm_sql.sql
+2.更改用户资料表
+	ALTER TABLE eluser ADD(ADMIN NUMBER(1) DEFAULT 1,active NUMBER(1) DEFAULT 1,audiolevel VARCHAR2(50) DEFAULT '1',audiocaptioning INTEGER DEFAULT 0 ,deliveryspeed VARCHAR2(50) DEFAULT '1', language VARCHAR2(50) DEFAULT '');
+3.调用访问地址：http://localhost:8080/gdgat/adl/runtime/LMSMain.htm,登录用户名和密码一样。
+4.还有几个点也需要进一步修正，可以先参考下。
+
+5.更改COURSE表，在表中增加SCORM课件ID
+ALTER TABLE COURSE
+ ADD (SCORMID  VARCHAR2(50 BYTE));

@@ -1,0 +1,61 @@
+-- Create table 外语能力表
+create table language
+(
+  id              NUMBER not null,
+  userid             NUMBER,
+  resumeid             NUMBER,
+  name		  varchar2(100),
+  read		 	varchar2(100),
+  speak		varchar2(100)
+)
+
+
+-- Create sequence 
+create sequence language_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_language  before insert on language for each row
+when (new.id is null)
+begin
+     select language_sequence.nextval into :new.id from dual;
+end;
+
+---------------------------------------------------------------------------
+
+-- Create table 工作经验表
+create table experience
+(
+  id              NUMBER not null,
+  userid             NUMBER,
+  resumeid             NUMBER,
+  companyname		  varchar2(100),
+  xingzhi		 	varchar2(100),
+  guimo		varchar2(100)，
+  hangyeleibie		varchar2(100),
+  bumen		varchar2(100),
+  zhiweileibie		varchar2(100),
+  zhiyemingcheng		varchar2(100),
+  workstartdate		date,
+  workenddate		date,
+  zhiweiyuexin		varchar2(100),
+  miaoshu			blob
+)
+
+
+-- Create sequence 
+create sequence experience_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_experience  before insert on experience for each row
+when (new.id is null)
+begin
+     select experience_sequence.nextval into :new.id from dual;
+end;

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+
+	<package name="lineTrainingCourse" extends="elearning">
+		<action name="myLineTrainingCourse"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="myLineTrainingCourse">
+			<result name="lineTrainingCourse_success">
+				admin/lineTrainingCourse/lineTrainingCourse.jsp
+			</result>
+		</action>
+		
+		<action name="addLineTrainingCourseInit"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="addLineTrainingCourseInit">
+			<result name="addLineTrainingCourseInit">
+				admin/lineTrainingCourse/addLineTrainingCourse.jsp
+			</result>
+		</action>
+		
+		<action name="addLineTrainingCourse"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="addLineTrainingCourse">
+			<result name="addLineTrainingCourse_success" type="redirectAction">
+				myLineTrainingCourse.action
+			</result>
+		</action>
+		
+		
+		<action name="showLineTrainingCourseView"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="showLineTrainingCourseView">
+			<result name="showLineTrainingCourseView" >
+				admin/lineTrainingCourse/showLineTrainingCourseView.jsp
+			</result>
+			<result name="lineTrainingCourse_content" >
+				admin/lineTrainingCourse/front/lineTrainingCourse_content.jsp
+			</result>
+			
+		</action>
+		
+		<action name="updateLineTrainingCourseInit"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="showLineTrainingCourseView">
+			<result name="showLineTrainingCourseView" >
+				admin/lineTrainingCourse/updateLineTrainingCourse.jsp
+			</result>
+		</action>
+		
+		<action name="updateLineTrainingCourse"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="updateLineTrainingCourse">
+			<result name="updateLineTrainingCourse_success" type="redirectAction">
+				myLineTrainingCourse.action
+			</result>
+			<result name="updateLineTrainingCourse_inall_success" type="redirectAction">
+				allLineTrainingCourse.action
+			</result>
+		</action>
+		
+		<action name="check_is_open"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="check_is_open">
+		</action>
+		
+		<action name="lineTrainingCourseByIds"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="lineTrainingCourseByIds">
+			<result name="deleteLineTrainingCourseByIds_success" type="redirectAction">
+				myLineTrainingCourse.action
+			</result>
+			<result name="deleteLineTrainingCourseByIds_inall_success" type="redirectAction">
+				allLineTrainingCourse.action
+			</result>
+			<result name="openLineTrainingCourseByIds_inall_success" type="redirectAction">
+				allLineTrainingCourse.action
+			</result>
+		</action>
+		
+		<action name="allLineTrainingCourse"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="allLineTrainingCourse">
+			<result name="lineTrainingCourse_success">
+				admin/lineTrainingCourse/allLineTrainingCourse.jsp
+			</result>
+		</action>
+		
+		<action name="goto_shenhe"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="goto_shenhe">
+			<result name="goto_shenhe_success">
+				admin/lineTrainingCourse/shenhe.jsp
+			</result>
+		</action>
+		
+		<action name="option_in_shenhePage"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="option_in_shenhePage">
+			<result name="option_in_shenhePage_success" type="redirectAction">
+				goto_shenhe.action?lineTrainingCourse.id=${lineTrainingCourse.id}
+			</result>
+		</action>
+		
+		<action name="result_entry"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="result_entry">
+			<result name="result_entry_success">
+				admin/lineTrainingCourse/result_entry.jsp
+			</result>
+		</action>
+		
+		<action name="option_in_allocation"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="option_in_allocation">
+			<result name="option_in_allocation_success" type="redirectAction">
+				allocation_person.action?lineTrainingCourse.id=${lineTrainingCourse.id}&amp;sub_department=${sub_department}
+			</result>
+		</action>
+		
+		
+		<action name="changeScore"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="changeScore">
+		</action>
+		
+		<action name="changeCredit"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="changeCredit">
+		</action>
+		
+		<action name="updateCredit"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="updateCredit">
+		</action>
+		
+		<action name="changeIs_get_certificate"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="changeIs_get_certificate">
+		</action>
+		
+		<action name="check_userIds"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="check_userIds">
+		</action>
+		
+		
+		<action name="accessory_update"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="accessory_update">
+			<result name="accessory_update" type="redirectAction">
+				result_entry.action?lineTrainingCourse.id=${assign.line_training_course_id}
+			</result>
+		</action>
+		
+		<action name="downloadInit"
+			class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+			method="downloadInit"> 
+			<result type="stream" name="download">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="allocation_person"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="allocation_person">
+			<result name="allocation_person" >
+				admin/lineTrainingCourse/allocation_person.jsp
+			</result>
+		</action>
+		
+		
+		
+		<!-- 线下培训班前台 -->
+		<action name="line_training_course_center"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="line_training_course_center">
+			<result name="line_training_course_center">
+				admin/lineTrainingCourse/front/line_training_course_center.jsp
+			</result>
+		</action>
+		
+		<action name="signByPerson"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="signByPerson">
+			<result name="signByPerson_success" type="redirectAction">
+				showLineTrainingCourseView.action?id=${lineTrainingCourse.id}&amp;type1=front
+			</result>
+		</action>
+		
+		<action name="check_is_signed"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="check_is_signed">
+		</action>
+		
+		
+		<!-- 个人学籍下的线下培训 -->
+		<action name="personal_lineTrainingCourse"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="personal_lineTrainingCourse">
+			<result name="personal_lineTrainingCourse">
+				admin/lineTrainingCourse/personal_lineTrainingCourse.jsp
+			</result>
+		</action>
+		
+		<action name="show_personal_lineTrainingCourse"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="show_personal_lineTrainingCourse">
+			<result name="show_personal_lineTrainingCourse">
+				admin/lineTrainingCourse/show_personal_lineTrainingCourse.jsp
+			</result>
+		</action>
+		
+		<!-- 线下培训类别管理 -->
+		<action name="trainTypeTreeList"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainTypeTreeList">
+			<result name="trainTypeTreeList">
+				admin/lineTrainingCourse/trianTypeTreeList.jsp
+			</result>
+		</action>
+		<action name="trainType_addInit"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainType_addInit">
+			<result name="trainType_addInit">
+				admin/lineTrainingCourse/trianType_add.jsp
+			</result>
+		</action>
+		<action name="trainType_add"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainType_add">
+			<result name="trainType_add_success">
+				admin/lineTrainingCourse/trianType_add_success.jsp
+			</result>
+		</action>
+		<action name="trainType_alterInit"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainType_alterInit">
+			<result name="trainType_alterInit">
+				admin/lineTrainingCourse/trianType_alter.jsp
+			</result>
+		</action>
+		<action name="trainType_alter"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainType_alter">
+			<result name="trainType_alter_success">
+				admin/lineTrainingCourse/trianType_alter_success.jsp
+			</result>
+		</action>
+		<action name="trainType_view"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainType_view">
+			<result name="trainType_view">
+				admin/lineTrainingCourse/trainType_view.jsp
+			</result>
+		</action>
+		<action name="trainType_delete"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="trainType_delete">
+			<result name="trainType_delete" type="redirectAction">
+				trainTypeTreeList.action
+			</result>
+		</action>
+		
+		<action name="searchtypeInit"
+			class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+			method="searchtypeInit">
+			<result name="searchtypeInit">
+				admin/lineTrainingCourse/searchtypeDio.jsp
+			</result>
+		</action>
+		<action name="addTypeView"
+				 class="com.sopia.lineTrainingCourse.action.LineTrainingCourseAction"
+				 method="addTypeView">
+			<result name="success">
+				admin/lineTrainingCourse/addLineTrainingCourse.jsp
+			</result>
+		</action>
+	</package>
+</struts>

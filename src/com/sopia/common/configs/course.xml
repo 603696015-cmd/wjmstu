@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_course" extends="elearning">
+		<action name="coursepage_addInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_addInit">
+			<result name="coursepage_addInit">
+				admin/course/coursemake/coursepage_add.jsp
+			</result>
+		</action>
+		<action name="coursepage_add"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_add">
+			<!-- <result name="coursepage_add_success">
+				admin/course/coursemake/coursepage_add_success.jsp
+			</result> -->
+			<result name="coursepage_add_success" type="redirectAction">
+				coursepage_list.action?course.id=${coursePage.course.id}
+			</result>
+		</action>
+		<action name="coursepage_list"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_list">
+			<result name="coursepage_list">
+				admin/course/coursemake/coursepage_list.jsp
+			</result>
+		</action>
+		<action name="coursepage_importInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_importInit">
+			<result name="coursepage_import">
+				admin/course/coursemake/coursepage_import.jsp
+			</result>
+		</action>
+		<action name="coursepage_import"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_import">
+			<result name="coursepage_import">
+				admin/course/coursemake/coursepage_import.jsp
+			</result>
+			<result name="coursepage_list" type="redirectAction">
+				coursepage_list?course.id=${course.id}
+			</result>
+		</action>
+
+		<action name="coursepage_upsort"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_upsort">
+			<result name="coursepage_list" type="redirectAction">
+				coursepage_list?course.id=${course.id}
+			</result>
+		</action>
+		<action name="coursepage_downsort"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_downsort">
+			<result name="coursepage_list" type="redirectAction">
+				coursepage_list?course.id=${course.id}
+			</result>
+		</action>
+		<action name="cpage_upsort"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="cpage_upsort">
+			<result name="cpage_upsort" type="redirectAction">
+				practicepaper_list_room.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="cpage_downsort"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="cpage_downsort">
+			<result name="cpage_downsort" type="redirectAction">
+				practicepaper_list_room.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		
+		<action name="coursepage_delete"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_delete">
+			<result name="coursepage_list" type="redirectAction">
+				coursepage_list?course.id=${course.id}
+			</result>
+		</action>
+		<action name="coursepage_alterInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_alterInit">
+			<result name="coursepage_alter">
+				admin/course/coursemake/coursepage_alter.jsp
+			</result>
+
+
+		</action>
+		<action name="coursepage_alter"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursepage_alter">
+			<!-- <result name="coursepage_alter_success">
+				admin/course/coursemake/coursepage_alter_success.jsp
+			</result> -->
+			<result name="coursepage_alter_success" type="redirectAction">
+				coursepage_list.action?course.id=${coursePage.course.id}
+			</result>
+		</action>
+		<action name="coursePageStuff_delete"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursePageStuff_delete">
+			<result name="coursepage_alterInit" type="redirectAction">
+				coursepage_alterInit.action?coursePage.id=${coursePage.id}
+			</result>
+		</action>
+		<action name="course_preview"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_preview">
+			<result name="course_preview_biaozhun"
+				type="redirectAction">
+				course_preview_biaozhun?course.id=${course.id}
+			</result>
+			<result name="course_preview_waibu">
+				admin/course/coursemake/course_preview_waibu.jsp
+			</result>
+			<result name="course_preview_zhuhewaibu">
+				admin/course/coursemake/course_preview_zhuhewaibu.jsp
+			</result>
+			<result name="course_preview_danyisp">
+				admin/course/coursemake/course_preview_danyisp.jsp
+			</result>
+			<result name="course_preview_tbkt">
+				admin/course/coursemake/course_preview_tbkt.jsp
+			</result>
+			<result name="course_preview_scorm" type="redirectAction">
+				course_preview_scorm?course.id=${course.id}
+			</result>
+		</action>
+		<action name="course_preview_scorm"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_preview_scorm">
+			<result name="course_preview_scorm">admin/course/coursemake/course_preview_scorm.jsp</result>
+		</action>
+		<action name="course_preview_zhuhewaibu"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_preview_zhuhewaibu">
+			<result name="course_preview_zhuhewaibu_page">
+				admin/course/coursemake/course_preview_zhuhewaibu_page.jsp
+			</result>
+		</action>
+		<action name="course_preview_biaozhun"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_preview_biaozhun">
+			<result name="course_preview_biaozhun_twspjy">
+				admin/course/coursemake/course_preview_biaozhun_twspjy.jsp
+			</result>
+			<result name="course_preview_biaozhun_csp">
+				admin/course/coursemake/course_preview_biaozhun_csp.jsp
+			</result>
+			<result name="course_preview_biaozhun_wb">
+				admin/course/coursemake/course_preview_biaozhun_wb.jsp
+			</result>
+		</action>
+		<!-- 章节预览 -->
+		<action name="coursepage_preview" class="com.sopia.courseman.action.CourseMakeAction" method="coursepage_preview">
+			<result name="coursePage_preview_tongbu">
+				admin/course/coursemake/coursepage_preview_tongbu.jsp
+			</result>
+			<result name="coursePage_preview_biaozhun" type="redirectAction">
+				coursePage_preview_biaozhun.action?coursePage.id=${coursePage.id}
+			</result>
+		</action>
+		
+		<action name="coursePage_preview_biaozhun"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="coursePage_preview_biaozhun">
+			<result name="course_preview_biaozhun_twspjy">
+				admin/course/coursemake/course_preview_biaozhun_twspjy.jsp
+			</result>
+			<result name="course_preview_biaozhun_csp">
+				admin/course/coursemake/coursepage_preview_biaozhun_csp.jsp
+			</result>
+			<result name="course_preview_biaozhun_wb">
+				admin/course/coursemake/course_preview_biaozhun_wb.jsp
+			</result>
+		</action>
+		<!-- 我的课 -->
+		<action name="mytbcourses"
+			class="com.sopia.courseman.action.CourseAction"
+			method="mytbcourses">
+			<result name="mytbcourses">
+				admin/course/course_mytbcourses_List.jsp
+			</result>
+		</action>
+		<!-- 上课 -->
+		<action name="mytbcourse_Into"
+			class="com.sopia.courseman.action.CourseAction"
+			method="mytbcourse_Into">
+			<result name="mytbcourse_Into">
+				elopenm/intoRoom.jsp
+			</result>
+		</action>
+		<!-- 课程管理 -->
+		<action name="coursetype_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_list">
+			<result name="coursetype_list">
+				admin/course/coursetype_list.jsp
+			</result>
+		</action>
+		<!-- 课程复制 -->
+		<action name="course_copy"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_copy">
+			<result name="course_copy" type="redirectAction">
+				course_alterInit?course.id=${course.id}
+			</result>
+		</action>
+		<action name="coursetype_addInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_addInit">
+			<result name="coursetype_add">
+				admin/course/coursetype_add.jsp
+			</result>
+		</action>
+		<action name="coursetype_add"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_add">
+			<!-- <result name="coursetype_add_success">
+				admin/course/coursetype_add_success.jsp
+			</result> -->
+			<result name="coursetype_add_success" type="redirectAction">
+				coursetype_view.action?ctype.id=${ctype.id}
+			</result>
+		</action>
+		<action name="coursetype_deleteInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_deleteInit">
+			<result name="coursetype_delete">
+				admin/course/coursetype_delete.jsp
+			</result>
+		</action>
+
+		<action name="coursetype_delete"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_delete">
+			<result name="coursetype_delete_success">
+				admin/course/coursetype_delete_success.jsp
+			</result>
+		</action>
+		<action name="coursetype_view"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_view">
+			<result name="coursetype_view">
+				admin/course/coursetype_view.jsp
+			</result>
+		</action>
+		<action name="coursetype_alterInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_alterInit">
+			<result name="coursetype_alter">
+				admin/course/coursetype_alter.jsp
+			</result>
+		</action>
+		<action name="coursetype_delete_user"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_delete_user">
+		</action>
+		<action name="coursetype_alter"
+			class="com.sopia.courseman.action.CourseAction"
+			method="coursetype_alter">
+			<!-- <result name="coursetype_alter_success">
+				admin/course/coursetype_alter_success.jsp
+			</result> -->
+			<result name="coursetype_alter_success" type="redirectAction">
+				coursetype_view.action?ctype.id=${ctype.id}
+			</result>
+		</action>
+		<action name="course_hotsetInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_hotsetInit">
+			<result name="course_hotset">
+				admin/course/course_hotsetInit.jsp
+			</result>
+		</action>
+		<action name="study_course_delete_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="study_course_delete_list">
+			<result name="study_course_delete_list">
+				admin/course/study_course_delete_list.jsp
+			</result>
+		</action>
+		<action name="study_course_delete_op"
+			class="com.sopia.courseman.action.CourseAction"
+			method="study_course_delete_op">
+			<result name="study_course_delete_list"
+				type="redirectAction">
+				study_course_delete_list?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="study_course_delete_unop"
+			class="com.sopia.courseman.action.CourseAction"
+			method="study_course_delete_unop">
+			<result name="study_course_delete_list"
+				type="redirectAction">
+				study_course_delete_list?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+
+		<action name="course_hotsetlist"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_hotsetlist">
+			<result name="course_hotsetlist">
+				admin/course/course_hotsetlist.jsp
+			</result>
+		</action>
+		<action name="course_hotset"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_hotset">
+			<result name="course_hotsetlist" type="redirectAction">
+				course_hotsetlist?course.name=${course.name}&amp;course_sourse=${course_sourse}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+
+
+		</action>
+		<!-- 多媒体管理 -->
+		<action name="multi-media_addInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_addInit">
+			<result name="course_add">
+				admin/course/multi-media_add.jsp
+			</result>
+		</action>
+		<action name="multi-media_alterInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_alterInit">
+			<result name="course_alter">
+				admin/course/coursemake/multi-media_alter.jsp
+			</result>
+		</action>
+		<action name="mymulti-media_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="myCourse_list">
+			<result name="myCourse_list">
+				admin/course/multi-media_mylist.jsp
+			</result>
+		</action>
+		<!-- 课程组合搜索 -->
+		<action name="combinationSearchCourseInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="combinationSearchCourseInit">
+			<result name="combinationSearchCourse">
+				admin/course/combinationSearchCourse.jsp
+			</result>
+		</action>
+		<action name="combinationSearchCourselist"
+			class="com.sopia.courseman.action.CourseAction"
+			method="combinationSearchCourselist">
+			<result name="combinationSearchCourselist">
+				admin/course/combinationSearchCourselist.jsp  
+			</result>
+		</action>
+		<!-- 课程管理 -->
+		<action name="course_addInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_addInit">
+			<result name="course_add">
+				admin/course/course_add.jsp
+			</result>
+		</action>
+		<action name="course_sh_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_sh_list">
+			<result name="course_sh_list">
+				admin/course/course_sh_list.jsp
+			</result>
+		</action>
+		<action name="course_primash_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_primash_list">
+			<result name="course_primash_list">
+				admin/course/course_primash_list.jsp
+			</result>
+		</action>
+		<action name="course_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_list">
+			<result name="course_list">
+				admin/course/course_list.jsp
+			</result>
+		</action>
+		<action name="course_sh"
+			class="com.sopia.courseman.action.CourseAction" method="course_sh">
+			<result name="course_assignList2" type="redirectAction">
+				course_assignList2
+			</result>
+			<result name="course_sh_list" type="redirectAction">
+				course_sh_list
+			</result>
+			<result name="course_primash_list" type="redirectAction">
+				course_primash_list
+			</result>
+			<result name="myCourse_list" type="redirectAction">
+				myCourse_list
+			</result>
+			<result name="course_alter_sh_list" type="redirectAction">
+				course_alter_sh_list
+			</result>
+			<result name="course_alter_list" type="redirectAction">
+				course_alter_list
+			</result>
+			<result name="course_applyDelete_list" type="redirectAction">
+				course_applyDelete_list
+			</result>
+			<result name="course_delete_list" type="redirectAction">
+				course_delete_list
+			</result>
+			<result name="combinationSearchCourselist" type="redirectAction">
+				combinationSearchCourselist?str=combinationSearchCourse&amp;course.status=-1&amp;course.ctype.id=1
+			</result>
+		</action>
+		<action name="course_alter_sh_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_alter_sh_list">
+			<result name="course_alter_sh_list">
+				admin/course/course_alter_sh_list.jsp
+			</result>
+		</action>
+		<action name="course_applyDelete_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_applyDelete_list">
+			<result name="course_applyDelete_list">
+				admin/course/course_applyDelete_list.jsp
+			</result>
+		</action>
+		<action name="course_alter_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_alter_list">
+			<result name="course_alter_list">
+				admin/course/course_alter_list.jsp
+			</result>
+		</action>
+		<action name="course_audit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_audit">
+			<result name="course_audit">
+				admin/course/coursemake/course_audit.jsp
+			</result>
+			<result name="course_audit_success">
+				admin/course/coursemake/course_audit_success.jsp
+			</result>
+			<result name="course_audit_H">
+				admin/course/coursemake/course_audit_H.jsp
+			</result>
+		</action>
+		<action name="course_audit_reply"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_audit_reply">
+			<result name="course_audit_reply">
+				admin/course/coursemake/course_audit_reply_success.jsp
+			</result>
+		</action>
+		<action name="course_alter_sh"
+			class="com.sopia.courseman.action.CourseAction" method="course_alter_sh">
+			<result name="course_alter_sh" type="redirectAction">
+				course_alter_sh_list
+			</result>
+		</action>
+		<action name="course_add"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_add">
+			<result name="course_add_success">
+				admin/course/course_add_success.jsp
+			</result>
+			<result name="course_add_failure">
+				admin/course/course_add_failure.jsp
+			</result>
+			<result name="course_list" type="redirectAction">
+				course_list
+			</result>
+			<result name="course_view" type="redirectAction">
+				course_view.action?course.id=${course.id}
+			</result>
+		</action>
+		<action name="myCourse_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="myCourse_list">
+			<result name="myCourse_list">
+				admin/course/course_mylist.jsp
+			</result>
+		</action>
+		<action name="myCoursemake_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="myCoursemake_list">
+			<result name="myCoursemake_list">
+				admin/course/coursemake_mylist.jsp
+			</result>
+
+
+		</action>
+		<action name="course_assignInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assignInit">
+			<result name="course_assign">
+				admin/course/course_assign.jsp
+			</result>
+
+
+		</action>
+		<action name="course_assignList"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assignList">
+			<result name="course_assignList">
+				admin/course/course_assignList.jsp
+			</result> 
+		</action>
+		<action name="course_assignList2"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assignList2">
+			<result name="course_assignList2">
+				admin/course/course_assignList2.jsp
+			</result> 
+		</action>
+		<action name="course_assigntoUsersInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assigntoUsersInit">
+			<result name="course_assigntoUsers">
+				admin/course/course_assigntoUsers.jsp
+			</result>
+            <result name="course_newassigntoUsers">
+				admin/course/course_listAssignedUser.jsp
+			</result> 
+		</action>
+		<action name="course_assigntoUsers2Init"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assigntoUsers2Init">
+			<result name="course_assigntoUsers2">
+				admin/course/course_assigntoUsers2.jsp
+			</result>
+            <result name="course_newassigntoUsers2">
+				admin/course/course_listAssignedUser2.jsp
+			</result> 
+		</action>
+		<action name="course_newassigntoUsers"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_newassigntoUsers">
+            <result name="course_newassigntoUsers">
+				admin/course/course_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="course_newassigntoUsers2"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_newassigntoUsers2">
+            <result name="course_newassigntoUsers2">
+				admin/course/course_listAssignedUser2.jsp
+			</result>
+		</action>
+		<action name="course_allassigntoUsers"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_allassigntoUsers">
+            <result name="course_newassigntoUsers">
+				admin/course/course_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="course_newunassigntoUsers"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_newunassigntoUsers">
+            <result name="course_newassigntoUsers">
+				admin/course/course_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="course_assigntoUsers"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assigntoUsers">
+			<result name="course_assigntoUsers" type="redirectAction">
+				course_assigntoUsersInit?course.id=${course.id}
+			</result>
+
+		</action>
+		<action name="course_unassigntoUsers"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_unassigntoUsers">
+			<result name="course_unassigntoUsers"
+				type="redirectAction">
+				course_assigntoUsersInit?course.id=${course.id}
+			</result>
+		</action>
+		<action name="course_assigntoDepsInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assigntoDepsInit">
+			<result name="course_assigntoDeps">
+				admin/course/course_assigntoDeps.jsp
+			</result>
+		</action>
+		<action name="course_assigntoDeps2Init"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assigntoDeps2Init">
+			<result name="course_assigntoDeps2">
+				admin/course/course_assigntoDeps2.jsp
+			</result>
+		</action>
+		<action name="course_assigntoDeps"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_assigntoDeps">
+			<result name="course_assigntoDeps" type="redirectAction">
+				course_assigntoDepsInit?course.id=${course.id}
+			</result>
+		</action>
+		<action name="course_unassigntoDeps"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_unassigntoDeps">
+			<result name="course_assigntoDeps" type="redirectAction">
+				course_assigntoDepsInit?course.id=${course.id}
+			</result>
+		</action>
+		<action name="course_unassigntoDeps2"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_unassigntoDeps2">
+			<result name="course_assigntoDeps2" type="redirectAction">
+				course_assigntoDepsInit?course.id=${course.id}
+			</result>
+		</action>
+		<action name="course_selectlist"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_selectlist">
+			<result name="course_selectlist">
+				admin/course/course_selectlist.jsp
+			</result>
+		</action>
+		<action name="setSelectedCoruse"
+			class="com.sopia.courseman.action.CourseAction"
+			method="setSelectedCoruse">
+			<result name="course_selectlist">
+				admin/course/course_selectlist.jsp
+			</result>
+		</action>
+		<action name="course_deleteInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_deleteInit">
+			<result name="course_delete">
+				admin/course/course_delete.jsp
+			</result>
+		</action>
+		<action name="course_del"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_del">
+			<result type="redirectAction" name="course_list">
+				course_list.action
+			</result>
+		</action>
+		<action name="course_delete"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_delete">
+			<result name="course_delete_success">
+				admin/course/course_delete_success.jsp
+			</result>
+		</action>
+		<action name="course_delete_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_delete_list">
+			<result name="course_delete_list">
+				admin/course/course_deleteOp_List.jsp
+			</result>
+		</action>
+		<action name="course_deleteOp"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_deleteOp">
+			<result name="course_deleteOp_success">
+				admin/course/course_deleteOp_success.jsp
+			</result>
+		</action>
+		<action name="course_view"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_view">
+			<result name="course_view">
+				admin/course/coursemake/course_view.jsp
+			</result>
+		</action>
+		<action name="course_alterInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_alterInit">
+			<result name="course_alter">
+				admin/course/coursemake/course_alter.jsp
+			</result>
+		</action>
+		<action name="course_alter"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_alter">
+			<result name="course_alter_success">
+				admin/course/coursemake/course_alter_success.jsp
+			</result> 
+			<result name="course_view" type="redirectAction">
+				course_view.action?course.id=${course.id}
+			</result>
+		</action>   
+		<action name="practicepaper_list"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_list">
+			<result name="practicepaper_list">
+				admin/course/coursemake/practicepaper_list.jsp
+			</result> 
+		</action>
+		<!-- 章节编辑考场 -->
+		<action name="practicepaper_list_room"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_list_room">
+			<result name="practicepaper_list_room">
+				admin/course/coursemake/practicepaper_list_room.jsp
+			</result> 
+		</action>
+		<action name="course_applyfor_alterInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_applyfor_alterInit">
+			<result name="course_applyfor_alterInit">
+				admin/course/coursemake/course_applyfor_alter_success.jsp
+			</result> 
+		</action> 
+		<action name="parcticepaper_upsort"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="parcticepaper_upsort">
+			<result name="practicepaper_list" type="redirectAction">
+				practicepaper_list${params}
+			</result>
+
+
+		</action>
+		<action name="parcticepaper_downsort"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="parcticepaper_downsort">
+			<result name="practicepaper_list" type="redirectAction">
+				practicepaper_list${params}
+			</result>
+
+
+
+		</action>
+		<action name="practicepaper_addInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_addInit">
+			<result name="practicepaper_add">
+				admin/course/coursemake/practicepaper_add.jsp
+			</result>
+
+
+
+		</action>
+		<action name="practicepaper_add_view"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_add_view">
+			<result name="practicepaper_add_view">
+				admin/course/coursemake/practicepaper_add_view.jsp
+			</result>
+
+
+
+		</action>
+		<action name="practicepaper_addSearchInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_addSearchInit">
+			<result name="practicepaper_addInit">
+				admin/course/coursemake/practicepaper_addInit.jsp
+			</result>
+			<result name="practicepaper_addInit2">
+				admin/course/coursemake/practicepaper_add2.jsp
+			</result>
+
+		</action>
+		<action name="practicepaper_addSearchInit_room"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_addSearchInit_room">
+			<result name="practicepaper_addSearchInit_room">
+				admin/course/coursemake/practicepaper_addSearchInit_room.jsp
+			</result>
+		</action>
+		<action name="practicepaper_addSearch_room"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_addSearch_room">
+			<result name="practicepaper_addSearch_room" type="redirectAction">
+				practicepaper_list_room.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+
+		</action>
+		<action name="cpage_choose_examroom"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="cpage_choose_examroom">
+			<result name="cpage_choose_examroom" type="redirectAction">
+				practicepaper_list_room.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+
+		</action>
+		<action name="practicepaper_alterSearchInit_room"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_alterSearchInit_room">
+			<result name="practicepaper_alterSearchInit_room">
+				admin/course/coursemake/practicepaper_alterSearchInit_room.jsp
+			</result>
+		</action>
+		<action name="practicepaper_alterSearch_room"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_alterSearch_room">
+			<result name="practicepaper_alterSearch_room" type="redirectAction">
+				practicepaper_list_room.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="practicepaper_delete"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_delete">
+			<result name="practicepaper_delete">
+				admin/course/coursemake/practicepaper_list.jsp
+			</result>
+			<result name="practicepaper_list" type="redirectAction">
+				practicepaper_list.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+
+		</action>
+		<action name="practicepaper_add"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_add">
+			<result name="practicepaper_add">
+				admin/course/coursemake/practicepaper_add.jsp
+			</result>
+		</action>
+		<action name="practicepaper_add2"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="practicepaper_add2">
+			<result name="practicepaper_add2" type="redirectAction">
+				practicepaper_list.action?pracPaper.course.id=${pracPaper.course.id}&amp;pracPaper.cpage.id=${pracPaper.cpage.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="simexampaper_add_view"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simexampaper_add_view">
+			<result name="simexampaper_add_view">
+				admin/course/coursemake/simexampaper_add_view.jsp
+			</result>
+		</action>
+		<action name="simexampaper_list"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simexampaper_list">
+			<result name="simexampaper_list">
+				admin/course/coursemake/simexampaper_list.jsp
+			</result>
+		</action>
+		<action name="simexampaper_addInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simexampaper_addInit">
+			<result name="simexampaper_add">
+				admin/course/coursemake/simexampaper_add.jsp
+			</result>
+		</action>
+		<action name="simexampaper_addSearchInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simexampaper_addSearchInit">
+			<result name="simexampaper_addInit">
+				admin/course/coursemake/simexampaper_addInit.jsp
+			</result>
+		</action>
+		<action name="simexampaper_delete"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simexampaper_delete">
+			<result name="simexampaper_delete">
+				admin/course/coursemake/simexampaper_list.jsp
+			</result> 
+		</action>
+
+		<action name="simexampaper_add"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simexampaper_add">
+			<result name="simexampaper_add">
+				admin/course/coursemake/simexampaper_add.jsp
+			</result>
+
+
+
+		</action>
+		<action name="quizpaper_list"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="quizpaper_list">
+			<result name="quizpaper_list">
+				admin/course/coursemake/quizpaper_list.jsp
+			</result>
+
+
+
+		</action>
+		<action name="quizpaper_addInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="quizpaper_addInit">
+			<result name="quizpaper_add">
+				admin/course/coursemake/quizpaper_add.jsp
+			</result>
+
+
+
+		</action>
+		<action name="quizpaper_addSearchInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="quizpaper_addSearchInit">
+			<result name="quizpaper_addInit">
+				admin/course/coursemake/quizpaper_addInit.jsp
+			</result>
+
+
+
+		</action>
+		<action name="quizpaper_delete"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="quizpaper_delete">
+			<result name="quizpaper_delete">
+				admin/course/coursemake/quizpaper_list.jsp
+			</result>
+
+
+
+		</action>
+		<action name="quizpaper_add"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="quizpaper_add">
+			<result name="quizpaper_add">
+				admin/course/coursemake/quizpaper_add.jsp
+			</result>
+		</action>
+		<action name="simpaperreadlist"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simpaperreadlist">
+			<result name="simpaperreadlist">
+				admin/course/coursemake/simpaperreadlist.jsp
+			</result>
+		</action>
+		<action name="reSimquiz"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="reSimquiz">
+			<result name="simpaperreadlist" type="redirectAction">
+				simpaperreadlist?pN=${pN}&amp;pS=${pS}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="simpaperreadInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simpaperreadInit">
+			<result name="simpaperreadInit">
+				admin/course/coursemake/simpaperread.jsp
+			</result>
+		</action>
+		<action name="simpaperread_submit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="simpaperread_submit">
+			<result name="simpaperread_submit">success.jsp</result>
+		</action>
+		<action name="course_notequeryInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_notequeryInit">
+			<result name="course_notequeryInit">
+				admin/course/course_notequeryInit.jsp
+			</result>
+		</action>
+		<action name="course_notequerylist"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_notequerylist">
+			<result name="course_notequerylist">
+				admin/course/course_notequerylist.jsp
+			</result>
+		</action>
+		<action name="course_notequery"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_notequery">
+			<result name="course_notequery">
+				admin/course/course_notequery.jsp
+			</result>
+		</action>
+		<action name="course_notequeryView"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_notequeryView">
+			<result name="course_notequeryView">
+				admin/course/course_notequeryView.jsp
+			</result>
+		</action>
+		<action name="ctype_useraddInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="ctype_useraddInit">
+			<result name="ctype_useradd">
+				admin/course/ctype_useradd.jsp
+			</result>
+		</action>
+		<action name="ctype_useradd"
+			class="com.sopia.courseman.action.CourseAction"
+			method="ctype_useradd">
+			<result name="ctype_useradd" type="redirectAction">
+				coursetype_view?ctype.id=${ctype.id}
+			</result>
+		</action>
+		<action name="ctype_userdelete"
+			class="com.sopia.courseman.action.CourseAction"
+			method="ctype_userdelete">
+			<result name="ctype_userdelete" type="redirectAction">
+				coursetype_view?ctype.id=${ctype.id}
+			</result>
+		</action>
+		<action name="course_openInit"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_openInit">
+			<result name="course_open">
+				admin/course/coursemake/course_open.jsp
+			</result>
+		</action>
+		<action name="course_open"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_open">
+			<result name="course_open">
+				admin/course/coursemake/course_open.jsp
+			</result>
+			<result name="course_open_succ">
+				admin/course/coursemake/course_open_succ.jsp
+			</result>
+			<result type="redirectAction" name="course_list">
+				course_list.action
+			</result>
+			<result type="redirectAction" name="course_view">
+				course_view.action?course.id=${course.id}
+			</result>
+		</action>
+		<action name="cpage_view"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="cpage_view">
+			<result name="cpage_view">
+				admin/course/coursemake/cpage_view.jsp
+			</result>
+		</action>
+		<!-- -scorm课件管理 -->
+		<action name="course_scormaddinit"
+			class="com.sopia.courseman.action.ScormAction"
+			method="course_scormaddinit">
+			<result name="course_scormadd">
+				admin/course/scorm/course_scormadd.jsp
+			</result>
+		</action>
+		<action name="course_scormadd"
+			class="com.sopia.courseman.action.ScormAction"
+			method="course_scormadd">
+			<result name="course_list" type="redirectAction">
+				course_list
+			</result>
+		</action>
+		
+		<action name="course_BasedbList"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_BasedbList">
+			<result name="course_BasedbList">
+				admin/duman/course_BasedbList.jsp
+			</result>
+		</action> 
+		<action name="course_addBasedbInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_addBasedbInit">
+			<result name="course_addBasedbInit">
+				admin/duman/course_addBasedb.jsp
+			</result>
+		</action>
+		<action name="course_addBasedb"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_addBasedb">
+			<result name="course_BasedbList" type="redirectAction">
+				course_BasedbList.action?baseCourse.typeid=${baseCourse.typeid}
+			</result>
+		</action>
+		<action name="course_alterBasedbInit"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_alterBasedbInit">
+			<result name="course_alterBasedb">
+				admin/duman/course_alterBasedb.jsp
+			</result>
+		</action>
+		<action name="course_alterBasedb"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_alterBasedb">
+			<result name="course_BasedbList" type="redirectAction">
+				course_BasedbList.action?baseCourse.typeid=${baseCourse.typeid}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="course_BasedbDel"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_BasedbDel">
+			<result name="course_BasedbList" type="redirectAction">
+				course_BasedbList.action?baseCourse.typeid=${baseCourse.typeid}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action> 
+		<action name="course_BasedbSort"
+			class="com.sopia.courseman.action.CourseAction"
+			method="course_BasedbSort">
+			<result name="course_BasedbList" type="redirectAction">
+				course_BasedbList.action?baseCourse.typeid=${baseCourse.typeid}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="course_scorm_catalog"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_scorm_catalog">
+			<result name="course_scorm_catalog">admin/course/coursemake/course_scorm_catalog.jsp</result>
+		</action>
+		<action name="course_scorm_study"
+			class="com.sopia.courseman.action.CourseMakeAction"
+			method="course_scorm_study">
+			<result name="course_scorm_study">admin/course/coursemake/course_scorm_study.jsp</result>
+		    <result name="course_scorm_catalog">admin/course/coursemake/course_scorm_study_catalog.jsp</result>
+		</action>
+		<!-- -scorm课件管理 -->
+		
+		<action name="mess_getCourseInfoJson"
+			class="com.sopia.courseman.action.CourseAction"
+			method="mess_getCourseInfoJson">
+		</action>
+		<!-- wsj1218修改 我添加的课程 -->
+		<action name="myAddCourse"
+			class="com.sopia.courseman.action.CourseAction"
+			method="myAddCourse">
+			<result name="myAddCourse">
+				admin/course/myAddCourse.jsp
+			</result>
+		</action>
+	</package>
+</struts>

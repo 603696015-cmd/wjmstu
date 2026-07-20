@@ -1,0 +1,192 @@
+BODY {
+	COLOR: #2b2b2b;
+	LINE-HEIGHT: 20px;
+	font-size:12px;
+}
+
+A:link {
+	COLOR: #010195; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #010195; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.linkNl A:link {
+	COLOR: #0147a6; TEXT-DECORATION: none
+}
+.linkNl A:visited {
+	COLOR: #0147a6; TEXT-DECORATION: none
+}
+.linkNl A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.linkNl A:active {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.list_009 LI {
+	PADDING-LEFT: 1em; BACKGROUND: url(../images/knowledge/unfcn_mj_01.gif) no-repeat 6px 50%
+}
+A.linkRed:link {
+	COLOR: #a20000
+}
+A.linkRed:visited {
+	COLOR: #a20000
+}
+A.linkRed:hover {
+	COLOR: #c00
+}
+A.linkBlack:link {
+	COLOR: #000
+}
+A.linkBlack:visited {
+	COLOR: #000
+}
+
+.tablinkwhite {
+	color: #FFFFFF;
+}
+.tablinkwhite A:hover {
+	COLOR: #FFFFFF
+}
+.tablinkwhite A:link {
+	COLOR: #FFFFFF
+}
+.tablinkwhite A:visited {
+	COLOR: #FFFFFF
+}
+.tablinkwhite A:hover {
+	COLOR: #FFFFFF
+}
+
+.tabtoplkblue {
+	color: #343434;
+	margin-top: 10px;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #999999;
+	padding-left: 20px;
+}
+.tabtoplkblue A:hover {
+	COLOR: #0000FF
+}
+.tabtoplkblue A:link {
+	COLOR: #0000FF
+}
+.tabtoplkblue A:visited {
+	COLOR: #0000FF
+}
+.tabtoplkblue A:hover {
+	COLOR: #0000FF
+}
+.tabrl {
+	BORDER-RIGHT: #e1e1e1 1px solid; BORDER-LEFT: #e1e1e1 1px solid; 
+}
+.tabrlb {
+	BORDER-RIGHT: #e1e1e1 1px solid; BORDER-LEFT: #e1e1e1 1px solid; BORDER-BOTTOM: #e1e1e1 1px solid; 
+}
+.tab4 {
+	border: 1px solid #e1e1e1;
+	margin-top: 8px;
+	color: #FF0000;
+}
+.tab42 {
+	border: 1px solid #e1e1e1;
+	color: #000000;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tabb {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #e1e1e1;
+}
+.tabb2 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e1e1e1;
+}
+.tabpad {
+	padding: 5px;
+}
+.tabtop {
+	margin-top: 8px;
+	background-image: url(../images/knowledge/2j_book_lmy_020.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	color: #0000FF;
+}.tabtopbk {
+	margin-top: 8px;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #fed883;
+}
+.titz {
+	PADDING-RIGHT: 10px;
+	BORDER-TOP: #fed883 2px solid;
+	PADDING-LEFT: 10px;
+	BACKGROUND: #fffbe8;
+	MARGIN-BOTTOM: 10px;
+	PADDING-BOTTOM: 0px;
+	LINE-HEIGHT: 45px;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #fed883 1px solid;
+	HEIGHT: 45px;
+	TEXT-ALIGN: right;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.titz2 {
+	BORDER-TOP: #fed883 2px solid;
+	BACKGROUND: #fffbe8;
+	PADDING-BOTTOM: 0px;
+	LINE-HEIGHT: 45px;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #fed883 1px solid;
+	HEIGHT: 45px;
+	TEXT-ALIGN: right;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.tdbg {
+	background-image: url(../images/knowledge/2j_book_lmy_020.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	padding: 5px;
+}
+.tdbg2 {
+	background-image: url(../images/knowledge/2j_book_lmy_020.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+.tdpad {
+	padding: 10px;
+	line-height: 30px;
+}
+.tdpad2 {
+	padding: 10px;
+}
+.dh1 {
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 5px;
+}
+.dibaikuang{
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #0000FF;
+	margin-top: 8px;
+}
+.h30{
+	font-size:12px;
+	line-height: 24px;
+	color: #FF0000;
+}

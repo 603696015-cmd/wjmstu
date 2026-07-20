@@ -1,0 +1,76 @@
+CREATE OR REPLACE PROCEDURE updateTrainStatus
+as
+v_num number;
+BEGIN
+
+  --循环身份证号
+  for B in (select pxzk_sfzh from pxzk )
+  loop
+    begin
+      select count(shenfenzheng) into v_num from eluser  where lower(shenfenzheng)=lower(b.pxzk_sfzh);
+      if v_num >0 then
+         update pxzk p set p.pxzk_sfzc='是'
+         where pxzk_sfzh=b.pxzk_sfzh;
+      else
+         update pxzk p set p.pxzk_sfzc='否'
+         where pxzk_sfzh=b.pxzk_sfzh;
+      end if;
+    exception
+      when others then
+           null;
+    end;
+
+    begin
+     select count(sp.status) into v_num from shoppingcart sp,eluser eu where eu.id=sp.userid(+) and eu.shenfenzheng=b.pxzk_sfzh;
+      if v_num >0 then
+         update pxzk p set p.pxzk_sfjf='是'
+         where pxzk_sfzh=b.pxzk_sfzh;
+      else
+         update pxzk p set p.pxzk_sfjf='否'
+         where pxzk_sfzh=b.pxzk_sfzh;
+      end if;
+    exception
+      when others then
+           null;
+    end;
+
+    begin
+     select count(sc.certificateno) into v_num from study_class sc,eluser eu where eu.id=sc.userid(+) and eu.shenfenzheng=b.pxzk_sfzh and   trunc(add_months(sc.applydate, 12) - sysdate) > 0 ;
+      if v_num>0 then
+         update pxzk p set p.pxzk_sfyz='是'
+         where pxzk_sfzh=b.pxzk_sfzh;
+      else
+         update pxzk p set p.pxzk_sfyz='否'
+         where pxzk_sfzh=b.pxzk_sfzh;
+      end if;
+    exception
+      when others then
+           null;
+    end;
+
+    begin
+      select count(sc.applydate) into v_num from study_class sc,eluser eu where eu.id=sc.userid(+) and sc.certificateno is not null and eu.shenfenzheng=b.pxzk_sfzh;
+      if v_num >0 then
+         update pxzk p set p.pxzk_zsksrq= (select sc.applydate from study_class sc,eluser eu where eu.id=sc.userid(+) and sc.certificateno is not null and eu.shenfenzheng=b.pxzk_sfzh
+      )
+         where pxzk_sfzh=b.pxzk_sfzh;
+
+      end if;
+    exception
+      when others then
+           null;
+    end;
+
+    begin
+      select count(sc.applydate) into v_num from study_class sc,eluser eu where eu.id=sc.userid(+) and sc.certificateno is not null and eu.shenfenzheng=b.pxzk_sfzh;
+      if v_num>0 then
+         update pxzk p set p.pxzk_zsjsrj= add_months((select sc.applydate from study_class sc,eluser eu where eu.id=sc.userid(+) and sc.certificateno is not null and eu.shenfenzheng=b.pxzk_sfzh),12)
+         where pxzk_sfzh=b.pxzk_sfzh;
+
+      end if;
+    exception
+      when others then
+           null;
+    end;
+  end loop;
+END updateTrainStatus;

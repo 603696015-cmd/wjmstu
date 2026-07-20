@@ -1,0 +1,57 @@
+.btn-js {
+	BACKGROUND-IMAGE: url(../img/add_120201.gif); BACKGROUND-REPEAT: no-repeat
+}
+.btn-jsLong {
+	BACKGROUND-IMAGE: url(../img/add_120201.gif); BACKGROUND-REPEAT: no-repeat
+}
+.btn-jsLong-disable {
+	BACKGROUND-IMAGE: url(../img/add_120201.gif); BACKGROUND-REPEAT: no-repeat
+}
+.txt-12 {
+	FONT-SIZE: 12px
+}
+.txt-14 {
+	FONT-SIZE: 14px
+}
+.btn-js {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; WIDTH: 78px; DISPLAY: block; BACKGROUND-POSITION: 0px 0px; HEIGHT: 24px; COLOR: #333; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.btn-js:hover {
+	BACKGROUND-POSITION: 0px -36px; TEXT-DECORATION: none
+}
+.btn-jsLong {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; WIDTH: 130px; DISPLAY: block; BACKGROUND-POSITION: -108px 0px; HEIGHT: 24px; COLOR: #333; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.btn-jsLong:hover {
+	BACKGROUND-POSITION: -108px -36px; TEXT-DECORATION: none
+}
+.btn-jsLong:active {
+	BACKGROUND-POSITION: -108px -72px; TEXT-DECORATION: none
+}
+.btn-jsLong-disable {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; WIDTH: 130px; DISPLAY: block; BACKGROUND-POSITION: -108px -108px; HEIGHT: 24px; COLOR: #777; FONT-SIZE: 12px; CURSOR: default
+}
+.g-dialogBox-ft INPUT.btn-wbig {
+	WIDTH: 82px; BACKGROUND-POSITION: -87px -36px
+}
+.recommend .ico-free {
+	MARGIN-LEFT: 5px
+}
+.chose-list .numID-guide {
+	PADDING-BOTTOM: 14px; BACKGROUND-COLOR: #ffffe1; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; COLOR: #333; PADDING-TOP: 14px
+}
+.disableMask {
+	DISPLAY: none
+}
+.g-collection-item-disable .disableMask {
+	Z-INDEX: 5; POSITION: absolute; FILTER: alpha(Opacity=50); BACKGROUND-COLOR: #fff; WIDTH: 956px; DISPLAY: block; HEIGHT: 67px; TOP: 0px; LEFT: 0px; opacity: 0.5; -moz-opacity: 0.5
+}
+.numID-reg {
+	
+}
+.numID-reg .btline {
+	BORDER-BOTTOM: #cbcbcb 1px solid; MARGIN: 0px 190px 30px; HEIGHT: 20px
+}
+.collection-main .goBack {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 20px; MARGIN-TOP: -30px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; FONT-SIZE: 12px; PADDING-TOP: 0px
+}

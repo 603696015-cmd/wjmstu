@@ -1,0 +1,189 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DIV {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TEXTAREA {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	HEIGHT: 100%
+}
+BODY {
+	FONT-SIZE: 13px; COLOR: black; LINE-HEIGHT: 150%; HEIGHT: 100%; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+UL LI {
+	LIST-STYLE-TYPE: none
+}
+A:link {
+	COLOR: #077ac7; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #077ac7; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: none
+}
+SELECT {
+	BORDER-RIGHT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-BOTTOM: #dcdcdc 1px solid
+}
+TEXTAREA {
+	BORDER-RIGHT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-BOTTOM: #dcdcdc 1px solid
+}
+INPUT {
+	BORDER-RIGHT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-BOTTOM: #dcdcdc 1px solid
+}
+.textarea_style {
+	BORDER-RIGHT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-BOTTOM: #dcdcdc 1px solid
+}
+.button_style {
+	BORDER-RIGHT: #9cc9e0 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #9cc9e0 1px solid; PADDING-LEFT: 4px; BACKGROUND: url(../images/btn_bg.gif) repeat-x 0px 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #9cc9e0 1px solid; CURSOR: pointer; COLOR: #077ac7; LINE-HEIGHT: 21px; PADDING-TOP: 0px; BORDER-BOTTOM: #9cc9e0 1px solid; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.file_style {
+	BORDER-RIGHT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #dcdcdc 1px solid; HEIGHT: 20px
+}
+.button_box {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+#header {
+	BACKGROUND-POSITION: 0px 0px; BACKGROUND-IMAGE: url(../images/bg_admin.jpg); WIDTH: 100%; BORDER-BOTTOM: #069 5px solid; BACKGROUND-REPEAT: repeat-x; HEIGHT: 58px
+}
+.logo {
+	CLEAR: none; BORDER-RIGHT: medium none; BORDER-TOP: medium none; FLOAT: left; MARGIN: 0px; BORDER-LEFT: medium none; WIDTH: 220px; BORDER-BOTTOM: medium none
+}
+#menu {
+	CLEAR: both; MARGIN-TOP: 8px; FONT-SIZE: 12px; FLOAT: right; MARGIN-BOTTOM: 0px; MARGIN-RIGHT: 5px
+}
+#menu LI {
+	FLOAT: left; LIST-STYLE-TYPE: none; TEXT-ALIGN: center
+}
+#menu LI A {
+	BACKGROUND: url(../images/menu_l.gif) no-repeat 0px 0px; FLOAT: left; CURSOR: pointer; COLOR: #fff; LINE-HEIGHT: 29px; HEIGHT: 29px
+}
+#menu LI A SPAN {
+	PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 10px; BACKGROUND: url(../images/menu_r.gif) no-repeat right 0px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#menu LI A:hover {
+	BACKGROUND: url(../images/menu_l.gif) no-repeat 0px -29px; COLOR: #ff0; LINE-HEIGHT: 29px; HEIGHT: 29px
+}
+.menu LI A.selected {
+	BACKGROUND: url(../images/menu_l.gif) no-repeat 0px -29px; COLOR: #ff0; LINE-HEIGHT: 29px; HEIGHT: 29px
+}
+#menu LI A:hover SPAN {
+	PADDING-RIGHT: 10px; BACKGROUND-POSITION: right -29px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; COLOR: #ff0; PADDING-TOP: 0px
+}
+.menu LI A.selected SPAN {
+	PADDING-RIGHT: 10px; BACKGROUND-POSITION: right -29px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; COLOR: #ff0; PADDING-TOP: 0px
+}
+#menu LI .on {
+	BACKGROUND: url(../images/menu_l.gif) no-repeat 0px -29px; COLOR: #fff; LINE-HEIGHT: 29px; HEIGHT: 29px
+}
+#menu LI .on SPAN {
+	PADDING-RIGHT: 10px; BACKGROUND-POSITION: right -29px; PADDING-LEFT: 10px; FONT-WEIGHT: bolder; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px
+}
+H4 {
+	BORDER-RIGHT: #069 1px solid; BACKGROUND-POSITION: 0px -58px; BORDER-TOP: #069 0px solid; MARGIN-TOP: 0px; FONT-SIZE: 14px; BACKGROUND-IMAGE: url(../images/bg_admin.jpg); BORDER-LEFT: #069 0px solid; WIDTH: 219px; COLOR: #fff; LINE-HEIGHT: 28px; BORDER-BOTTOM: #069 1px solid; BACKGROUND-REPEAT: repeat-x; HEIGHT: 28px; TEXT-ALIGN: left
+}
+H4 SPAN {
+	PADDING-LEFT: 30px; BACKGROUND: url(../images/bg_arrow.gif) no-repeat 5px -1px
+}
+H4 IMG {
+	CURSOR: pointer
+}
+#info_bar {
+	CLEAR: both; MARGIN-TOP: 5px; FONT-SIZE: 12px; FLOAT: right; COLOR: #fff; MARGIN-RIGHT: 5px
+}
+A.orange:link {
+	COLOR: orange
+}
+A.orange:visited {
+	COLOR: orange
+}
+A.orange:hover {
+	COLOR: orange
+}
+A.orange:active {
+	COLOR: orange
+}
+A.white:link {
+	COLOR: #fff
+}
+A.white:visited {
+	COLOR: #fff
+}
+A.white:hover {
+	COLOR: #fff
+}
+A.white:active {
+	COLOR: #fff
+}

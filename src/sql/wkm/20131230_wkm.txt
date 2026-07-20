@@ -1,0 +1,50 @@
+-- Create table
+create table PXZK 
+(
+  ID          NUMBER not null,
+  STATUS      NUMBER default 0,
+  PRINCIPALID NUMBER,
+  USERID      NUMBER,
+  AUDITUSERID NUMBER default 0,
+  AUDITTIME   TIMESTAMP(6),
+  AUDITDEPID  NUMBER default 0,
+  MARK        VARCHAR2(400),
+  PXZK_XM     VARCHAR2(500),
+  PXZK_XB     VARCHAR2(500),
+  PXZK_XL     VARCHAR2(500),
+  PXZK_SFZH   VARCHAR2(500),
+  PXZK_DWMC   VARCHAR2(500),
+  PXZK_SJH    VARCHAR2(500),
+  PXZK_KSCJ   FLOAT,
+  PXZK_PXZSH  VARCHAR2(500),
+  PXZK_KSRJ   DATE,
+  PXZK_SFZC   VARCHAR2(500),
+  PXZK_SFJF   VARCHAR2(500),
+  PXZK_SFYZ   VARCHAR2(500),
+  PXZK_ZSKSRQ DATE,
+  PXZK_ZSJSRJ DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table PXZK
+  add constraint PXZK primary key (ID)
+  disable;
+
+  
+  
+  
+  
+  前台采用自定义模块添加，模块名称培训状况，字段参考上述字段
+  
+  
+  ------------------------------------------------------------------------------------------------
+  在基础数据管理中在职务，职级，工种三个字段添加除外字段；

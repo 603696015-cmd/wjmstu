@@ -1,0 +1,162 @@
+BODY {
+	BACKGROUND-POSITION: center 50%; FONT-SIZE: 9pt; MARGIN: 0px; COLOR: #454545; FONT-FAMILY: Arial, Helvetica, sans-serif, Verdana,宋体; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.d_default {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #fff 1px solid
+}
+.d_on {
+	BORDER-RIGHT: #ffcc00 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffcc00 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; BORDER-LEFT: #ffcc00 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ffcc00 1px solid; BACKGROUND-COLOR: #ffffdd
+}
+.d_ok {
+	BORDER-RIGHT: #00be00 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #00be00 1px solid; PADDING-LEFT: 24px; BACKGROUND: url(ok.gif) #e6ffe6 no-repeat 4px 50%; PADDING-BOTTOM: 2px; BORDER-LEFT: #00be00 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #00be00 1px solid
+}
+.d_err {
+	BORDER-RIGHT: #ff3300 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ff3300 1px solid; PADDING-LEFT: 24px; BACKGROUND: url(error.gif) #fff1e4 no-repeat 4px 50%; PADDING-BOTTOM: 2px; BORDER-LEFT: #ff3300 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ff3300 1px solid
+}
+TD {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: 宋体
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: #333333; BACKGROUND-COLOR: #fbfbf4
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+.textarea {
+	FONT-SIZE: 12px
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #333333; TEXT-DECORATION: underline
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.font1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ff5500; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #aa3300; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #333333; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font4 {
+	FONT-SIZE: 14px; COLOR: #333333; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0066cc; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font6 {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font10 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: green; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font11 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: blue; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+.font13 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: red; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+A.link3:link {
+	FONT-SIZE: 12px; COLOR: #0044dd; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A.link3:visited {
+	FONT-SIZE: 12px; COLOR: #0044dd; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A.link3:hover {
+	FONT-SIZE: 12px; COLOR: #ff5500; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+A.teamname:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #ff6600; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+A.teamname:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #ff6600; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+A.teamname:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #666600; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+DIV.RegLicense {
+	BORDER-RIGHT: #666666 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #666666 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; OVERFLOW: auto; BORDER-LEFT: #666666 1px solid; WIDTH: 98%; COLOR: #000000; PADDING-TOP: 5px; BORDER-BOTTOM: #666666 1px solid; HEIGHT: 380px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.Title {
+	FONT-WEIGHT: bold; BACKGROUND: url(Mbg.png) #eef8fe
+}
+.tdbg {
+	BACKGROUND: #ffffff
+}
+.tdbgmouseover {
+	BACKGROUND: #ffffff
+}
+.border {
+	BORDER-RIGHT: #efefef 1px solid; BORDER-TOP: #efefef 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #efefef 1px solid; BORDER-BOTTOM: #efefef 1px solid
+}
+.textbox {
+	BORDER-RIGHT: #a7a7a7 1px solid; BORDER-TOP: #a7a7a7 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #a7a7a7 1px solid; BORDER-BOTTOM: #a7a7a7 1px solid; HEIGHT: 23px
+}
+.Button {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BACKGROUND: url(button_bg.gif); BORDER-LEFT: #cccccc 1px solid; CURSOR: pointer; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 23px
+}
+.button_on {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BACKGROUND: url(button_on.gif); BORDER-LEFT: #cccccc 1px solid; CURSOR: pointer; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 23px
+}
+.nav {
+	MARGIN: 0px; WIDTH: 611px; HEIGHT: 35px
+}
+.nav LI {
+	FLOAT: left; WIDTH: 90px; LINE-HEIGHT: 35px; HEIGHT: 35px; TEXT-ALIGN: center
+}
+.nav LI A {
+	DISPLAY: block; BACKGROUND: url(nav_main_bg.jpg) no-repeat left top; WIDTH: 90px; COLOR: #ffffff; LETTER-SPACING: 2px; HEIGHT: 35px; TEXT-DECORATION: none
+}
+.nav LI A:hover {
+	FONT-WEIGHT: bold; BACKGROUND: url(nav_main_bg.jpg) no-repeat left -35px; COLOR: #000000; TEXT-DECORATION: none
+}
+.nav LI A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.nav .home {
+	WIDTH: 71px
+}
+.nav .home A {
+	DISPLAY: block; BACKGROUND: url(nav_home_bg.jpg) no-repeat left top; WIDTH: 71px; HEIGHT: 35px; TEXT-DECORATION: none
+}
+.nav .home A:hover {
+	BACKGROUND: url(nav_home_bg.jpg) no-repeat left -35px; TEXT-DECORATION: none
+}
+.top_nav2 {
+	
+}
+.top_nav2 .home A {
+	FONT-WEIGHT: bold; BACKGROUND: url(nav_home_bg.jpg) no-repeat left -35px; COLOR: #000000
+}
+.top_nav2 TABLE {
+	Z-INDEX: 80; LEFT: -1px; POSITION: absolute; TOP: 25px; BORDER-COLLAPSE: collapse
+}
+.top_nav2 LI {
+	Z-INDEX: 100; FLOAT: left; POSITION: relative
+}
+.top_nav2 UL UL {
+	RIGHT: -37px; VISIBILITY: hidden; WIDTH: 130px; POSITION: absolute; HEIGHT: 0px
+}
+HTML .top_nav2 UL UL {
+	RIGHT: -120px; VISIBILITY: hidden; WIDTH: 130px; POSITION: absolute; TOP: 10px; HEIGHT: 0px
+}
+.top_nav2 UL LI:hover UL {
+	VISIBILITY: visible
+}
+.top_nav2 UL A:hover UL {
+	VISIBILITY: visible
+}
+.regtype {
+	BORDER-RIGHT: #84bceb 1px solid; BORDER-TOP: #84bceb 1px solid; OVERFLOW-Y: auto; Z-INDEX: 100; BACKGROUND: #d6ebf9; LEFT: 120px; MARGIN-BOTTOM: 0px; BORDER-LEFT: #84bceb 1px solid; WIDTH: 320px; BORDER-BOTTOM: #84bceb 1px solid; POSITION: absolute; TOP: 115px; HEIGHT: 300px; TEXT-ALIGN: center
+}

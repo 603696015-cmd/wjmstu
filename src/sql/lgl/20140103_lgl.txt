@@ -1,0 +1,148 @@
+-- Create table 简历表
+create table resume
+(
+  id              NUMBER not null,
+  userid             NUMBER
+)
+
+
+-- Create sequence 
+create sequence resume_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_resume  before insert on resume for each row
+when (new.id is null)
+begin
+     select resume_sequence.nextval into :new.id from dual;
+end;
+
+---------------------------------------------------------------------------
+
+-- Create table    简历投递表
+create table resumedeliver
+(
+  id              NUMBER not null,
+  resumeid    NUMBER,
+  positionid   NUMBER,
+  time           date
+)
+
+
+-- Create sequence 
+create sequence resumedeliver_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_resumedeliver  before insert on resumedeliver for each row
+when (new.id is null)
+begin
+     select resumedeliver_sequence.nextval into :new.id from dual;
+end;
+
+-----------------------------------------------------------------------
+
+-- Create table 职位表
+create table position
+(
+  id              		NUMBER not null,
+  userid             NUMBER,
+  postypeid   		NUMBER,
+  createtime  		date
+)
+
+
+-- Create sequence 
+create sequence position_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_position  before insert on position for each row
+when (new.id is null)
+begin
+     select position_sequence.nextval into :new.id from dual;
+end;
+
+-----------------------------------------------------------------------
+
+-- Create table 企业简历表
+create table companyresume
+(
+  id              		NUMBER not null,
+  userid             NUMBER,
+  downloadtime  		date,
+  resumeid        number,
+  postypeid       number
+)
+
+
+-- Create sequence 
+create sequence companyresume_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_companyresume  before insert on companyresume for each row
+when (new.id is null)
+begin
+     select companyresume_sequence.nextval into :new.id from dual;
+end;
+
+-----------------------------------------------------------------------
+
+-- Create table 职位类别表
+create table positiontype
+(
+  id              		NUMBER not null
+  
+)
+
+
+-- Create sequence 
+create sequence positiontype_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_positiontype  before insert on positiontype for each row
+when (new.id is null)
+begin
+     select positiontype_sequence.nextval into :new.id from dual;
+end;
+
+-------------------------------------------------------------------------
+
+-- Create table 简历文件夹表
+create table resumefile
+(
+  id              NUMBER not null,
+  resumeid             NUMBER
+)
+
+
+-- Create sequence 
+create sequence resumefile_sequence
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1073
+increment by 1
+cache 10;
+
+create or replace trigger auto_id_resumefile  before insert on resumefile for each row
+when (new.id is null)
+begin
+     select resumefile_sequence.nextval into :new.id from dual;
+end;

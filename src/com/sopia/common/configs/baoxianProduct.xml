@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="baoxianProduct" extends="elearning">
+		 <action name="baoxianProductList"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="baoxianProductList">
+			<result name="success">
+				pfms/baoxianProductList.jsp
+			</result>
+		</action>
+		
+		<action name="baoxianAllProductList"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="baoxianAllProductList">
+			<result name="success">
+				pfms/baoxianAllProductList.jsp
+			</result>
+		</action>
+		
+		<action name="shenheBaoxianProduct"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="shenheBaoxianProduct">
+			<result name="success" type="redirectAction">
+				baoxianAllProductList.action
+			</result>
+		</action>
+		
+		<action name="shenheBaoxianProductNotPass"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="shenheBaoxianProductNotPass">
+			<result name="success" type="redirectAction">
+				baoxianAllProductList.action
+			</result>
+		</action>
+		
+		
+		
+		<action name="updateBaoxianProductView"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="updateBaoxianProductView">
+			<result name="success">
+				pfms/updateBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		<action name="updateBaoxianProduct"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="updateBaoxianProduct">
+			<result name="updateBaoxianProduct_success_in_List" type="redirectAction">
+				baoxianProductList.action
+			</result>
+			<result name="updateBaoxianProduct_success_in_allList" type="redirectAction">
+				baoxianAllProductList.action
+			</result>
+			
+		</action>
+		
+		<action name="deleteBaoxianProduct"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="deleteBaoxianProduct">
+			<result name="baoxianProductList" type="redirectAction">
+				baoxianProductList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="allBaoxianProductList" type="redirectAction">
+				baoxianAllProductList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		
+		<action name="addBaoxianProductView"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="addBaoxianProductView">
+			<result name="success">
+				pfms/addBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		<action name="addBaoxianProduct"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="addBaoxianProduct">
+			<result name="success" type="redirectAction">
+				baoxianProductList.action?product_sh=${product_sh}
+			</result>
+			<result name="failure">
+				pfms/addBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		<action name="showBaoxianProduct"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="updateBaoxianProductView">
+			<result name="success">
+				pfms/showBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="getBaoxianProductTypeList"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="getBaoxianProductTypeList">
+			<result name="baoxianProductTypeList">
+				pfms/baoxianProductTypeList.jsp
+			</result>
+		</action>
+		
+		
+		<action name="baoxianProductType_view"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="baoxianProductType_view">
+			<result name="baoxianProductType_view">
+				pfms/baoxianProductType_view.jsp
+			</result>
+		</action>
+		
+		
+		<action name="baoxianProductType_addInit"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="baoxianProductType_addInit">
+			<result name="baoxianProductType_add">
+				pfms/baoxianProductType_add.jsp
+			</result>
+		</action>
+		
+		<action name="baoxianProductType_add"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="baoxianProductType_add">
+			<result name="baoxianProductType_add_success">
+				pfms/baoxianProductType_add_success.jsp
+			</result>
+		</action>
+		
+		<action name="baoxianProductType_alterInit"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="baoxianProductType_alterInit">
+			<result name="baoxianProductType_alter">
+				pfms/baoxianProductType_alter.jsp
+			</result>
+		</action>
+		
+		<action name="baoxianProductType_alter"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="baoxianProductType_alter">
+			<result name="baoxianProductType_alter_success">
+				pfms/baoxianProductType_alter_success.jsp
+			</result>
+		</action>
+		
+		
+		<action name="baoxianProductType_delete"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="baoxianProductType_delete">
+			<result name="baoxianProductType_list" type="redirectAction">
+				getBaoxianProductTypeList.action
+			</result>
+		</action>
+		
+		<action name="searchLanmu_baoxianProductInit"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="searchLanmu_baoxianProductInit">
+			<result name="searchLanmu_baoxianProductInit">
+				pfms/searchBaoxianLanmuDio.jsp
+			</result>
+		</action>
+		
+		<action name="insuranceCategoriesTree"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="insuranceCategoriesTree">
+			<result name="insuranceCategoriesTree">
+				pfms/insuranceCategoriesTree.jsp
+			</result>
+		</action>
+		
+		<action name="insuranceCategory_view"
+			class="com.sopia.pfms.action.BaoxianProductAction"
+			method="insuranceCategory_view">
+		</action>
+		
+		<action name="checkShztBeforeDelete_baoxianProduct"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="checkShztBeforeDelete_baoxianProduct">
+		</action>
+		
+		<action name="change_tuijian"
+				 class="com.sopia.pfms.action.BaoxianProductAction"
+				 method="change_tuijian">
+			<result name="success" type="redirectAction">
+				baoxianAllProductList.action
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

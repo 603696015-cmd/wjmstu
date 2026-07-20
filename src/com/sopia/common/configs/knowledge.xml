@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_knowledge" extends="elearning">
+		<action name="knowledgetype_list"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_list">
+			<result name="knowledgetype_list">
+				admin/knowledge/knowledgetype_list.jsp
+			</result>
+		</action>
+		<action name="knowledgetype_addInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_addInit">
+			<result name="knowledgetype_add">
+				admin/knowledge/knowledgetype_add.jsp
+			</result>
+		</action>
+		<action name="knowledgetype_add"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_add">
+			<result name="knowledgetype_add_success">
+				admin/knowledge/knowledgetype_add_success.jsp
+			</result>
+		</action>
+		
+		<action name="knowledgetype_alterInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_alterInit">
+			<result name="knowledgetype_alter">
+				admin/knowledge/knowledgetype_alter.jsp
+			</result>
+		</action>
+		<action name="knowledgetype_delete_user"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_delete_user">
+		</action>
+		<action name="knowledgetype_alter"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_alter">
+			<result name="knowledgetype_alter_success">
+				admin/knowledge/knowledgetype_alter_success.jsp
+			</result>
+		</action>
+		<action name="myknowledge_list"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="myknowledge_list">
+			<result name="myknowledge_list">
+				admin/knowledge/myknowledge_list.jsp
+			</result>
+		</action>
+		<action name="knowledgeAssignDep"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgeAssignDep">
+			<result name="knowledgeAssignDep">
+				admin/knowledge/knowledgeAssignDep.jsp
+			</result>
+		</action>
+		<action name="knowledgeAssignDepDo"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgeAssignDepDo">
+			<result name="knowledgeAssignDep" type="redirectAction">
+				knowledgeAssignDep.action?updateStatus=1
+			</result>
+		</action>
+		<action name="knowledge_shlist"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_shlist">
+			<result name="knowledge_shlist">
+				admin/knowledge/knowledge_shlist.jsp
+			</result>
+		</action>
+		<action name="knowledge_del"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_del">
+			<result name="knowledge_shlist" type="redirectAction">
+				knowledge_shlist?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="knowledge_sh"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_sh">
+			<result name="knowledge_shlist" type="redirectAction">
+				knowledge_shlist?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="knowledge_mshlist"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_mshlist">
+			<result name="knowledge_mshlist">
+				admin/knowledge/knowledge_mshlist.jsp
+			</result>
+		</action>
+		<action name="knowledge_msh"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_msh">
+			<result name="knowledge_mshlist" type="redirectAction">
+				knowledge_mshlist?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="knowledge_addInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_addInit">
+			<result name="knowledge_add">
+				admin/knowledge/knowledge_add.jsp
+			</result>
+		</action>
+		<action name="knowledge_add"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_add">
+			<result name="knowledge_add_success">
+				admin/knowledge/knowledge_add_success.jsp
+			</result>
+			<result name="knowledge_add">
+				admin/knowledge/knowledge_add.jsp
+			</result>
+		</action>
+		<action name="knowledge_alterInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_alterInit">
+			<result name="knowledge_alter">
+				admin/knowledge/knowledge_alter.jsp
+			</result>
+		</action>
+		<action name="deleteKstuff"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="deleteKstuff">
+			<result name="deleteKstuff" type="redirectAction">
+				knowledge_alterInit?knowledge.id=${knowledge.id}
+			</result>
+		</action>
+		<action name="download_kstuff"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="download_kstuff">
+			<result type="stream" name="download_kstuff">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename=${filename}
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		<action name="knowledge_alter"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_alter">
+			<result name="knowledge_alter_success">
+				admin/knowledge/knowledge_alter_success.jsp
+			</result>
+
+
+
+
+		</action>
+		<action name="knowledge_delete"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_delete">
+			<result name="knowledge_delete">
+				admin/knowledge/myknowledge_list.jsp
+			</result>
+		</action>
+		<action name="knowledge_listInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_listInit">
+			<result name="knowledge_listInit">
+				admin/knowledge/knowledge_listInit.jsp
+			</result>
+		</action>
+
+		<action name="knowledge_list"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_list">
+			<result name="knowledge_list">
+				admin/knowledge/knowledge_list.jsp
+			</result>
+		</action>
+		<action name="knowledge_delete_man"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_delete_man">
+			<result name="knowledge_list" type="redirectAction">
+				knowledge_list.action
+			</result>
+		</action>
+		<action name="knowledge_hotset"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledge_hotset">
+			<result name="knowledge_list" type="redirectAction">
+				knowledge_list.action
+			</result>
+		</action>
+		<!-- 组合搜索 -->
+		<action name="combinationSearch"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="combinationSearch">
+			<result name="combinationSearch">
+				admin/knowledge/combinationSearch.jsp
+			</result>
+		</action>
+		<!-- 知识类别组合搜索 -->
+		<action name="combinationSearchknowledgeInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="combinationSearchknowledgeInit">
+			<result name="combinationSearchknowledgeInit">
+				admin/knowledge/combinationSearchknowledge.jsp
+			</result>
+		</action>
+		<action name="knowledgetype_deleteInit"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_deleteInit">
+			<result name="knowledgetype_delete">
+				admin/knowledge/knowledgetype_delete.jsp
+			</result>
+		</action>
+		<!-- 知识类别删除 -->
+		<action name="knowledgetype_delete"
+			class="com.sopia.knowledgeman.action.KnowledgeAction"
+			method="knowledgetype_delete">
+			<result name="knowledgetype_delete_success">
+				admin/knowledge/knowledgetype_delete_success.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

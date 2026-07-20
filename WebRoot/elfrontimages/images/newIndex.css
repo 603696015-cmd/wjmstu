@@ -1,0 +1,212 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+<!--
+/* 全局 */
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li, body, form, input, button, img, cite, strong, em, table, td, th { padding:0; margin:0;}
+h1, h4, h6 { font-size:14px;}
+h1{margin-top:10px;margin-left:34px!important;margin-left:17px;}
+h4{ color:#fff;margin-top:7px;margin-left:20px;}
+h6{ color:#6F6F71;margin-top:7px;margin-left:20px;}
+h3{ font-size:18px; text-align:center;margin:5px 0;}
+h3 a:link {color: #CC0000;text-decoration: none;}
+h3 a:visited {text-decoration: none;color: #CC0000;}
+h3 a:hover {text-decoration: underline;color: #CC0000;}
+h3 a:active {text-decoration: none;color: #CC0000;}
+h5{ font-size:12px; font-weight:bold; text-align:center}
+img, table, td, th { border:0;margin:0px;}
+ul, ol { list-style-type:none;}
+body {font:12px   "宋体";margin: 0px;}
+body,td,th {color: #6F6F71;}
+a:link {color: #6F6F71;text-decoration: none;}
+a:visited {text-decoration: none;color: #6F6F71;}
+a:hover {text-decoration: underline;color: #CC0000;}
+a:active {text-decoration: none;color: #6F6F71;}
+.left{ float:left}
+.right{ float:right}
+.zd-jl{width:100%;margin-top:9px;}
+.clear{ clear:both;}
+.zd-jlw{width:9px!important;width:0px;}
+/* 全局end */
+
+.zd-container{ width:966px; margin:0 auto;}
+
+/* 头部 */
+.zd-toploginbar{ height:31px; width:966px; background:url(http://www.sopia.com.cn/imgs/zd-index-pic07.gif) no-repeat; }
+.zd-toploginbar span{ font-size:12px; color:#fff; text-align:right; float:right;margin-top:8px;}
+.zd-toploginbar span input{ width:80px;height:10px;}
+.zd-toploginbar span a:link {color: #fff;text-decoration: none;}
+.zd-toploginbar span a:visited {text-decoration: none;color: #fff;}
+.zd-toploginbar span a:hover {text-decoration: underline;color: #CC0000;}
+.zd-toploginbar span a:active {text-decoration: none;color: #fff;}
+.zd-topnav1{ width:966px;height:101px;}
+.zd-toplogo{ width:157px;height:81px;padding:20px 0 0 8px; float:left;}
+.zd-topnav1-1{ width:770px;height:101px; float:right}
+.zd-topnav1-1 p{ font-size:12px;margin:10px 0 0 0;margin-left:15px;}
+.zd-topnav1-1 p a{margin-right:2px;padding:4px;}
+.zd-topnav1-1 a:link {color: #6F6F71;text-decoration: none;}
+.zd-topnav1-1 a:visited {text-decoration: none;color: #6F6F71;}
+.zd-topnav1-1 a:hover { background:#9AA7AD;text-decoration: underline;color: #fff;}
+.zd-topnav1-1 a:active {text-decoration: none;color: #6F6F71;}
+.zd-topnav1-2{margin-left:10px;margin-top:10px;}
+.zd-topnav1-2 span{margin:0 6px!important;margin:0 5px;}
+.zd-topnav1-3{ font-size:14px;height:200px;width:200px; }
+.zd-topline{ height:4px; background-color:#619CA0; color:#619CA0;margin:0; margin-top:0px!important;margin-top:0px;}
+.zd-topnav2{height:58px; background:repeat-x url(http://www.sopia.com.cn/imgs/zd-index-bg02.gif);margin-top:0!important;margin-top:-13px; }
+.zd-topnav2-1{ float:left; width:722px;}
+.zd-topguangg01{ float:right}
+.zd-topnav2-1 p{ font-size:12px;margin:10px 0 0 0;margin-left:30px;}
+.zd-topnav2-1 p a{margin-right:8px;}
+/* 头部end */
+
+/* 搜索 */
+.zd-search{ border:1pt solid #B3B5B4; background:repeat-x url(http://www.sopia.com.cn/imgs/zd-index-bg04.gif);height:66px;width:964px;margin-top:9px!important;margin-top:5px;}
+.zd-search-main{border:1pt solid #CFE1E2;height:64px;width:962px; background:no-repeat url(http://www.sopia.com.cn/imgs/zd-index-bg03.gif); }
+.zd-search-left{margin-left:40px!important;margin-left:20px;margin-top:10px;width:510px; height:50px; float:left;}
+.zd-search-l-s{ height:26px;width:400px; border:1pt solid #fff; background:url(http://www.sopia.com.cn/imgs/zd-index-bg05.gif) repeat-x;}
+.zd-search-l-se img{margin-left:10px;margin-top:0px!important;margin-top:1px;}
+.zd-search-left p,.zd-search-right p{margin-top:5px; color:#fff}
+.zd-search-left p a,.zd-search-right p a{margin-right:5px;}
+.zd-search-left p a:link,.zd-search-right p a:link {color: #fff;text-decoration: none;}
+.zd-search-left p a:visited,.zd-search-right p a:visited {text-decoration: none;color: #fff;}
+.zd-search-left p a:hover,.zd-search-right p a:hover {text-decoration: underline;color: #CC0000;}
+.zd-search-left p a:active,.zd-search-right p a:active {text-decoration: none;color: #fff;}
+.zd-search-right{ width:400px; height:60px; float:right;}
+.zd-search-main1{width:966px;margin:5px 0; background: url(http://www.sopia.com.cn/imgs/zd-searchbg01.gif);height:68px;}
+.zd-search-left1{width:400px;margin:8px 0 0 10px; float:left}
+.zd-searchhots p{ font-size:14px; color:#085F6A;margin:2px 0 5px 0;}
+.zd-search-l-s1{width:342px;height:20px; border:1pt solid #888; float:left;}
+.zd-search-l-se1{ float:left;}
+.zd-search-mid1{ float:left;}
+.zd-search-right1{width:300px;margin:3px 5px 0 3px; float:right;}
+.zd-searchhots{height:25px; background:url(http://www.sopia.com.cn/imgs/zd-searchbg04.gif) no-repeat;}
+/* 搜索end */
+
+/* 首屏两个半通栏 */
+.zd-banner1{ width:100%; height:101px;margin-top:9px; }
+.zd-banner1-l{ float:left;}
+.zd-banner1-r{ float:right;border:1pt solid #DEDEDE;}
+/* 首屏两个半通栏end */
+
+/* 通告*/
+.msg{width:966px;margin-top:9px; height:25px; } 
+/* 通告end*/
+
+/* 焦点图*/
+.zd-jw{width:348px; height:233px; float:left;}
+.zd-jd{ width:348px; height:225px;padding-top:8px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg06.gif) no-repeat right top;}
+.zd-jdk{width:335px;height:216px;border:1pt solid #DEDEDE;}
+/* 焦点图end*/
+
+/* 文字链*/
+.zd-wzl{ height:53px; width:346px;border:1pt solid #DEDEDE;margin-top:9px;}
+.zd-wzl p{margin:10px 0 0 10px;}
+.zd-wzl p a{margin-right:5px;}
+/* 文字链end*/
+
+/* 新闻*/
+.zd-news{width:325px;height:295px;margin-left:5px; float:left; background:url(http://www.sopia.com.cn/imgs/zd-index-bg07.gif) no-repeat top;}
+.zd-newsk{width:322px;height:275px;margin-left:5px; float:left;padding:10px 5px; background:url(http://www.sopia.com.cn/imgs/zd-index-bg07.gif) no-repeat bottom;}
+.zd-newsk p{ font-size:14px;margin:7px 0;}
+/* 新闻end*/
+
+/* 专题区*/
+.zd-column-zt{width:256px; height:295px; float:right;margin-right:2px;}
+/* 专题区end*/
+
+/* cio*/
+.zd-cio{width:346px; float:left; height:304px;border:1pt solid #DEDEDE; background:url(http://www.sopia.com.cn/imgs/zd-index-bg08.gif) no-repeat;}
+h2{ font-size:16px; color:#fff; font-weight:bold;margin-top:5px;margin-left:20px;margin-bottom:1px!important;margin-bottom:3px;}
+/* cio end*/
+
+/* 资讯中心*/
+.zd-news1{ width:342px; height:306px;float:left;margin-left:7px;}
+/* 资讯中心end*/
+
+/* 右侧广告1*/
+.zd-banner2{ float:right; width:256px; background-color:#3300CC; height:76px;border:1pt solid #DEDEDE;margin:0;padding:0px;}
+.zd-banner2 img {margin-bottom:-3px;}
+/* 右侧广告1end*/
+
+/* 支点访谈*/
+.zd-visi{ width:256px; height:217px;border:1pt solid #DEDEDE; float:right;margin-top:9px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg09.gif) no-repeat;}
+/* 支点访谈end*/
+
+/* 通栏1*/
+.zd-banner3{ width:964px; height:90px;border:1pt solid #DEDEDE;margin-top:9px;}
+/* 通栏1end*/
+
+/* 行业信息化 方案案例*/
+.zd-hyxxh,.zd-fanal{width:698px;height:325px;border:1pt solid #DEDEDE; float:left;background:url(http://www.sopia.com.cn/imgs/zd-index-bg10.gif) repeat-x;margin-bottom:0px!important;margin-bottom:0px;}
+.zd-hyxxh-left,.zd-fanal-left{width:340px; float:left;margin-top:20px;}
+.zd-hyxxh-sidebar,.zd-fanal-sidebar{margin-bottom:10px; width:348px; height:33px; background-color:#CC6600; background:url(http://www.sopia.com.cn/imgs/zd-index-bg11.gif) no-repeat 20px top;}
+.zd-hyxxh-left p,.zd-hyxxh-right p,.zd-fanal-left p,.zd-fanal-right p{ font-size:14px;margin:4px 0 7px 10px;}
+.zd-hyxxh-right,.zd-fanal-right{ float:right;width:350px;height:270px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg12.gif) no-repeat;margin-top:20px; }
+/* 行业信息化 方案案例end*/
+
+/*资料室*/
+.zd-ziliao{width:256px; height:155px;border:1pt solid #DEDEDE;margin-top:8px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg09.gif) no-repeat;}
+/*资料室end*/
+
+/* saas*/
+.zd-saas{ width:258px; height:328px; float:right;}
+/* saas end*/
+
+/* 两个半通栏*/
+.zd-banner4{width:966px;}
+.zd-banner4-left{ width:698px;height:90px;border:1pt solid #DEDEDE; float:left;}
+.zd-banner4-right{ width:256px;height:90px;border:1pt solid #DEDEDE; float:right;}
+/* 两个半通栏 end*/
+
+/*广告*/
+.zd-index-ad-banner-left
+{
+width:698px; float:left;
+}
+.zd-index-ad-banner-right
+{
+width:268px;  float:right; text-align:right;
+}
+/* 广告 end*/
+
+/* IT基础*/
+.zd-it{width:698px;height:369px;border:1pt solid #DEDEDE; float:left;background:url(http://www.sopia.com.cn/imgs/zd-index-bg10.gif) repeat-x;}
+.zd-it p{ font-size:14px;padding:4px 0;}
+.zd-it-left{ float:left;width:240px;margin-top:10px;padding:10px 0 0 15px}
+.zd-it-pick{width:218px; text-align:center; height:172px;padding:2px;border:1pt solid #DEDEDE;margin-bottom:14px; }
+.zd-it-mid{width:262px; float:left;margin-top:5px;}
+.zd-it-right{width:175px; float:right;margin-top:15px; text-align:left;}
+.zd-it-pickr{text-align:center; width:142px;height:110px;padding:2px;border:1pt solid #DEDEDE;}
+.zd-it-pickr p{text-align:center}
+/* IT基础 end*/
+
+/* IT商情*/
+.zd-shangqing{width:256px;height:369px;border:1pt solid #DEDEDE; float:right;background:url(http://www.sopia.com.cn/imgs/zd-index-bg09.gif) no-repeat;}
+/* IT商情 end*/
+
+/* 网络与安全*/
+.zd-websafe,.zd-ityunwei{ float:left;width:344px;height:239px;border:1pt solid #DEDEDE;background:url(http://www.sopia.com.cn/imgs/zd-index-bg10.gif) repeat-x;}
+.zd-websafe{margin-right:9px;}
+.zd-download{width:256px;height:239px;border:1pt solid #DEDEDE; float:right;background:url(http://www.sopia.com.cn/imgs/zd-index-bg10.gif) repeat-x;}
+/* 网络与安全end*/
+
+/* 互动专区*/
+.zd-bbsblog{width:964px; height:270px;border:1pt solid #DEDEDE;margin-top:9px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg10.gif) repeat-x;}
+.zd-bbsblogk{width:964px;margin-top:32px!important;margin-top:8px;}
+.zd-bbs,.zd-blog{ float:left;width:344px;height:239px;border-right:1pt solid #DEDEDE;background:url(http://www.sopia.com.cn/imgs/zd-index-bg13.gif) repeat-x;}
+.zd-blog{border-left:1pt solid #DEDEDE;}
+.zd-bbs{margin-right:9px;}
+.zd-chanage{width:256px;height:239px;border-left:1pt solid #DEDEDE; float:right;background:url(http://www.sopia.com.cn/imgs/zd-index-bg13.gif) repeat-x;}
+/* 互动专区end*/
+
+/*友情链接*/
+.zd-friendlink{width:964px; height:110px;border:1pt solid #DEDEDE;margin-top:9px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg14.gif) no-repeat 9px 9px;}
+.zd-friendlinkmain,.zd-footermain{width:800px; height:98px;float:right;padding:5px;}
+.zd-footermain{ text-align:center}
+.zd-friendlinkmain p,.zd-footer p{ line-height:25px;}
+/*友情链接end*/ 
+
+/*footer*/
+.zd-footer{width:964px; height:153px;border:1pt solid #DEDEDE;margin-top:9px;background:url(http://www.sopia.com.cn/imgs/zd-index-bg15.gif) no-repeat 9px 9px;} 
+/*footer end*/ 
+-->

@@ -1,0 +1,26 @@
+create or replace procedure getNowCourseid
+(classid_ number,userid_ number,flag_ out number)
+as
+clsid_ number;
+orderid_ number;
+process_ number;
+courseid_ number;
+cursor studycourses is
+       select cc.classid,cc.orderid,sc.process,sc.courseid from class_course cc right join study_course sc
+       on cc.classid=sc.classid  and sc.classid=classid_ and cc.courseid=sc.courseid
+       where sc.userid=userid_ and cc.classid=classid_
+       order by cc.orderid asc;
+begin
+        flag_:=0;
+        open studycourses;
+         loop
+            fetch studycourses into clsid_,orderid_,process_,courseid_ ;
+            exit when studycourses%notfound;
+            if process_<100 then
+               flag_:= courseid_;
+            else
+               flag_:= courseid_;
+            end if;
+         end loop;
+       close studycourses;
+end;

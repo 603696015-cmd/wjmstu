@@ -1,0 +1,2 @@
+
+alter table exam_room add(stuViewResult number default 1)

@@ -1,0 +1,867 @@
+.PG_TAB_BORDER {			/*TAB组件的边框风格*/
+	border-left: solid 1px #0063A6;
+	border-right: solid 1px #0063A6;
+	border-bottom: solid 1px #0063A6;
+}
+
+/************************************************************
+ *以下是Rich Client Tree的风格
+ ***********************************************************/
+.RC_TREE {
+	border: 2px, solid, gray;
+	cursor: default;
+}
+
+.RC_TREE_CELL {				/*节点的风格*/
+	font-size: 12px;
+	text-decoration: none;
+	font-family: "宋体";
+	cursor: default;
+}
+
+.RC_TREE_ACTIVENODE {		/*选中节点的风格*/
+	background-color: #C6D6DE;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #005A6B;
+	text-decoration: none;
+	cursor: default;
+}
+
+.RC_TREE_TARGETNODE {		/*拖拽节点时，目标节点的风格*/
+	background-color: #F79C18;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.RC_TREE_DRAGNODE {			/*拖拽节点时，被拖拽节点的风格*/
+	font-size: 12px;
+	border: 2px, solid, gray;
+	background-color: #F79C18;
+	color: white;
+	cursor: hand;
+}
+
+.RC_TREE_MENU {				/*右键菜单风格*/
+	cursor: default;
+	font: normal 10pt Arial, Helvetica, sans-serif;
+	position: absolute;
+	text-align: left;
+	width: 120px;
+	background-color: #FFE7C6;
+	border: 1 solid buttonface;
+	border: 2 outset buttonhighlight;
+	cursor: hand;
+	color: #000000;
+}
+
+.RC_TREE_MENUITEM {			/*右键菜单菜单项的风格*/
+	padding-left: 15px;
+	padding-right: 10px;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #000000;
+	background-color: FFE7C6;
+}
+
+/************************************************************
+ *以下是DATACELL的风格
+ ＊仿Ｃ／Ｓ风格的表－－－－jxouyang
+ ***********************************************************/
+.RC_DATACELL_TABLE {				/*Table表的风格*/
+	BORDER-RIGHT: #005A6B 1px solid;
+	BORDER-TOP: #005A6B 1px solid;
+	FONT-SIZE: 12px;
+	BORDER-LEFT: #005A6B 1px solid;
+	CURSOR: default;
+	WORD-BREAK: break-all;
+	BORDER-BOTTOM: #005A6B 1px solid;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: #FFFFFF;
+	align: center;
+	font-family: "宋体";
+	color: #0C4B7B;
+}
+
+.RC_DATACELL_HEAD {					/*Table表头的风格*/
+	background-color: #80ADBA;
+	cursor: hand;
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+
+.RC_DATACELL_BODY {					/*Table表body的风格*/
+	FONT-SIZE: 12px;
+	font-family: "宋体";
+	color: #000000;
+	text-decoration: none;
+	padding: 0px;
+	height: 20px;
+}
+
+.RC_DATACELL_ACTIVEROW {			/*被选中行的风格*/
+	background-color: #FF9966;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #000000;
+}
+
+.RC_DATAGIRD_ACTIVEROW {
+	background-color: #0A246A;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #ffffff;
+}
+
+.RC_DATACELL_NEXTROW {				/*隔行的风格*/
+	background-color: #EDEFF0;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #000000;
+}
+
+.RC_DATACELL_TEXTEDITOR {			/*编辑框的风格*/
+	text-align: center;
+	cursor: hand;
+	border: 1 solid black;
+}
+
+.RC_DATACELL_OPTIONTABLE {			/*下拉列表框中table的风格*/
+	background-color: #D4D0C8;
+	cursor: hand;
+	fontsize: 10;
+	font-family: "宋体";
+	font-size: 12px;
+	color: 0C4B7B;
+	text-decoration: none;
+}
+
+.RC_OPTIONTABLE {					/*下拉列表框的风格*/
+	background-color: #D4D0C8;
+	border: 1 solid black;
+}
+
+/*********************************************************************	
+ *  以pg_result开头的风格类为DataGrid控件所引用，也可因需要用在页面其它地方。
+ *	具体使用如下：
+ *	
+ *	表格风格：TABLE.pg_result
+ *	标题风格：TR.pg_result_title	，TD.pg_result_title
+ *	字段显示名称风格：TR.pg_result_head，TD.pg_result_head
+ *	底部翻页风格：TR.pg_result_bottom，TD.pg_result_bottom
+ *	单行结果集风格：TR.pg_result_content，TD.pg_result_content
+ *	双行结果集风格：TR.pg_result_content_，TD.pg_result_content_
+ *	鼠标所指行风格：TR.pg_onmouseover，TD.pg_onmouseover
+ ********************************************************11111111111111111***********/
+TABLE.pg_result {
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	FONT-SIZE: 10pt;
+	FONT-FAMILY: "宋体";
+	
+	border-left:1px solid #ffffff;
+    border-right:1px solid #ffffff;
+    background:#ffffff;
+}
+
+TR.pg_result_title {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 14px;
+	COLOR: #464d81;/*#fff OldCss*/
+	FONT-FAMILY: "宋体";
+	list-style-image: url('restitle-icon.gif');
+	list-style-position: inside;
+	text_align: left;
+	/*HEIGHT: 22px;
+	background-color: #005A6B;*/
+	
+	height:25px;
+  background-color:#d3e0f0;
+}
+
+TD.pg_result_title {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 14px;
+	COLOR: #464d81;/*#fff OldCss*/
+	FONT-FAMILY: "宋体";
+	/*HEIGHT: 22px;
+	background-color: #005A6B;*/
+	
+	padding-left:10px;
+	padding-top:4px;
+	height:25px;
+  background-color:#a6b7ce;
+  border-bottom:1px solid #fff;
+}
+
+TR.pg_result_head {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	text-align: center;
+	BACKGROUND: #c9dee4;/*#80ADBA;*/
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	/*text-indent: 12px;*/
+	
+	padding-top:4px;
+}
+
+TD.pg_result_head {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	text-align: center;
+	BACKGROUND: 3b2cdd5;/*#80ADBA;*/
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	
+	padding-top:3px;
+}
+
+TR.pg_result_bottom {
+	FONT-SIZE: 10pt;
+	BACKGROUND: #CBCDCE;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 25px;/*20px;*/
+	color: #303030;
+	/*text-indent: 12px;*/
+	
+	
+}
+
+TD.pg_result_bottom {
+	FONT-SIZE: 10pt;
+	BACKGROUND: #CBCDCE;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	color: #303030;
+}
+
+TR.pg_result_content {
+	FONT-SIZE: 12px;
+	BACKGROUND: #EDEFF0;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	color: #000000;
+	text-align: left;
+	text-indent: 12px;
+}
+
+TD.pg_result_content {
+	FONT-SIZE: 12px;
+	BACKGROUND: #EFEFEF;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 18px;
+	color: #000000;
+	text-align: left;
+	text-indent: 12px;
+}
+
+TR.pg_result_content_ {
+	FONT-SIZE: 12px;
+	BACKGROUND: #FFFFFF;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	color: #000000;
+	text-align: left;
+	text-indent: 12px;
+}
+
+TD.pg_result_content_ {
+	FONT-SIZE: 12px;
+    BACKGROUND :   #FFFFFF;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 18px;
+	color: #0C4B7B;
+	text-align: left;
+	text-indent: 12px;
+}
+
+TR.pg_result_divide {
+	FONT-SIZE: 10pt;
+	BACKGROUND: #ffffcc;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+}
+
+TD.pg_result_divide {
+	FONT-SIZE: 10pt;
+	BACKGROUND: #ffffcc;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+}
+
+TR.onmouseover {
+	background: #f7e5a5;/* 原始颜色 #e5fff3;*//* EOS默认颜色 #336699;*/
+	border: 1px solid #336699;
+	color: #461200; /* 原始颜色 #357d64;*//* EOS默认颜色 #fff;*/
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	HEIGHT: 20px;
+	text-align: left;
+	text-indent: 12px;
+}
+
+TD.onmouseover {
+	background: #336699;
+	border: 1px solid #336699;
+	color: #ffffff;
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	HEIGHT: 20px;
+	text-align: left;
+	text-indent: 12px;
+}
+
+/*******************************************************************************	
+ *	以pg_add开头的风格类为DataForm,QueryForm控件所引用，也可因需要用在页面其它地方。
+ *	具体使用如下：
+ *
+ *	表格风格：TABLE.pg_add
+ *	标题风格：TR.pg_add_title，TD.pg_add_title
+ *	字段显示名称风格：TR.pg_add_head，TD.pg_add_head
+ *	字段值输入控件所在行和单元格风格：TR.pg_add_content，TD.pg_add_content
+ *	表格提交控制按钮所在行和单元格风格：TR.pg_add_bottom，TD.pg_add_bottom
+ ***************************************************************************ttttttttttttt***/
+TABLE.pg_add {
+	cellspacing: 0px;
+	width: 100%;
+	BORDER-TOP: 0px none border-style;
+	FONT-SIZE: 10pt;
+	BORDER-RIGHT: 0px none;
+	BORDER-LEFT: 0px none;
+	BORDER-BOTTOM: 0px none;
+	FONT-FAMILY: "宋体";
+	
+	border-left:1px solid #ffffff;
+    border-right:1px solid #ffffff;
+    background:#ffffff;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+TR.pg_add_title {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 14px;
+	COLOR: #464d81;/*#fff OldCss*/
+	FONT-FAMILY: "宋体";
+	/*HEIGHT: 20px;
+	background-color: #005A6B; ********oldCss*/
+	text-indent: 12px;
+	
+	height:25px;
+  background-color:#d3e0f0;
+}
+
+TD.pg_add_title {
+	FONT-WEIGHT: bold;
+	font-size: 14px;
+	color: #464d81;/*#fff OldCss*/
+	font-family: "宋体";
+	/*height: 20px;
+	background-color: #005A6B;*********oldCss*/
+	text-indent: 12px;
+	
+	padding-top:4px;
+	height:25px;
+  background-color:#d3e0f0;
+  border-bottom:1px solid #fff;
+}
+
+TR.pg_add_head {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	BACKGROUND:#dddce2;/* #DADFE0*/
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	text-align: center;
+	text-decoration: none;
+}
+
+TD.pg_add_head {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	BACKGROUND: #dddce2;/* #DADFE0*/
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 22px;
+	text-align: right;
+	
+	padding-top:4px;
+	 border-bottom:1px solid #fff;
+	  border-right:1px solid #fff;
+}
+TD.pg_add_head_red {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	BACKGROUND: #ff0000;/* #DADFE0*/
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 22px;
+	text-align: right;
+	
+	padding-top:4px;
+	 border-bottom:1px solid #fff;
+	  border-right:1px solid #fff;
+}
+TD.pg_add_head_red {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	BACKGROUND: #ff0000;/* #DADFE0*/
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 22px;
+	text-align: right;
+	
+	padding-top:4px;
+	 border-bottom:1px solid #fff;
+	  border-right:1px solid #fff;
+}
+TR.pg_add_bottom {
+	FONT-SIZE: 10pt;
+	BACKGROUND: #CBCDCE;
+	FONT-FAMILY: "宋体";
+	color: #303030;
+	height: 30px;
+	
+	padding-top:10px;
+}
+
+
+
+TD.pg_add_bottom {
+	FONT-SIZE: 10pt;
+	BACKGROUND: CBCDCE;
+	FONT-FAMILY: "宋体";
+	HEIGHT: 30px;
+	color: #303030;
+	
+	padding-top:10px;
+}
+
+TR.pg_add_content {
+	FONT-SIZE: 12px;
+	BACKGROUND: #efefef;/*#EFEFEF;*/
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	color: #000000;
+	text-decoration: none;
+	
+}
+
+TD.pg_add_content {
+	FONT-SIZE: 12px;
+	BACKGROUND: #efefef;/*#EFEFEF;*/
+	FONT-FAMILY: "宋体";
+	HEIGHT: 20px;
+	color: #000000;
+	
+	border-bottom:1px solid #fff;
+	padding-left:4px;
+}
+
+INPUT.mytext {
+	BORDER-TOP-WIDTH: 1px;
+	BORDER-LEFT-WIDTH: 1px;
+	BORDER-LEFT-COLOR: 0C4B7B;
+	BORDER-BOTTOM-WIDTH: 1px;
+	BORDER-BOTTOM-COLOR: 0C4B7B;
+	BORDER-TOP-COLOR: 0C4B7B;
+	FONT-FAMILY: monospace;
+	BORDER-RIGHT-WIDTH: 1px;
+	BORDER-RIGHT-COLOR: 0C4B7B;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+
+.button {
+	BACKGROUND: #254879;
+	COLOR: #e7e7e7;
+	width: 80px;
+	HEIGHT: 20px;
+	FONT-SIZE: 9pt;
+}
+
+.date_tp {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF6600;
+	text-decoration: none;
+}
+
+.result_table {
+	background-color: #DADFE0;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #005A6B;
+	border-bottom-color: #005A6B;
+	border-left-color: #005A6B;
+	left: 10px;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	clip: rect(10px, 10px, 10px, 10px);
+	padding: 5px;
+}
+
+.date_tp {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF6600;
+	text-decoration: none;
+}
+
+.result_table {
+	background-color: #DADFE0;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #005A6B;
+	border-bottom-color: #005A6B;
+	border-left-color: #005A6B;
+	left: 10px;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	clip: rect(10px, 10px, 10px, 10px);
+	padding: 5px;
+}
+
+
+/****************************************************
+ *以下是主从菜单的风格
+ ***************************************************/
+.MAIN_DIV_MENU {	/*主从菜单的主菜单风格*/
+	padding-left: 0px;
+	visibility: inherit;
+	color: #f7f6f6;
+	padding-top: 4px;
+	position: absolute;
+	top: 0px;
+	height: 20px;
+	background-color: #004d81;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.SUB_DIV_MENU {		/*主从菜单的的二级菜单风格*/
+	color: #f7f6f6;
+	cursor: hand;
+	background-color: #004d81;
+	text-align: center;
+	font-size: 10pt;
+	height: 20px;
+	padding-top: 4px;
+	margin-top: 2px;
+	width: 100%;
+}
+
+.A_SUBMENU {		/*主从菜单的三级菜单风格*/
+	color: #f7f6f6;
+	background-color: #85B5E4;
+	width: 100%;
+	text-align: center;
+	font-size: 10pt;
+	margin-top: 1px;
+}
+
+Div.PROGRESS {		/*进度条风格*/
+	position: absolute;
+	top: 251;
+	left: 276;
+	z-index: 17;
+	height:44;
+	background-color: yellow
+}
+
+Div.WAITING {		/*进度条的框风格*/
+	position: absolute;
+	top: 250;
+	left: 275;
+	width: 352;
+	height:46;
+	z-index: 12;
+	background-color: #eeeeee;
+	visibility: hidden;
+	border: solid black 1px
+}
+
+Div.WORD {			/*进度条的文字风格*/
+	position: absolute;
+	top: 260;
+	left: 370;
+	width: 150;
+	z-index: 20;
+	visibility: hidden
+}
+
+Div.COVER {			/*进度条中覆盖原页面的风格*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	visibility: hidden;
+}
+
+/********************************************************
+ *  以下是静态Tree的风格 
+ *******************************************************/
+ 
+.PG_STREE_ITEM{				/* 树节点的风格 */
+	background:#FFFFFF;
+}
+
+.PG_STREE_ITEM_MOUSEOVER{	/* 树节点鼠标滑过的风格 */
+	background: #CCFFFF
+}
+
+.PG_STREE_LINK{				/* 树节点中链接的风格 */
+	TEXT-DECORATION:none;
+	color:#3333FF;
+}
+
+.PG_STREE_T_CHECKBOX{		/* 三态复选框的风格  */
+	cursor:default;
+	margin-bottom:3;
+	height:13;
+	width:13;
+	padding-left:13;
+
+}
+
+/*******************************************************
+ *以下是富文本框的风格控制
+ ******************************************************/
+.PG_RICHTEXT_GEN {
+	POSITION: relative
+}
+
+.PG_RICHTEXT_HEADING {
+	BACKGROUND: #eeeeee;
+	COLOR: #000000
+}
+
+.PG_RICHTEXT_COMPOSITION {
+	BACKGROUND-COLOR: menu;
+	POSITION: relative
+}
+
+.PG_RICHTEXT_yTOOLBAR {
+	BACKGROUND-COLOR: menu;
+	BORDER-BOTTOM: buttonshadow 1px solid;
+	BORDER-LEFT: buttonhighlight 1px solid;
+	BORDER-RIGHT: buttonshadow 1px solid;
+	BORDER-TOP: buttonhighlight 1px solid;
+	HEIGHT: 27px;
+	LEFT: 0px;
+	POSITION: relative;
+	TOP: 0px
+}
+
+.PG_RICHTEXT_BTN {
+	BACKGROUND-COLOR: menu;
+	BORDER-BOTTOM: buttonface 1px solid;
+	BORDER-LEFT: buttonface 1px solid;
+	BORDER-RIGHT: buttonface 1px solid;
+	BORDER-TOP: buttonface 1px solid;
+	HEIGHT: 23px;
+	POSITION: absolute;
+	TOP: 1px;
+	WIDTH: 23px
+}
+
+.PG_RICHTEXT_ICO {
+	LEFT: 2px;
+	POSITION: absolute;
+	TOP: 1px
+}
+
+.PG_RICHTEXT_TBSEP {
+	BORDER-LEFT: buttonshadow 1px solid;
+	BORDER-RIGHT: buttonhighlight 1px solid;
+	FONT-SIZE: 0px;
+	HEIGHT: 22px;
+	POSITION: absolute;
+	TOP: 1px;
+	WIDTH: 1px
+}
+
+.PG_RICHTEXT_TBGEN {
+	FONT: 8pt verdana, arial, sans-serif;
+	HEIGHT: 22px;
+	POSITION: absolute;
+	TOP: 2px
+}
+
+.PG_RICHTEXT_TBHANDLE {
+	BACKGROUND-COLOR: menu;
+	BORDER-LEFT: buttonhighlight 1px solid;
+	BORDER-RIGHT: buttonshadow 1px solid;
+	BORDER-TOP: buttonhighlight 1px solid;
+	FONT-SIZE: 1px;
+	HEIGHT: 22px;
+	POSITION: absolute;
+	TOP: 1px;
+	WIDTH: 3px
+}
+
+.PG_RICHTEXT_BTNMOUSEOVERUP {
+	BACKGROUND-COLOR: buttonface;
+	BORDER-BOTTOM: buttonshadow 1px solid;
+	BORDER-LEFT: buttonhighlight 1px solid;
+	BORDER-RIGHT: buttonshadow 1px solid;
+	BORDER-TOP: buttonhighlight 1px solid;
+	HEIGHT: 23px;
+	POSITION: absolute;
+	TOP: 1px;
+	WIDTH: 24px
+}
+
+.PG_RICHTEXT_BTNMOUSEOVERDOWN {
+	BACKGROUND-COLOR: buttonface;
+	BORDER-BOTTOM: buttonhighlight 1px solid;
+	BORDER-LEFT: buttonshadow 1px solid;
+	BORDER-RIGHT: buttonhighlight 1px solid;
+	BORDER-TOP: buttonshadow 1px solid;
+	HEIGHT: 23px;
+	POSITION: absolute;
+	TOP: 1px;
+	WIDTH: 24px
+}
+
+.PG_RICHTEXT_BTNDOWN {
+	BACKGROUND-COLOR: gainsboro;
+	BORDER-BOTTOM: buttonhighlight 1px solid;
+	BORDER-LEFT: buttonshadow 1px solid;
+	BORDER-RIGHT: buttonhighlight 1px solid;
+	BORDER-TOP: buttonshadow 1px solid;
+	HEIGHT: 23px;
+	POSITION: absolute;
+	TOP: 1px;
+	WIDTH: 24px
+}
+
+.PG_RICHTEXT_ICODOWN {
+	HEIGHT: 23px;
+	LEFT: 0px;
+	POSITION: absolute;
+	TOP: 0px;
+	WIDTH: 24px
+}
+
+.PG_RICHTEXT_ICODOWNPRESSED {
+	LEFT: 1px;
+	POSITION: absolute;
+	TOP: 1px
+}
+
+/*****************newAdd by jxouyang************************/
+TR.pg_add_bottom a{
+  width:75;
+  height:18;
+  background-image: url(/kqgl/page/images/bg_button_1.gif);
+  
+  text-decoration:none;
+  
+  padding-top:3px;
+}
+TR.pg_add_bottom a.a_buttonLong{
+   width:99;
+  height:18;
+  background-image: url(/kqgl/page/images/bg_button_4_long.gif);
+  
+  text-decoration:none;
+  
+  padding-top:3px;
+}
+
+TR.pg_result_head  TD{
+  border-right:1px solid #fff;
+}
+
+
+input.input_noBg{
+   background:none;
+}
+input.text_border{
+   background:#fff;
+   border:1px solid #444e76;
+}
+.button_normal{
+  width:75;
+  height:18;
+  background: url(/kqgl/page/images/bg_button_1.gif) transparent;
+  color:#263d8a;
+
+  
+  padding-top:3px;
+  border:0px;
+  margin-top:3px;
+  cursor:hand;
+}
+.button_little{
+  width:28;
+  height:18;
+  background: url(/kqgl/page/images/bg_button_2_little.gif) transparent;
+  color:#263d8a;
+ 
+
+  border:0px;
+  margin-top:3px;
+  cursor:hand;
+}
+.button_twoF{
+  width:46;
+  height:18;
+    background: url(/kqgl/page/images/bg_button_3_twoF.gif) transparent;
+  color:#263d8a;
+ 
+ padding-top:3px;
+  border:0px;
+  margin-top:3px;
+  cursor:hand;
+}
+.button_long{
+  width:99;
+  height:18;
+  background: url(/kqgl/page/images/bg_button_4_long.gif) transparent;
+  color:#263d8a;
+
+  
+  padding-top:3px;
+  border:0px;
+  margin-top:3px;
+  cursor:hand;
+}
+
+.button_long1{
+  width:133;
+  height:18;
+  background: url(/kqgl/page/images/bg_button_5.gif) transparent;
+  color:#263d8a;
+
+  
+  padding-top:3px;
+  border:0px;
+  margin-top:3px;
+  cursor:hand;
+}

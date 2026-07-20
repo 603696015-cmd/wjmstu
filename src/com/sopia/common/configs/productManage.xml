@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="pruductManage" extends="elearning">
+		 <action name="productList"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="productList">
+			<result name="success">
+				pfms/productList.jsp
+			</result>
+		</action>
+		
+		<action name="getAllProductAction"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="getAllProductAction">
+			<result name="success">
+				pfms/allProductList.jsp
+			</result>
+		</action>
+		
+		<action name="showChanpin"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="updateChanpinView">
+			<result name="success">
+				pfms/showProduct.jsp
+			</result>
+		</action>
+		
+		<action name="updateChanpinView"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="updateChanpinView">
+			<result name="success">
+				pfms/updateProduct.jsp
+			</result>
+		</action>
+		
+		<action name="updateChanpin"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="updateChanpin">
+			<result name="updateProduct_success_in_List" type="redirectAction">
+				productList.action
+			</result>
+			<result name="updateProduct_success_in_allList" type="redirectAction">
+				getAllProductAction.action
+			</result>
+		</action>
+		
+		<action name="deleteChanpin"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="deleteChanpin">
+			<result name="productList" type="redirectAction">
+				productList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="allProductList" type="redirectAction">
+				getAllProductAction.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		
+		<action name="shenheChanpin"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="shenheChanpin">
+			<result name="success" type="redirectAction">
+				getAllProductAction.action
+			</result>
+		</action>
+		
+		<action name="shenheChanpinNotPass"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="shenheChanpinNotPass">
+			<result name="success" type="redirectAction">
+				getAllProductAction.action
+			</result>
+		</action>
+		
+		
+		<action name="addProductView"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="addProductView">
+			<result name="success">
+				pfms/addProduct.jsp
+			</result>
+		</action>
+		
+		<action name="addProduct"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="addProduct">
+			<result name="success" type="redirectAction">
+				productList.action?product_sh=${product_sh}
+			</result>
+		</action>
+		
+		<action name="getProductTypeList"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="getProductTypeList">
+			<result name="productTypeList">
+				pfms/productTypeList.jsp
+			</result>
+		</action>
+		
+		
+		<action name="productType_view"
+			class="com.sopia.pfms.action.ProductManage"
+			method="productType_view">
+			<result name="productType_view">
+				pfms/productType_view.jsp
+			</result>
+		</action>
+		
+		
+		<action name="productType_addInit"
+			class="com.sopia.pfms.action.ProductManage"
+			method="productType_addInit">
+			<result name="productType_add">
+				pfms/productType_add.jsp
+			</result>
+		</action>
+		
+		<action name="productType_add"
+			class="com.sopia.pfms.action.ProductManage"
+			method="productType_add">
+			<result name="productType_add_success">
+				pfms/productType_add_success.jsp
+			</result>
+		</action>
+		
+		<action name="productType_alterInit"
+			class="com.sopia.pfms.action.ProductManage"
+			method="productType_alterInit">
+			<result name="productType_alter">
+				pfms/productType_alter.jsp
+			</result>
+		</action>
+		
+		<action name="productType_alter"
+			class="com.sopia.pfms.action.ProductManage"
+			method="productType_alter">
+			<result name="productType_alter_success">
+				pfms/productType_alter_success.jsp
+			</result>
+		</action>
+		
+		
+		<action name="productType_delete"
+			class="com.sopia.pfms.action.ProductManage"
+			method="productType_delete">
+			<result name="productType_list" type="redirectAction">
+				getProductTypeList.action
+			</result>
+		</action>
+		
+		<action name="searchLanmuInit"
+			class="com.sopia.pfms.action.ProductManage"
+			method="searchLanmuInit">
+			<result name="searchLanmuInit">
+				pfms/searchLanmuDio.jsp
+			</result>
+		</action>
+		
+		
+		<action name="checkShztBeforeDelete_product"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="checkShztBeforeDelete_product">
+		</action>
+		
+		<action name="change_tuijian_product"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="change_tuijian">
+			<result name="success" type="redirectAction">
+				getAllProductAction.action
+			</result>
+		</action>
+		
+		<!-- <action name="search_zhengzhantuijian_init"
+				 class="com.sopia.pfms.action.ProductManage"
+				 method="search_zhengzhantuijian_init">
+			<result name="search_zhengzhantuijian_init">
+				pfms/search_product_zhengzhantuijian_init.jsp
+			</result>
+		</action> -->
+		
+		
+	</package>
+</struts>

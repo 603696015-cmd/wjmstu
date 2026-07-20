@@ -1,0 +1,25 @@
+/*
+样式定义：
+表内字段列名用columnname代替
+#columnname {  定义需要的样式 }
+
+各类型字样式说明：
+
+文本			#columnname {  定义需要的样式 }
+实数			#columnname {  定义需要的样式 }
+整数			#columnname {  定义需要的样式 }
+百分比
+日期			#columnname {  定义需要的样式 }
+下拉选项		#columnname {  定义需要的样式 }
+单选
+复选
+城市			省	#columnname_province	市	#columnname_city	县	#columnname_county
+大文本		#columnname
+附件上传		名称		#columnname		路径		#columnname_
+图片			高	#columnname_h		宽	#columnname_w		路径		#columnname
+相关字段		#relate_columnname_
+相关负责人	#relate_columnname_
+
+例如：联系人姓名input标签的样式
+#columnname { }
+*/

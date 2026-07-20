@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="answeringType" extends="elearning">
+		
+		<action name="listAnsweringTypeTree"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="listAnsweringTypeTree">
+			<result name="listAnsweringTypeTree">
+				admin/answeringsystem/answeringtype/listAnsweringTypeTree.jsp
+			</result>
+		</action>
+		<action name="list_answeringTypeTree_childs"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="list_answeringTypeTree_childs">
+		</action>
+		<action name="addAnsweringTypeTreeInit"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="addAnsweringTypeTreeInit">
+			<result name="addAnsweringTypeTreeInit">
+				admin/answeringsystem/answeringtype/addAnsweringTypeTreeInit.jsp
+			</result>
+		</action>
+		<action name="addAnsweringTypeTree"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="addAnsweringTypeTree">
+			<result name="addAnsweringTypeTree_success">
+				admin/answeringsystem/answeringtype/addAnsweringTypeTree_success.jsp
+			</result>
+		</action>
+		<action name="viewAnsweringTypeTree"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="viewAnsweringTypeTree">
+			<result name="viewAnsweringTypeTree">
+				admin/answeringsystem/answeringtype/viewAnsweringTypeTree.jsp
+			</result>
+		</action>
+		<action name="alterAnsweringTypeTreeInit"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="alterAnsweringTypeTreeInit">
+			<result name="alterAnsweringTypeTreeInit">
+				admin/answeringsystem/answeringtype/alterAnsweringTypeTreeInit.jsp
+			</result>
+		</action>
+		<action name="alterAnsweringTypeTree"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="alterAnsweringTypeTree">
+			<result name="alterAnsweringTypeTree_success">
+				admin/answeringsystem/answeringtype/alterAnsweringTypeTree_success.jsp
+			</result>
+		</action>
+		<action name="deleteAnsweringTypeTreeInit"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="deleteAnsweringTypeTreeInit">
+			<result name="deleteAnsweringTypeTreeInit">
+				admin/answeringsystem/answeringtype/deleteAnsweringTypeTreeInit.jsp
+			</result>
+		</action>
+		<action name="deleteAnsweringTypeTree"
+			class="com.sopia.answeringsystem.action.AnsweringTypeAction"
+			method="deleteAnsweringTypeTree">
+			<result name="deleteAnsweringTypeTree_success">
+				admin/answeringsystem/answeringtype/deleteAnsweringTypeTree_success.jsp
+			</result>
+		</action>
+	</package>
+</struts>

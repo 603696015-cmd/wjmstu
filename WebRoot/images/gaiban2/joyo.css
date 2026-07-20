@@ -1,0 +1,18 @@
+.pict1 {
+	TEXT-ALIGN: center; COLOR: #000; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.pict1 A {
+	TEXT-ALIGN: center; COLOR: #000; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.pict1 A:unknown {
+	TEXT-ALIGN: center; COLOR: #000; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.pict1 A:visited {
+	TEXT-ALIGN: center; COLOR: #000; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.pict1 A:active {
+	TEXT-ALIGN: center; COLOR: #000; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.picontent {
+	LINE-HEIGHT: 22px; COLOR: #ff0000
+}

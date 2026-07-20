@@ -1,0 +1,956 @@
+-- Create table
+create table INTELLIGENT_CLASS_T_T
+(
+  USERID      NUMBER not null,
+  CLASSID     NUMBER not null,
+  TOTALSCORE  NUMBER not null,
+  TOTALSECOND NUMBER not null,
+  HOUR        NUMBER(12,2) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+
+  
+  
+  -- Create table
+create table INTELLIGENT_PROPORTION_T
+(
+  USERID             NUMBER not null,
+  TOTALSCORE         NUMBER(12,1) not null,
+  CLASSID            NUMBER not null,
+  PROPORTIONQCOUNT   NUMBER not null,
+  TOTALCOUNT         NUMBER not null,
+  PROPORTIONQPROCESS NUMBER(12,2) not null,
+  PROPORTIONTCOUNT   NUMBER not null,
+  PROPORTIONTPROCESS NUMBER(12,2) not null,
+  QSCORE             NUMBER(12,1) not null,
+  TSCORE             NUMBER(12,1) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column INTELLIGENT_PROPORTION_T.PROPORTIONQCOUNT
+  is '复听题目数';
+comment on column INTELLIGENT_PROPORTION_T.TOTALCOUNT
+  is '总题数';
+comment on column INTELLIGENT_PROPORTION_T.PROPORTIONQPROCESS
+  is '复听比例';
+comment on column INTELLIGENT_PROPORTION_T.PROPORTIONTCOUNT
+  is '复听次数';
+comment on column INTELLIGENT_PROPORTION_T.PROPORTIONTPROCESS
+  is '复听次数比例';
+comment on column INTELLIGENT_PROPORTION_T.QSCORE
+  is '复听数量得分';
+comment on column INTELLIGENT_PROPORTION_T.TSCORE
+  is '复听次数得分';
+  
+  
+  
+  
+  
+  -- Create table
+create table INTELLIGENT_RECODING_T
+(
+  USERID           NUMBER not null,
+  TOTALSCORE       NUMBER(12,1) not null,
+  CLASSID          NUMBER not null,
+  RECODINGQCOUNT   NUMBER not null,
+  TOTALCOUNT       NUMBER not null,
+  RECODINGQPROCESS NUMBER(12,2) not null,
+  RECODINGTCOUNT   NUMBER not null,
+  RECODINGTPROCESS NUMBER(12,2) not null,
+  QSCORE           NUMBER(12,1) not null,
+  TSCORE           NUMBER(12,1) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column INTELLIGENT_RECODING_T.RECODINGQCOUNT
+  is '录音题目数';
+comment on column INTELLIGENT_RECODING_T.TOTALCOUNT
+  is '总题数';
+comment on column INTELLIGENT_RECODING_T.RECODINGQPROCESS
+  is '录音比例';
+comment on column INTELLIGENT_RECODING_T.RECODINGTCOUNT
+  is '录音次数';
+comment on column INTELLIGENT_RECODING_T.RECODINGTPROCESS
+  is '录音次数比例';
+comment on column INTELLIGENT_RECODING_T.QSCORE
+  is '录音数量得分';
+comment on column INTELLIGENT_RECODING_T.TSCORE
+  is '录音次数得分';
+  
+  
+  
+  
+  
+  
+  -- Create table
+create table INTELLIGENT_WEEK_T_T
+(
+  USERID     NUMBER not null,
+  CLASSID    NUMBER not null,
+  COURSEID   NUMBER not null,
+  PAGEID     NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+ -- Create table
+create table INTELLIGENT_ACADEMIC_T
+(
+  USERID        NUMBER not null,
+  TOTALSCORE    NUMBER(12,1) not null,
+  CLASSID       NUMBER not null,
+  AVGSCORE      NUMBER(12,1) not null,
+  MYEXAMPAPERID NUMBER not null,
+  COURSEID      NUMBER not null,
+  PAGEID        NUMBER not null,
+  ROOMID        NUMBER not null,
+  MAXSCORE      NUMBER,
+  MINSCORE      NUMBER
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+ -- Create table
+create table INTELLIGENT_ACADEMIC_T_T_T
+(
+  USERID     NUMBER not null,
+  CLASSID    NUMBER not null,
+  COURSEID   NUMBER not null,
+  PAGEID     NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  ); 
+  
+  
+  create or replace procedure intelligentweeklearnend
+(userid_ number,classid_ number,courseid_ number,cpid_ number,studyCourseRecordId_ number)
+as
+count_ number;
+between_sec_ number;
+sum_sec_ number;
+totalscore_ number;
+hour_ number;
+week1day_ varchar2(50);
+week2day_ varchar2(50);
+week3day_ varchar2(50);
+week4day_ varchar2(50);
+week5day_ varchar2(50);
+week6day_ varchar2(50);
+week7day_ varchar2(50);
+sql_ varchar2(1000);
+sqlwhere_ varchar2(1000);
+begin
+     count_:=0;
+     between_sec_:=0;
+     sum_sec_:=0;
+     --更新当次学习记录
+     select count(1) into count_ from intelligent_week where id=studyCourseRecordId_;
+     if count_>0 then
+        update intelligent_week set endtime=sysdate where id=studyCourseRecordId_;
+        select (cast(endtime as date)-cast(begintime as date))*86400 interval into between_sec_ from  intelligent_week  where id=studyCourseRecordId_;
+        update intelligent_week set learntime=between_sec_ where id=studyCourseRecordId_;
+     end if;
+     --本周学习时长得分
+     select to_char(trunc(sysdate, 'd') + 1,'yyyyMMdd') into week1day_ from dual;--周一
+     select to_char(trunc(sysdate, 'd') + 2,'yyyyMMdd') into week2day_ from dual;--周二
+     select to_char(trunc(sysdate, 'd') + 3,'yyyyMMdd') into week3day_ from dual;--周三
+     select to_char(trunc(sysdate, 'd') + 4,'yyyyMMdd') into week4day_ from dual;--周四
+     select to_char(trunc(sysdate, 'd') + 5,'yyyyMMdd') into week5day_ from dual;--周五
+     select to_char(trunc(sysdate, 'd') + 6,'yyyyMMdd') into week6day_ from dual;--周六
+     select to_char(trunc(sysdate, 'd') + 7,'yyyyMMdd') into week7day_ from dual;--周日
+     --更新周学习总表
+     --sqlwhere_:='(today='||week1day_||' or today='||week2day_||' or today='||week3day_||' or today='||week4day_||' or today='||week5day_||' or today='||week6day_||' or today='||week7day_||')';
+     sqlwhere_:='today in ('''||week1day_||''','''||week2day_||''','''||week3day_||''','''||week4day_||''','''||week5day_||''','''||week6day_||''','''||week7day_||''')';
+     dbms_output.put_line(sqlwhere_);
+     sql_ := 'select sum(learntime)  from intelligent_week where '||sqlwhere_||' and userid='||userid_||' and  classid='||classid_||' and courseid='||courseid_||' and pageid='||cpid_;
+     dbms_output.put_line(sql_);
+     execute immediate sql_ into sum_sec_;
+     totalscore_:=round(1 * sum_sec_/120,1);
+     if totalscore_>1 then
+        totalscore_:=1.0;   
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t where weekbegin=week1day_ and weekend=week7day_ and userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if count_=0 then
+        insert into intelligent_week_t(userid,classid,courseid,pageid,totalscore,weekbegin,weekend,learntime)
+               values(userid_,classid_,courseid_,cpid_,totalscore_,week1day_,week7day_,sum_sec_);
+     else
+        update intelligent_week_t set totalscore=totalscore_,learntime=sum_sec_ where weekbegin=week1day_ and weekend=week7day_ and  userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if;
+     --更新周学习汇总表
+     totalscore_:=0.0;
+     select round(sum(totalscore),1) into totalscore_ from intelligent_week_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if totalscore_>10 then
+        totalscore_:=10.0;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_; 
+     if count_=0 then
+        insert into intelligent_week_t_t(userid,classid,courseid,pageid,totalscore)
+               values (userid_,classid_,courseid_,cpid_,totalscore_);
+     else
+         update intelligent_week_t_t set totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if; 
+     --更新等级总学习时间
+     count_:=0;
+     sum_sec_:=0;
+     select sum(learntime) into sum_sec_ from intelligent_week where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     totalscore_:=round(sum_sec_/3600 * 0.3,1);
+     if totalscore_>10 then
+        totalscore_:=10.0;
+     end if;
+     select count(1) into count_ from intelligent_class_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if count_=0 then
+        insert into intelligent_class_t(userid,totalscore,totalsecond,classid,courseid,pageid)
+               values(userid_,totalscore_,sum_sec_,classid_,courseid_,cpid_);
+     else
+         update intelligent_class_t set totalsecond=sum_sec_,totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if;
+     --更新等级学习时间总表
+     totalscore_:=0.0;
+     sum_sec_:=0;
+     hour_:=0.00f;
+     select sum(totalscore),sum(totalsecond) into totalscore_,sum_sec_ from intelligent_class_t where userid=userid_ and classid=classid_;
+     if sum_sec_>0 then
+        hour_:=round(sum_sec_/3600,2);
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_class_t_t where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into intelligent_class_t_t(userid,classid,totalscore,totalsecond,hour)
+               values(userid_,classid_,totalscore_,sum_sec_,hour_);
+     else
+        update intelligent_class_t_t set totalscore=totalscore_ ,totalsecond=sum_sec_,hour=hour_ where userid=userid_ and classid=classid_;
+     end if;
+end;
+  
+  
+  
+  
+  
+  
+  create or replace procedure intelligent_different_points
+(userid_ number,classid_ number,
+scoretotal_ out float,
+scorelogin_ out float,
+scoreweek_ out float,
+scoreclass_ out float,
+scoreproportion_ out float,
+scorerecoding_ out float,
+scoreacademic_ out float,
+scoreacademiccourse_ out float,
+scoreproportionQ_ out float,
+scoreproportionT_ out float,
+scorerecodingQ_ out float,
+scorerecodingT_ out float
+)
+as
+count_ number;
+begin
+     /**
+     scoretotal_:=0.0f;
+     scorelogin_:=0.0f;
+     scoreweek_:=0.0f;
+     scoreclass_:=0.0f;
+     scoreproportion_:=0.0f;
+     scorerecoding_:=0.0f;
+     scoreacademic_:=0.0f;
+     scoreacademiccourse_:=0.0f;
+     */
+     
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scorelogin_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     else
+         scorelogin_:=0.0f;
+     end if;
+     
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreweek_ from intelligent_week_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreweek_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_class_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreclass_ from intelligent_class_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreclass_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreproportion_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     else
+         scoreproportion_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scorerecoding_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     else
+         scorerecoding_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_academic_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreacademic_ from intelligent_academic_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreacademic_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_academic_cou_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreacademiccourse_ from intelligent_academic_cou_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreacademiccourse_:=0.0f;
+     end if;
+     
+     count_:=0;
+     select count(1) into count_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(qscore),1) into scoreproportionQ_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     else
+         scoreproportionT_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(tscore),1) into scoreproportionT_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     else
+         scoreproportionT_:=0.0f;
+     end if;
+     
+     count_:=0;
+     select count(1) into count_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(qscore),1) into scorerecodingQ_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     else
+         scorerecodingQ_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(tscore),1) into scorerecodingT_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     else
+         scorerecodingQ_:=0.0f;
+     end if;
+     
+     
+     scoretotal_:=scorelogin_+scoreweek_+scoreclass_+scoreproportion_+scorerecoding_+scoreacademic_+scoreacademiccourse_;
+     
+     
+end;
+  
+  
+  
+  
+  
+  
+  
+  create or replace procedure intelligent_login_pro(userid_ number,notLogin3day_ number,classid_ number,flag_ out number,returnloginid_ out number)
+as
+today_ varchar2(50);
+count_ number;
+loginid_ number;
+score_ number;--每次登录得分
+sumscore_ number;--总分
+begin
+     count_:=0;
+     loginid_:=0;
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     score_:=0.0;
+     sumscore_:=0.0;
+     
+     if notLogin3day_=1 then--3天未登陆
+        score_:=-0.1;
+        insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+        flag_:=-1;
+     else--不是3天未登录
+        select count(1) into count_ from intelligent_login where today=today_ and userid=userid_ and classid=classid_; 
+        if count_=0 then--当天第一次登陆
+           score_:=0.1;
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=1;
+        else--当天不是第一次登陆
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=0;
+        end if;
+     end if;
+     select intelligent_login_sequence.currval into loginid_ from dual;
+     returnloginid_:=loginid_;
+     
+     --判断分数是否已经达到饱和
+     select sum(score) into sumscore_ from intelligent_login where userid=userid_ and classid=classid_ and begintime<sysdate;
+     if sumscore_ IS NULL then
+        sumscore_:=0.0;
+     end if;
+     sumscore_:=sumscore_+score_;
+     if sumscore_>=10  then
+        sumscore_:=10.0;
+     else if sumscore_<=0 then
+        sumscore_:=0.0;  
+     end if;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into intelligent_login_t (userid,totalscore,classid) values (userid_,sumscore_,classid_);
+     else 
+        update intelligent_login_t set totalscore=sumscore_ where userid=userid_ and classid=classid_;
+     end if;
+     
+end;
+  
+  
+  
+  
+  create or replace procedure intelligent_proportion_pro
+(userid_ number,            --用户ID
+myexampaperid_ number,      --用户试卷ID
+exampaperid_ number,        --考卷ID
+blockid_ number,            --大题ID
+questionid_ number,         --小题ID
+classid_ number,            --培训班ID
+courseid_ number,           --课程ID
+pageid_ number,             --章节ID
+roomid_ number)             --章节考场ID
+as
+count_ number;
+totalcount_ number;         --培训班下所有课程和课程的章节对应特殊类型题型的数量
+proporcount_ number;        --复听数量
+proporprocess_ number;      --复听数量比例
+score1_ number;
+score2_ number;
+totalscore_ number;
+ep_ number;
+proportcount_ number;           --复听次数
+proportprocess_ number;     --复听次数比例
+bl_ float;
+dingjiroomid_ number;
+cursor eps is
+      select erps.epid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_
+      union all
+      select erps.epid from
+      (select cc.courseid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_ ) t,course_page cp
+      ,exam_room er,exam_reps erps
+      where t.courseid=cp.courseid and cp.id=er.cpid and erps.roomid=er.id;
+
+begin
+     select roomid into dingjiroomid_ from exam_room_sys where sys=1 ;
+     if dingjiroomid_!=roomid_ then 
+       --插入记录到复听记录表
+       count_:=0;
+       totalcount_:=0;
+       proporcount_:=0;
+       proporprocess_:=0.00f;
+       totalscore_:=0.0;
+       score1_:=0.0;
+       score2_:=0.0;
+       proportcount_:=0;
+       proportprocess_:=0.00f;
+       bl_:=0.0f;
+       select count(1) into count_ from INTELLIGENT_PROPORTION 
+              where userid=userid_ and myexampaperid=myexampaperid_
+              and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+              and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+       if count_=0 then
+          insert into INTELLIGENT_PROPORTION(userid,myexampaperid,exampaperid,blockid,questionid,
+                 classid,courseid,pageid,roomid,count,proportime)
+              values (userid_,myexampaperid_,exampaperid_,blockid_,questionid_,
+                     classid_,courseid_,pageid_,roomid_,1,sysdate);
+       else
+           update INTELLIGENT_PROPORTION set count=count+1,proportime=sysdate 
+              where userid=userid_ and myexampaperid=myexampaperid_
+              and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+              and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+       end if;
+       --获取培训班下所有课程对应试卷、所有课程的章节对应试卷的所有特殊类型试题总量
+       --总题量
+       open eps;
+           loop
+              fetch eps into ep_ ;
+              exit when eps%notfound;
+              totalcount_:=totalcount_+getquestioncountbyepid(ep_);--总题数
+           end loop;
+       close eps;
+       --复听题目数量
+       select count(1) into proporcount_ from (select distinct(questionid) from INTELLIGENT_PROPORTION where userid=userid_ and classid=classid_);
+       proporprocess_:=round(proporcount_/totalcount_,2);--复听题目数量比例
+       score1_:=round(proporcount_/totalcount_ * 10,1);--复听得分
+       if score1_>10 then
+          score1_:=10.0;
+       end if;
+       --复听次数
+       select sum(count) into proportcount_ from INTELLIGENT_PROPORTION where userid=userid_ and classid=classid_;
+       proportprocess_:=round(proportcount_/totalcount_,2);
+       bl_:=proportcount_/totalcount_;
+       if bl_>3 then
+          score2_:=10.0;
+       else
+          score2_:=round((bl_/3)*10,1);
+       end if;
+       --更新复听比例总表
+       totalscore_:=score1_ + score2_;
+       count_:=0;
+       select count(1) into count_ from INTELLIGENT_PROPORTION_T where userid=userid_ and classid=classid_;
+       if count_=0 then
+          insert into INTELLIGENT_PROPORTION_T(userid,totalscore,classid,
+                 totalcount,Proportionqcount,proportionqprocess,Proportiontcount,proportiontprocess,qscore,tscore)
+                 values(userid_,totalscore_,classid_,
+                 totalcount_,proporcount_,proporprocess_,proportcount_,proportprocess_,score1_,score2_);
+       else
+           update INTELLIGENT_PROPORTION_T 
+                  set totalscore=totalscore_ ,
+                  totalcount = totalcount_,Proportionqcount=proporcount_,
+                  proportionqprocess=proporprocess_,
+                  Proportiontcount=proportcount_,
+                  proportiontprocess=proportprocess_ ,
+                  qscore=score1_,
+                  tscore=score2_
+                  where userid=userid_ and classid=classid_;
+       end if;
+     end if;
+end;
+  
+  
+  
+  
+  
+  create or replace procedure intelligent_recoding_pro
+(userid_ number,            --用户ID
+myexampaperid_ number,      --用户试卷ID
+exampaperid_ number,        --考卷ID
+blockid_ number,            --大题ID
+questionid_ number,         --小题ID
+classid_ number,            --培训班ID
+courseid_ number,           --课程ID
+pageid_ number,             --章节ID
+roomid_ number)             --章节考场ID
+as
+count_ number;
+totalcount_ number;         --培训班下所有课程和课程的章节对应特殊类型题型的数量
+recodingcount_ number;        --复听数量
+recodingprocess_ number;      --复听数量比例
+score1_ number;
+score2_ number;
+totalscore_ number;
+ep_ number;
+recodingtcount_ number;           --复听次数
+recodingtprocess_ number;     --复听次数比例
+bl_ float;
+dingjiroomid_ number;
+cursor eps is
+      select erps.epid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_
+      union all
+      select erps.epid from
+      (select cc.courseid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_ ) t,course_page cp
+      ,exam_room er,exam_reps erps
+      where t.courseid=cp.courseid and cp.id=er.cpid and erps.roomid=er.id;
+
+begin
+     select roomid into dingjiroomid_ from exam_room_sys where sys=1 ;
+     if dingjiroomid_!=roomid_ then 
+       --插入记录到复听记录表
+       count_:=0;
+       totalcount_:=0;
+       recodingcount_:=0;
+       recodingprocess_:=0.00f;
+       totalscore_:=0.0;
+       score1_:=0.0;
+       score2_:=0.0;
+       recodingtcount_:=0;
+       recodingtprocess_:=0.00f;
+       bl_:=0.0f;
+       select count(1) into count_ from INTELLIGENT_RECODING
+              where userid=userid_ and myexampaperid=myexampaperid_
+              and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+              and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+       if count_=0 then
+          insert into INTELLIGENT_RECODING(userid,myexampaperid,exampaperid,blockid,questionid,
+                 classid,courseid,pageid,roomid,count,proportime)
+              values (userid_,myexampaperid_,exampaperid_,blockid_,questionid_,
+                     classid_,courseid_,pageid_,roomid_,1,sysdate);
+       else
+           update INTELLIGENT_RECODING set count=count+1,proportime=sysdate
+              where userid=userid_ and myexampaperid=myexampaperid_
+              and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+              and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+       end if;
+       --获取培训班下所有课程对应试卷、所有课程的章节对应试卷的所有特殊类型试题总量
+       --总题量
+       open eps;
+           loop
+              fetch eps into ep_ ;
+              exit when eps%notfound;
+              totalcount_:=totalcount_+getquestioncountbyepidrecoding(ep_);
+           end loop;
+       close eps;
+       --复听题目数量
+       select count(1) into recodingcount_ from (select distinct(questionid) from INTELLIGENT_RECODING where userid=userid_ and classid=classid_);
+       recodingprocess_:=round(recodingcount_/totalcount_,2);
+       score1_:=round(recodingcount_/totalcount_ * 10,1);--复听得分
+       if score1_>10 then
+          score1_:=10.0;
+       end if;
+       --复听次数
+       select sum(count) into recodingtcount_ from INTELLIGENT_RECODING where userid=userid_ and classid=classid_;
+       recodingtprocess_:=round(recodingtcount_/totalcount_,2);
+       bl_:=recodingtcount_/totalcount_;
+       if bl_>3 then
+          score2_:=10.0;
+       else
+          score2_:=round((bl_/3)*10,1);
+       end if;
+       --更新复听比例总表
+       totalscore_:=score1_ + score2_;
+       count_:=0;
+       select count(1) into count_ from INTELLIGENT_RECODING_T where userid=userid_ and classid=classid_;
+       if count_=0 then
+          insert into INTELLIGENT_RECODING_T(userid,totalscore,classid,
+                 totalcount,recodingqcount,recodingqprocess,recodingtcount,recodingtprocess,qscore,tscore)
+                 values(userid_,totalscore_,classid_,
+                 totalcount_,recodingcount_,recodingprocess_,recodingtcount_,recodingtprocess_,score1_,score2_);
+       else
+           update INTELLIGENT_RECODING_T 
+                  set totalscore=totalscore_ ,
+                  totalcount = totalcount_,recodingqcount=recodingcount_,
+                  recodingqprocess=recodingprocess_,
+                  recodingtcount=recodingtcount_,
+                  recodingtprocess=recodingtprocess_ ,
+                  qscore=score1_,
+                  tscore=score2_
+                  where userid=userid_ and classid=classid_;
+       end if;
+     end if;
+end;
+  
+  
+  
+  
+  
+  create or replace procedure intelligent_academic_pro
+ (userid_ number,roomid_ number,classid_ number,courseid_ number,pageid_ number,myexampaperid_ number)
+ as
+ count_ number;
+ myscore_ number;
+ totalscore_ number;
+ avgscore_ number;
+ maxscore_ number;
+ minscore_ number;
+ bl_ number;
+ countpagequiz_ number;
+ begin
+      --得到这次考试的成绩
+      select myscore into myscore_ from study_quizinfo where id=myexampaperid_ ;
+      myscore_:=round(myscore_,1);
+      --插入单次章节考试得分表
+      insert into intelligent_academic(userid,classid,courseid,pageid,roomid,score,myexampaperid)
+                values (userid_,classid_,courseid_,pageid_,roomid_,myscore_,myexampaperid_);
+      select round(sum(score),1),round(avg(score),1),round(max(score),1),round(min(score),1) into totalscore_,avgscore_,maxscore_,minscore_ from intelligent_academic 
+             where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid_;
+      --插入章节考试记录表
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid_;
+      if count_=0 then
+         insert into intelligent_academic_t(userid,classid,courseid,pageid,roomid,myexampaperid,avgscore,totalscore,maxscore,minscore)
+                values (userid_,classid_,courseid_,pageid_,roomid_,myexampaperid_,avgscore_,totalscore_,maxscore_,minscore_);
+      else
+          update intelligent_academic_t set totalscore=totalscore_,avgscore=avgscore_,maxscore=maxscore_,minscore=minscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid_;
+      end if;
+      --章节考场数
+      select count(1) into countpagequiz_ from 
+      (
+        select erps.epid from
+        (select cc.courseid from class_course cc ,exam_room er,exam_reps erps
+        where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_ ) t,course_page cp
+        ,exam_room er,exam_reps erps
+        where t.courseid=cp.courseid and cp.id=er.cpid and erps.roomid=er.id
+      );
+      --获取培训班下，所有章节考试总成绩
+      totalscore_:=0.0;
+      select sum(avgscore) into totalscore_ from intelligent_academic_t where userid=userid_ and classid=classid_ ;
+      --获取章节考试智能辅导分
+      if countpagequiz_>0 then
+         bl_:=totalscore_/countpagequiz_ ;
+         if bl_>100 then
+            bl_:= 100.0;
+         end if;
+         totalscore_:=round(bl_ * 0.3,1);
+      end if;
+      
+      --插入或更新考试智能辅导分
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_t_t where userid=userid_ and classid=classid_;
+      if count_=0 then
+          insert into intelligent_academic_t_t(userid,totalscore,classid)
+                values(userid_,totalscore_,classid_);
+      else
+          update intelligent_academic_t_t set totalscore=totalscore_
+                 where userid=userid_ and classid=classid_;
+      end if;
+ end;
+  
+  
+  
+  
+  
+  create or replace procedure intelligent_academic_pro
+ (userid_ number,roomid_ number,classid_ number,courseid_ number,pageid_ number,myexampaperid_ number)
+ as
+ count_ number;
+ myscore_ number;
+ totalscore_ number;
+ avgscore_ number;
+ maxscore_ number;
+ minscore_ number;
+ bl_ number;
+ countpagequiz_ number;
+ tempscore_ number;
+ tempscore1_ number;
+ begin
+      --得到这次考试的成绩
+      select myscore into myscore_ from study_quizinfo where id=myexampaperid_ ;
+      myscore_:=round(myscore_,1);
+      --插入单次章节考试得分表
+      insert into intelligent_academic(userid,classid,courseid,pageid,roomid,score,myexampaperid)
+                values (userid_,classid_,courseid_,pageid_,roomid_,myscore_,myexampaperid_);
+      select round(sum(score),1),round(avg(score),1),round(max(score),1),round(min(score),1) into totalscore_,avgscore_,maxscore_,minscore_ from intelligent_academic 
+             where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid_;
+      --保存totalscore_
+      tempscore_:=avgscore_;
+      --插入章节考试记录表
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid_;
+      if count_=0 then
+         insert into intelligent_academic_t(userid,classid,courseid,pageid,roomid,myexampaperid,avgscore,totalscore,maxscore,minscore)
+                values (userid_,classid_,courseid_,pageid_,roomid_,myexampaperid_,avgscore_,totalscore_,maxscore_,minscore_);
+      else
+          update intelligent_academic_t set totalscore=totalscore_,avgscore=avgscore_,maxscore=maxscore_,minscore=minscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid_;
+      end if;
+      --章节考场数
+      select count(1) into countpagequiz_ from 
+      (
+        select erps.epid from
+        (select cc.courseid from class_course cc ,exam_room er,exam_reps erps
+        where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_ ) t,course_page cp
+        ,exam_room er,exam_reps erps
+        where t.courseid=cp.courseid and cp.id=er.cpid and erps.roomid=er.id
+      );
+      --获取培训班下，所有章节考试总成绩
+      totalscore_:=0.0;
+      select sum(avgscore) into totalscore_ from intelligent_academic_t where userid=userid_ and classid=classid_ ;
+      --获取章节考试智能辅导分
+      if countpagequiz_>0 then
+         bl_:=totalscore_/countpagequiz_ ;
+         if bl_>100 then
+            bl_:= 100.0;
+         end if;
+         totalscore_:=round(bl_ * 0.3,1);
+      end if;
+      
+      --插入或更新考试智能辅导分
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_t_t where userid=userid_ and classid=classid_;
+      if count_=0 then
+          insert into intelligent_academic_t_t(userid,totalscore,classid)
+                values(userid_,totalscore_,classid_);
+      else
+          update intelligent_academic_t_t set totalscore=totalscore_
+                 where userid=userid_ and classid=classid_;
+      end if;
+      tempscore1_:=totalscore_;--保存智能辅导总分
+      --保存模块智能辅导分
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_t_t_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_;
+      if tempscore_>0 then
+         select sum(avgscore) into totalscore_ from intelligent_academic_t where userid=userid_ and classid=classid_;
+         totalscore_:=round((tempscore_/totalscore_) * tempscore1_,2);
+      end if; 
+      if count_=0 then
+         insert into intelligent_academic_t_t_t(userid,classid,courseid,pageid,totalscore)
+                values(userid_,classid_,courseid_,pageid_,totalscore_);
+      else
+          update intelligent_academic_t_t_t set totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=pageid_;
+      end if;
+ end;
+  
+  
+  
+  
+  
+  
+  -- Create table
+create table INTELLIGENT_ACADEMIC_COU_T_T_T
+(
+  USERID     NUMBER not null,
+  CLASSID    NUMBER not null,
+  COURSEID   NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  
+  
+  
+  create or replace procedure intelligent_academic_cou_pro
+ (userid_ number,roomid_ number,classid_ number,courseid_ number,myexampaperid_ number,classtype_ number)
+ as
+ count_ number;
+ myscore_ number;
+ totalscore_ number;
+ avgscore_ number;
+ bl_ number;
+ countcoursequiz_ number;
+ tempscore_ number;
+ tempscore1_ number;
+ begin
+      --得到这次考试的成绩
+      select myscore into myscore_ from study_quizinfo where id=myexampaperid_ ;
+      myscore_:=round(myscore_,1);
+      --插入单次课程考试得分表
+      insert into intelligent_academic_course(userid,classid,courseid,roomid,score,myexampaperid)
+                values (userid_,classid_,courseid_,roomid_,myscore_,myexampaperid_);
+      select round(sum(score),1),round(avg(score),1) into totalscore_,avgscore_ from intelligent_academic_course
+             where userid=userid_ and classid=classid_ and courseid=courseid_  and roomid=roomid_;
+       --保存totalscore_
+      tempscore_:=avgscore_;
+      --插入课程考试记录表
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_course_t where userid=userid_ and classid=classid_ and courseid=courseid_  and roomid=roomid_;
+      if count_=0 then
+         insert into intelligent_academic_course_t(userid,classid,courseid,roomid,myexampaperid,avgscore,totalscore)
+                values (userid_,classid_,courseid_,roomid_,myexampaperid_,avgscore_,totalscore_);
+      else
+          update intelligent_academic_course_t set totalscore=totalscore_,avgscore=avgscore_ where userid=userid_ and classid=classid_ and courseid=courseid_  and roomid=roomid_;
+      end if;
+      --课程考场数
+      select count(1) into countcoursequiz_ from
+      (
+        select erps.epid from class_course cc ,exam_room er,exam_reps erps
+        where cc.classid=er.classid and cc.courseid=er.courseid
+        and er.id=erps.roomid and cc.classid=classid_
+      );
+      --获取培训班下，所有章节考试总成绩
+      totalscore_:=0.0;
+      select sum(avgscore) into totalscore_ from intelligent_academic_course_t where userid=userid_ and classid=classid_ ;
+      --获取章节考试智能辅导分
+      if countcoursequiz_>0 then
+         bl_:=totalscore_/countcoursequiz_ ;
+         if classtype_ = 0 then--1A到3B
+            if bl_>100 then
+               bl_:= 100.0;
+            end if;
+            totalscore_:=round(bl_ * 0.1,1);
+            if totalscore_>10 then
+               totalscore_:=10.0;
+            end if;
+         else--4A到6B
+            if bl_>150 then
+               bl_:= 150.0;
+            end if;
+            totalscore_:=round(bl_ * 0.07,1);
+            if totalscore_>10 then
+               totalscore_:=10.0;
+            end if;
+         end if;
+      end if;
+
+      --插入或更新考试智能辅导分
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_cou_t_t where userid=userid_ and classid=classid_;
+      if count_=0 then
+          insert into intelligent_academic_cou_t_t(userid,totalscore,classid)
+                values(userid_,totalscore_,classid_);
+      else
+          update intelligent_academic_cou_t_t set totalscore=totalscore_
+                 where userid=userid_ and classid=classid_;
+      end if;
+      tempscore1_:=totalscore_;--保存智能辅导总分
+      --保存模块智能辅导分
+      count_:=0;
+      select count(1) into count_ from intelligent_academic_cou_t_t_t where userid=userid_ and classid=classid_ and courseid=courseid_ ;
+      if tempscore_>0 then
+         select sum(avgscore) into totalscore_ from intelligent_academic_course_t where userid=userid_ and classid=classid_;
+         totalscore_:=round((tempscore_/totalscore_) * tempscore1_,2);
+      end if; 
+      if count_=0 then
+         insert into intelligent_academic_cou_t_t_t(userid,classid,courseid,totalscore)
+                values(userid_,classid_,courseid_,totalscore_);
+      else
+          update intelligent_academic_cou_t_t_t set totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ ;
+      end if;
+ end;
+  

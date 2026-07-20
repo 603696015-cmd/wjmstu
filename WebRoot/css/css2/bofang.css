@@ -1,0 +1,97 @@
+BODY {
+	FONT-SIZE: 12px; HEIGHT: 100%;WORD-BREAK: break-all; WORD-WRAP: break-word
+}
+.unnamed1 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 24px; FONT-FAMILY: "ËÎÌå"
+}
+.style1 {
+	FONT-WEIGHT: bold; COLOR: #ff0000
+}
+.bt {
+	FONT-SIZE: 18px; COLOR: #ffffff; LINE-HEIGHT: 26px; FONT-FAMILY: "ºÚÌå"
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.dh:link {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: none
+}
+A.dh:visited {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: none
+}
+A.dh:hover {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: underline
+}
+A.dh:active {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: underline
+}
+A.dh2:link {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: none
+}
+A.dh2:visited {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: none
+}
+A.dh2:hover {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: underline
+}
+A.dh2:active {
+	FONT-SIZE: 14px; COLOR: #0033cc; TEXT-DECORATION: underline
+}
+
+.style2 {
+	COLOR: #ff0000
+}
+.contentdiv {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 15px; OVERFLOW: auto; WIDTH: 100%; LINE-HEIGHT: 20px; HEIGHT: 100%; TEXT-ALIGN: left
+}
+.contentdiv2 {
+	OVERFLOW: auto; WIDTH: 100%; HEIGHT: 100%; TEXT-ALIGN: left
+}
+.muludiv {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 10px; FONT-SIZE: 15px; PADDING-BOTTOM: 8px; OVERFLOW: auto; WIDTH: 100%; COLOR: #666666; LINE-HEIGHT: 30px; PADDING-TOP: 12px; HEIGHT: 100%; BACKGROUND-COLOR: #dae9fe; TEXT-ALIGN: left
+}
+.muludiv2 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 8px; OVERFLOW: auto; WIDTH: 100%; COLOR: #666666; LINE-HEIGHT: 25px; PADDING-TOP: 12px; HEIGHT: 100%; TEXT-ALIGN: left
+}
+.leibie {
+	PADDING-RIGHT: 20px; FONT-SIZE: 12px; OVERFLOW: auto; WIDTH: 100%; PADDING-TOP: 10px; HEIGHT: 100%; TEXT-ALIGN: right
+}
+.tabtb {
+	MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px
+}.tabtop {
+	MARGIN-TOP: 8px;
+}
+.tit {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #FFFFFF;
+}
+A.LI:link {
+	FONT-SIZE: 12px; COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.LI:visited {
+	FONT-SIZE: 12px; COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.LI:hover {
+	FONT-SIZE: 12px; COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.LI:active {
+	FONT-SIZE: 12px; COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.STYLE6 {
+	color: #0000FF;
+	font-size: 12px;
+}
+.txarea {
+	font-size: 12px;
+	width: 100%;
+}

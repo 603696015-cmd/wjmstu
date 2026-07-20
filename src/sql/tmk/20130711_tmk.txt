@@ -1,0 +1,216 @@
+---------单独执行-------
+---------修改培训批次进度-------
+create or replace procedure set_batch_process(batchid_ number,userid_ number)
+as
+process_ number(20,2);
+count_ number;
+tcount_ number;
+cursor studyclasses is
+       select process from study_class sc
+       left join BATCH_ELCLASS_FENPEI bef on sc.classid=bef.elclassid and bef.batchid=batchid_
+       where sc.userid=userid_ ;
+begin
+     process_:=0.00;
+     count_:=0;
+     tcount_:=0;
+     select count(1) into count_ from (select 1 from study_class sc
+       left join BATCH_ELCLASS_FENPEI bef on sc.classid=bef.elclassid and bef.batchid=batchid_
+       where sc.userid=userid_ );
+     if count_>0 then
+       open studyclasses;
+         loop
+            fetch studyclasses into process_ ;
+            exit when studyclasses%notfound;
+            if process_=100.00 then
+               tcount_:=tcount_+1;
+            end if;
+         end loop;
+        close studyclasses;
+        update BATCH_USER_FENPEI set process=round(tcount_/count_*100,2) where batchid=batchid_ and userid=userid_;
+     end if;
+end;
+-----------------------
+
+
+
+
+-----单独执行----
+---------检查上一门章节是否可以学习---------
+create or replace procedure checkpagecanlearn(sortid_ number,courseid_ number,userid_ number,flag_ out number)
+as
+id_ number;--保存课程章节分配表中的id
+skipable_ number;--保存是否可跳过
+getcredit_ number;--保存章节通过类型
+passed_ number;--保存章节完成情况
+count_ number;--保存是否有该章节的学习情况
+roompassed_ number;--保存章节考试是否通过
+roomid_ number;--保存章节结业考场
+begin
+  skipable_:=0;
+  passed_:=0;
+  count_:=0;
+  getcredit_:=0;
+  roompassed_:=0;
+  roomid_:=0;
+  select id,skipable,getcredit into id_,skipable_,getcredit_ from course_page where courseid=courseid_ and sortid=sortid_;
+  if getcredit_=1 then --学完
+    if skipable_=1 then--可跳过
+       flag_:=1;
+    else--不可跳过
+       select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+       if count_>0 then--用户有学习情况
+            --判断是否学完该章节
+            select passed into passed_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+            if passed_=1 then --学完
+                flag_:=1;
+            end if;
+      end if;
+    end if;
+  else if getcredit_=3 then --学完且考过
+     select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+     if count_>0 then--用户有学习情况
+          --判断是否学完该章节
+          select passed into passed_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+          if passed_=1 then --学完
+              --判断章节考试是否通过
+              select id into roomid_ from exam_room where courseid=courseid_ and classid=0 and cpid=id_;
+              if roomid_!=0 then
+                select ispassed into roompassed_ from study_room where userid=userid_ 
+                   and roomid =roomid_;
+                if roompassed_=1 then
+                  flag_:=1;
+                end if;
+              end if;
+          end if;
+     end if;
+  else--考过
+   --判断章节考试是否通过
+    select id into roomid_ from exam_room where courseid=courseid_ and classid=0 and cpid=id_;
+    if roomid_!=0 then
+      select ispassed into roompassed_ from study_room where userid=userid_ 
+         and roomid =roomid_;
+      if roompassed_=1 then
+        flag_:=1;
+      end if;
+    end if;
+  end if;
+  end if;
+end;
+
+-------------------
+
+
+
+------单独执行-----
+create or replace procedure add_batch_user(batchid_ number,userid_ number)
+as
+count_ number;
+begintime_ timestamp(6);
+endtime_ timestamp(6);
+classid_ number;
+cursor batchclasses is
+  select elclassid from BATCH_ELCLASS_FENPEI where batchid=batchid_ order by sortid asc;
+begin
+     count_:=0;
+     classid_:=0;
+     select count(1) into count_ from batch_user_fenpei where batchid=batchid_ and userid=userid_;
+     if count_=0 then
+        --1分配培训批次
+        select createtime,endtime into begintime_,endtime_ from PEIXUN_BATCH where id=batchid_;
+        insert into batch_user_fenpei (batchid,userid,begintime,endtime,process)
+        values (batchid_,userid_,begintime_,endtime_,0.00);
+        --2分配培训批次中的培训班
+        open batchclasses;
+          loop
+            fetch batchclasses into classid_;
+            exit when batchclasses%notfound;
+            if classid_!=0 then
+              insert into study_class (classid,userid,applydate,status,joinway,process)
+              values (classid_,userid_,sysdate,1,0,0.00);
+            end if;
+          end loop;
+        close batchclasses;
+     end if;
+end;
+
+-------------------
+
+
+ALTER TABLE exam_room  ADD sortid   NUMBER;
+commit;
+
+--------单独执行---------
+create or replace procedure checkpageroomispassed(courseid_ number,cpid_ number,userid_ number,flag_ out number)
+as
+roomid_ number;
+roompassed_ number;
+cursor rooms is
+  select id  from exam_room where courseid=courseid_ and classid=0 and cpid=cpid_ order by sortid desc;
+begin
+  roomid_:=0;
+  open rooms;
+     loop
+        fetch rooms into roomid_ ;
+        exit when rooms%notfound;
+        if roomid_!=0 then
+          select ispassed into roompassed_ from study_room where userid=userid_  and roomid=roomid_;
+          if roompassed_=1 then
+            flag_:=1;
+          else
+            flag_:=0;
+          end if;
+        end if;
+     end loop;
+   close rooms;
+end;
+
+------------------------
+
+
+
+
+-----------单独执行----------
+create or replace procedure checkpagecanlearn(sortid_ number,courseid_ number,userid_ number,flag_ out number)
+as
+id_ number;--保存课程章节分配表中的id
+skipable_ number;--保存是否可跳过
+getcredit_ number;--保存章节通过类型
+passed_ number;--保存章节完成情况
+count_ number;--保存是否有该章节的学习情况
+begin
+  skipable_:=0;
+  passed_:=0;
+  count_:=0;
+  getcredit_:=0;
+  select id,skipable,getcredit into id_,skipable_,getcredit_ from course_page where courseid=courseid_ and sortid=sortid_;
+  if getcredit_=1 then --学完
+    if skipable_=1 then--可跳过
+       flag_:=1;
+    else--不可跳过
+       select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+       if count_>0 then--用户有学习情况
+            --判断是否学完该章节
+            select passed into passed_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+            if passed_=1 then --学完
+                flag_:=1;
+            end if;
+      end if;
+    end if;
+  else if getcredit_=3 then --学完且考过
+     select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+     if count_>0 then--用户有学习情况
+          --判断是否学完该章节
+          select passed into passed_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+          if passed_=1 then --学完
+              --判断章节考试是否通过(这里有多个章节考场)
+              checkpageroomispassed(courseid_,id_,userid_,flag_);
+          end if;
+     end if;
+  else--考过
+   --判断章节考试是否通过(这里有多个章节考场)
+    checkpageroomispassed(courseid_,id_,userid_,flag_);
+  end if;
+  end if;
+end;
+
+------------------------------

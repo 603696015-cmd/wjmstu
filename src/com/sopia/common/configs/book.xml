@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_book" extends="elearning">
+	 <action name="booktype_list"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_list">
+			<result name="booktype_list">
+				admin/book/booktype_list.jsp
+			</result>
+		</action>
+		<action name="booktype_delete"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_delete">
+			<result name="booktype_list" type="redirectAction">
+				booktype_list
+			</result>
+		</action>
+		<action name="booktype_addInit"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_addInit">
+			<result name="booktype_add">
+				admin/book/booktype_add.jsp
+			</result>
+		</action>
+		<action name="booktype_add"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_add">
+			<result name="booktype_add_success">
+				admin/book/booktype_add_success.jsp
+			</result>
+		</action>
+		<action name="booktype_alterInit"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_alterInit">
+			<result name="booktype_alter">
+				admin/book/booktype_alter.jsp
+			</result>
+		</action>
+		<action name="booktype_alter"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_alter">
+			<result name="booktype_alter_success">
+				admin/book/booktype_alter_success.jsp
+			</result>
+		</action>
+		<action name="booktype_view"
+			class="com.sopia.bookman.action.BookAction"
+			method="booktype_view">
+			<result name="booktype_view">
+				admin/book/booktype_view.jsp
+			</result>
+		</action>
+		<action name="book_list"
+			class="com.sopia.bookman.action.BookAction" method="book_list">
+			<result name="book_list">admin/book/book_list.jsp</result>
+		</action>
+		<action name="book_addInit"
+			class="com.sopia.bookman.action.BookAction"
+			method="book_addInit">
+			<result name="book_add">admin/book/book_add.jsp</result>
+		</action>
+		<action name="book_add"
+			class="com.sopia.bookman.action.BookAction" method="book_add">
+			<result name="book_add_success">
+				admin/book/book_add_success.jsp
+			</result>
+		</action>
+		<action name="book_alterInit"
+			class="com.sopia.bookman.action.BookAction"
+			method="book_alterInit">
+			<result name="book_alter">
+				admin/book/book_alter.jsp
+			</result>
+		</action>
+		<action name="book_alter"
+			class="com.sopia.bookman.action.BookAction"
+			method="book_alter">
+			<result name="book_alter_success">
+				admin/book/book_alter_success.jsp
+			</result>
+		</action>
+		<action name="book_view"
+			class="com.sopia.bookman.action.BookAction" method="book_view">
+			<result name="book_view">admin/book/book_view.jsp</result>
+		</action>
+		<action name="book_delete"
+			class="com.sopia.bookman.action.BookAction"
+			method="book_delete">
+			<result name="book_delete" type="redirectAction">
+				book_list
+			</result>
+		</action>
+			<action name="booksethot_list"
+			class="com.sopia.bookman.action.BookAction" method="booksethot_list">
+			<result name="booksethot_list">admin/book/booksethot_list.jsp</result>
+		</action>
+			<action name="booksethot"
+			class="com.sopia.bookman.action.BookAction" method="booksethot">
+			<result name="booksethot_list" type="redirectAction">booksethot_list?pN=${pN}&amp;pS=${pS}</result>
+		</action>
+		
+	</package>
+</struts>

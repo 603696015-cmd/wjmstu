@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="simulation"  extends="elearning">
+		<!-- 模拟考试管理 -->
+		<action name="simulation_index" class="com.sopia.simulation.action.SimulationAction"
+			method="index">
+			<result name="index">
+				simulation/index.jsp
+			</result>
+		</action>
+		<!-- 模拟考试登录-->
+		<action name="simulation_login" class="com.sopia.simulation.action.SimulationAction"
+			method="login">
+			<result name="index">
+				simulation/login.jsp
+			</result>
+		</action>
+		
+		<!-- 模拟考试登录-->
+		<action name="simulation_login_check" class="com.sopia.simulation.action.SimulationAction"
+			method="loginCheck">
+		</action>
+		
+		<action name="simulation_info" class="com.sopia.simulation.action.SimulationAction"
+			method="infoConfirm">
+			<result name="information">
+				simulation/information.jsp
+			</result>
+		</action>
+		
+		<action name="simulation_device" class="com.sopia.simulation.action.SimulationAction"
+			method="deviceDebu">
+			<result name="deviceDebu">
+				simulation/deviceDebu.jsp
+			</result>
+		</action>
+		
+		<action name="simulation_paper" class="com.sopia.simulation.action.SimulationAction"
+			method="paper">
+			<result name="paper">
+				simulation/paper.jsp
+			</result>
+		</action>
+		<action name="ajax_paper" class="com.sopia.simulation.action.SimulationAction"
+			method="ajaxPaperData">
+		</action>
+		
+		<action name="load_question" class="com.sopia.simulation.action.SimulationAction"
+			method="loadQuestion">
+		</action>
+		<!-- 获取缓存全部数据  -->
+		<action name="ajax_paper_all" class="com.sopia.simulation.action.SimulationAction"
+			method="ajaxAllPaperData">
+		</action>
+		
+		<!-- 提交试卷 -->
+		<action name="exam_submit" class="com.sopia.simulation.action.SimulationAction"
+			method="examSubmit">
+		</action>
+		
+	</package>
+</struts>

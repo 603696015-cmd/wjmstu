@@ -1,0 +1,135 @@
+BODY {
+	LINE-HEIGHT: 20px; COLOR: #2b2b2b; FONT-SIZE: 12px
+}
+A:link {
+	COLOR: #010195; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #010195; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.linkNl A:link {
+	COLOR: #0147a6; TEXT-DECORATION: none
+}
+.linkNl A:visited {
+	COLOR: #0147a6; TEXT-DECORATION: none
+}
+.linkNl A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.linkNl A:active {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.list_009 LI {
+	PADDING-LEFT: 1em; BACKGROUND: url(../images/knowledge/unfcn_mj_01.gif) no-repeat 6px 50%
+}
+A.linkRed:link {
+	COLOR: #a20000
+}
+A.linkRed:visited {
+	COLOR: #a20000
+}
+A.linkRed:hover {
+	COLOR: #c00
+}
+A.linkBlack:link {
+	COLOR: #000
+}
+A.linkBlack:visited {
+	COLOR: #000
+}
+.tablinkwhite {
+	COLOR: #ffffff
+}
+.tablinkwhite A:hover {
+	COLOR: #ffffff
+}
+.tablinkwhite A:link {
+	COLOR: #ffffff
+}
+.tablinkwhite A:visited {
+	COLOR: #ffffff
+}
+.tablinkwhite A:hover {
+	COLOR: #ffffff
+}
+.tabtoplkblue {
+	MARGIN-TOP: 10px; PADDING-LEFT: 20px; COLOR: #343434; BORDER-TOP: #999999 1px dashed
+}
+.tabtoplkblue A:hover {
+	COLOR: #0000ff
+}
+.tabtoplkblue A:link {
+	COLOR: #0000ff
+}
+.tabtoplkblue A:visited {
+	COLOR: #0000ff
+}
+.tabtoplkblue A:hover {
+	COLOR: #0000ff
+}
+.tabrl {
+	BORDER-LEFT: #e1e1e1 1px solid; BORDER-RIGHT: #e1e1e1 1px solid
+}
+.tabrlb {
+	BORDER-BOTTOM: #e1e1e1 1px solid; BORDER-LEFT: #e1e1e1 1px solid; BORDER-RIGHT: #e1e1e1 1px solid
+}
+.tab4 {
+	BORDER-BOTTOM: #e1e1e1 1px solid; BORDER-LEFT: #e1e1e1 1px solid; MARGIN-TOP: 8px; COLOR: #ff0000; BORDER-TOP: #e1e1e1 1px solid; BORDER-RIGHT: #e1e1e1 1px solid
+}
+.tab42 {
+	BORDER-BOTTOM: #e1e1e1 1px solid; BORDER-LEFT: #e1e1e1 1px solid; COLOR: #000000; FONT-SIZE: 14px; BORDER-TOP: #e1e1e1 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #e1e1e1 1px solid
+}
+.tabb {
+	BORDER-BOTTOM: #e1e1e1 1px dashed
+}
+.tabb2 {
+	BORDER-BOTTOM: #e1e1e1 1px solid
+}
+.tabpad {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.tabtop {
+	BACKGROUND-IMAGE: url(../images/knowledge/2j_book_lmy_020.gif); MARGIN-TOP: 8px; BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 50% bottom; COLOR: #0000ff
+}
+.tabtopbk {
+	MARGIN-TOP: 8px; BORDER-TOP: #fed883 2px solid
+}
+.titz {
+	BORDER-BOTTOM: #fed883 1px solid; TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 45px; MARGIN-TOP: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 10px; BACKGROUND: #fffbe8; HEIGHT: 45px; FONT-SIZE: 14px; BORDER-TOP: #fed883 2px solid; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.titz2 {
+	BORDER-BOTTOM: #fed883 1px solid; TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 45px; MARGIN-TOP: 10px; BACKGROUND: #fffbe8; HEIGHT: 45px; FONT-SIZE: 14px; BORDER-TOP: #fed883 2px solid; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.tdbg {
+	BACKGROUND-IMAGE: url(../images/knowledge/2j_book_lmy_020.gif); PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 50% top; PADDING-TOP: 5px
+}
+.tdbg2 {
+	BACKGROUND-IMAGE: url(../images/knowledge/2j_book_lmy_020.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 50% bottom
+}
+.tdpad {
+	PADDING-BOTTOM: 10px; LINE-HEIGHT: 30px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.tdpad2 {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.dh1 {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.dibaikuang {
+	BORDER-BOTTOM: #0000ff 1px dotted; MARGIN-TOP: 8px
+}
+.dibaikuang2 {
+	MARGIN-TOP: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CAE2E6;
+}
+.h30 {
+	LINE-HEIGHT: 24px; COLOR: #ff0000; FONT-SIZE: 12px
+}

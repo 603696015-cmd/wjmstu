@@ -1,0 +1,16 @@
+insert into ELFUNC (ID, FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values (4322, 'jg_register', '机构注册', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+insert into ELFUNC (ID, FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG )
+values (4321, 'sendcode', '发送验证码', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+insert into ELFUNC (ID, FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG )
+values (4319, 'jg_registerInit', '机构注册', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+insert into ELFUNC (ID, FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values (4324, 'jg_login', '机构登录', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+insert into ELFUNC (ID, FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values (4323, 'index_jg', '机构首页', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+注：这五个功能的上级都是“前台页面” 分配给所有角色

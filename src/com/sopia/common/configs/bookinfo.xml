@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="bookinfo" extends="elearning">
+		<!-- 返回图书类别 --> 
+		<action name="bookTypeTree" class="com.sopia.bookinfo.action.BookInfoAction" method="bookTypeTree">
+			<result name="bookTypeTree_success">
+				admin/newbook/booktype_list.jsp
+			</result>
+		</action>	
+		<!-- 显示图书类别信息页面 --> 
+		<action name="bookType_view" class="com.sopia.bookinfo.action.BookInfoAction" method="bookType_view">
+			<result name="booktype_view_success">
+				admin/newbook/booktype_view.jsp
+			</result>
+		</action>		
+		<!-- 返回图书类别添加页面 --> 
+		<action name="bookType_addInit" class="com.sopia.bookinfo.action.BookInfoAction" method="bookType_addInit">
+			<result name="bookType_addInit_success">
+				admin/newbook/booktype_add.jsp
+			</result>
+		</action>	
+		<!-- 返回图书类别添加成功 --> 
+		<action name="bookType_add" class="com.sopia.bookinfo.action.BookInfoAction" method="bookType_add">
+			<result name="booktype_add_success">
+				admin/newbook/booktype_add_success.jsp
+			</result>
+		</action>	
+		
+		<!-- 删除图书类别 --> 
+		<action name="deleteBooktype" class="com.sopia.bookinfo.action.BookInfoAction" method="deleteBooktype">
+			<result name="deleteBooktype_success">
+				admin/newbook/booktype_delete_success.jsp
+			</result>
+		</action>
+		<!-- 返回修改图书类别页面 --> 
+		<action name="bookType_updinit" class="com.sopia.bookinfo.action.BookInfoAction" method="bookType_updinit">
+			<result name="bookType_updinit_success">
+				admin/newbook/booktype_alter.jsp
+			</result>
+		</action>
+		<!-- 修改图书类别 --> 		
+		<action name="bookType_upd" class="com.sopia.bookinfo.action.BookInfoAction" method="bookType_upd">
+			<result name="bookType_upd_success">
+				admin/newbook/booktype_alter_success.jsp
+			</result>
+		</action>	
+		<!-- 返回图书信息添加页面 --> 		
+		<action name="bookinfo_addinit" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_addinit">
+			<result name="bookinfo_addinit_success">
+				admin/newbook/bookinfo_add.jsp
+			</result>
+		</action>		
+		<!-- 返回图书信息添加 类型选择页面 --> 		
+		<action name="bookinfo_typeaddinit" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_typeaddinit">
+			<result name="bookinfo_typeaddinit_success">
+				admin/newbook/bookRegister.jsp
+			</result>
+		</action>	
+		<!-- 返回图书信息添加 成功 --> 		
+		<action name="bookinfo_add" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_add">
+			<result name="bookinfo_add_success">
+				admin/newbook/bookinfo_add_success.jsp
+			</result>
+		</action>
+		<!-- 返回前台图书列表 -->
+		<action name="front_bookinfo_allistview" class="com.sopia.bookinfo.action.BookInfoAction" method="front_bookinfo_allistview">
+			<result name="front_bookinfo_allistview_success">
+				elfrontman/book/bookindex.jsp
+			</result>
+		</action>
+		<!-- 返回前台图书内容页 -->
+		<action name="front_bookinfo_view" class="com.sopia.bookinfo.action.BookInfoAction" method="front_bookinfo_view">
+			<result name="front_bookinfo_view">
+				elfrontman/book/bookindexview.jsp
+			</result>
+		</action>
+		<!-- 返回后台我的图书管理 -->
+		<action name="bookinfo_listview" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_listview">
+			<result name="bookinfo_listview_success">
+				admin/newbook/bookinfomymanage_list.jsp
+			</result>
+		</action>	
+		<!-- 返回后台图书审核管理 -->
+		<action name="bookinfo_alllistview" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_alllistview">
+			<result name="bookinfo_alllistview_success">
+				admin/newbook/bookinfoallmanage_list.jsp
+			</result>
+		</action>
+		
+		<!-- 删除图书 -->
+		<action name="bookinfo_dele" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_dele">
+			<result name="bookinfo_listview_success">
+				admin/newbook/bookinfomymanage_list.jsp
+			</result>
+			<result name="bookinfo_alllistview_success">
+				admin/newbook/bookinfoallmanage_list.jsp
+			</result>		
+		</action>
+		<!-- 浏览图书信息 -->	
+		<action name="bookinfo_view" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_view">
+			<result name="bookinfo_view_success">
+				admin/newbook/bookinfo_view.jsp
+			</result>
+			
+		</action>
+		<!-- 修改图书页面 -->	
+		<action name="bookinfo_updinit" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_updinit">
+			<result name="bookinfo_updinit_success">
+				admin/newbook/bookinfo_upd.jsp
+			</result>
+		</action>	
+		<!-- 修改图书成功 -->	
+		<action name="bookinfo_upd" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_upd">
+			<result name="bookinfo_updinit_success">
+				admin/newbook/bookinfo_upd_success.jsp
+			</result>
+		</action>	
+		<!-- 批量审核通过 -->		
+		<action name="bookinfo_check" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_check">
+			<result name="bookinfo_alllistview_success">
+				admin/newbook/bookinfoallmanage_list.jsp
+			</result>
+		</action>	
+		<!-- 批量审核不通过 -->		
+		<action name="bookinfo_check2" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_check2">
+			<result name="bookinfo_alllistview_success">
+				admin/newbook/bookinfoallmanage_list.jsp
+			</result>
+		</action>
+		<!-- 批量推荐 -->		
+		<action name="bookinfo_tuijian" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_tuijian">
+			<result name="bookinfo_alllistview_success">
+				admin/newbook/bookinfoallmanage_list.jsp
+			</result>
+		</action>
+		<!-- 批量取消推荐 -->		
+		<action name="bookinfo_notuijian" class="com.sopia.bookinfo.action.BookInfoAction" method="bookinfo_notuijian">
+			<result name="bookinfo_alllistview_success">
+				admin/newbook/bookinfoallmanage_list.jsp
+			</result>
+		</action>													
+	</package> 
+</struts>

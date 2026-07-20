@@ -1,0 +1,11 @@
+alter table department add(image varchar(200));
+
+alter table department add(title varchar(200));
+
+alter table department add(luokuanwenzi varchar(200));
+
+alter table department add(lingyu varchar(200));
+
+alter table department add(dishi varchar(200));
+
+commit

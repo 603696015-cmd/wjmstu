@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="stat_quiz" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="user_quizresult"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="user_quizresult">
+			<result name="user_quizresult">
+				admin/statistic/user_quizresult.jsp
+			</result>
+		</action>
+		<action name="dep_quiz_info"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="dep_quiz_info">
+			<result name="dep_quiz_info">
+				admin/statistic/dep_quiz_info.jsp
+			</result>
+		</action>
+		<action name="quiz_searchInit"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_searchInit">
+			<result name="quiz_searchInit">
+				admin/statistic/quiz_searchInit.jsp
+			</result>
+		</action>
+		<action name="quiz_searchlist"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_searchlist">
+			<result name="quiz_searchlist">
+				admin/statistic/quiz_searchlist.jsp
+			</result>
+		</action>
+		<action name="quiz_stat_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_stat_view">
+			<result name="quiz_stat_view">
+				admin/statistic/quiz_stat_view.jsp
+			</result>
+			<result name="quiz_stat_view_EXCEL">
+				admin/statistic/quiz_stat_view_EXCLE.jsp
+			</result>
+		</action>
+		<action name="sim_stat_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="sim_stat_view">
+			<result name="sim_stat_view">
+				admin/statistic/sim_stat_view.jsp
+			</result>
+		</action>
+		<action name="quiz_detail_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_detail_view">
+			<result name="quiz_detail_view">
+				admin/statistic/quiz_detail_view.jsp
+			</result>
+		</action>
+		<action name="quizblock_detail_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quizblock_detail_view">
+			<result name="quizblock_detail_view">
+				admin/statistic/quizblock_detail_view.jsp
+			</result>
+		</action>
+		<action name="quizblock_detail_viewExcel"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quizblock_detail_viewExcel">
+			<result name="quizblock_detail_viewExcel">
+				admin/statistic/quizblock_detail_viewExcel.jsp
+			</result>
+		</action>
+		<action name="quiz_detail_paper_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_detail_paper_view">
+			<result name="quiz_detail_paper_view">
+				admin/statistic/quiz_detail_paper_view.jsp
+			</result>
+		</action>
+		<action name="quiz_detail_paper_view_Excel"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_detail_paper_view_Excel">
+			<result name="quiz_detail_paper_view_Excel">
+				admin/statistic/quiz_detail_paper_view_Excel.jsp
+			</result>
+		</action>
+		<!-- 考试情况导出列表 -->
+		<action name="quiz_detail_viewExcel"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_detail_viewExcel">
+			<result name="quiz_detail_viewExcel">
+				admin/statistic/quiz_detail_viewExcel.jsp
+			</result>
+		</action>
+		<action name="studyRoomRecordList"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="studyRoomRecordList">
+			<result name="studyRoomRecordList">
+				admin/statistic/studyRoomRecordList.jsp
+			</result>
+		</action>
+		<action name="quiz_paper_detail_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_paper_detail_view">
+			<result name="quiz_paper_detail_view">
+				admin/statistic/quiz_paper_detail_view.jsp
+			</result>
+		</action>
+		<action name="sim_detail_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="sim_detail_view">
+			<result name="sim_detail_view">
+				admin/statistic/sim_detail_view.jsp
+			</result>
+		</action>
+		<action name="sim_searchInit"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="sim_searchInit">
+			<result name="sim_searchInit">
+				admin/statistic/sim_searchInit.jsp
+			</result>
+		</action>
+		<action name="sim_searchlist"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="sim_searchlist">
+			<result name="sim_searchlist">
+				admin/statistic/sim_searchlist.jsp
+			</result>
+		</action>
+		<action name="quizpaper_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quizpaper_view">
+			<result name="quizpaper_view">
+				admin/statistic/quizpaper_view.jsp
+			</result>
+			<result name="quizpaperviewall">
+				admin/statistic/quizpaperviewall.jsp
+			</result>
+		</action>
+		<action name="stat_examprac_list"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_examprac_list">
+			<result name="stat_examprac_list">
+				admin/statistic/stat_examprac_list.jsp
+			</result> 
+		</action>
+		<action name="stat_examprac_gk"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_examprac_gk">
+			<result name="stat_examprac_gk">
+				admin/statistic/stat_examprac_gk.jsp
+			</result>
+			<result name="stat_examprac_gk_EXCEL">
+				admin/statistic/stat_examprac_gk_EXCEL.jsp
+			</result>
+		</action>
+		<action name="stat_examprac_detail"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_examprac_detail">
+			<result name="stat_examprac_detail">
+				admin/statistic/stat_examprac_detail.jsp
+			</result>
+			<result name="stat_examprac_detail_EXCEL">
+				admin/statistic/stat_examprac_detail_EXCEL.jsp
+			</result>
+		</action>
+			<action name="stat_examprac_detail_list"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_examprac_detail_list">
+			<result name="stat_examprac_detail_list">
+				admin/statistic/stat_examprac_detail_list.jsp
+			</result>
+		</action>
+		<action name="stat_examprac_eval"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_examprac_eval">
+			<result name="stat_examprac_eval">
+				admin/statistic/stat_examprac_eval.jsp
+			</result>
+			<result name="stat_examprac_eval_EXCEL">
+				admin/statistic/stat_examprac_eval_EXCEL.jsp
+			</result>
+		</action>
+		<action name="quiz_stat_eval"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_stat_eval">
+			<result name="quiz_stat_eval">
+				admin/statistic/quiz_stat_eval.jsp
+			</result>
+			<result name="quiz_stat_eval_EXCEL">
+				admin/statistic/quiz_stat_eval_Excel.jsp
+			</result>
+		</action>
+		<action name="quiz_stat_eval_jz"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="quiz_stat_eval_jz">
+			<result name="quiz_stat_eval_jz">
+				admin/statistic/quiz_stat_eval_jz.jsp
+			</result>
+			<result name="quiz_stat_eval_jz_EXCEL">
+				admin/statistic/quiz_stat_eval_jz_Excel.jsp
+			</result>
+		</action>
+		<action name="stat_eroom_batch_list"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_eroom_batch_list">
+			<result name="stat_eroom_batch_list">
+				admin/statistic/stat_eroom_batch_list.jsp
+			</result> 
+		</action>
+		<action name="stat_eroom_block_list"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_eroom_block_list">
+			<result name="stat_eroom_block_list">
+				admin/statistic/stat_eroom_block_list.jsp
+			</result> 
+		</action>
+		<action name="stat_eroom_batch_gk"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_eroom_batch_gk">
+			<result name="stat_eroom_batch_gk">
+				admin/statistic/stat_eroom_batch_gk.jsp
+			</result>
+			<result name="stat_eroom_batch_gk_EXCEL">
+				admin/statistic/stat_eroom_batch_gk_EXCEL.jsp
+			</result>
+		</action>
+		<action name="stat_eroom_batch_view"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_eroom_batch_view">
+			<result name="stat_eroom_batch_view">
+				admin/statistic/stat_eroom_batch_view.jsp
+			</result>
+			<result name="stat_eroom_batch_view_EXCEL">
+				admin/statistic/stat_eroom_batch_view_EXCEL.jsp
+			</result>
+		</action>
+		<action name="stat_eroom_batch_eval"
+			class="com.sopia.statman.action.StatisticQuiz"
+			method="stat_eroom_batch_eval">
+			<result name="stat_eroom_batch_eval">
+				admin/statistic/stat_eroom_batch_eval.jsp
+			</result>
+			<result name="stat_eroom_batch_eval_EXCEL">
+				admin/statistic/stat_eroom_batch_eval_EXCEL.jsp
+			</result>
+		</action>
+	</package>
+</struts>

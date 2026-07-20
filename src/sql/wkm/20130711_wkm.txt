@@ -1,0 +1,1 @@
+alter table batch_user_fenpei add process number(20,2);

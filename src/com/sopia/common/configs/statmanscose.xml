@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="statmanscose" extends="elearning">
+		<!-- 返回学员学分统计页面 --> 
+		<action name="getstudentcouse" class="com.sopia.statman.action.StatmanscoseAciton" method="getstudentcouse">
+			<result name="getstudentcouse_success">
+				admin/scoer/statmanscose_list.jsp
+			</result>
+		</action>	
+		<!-- 学员学分详细信息 -->			
+		<action name="getstudentcousebyuserid" class="com.sopia.statman.action.StatmanscoseAciton" method="getstudentcousebyuserid">
+			<result name="getstudentcousebyuserid_success">
+				admin/scoer/usercouseinfo_list.jsp
+			</result>
+			<result name="getmycouse_success">
+				admin/scoer/user_course_list.jsp
+			</result>
+		</action>	
+													
+	</package> 
+</struts>

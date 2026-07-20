@@ -1,0 +1,163 @@
+create or replace procedure intelligent_login_pro(userid_ number,notLogin3day_ number,classid_ number,flag_ out number,returnloginid_ out number)
+as
+today_ varchar2(50);
+count_ number;
+loginid_ number;
+score_ number;--每次登录得分
+sumscore_ number;--总分
+begin
+     count_:=0;
+     loginid_:=0;
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     score_:=0.0;
+     sumscore_:=0.0;
+     
+     if notLogin3day_=1 then--3天未登陆
+        score_:=-0.9;
+        insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+        flag_:=-1;
+     else--不是3天未登录
+        select count(1) into count_ from intelligent_login where today=today_ and userid=userid_ and classid=classid_; 
+        if count_=0 then--当天第一次登陆
+           score_:=0.1;
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=1;
+        else--当天不是第一次登陆
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=0;
+        end if;
+     end if;
+     select intelligent_login_sequence.currval into loginid_ from dual;
+     returnloginid_:=loginid_;
+     
+     --判断分数是否已经达到饱和
+     select sum(score) into sumscore_ from intelligent_login where userid=userid_ and classid=classid_ and begintime<sysdate;
+     if sumscore_ IS NULL then
+        sumscore_:=0.0;
+     end if;
+     sumscore_:=sumscore_+score_;
+     if sumscore_>=10  then
+        sumscore_:=10.0;
+     else if sumscore_<=0 then
+        sumscore_:=0.0;  
+     end if;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into intelligent_login_t (userid,totalscore,classid) values (userid_,sumscore_,classid_);
+     else 
+        update intelligent_login_t set totalscore=sumscore_ where userid=userid_ and classid=classid_;
+     end if;
+     
+end;
+
+
+
+
+create or replace procedure intelligentweeklearnend
+(userid_ number,classid_ number,courseid_ number,cpid_ number,studyCourseRecordId_ number)
+as
+count_ number;
+between_sec_ number;
+sum_sec_ number;
+totalscore_ number;
+hour_ number;
+week1day_ varchar2(50);
+week2day_ varchar2(50);
+week3day_ varchar2(50);
+week4day_ varchar2(50);
+week5day_ varchar2(50);
+week6day_ varchar2(50);
+week7day_ varchar2(50);
+sql_ varchar2(1000);
+sqlwhere_ varchar2(1000);
+begin
+     count_:=0;
+     between_sec_:=0;
+     sum_sec_:=0;
+     --更新当次学习记录
+     select count(1) into count_ from intelligent_week where id=studyCourseRecordId_;
+     if count_>0 then
+        update intelligent_week set endtime=sysdate where id=studyCourseRecordId_;
+        select (cast(endtime as date)-cast(begintime as date))*86400 interval into between_sec_ from  intelligent_week  where id=studyCourseRecordId_;
+        update intelligent_week set learntime=between_sec_ where id=studyCourseRecordId_;
+     end if;
+     --本周学习时长得分
+     select to_char(trunc(sysdate, 'd') + 1,'yyyyMMdd') into week1day_ from dual;--周一
+     select to_char(trunc(sysdate, 'd') + 2,'yyyyMMdd') into week2day_ from dual;--周二
+     select to_char(trunc(sysdate, 'd') + 3,'yyyyMMdd') into week3day_ from dual;--周三
+     select to_char(trunc(sysdate, 'd') + 4,'yyyyMMdd') into week4day_ from dual;--周四
+     select to_char(trunc(sysdate, 'd') + 5,'yyyyMMdd') into week5day_ from dual;--周五
+     select to_char(trunc(sysdate, 'd') + 6,'yyyyMMdd') into week6day_ from dual;--周六
+     select to_char(trunc(sysdate, 'd') + 7,'yyyyMMdd') into week7day_ from dual;--周日
+     --更新周学习总表
+     --sqlwhere_:='(today='||week1day_||' or today='||week2day_||' or today='||week3day_||' or today='||week4day_||' or today='||week5day_||' or today='||week6day_||' or today='||week7day_||')';
+     sqlwhere_:='today in ('''||week1day_||''','''||week2day_||''','''||week3day_||''','''||week4day_||''','''||week5day_||''','''||week6day_||''','''||week7day_||''')';
+     dbms_output.put_line(sqlwhere_);
+     sql_ := 'select sum(learntime)  from intelligent_week where '||sqlwhere_||' and userid='||userid_||' and  classid='||classid_||' and courseid='||courseid_||' and pageid='||cpid_;
+     dbms_output.put_line(sql_);
+     execute immediate sql_ into sum_sec_;
+     totalscore_:=round(1 * sum_sec_/120,1);
+     if totalscore_>1 then
+        totalscore_:=1.0;   
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t where weekbegin=week1day_ and weekend=week7day_ and userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if count_=0 then
+        insert into intelligent_week_t(userid,classid,courseid,pageid,totalscore,weekbegin,weekend,learntime)
+               values(userid_,classid_,courseid_,cpid_,totalscore_,week1day_,week7day_,sum_sec_);
+     else
+        update intelligent_week_t set totalscore=totalscore_,learntime=sum_sec_ where weekbegin=week1day_ and weekend=week7day_ and  userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if;
+     --更新周学习汇总表
+     totalscore_:=0.0;
+     select round(sum(totalscore),1) into totalscore_ from intelligent_week_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if totalscore_>10 then
+        totalscore_:=10.0;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_; 
+     if count_=0 then
+        insert into intelligent_week_t_t(userid,classid,courseid,pageid,totalscore)
+               values (userid_,classid_,courseid_,cpid_,totalscore_);
+     else
+         update intelligent_week_t_t set totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if; 
+     --更新等级总学习时间
+     count_:=0;
+     sum_sec_:=0;
+     select sum(learntime) into sum_sec_ from intelligent_week where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     totalscore_:=round(sum_sec_/3600 * 0.3,1);
+     if totalscore_>10 then
+        totalscore_:=10.0;
+     end if;
+     select count(1) into count_ from intelligent_class_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if count_=0 then
+        insert into intelligent_class_t(userid,totalscore,totalsecond,classid,courseid,pageid)
+               values(userid_,totalscore_,sum_sec_,classid_,courseid_,cpid_);
+     else
+         update intelligent_class_t set totalsecond=sum_sec_,totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if;
+     --更新等级学习时间总表
+     totalscore_:=0.0;
+     sum_sec_:=0;
+     hour_:=0.00f;
+     select sum(totalsecond) into sum_sec_ from intelligent_class_t where userid=userid_ and classid=classid_;
+     if sum_sec_>0 then
+        hour_:=round(sum_sec_/3600,2);
+        totalscore_:=round(hour_*0.25,1);
+        if totalscore_>10 then
+           totalscore_:=10.0;
+        end if;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_class_t_t where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into intelligent_class_t_t(userid,classid,totalscore,totalsecond,hour)
+               values(userid_,classid_,totalscore_,sum_sec_,hour_);
+     else
+        update intelligent_class_t_t set totalscore=totalscore_ ,totalsecond=sum_sec_,hour=hour_ where userid=userid_ and classid=classid_;
+     end if;
+end;
+

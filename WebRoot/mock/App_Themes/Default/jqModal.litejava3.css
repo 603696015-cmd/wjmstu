@@ -1,0 +1,101 @@
+div.jqDrag {cursor: move;}
+
+/* jqmModal dialog CSS courtesy of;
+  Brice Burgess <bhb@iceburg.net> */
+
+div.jqmDialog {
+  display: none;
+    
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    
+    margin-left: -200px;
+  width: 400px;
+
+  overflow: hidden;
+  font-family:verdana,tahoma,helvetica;
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html div.jqmDialog {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(30 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+
+/* [[[ Title / Top Classes ]]] */
+div.jqmdTC {   
+  background-position: 0px 0px; background: url("Images/Pop-Up_02.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_02.gif*/ repeat-x ; 
+  padding:  11px 5px 5px 5px;
+  
+  font-weight: bold;
+  
+  height:45px;
+  * zoom: 1;
+  }
+
+
+div.jqmdTL { background:  url("Images/Pop-Up_01.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_01.gif*/ no-repeat 0px 0px; 
+  margin-bottom:-14px;
+  margin-bottom:0!important;
+padding-left: 33px;
+  height:45px;
+   
+}
+div.jqmdTR { background: url("Images/Pop-Up_04.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_04.gif*/ no-repeat right 0px; 
+padding-right: 43px; * zoom: 1;
+  height:45px;
+  
+}
+
+
+/* [[[ Body / Message Classes ]]] */
+div.jqmdBC {
+  background: url("Images/bc.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/bc.gif*/ repeat-x center bottom;
+  padding: 7px; 
+  height: 120px;  
+}
+
+div.jqmdBC1 {
+  height: 80px;
+  overflow: auto;
+}
+
+div.jqmdBL { background: url("Images/bl.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/bl.gif*/ no-repeat left bottom; 
+  padding-left: 7px; }
+* html div.jqmdBL { background: url("Images/bl.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/bl.gif*/ no-repeat left bottom; 
+  padding-left: 7px; 
+  margin-top:-16px;
+  }
+div.jqmdBR { background: url("Images/br.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/br.gif*/ no-repeat right bottom; 
+padding-right: 7px; * zoom: 1
+}
+
+div.jqmdMSG { color: #317895; 
+              }
+
+
+/* [[[ Button classes ]]] */
+input.jqmdX {
+  position: absolute;
+  right: 6px;
+  top: 7px;
+  /*padding: 0 0 0 19px;*/
+  height: 18px;
+  width: 31px;
+  background: url("Images/titlebarclose.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/titlebarclose.gif*/ no-repeat left top;
+  overflow: hidden;
+}
+input.jqmdXFocus {background-position: bottom left; outline: none;}
+
+div.jqmdBC button, div.jqmdBC input[type="submit"] {
+  margin: 8px 10px 4px 10px; 
+  color: #777;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+div.jqmDialog input:focus, div.jqmDialog input.iefocus { background-color: #eaffc3; }

@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="ecperfectt" extends="elearning">
+
+		<!-- schedule actions -->
+		<action name="schedule_add"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="addScheduleTable">
+			<result name="add_jsp">
+				admin/etcperfect/addschedule.jsp
+			</result>
+		</action>
+
+		<action name="schedule_add_data"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="addScheduleToDb">
+			<result name="add_success">
+				admin/etcperfect/addschedule_success.jsp
+			</result>
+			<result name="addScheduleSuccess" type="redirectAction">
+				listSchedule.action
+			</result>
+		</action>
+
+		<action name="listSchedule"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="listSchedule">
+			<result name="listSchedule">
+				admin/etcperfect/list_schedule.jsp
+			</result>
+		</action>
+
+		<action name="delSchedule"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="delSchedule">
+			<result name="delScheduleSuccess" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				listSchedule.action
+			</result>
+		</action>
+
+		<action name="getSchedule"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="getScheduleById">
+			<result name="getScheduleSuccess">
+				admin/etcperfect/scheduleview.jsp
+			</result>
+			<result name="updateSchedule">
+				admin/etcperfect/scheduleupdate.jsp
+			</result>
+		</action>
+
+		<action name="updateSchedule"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="updateSchedule">
+			<result name="updatesuccess">
+				admin/etcperfect/updateScheduleSuccess.jsp
+			</result>
+			<result name="updateSuccessAndList" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				listSchedule.action
+			</result>
+
+		</action>
+
+		<action name="searchSchedule"
+			class="com.sopia.schedule.action.ScheduleAction"
+			method="searchSchedule">
+			<result name="search_jsp">
+				admin/etcperfect/schedule_search.jsp
+			</result>
+		</action>
+
+		<!--      ++++++++++++ log actions     +++++++       -->
+		<action name="log_add_view"
+			class="com.sopia.schedule.action.LogAction" method="addLog_view">
+			<result name="add_log_jsp">
+				admin/etcperfect/log_add.jsp
+			</result>
+		</action>
+
+		<action name="log_add"
+			class="com.sopia.schedule.action.LogAction" method="addLog">
+			<result name="add_log_success">
+				admin/etcperfect/log_add_success.jsp
+			</result>
+			<result name="addLogSuccess" type="redirectAction">
+				list_mylogs.action
+			</result>
+		</action>
+
+		<action name="list_mylogs"
+			class="com.sopia.schedule.action.LogAction"
+			method="selectMyLogById">
+			<result name="selectLogsSuccess">
+				admin/etcperfect/list_mylog.jsp
+			</result>
+		</action>
+
+		<action name="delLog"
+			class="com.sopia.schedule.action.LogAction" method="delLog">
+			<result name="delLogSuccess" type="redirectAction">
+				list_mylogs.action
+			</result>
+		</action>
+
+		<action name="getLog"
+			class="com.sopia.schedule.action.LogAction" method="getLogById">
+			<result name="getLogSuccess">
+				admin/etcperfect/logview.jsp
+			</result>
+			<result name="updateLog">
+				admin/etcperfect/logupdate.jsp
+			</result>
+		</action>
+
+		<action name="updateLog"
+			class="com.sopia.schedule.action.LogAction" method="updateLog">
+			<result name="updateLogSuccess">
+				admin/etcperfect/updateLogSuccess.jsp
+			</result>
+			<result name="updateSuccessAndList" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				list_mylogs.action
+			</result>
+		</action>
+
+
+		<action name="searchLog"
+			class="com.sopia.schedule.action.LogAction" method="searchLog">
+			<result name="search_jsp">
+				admin/etcperfect/log_search.jsp
+			</result>
+		</action>
+
+		<action name="searchLogAction"
+			class="com.sopia.schedule.action.LogAction"
+			method="searchLogAction">
+			<result name="search_jsp" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				searchLog.action?department.id=
+			</result>
+		</action>
+
+		<action name="delLogStuff"
+			class="com.sopia.schedule.action.LogAction" method="delLogStuff">
+			<result name="delLogStuffSuccess">
+				admin/etcperfect/logupdate.jsp
+			</result>
+		</action>
+
+		<!-- +++++++client actions +++++++++++++++++ -->
+		<action name="addClientInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addClientInit">
+			<result name="addClientInitSuccess">
+				admin/etcperfect/client_add.jsp
+			</result>
+		</action>
+
+		<action name="addClient"
+			class="com.sopia.schedule.action.ClientAction" method="addClient">
+			<result name="addClientSuccess">
+				admin/etcperfect/success.jsp
+			</result>
+		</action>
+
+
+
+		<action name="myClient"
+			class="com.sopia.schedule.action.ClientAction" method="myClient">
+			<result name="myClientSuccess">
+				admin/etcperfect/client_myclient.jsp
+			</result>
+		</action>
+
+
+		<action name="getClientView"
+			class="com.sopia.schedule.action.ClientAction"
+			method="getClientView">
+			<result name="getClientViewSuccess">
+				admin/etcperfect/client_view.jsp
+			</result>
+		</action>
+
+		<action name="delClient"
+			class="com.sopia.schedule.action.ClientAction" method="delClient">
+			<result name="delClientSuccess" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				myClient.action
+			</result>
+			<result name="delMyClientSuccess" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				searchMyClient.action
+			</result>
+		</action>
+
+		<action name="updateClientInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateClientInit">
+			<result name="updateClientInitSuccess">
+				admin/etcperfect/client_update.jsp
+			</result>
+		</action>
+
+		<action name="updateClient"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateClient">
+			<result name="updateClientSuccess" type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				myClient.action
+			</result>
+		</action>
+
+		<action name="updateClientlinkman"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateClientlinkman">
+			<result name="updateClientlinkmanSuccess"
+				type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				myClient.action
+			</result>
+		</action>
+
+		<action name="deleteClientlinkman"
+			class="com.sopia.schedule.action.ClientAction"
+			method="deleteClientlinkman">
+			<result name="deleteClientlinkmanSuccess"
+				type="redirectAction">
+				<!--  admin/etcperfect/delschedule_success.jsp-->
+				myClient.action
+			</result>
+		</action>
+
+		<action name="searchClient"
+			class="com.sopia.schedule.action.ClientAction"
+			method="searchClient">
+			<result name="searchClientSuccess">
+				admin/etcperfect/client_search.jsp
+			</result>
+		</action>
+
+		<action name="searchMyClient"
+			class="com.sopia.schedule.action.ClientAction"
+			method="searchMyClient">
+			<result name="searchMyClientSuccess">
+				admin/etcperfect/client_search_my.jsp
+			</result>
+		</action>
+
+
+		<!--  client contact -->
+		<!-- add -->
+		<action name="addContactInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addContactInit">
+			<result name="addContactInitSuccess">
+				admin/etcperfect/contact_add.jsp
+			</result>
+		</action>
+
+		<action name="addContact"
+			class="com.sopia.schedule.action.ClientAction" method="addContact">
+			<result name="addContactSuccess" type="redirectAction">
+				myContact.action
+			</result>
+		</action>
+		<!--  my -->
+		<action name="myContact"
+			class="com.sopia.schedule.action.ClientAction" method="myContact">
+			<result name="myContactSuccess">
+				admin/etcperfect/contact_mycontact.jsp
+			</result>
+		</action>
+		<!--delete  -->
+		<action name="deleteContact"
+			class="com.sopia.schedule.action.ClientAction"
+			method="deleteContact">
+			<result name="deleteContactSuccess" type="redirectAction">
+				myContact.action
+			</result>
+		</action>
+		<!-- update -->
+		<action name="updateContactInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateContactInit">
+			<result name="updateContactInitSuccess">
+				admin/etcperfect/contact_update.jsp
+			</result>
+		</action>
+
+		<action name="updateContact"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateContact">
+			<result name="updateContactSuccess" type="redirectAction">
+				myContact.action
+			</result>
+		</action>
+
+		<action name="deleteContactstuff"
+			class="com.sopia.schedule.action.ClientAction"
+			method="deleteContactstuff">
+			<result name="deleteContactstuffSuccess"
+				type="redirectAction">
+				updateContactInit.action?contact.id=${contact.id}
+			</result>
+		</action>
+
+		<!-- view -->
+		<action name="viewContact"
+			class="com.sopia.schedule.action.ClientAction"
+			method="viewContact">
+			<result name="viewContactSuccess">
+				admin/etcperfect/contact_view.jsp
+			</result>
+		</action>
+		<!--   download -->
+		<action name="downContactstuff"
+			class="com.sopia.schedule.action.ClientAction"
+			method="downContactstuff">
+			<result type="stream" name="downContactstuff">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename=${filename}
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<!--  search -->
+		<action name="searchContact"
+			class="com.sopia.schedule.action.ClientAction"
+			method="searchContact">
+			<result name="searchContactSuccess">
+				admin/etcperfect/contact_search.jsp
+			</result>
+		</action>
+
+		<!--  test  tag -->
+		<action name="testtags"
+			class="com.sopia.schedule.action.ClientAction" method="testtags">
+			<result name="testtagsSuccess">
+				admin/etcperfect/testtag.jsp
+			</result>
+		</action>
+
+		<action name="contactlinkmanDesigneAddInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="contactlinkmanDesigneAddInit">
+			<result name="contactlinkmanDesigneAddInitSuccess">
+				admin/etcperfect/contactlinkman_designe_add.jsp
+			</result>
+		</action>
+
+		<action name="contactlinkmanDesigneAdd"
+			class="com.sopia.schedule.action.ClientAction"
+			method="contactlinkmanDesigneAdd">
+			<result name="contactlinkmanDesigneAddSuccess" type="redirectAction">
+				designeContactTagsInit.action?tablename=${tablename}
+			</result>
+			<result name="contactlinkmanDesigneAddError">
+				admin/etcperfect/contactlinkman_designe_add.jsp
+			</result>
+			<result name="contactlinkmanDesigneAddInit">
+				admin/etcperfect/contactlinkman_designe_add.jsp
+			</result>
+		</action>
+
+
+		<action name="addContactTagsInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addContactTagsInit">
+			<result name="addContactTagsInitSuccess">
+				admin/etcperfect/contact_tags_add.jsp
+			</result>
+			<result name="addContactTagsInitSuccess_phone">
+			admin/wsm_phone/contact_tags_add_phone.jsp
+			</result>
+		</action>
+		<action name="addContactTagsInitZDY"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addContactTagsInitZDY">
+			<result name="addContactTagsInitSuccess_ondemo">
+				admin/etcperfect/template/${moduleManage.tablename}/${tablename}_add.jsp
+			</result>
+			
+		</action>
+
+		<action name="addContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addContactTags">
+			<result name="addContactTagsSuccess" type="redirectAction">
+				myContactTags.action?tablename=${tablename}&amp;type=${type}
+			</result>
+			<result name="insert_failure" type="redirectAction">
+				addContactTagsInit.action?tablename=${tablename}&amp;type=${type}&amp;elmessage=${elmessage}
+			</result>
+			<result name="addContactTagsInit" type="redirectAction">
+				addContactTagsInit.action?tablename=${tablename}&amp;fromcopy=${fromcopy}&amp;elmessage=${elmessage}
+			</result>
+			
+		</action>
+		<action name="addContactTags_ajas"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addContactTags_ajas">
+		</action>
+		<action name="getDesigneColumns"
+			class="com.sopia.schedule.action.ClientAction"
+			method="getDesigneColumns">
+		</action>
+		
+
+		<!--  my -->
+		<action name="myContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myContactTags">
+			<result name="myContactTagsSuccess">
+				admin/etcperfect/contact_tags_mycontact.jsp
+			</result>
+			<result name="container">
+				admin/newversion/container.jsp
+			</result>
+		</action>
+
+		<action name="deleteContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="deleteContactTags">
+			<result name="deleteContactTagsSuccess"
+				type="redirectAction">
+				myContactTags.action?tablename=${tablename}&amp;rx=${rx}&amp;final_=${final_}
+			</result>
+		</action>
+		
+		<action name="deleteContactSearchTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="deleteContactSearchTags">
+			<result name="deleteContactSearchTagsSuccess"
+				type="redirectAction">
+				searchContactTags.action?tablename=${tablename}
+			</result>
+			<result name="deleteContactFinalSearchTagsSuccess"
+				type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}&amp;final_=${final_}
+			</result>
+		</action>
+
+
+		<action name="viewContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="viewContactTags">
+			<result name="viewContactTagsSuccess">
+				admin/etcperfect/contact_view_tags.jsp
+			</result>
+		</action>
+		<action name="viewContactTagsZDY"
+			class="com.sopia.schedule.action.ClientAction"
+			method="viewContactTagsZDY">
+				<result name="viewContactTagsSuccess_ondemo">
+				admin/etcperfect/template/${moduleManage.tablename}/${tablename}_view.jsp
+			</result>
+		</action>
+		<action name="updateContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateContactTags">
+			<result name="updateContactTagsSuccess"
+				type="redirectAction">
+				myContactTags.action?tablename=${tablename}&amp;rx=${rx}&amp;final_=${final_}
+			</result>
+			
+		</action>
+		<action name="updateContactTagsInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateContactTagsInit">
+			<result name="updateContactTagsInitSuccess">
+				admin/etcperfect/contact_update_tags.jsp
+			</result>
+		</action>
+		<action name="updateContactTagsInitZDY"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateContactTagsInitZDY">
+			<result name="updateContactTagsInitSuccess_ondemo">
+				admin/etcperfect/template/${moduleManage.tablename}/${tablename}_update.jsp
+			</result>
+		</action>
+
+		<action name="searchContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="searchContactTags">
+			<result name="searchContactTagsSuccess">
+				admin/etcperfect/contact_tags_search.jsp
+			</result>
+		</action>
+		
+		<action name="finalsearchContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="finalsearchContactTags">
+			<result name="finalsearchContactTagsSuccess">
+				admin/etcperfect/contact_tags_final_search.jsp
+			</result>
+		</action>
+		<!-- 客户分析一览 -->
+		<action name="myContactTags_"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myContactTags_">
+			<result name="myContactTags_">
+				admin/etcperfect/globle/kehu_analysis_view.jsp
+			</result>
+		</action>
+		<!-- 生产任务相关\委外加工相关详情查看 -->
+		<action name="myContactTags1_"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myContactTags1_">
+			<result name="myContactTags1_">
+				admin/etcperfect/globle/material_requirements_view.jsp
+			</result>
+		</action>
+		<!-- 验证审核级别是否已经存在 -->
+		<action name="check_auditOrderIsExist"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="check_auditOrderIsExist">
+		</action>
+		
+		<action name="deleteauditOrderUserId"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="deleteauditOrderUserId">
+		</action>
+		<!-- 添加审核人 -->
+		<action name="addShenheren"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addShenheren">
+			<result name="getRelateEluserInfoSuccess">
+				admin/etcperfect/addShenherenInit.jsp
+			</result>
+		</action>
+		<!-- 自定义审核列表 -->
+		<action name="customAuditListContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="customAuditListContactTags">
+			<result name="finalsearchContactTagsSuccess">
+				admin/etcperfect/contact_tags_custom_audit_list.jsp
+			</result>
+		</action>
+		
+		<!-- 自定义审核管理 -->
+		<action name="customAuditManageInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="customAuditManageInit">
+			<result name="customAuditManageInit">
+				admin/etcperfect/contact_tags_custom_audit_manage.jsp
+			</result>
+			<result name="customAuditView">
+				admin/etcperfect/contact_tags_custom_audit_view.jsp
+			</result>
+		</action>
+		
+		<!-- 自定义审核管理 -->
+		<action name="customAuditManage"
+			class="com.sopia.schedule.action.ClientAction"
+			method="customAuditManage">
+			<result name="customAuditManage" type="redirectAction">
+				customAuditManageInit.action?tablename=${tablename}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="fieldAuditMark"
+			class="com.sopia.schedule.action.ClientAction"
+			method="fieldAuditMark">
+			<result name="fieldAuditMark" >
+				admin/etcperfect/fieldAuditMark.jsp
+			</result>
+		</action>
+		<action name="select_audit_mark_by_entityid"
+			class="com.sopia.schedule.action.ClientAction"
+			method="select_audit_mark_by_entityid">
+			<result name="select_audit_mark_by_entityid" >
+				admin/etcperfect/select_audit_mark_by_entityid.jsp
+			</result>
+		</action>
+		
+		
+		
+		<action name="deleteDesigneTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="deleteDesigneTags">
+			<result name="deleteDesigneTags_success" type="redirectAction">
+				designeContactTagsInit.action?tablename=${tablename}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="designeContactTagsInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="designeContactTagsInit">
+			<result name="designeContactTagsInitSuccess">
+				admin/etcperfect/contact_tags_designe_manage.jsp
+			</result>
+		</action>
+		<action name="designeContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="designeContactTags">
+			<result name="designeContactTagsSuccess" type="redirectAction">
+				designeContactTagsInit.action?tablename=${tablename}
+			</result>
+			
+			<result name="designeContactTagsSuccess2">
+				admin/etcperfect/success.jsp
+			</result>
+		</action>
+		
+		
+		
+		<action name="downloadStuff"
+			class="com.sopia.schedule.action.ClientAction"
+			method="downloadStuff">
+			<result type="stream" name="downloadStuffSuccess">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename=${filename}
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<!--   excel  下载 -->
+		
+		<action name="downloadExcel"
+			class="com.sopia.schedule.action.ClientAction"
+			method="downloadExcel">
+			<result type="stream" name="downloadExcelSuccess">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename=${filename}
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+				<!-- 提交初审 -->
+		<action name="commitverifypassContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="commitverifypassContactTags">
+			<result name="commitverifypassContactTagsSuccess" type="redirectAction">
+				myContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+				<!-- 初审 -->
+		<action name="verifypassContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="verifypassContactTags">
+			<result name="verifypassContactTagsSuccess" type="redirectAction">
+				searchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+
+		<action name="verifynopassContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="verifynopassContactTags">
+			<result name="verifynopassContactTagsSuccess" type="redirectAction">
+				searchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+				<!-- 终审 -->
+		<action name="verifypassFinalTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="verifypassFinalTags">
+			<result name="verifypassFinalTagsSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+
+		<action name="verifynopassFinalTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="verifynopassFinalTags">
+			<result name="verifynopassFinalTagsSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+				<!-- 自定义审核 -->
+		<action name="verifypassTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="verifypassTags">
+			<result name="verifypassTagsSuccess" type="redirectAction">
+				customAuditListContactTags.action?tablename=${tablename}&amp;final_=1&amp;auditOrder=${auditOrder}
+			</result>
+		</action>
+
+		<action name="verifynopassTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="verifynopassTags">
+			<result name="verifynopassTagsSuccess" type="redirectAction">
+				customAuditListContactTags.action?tablename=${tablename}&amp;final_=1&amp;auditOrder=${auditOrder}
+			</result>
+		</action>
+		
+				
+				
+		<action name="myaddApplyUpate"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myaddApplyUpate">
+			<result name="myaddApplyUpateSuccess" type="redirectAction">
+				myContactTags.action?tablename=${tablename}
+			</result>
+		</action>	
+		
+		<action name="myaddApplyDel"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myaddApplyDel">
+			<result name="myaddApplyDelSuccess" type="redirectAction">
+				myContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+		
+		<action name="myaddAllowUpate"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myaddAllowUpate">
+			<result name="myaddAllowUpateSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>	
+		
+		<action name="myaddAllowDel"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myaddAllowDel">
+			<result name="myaddAllowDelSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+		
+		<action name="allDel"
+			class="com.sopia.schedule.action.ClientAction"
+			method="allDel">
+			<result name="allDelSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+				
+		<action name="myaddNoAllowUpate"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myaddNoAllowUpate">
+			<result name="myaddNoAllowUpateSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>	
+		
+		<action name="myaddNoAllowDel"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myaddNoAllowDel">
+			<result name="myaddNoAllowDelSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+				
+		
+		<!--   ++++++++++++++++++++++++++                             -->
+		
+		<action name="searchClientContactTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="searchClientContactTags">
+			<result name="searchClientContactTagsSuccess">
+				admin/etcperfect/contact_tags_client_search.jsp
+			</result>
+		</action>
+		
+		<action name="contactRelateClient"
+			class="com.sopia.schedule.action.ClientAction"
+			method="contactRelateClient">
+			<result name="contactRelateClientSuccess2rrrrr">
+				admin/etcperfect/contact_relate_client.jsp
+			</result>
+			<result name="contactRelateClientSuccess">
+				admin/etcperfect/relate_tags_search.jsp
+			</result>
+		</action>
+		
+		<!-- +++++++客户管理自定义++++++++ -->
+		<action name="clientDesigneAddInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="clientDesigneAddInit">
+			<result name="clientDesigneAddInitSuccess">
+				admin/etcperfect/client_designe_add.jsp
+			</result>
+		</action>
+
+		<action name="clientDesigneAdd"
+			class="com.sopia.schedule.action.ClientAction"
+			method="clientDesigneAdd">
+			<result name="clientDesigneAddSuccess">
+				admin/etcperfect/success.jsp
+			</result>
+			<result name="clientDesigneAddError">
+				admin/etcperfect/client_designe_add.jsp
+			</result>
+		</action>
+		
+		<action name="designeClientTagsInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="designeClientTagsInit">
+			<result name="designeClientTagsInitSuccess">
+				admin/etcperfect/client_tags_designe_manage.jsp
+			</result>
+		</action>
+		<action name="designeClientTags"
+			class="com.sopia.schedule.action.ClientAction"
+			method="designeClientTags">
+			<result name="designeClientTagsSuccess">
+				admin/etcperfect/success.jsp
+			</result>
+		</action>
+		
+
+	<!--   模块复制 -->
+	<action name="addModuleManageInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addModuleManageInit">
+			<result name="addModuleManageInitSuccess">
+				admin/etcperfect/module_add.jsp
+			</result>
+	</action>
+	
+	<action name="addModuleManage"
+			class="com.sopia.schedule.action.ClientAction"
+			method="addModuleManage">
+			<result name="addModuleManageSuccess" type="redirectAction">
+				myModuleManage.action
+			</result>
+			<result name="addModuleManageInitSuccess" >
+				admin/etcperfect/module_add.jsp
+			</result>
+	</action>
+
+	<action name="myModuleManage"
+			class="com.sopia.schedule.action.ClientAction"
+			method="myModuleManage">
+			<result name="myModuleManageSuccess">
+				admin/etcperfect/modulemanage_my_modulemanage.jsp
+			</result>
+	</action>
+
+	<action name="updateModuleManage"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateModuleManage">
+			<result name="updateModuleManageSuccess" type="redirectAction">
+				myModuleManage.action
+			</result>
+	</action>
+	<action name="updateModuleManageInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateModuleManageInit">
+			<result name="updateModuleManageInitSuccess">
+				admin/etcperfect/module_update.jsp
+			</result>
+	</action>
+	
+	<!-- test relate  -->
+	<action name="relateColumn"
+			class="com.sopia.schedule.action.ClientAction" method="relateColumn">
+			<result name="relateColumnSuccess">
+				admin/etcperfect/relate_tags_search.jsp
+			</result>
+		</action>
+		
+	<action name="relateEluser"
+			class="com.sopia.schedule.action.ClientAction"
+			 method="relateEluser">
+			<result name="relateEluserSuccess">
+				admin/etcperfect/relate_eluser_search.jsp
+			</result>
+		</action>
+
+
+
+		<action name="getModule"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getModule">
+			<result name="getModuleSuccess">
+				admin/etcperfect/module_select.jsp
+			</result>
+		</action>
+		<action name="getModule_checkbox"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getModule">
+			<result name="getModuleSuccess">
+				admin/etcperfect/module_select_checkbox.jsp
+			</result>
+		</action>
+		
+
+		<action name="getModuleColumn"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getModuleColumn">
+			<result name="getModuleColumnSuccess">
+				admin/etcperfect/module_column_select.jsp
+			</result>
+		</action>
+
+		<action name="delRelateTags"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="delRelateTags">
+			<result name="delRelateTagsSuccess" type="redirectAction">
+				updateContactTagsInit?tablename=${tablename}&amp;id=${id}&amp;final_=${final_}&amp;actionName=${actionName}&amp;columnName=${columnName}
+			</result>
+		</action>
+
+		<action name="getRelateEluserInfo"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getRelateEluserInfo">
+			<result name="getRelateEluserInfoSuccess">
+				admin/etcperfect/relate_eluser.jsp
+			</result>
+		</action>
+
+
+		<action name="updatePrincipal"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="updatePrincipal">
+			<result name="updatePrincipalSuccess" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}
+			</result>
+		</action>
+	
+		<action name="myPassContactTags"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="myPassContactTags">
+			<result name="myPassContactTagsSuccess">
+				admin/etcperfect/contact_tags_pass_mycontact.jsp
+			</result>
+		</action>
+		
+		<action name="updateDesigneTagsInit"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="updateDesigneTagsInit">
+			<result name="updateDesigneTagsInitSuccess">
+				admin/etcperfect/contactlinkman_designe_add_update.jsp
+			</result>
+		</action>
+		
+			<action name="updateDesigneTags"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="updateDesigneTags">
+			<result name="updateDesigneTagsSuccess" type="redirectAction">
+				designeContactTagsInit.action?tablename=${tags.table_name}
+			</result>
+		</action>
+		
+		
+		<action name="importExcelDataInit"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="importExcelDataInit">
+			<result name="importExcelDataInitSuccess" >
+				admin/etcperfect/import_excel_data.jsp
+			</result>
+		</action>
+		
+		<action name="importExcelData"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="importExcelData">
+			<result name="importExcelDataSuccess" >
+				admin/etcperfect/import_excel_data.jsp
+			</result>
+			<result name="importExcelDataError" >
+				admin/etcperfect/import_excel_data.jsp
+			</result>
+		</action>
+		
+		<action name="myPassSearchContactTags"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="myPassSearchContactTags">
+			<result name="myPassSearchContactTagsSuccess">
+				admin/etcperfect/contact_tags_search_pass_mycontact.jsp
+			</result>
+		</action>
+		
+		<action name="myPassSearchContactTagsInit"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="myPassSearchContactTagsInit">
+			<result name="myPassSearchContactTagsInitSuccess">
+				admin/etcperfect/contact_tags_search_pass_mycontact.jsp
+			</result>
+		</action>
+		
+		<action name="check_relate_has_in_table"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="check_relate_has_in_table">
+		</action>
+		
+		<action name="selectQiujiRelateColumn_zidingyi"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="selectQiujiRelateColumn_zidingyi">
+			<result name="selectQiujiRelateColumn_zidingyi">
+				schedule/selectQiujiRelateColumn_zidingyi.jsp
+			</result>
+		</action>
+		
+		<action name="getQiuheResult"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getQiuheResult">
+		</action>
+		
+		<!-- 模块间计算 -->
+		<action name="check_column_is_calculate_in_module"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="check_column_is_calculate_in_module">
+		</action>
+		
+		<!-- 模块间计算求值 -->
+		<action name="getValue"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getValue">
+			<result name="getValue">
+				schedule/getValue.jsp
+			</result>
+		</action>
+		
+		<!-- 计算操作 -->
+		<action name="calculate"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="calculate">
+		</action>
+		
+		<!-- 时间进度判断表中是否有两个date字段 -->
+		<action name="checkIfHasTwoDateField"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkIfHasTwoDateField">
+		</action>
+		
+		<action name="select_time_begin_end"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="select_time_begin_end">
+			<result name="select_time_begin_end">
+				schedule/select_time_begin_end.jsp
+			</result>
+		</action>
+		
+		<!--查找有无业务进度字段 -->
+		<action name="IfHasYewuJindu_column"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="IfHasYewuJindu_column">
+		</action>
+		
+		<!--判断是相关字段且关联模块式结果表 -->
+		<action name="checkColumnRelateIsResultTable"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkColumnRelateIsResultTable">
+		</action>
+		
+		<!--获取返回的相关的具体内容 -->
+		<action name="getRelateInfoByIds"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getRelateInfoByIds">
+		</action>
+		
+		<!--根据id判断该字段是否是某类型字段 -->
+		<action name="checkColumnIsJutileixingById"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkColumnIsJutileixingById">
+		</action>
+		
+		<action name="select_columnname_by_tablename_chengshi"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="select_columnname_by_tablename_chengshi">
+		</action>
+		<action name="getShengshixian"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getShengshixian">
+		</action>
+		<action name="getDefaultValue_shengshixian"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getDefaultValue_shengshixian">
+		</action>
+		
+		
+		<!--根据id获取列名 -->
+		<action name="getColumnNameById_ajax"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getColumnNameById_ajax">
+		</action>
+		
+		<!--根据id获取中文名称 -->
+		<action name="getNameDisplayById"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getNameDisplayById">
+		</action>
+		
+		<!--根据表名获取模块名称 -->
+		<action name="getModuleNameByTablename"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getModuleNameByTablename">
+		</action>
+		<!--根据表名获取数据名称 -->
+		<action name="getModuleShujuNameByTablename"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getModuleShujuNameByTablename">
+		</action>
+		
+		<action name="getBiaojianqiuheValue"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getBiaojianqiuheValue">
+		</action>
+		
+		<action name="getRelate_thing_id"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getRelate_thing_id">
+		</action>
+		
+		<!-- 删除选中 -->
+		<action name="del_check"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="del_check">
+			<result name="del_check" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tags.table_name}
+			</result>
+		</action>
+		<!-- 删除搜索结果 -->
+		<action name="del_search"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="del_search">
+			<result name="del_search" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tags.table_name}
+			</result>
+		</action>
+		
+		<!-- 终审页面全部通过审核 -->
+		<action name="access_ALL"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="access_ALL">
+			<result name="access_ALL" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tags.table_name}
+			</result>
+		</action>
+		
+		<action name="viewFunInformation"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="viewFunInformation">
+			<result name="viewFunInformation">
+				admin/etcperfect/viewFunInformation.jsp
+			</result>
+		</action>
+		
+		<!-- 批量更新负责人字段 -->
+		<action name="updateManagePerson"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="updateManagePerson">
+			<result name="updateManagePerson" type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}&amp;final_=${final_}
+			</result>
+		</action>
+		
+		<!-- 表间计算 -->
+		<action name="jisuan_select_relate"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="jisuan_select_relate">
+			<result name="jisuan_select_relate">
+				schedule/select_time_begin_end.jsp
+			</result>
+		</action>
+		<action name="getRelateListByTablenameAndIds"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getRelateListByTablenameAndIds">
+		</action>
+		<!-- 根据表名和列名获取列中文名 -->
+		<action name="getColumnByColumnName"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getColumnByColumnName">
+		</action>
+		<!-- 表内计算 -->
+		<action name="biaoneijisuan"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="biaoneijisuan">
+		</action>
+		
+		<!-- <action name="checkColumnIsCalculate"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkColumnIsCalculate">
+		</action> -->
+		
+		<action name="getQiujiAndHeInfo"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getQiujiAndHeInfo">
+		</action>
+		
+		<action name="getCurrentUserinfo"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getCurrentUserinfo">
+		</action>
+		
+		<!-- 添加到过程表 -->
+		<action name="addToProduce"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="addToProduce">
+		</action>
+		
+		<action name="getBiaojianjisuan_column"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getBiaojianjisuan_column">
+		</action>
+		
+		
+		<!-- 根据相关字段获取与之关联的业务进度column -->
+		<action name="getColumnByRelateColumnAndTable"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getColumnByRelateColumnAndTable">
+		</action>
+		
+		<!-- 根据结果表查询过程表 -->
+		<action name="getProduceTableByResultTable"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getProduceTableByResultTable">
+		</action>
+		
+		<!-- 修改结果表中表间计算字段值 -->
+		<action name="updateResultTableBiaojianValue"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="updateResultTableBiaojianValue">
+		</action>
+		
+		<!-- 获取过程表中与结果表不对应的字段 -->
+		<action name="getProduceColumns"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getProduceColumns">
+		</action>
+		
+		<!-- 获取表间求和关联表和关联字段 -->
+		<action name="getBiaojianqiuheResultTableAndColumn"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getBiaojianqiuheResultTableAndColumn">
+		</action>
+		
+		<!-- 判断要添加的列在自动读取的时候选择的列类型是否一致 -->
+		<action name="checkSelectColumnIsRight"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkSelectColumnIsRight">
+		</action>
+		
+		
+		<action name="getColumn_name_by_id"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getColumn_name_by_id">
+		</action>
+		
+		<action name="checkTable"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkTable">
+		</action>
+		
+		<action name="getProduceTableByTable"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getProduceTableByTable">
+		</action>
+		
+		<action name="getRelateId"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getRelateId">
+		</action>
+		
+		<action name="getResult_table_column"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getResult_table_column">
+		</action>
+		
+		
+		<!-- 204改为231 -->
+		<action name="getProduceColumnByResultColumn"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getProduceColumnByResultColumn">
+		</action>
+		
+		<!-- 字段的添加时验证该字段在该表中是否已经存在 -->
+		<action name="checkColumnIsExistByTable"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="checkColumnIsExistByTable">
+		</action>
+		
+		<action name="getFromtablenameByTablename"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getFromtablenameByTablename">
+		</action>
+		
+		<!-- 数据自动获取时候选择一条记录 -->
+		<action name="getListByTablename"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getListByTablename">
+			<result name="getListByTablename" >
+				admin/etcperfect/getListByTablename.jsp
+			</result>
+		</action>
+		
+		<action name="getById"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getById">
+		</action>
+		
+		<action name="getAutoColumns"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getAutoColumns">
+		</action>
+		<action name="getIdByColumnName"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getIdByColumnName">
+		</action>
+		
+		<action name="getColumnValueByAuto"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getColumnValueByAuto">
+		</action>
+		
+		
+		<action name="getColumnNameByFromtablenameAndColumnName"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getColumnNameByFromtablenameAndColumnName">
+		</action>
+		
+		<!-- 自动补齐 -->
+		<action name="getZidongbuqiValue"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getZidongbuqiValue">
+		</action>
+		
+		
+		<!-- 文件模板上传 -->
+		<action name="TB_UpdateDemo"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="TB_UpdateDemo">
+			<result name="TB_UpdateDemo" type="redirectAction">
+				myModuleManage.action
+			</result>
+		</action>
+		<!-- 样式模板上传 -->
+		<action name="TB_UpdateDemo_CSS"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="TB_UpdateDemo_CSS">
+			<result name="TB_UpdateDemo_CSS" type="redirectAction">
+				myModuleManage.action
+			</result>
+		</action>
+		
+		
+		<action name="TB_Demo_downloadInit"
+			class="com.sopia.schedule.action.ClientAction"
+			method="TB_Demo_downloadInit"> 
+			<result type="stream" name="TB_Demo_download">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream1</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="getStatusByIdAndTablename"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getStatusByIdAndTablename">
+		</action>
+		<action name="getApplicationByIdAndTablename"
+			class="com.sopia.schedule.action.ClientAction" 
+			method="getApplicationByIdAndTablename">
+		</action>
+		
+		<!-- wsj20131118修改 -->
+		<!-- 更新培训状况 -->
+		<action name="updateTrainStatus"
+			class="com.sopia.schedule.action.ClientAction"
+			method="updateTrainStatus">
+			<result name="updateTrainStatus"
+				type="redirectAction">
+				finalsearchContactTags.action?tablename=${tablename}&amp;final_=${final_}
+			</result>
+		</action>
+		<!-- 培训状况一览 -->
+		<action name="trainStatusList"
+			class="com.sopia.schedule.action.ClientAction"
+			method="trainStatusList">
+			<result name="trainStatusList">
+				admin/etcperfect/trainStatusList.jsp
+			</result>
+		</action>
+		
+		<!-- 培训状况无证 -->
+		<action name="nocertificateno"
+			class="com.sopia.schedule.action.ClientAction"
+			method="nocertificateno">
+			<result name="nocertificateno">
+				admin/etcperfect/nocertificateno.jsp
+			</result>
+		</action>
+		
+		<!-- 培训状况有证 -->
+		<action name="hascertificateno"
+			class="com.sopia.schedule.action.ClientAction"
+			method="hascertificateno">
+			<result name="hascertificateno">
+				admin/etcperfect/hascertificateno.jsp
+			</result>
+		</action>
+		
+		<!-- 培训状况已注册 -->
+		<action name="hasregister"
+			class="com.sopia.schedule.action.ClientAction"
+			method="hasregister">
+			<result name="hasregister">
+				admin/etcperfect/hasregister.jsp
+			</result>
+		</action>
+		
+		<!-- 培训状况已缴费 -->
+		<action name="haspaymoney"
+			class="com.sopia.schedule.action.ClientAction"
+			method="haspaymoney">
+			<result name="haspaymoney">
+				admin/etcperfect/haspaymoney.jsp
+			</result>
+		</action>
+		
+		<!-- 培训状况进度一览 -->
+		<action name="trainStatusPlan"
+			class="com.sopia.schedule.action.ClientAction"
+			method="trainStatusPlan">
+			<result name="trainStatusPlan">
+				admin/etcperfect/trainStatusPlan.jsp
+			</result>
+		</action>
+		
+		<!-- 半年到期 -->
+		<action name="isSixMonths"
+			class="com.sopia.schedule.action.ClientAction"
+			method="isSixMonths">
+			<result name="isSixMonths">
+				admin/etcperfect/isSixMonths.jsp
+			</result>
+		</action>
+		
+		<!-- 三个月到期 -->
+		<action name="isThreeMonths"
+			class="com.sopia.schedule.action.ClientAction"
+			method="isThreeMonths">
+			<result name="isThreeMonths">
+				admin/etcperfect/isThreeMonths.jsp
+			</result>
+		</action>
+		
+		<!-- 一个月到期 -->
+		<action name="isOneMonths"
+			class="com.sopia.schedule.action.ClientAction"
+			method="isOneMonths">
+			<result name="isOneMonths">
+				admin/etcperfect/isOneMonths.jsp
+			</result>
+		</action>
+		
+		<!-- 半个月到期 -->
+		<action name="isHalfMonths"
+			class="com.sopia.schedule.action.ClientAction"
+			method="isHalfMonths">
+			<result name="isHalfMonths">
+				admin/etcperfect/isHalfMonths.jsp
+			</result>
+		</action>
+		
+		<!-- 一周到期 -->
+		<action name="isOneWeek"
+			class="com.sopia.schedule.action.ClientAction"
+			method="isOneWeek">
+			<result name="isOneWeek">
+				admin/etcperfect/isOneWeek.jsp
+			</result>
+		</action>
+		
+		<!-- 过期-->
+		<action name="isValid"
+			class="com.sopia.schedule.action.ClientAction"
+			method="isValid">
+			<result name="isValid">
+				admin/etcperfect/isValid.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,4 @@
+insert into ELFUNC ( FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values ('company_importInit', '企业用户导入', null, 774, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+注："企业用户导入" 上级功能菜单是 “用户管理”

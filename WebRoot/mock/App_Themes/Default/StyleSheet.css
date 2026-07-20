@@ -1,0 +1,1148 @@
+/*-------------------------------------------------基础样式-------------------------------------------------*/
+/*
+html,body{margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;font-size:12px;background:#fff url(Images/UI/mainBg.jpg) repeat-x left top fixed;background-attachment:fixed;scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-shadow-color:#eee;scrollbar-3dlight-color:#fff;scrollbar-arrow-color:#222;scrollbar-track-color:#eee;scrollbar-darkshadow-color:#666;}
+div,ul,dl,dt,dd,form,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}*
+
+/* CSS Document */
+
+
+/*----------GridView分页----------*/
+.PagerInfo{color:#06f;}
+.PagerNavigation{color:#06f;}
+.PagerIndex{color:#FFFFFF; width:30}
+.PagerGo{height:23px;line-height:23px;border:none;cursor:pointer;margin-left:10px;background:url("Images/Buttons/btnOut2.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Buttons/btnOut2.gif*/ no-repeat;width:41px;}
+/*OpenGridView分页*/
+.OpenGridViewPagerRow
+{
+	width:100%;	
+	border:none 0px #FFFFFF;
+	border-collapse: collapse;	
+	background:#FFFFFF;
+	
+}
+
+.OpenGridViewPagerRow td
+{   
+  margin:0;   
+  padding:0;
+  border:none 0px #FFFFFF;
+}
+
+.OpenGridViewPagerSelectAll
+{
+	text-align:left;
+}
+
+.OpenGridViewPagerInfo
+{
+	width:340px;
+	text-align:right;
+}
+
+.OpenGridViewPagerNavigation
+{
+	width:340px;
+	text-align:center;
+}
+
+.OpenGridViewPagerGo
+{
+	width:150px;
+	text-align:left;
+}
+
+.OpenGridViewPagerGoIndex
+{
+	width:50px;
+	height:20px;
+	line-height:20px;
+	border:1px solid #A4C2CC;
+	background:url("images/inputBg.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/inputBg.jpg*/ repeat-x top;
+	padding-left:5px;
+	margin-bottom:5px;
+}
+/*
+.OpenGridViewPagerGoButton
+{
+    background: url("images/btn_2.jpg") no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 54px;
+}*/
+.pageBar td
+{
+	/*padding: 5px 20px 5px 0;
+	height: 25px;
+	line-height: 35px;*/
+	border: none;
+	text-align: right;
+	nowrap: nowrap;
+}
+.dropDownCheckListBox
+{
+    border: 1px solid #A4C2CC;
+    font-size: 1em;
+    height: auto;
+    padding: 0;
+    width: 220px;
+}
+
+/*----------------简单搜索表单样式2------------------*/
+.FormView{width:100%;margin:0 auto;border:1px solid #ccc;border-collapse:collapse;}
+.FormView th,.FormView td,.FormView tfoot td{height:20px;line-height:20px;padding:5px 0 5px 0;}
+.FormView th{width:90px;text-align:left; padding-left:3px; color:#036;font-weight:normal;border-bottom:1px solid #95C6DB;border-right:1px solid #95C6DB;background:#E4F0F5;font-weight:bold;vertical-align:top;}
+.FormView td{width:590px;text-align:left;border-bottom:1px solid #ccc;background:#F9F9F9;padding-left:5px;vertical-align:top;}
+.FormView tfoot td{width:680px;text-align:left;text-align:center;border-bottom:none;background:#fff;}
+.FormViewHeaderRow td{width:680px;color:#036;font-weight:normal;border-bottom:1px solid #95C6DB;border-right:1px solid #95C6DB;background:#E4F0F5;font-weight:bold;vertical-align:top;}
+.FormViewCommandRow td{width:680px;text-align:center;}
+/*====================Begin后台管理按钮样式改为动态宽度(2013-12月份调整)===================================*/
+.MainButtonBar {
+    padding: 10px;
+    text-align: center;
+    top: 10px;
+}
+.PopButton
+{
+    margin-top:10px;
+    text-align:center; 
+}
+.mainTab tr td a,.FormView tr td a,.MainButtonBar a,.PopButton a,.CommonGlobal a
+{
+    background-color:#ECF0F1;
+    border:1px solid #BDC3C7;
+    color: #005580;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding:5px 10px;
+    margin:3px;
+    border-radius:5px;
+  }
+.mainTab tr td a:hover,.FormView tr td a:hover,.MainButtonBar a:hover,.PopButton a:hover,.CommonGlobal a:hover
+{
+    background:#3E98D9;
+    color:#FFFFFF;
+    text-decoration: none;
+}
+/*====================End后台管理按钮样式改为动态宽度===========================================================*/
+.normalBtn {
+    background: url("images/btn_2.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_2.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 54px;
+}
+.normalBtn1 {
+    background: url("images/btn_4.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_4.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 76px;
+}
+.normalBtn1 {
+    background: url("images/btn_4.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_4.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 76px;
+}
+.normalBtn2 {
+    background: url("images/btn_2.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_2.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 56px;
+}
+.normalBtn4 {
+     background: url("images/btn_4.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_4.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 76px;
+}
+.normalBtn6 {
+     background: url("images/btn_6.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_6.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 100px;
+}
+.normalBtn8 {
+     background: url("images/btn_8.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/btn_8.jpg*/ no-repeat scroll 0 0 transparent;
+    border-color: inherit;
+    border-style: none;
+    border-width: medium;
+    font-size: 12px;
+    height: 22px;
+    margin: 2px;
+    width: 122px;
+}
+/*--fieldset样式--*/
+fieldset {
+    margin-top: 5px;
+    padding: 10px 5px;
+}
+/*--图层样式--*/
+.d_info
+{
+    padding:5px;
+    background-color:#D9E7FA;
+    color:#4372B0;
+    border:1px solid #4372B0;
+    line-height:20px;
+    margin:5px;
+}
+.d_info2 {
+	color: #444;
+	font-size: 11px;
+	line-height:normal;
+	border: 1px solid #444;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	padding: 5px;
+	background-color: #F9F9F9;
+	overflow: auto;
+	width:60%;
+	margin:5px;
+}
+
+/*阅读理解/完形填空 题干/子题 水平/垂直布局模式*/
+.Reading_Prompt_Horizontal
+{
+    width:50%;
+    float:left;
+}
+.Reading_SubItems_Horizontal
+{
+    width:49%;
+    float:left;
+}
+.Reading_Prompt_Vertical
+{
+    
+}
+.Reading_SubItems_Vertical
+{
+    
+}
+
+.OrderExample
+{
+    background: url("images/OrderSample.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/OrderSample.gif*/ no-repeat;
+	width: 396px;
+	height: 92px;
+}
+.OrderExample3
+{
+    background: url("images/OrderSample3.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/OrderSample3.gif*/ no-repeat;
+	width: 688px;
+	height: 140px;
+}
+.OrderExample4
+{
+    background: url("images/OrderSample4.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/OrderSample4.gif*/ no-repeat;
+	width: 688px;
+	height: 140px;
+}
+.OrderExample5
+{
+    background: url("images/OrderSample5.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/OrderSample5.gif*/ no-repeat;
+	width: 688px;
+	height: 140px;
+}
+
+
+
+/******************************* 登录页布局 ************************************/
+.LoginArea
+{
+   background:url("Images/logincenter.png.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/logincenter.png*/ no-repeat 0 0; 
+   width:998px; 
+   height:594px;
+   font-size:1em;
+   margin:0 auto;
+  
+}
+.LoginArea_ja
+{
+   background:url("Images/logincenter_ja.png")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/logincenter_ja.png*/ no-repeat 0 0; 
+   width:998px; 
+   height:594px;
+   font-size:1em;
+   margin:0 auto;
+}
+.LoginArea_th
+{
+   background:url("Images/logincenter_th.png")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/logincenter_th.png*/ no-repeat 0 0; 
+   width:998px; 
+   height:594px;
+   font-size:1em;
+   margin:0 auto;
+}
+
+#Layout
+{
+	background: #DBE6F2 url("images/layoutBg.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/layoutBg.jpg*/ repeat-x left 80px;
+	font-size:1.2em;
+	
+}
+#Header
+{
+	height: 80px;
+	width:100%;
+	background: url("images/loginTop_Right.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/loginTop_Right.jpg*/ repeat-x;
+}
+#HeaderImg
+{
+	height:80px;
+	width:1000px;
+	background-image:url("images/loginTop.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/loginTop.jpg*/;
+}
+#loginTab1
+{  
+    float:left;
+    width: 500px;
+    margin:160px  0  0 400px; 
+    border: none;
+    display:inline;
+}
+#loginTab1 td
+{ 
+    line-height:50px; 
+    height:55px;
+}
+#loginTab2
+{ 
+    float:left;
+    width: 500px;
+    margin:18px  0  0 390px; 
+    border: none;
+    display:inline;
+}
+#loginTab2 td
+{ 
+    line-height:30px; 
+    height:30px; 
+}
+#loginTab3
+{  
+    float:left;
+    width: 500px;
+    margin:10px  0  0 246px; 
+    border: none;
+    display:inline;
+}
+.buttonlogin
+{
+    float:left; 
+    display:inline; 
+    font-size:14px; 
+    font-family:微软雅黑; 
+    margin-right:20px; 
+    margin-left:0px; 
+    background:url("Images/loginbutton.png")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/loginbutton.png*/  no-repeat 0 0; 
+    width:80px; 
+    height:31px; 
+    /*line-height:31px; */
+    border:0px;
+    padding-bottom:4px;
+}
+.loginTabRow3-1
+{
+    width:250px;
+    height:75px;
+    line-height:24px;
+    padding-left:50px;
+}
+.loginTabRow3-2
+{
+  width:55%;  
+}
+
+.loginTabRow1 img
+{
+    padding:3px 0 0 10px;
+}
+.tip
+{
+	background: url("images/tipBg.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tipBg.gif*/ no-repeat;
+	top: 3px;
+	left: 3px;
+	width: 187px;
+	height: 23px;
+	line-height: 23px;
+	display: block;
+	padding-left: 25px;
+}
+.ValidateCode input
+{
+    float:left;
+}
+.ValidateCode img
+{
+    float:left; margin-left:90px; margin-top:10px;
+}
+.ValidateCode .tip
+{
+    float:left;
+    background: url("images/tipBg.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tipBg.gif*/ no-repeat;
+	top: 3px;
+	left: 3px;
+	width: 187px;
+	height: 23px;
+	line-height: 23px;
+	display: block;
+	margin-left: 45px;
+}
+/*GridView以及表格*/
+.mainTab
+{
+	/**margin: 5px auto 5px auto;**/
+	width: 100%;
+	border: 1px solid #B0B9C4;
+	border-collapse: collapse;
+	background: #fff;
+	font-size:1em;
+}
+.mainTab th
+{
+	background: #DDE6F0 url("images/tabHeadBg.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabHeadBg.jpg*/ repeat-x top;
+	height: 23px;
+	line-height: 23px;
+}
+.mainTab th a
+{
+	color: #036;
+}
+.mainTab th
+{
+	border: 1px solid #B0B9C4;
+}
+.mainTab td
+{
+	border: 1px solid #B0B9C4;
+    padding-left:5px;
+}
+
+.mainTab tbody td
+{
+	height: 25px;
+	line-height: 15px;
+}
+.mainTab td td
+{
+    border:none;
+}
+.rowA
+{
+	background: #EEF3F9;
+}
+.rowB
+{
+	background: #fff;
+}
+.mainTab select {
+    border: 1px solid #A4C2CC;
+    font-size: 1em;
+    height: auto;
+    padding: 0;
+    width:260px;
+}
+
+#DropSubject_displaybox {
+    border: 1px solid #A4C2CC;
+    font-size: 1em;
+    height: auto;
+    padding: 0;
+    width:220px;
+}
+#DropSubject_displaybox td {
+    height:17px;
+}
+
+
+#DroState_displaybox {
+    border: 1px solid #A4C2CC;
+    font-size: 1em;
+    height: auto;
+    padding: 0;
+    width:220px;
+}
+#DroState_displaybox td {
+    height:17px;
+}
+
+/*网考登录后默认*/
+.welcomeImg {
+    background: url("images/welcome.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/welcome.jpg*/ no-repeat scroll left top transparent;
+    height: 618px;
+    width: 715px;
+}
+
+/*拼音的样式*/
+.tijiao{width:152px;background:url("images/submitBtnOut.png")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/submitBtnOut.png*/ no-repeat;height:48px;cursor:pointer;}
+
+
+/*ajax net tab 样式*/
+.Tabs .ajax__tab_outer 
+{
+    background:url("images/tabs/tab-right.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-right.gif*/ no-repeat right;
+    height:21px;
+ }
+.Tabs .ajax__tab_inner 
+{
+    padding-left:3px;
+    background:url("images/tabs/tab-left.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-left.gif*/ no-repeat;
+}
+.Tabs .ajax__tab_tab 
+{
+    height:13px;
+    padding:4px;
+    margin:0;
+    background:url("images/tabs/tab.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab.gif*/ repeat-x;
+ }
+.Tabs .ajax__tab_hover .ajax__tab_outer 
+{
+    background:url("images/tabs/tab-hover-right.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-hover-right.gif*/ no-repeat right;
+}
+.Tabs .ajax__tab_hover .ajax__tab_inner 
+{
+    background:url("images/tabs/tab-hover-left.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-hover-left.gif*/ no-repeat;
+}
+.Tabs .ajax__tab_hover .ajax__tab_tab 
+{
+    background:url("images/tabs/tab-hover.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-hover.gif*/ repeat-x;
+}
+.Tabs .ajax__tab_active .ajax__tab_outer 
+{
+    background:url("images/tabs/tab-active-right.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-active-right.gif*/ no-repeat right;
+}
+.Tabs .ajax__tab_active .ajax__tab_inner 
+{
+    background:url("images/tabs/tab-active-left.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-active-left.gif*/ no-repeat;
+}
+.Tabs .ajax__tab_active .ajax__tab_tab 
+{
+    background:url("images/tabs/tab-active.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabs/tab-active.gif*/ repeat-x;
+}
+.Tabs .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    border:1px solid #999999;
+    border-top:0;
+    padding:8px;
+    background-color:#ffffff;
+    font-size:1em;
+} 
+.ExamSiteListCss {
+    height: 205px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 98%;
+    padding:5px;
+}
+
+.ExamSiteListCss ul
+{
+  padding-left:15px;   
+}
+.ExamSiteListCss ul li
+{
+  padding:5px;   
+}
+
+/* 自定义弹出层样式 */
+.PopDiv
+{
+	background-color: #EEF3F9;
+	border-width: 2px;
+	border-style: solid;
+	border-color: Gray;
+	padding: 3px;
+	width: 500px;
+}
+.PopTitleDiv
+{
+	cursor:hand;
+	background: #DDE6F0 url("images/tabHeadBg.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/tabHeadBg.jpg*/ repeat-x top;
+	height:25px;
+	width:auto;
+	display:block;
+	vertical-align:middle;
+	border:1px solid #A4C2CC;
+	font-size:15px;
+	font-weight: bolder;
+}
+.PopCloseSpan
+{
+	cursor:hand;
+	position:absolute;
+	display:block;
+	right:7px;
+	top:7px;
+	height:16px;
+	width:16px;
+	background:url("images/state_deleted.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/state_deleted.gif*/ repeat-x top;
+	border:1px solid #A4C2CC;
+}
+.PopFile
+{
+    margin:10px 0 10px 0;
+    text-align:center;    
+}
+.FileContent {
+    height: 290px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+/*试题作答按钮*/
+.buttonwrapper{
+ overflow: hidden;
+ width: 100%;
+}
+a.ovalbutton{
+background: transparent url("Images/orange-left.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/orange-left.gif*/ no-repeat top left;
+display: block;
+float: left;
+font: normal 13px Tahoma;
+line-height: 16px;
+height: 24px;
+padding-left: 11px;
+text-decoration: none;
+width:70px;
+margin:5px;
+text-align:center;
+}
+a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
+ color : #494949;
+}
+a.ovalbutton span{
+background: transparent url("Images/orange-right.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/orange-right.gif*/ no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0;
+}
+a.ovalbutton:hover{
+background-position: bottom left;
+}
+a.ovalbutton:hover span{
+background-position: bottom right;
+color: black;
+}
+/*试题作答按钮*/
+#divflash
+{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+#divnet
+{
+    margin:10px 0 10px 20px;
+}
+.InfoLoginout
+{
+    float:left;
+    width: 100%;
+    margin:0 auto; 
+    background:#ffffff;
+    height:300px;
+}
+#InfoDiv
+{
+    float:left;
+    width: 100%;
+    margin:0 auto; 
+    background:#ffffff;
+    height:100px;
+}
+#InfoDivOut
+{
+    float:left;
+    width: 100%;
+    margin:0 auto; 
+    background:#ffffff;
+    height:300px;
+}
+
+#InfoDivImg
+{
+    width: 50px;
+    float:left;
+}
+#InfoDivContent
+{
+    width:550px;
+    float:left;
+}
+#InfoOperation
+{
+	width: 650px;
+    padding: 50px 0 20px 200px;
+    margin:0 auto; 
+    float:left;
+}
+
+
+/*模拟考试首页 begin*/
+/*07.30改动*/
+.exHeader{float:left; width:960px;  background:url("../Images/headerbg.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Images/headerbg.gif*/ repeat-x 0 0;}
+/*0.menu2{clear:both;margin-left:10px; padding-top:3px; height:32px; background:url(Images/menu2bg.gif) no-repeat 0 0;}
+.menu2 li{float:left; padding:0 50px;}
+.menu2 li a{width:130px; height:26px; line-height:26px; font-size:12px; font-weight:bold; color:#fff; font-family:"微软雅黑"; display:block; text-align:center; background:url(Images/menu2_1.gif) no-repeat 0 0;}*/
+.menu2 li a:hover{background:url("Images/menu2_1hover.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/menu2_1hover.gif*/ no-repeat 0 0;}
+
+.menu2 { background: url("Images/menu2bg.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/menu2bg.gif*/ no-repeat scroll 0 0 transparent;clear: both;height: 32px;padding-top: 3px;}
+.menu2 li {float: left;list-style-type: none;padding: 0 65px;}
+.menu2 li a {
+    background: url("Images/menu2_1.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/menu2_1.gif*/ no-repeat scroll 0 0 transparent;color: #FFFFFF;
+    display: block;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    font-weight: bold;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    width: 110px;
+}
+/*07.30列表页新增样式*/
+.listcontent{ width:958px; border:1px solid #1a8ccb;float:left; }
+.listcontent h2{ background:url("Images/11.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/11.gif*/ repeat-x left top; height:28px;}
+.listcontent h1{ font-family:"微软雅黑"; font-size:22px; color:#3c3c3c; margin:30px 300px;}
+
+.listone{ width:810px; float:left; margin-left:90px; border:#ccd3dc 1px solid; border-top:none; background:#f9fdff;}
+.listone h3{ background:url("Images/11one.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/11one.gif*/ repeat-x 0 0; height:44px; font-family:"微软雅黑"; font-size:22px; color:#fff; padding-left:20px; line-height:44px;}
+.listone table{ width:800px;}
+
+.listone table  span{ line-height:50px;}
+.listone table  span a { font-size:14px; color:#0C6FCB; padding-left:10px;}
+.listone table  span a:hover {text-decoration:underline;}
+
+.listtwo{ width:810px; float:left; margin-left:90px; border:#ccd3dc 1px solid; border-top:none; background:#f9fdff;}
+.listtwo h3{ background:url("Images/11one.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/11one.gif*/ repeat-x 0 0; height:44px; font-family:"微软雅黑"; font-size:22px; color:#fff; padding-left:20px; line-height:44px;}
+.listtwo table{ width:780px; border-bottom:1px solid #ccd3dc; border-bottom-style:dashed; padding:10px; margin:10px;}
+.listtwo table th{font-family:"微软雅黑"; font-size:19px; border-right:#ccd3dc 1px solid; width:150px;}
+.listtwo table ul{ width:630px; float:left; margin-left:20px;}
+.listtwo table ul li{ float:left; display:block; margin-right:10px; display:inline; line-height:24px; width:100px}
+.listtwo table ul li a{font-size:14px; color:#0C6FCB;}
+.listtwo table ul li a:hover {text-decoration:underline;}
+
+.listthree{ width:810px; float:left; margin-left:90px; margin-top:50px;}
+.listthree h3{ margin-left:200px;font-family:"微软雅黑"; font-size:22px; margin-bottom:10px; }
+.listthree table{ background:url("Images/threebg.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/threebg.gif*/ no-repeat 0 0; width:812px; height:56px; border:0;}
+.listthree table a{font-size:14px; color:#0c6fcb;}
+.listthree table a:hover {text-decoration:underline;}
+
+.listfour{ width:810px; float:left; margin-left:90px; margin-top:50px;}
+.listfour h3{ margin-left:250px;font-family:"微软雅黑"; font-size:22px; margin-bottom:10px; }
+.listfour table{ background:url("Images/fourbg.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/fourbg.gif*/ no-repeat 0 0; width:812px; height:56px; border:0;}
+.listfour table a{font-size:14px; color:#0c6fcb;}
+.listfour table a:hover {text-decoration:underline;}
+
+.simimg{ float:left; margin:50px 400px; display:inline;}
+
+.simBtnImg{
+    background: url("images/simbutton.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/simbutton.gif*/ no-repeat scroll left top transparent;
+    height: 38px;
+    width: 136px;
+}
+/*友情链接开始*/
+.friendlink{clear:both; width:960px; height:106px; background:url("../../../images/linkbg.gif")/*tpa=http://mnks.cnhsk.org/images/linkbg.gif*/ repeat-x 1px 1px; border:1px solid #aed3f5;text-align:left;}
+.friendlink_title{ height:31px; line-height:31px; padding-left:14px; color:#1176d1; font-size:14px; font-weight:bold;}
+.friendlink_content{padding:10px 27px 0 27px;}
+.friendlink_content img{float:left; padding-right:33px; border:none;}
+
+.footer {
+    background: none repeat scroll 0 0;
+    clear: both;
+    float: none;
+    font-size: 14px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 600px;
+    z-index: 0;
+}
+
+.menu1, .header1 {
+    height: 177px;
+    margin: 0 auto;
+    position: relative;
+    width: 1002px;
+    z-index: 999;
+}
+
+.header1, .heade1 a {
+    color: #FFFFFF;
+}
+.header1 {
+    height: 25px;
+}
+#containers {
+    background: url("../../../images/dtbjline.gif")/*tpa=http://mnks.cnhsk.org/images/dtbjline.gif*/ repeat-x scroll 1px top #FFFFFF;
+    border-bottom: medium none;
+    border-top: medium none;
+    color: #515151;
+    display: block;
+    font: 12px/22px Tahoma,微软雅黑;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 2px;
+    width: 960px;
+}
+.examNav{clear:both; height:32px; margin-bottom:5px;}
+
+.logo {
+    background: url("../images/banner_lan.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/images/banner_lan.gif*/ no-repeat scroll 0 0 transparent;
+    height: 99px;
+    width: 1002px;
+}
+
+.nav {
+    display: block;
+    float: left;
+    height: 45px;
+    overflow: visible !important;
+    position: relative;
+    width: 810px;
+    z-index: 99;
+}
+
+.nav li {
+    display: block;
+    float: left;
+    height: 28px;
+    line-height: 26px;
+    margin: 9px 0 0 5px;
+    text-align: center;
+    width: 130px;
+}
+
+.nav li a {
+    color: #000000;
+    display: block;
+    font-size: 14px;
+    height: 28px;
+    width: 130px;
+}
+.header1, .header1 a {
+    color: #000000 !important;
+    top: 7px !important;
+}
+
+.header1 span {
+    display: block;
+    float: right;
+    height: 25px;
+    margin-left: 20px;
+    margin-top: -3px;
+}
+.oss {
+    position: relative;
+}
+/**-------------------------首页登录控件-----------------------------**/
+.IndexLogin
+{
+    width:680px;
+    height:30px;
+    float:right;
+}
+.IndexLogin a{color:#FFFFFF;text-decoration:none; line-height:30px;}
+.IndexLogin a:visited{color:#FFFFFF;text-decoration:none; line-height:30px;}
+.IndexLoginContent
+{
+    width:500px;
+    height:25px;
+    float:left;
+    padding: 5px 0 0 30px;
+}
+.IndexLoginContent2
+{
+    width:200px;
+    height:25px;
+    float:left;
+    padding: 0 0 0 0;
+}
+.IndexLoginContent2 span{float:left;}
+.IndexLoginInput
+{
+	width: 110px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #A4C2CC;
+	background-color:White;
+	padding-left: 5px;
+}
+.IndexLoginUserInfo
+{
+    width:500px;
+    height:25px;
+    float:right;
+    padding: 5px 10px 0 0;
+}
+.IndexLoginUserInfo span{float:left;}
+.IndexLoginSeparator
+{
+    float:left;
+    height:20px;
+    background:url("../../../images/IndexLoginSeparator.jpg")/*tpa=http://mnks.cnhsk.org/images/IndexLoginSeparator.jpg*/ no-repeat 5px 10px;
+}
+.IndexLoginButton
+{
+    background: url("../../../images/button-login.gif")/*tpa=http://mnks.cnhsk.org/images/button-login.gif*/ no-repeat;
+    width:40px;
+    height:21px; 
+	border: none;
+	cursor:pointer;
+}
+
+#footer {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #95AABF;
+    clear: both;
+    float: none;
+    font-size: 12px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 960px;
+    z-index: 0;
+}
+/*模拟考试首页 end*/
+.LoginTab
+{
+    margin-top:20px;
+    margin:0 auto;
+    text-align: center;
+    
+}
+.LoginTab td
+{
+    height: 30px;
+    text-align: left;
+}
+.LoginTab img
+{
+    vertical-align:middle;
+}
+.LoginTab .inputcss
+{
+    height:35px;
+    width:400px;
+    font-size:18px;
+}
+.LoginTab .yzmcss
+{
+    height:35px;
+    width:400px;
+    font-size:18px;
+    
+}
+.LoginTab .buttoncss
+{
+    background-color: #b31906;
+    border: 1px solid #951100;
+    margin:auto; 
+    text-align: center;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
+    width: 100px;
+    height:40px;
+   color: #fff;
+   font: bold 16px/1 "helvetica neue", helvetica, arial, sans-serif;
+ }
+ .LoginTab .buttoncss:hover {
+    
+    cursor: pointer; }
+ .LoginTab .buttoncss:active {
+   }
+	
+
+.LoginTab .wjmacss
+{
+    color:Red;
+}
+.UserRegisterTitle
+{
+     text-align:center; margin-left:auto; margin-right:auto; 
+    height: 35px;
+    padding-right: 70px;
+    font-family:"微软雅黑";
+    border-bottom: 1px dotted #000000;
+    color: #000000;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+    text-align:cetner;
+    
+}
+.UserRegisterContent table th
+{
+    text-align:right;
+}
+.UserRegisterContent .inputcss
+{
+    height:35px;
+    width:400px;
+    font-size:18px;
+}
+.UserRegisterContent .yzmcss
+{
+    height:35px;
+    width:400px;
+    font-size:18px;
+}
+.UserRegisterContent .buttoncss
+{
+    background-color: #b31906;
+    border: 1px solid #951100;
+    margin:auto; 
+    text-align: center;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
+    width: 100px;
+    height:40px;
+   color: #fff;
+   font: bold 16px/1 "helvetica neue", helvetica, arial, sans-serif;
+ }
+ .UserRegisterContent .buttoncss:hover {
+    
+    cursor: pointer; }
+ .UserRegisterContent .buttoncss:active {
+     }
+.ResetPwdContent table th
+{
+    text-align:right;
+}
+
+.TxtUserInfoInput
+{
+	width: 300px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #A4C2CC;
+	background-color:White;
+	padding-left: 5px;
+}
+
+.inputLogin
+{
+    width:290px;
+    height:25px;
+    font-size:1.2em;
+	border: none #FFFFFF;
+}
+.inputLoginValCode
+{
+	width: 160px;
+	height: 22px;
+	line-height: 22px;
+	border: none #FFFFFF;
+	padding-left: 10px;
+	font-size:1.2em;
+}
+
+.LoginInput
+{
+    width: 300px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #A4C2CC;
+	background-color:White;
+	padding-left: 5px;
+}
+.LoginValCode
+{
+	width: 200px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #A4C2CC;
+	background-color:White;
+	padding-left: 5px;
+}
+/**-------------------------服务条款-----------------------------**/
+.ResetPwdRequestTitle, .ResetPwdTitle
+{
+    margin: 0 0 0 0;
+    height: 35px;
+    padding-left: 100px;
+    background: url("images/ModifyInfoTitle.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/images/ModifyInfoTitle.jpg*/ no-repeat;
+    border-bottom: 2px dotted #247F98;
+    color: #247F98;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.ServiceItemsContent, .ResetPwdRequestContent, .ResetPwdContent
+{
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    line-height: 20px;
+    border:1;
+}
+.ServiceItemsTitle1
+{
+    text-align:center; margin-left:auto; margin-right:auto; 
+    height: 35px;
+    padding-right: 70px;
+    font-family: "微软雅黑";
+    color: #b31906;
+    font-size:20px;
+    border-left: 1px solid  #ccc;
+     border-right: 1px solid  #ccc;
+      border-top: 1px solid  #ccc;
+      padding-top:20px;
+      padding-bottom:10px;
+      font-weight:bold;
+    }
+ .ServiceItemsTitle2
+
+ {
+     text-align:center; margin-left:auto; margin-right:auto; 
+     border-bottom: 1px solid #ccc;
+     
+     }
+.ServiceItemsContent1
+{
+    border-left: 1px solid  #ccc;
+     border-right: 1px solid  #ccc;
+      border-bottom: 1px solid  #ccc;
+    line-height:25px;
+    
+   
+    }
+
+.LoginTitle
+{
+    text-align:center; margin-left:auto; margin-right:auto; 
+    height: 35px;
+    padding-right: 70px;
+    font-family:"微软雅黑";
+    border-bottom: 1px dotted #000000;
+    color: #000000;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+    text-align:center;
+    }

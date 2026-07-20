@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="study2222" extends="elearning">
+		<!-- 购物模块 --> 
+		<!-- 得到课程列表--> 
+		<action name="course_assignList3" class="com.sopia.shopping.action.ShoppingAction" method="course_assignList3">
+			<result name="course_assignList3">
+				admin/shopping/course_assignList3.jsp
+			</result>
+		</action>
+		<action name="course_sh1" class="com.sopia.shopping.action.ShoppingAction" method="course_sh">
+			<result name="course_assignList3">
+				admin/shopping/course_assignList3.jsp
+			</result>
+		</action>
+		<!-- 待定学员页面的取消分配 -->
+		<action name="Shopping_user_detail_unassigntoUsers" class="com.sopia.shopping.action.ShoppingAction" method="Shopping_user_detail_unassigntoUsers">
+			<result name="Shopping_user_detail_list">
+				admin/shopping/shoping_UsersInit.jsp
+			</result>
+		</action>
+				
+		<!-- 得到指定课程的学生分配列表--> 
+		<action name="shoping_assigntoUsersInit" class="com.sopia.shopping.action.ShoppingAction" method="shoping_assigntoUsersInit">
+			<result name="shoping_assigntoUsersInit">
+				admin/shopping/shoping_assigntoUsersInit.jsp
+			</result>
+		</action>
+		
+		<!-- 课程分配订单提示--> 
+		<action name="shopping_course_order" class="com.sopia.shopping.action.ShoppingAction" method="shopping_course_order">
+			<result name="shopping_course_order_success">
+				admin/shopping/mark_course_order.jsp
+			</result>
+		</action>		
+		<action name="shopping_newassigntoUsers" class="com.sopia.shopping.action.ShoppingAction" method="shopping_newassigntoUsers">
+			<result name="shoping_assigntoUsersInit">
+				admin/shopping/shoping_assigntoUsersInit.jsp
+			</result>
+		</action>
+		<action name="shopoing_newunassigntoUsers" class="com.sopia.shopping.action.ShoppingAction" method="shopoing_newunassigntoUsers">
+			<result name="shoping_assigntoUsersInit">
+				admin/shopping/shoping_assigntoUsersInit.jsp
+			</result>
+		</action>
+		<action name="shopping_allassigntoUsers" class="com.sopia.shopping.action.ShoppingAction" method="shopping_allassigntoUsers">
+			<result name="shoping_assigntoUsersInit">
+				admin/shopping/shoping_assigntoUsersInit.jsp
+			</result>
+		</action>
+		<!-- 待定学员 -->
+		<action name="Shopping_user_detail_list" class="com.sopia.shopping.action.ShoppingAction" method="Shopping_user_detail_list">
+			<result name="Shopping_user_detail_list">
+				admin/shopping/shoping_UsersInit.jsp
+			</result>
+		</action>
+		<!-- 支付订单信息页 -->
+		<action name="getcourseOrderinfo" class="com.sopia.shopping.action.ShoppingAction" method="getcourseOrderinfo">
+			<result name="getcourseOrderinfo_success">
+				admin/shopping/ordercommodity_list.jsp
+			</result>
+		</action>		
+		
+			<action name="mark_course_order" class="com.sopia.shopping.action.ShoppingAction" method="mark_course_order">
+			<result name="mark_course_order">
+				admin/shopping/mark_course_order_success.jsp
+			</result>
+			<result name="Shopping_user_detail_list">
+				admin/shopping/shoping_UsersInit.jsp
+			</result>
+		</action>
+		<action name="getOrderUserList" class="com.sopia.shopping.action.ShoppingAction" method="getOrderUserList">
+			<result name="getOrderUserList">
+				admin/shopping/getOrderUserList.jsp
+			</result>
+		</action>
+		
+		<action name="getMyOrderCourseList" class="com.sopia.shopping.action.ShoppingAction" method="getMyOrderCourseList">
+			<result name="getMyOrderCourseList">
+				admin/shopping/getMyOrderCourseList.jsp
+			</result>
+		</action>
+		<action name="shopping_elclass_course_selectList" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_course_selectList">
+			<result name="shopping_course_selectList">
+					admin/class/elclass_course_selectList.jsp
+			</result>
+		</action>
+		
+		<action name="shopping_elclass_assignlist2" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_assignlist2">
+			<result name="shopping_elclass_assignlist2">
+					admin/shopping/shopping_elclass_assignlist2.jsp
+			</result>
+		</action>
+		
+		<action name="shopping_elclass_assign2userInit" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_assign2userInit">
+			<result name="shopping_elclass_assign2userInit">
+					admin/shopping/shopping_class_listAssignedUser.jsp
+			</result>
+		</action>
+		<!--  添加选中用户 -->
+		<action name="shopping_elclass_newassign2user_add" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_newassign2user_add">
+			<result name="shopping_elclass_assign2userInit">
+					admin/shopping/shopping_class_listAssignedUser.jsp
+			</result>
+		</action>
+		<!--  取消选中用户 -->
+		<action name="shopping_elclass_newassign2user_delete" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_newassign2user_delete">
+			<result name="shopping_elclass_assign2userInit">
+					admin/shopping/shopping_class_listAssignedUser.jsp
+			</result>
+		</action>
+		<!--  分配所有搜索用户 -->
+		<action name="shopping_elclass_newassign2user_addAll" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_newassign2user_add">
+			<result name="shopping_elclass_assign2userInit">
+					admin/shopping/shopping_class_listAssignedUser.jsp
+			</result>
+		</action>
+		
+		<!--  待订购用户 -->
+		<action name="shopping_elclass_check_students" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_check_students">
+			<result name="shopping_elclass_check_students">
+					admin/shopping/shopping_elclass_check_students.jsp
+			</result>
+		</action>
+		<!--  去订购页面 -->
+		<action name="ClassOrderPreview" class="com.sopia.shopping.action.ShoppingAction" method="ClassOrderPreview">
+			<result name="ClassOrderPreview">
+					admin/shopping/mark_course_class_order.jsp
+			</result>
+			<result name="shopping_elclass_check_students">
+				admin/shopping/shopping_elclass_check_students.jsp
+			</result>			
+		</action>	
+			<!--  待订购页面的学员取消分配 -->
+		<action name="shopping_elclass_dele_students" class="com.sopia.shopping.action.ShoppingAction" method="shopping_elclass_dele_students">
+			<result name="shopping_elclass_check_students">
+				admin/shopping/shopping_elclass_check_students.jsp
+			</result>			
+		</action>	
+					
+		<!--  培训班订单内课程查看 -->
+		<action name="getclass_order_courseprice" class="com.sopia.shopping.action.ShoppingAction" method="getclass_order_courseprice">
+			<result name="getclass_order_courseprice_success">
+					admin/shopping/classordercourseprice_list.jsp
+			</result>
+		</action>
+		<!--  确认订购 -->
+		<action name="saveOrderCourseClass" class="com.sopia.shopping.action.ShoppingAction" method="saveOrderCourseClass">
+			<result name="saveOrderCourseClass">
+					admin/shopping/shopping_saveOrderCourseClass.jsp
+			</result>
+			<result name="shopping_elclass_check_students">
+				admin/shopping/shopping_elclass_check_students.jsp
+			</result>
+		</action>		
+		<!--  培训班订单管理 -->
+		<action name="myClassOrder_list" class="com.sopia.shopping.action.ShoppingAction" method="myClassOrder_list">
+			<result name="myClassOrder_List">
+					admin/shopping/getMyOrderClassList.jsp
+			</result>
+		</action>	
+	     <!--  培训班订单内学生查看 -->
+		<action name="getclassuserinfo_list" class="com.sopia.shopping.action.ShoppingAction" method="getclassuserinfo_list">
+			<result name="getclassuserinfo_list_success">
+					admin/shopping/getclassOrderUserList.jsp
+			</result>
+		</action>	
+		
+		<!--  培训班订单订单支付详情 -->
+		<action name="getclassorderinfobyid" class="com.sopia.shopping.action.ShoppingAction" method="getclassorderinfobyid">
+			<result name="getclassorderinfobyid_success">
+					admin/shopping/ordercommodity_list.jsp
+			</result>
+		</action>
+		
+		<!--  新课程修改页-->
+		<action name="newcourse_view" class="com.sopia.shopping.action.ShoppingAction" method="newcourse_view">
+			<result name="newcourse_view">
+					admin/course/coursemake/course_view.jsp
+			</result>
+		</action>		
+		<!--  新培训班列表-->
+	<action name="newelclass_alllist"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_alllist">
+			<result name="elclass_alllist">
+				admin/newclass/elclass_alllist.jsp
+			</result>
+		</action>
+	<!-- 必修课action -->
+		<action name="newelclass_course_bx" class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_course_bx">
+			<result name="elclass_course_bx">
+				admin/newclass/elclass_course_bx.jsp
+			</result>
+		</action>		
+		<!--  新培训班列表审核-->
+		<action name="newelclass_sh"
+			class="com.sopia.shopping.action.ShoppingAction" method="newelclass_sh">
+			<result name="elclass_sh_list" type="redirectAction">
+				elclass_sh_list
+			</result>
+			<result name="elclass_applyDelete_list" type="redirectAction"> 
+				elclass_applyDelete_list
+			</result>
+			<result name="elclass_uvalidlist" type="redirectAction">
+				elclass_uvalidlist
+			</result>
+			<result name="elclass_assignlist2" type="redirectAction">
+				elclass_assignlist2
+			</result>
+			<result name="elclass_primash_list" type="redirectAction">
+				elclass_primash_list
+			</result>
+			<result name="elclass_applyAlter_list" type="redirectAction">
+				elclass_applyAlter_list
+			</result>
+			<result name="elclass_delete_apply_list" type="redirectAction">
+				elclass_delete_apply_list
+			</result>
+			<result name="elclass_alter_list" type="redirectAction">
+				elclass_alter_list
+			</result>
+			<result name="elclass_alter_list" type="redirectAction">
+				elclass_alter_list
+			</result>
+			<result name="elclass_suspended_recovery" type="redirectAction">
+				elclass_suspended_recovery
+			</result>
+			<result name="elclass_list" type="redirectAction">
+				elclass_list?pN=0&amp;pS=10
+			</result>
+			<result name="combinationSearchClass" type="redirectAction">
+				combinationSearchClass?pN=0&amp;pS=10
+			</result>
+			<result name="elclass_alllist" type="redirectAction">
+				newelclass_alllist.action
+			</result>
+		</action>
+		<!-- 培训班复制 -->
+		<action name="newelclass_copy"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_copy">
+			<result name="elclass_copy" type="redirectAction">
+				newelclass_alterInit.action?elclass.id=${elclass.id}
+			</result>
+		</action>
+		<action name="newelclass_add"
+			class="com.sopia.shopping.action.ShoppingAction" method="newelclass_add">
+			<result name="elclass_add_success">
+				admin/class/elclass_add_success.jsp
+			</result>
+			<result name="elclass_edit">
+				admin/newclass/elclass_add.jsp
+			</result> 
+			<result name="elclass_alllist" type="redirectAction">
+				newelclass_alllist
+			</result>
+			<result type="redirectAction" name="elclass_list">
+				elclass_list.action
+			</result>
+		</action>
+		<action name="newelclass_alterInit"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_alterInit">
+			<result name="elclass_alter">
+				admin/newclass/elclass_alter.jsp
+			</result>
+		</action>
+		<!--  选修课action -->
+		<action name="newelclass_course_xx" class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_course_xx">
+			<result name="elclass_course_xx">
+				admin/newclass/elclass_course_xx.jsp
+			</result>
+		</action>
+		<!--  课程选择列表action -->
+		<action name="newelclass_course_selectList" class="com.sopia.shopping.action.ShoppingAction" method="newelclass_course_selectList">
+			<result name="elclass_course_selectList">
+				admin/newclass/elclass_course_selectList.jsp
+			</result>
+		</action>	
+		<action name="newmycourselist"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newmycourselist">
+			<result name="mycourselist">
+				study/course/mycourselist.jsp
+			</result>
+		</action>
+		
+		<action name="newmyelclass_list"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newmyelclass_list">
+			<result name="myelclass_list">
+				study/myelclass_list.jsp
+			</result>
+		</action>
+		
+		<!-- 部门培训班分配 -->
+		<action name="shopping_partmentnewmyelclass_list"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="shopping_partmentnewmyelclass_list">
+			<result name="shopping_partmentnewmyelclass_list_success">
+				admin/shopping/elclass_alllist.jsp
+			</result>
+		</action>
+		
+		<action name="shopping_classtodepartment_init"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="shopping_classtodepartment_init">
+			<result name="shopping_classtodepartment_init_success">
+				admin/shopping/class_depInfo.jsp
+			</result>
+		</action>
+		<action name="shopping_classtodepartmentlist" 
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="shopping_classtodepartmentlist">
+			<result name="examprac_doDepInit">
+				admin/shopping/examprac_doDepInit.jsp
+			</result>
+		</action>	
+		<action name="shopping_updclasstodepartment" 
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="shopping_updclasstodepartment">
+			<result name="examprac_depInfo" type="redirectAction">
+				shopping_classtodepartment_init.action?elclass.id=${elclass.id}
+			</result>
+		</action>
+			<action name="shopping_elclass_sh_list" 
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="shopping_elclass_sh_list">
+			<result name="shopping_elclass_sh_list_success" >
+				admin/shopping/elclass_sh_list.jsp
+			</result>
+		</action>
+			<!-- 10月6日后添加 -->
+		<action name="newelclass_addInit" 
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_addInit">
+			<result name="elclass_add" >
+				admin/newclass/elclass_add.jsp
+			</result>
+		</action>	
+		<action name="newelclass_course_add"
+			class="com.sopia.shopping.action.ShoppingAction"
+			method="newelclass_course_add">
+			<result name="elclass_course_selectList" type="redirectAction">
+				newelclass_course_selectList?elclassId=${elclassId}&amp;status=${status}
+			</result>
+		</action>
+	</package> 
+</struts>

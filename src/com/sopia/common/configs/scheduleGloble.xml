@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="scheduleGloble" extends="elearning">
+		<action name="kehujieguo_query"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="kehujieguo_query">
+			<result name="kehujieguo_query">
+				admin/etcperfect/globle/kehujieguo_query.jsp
+			</result>
+		</action>
+		
+		<action name="kehu_analysis"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="kehu_analysis">
+			<result name="kehu_analysis">
+				admin/etcperfect/globle/kehu_analysis.jsp
+			</result>
+		</action>
+		
+		
+		<action name="caiwu_query"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="caiwu_query">
+			<result name="caiwu_query">
+				admin/etcperfect/globle/caiwu_query.jsp
+			</result>
+		</action>
+		
+		<action name="caiwu_view"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="caiwu_view">
+			<result name="caiwu_view">
+				admin/etcperfect/globle/caiwu_view.jsp
+			</result>
+		</action>
+		
+		<action name="log_statistics"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="log_statistics">
+			<result name="log_statistics">
+				admin/etcperfect/globle/log_statistics.jsp
+			</result>
+		</action>
+		
+		<action name="wupin_center"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="wupin_center">
+			<result name="wupin_center">
+				admin/etcperfect/globle/wupin_center.jsp
+			</result>
+		</action>
+		
+		<action name="xiangmu_accounting"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="xiangmu_accounting">
+			<result name="xiangmu_accounting">
+				admin/etcperfect/globle/xiangmu_accounting.jsp
+			</result>
+		</action>
+		
+		<action name="viewRelateDanju"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="viewRelateDanju">
+			<result name="viewRelateDanju">
+				admin/etcperfect/globle/viewRelateDanju.jsp
+			</result>
+		</action>
+		
+		<action name="production_efficiency"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="production_efficiency">
+			<result name="production_efficiency">
+				admin/etcperfect/globle/production_efficiency.jsp
+			</result>
+		</action>
+		
+		<action name="material_requirements"
+			class="com.sopia.schedule.action.ScheduleGlobleAction"
+			method="material_requirements">
+			<result name="material_requirements">
+				admin/etcperfect/globle/material_requirements.jsp
+			</result>
+		</action>
+		
+	</package>
+	
+	
+</struts>

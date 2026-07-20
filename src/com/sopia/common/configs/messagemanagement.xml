@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="commenmanagement" extends="elearning">
+		<!-- 课程留言管理 --> 
+		<action name="courseuserCommentList_init" class="com.sopia.message.action.MessageManagementAction" method="courseuserCommentList_init">
+			<result name="courseuserCommentList_init_success">
+				admin/comment/courseusercomment_list.jsp
+			</result>
+		</action>
+		<!-- 课程留言审核 --> 
+		<action name="courseuserCommentAudit" class="com.sopia.message.action.MessageManagementAction" method="courseuserCommentAudit">
+			<result name="courseuserCommentList_init_success">
+				admin/comment/courseusercomment_list.jsp
+			</result>
+			<result name="classserCommentList_init_success">
+				admin/comment/classusercomment_list.jsp
+			</result>
+		</action>
+		<!-- 课程留言删除 --> 
+		<action name="deleuserComment" class="com.sopia.message.action.MessageManagementAction" method="deleuserComment">
+			<result name="courseuserCommentList_init_success">
+				admin/comment/courseusercomment_list.jsp
+			</result>
+			<result name="classserCommentList_init_success">
+				admin/comment/classusercomment_list.jsp
+			</result>
+		</action>
+		<!-- 课程留言浏览 --> 
+		<action name="courseuserCommentView" class="com.sopia.message.action.MessageManagementAction" method="courseuserCommentView">
+			<result name="courseuserCommentView_success">
+				admin/comment/commentview.jsp
+			</result>
+		</action>
+		<!-- 课程留言管理 --> 
+		<action name="classserCommentList_init" class="com.sopia.message.action.MessageManagementAction" method="classserCommentList_init">
+			<result name="classserCommentList_init_success">
+				admin/comment/classusercomment_list.jsp
+			</result>
+		</action>
+	</package> 
+</struts>

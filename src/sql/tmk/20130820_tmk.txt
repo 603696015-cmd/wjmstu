@@ -1,0 +1,369 @@
+alter table intelligent_week_t add(WEEKBEGIN  VARCHAR2(50) not null);
+
+
+-- Create table
+create table INTELLIGENT_WEEK_T_T
+(
+  USERID     NUMBER not null,
+  CLASSID    NUMBER not null,
+  COURSEID   NUMBER not null,
+  PAGEID     NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+  
+  
+  
+  
+  create or replace procedure intelligentweeklearnend
+(userid_ number,classid_ number,courseid_ number,cpid_ number,studyCourseRecordId_ number)
+as
+count_ number;
+between_sec_ number;
+max_sec_ number;
+totalscore_ number;
+week1day_ varchar2(50);
+week2day_ varchar2(50);
+week3day_ varchar2(50);
+week4day_ varchar2(50);
+week5day_ varchar2(50);
+week6day_ varchar2(50);
+week7day_ varchar2(50);
+sql_ varchar2(1000);
+sqlwhere_ varchar2(1000);
+begin
+     count_:=0;
+     between_sec_:=0;
+     max_sec_:=0;
+     --更新当次学习记录
+     select count(1) into count_ from intelligent_week where id=studyCourseRecordId_;
+     if count_>0 then
+        update intelligent_week set endtime=sysdate where id=studyCourseRecordId_;
+        select (cast(endtime as date)-cast(begintime as date))*86400 interval into between_sec_ from  intelligent_week  where id=studyCourseRecordId_;
+        update intelligent_week set learntime=between_sec_ where id=studyCourseRecordId_;
+     end if;
+     --本周学习时长得分
+     select to_char(trunc(sysdate, 'd') + 1,'yyyyMMdd') into week1day_ from dual;--周一
+     select to_char(trunc(sysdate, 'd') + 2,'yyyyMMdd') into week2day_ from dual;--周二
+     select to_char(trunc(sysdate, 'd') + 3,'yyyyMMdd') into week3day_ from dual;--周三
+     select to_char(trunc(sysdate, 'd') + 4,'yyyyMMdd') into week4day_ from dual;--周四
+     select to_char(trunc(sysdate, 'd') + 5,'yyyyMMdd') into week5day_ from dual;--周五
+     select to_char(trunc(sysdate, 'd') + 6,'yyyyMMdd') into week6day_ from dual;--周六
+     select to_char(trunc(sysdate, 'd') + 7,'yyyyMMdd') into week7day_ from dual;--周日
+     --更新周学习总表
+     --sqlwhere_:='(today='||week1day_||' or today='||week2day_||' or today='||week3day_||' or today='||week4day_||' or today='||week5day_||' or today='||week6day_||' or today='||week7day_||')';
+     sqlwhere_:='today in ('''||week1day_||''','''||week2day_||''','''||week3day_||''','''||week4day_||''','''||week5day_||''','''||week6day_||''','''||week7day_||''')';
+     dbms_output.put_line(sqlwhere_);
+     sql_ := 'select max(learntime)  from intelligent_week where '||sqlwhere_||' and userid='||userid_||' and  classid='||classid_||' and courseid='||courseid_||' and pageid='||cpid_;
+     dbms_output.put_line(sql_);
+     execute immediate sql_ into max_sec_;
+     totalscore_:=round(1 * max_sec_/120,1);
+     if totalscore_>1 then
+        totalscore_:=1.0;   
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t where weekbegin=week1day_ and userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if count_=0 then
+        insert into intelligent_week_t(userid,classid,courseid,pageid,totalscore,weekbegin)
+               values(userid_,classid_,courseid_,cpid_,totalscore_,week1day_);
+     else
+        update intelligent_week_t set totalscore=totalscore_ where weekbegin=week1day_ and userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if;
+     --更新周学习汇总表
+     totalscore_:=0.0;
+     select round(max(totalscore),1) into totalscore_ from intelligent_week_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if totalscore_>10 then
+        totalscore_:=10.0;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_; 
+     if count_=0 then
+        insert into intelligent_week_t_t(userid,classid,courseid,pageid,totalscore)
+               values (userid_,classid_,courseid_,cpid_,totalscore_);
+     else
+         update intelligent_week_t_t set totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if; 
+     --更新等级总学习时间
+     count_:=0;
+     max_sec_:=0;
+     select max(learntime) into max_sec_ from intelligent_week where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     totalscore_:=round(max_sec_/3600 * 0.3,1);
+     if totalscore_>10 then
+        totalscore_:=10.0;
+     end if;
+     select count(1) into count_ from intelligent_class_t where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     if count_=0 then
+        insert into intelligent_class_t(userid,totalscore,totalsecond,classid,courseid,pageid)
+               values(userid_,totalscore_,max_sec_,classid_,courseid_,cpid_);
+     else
+         update intelligent_class_t set totalsecond=max_sec_,totalscore=totalscore_ where userid=userid_ and classid=classid_ and courseid=courseid_ and pageid=cpid_;
+     end if;
+end;
+
+  
+  
+  
+  
+ -- Create table
+create table INTELLIGENT_CLASS_T
+(
+  USERID      NUMBER not null,
+  TOTALSCORE  NUMBER(12,1) not null,
+  TOTALSECOND NUMBER not null,
+  CLASSID     NUMBER not null,
+  COURSEID    NUMBER not null,
+  PAGEID      NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  create or replace procedure intelligent_login_pro(userid_ number,notLogin3day_ number,classid_ number,flag_ out number,returnloginid_ out number)
+as
+today_ varchar2(50);
+count_ number;
+loginid_ number;
+score_ number;--每次登录得分
+maxscore_ number;--总分
+begin
+     count_:=0;
+     loginid_:=0;
+     today_ := TO_CHAR(SYSDATE,'YYYYMMDD');--当前日期字符串
+     score_:=0.0;
+     maxscore_:=0.0;
+     
+     if notLogin3day_=1 then--3天未登陆
+        score_:=-0.1;
+        insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+        flag_:=-1;
+     else--不是3天未登录
+        select count(1) into count_ from intelligent_login where today=today_ and userid=userid_;
+        if count_=0 then--当天第一次登陆
+           score_:=0.1;
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=1;
+        else--当天不是第一次登陆
+           insert into intelligent_login (userid,begintime,today,score,classid) values (userid_,sysdate,today_,score_,classid_);
+           flag_:=0;
+        end if;
+     end if;
+     select intelligent_login_sequence.currval into loginid_ from dual;
+     returnloginid_:=loginid_;
+     
+     --判断分数是否已经达到饱和
+     select max(score) into maxscore_ from intelligent_login where userid=userid_ and begintime<sysdate;
+     if maxscore_ IS NULL then
+        maxscore_:=0.0;
+     end if;
+     maxscore_:=maxscore_+score_;
+     if maxscore_>=10  then
+        maxscore_:=10.0;
+     else if maxscore_<=0 then
+        maxscore_:=0.0;  
+     end if;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into intelligent_login_t (userid,totalscore,classid) values (userid_,maxscore_,classid_);
+     else 
+        update intelligent_login_t set totalscore=maxscore_ where userid=userid_ and classid=classid_;
+     end if;
+     
+end;
+  
+  
+  
+
+
+-- Create table
+create table INTELLIGENT_PROPORTION
+(
+  USERID        NUMBER not null,
+  MYEXAMPAPERID NUMBER not null,
+  EXAMPAPERID   NUMBER not null,
+  BLOCKID       NUMBER not null,
+  QUESTIONID    NUMBER not null,
+  CLASSID       NUMBER not null,
+  COURSEID      NUMBER not null,
+  PAGEID        NUMBER not null,
+  ROOMID        NUMBER not null,
+  PROPORTIME    TIMESTAMP(6) not null,
+  COUNT         NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table INTELLIGENT_PROPORTION_T
+(
+  USERID     NUMBER not null,
+  TOTALSCORE NUMBER(12,1) not null,
+  CLASSID    NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  
+ create or replace function getquestioncountbyepid( ep_ number)
+return number
+is
+type_ number default 0;
+count_ number default 0;
+block_ number default 0;
+totalcount_ number default 0;
+cursor blocks is
+       SELECT EPB.TYPE,EPB.QUESTIONAMOUNT,EPB.ID
+       FROM EXAMPAPERBLOCK EPB
+       WHERE EPB.EXAMPAPERID = ep_ 
+             and EPB.TYPE in (15,16,17,18,19,20,21)
+       ORDER BY EPB.SORTID ASC;
+begin
+    open blocks;
+         loop
+            fetch blocks into type_,count_,block_ ;
+            exit when blocks%notfound;
+            totalcount_:=totalcount_+count_;
+         end loop;
+     close blocks;
+    return totalcount_;
+end ;
+ 
+ 
+ 
+  
+  
+ create or replace procedure intelligent_proportion_pro
+(userid_ number,            --用户ID
+myexampaperid_ number,      --用户试卷ID
+exampaperid_ number,        --考卷ID
+blockid_ number,            --大题ID
+questionid_ number,         --小题ID
+classid_ number,            --培训班ID
+courseid_ number,           --课程ID
+pageid_ number,             --章节ID
+roomid_ number)             --章节考场ID
+as
+count_ number;
+totalcount_ number;         --培训班下所有课程和课程的章节对应特殊类型题型的数量
+proporcount_ number;        --复听数量
+score1_ number;
+score2_ number;
+totalscore_ number;
+ep_ number;
+maxcount_ number;           --复听次数
+bl_ float;
+cursor eps is
+      select erps.epid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_
+      union all
+      select erps.epid from
+      (select cc.courseid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_ ) t,course_page cp
+      ,exam_room er,exam_reps erps
+      where t.courseid=cp.courseid and cp.id=er.cpid and erps.roomid=er.id;
+
+begin
+     --插入记录到复听记录表
+     count_:=0;
+     totalcount_:=0;
+     proporcount_:=0;
+     totalscore_:=0.0;
+     score1_:=0.0;
+     score2_:=0.0;
+     maxcount_:=0;
+     bl_:=0.0f;
+     select count(1) into count_ from INTELLIGENT_PROPORTION 
+            where userid=userid_ and myexampaperid=myexampaperid_
+            and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+            and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+     if count_=0 then
+        insert into INTELLIGENT_PROPORTION(userid,myexampaperid,exampaperid,blockid,questionid,
+               classid,courseid,pageid,roomid,count,proportime)
+            values (userid_,myexampaperid_,exampaperid_,blockid_,questionid_,
+                   classid_,courseid_,pageid_,roomid_,1,sysdate);
+     else
+         update INTELLIGENT_PROPORTION set count=count+1,proportime=sysdate 
+            where userid=userid_ and myexampaperid=myexampaperid_
+            and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+            and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+     end if;
+     --获取培训班下所有课程对应试卷、所有课程的章节对应试卷的所有特殊类型试题总量
+     --总题量
+     open eps;
+         loop
+            fetch eps into ep_ ;
+            exit when eps%notfound;
+            totalcount_:=totalcount_+getquestioncountbyepid(ep_);
+         end loop;
+     close eps;
+     --复听题目数量
+     select count(1) into proporcount_ from INTELLIGENT_PROPORTION where userid=userid_ and classid=classid_;
+     --dbms_output.put_line(proporcount_);
+     --dbms_output.put_line(totalcount_);
+     score1_:=round(proporcount_/totalcount_ * 10,1);--复听得分
+     if score1_>10 then
+        score1_:=10.0;
+     end if;
+     --复听次数
+     select sum(count) into maxcount_ from INTELLIGENT_PROPORTION where userid=userid_ and classid=classid_;
+     bl_:=maxcount_/totalcount_;
+     if bl_>3 then
+        score2_:=10.0;
+     else
+        score2_:=round((bl_/3)*10,1);
+     end if;
+     --更新复听比例总表
+     totalscore_:=score1_ + score2_;
+     count_:=0;
+     select count(1) into count_ from INTELLIGENT_PROPORTION_T where userid=userid_ and classid=classid_;
+     if count_=0 then
+        insert into INTELLIGENT_PROPORTION_T(userid,totalscore,classid)
+               values(userid_,totalscore_,classid_);
+     else
+         update INTELLIGENT_PROPORTION_T set totalscore=totalscore_ where userid=userid_ and classid=classid_;
+     end if;
+end;
+
+
+
+  
+ 

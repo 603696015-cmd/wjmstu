@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts> 
+	<package name="elearning_poll" extends="elearning">
+		<action name="addPollInit" class="com.sopia.assistman.action.PollAction" 
+			method="addPollInit">
+			<result name="addPoll">
+				admin/assist/addPoll.jsp
+			</result> 
+		</action>
+		<action name="questionSearch" class="com.sopia.assistman.action.PollAction" 
+			method="questionSearch">
+			<result name="questionSearch">
+				admin/assist/questionSearch.jsp
+			</result> 
+		</action>
+		<action name="questionSelect" class="com.sopia.assistman.action.PollAction" 
+			method="questionSelect">
+		</action>
+		<action name="addPoll" class="com.sopia.assistman.action.PollAction" 
+			method="addPoll">
+			<result name="PollList" type="redirectAction">
+				pollList.action
+			</result>
+		</action>
+		<action name="pollList" class="com.sopia.assistman.action.PollAction" 
+			method="pollList">
+			<result name="pollList">
+				admin/assist/pollList.jsp
+			</result> 
+		</action>
+		<action name="alterPollInit" class="com.sopia.assistman.action.PollAction" 
+			method="alterPollInit">
+			<result name="alterPoll">
+				admin/assist/alterPoll.jsp
+			</result> 
+		</action>
+		<action name="alterPoll" class="com.sopia.assistman.action.PollAction" 
+			method="alterPoll">
+			<result name="pollList" type="redirectAction">
+				pollList.action
+			</result>
+		</action>
+		<action name="deletePoll" class="com.sopia.assistman.action.PollAction" 
+			method="deletePoll">
+			<result name="pollList" type="redirectAction">
+				pollList.action
+			</result>
+		</action>
+		<action name="pollInfo" class="com.sopia.assistman.action.PollAction" 
+			method="pollInfo">
+			<result name="pollInfo">
+				admin/assist/pollInfo.jsp
+			</result> 
+		</action>
+		<action name="pollassignSearchlist" class="com.sopia.assistman.action.PollAction" 
+			method="pollassignSearchlist">
+			<result name="pollassignSearchlist">
+				admin/assist/pollassignSearchlist.jsp
+			</result> 
+		</action>
+		<action name="pollassign" class="com.sopia.assistman.action.PollAction" 
+			method="pollassign">
+			<result name="pollassignSearchlist" type="redirectAction">
+				pollassignSearchlist.action?poll.id=${poll.id}&amp;sub_department=1
+			</result>
+		</action>
+		<action name="pollunassign" class="com.sopia.assistman.action.PollAction" 
+			method="pollunassign">
+			<result name="pollassignSearchlist" type="redirectAction">
+				pollassignSearchlist.action?poll.id=${poll.id}&amp;sub_department=1
+			</result>
+		</action>
+		<action name="pollassignAll" class="com.sopia.assistman.action.PollAction" 
+			method="pollassignAll">
+			<result name="pollassignSearchlist">
+				admin/assist/pollassignSearchlist.jsp
+			</result> 
+		</action>
+		<action name="pollShList" class="com.sopia.assistman.action.PollAction" 
+			method="pollShList">
+			<result name="pollShList">
+				admin/assist/pollShList.jsp
+			</result> 
+		</action>
+		<action name="pollSh" class="com.sopia.assistman.action.PollAction" 
+			method="pollSh">
+			<result name="pollList" type="redirectAction">
+				pollList.action
+			</result>
+			<result name="pollShList" type="redirectAction">
+				pollShList.action
+			</result>
+		</action>
+		<action name="studyPollList" class="com.sopia.assistman.action.PollAction" 
+			method="studyPollList">
+			<result name="studyPollList">
+				admin/assist/studyPollList.jsp
+			</result>
+		</action>
+		<action name="studyPoll" class="com.sopia.assistman.action.PollAction" 
+			method="studyPoll">
+			<result name="studyPoll">
+				admin/assist/studyPoll.jsp
+			</result>
+		</action>
+		<action name="studyPollDo" class="com.sopia.assistman.action.PollAction" 
+			method="studyPollDo">
+			<result name="pollResult" type="redirectAction">
+				pollResult.action?poll.id=${poll.id}
+			</result>
+			<result name="studyPollList" type="redirectAction">
+				studyPollList.action
+			</result>
+		</action>
+		<action name="pollResult" class="com.sopia.assistman.action.PollAction" 
+			method="pollResult">
+			<result name="pollResult">
+				admin/assist/pollResult.jsp
+			</result>
+		</action>
+		
+		<action name="addQuestionnaireInit" class="com.sopia.courseman.action.EroomAction" 
+			method="addQuestionnaireInit">
+			<result name="addQuestionnaireInit">
+				admin/assist/addQuestionnaire.jsp
+			</result> 
+		</action>
+		<action name="addQuestionnaire" class="com.sopia.courseman.action.EroomAction" 
+			method="addQuestionnaire">
+			<result name="addQuestionnaire" type="redirectAction">
+				questionnaireList.action
+			</result> 
+		</action>
+		<action name="questionnaireList" class="com.sopia.courseman.action.EroomAction" 
+			method="questionnaireList">
+			<result name="questionnaireList">
+				admin/assist/questionnaireList.jsp
+			</result> 
+		</action>
+		<action name="questionnaire_alterInit" class="com.sopia.courseman.action.EroomAction" 
+			method="questionnaire_alterInit">
+			<result name="questionnaire_alterInit">
+				admin/assist/questionnaire_alter.jsp
+			</result> 
+		</action>
+		<action name="questionnaire_alter" class="com.sopia.courseman.action.EroomAction" 
+			method="questionnaire_alter">
+			<result name="questionnaire_view" type="redirectAction">
+				questionnaire_view?examRoom.id=${examRoom.id}
+			</result> 
+		</action>
+		<action name="questionnaire_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="questionnaire_view">
+			<result name="questionnaire_view">
+				admin/assist/questionnaire_view.jsp
+			</result>
+		</action>
+		<action name="questionnaire_prima_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="questionnaire_prima_shlist">
+			<result name="questionnaire_prima_shlist">
+				admin/assist/questionnaire_prima_shlist.jsp
+			</result>
+		</action>
+		<action name="questionnaire_timeover_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="questionnaire_timeover_list">
+			<result name="questionnaire_timeover_list">
+				admin/assist/questionnaire_timeover_list.jsp
+			</result>
+		</action>
+		<action name="questionnaire_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="questionnaire_shlist">
+			<result name="questionnaire_shlist">
+				admin/assist/questionnaire_shlist.jsp
+			</result>
+		</action> 
+		<action name="questionnaire_sh_p"
+			class="com.sopia.courseman.action.EroomAction"
+			method="questionnaire_sh_p">
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="examroom_selectinglist" type="redirectAction">
+				examroom_selectinglist
+			</result>
+			<result name="examroom_shlist" type="redirectAction">
+				questionnaire_shlist
+			</result>
+			<result name="examroom_prima_shlist" type="redirectAction">
+				questionnaire_prima_shlist
+			</result>
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="examroom_applyfor_revision" type="redirectAction">
+				examroom_applyfor_revision
+			</result>
+			<result name="examroom_alter_list" type="redirectAction">
+				examroom_alter_list
+			</result>
+			<result name="examroom_application_delete" type="redirectAction">
+				examroom_application_delete
+			</result>
+			<result name="examroom_application_delete_shlist" type="redirectAction">
+				examroom_application_delete_shlist
+			</result>
+			<result name="examroom_suspended_recovery" type="redirectAction">
+				examroom_suspended_recovery
+			</result>
+			<result name="combinationSearchExamroom" type="redirectAction">
+				combinationSearchExamroom?str=&amp;examRoom.eroomLib.id=1
+			</result>
+			<result name="questionnaire_view"
+				type="redirectAction">
+				questionnaire_view?examRoom.id=${examRoom.id}
+			</result> 
+		</action>
+		<action name="questionnaire_assignwcInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="questionnaire_assignwcInit">
+			<result name="questionnaire_assignwc">
+				admin/assist/questionnaire_assign.jsp
+			</result>
+			<result name="questionnaire_assign">
+				admin/assist/questionnaire_assign2.jsp
+			</result>
+			<result name="examroom_assignwcSearchInit"
+				type="redirectAction">
+				examroom_assignwcSearchInit?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;course.id=${course.id}
+			</result>
+		</action> 
+		<action name="questionnaire_partakeList" class="com.sopia.studyman.action.StudyQuiz" method="questionnaire_partakeList">
+			<result name="questionnaire_partakeList">
+				study/quiz/questionnaire_partakeList.jsp
+			</result>
+		</action>
+		<action name="questionnaire_searchList" class="com.sopia.courseman.action.EroomAction" method="questionnaire_searchList">
+			<result name="questionnaire_searchList">
+				admin/assist/questionnaire_searchList.jsp
+			</result>
+		</action>
+		<action name="questionnaireResult" class="com.sopia.courseman.action.EroomAction" method="questionnaireResult">
+			<result name="questionnaireResult">
+				admin/assist/questionnaireResult.jsp
+			</result>
+		</action>
+	</package>
+</struts>

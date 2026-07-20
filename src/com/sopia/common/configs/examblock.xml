@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_examblock" extends="elearning">
+		<!-- 考场模块管理 -->
+		<action name="eroom_block_addinit"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_addinit">
+			<result name="eroom_block_add">
+				admin/exam/block/eroom_block_add.jsp
+			</result>
+		</action>
+		<action name="eroom_block_add"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_add">
+			<result name="stat_eroom_block_list" type="redirectAction">
+				stat_eroom_block_list.action
+			</result>
+		</action>
+		<action name="eroom_block_alterinit"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_alterinit">
+			<result name="eroom_block_alter">
+				admin/exam/block/eroom_block_alter.jsp
+			</result>
+		</action>
+		<action name="eroom_block_alter"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_alter">
+			<result name="stat_eroom_block_list" type="redirectAction">
+				stat_eroom_block_list.action
+			</result>
+		</action>
+		<action name="eroom_block_delete"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_delete">
+			<result name="stat_eroom_block_list" type="redirectAction">
+				stat_eroom_block_list.action
+			</result>
+		</action>
+		<action name="eroom_block_erview"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_erview">
+		</action>
+		<action name="eroom_block_eplist"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_eplist">
+			<result name="eroom_block_eplist">
+				admin/exam/block/eroom_block_eplist.jsp
+			</result>
+		</action>
+		<action name="eroom_block_erblock_delete"
+			class="com.sopia.courseman.action.EroomBlockAction"
+			method="eroom_block_erblock_delete">
+		</action>
+	</package>
+</struts>

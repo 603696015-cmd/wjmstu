@@ -1,0 +1,99 @@
+BODY {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+TABLE {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+INPUT {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+SELECT {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+.css {
+	FONT-SIZE: 12px; LINE-HEIGHT: 30px; TEXT-DECORATION: none
+}
+A {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 30px; TEXT-DECORATION: none
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 30px; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 30px; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 30px; TEXT-DECORATION: none
+}
+.font {
+	FONT-SIZE: 12px; COLOR: #1f3c5f
+}
+.Button {
+	FONT-SIZE: 12px
+}
+.tablecolor1 {
+	FONT-SIZE: 12px; BACKGROUND-COLOR: #b5cbe7
+}
+.tablecolor2 {
+	FONT-SIZE: 12px; BACKGROUND-COLOR: #ffffff
+}
+.tablecolor3 {
+	FONT-SIZE: 12px; BACKGROUND-COLOR: #3a6499
+}
+.tablecolor4 {
+	BACKGROUND-COLOR: #94b7e3
+}
+.tablecolor5 {
+	BACKGROUND-COLOR: #f9fbff
+}
+.pucker {
+	FONT-SIZE: 14pt; CURSOR: pointer; COLOR: #244166; FONT-FAMILY: "Courier",serif
+}
+.p3 {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.p4 {
+	LINE-HEIGHT: 23px
+}
+.p6 {
+	LINE-HEIGHT: 21px
+}
+#divFolder {
+	WIDTH: 100%
+}
+#divFolder DIV {
+	WIDTH: 100%; LINE-HEIGHT: 21px
+}
+#divFolder DIV.hover {
+	BORDER-RIGHT: #d4d0c8 1px solid; BORDER-TOP: #d4d0c8 1px solid; BORDER-LEFT: #d4d0c8 1px solid; LINE-HEIGHT: 19px; BORDER-BOTTOM: #d4d0c8 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.fdrrow_hover {
+	BORDER-RIGHT: #d4d0c8 1px solid; BORDER-TOP: #d4d0c8 1px solid; BORDER-LEFT: #d4d0c8 1px solid; LINE-HEIGHT: 21px; BORDER-BOTTOM: #d4d0c8 1px solid; BACKGROUND-COLOR: #f9fbff
+}
+.fdrrow_normal {
+	LINE-HEIGHT: 21px; BACKGROUND-COLOR: #ffffff
+}
+.fdrrow_hover_root {
+	BORDER-RIGHT: #d4d0c8 1px solid; BORDER-TOP: #d4d0c8 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #d4d0c8 1px solid; LINE-HEIGHT: 21px; BORDER-BOTTOM: #d4d0c8 1px solid
+}
+.fdrrow_normal_root {
+	FONT-WEIGHT: bold; LINE-HEIGHT: 21px
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 21px; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 21px; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #244166; LINE-HEIGHT: 21px; TEXT-DECORATION: none
+}
+.menubgcolor1 {
+	BACKGROUND-COLOR: #b5cbe7
+}
+.menubgcolor2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.font3 {
+	FONT-WEIGHT: bold; COLOR: #1f3c5f
+}

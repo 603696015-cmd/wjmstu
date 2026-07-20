@@ -1,0 +1,138 @@
+1.内容制作去掉菜单去掉
+2.将“可分配课程” 的funccode有course_assignInit 改成course_assignList
+3.查看课程小结 的功能代码由 course_notequeryInit改成 course_notequerylist
+4.结业考试管理 的功能代码由examroom_listInit改成examroom_list
+5.统计分析--》课程统计  的功能代码 由course_searchInit 改 course_searchlist
+6.个人中心--》 教学超市--》我要选课 的功能代码由listCanAppalyCourseInit改成listCanAppalyCourse
+添加菜单：我的全部课程：功能代码为mycourseAlllist 上级节点是在线学习
+7.  ALTER TABLE COURSE_TYPE ADD (ISSHARED NUMBER)
+    COMMENT ON COLUMN 
+    COURSE_TYPE.ISSHARED IS 
+   '是否是共享节点，0不共享，1共享，默认0'
+8.
+--课程类型管理权限
+CREATE TABLE COURSE_OP_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+--课程类型使用权限
+CREATE TABLE COURSE_USE_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+
+9.
+ALTER TABLE STUDY_COURSE
+ADD (valid NUMBER)
+10.insert into elfunc(funccode,name,description,parentid,needcheck,params,target) values('individualenrollment','个人学籍','个人学籍',766,0,'','rightFrame');
+添加：学籍查看 功能代码为findenrollment 上级节点为个人学籍
+
+insert into elfunc(funccode,name,description,parentid,needcheck,params,target) values('linetrainingmanagement','线下培训管理','线下培训管理',1061,0,'','rightFrame');
+11.
+CREATE TABLE LINETRAINRECORD
+(
+  TRAINID         NUMBER                        NOT NULL,
+  TRAINNAME       VARCHAR2(100 BYTE),
+  SUBMITTIME      DATE,
+  CERTIFICATE     VARCHAR2(100 BYTE),
+  TRAINSTARTTIME  DATE,
+  TRAINENDTIME    DATE,
+  TRAINLENGTH     VARCHAR2(10 BYTE),
+  STATE           NUMBER,
+  REMARK VARCHAR2(4000 BYTE) ,
+  CREATEUSERID    INTEGER
+)
+TABLESPACE CASP
+PCTUSED    40
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       2147483645
+            PCTINCREASE      0
+            FREELISTS        1
+            FREELIST GROUPS  1
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+COMMENT ON COLUMN LINETRAINRECORD.TRAINID IS '主键ID';
+
+COMMENT ON COLUMN LINETRAINRECORD.TRAINNAME IS '培训名称';
+
+COMMENT ON COLUMN LINETRAINRECORD.SUBMITTIME IS '提交时间';
+
+COMMENT ON COLUMN LINETRAINRECORD.CERTIFICATE IS '证书名称';
+
+COMMENT ON COLUMN LINETRAINRECORD.TRAINSTARTTIME IS '培训开始时间';
+
+COMMENT ON COLUMN LINETRAINRECORD.TRAINENDTIME IS '培训结束时间';
+
+COMMENT ON COLUMN LINETRAINRECORD.TRAINLENGTH IS '培训时长';
+
+COMMENT ON COLUMN LINETRAINRECORD.STATE IS '状态';
+
+COMMENT ON COLUMN LINETRAINRECORD.REMARK IS  '备注';
+
+COMMENT ON COLUMN LINETRAINRECORD.CREATEUSERID IS '创建者ID';
+
+
+ALTER TABLE LINETRAINRECORD ADD (
+  PRIMARY KEY
+ (TRAINID));
+12.create sequence linetrain_sequence START WITH 42 
+MAXVALUE 999999999999999999999999999
+ MINVALUE 1 NOCYCLE CACHE 10 NOORDER
+
+13.ALTER TABLE NEWSTYPE
+ADD (ISSHARED NUMBER)
+
+COMMENT ON COLUMN 
+NEWSTYPE.ISSHARED IS 
+'是否是共享节点，0不共享，1共享，默认0'
+
+
+CREATE TABLE NEWSTYPE_OP_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+
+CREATE TABLE NEWSTYPE_USE_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+14.添加功能节点：我的新闻 功能代码为mynews， 上级为学员社区 
+15.CREATE TABLE KNOWLEDGE_OP_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+
+CREATE TABLE KNOWLEDGE_USE_TYPE
+(
+  USERID   NUMBER                               NOT NULL,
+  CTYPEID  NUMBER                               NOT NULL
+);
+
+ALTER TABLE KNOWLEDGETYPE
+ADD (ISSHARED NUMBER)
+
+COMMENT ON COLUMN 
+KNOWLEDGETYPE.ISSHARED IS 
+'是否是共享节点，0不共享，1共享，默认0'
+16.课程推荐设置 的功能代码改成course_hotsetlist
+17.添加菜单：学籍查询 功能代码为schoolrolls 上级菜单为：线下培训
+18.ALTER TABLE NEWS
+ADD (STATUS NUMBER)
+
+19.在新闻公告下面添加菜单 新闻公告审核 功能代码：news_assignlist

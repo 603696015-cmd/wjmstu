@@ -1,0 +1,41 @@
+create or replace procedure set_batch_process(batchid_ number,userid_ number)
+as
+process_ number(20,2);
+count_ number;
+--tcount_ number;
+totalprocess_ number(20,2);
+cursor studyclasses is
+       select process from study_class sc
+       left join BATCH_ELCLASS_FENPEI bef on sc.classid=bef.elclassid and bef.batchid=batchid_
+       where sc.userid=userid_ ;
+begin
+     process_:=0.00;
+     count_:=0;
+     --tcount_:=0;
+     totalprocess_:=0.00;
+     select count(1) into count_ from (select 1 from study_class sc
+       left join BATCH_ELCLASS_FENPEI bef on sc.classid=bef.elclassid and bef.batchid=batchid_
+       where sc.userid=userid_ );
+     if count_>0 then
+       /**
+       open studyclasses;
+         loop
+            fetch studyclasses into process_ ;
+            exit when studyclasses%notfound;
+            if process_=100.00 then
+               tcount_:=tcount_+1;
+            end if;
+         end loop;
+        close studyclasses;
+        update BATCH_USER_FENPEI set process=round(tcount_/count_*100,2) where batchid=batchid_ and userid=userid_;
+        */
+        open studyclasses;
+         loop
+            fetch studyclasses into process_ ;
+            exit when studyclasses%notfound;
+            totalprocess_:=totalprocess_ + process_;
+         end loop;
+        close studyclasses;
+        update BATCH_USER_FENPEI set process=round(totalprocess_/count_,2) where batchid=batchid_ and userid=userid_;
+     end if;
+end;

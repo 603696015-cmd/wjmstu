@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_stat" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="user_searchInit"
+			class="com.sopia.statman.action.StatisticAction"
+			method="user_searchInit">
+			<result name="user_searchInit">
+				admin/statistic/user_search.jsp
+			</result>
+		</action>
+		<action name="user_searchlist"
+			class="com.sopia.statman.action.StatisticAction"
+			method="user_searchlist">
+			<result name="user_searchlist">
+				admin/statistic/user_searchlist.jsp
+			</result>
+		</action>
+		<action name="user_view"
+			class="com.sopia.statman.action.StatisticAction"
+			method="user_view">
+			<result name="user_view">
+				admin/statistic/user_view.jsp
+			</result>
+		</action>
+		<action name="dep_searchInit"
+			class="com.sopia.statman.action.StatisticAction"
+			method="dep_searchInit">
+			<result name="dep_searchInit">
+				admin/statistic/dep_search.jsp
+			</result>
+		</action>
+		<action name="dep_searchlist"
+			class="com.sopia.statman.action.StatisticAction"
+			method="dep_searchlist">
+			<result name="dep_searchlist">
+				admin/statistic/dep_searchlist.jsp
+			</result>
+		</action>
+		<action name="dep_stat_view"
+			class="com.sopia.statman.action.StatisticAction"
+			method="dep_stat_view">
+			<result name="dep_stat_view">
+				admin/statistic/dep_stat_view.jsp
+			</result>
+		</action>
+		<action name="score_dot_list"
+			class="com.sopia.statman.action.StatisticAction"
+			method="score_dot_list">
+			<result name="score_dot_list">
+				admin/statistic/score_dot_list.jsp
+			</result>
+		</action>
+		<action name="score_dot_view"
+			class="com.sopia.statman.action.StatisticAction"
+			method="score_dot_view">
+			<result name="score_dot_view">
+				admin/statistic/score_dot_view.jsp
+			</result>
+		</action>
+		<action name="score_score_list"
+			class="com.sopia.statman.action.StatisticAction"
+			method="score_score_list">
+			<result name="score_score_list">
+				admin/statistic/score_score_list.jsp
+			</result>
+		</action>
+		<action name="score_score_view"
+			class="com.sopia.statman.action.StatisticAction"
+			method="score_score_view">
+			<result name="score_score_view">
+				admin/statistic/score_score_view.jsp
+			</result>
+		</action>
+		<action name="score_xfscore_list"
+			class="com.sopia.statman.action.StatisticAction"
+			method="score_xfscore_list">
+			<result name="score_xfscore_list">
+				admin/statistic/score_xfscore_list.jsp
+			</result>
+		</action>
+		<action name="score_zhscore_list"
+			class="com.sopia.statman.action.StatisticAction"
+			method="score_zhscore_list">
+			<result name="score_zhscore_list">
+				admin/statistic/score_zhscore_list.jsp
+			</result>
+		</action>
+		<action name="stat_talent_searchInit"
+			class="com.sopia.statman.action.StatisticAction"
+			method="stat_talent_searchInit">
+			<result name="stat_talent_searchInit">
+				admin/statistic/stat_talent_search.jsp
+			</result>
+		</action>
+		<action name="stat_talent_searchlist"
+			class="com.sopia.statman.action.StatisticAction"
+			method="stat_talent_searchlist">
+			<result name="stat_talent_searchlist">
+				admin/statistic/stat_talent_searchlist.jsp
+			</result>
+		</action>
+		<action name="stat_talent_list"
+			class="com.sopia.statman.action.StatisticAction"
+			method="stat_talent_list">
+			<result name="stat_talent_list">
+				admin/statistic/stat_talent_list.jsp
+			</result>
+		</action>
+		<action name="offline_stat_seachinit"
+			class="com.sopia.statman.action.StatisticAction"
+			method="offline_stat_seachinit">
+			<result name="offline_stat_seach">
+				admin/statistic/offline_stat_seach.jsp
+			</result>
+		</action>
+		<action name="offline_stat_seach"
+			class="com.sopia.statman.action.StatisticAction"
+			method="offline_stat_seach">
+			<result name="offline_stat_seachlist">
+				admin/statistic/offline_stat_seachlist.jsp
+			</result>
+		</action>
+		<action name="offline_stat_detail"
+			class="com.sopia.statman.action.StatisticAction"
+			method="offline_stat_detail">
+			<result name="offline_stat_detail">
+				admin/statistic/offline_stat_detail.jsp
+			</result>
+		</action>
+		<action name="offline_stat_userdetail"
+			class="com.sopia.statman.action.StatisticAction"
+			method="offline_stat_userdetail">
+			<result name="offline_stat_userdetail">
+				admin/statistic/offline_stat_userdetail.jsp
+			</result>
+		</action>
+		<action name="usercredit_stat_search"
+			class="com.sopia.statman.action.StatisticAction"
+			method="usercredit_stat_search">
+			<result name="usercredit_stat_searchlist">
+				admin/statistic/usercredit_stat_searchlist.jsp
+			</result>
+		</action>
+		<action name="usercredit_stat_searchinit"
+			class="com.sopia.statman.action.StatisticAction"
+			method="usercredit_stat_searchinit">
+			<result name="usercredit_stat_search">
+				admin/statistic/usercredit_stat_search.jsp
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,73 @@
+alter table elclass add(learnbyorder  number(1) default 0);
+alter table class_course add(orderid  number );
+alter table class_course add(firstLearn  number(1) default 0 );
+
+
+
+
+
+---单独执行----
+create or replace procedure checkcoursecanlearn (courseid_ number,classid_ number,userid_ number,flag_ out number)
+as
+class_id number;--循环保存classid
+course_id number;--循环保存courseid
+order_id number;--循环保存orderid
+c_id number;--保存上一门课程的id
+ord_id number;--当前课程的序号
+learnByOrder_ number;--表示培训班是否开始循序学习
+passed_ number;--表示课程是否通过
+rn number;
+count_ number; --表示能否查询到当前课程前面序号的课程数量
+cursor classcourse is
+    select classid, courseid,orderid from class_course where classid = classid_ order by orderid asc ;
+begin
+     class_id:=0;
+     course_id:=0;
+     order_id:=0;
+     ord_id:=0;
+     c_id:=0;
+     learnByOrder_:=0;
+     passed_:=0;
+     flag_:=0;
+     count_:=0;
+     --获取当前课程的序号
+     select orderid into ord_id from class_course where classid = classid_ and courseid=courseid_ ;
+     --获取培训班是否开通顺序学习
+     select learnByOrder into learnByOrder_ from elclass where id=classid_;
+     if learnByOrder_=1 then
+       open classcourse;--循环培训班课程列表--判断当前课程的上一门课程是否已经学完
+         loop
+            fetch classcourse into class_id,course_id,order_id ;
+            exit when classcourse%notfound;
+
+            --找到当前学习的课程的上一门课程
+            select count(1) into count_ from (select m.courseid,rownum rn from (select courseid from class_course  where classid=classid_ and orderid<ord_id  order by orderid desc ) m where rownum=1);
+            if count_>0 then 
+               select m.courseid,rownum rn into c_id,rn from (select courseid from class_course  where classid=classid_ and orderid<ord_id   order by orderid desc ) m where rownum=1;
+                if c_id !=0 then--不是第一门课程
+                   --判断上一门课程是否学习通过
+                  select passed into passed_ from study_course where userid=userid_ and courseid=c_id;
+                  if passed_=1 then
+                     flag_:=1;
+                  else
+                      flag_:=0;
+                  end if;
+                end if;
+            else
+                flag_:=1;
+            end if;
+      
+         end loop;
+       close classcourse;
+     else
+        flag_:=1;
+     end if;
+     
+
+end;
+
+
+
+--------------
+
+commit;

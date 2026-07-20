@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="answeringSystem" extends="elearning">
+		<action name="releaseQuestionInit"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="releaseQuestionInit">
+			<result name="releaseQuestionInit">
+				admin/answeringsystem/system/releaseQuestionInit.jsp
+			</result>
+		</action>
+		<action name="releaseQuestion"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="releaseQuestion">
+			<result name="releaseQuestion_success" >
+				admin/answeringsystem/system/releaseQuestion_success.jsp
+			</result>
+		</action>
+		<action name="selectAnsweringTypeTreeInit"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="selectAnsweringTypeTreeInit">
+			<result name="selectAnsweringTypeTreeInit">
+				admin/answeringsystem/system/selectAnsweringTypeTreeInit.jsp
+			</result>
+		</action>
+		<action name="answeringUsersInit"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="answeringUsersInit">
+			<result name="answeringUsersInit">
+				admin/answeringsystem/system/answeringUsersInit.jsp
+			</result>
+		</action>
+		<action name="myQues"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="myQues">
+			<result name="myQues">
+				admin/answeringsystem/system/myQues.jsp
+			</result>
+		</action>
+		<action name="deleteQues"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="deleteQues">
+			<result name="deleteQues_success" type="redirectAction">
+				${returnPage}.action?elmessage=${elmessage}
+			</result>
+		</action>
+		<action name="alterQuesInit"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="alterQuesInit">
+			<result name="alterQuesInit">
+				admin/answeringsystem/system/alterQuesInit.jsp
+			</result>
+		</action>
+		<action name="alterQues"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="alterQues">
+			<result name="alterQues_success" type="redirectAction">
+				${returnPage}.action
+			</result>
+		</action>
+		<action name="viewQues"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="viewQues">
+			<result name="viewQues">
+				admin/answeringsystem/system/viewQues.jsp
+			</result>
+		</action>
+		<action name="questionRecommend"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="questionRecommend">
+			<result name="questionRecommend">
+				admin/answeringsystem/system/questionRecommend.jsp
+			</result>
+		</action>
+		<action name="verifyQueslist"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="verifyQueslist">
+			<result name="verifyQueslist">
+				admin/answeringsystem/system/verifyQueslist.jsp
+			</result>
+		</action>
+		<action name="verifyQues"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="verifyQues">
+			<result name="verifyQues_success" type="redirectAction">
+				${returnPage}.action
+			</result>
+		</action>
+		<action name="noverifyQues"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="noverifyQues">
+			<result name="noverifyQues_success" type="redirectAction">
+				${returnPage}.action
+			</result>
+		</action>
+		<action name="myAnswerList"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="myAnswerList">
+			<result name="myAnswerList">
+				admin/answeringsystem/system/myAnswerList.jsp
+			</result>
+		</action>
+		<action name="verifyAnswerList"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="verifyAnswerList">
+			<result name="verifyAnswerList">
+				admin/answeringsystem/system/verifyAnswerList.jsp
+			</result>
+		</action>
+		<action name="verifyAnswer"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="verifyAnswer">
+			<result name="verifyAnswer_success" type="redirectAction">
+				${returnPage}.action
+			</result>
+		</action>
+		<action name="noverifyAnswer"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="noverifyAnswer">
+			<result name="noverifyAnswer_success" type="redirectAction">
+				${returnPage}.action
+			</result>
+		</action>
+		<action name="queses_answers_Index"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="queses_answers_Index">
+			<result name="queses_answers_Index">
+				admin/answeringsystem/system/queses_answers_Index.jsp
+			</result>
+		</action>
+		<action name="ques_index_view"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="ques_index_view">
+			<result name="ques_index_view">
+				admin/answeringsystem/system/ques_index_view.jsp
+			</result>
+		</action>
+		<action name="ques_index"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="ques_index">
+			<result name="ques_index">
+				admin/answeringsystem/system/ques_index.jsp
+			</result>
+		</action>
+		<action name="addAnswer"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="addAnswer">
+			<result name="addAnswer_success" type="redirectAction">
+				ques_index_view.action?ques.id=${answer.questionId}&amp;notView=1
+			</result>
+		</action>
+		<action name="setStatusTow"
+			class="com.sopia.answeringsystem.action.AnsweringSystemAction"
+			method="setStatusTow">
+			<result name="setStatusTow_success" type="redirectAction">
+				questionRecommend.action
+			</result>
+		</action>
+	</package>
+</struts>

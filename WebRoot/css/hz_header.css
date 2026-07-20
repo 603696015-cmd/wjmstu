@@ -1,0 +1,34 @@
+/* CSS Document */
+
+
+
+.sub_box{width:100%;height:25px;background:url(../images/top_menu/top_bg.gif) repeat-x;}
+.sub_nav{	width:960px;
+	height:19px;
+	padding-top:6px;
+	text-align:right;}
+.sub_nav img{ margin-top:-6px;}	
+.sub_nav a{color:#777676;text-decoration:none;margin-left:10px;margin-right:10px;display:inline;}
+.sub_nav a:hover{text-decoration:underline;}
+
+.nav_box{width:950px;height:71px;background:url(../images/top_menu/nav_bgb.gif) repeat-x;margin-bottom:5px;}
+.nav{width:950px;height:71px;background:url(../images/top_menu/nav_bga.gif) no-repeat;}
+.nav_logo{width:114px;height:59px;margin-left:23px;display:inline;float:left;}
+.nav_texta{width:463px;height:48px;float:left;margin-left:25px;display:inline;padding-top:23px;}
+.nav_textadiv{width:463px;height:21px;}
+.nav_texta ul li{float:left;}
+.nav_texta ul li a{color:#2e2e2e;text-decoration:none;margin-left:6px;margin-right:6px;}
+.nav_texta ul li a:hover{text-decoration:underline;}
+.nav_textb{width:325px;height:53px;float:left;background:url(../images/top_menu/nav_bgc.gif) no-repeat;margin-top:16px;position:relative; z-index:99;}
+.nav_textb ul li{float:left;height:38px;*eight:36px;text-align:center;padding-top:14px;*padding-top:16px;}
+.nav_textblia{width:67px;}
+.nav_textblib{width:54px;}
+.nav_textblic{width:42px;}
+.nav_textb ul li a{color:#2d2d2d;text-decoration:none;}
+.nav_hide{width:325px; position:absolute;left:0px;margin-top:40px;_margin-top:-14px;}
+.span_one{width:67px;height:12px;background:url(../images/top_menu/nav_02.gif) no-repeat;margin-bottom:-1px;position:absolute;margin-top:-11px;}
+.span_two{width:55px;height:12px;background:url(../images/top_menu/nav_02.gif) no-repeat;margin-bottom:-1px;position:absolute;margin-top:-11px;background-position:0px -17px;display:inline;}
+.span_three{width:43px;height:12px;background:url(../images/top_menu/nav_02.gif) no-repeat;margin-bottom:-1px;position:absolute;margin-top:-11px;background-position:0px -34px;display:inline;}
+.nav_hide_content{width:303px; overflow:hidden;border:1px solid #cdcbcc;background:#fff;padding:10px 10px 15px 10px;line-height:18px;}
+.nav_hide_content a{color:#2e2e2e;text-decoration:none;margin-left:5px;margin-right:5px;}
+.nav_hide_content a:hover{color:#00f;text-decoration:underline;}

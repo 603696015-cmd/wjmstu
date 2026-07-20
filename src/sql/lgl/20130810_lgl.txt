@@ -1,0 +1,4 @@
+insert into ELFUNC ( FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values ( 'wjmlogin', 'Mac登录', null, 761, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+注：上级ID为“前台页面”；把该功能分配给所有角色

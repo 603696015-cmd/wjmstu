@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- <filter>
+		<filter-name>author</filter-name>
+		<filter-class>com.sopia.AuthorityFilter</filter-class>
+	</filter> -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.FilterDispatcher
+		</filter-class>
+	</filter>
+	<filter>
+	  <filter-name>SecurityFilter</filter-name>
+	  <filter-class>com.sopia.SecurityFilter</filter-class>
+	  <!--  <init-param>
+	    <param-name>fangdao</param-name>
+	    <param-value>24144444</param-value>
+	  </init-param>
+	  -->
+  	</filter>
+  	<filter-mapping>
+   		<filter-name>SecurityFilter</filter-name>
+   		<url-pattern>/course/*</url-pattern>
+  	</filter-mapping>
+	
+	<!-- <filter-mapping>
+		<filter-name>author</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping> -->
+	<!-- scorm -->
+	<!--  <filter-mapping>
+		<filter-name>author</filter-name>
+		<url-pattern>/adl/*</url-pattern>
+	</filter-mapping>-->
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<dispatcher>REQUEST</dispatcher>    
+        <dispatcher>INCLUDE</dispatcher> 
+        <dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>SSL Resource</web-resource-name>
+			<url-pattern>/loginpki.action</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	<!--  <login-config>
+		<auth-method>BASIC</auth-method>
+		</login-config> -->
+	<servlet>
+      <servlet-name>initServlet</servlet-name>
+      <servlet-class>com.sopia.InitServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+	<!-- scorm-->
+    <!-- context-param>
+      <param-name>ADL</param-name>
+      <param-value>poltracj@adlnet.org</param-value>
+    </context-param>
+
+    <servlet>
+      <servlet-name>LMSCMIServlet</servlet-name>
+      <servlet-class>org.adl.samplerte.server.LMSCMIServlet</servlet-class>
+      <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <servlet>
+      <servlet-name>LMSUserAdmin</servlet-name>
+      <servlet-class>org.adl.samplerte.server.LMSUserAdmin</servlet-class>
+      <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <servlet>
+      <servlet-name>LMSCourseAdmin</servlet-name>
+      <servlet-class>org.adl.samplerte.server.LMSCourseAdmin</servlet-class>
+      <load-on-startup>5</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+      <servlet-name>LMSCMIServlet</servlet-name>
+      <url-pattern>/LMSCMIServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>LMSUserAdmin</servlet-name>
+      <url-pattern>/adl/LMSUserAdmin</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>LMSCourseAdmin</servlet-name>
+      <url-pattern>/adl/LMSCourseAdmin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>LMSCMIServlet</servlet-name>
+      <url-pattern>/lmscmi</url-pattern>
+    </servlet-mapping-->
+    
+    <!-- scorm1.2 start
+	<servlet>
+		<servlet-name>LMSCMIServlet</servlet-name>
+		<servlet-class>org.adl.samplerte.server.LMSCMIServlet</servlet-class>
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LMSCMIServlet</servlet-name>
+		<url-pattern>/LMSCMIServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LMSCMIServlet</servlet-name>
+		<url-pattern>/lmscmi</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LMSCMIServlet</servlet-name>
+		<url-pattern>/servlet/lmscmi</url-pattern>
+	</servlet-mapping>
+	 scorm1.2  end -->
+     <!-- scorm1.2 start-->
+	<servlet>
+		<servlet-name>LMSCMIServlet</servlet-name>
+		<servlet-class>org.adl.samplerte.server.LMSCMIServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LMSCMIServlet</servlet-name>
+		<url-pattern>/lmscmi</url-pattern>
+	</servlet-mapping>
+	<!-- scorm1.2  end -->
+	<!-- 设置session超时销毁时间 -->
+    <session-config> 
+      <session-timeout>30</session-timeout> 
+    </session-config>
+    <listener>
+    	<listener-class>com.sopia.SessionListener</listener-class>
+    </listener>
+    <error-page>
+    	<error-code>404</error-code>
+    	<location>/errorPage_404.jsp</location>
+    </error-page>
+    <context-param> 
+    	<param-name>log4jConfigLocation</param-name> 
+    	<param-value>WEB-INF/config/log4j.properties</param-value> 
+ 	</context-param> 
+ 	<context-param>
+    	<param-name>webAppRootKey</param-name>
+    	<param-value>svndemo0305.root0302</param-value>
+	</context-param>
+ 	<listener> 
+    	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class> 
+ 	</listener> 
+    <!--<listener>
+		<listener-class>com.sopia.attendance.MyListener</listener-class>
+	</listener>-->
+	<!-- 
+	<listener>
+		<listener-class>com.sopia.schedule.remind.RemindListener</listener-class>
+	</listener>
+	 -->
+	 
+	 <!-- 导致编辑器请求.html的时候 404
+	 <servlet>
+		<servlet-name>htmlCreator</servlet-name>
+		<servlet-class>com.sopia.HtmlCreatorServlet2</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>htmlCreator</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	 -->
+	  <servlet>
+		<servlet-name>htmlCreator</servlet-name>
+		<servlet-class>com.sopia.HtmlCreatorServlet2</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>htmlCreator</servlet-name>
+		<url-pattern>*.shtml</url-pattern>
+	</servlet-mapping>
+	<!-- 自定义模块的静态化 -->
+	<servlet>
+		<servlet-name>ZDYhtmlCreator</servlet-name>
+		<servlet-class>com.sopia.schedule.ZDYHtmlCreatorServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ZDYhtmlCreator</servlet-name>
+		<url-pattern>*.shtm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>com.sopia.ImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/imageServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RecordUploadServlet</servlet-name>
+		<servlet-class>com.sopia.record.servlet.RecordUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecordUploadServlet</servlet-name>
+		<url-pattern>/recordUpload</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="course_peice" extends="elearning">
+		<!-- 价格设置模块 --> 
+		<action name="peice_myallcourselist" class="com.sopia.peice.action.PeiceAction" method="peice_myallcourselist">
+			<result name="peice_myallcourselist_success">
+				admin/peice/peice_myallcourselist.jsp
+			</result>
+		</action>
+		<!-- 价格审核 -->
+		<action name="peice_AuditList" class="com.sopia.peice.action.PeiceAction" method="peice_AuditList">
+			<result name="peice_AuditList_success">
+				admin/peice/peice_AuditList.jsp
+			</result>
+		</action>
+		
+	</package> 
+</struts>

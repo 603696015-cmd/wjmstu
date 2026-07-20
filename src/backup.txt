@@ -1,0 +1,9 @@
+select * from exampaper ; 
+select * from dbo.exampaperblock
+delete from exampaperblock where exampaperid not in(select id from exampaper );
+select * from exampaper_random;
+delete from exampaper_random where blockid not in(select id from exampaperblock)
+select * from exampaperblockquestion;
+delete from exampaperblockquestion where blockid not in(select id from exampaperblock)
+
+Caused by: java.lang.NoClassDefFoundError: org/apache/openjpa/enhance/PersistenceCapable

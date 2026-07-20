@@ -1,0 +1,22 @@
+-- Create table
+create table EXAM_ROOM_SYS
+(
+  SYS    NUMBER not null,
+  ROOMID NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  insert into EXAM_ROOM_SYS (SYS,ROOMID) values (1,0);
+  
+  
+  insert into elfunc (funccode,name,parentid,needcheck,target,dyimg,bgimg,linkimg) 
+  values ('init_classification_standard','初始定级标准',817,0,'rightFrame','default_dy.jpg','default_bg.jpg','default_link.jpg');

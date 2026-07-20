@@ -1,0 +1,20 @@
+-- Create table
+create table ELCLASS_ASSIGN_EXAMROOM
+(
+  CLASSID    NUMBER not null,
+  EXAMROOMID NUMBER not null
+);
+
+
+create or replace procedure assign_examroom(classid_ number,examroomid_ number)
+as
+insc number;
+begin
+     insc:=0;
+     select count(1) into insc from elclass_assign_examroom where classid=classid_ and examroomid=examroomid_;
+     if insc=0 then
+          insert into elclass_assign_examroom(classid,examroomid) values (classid_,examroomid_);
+     else 
+          update elclass_assign_examroom set examroomid=examroomid_ where classid=classid_ and examroomid = examroomid_;
+     end if;
+end;

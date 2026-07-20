@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_talent" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="talent_expert_list"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_expert_list">
+			<result name="talent_expert_list">
+				admin/talent/talent_expert_list.jsp
+			</result>
+		</action>
+			<action name="talent_expert_search"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_expert_search">
+			<result name="talent_expert_search">
+				admin/talent/talent_expert_search.jsp
+			</result>
+		</action>
+		<action name="talent_expert_addInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_expert_addInit">
+			<result name="talent_expert_add">
+				admin/talent/talent_expert_add.jsp
+			</result>
+		</action>
+		<action name="talent_expert_add"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_expert_add">
+			<result name="talent_expert_list" type="redirectAction">
+				talent_expert_list
+			</result>
+		</action>
+		<action name="talent_roomcollect_addInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_roomcollect_addInit">
+			<result name="talent_roomcollect_add">
+				admin/talent/talent_roomcollect_add.jsp
+			</result>
+		</action>
+		<action name="talent_roomcollect_add"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_roomcollect_add">
+			<result name="talent_roomcollect_list" type="redirectAction">
+				talent_roomcollect_list
+			</result>
+		</action>
+			<action name="talent_roomcollect_alterInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_roomcollect_alterInit">
+			<result name="talent_roomcollect_alter">
+				admin/talent/talent_roomcollect_alter.jsp
+			</result>
+		</action>
+		<action name="talent_roomcollect_alter"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_roomcollect_alter">
+			<result name="talent_troom_list" type="redirectAction">
+				talent_troom_list?troomcoll.id=${troomcoll.id}
+			</result>
+		</action>
+		<action name="talent_roomcollect_list"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_roomcollect_list">
+			<result name="talent_roomcollect_list">
+				admin/talent/talent_roomcollect_list.jsp
+			</result>
+		</action>
+		<action name="talent_troom_list"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_list">
+			<result name="talent_troom_list">
+				admin/talent/talent_troom_list.jsp
+			</result>
+		</action>
+		<action name="talent_troom_addInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_addInit">
+			<result name="talent_troom_add">
+				admin/talent/talent_troom_add.jsp
+			</result>
+		</action>
+		<action name="talent_troom_add"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_add">
+			<result name="talent_troom_list" type="redirectAction">
+			talent_troom_list?troomcoll.id=${troomcoll.id}
+			</result>
+		</action>
+		
+		<action name="talent_troom_alterInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_alterInit">
+			<result name="talent_troom_alter">
+			admin/talent/talent_troom_alter.jsp
+			</result>
+		</action>
+		<action name="talent_troom_alter"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_alter">
+			<result name="talent_troom_list" type="redirectAction">
+			talent_troom_list?troomcoll.id=${troomcoll.id}
+			</result>
+		</action>
+		<action name="talent_troom_assign_list"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_assign_list">
+			<result name="talent_troom_assign_list">
+			admin/talent/talent_troom_assign_list.jsp
+			</result>
+		</action>
+			<action name="talent_troom_assign_searchInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_assign_searchInit">
+			<result name="talent_troom_assign_search">
+			admin/talent/talent_troom_assign_search.jsp
+			</result>
+		</action>
+			<action name="talent_troom_assign_search"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_assign_search">
+			<result name="talent_troom_assign_list">
+			admin/talent/talent_troom_assign_search_list.jsp
+			</result>
+		</action>
+			<action name="talent_troom_assign_add"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_assign_add">
+			<result name="talent_troom_assign_add">
+			admin/talent/talent_troom_assign_search_list.jsp
+			</result>
+		</action>
+		<action name="talent_troom_assign_delete"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_assign_delete">
+			<result name="talent_troom_assign_list" type="redirectAction">
+			talent_troom_assign_list?troomcoll.id=${troomcoll.id}&amp;troom.id=${troom.id}
+			</result>
+		</action>
+		<action name="talent_searchInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_searchInit">
+			<result name="talent_search">
+		admin/talent/talent_search.jsp
+			</result>
+		</action>
+			<action name="talent_search"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_search">
+			<result name="talent_searchlist">
+			admin/talent/talent_searchlist.jsp
+			</result>
+		</action>
+				<action name="talent_troom_result_view"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_troom_result_view">
+			<result name="talent_troom_result_view">
+			admin/talent/talent_troom_result_view.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_addInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_addInit">
+			<result name="talent_ztroom_add">
+				admin/talent/talent_ztroom_add.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_add"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_add">
+			<result name="talent_ztroom_list" type="redirectAction">
+			talent_ztroom_list
+			</result>
+		</action>
+		<action name="talent_ztroom_alterInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_alterInit">
+			<result name="talent_ztroom_alter">
+				admin/talent/talent_ztroom_alter.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_alter"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_alter">
+			<result name="talent_ztroom_list" type="redirectAction">
+			talent_ztroom_list
+			</result>
+		</action>
+		<action name="talent_ztroom_list"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_list">
+			<result name="talent_ztroom_list">
+				admin/talent/talent_ztroom_list.jsp
+			</result>
+		</action>
+			<action name="talent_ztroom_assign_list"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_assign_list">
+			<result name="talent_ztroom_assign_list">
+				admin/talent/talent_ztroom_assign_list.jsp
+			</result>
+		</action>
+			<action name="talent_ztroom_assign_searchInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_assign_searchInit">
+			<result name="talent_ztroom_assign_search">
+			admin/talent/talent_ztroom_assign_search.jsp
+			</result>
+		</action>
+			<action name="talent_ztroom_assign_search"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_assign_search">
+			<result name="talent_ztroom_assign_list">
+			admin/talent/talent_ztroom_assign_search_list.jsp
+			</result>
+		</action>
+			<action name="talent_ztroom_assign_add"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_assign_add">
+			<result name="talent_ztroom_assign_add">
+			admin/talent/talent_ztroom_assign_search_list.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_assign_delete"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_assign_delete">
+			<result name="talent_ztroom_assign_list" type="redirectAction">
+			talent_ztroom_assign_list?ztroom.id=${ztroom.id}
+			</result>
+		</action>
+		<action name="talent_room_statInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_room_statInit">
+			<result name="talent_room_statInit">
+				admin/talent/talent_room_statInit.jsp
+			</result>
+		</action>
+		<action name="talent_room_statlist"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_room_statlist">
+			<result name="talent_room_statlist">
+				admin/talent/talent_room_statlist.jsp
+			</result>
+		</action>
+		<action name="talent_room_statview"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_room_statview">
+			<result name="talent_room_statview">
+				admin/talent/talent_room_statview.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_statInit"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_statInit">
+			<result name="talent_ztroom_statInit">
+				admin/talent/talent_ztroom_statInit.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_statlist"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_statlist">
+			<result name="talent_ztroom_statlist">
+				admin/talent/talent_ztroom_statlist.jsp
+			</result>
+		</action>
+		<action name="talent_ztroom_statview"
+			class="com.sopia.talentman.action.TalentAction"
+			method="talent_ztroom_statview">
+			<result name="talent_ztroom_statview">
+				admin/talent/talent_ztroom_statview.jsp
+			</result>
+		</action>
+	</package>
+</struts>

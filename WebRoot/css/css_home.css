@@ -1,0 +1,474 @@
+.szwz {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; COLOR: #999999; PADDING-TOP: 3px
+}
+.zuo {
+	WIDTH: 200px; FLOAT: left
+}
+.gmlc_tp {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.gmlc_tp IMG {
+	VERTICAL-ALIGN: middle
+}
+.gmlc {
+	MARGIN-BOTTOM: 10px
+}
+.gmlc LI {
+	MARGIN-BOTTOM: 4px
+}
+.gmlc_tp A {
+	COLOR: #989898; FONT-SIZE: 14px
+}
+.gmlc_tp A:hover {
+	COLOR: #c00; TEXT-DECORATION: underline
+}
+.xgcp_tp {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; PADDING-TOP: 10px
+}
+.xgcp_tp IMG {
+	VERTICAL-ALIGN: middle
+}
+.xgcp TD {
+	BORDER-BOTTOM: #ccc 1px dashed; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.ksdb {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 60px; PADDING-RIGHT: 0px; PADDING-TOP: 15px
+}
+.rmtj {
+	LINE-HEIGHT: 22px
+}
+.rmtj LI {
+	BORDER-BOTTOM: #ccc 1px dashed; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; WIDTH: 190px; PADDING-RIGHT: 0px; PADDING-TOP: 3px
+}
+.rmtj IMG {
+	PADDING-RIGHT: 5px; VERTICAL-ALIGN: middle; _padding-top: 3px; _padding-bottom: 3px
+}
+.you {
+	WIDTH: 755px; FLOAT: right
+}
+.wz_bg {
+	BORDER-LEFT: #d9d9d9 1px solid; MARGIN: 0px auto; WIDTH: 736px; BACKGROUND: url(bgw.gif) repeat-x; HEIGHT: 71px; BORDER-RIGHT: #d9d9d9 1px solid
+}
+.wz_bg_x {
+	BORDER-LEFT: #d9d9d9 1px solid; MARGIN: 0px auto; WIDTH: 736px; HEIGHT: 9px; OVERFLOW: hidden; BORDER-RIGHT: #d9d9d9 1px solid
+}
+.cplogo {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; FLOAT: left; PADDING-TOP: 20px
+}
+.cplpgp_tit {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; FLOAT: left; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 25px
+}
+.ss_bg {
+	BORDER-LEFT: #d9d9d9 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; WIDTH: 749px; PADDING-RIGHT: 1px; BACKGROUND: url(ss_bg.jpg) repeat-x; HEIGHT: 38px; BORDER-RIGHT: #d9d9d9 1px solid; PADDING-TOP: 0px
+}
+.bxss {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; COLOR: #1c6bb6; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 10px
+}
+.bxss_bg {
+	BORDER-LEFT: #d9d9d9 1px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; WIDTH: 749px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/images_home/bxssbg.jpg) repeat-x; HEIGHT: auto; BORDER-RIGHT: #d9d9d9 1px solid; PADDING-TOP: 5px
+}
+.tbkx {
+	BORDER-LEFT: #d9d9d9 1px solid; WIDTH: 92px; FLOAT: right; BORDER-RIGHT: #d9d9d9 1px solid
+}
+.xj {
+	COLOR: #ff6223; FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+.xj SPAN {
+	FONT-SIZE: 12px
+}
+.xj2 {
+	COLOR: #ff6223; FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+.xj2 .span1 {
+	FONT-SIZE: 12px
+}
+.yj {
+	POSITION: relative; TEXT-ALIGN: left; PADDING-LEFT: 5px; FONT-FAMILY: Î¢ÈíÑÅºÚ, Geneva, sans-serif; FONT-SIZE: 12px; _padding-left: 5px
+}
+.yj_gw {
+	POSITION: absolute; TOP: 10px; LEFT: 5px; _top: 7px; _left: 2px
+}
+.jbxx_k {
+	BORDER-BOTTOM: #d9d9d9 1px solid; BORDER-LEFT: #d9d9d9 1px solid; PADDING-BOTTOM: 10px; MARGIN: 0px auto; WIDTH: 736px; ZOOM: 1; OVERFLOW: hidden; BORDER-RIGHT: #d9d9d9 1px solid
+}
+.jbxx {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; COLOR: #1c6bb6; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.jbxx_nr {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 30px; PADDING-LEFT: 25px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; COLOR: #515151; PADDING-TOP: 0px
+}
+.jbxx_nr IMG {
+	VERTICAL-ALIGN: middle
+}
+.hdm {
+	ZOOM: 1; BACKGROUND: url(../images/images_home/hdmbg.gif) repeat-x; HEIGHT: 28px; MARGIN-LEFT: 20px; OVERFLOW: hidden; PADDING-TOP: 5px
+}
+.hdm LI {
+	TEXT-ALIGN: center; WIDTH: 104px; PADDING-RIGHT: 5px; BACKGROUND: url(../images/images_home/mr.gif) no-repeat; FLOAT: left; HEIGHT: 22px; PADDING-TOP: 2px
+}
+.hdm LI.xzzt {
+	MARGIN-TOP: -5px; WIDTH: 101px; BACKGROUND: url(../images/images_home/xz.gif) no-repeat; HEIGHT: 27px; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.hdm LI SPAN {
+	COLOR: #0360c0
+}
+.bzqy_hk {
+	MARGIN-TOP: 5px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 20px; MARGIN-RIGHT: 10px
+}
+.bzqy {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.bgbs {
+	MARGIN: 5px auto; WIDTH: 680px; BORDER-TOP: #4285c9 2px solid
+}
+.bgbs TD {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.cpts {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #f5f5f5; PADDING-TOP: 10px
+}
+.jttk A {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #1d72cc; TEXT-DECORATION: underline; PADDING-TOP: 5px
+}
+.d_tp {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 20px
+}
+.sc_jfdhbg {
+	BACKGROUND: url(../images/images_home/sc_dhbg.jpg) repeat-x; HEIGHT: 26px; MARGIN-LEFT: 20px; CURSOR: pointer
+}
+.sc_jfdhbg LI {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 20px; FLOAT: left; COLOR: #787878; PADDING-TOP: 0px
+}
+.h_syz {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 29px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #fff; FLOAT: left; HEIGHT: 26px; COLOR: #0360c0; FONT-SIZE: 14px; BORDER-TOP: #ccc 1px solid; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.h_syl {
+	FLOAT: left
+}
+.khpj {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 30px; PADDING-RIGHT: 0px; BACKGROUND: #e5e8ef; COLOR: #0466c1; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.khpj IMG {
+	VERTICAL-ALIGN: text-bottom; MARGIN-RIGHT: 10px
+}
+.plkj {
+	MARGIN: 10px auto; WIDTH: 650px
+}
+.yhpl {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 30px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/images_home/yhplbg.jpg) repeat-x; HEIGHT: 32px; PADDING-TOP: 5px
+}
+.yhpl SPAN {
+	COLOR: #0466c1; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.yhpl A {
+	COLOR: #0466c1
+}
+.zxpl_xx {
+	LINE-HEIGHT: 24px; MARGIN: 5px auto; WIDTH: 650px
+}
+.zxpl_xx LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.zxpl_kf {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.zxpl_kf SPAN {
+	COLOR: #fb5500; FONT-WEIGHT: bold
+}
+.zxpl_hf {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.zxpl_hf LI {
+	WIDTH: 64px; BACKGROUND: url(../images/images_home/yy.jpg) no-repeat; FLOAT: left; HEIGHT: 22px; MARGIN-RIGHT: 10px
+}
+.zxpl_hf SPAN {
+	COLOR: #9f0000; FONT-WEIGHT: normal
+}
+.zxpl_hf EM {
+	FONT-STYLE: normal; COLOR: #f00
+}
+.zxpl_xx1 {
+	BORDER-BOTTOM: #dfdfdf 1px dashed; LINE-HEIGHT: 24px; MARGIN: 5px auto; WIDTH: 650px; BACKGROUND: #f0f0f0; BORDER-TOP: #dfdfdf 1px dashed
+}
+.zxpl_xx1 LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.fbpl {
+	COLOR: #fe2b00; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.fbpl_k {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 45px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.xcfl {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #0466c1; PADDING-TOP: 5px
+}
+.dlfy {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #555555; TEXT-DECORATION: underline; PADDING-TOP: 5px
+}
+.dlfb_k INPUT {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; WIDTH: 120px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.Test5study {
+	WIDTH: 650px; HEIGHT: auto; OVERFLOW: hidden
+}
+.Test5study DD {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #f0f0f0; PADDING-TOP: 10px
+}
+.Test5study H2 {
+	POSITION: relative; LINE-HEIGHT: 22px; HEIGHT: 26px; FONT-SIZE: 12px; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.Test5study H2 SPAN {
+	POSITION: absolute; TOP: 0px; RIGHT: 6px; FONT-WEIGHT: bold
+}
+.TxtList {
+	LINE-HEIGHT: 26px; COLOR: #747474
+}
+.sech_lydq {
+	FLOAT: left; PADDING-TOP: 3px
+}
+.searchBar {
+	FLOAT: left; MARGIN-RIGHT: 20px
+}
+.searchBar .select {
+	MARGIN-TOP: 1px; DISPLAY: inline; FLOAT: left; MARGIN-RIGHT: 8px
+}
+DIV.selectbox-wrapper {
+	BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; MARGIN-TOP: -2px; BACKGROUND: #fbfbfb; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid
+}
+DIV.selectbox-wrapper UL LI.selected {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 10px; WIDTH: 73px
+}
+DIV.selectbox-wrapper UL LI.current {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 10px; WIDTH: 73px; COLOR: #fff
+}
+DIV.selectbox-wrapper UL LI {
+	PADDING-BOTTOM: 1px; LINE-HEIGHT: 18px; PADDING-LEFT: 10px; WIDTH: 73px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectbox {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 10px; WIDTH: 110px; DISPLAY: block; BACKGROUND: url(../images/images_home/select.jpg) no-repeat 0px 0px; HEIGHT: 18px; COLOR: red; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+.btn {
+	MARGIN-TOP: 2px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 8px
+}
+.sech_lydq {
+	FLOAT: left; PADDING-TOP: 3px
+}
+.searchBar {
+	FLOAT: left
+}
+.searchBar .select {
+	MARGIN-TOP: 1px; DISPLAY: inline; FLOAT: left; MARGIN-RIGHT: 8px
+}
+DIV.selectbox-wrappersex {
+	BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; MARGIN-TOP: -2px; BACKGROUND: #fbfbfb; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid
+}
+DIV.selectbox-wrappersex UL LI.selectedsex {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 10px; WIDTH: 25px
+}
+DIV.selectbox-wrappersex UL LI.currentsex {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 10px; WIDTH: 25px; COLOR: #fff
+}
+DIV.selectbox-wrappersex UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 10px; WIDTH: 25px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxsex {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 10px; WIDTH: 52px; DISPLAY: block; BACKGROUND: url(../images/images_list/sexselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+.btn {
+	MARGIN-TOP: 2px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 8px
+}
+.sech_lydq {
+	FLOAT: left; PADDING-TOP: 3px
+}
+.searchBar {
+	FLOAT: left
+}
+.searchBar .select {
+	MARGIN-TOP: 1px; DISPLAY: inline; FLOAT: left; MARGIN-RIGHT: 8px
+}
+DIV.selectbox-wrappernl {
+	SCROLLBAR-ARROW-COLOR: #ffffff; BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; SCROLLBAR-FACE-COLOR: #cfcfcf; OVERFLOW-Y: scroll; MARGIN-TOP: -2px; WIDTH: 60px; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; SCROLLBAR-BASE-COLOR: #cfcfcf; BACKGROUND: #fbfbfb; HEIGHT: 130px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #595959; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid; SCROLLBAR-3DLIGHT-COLOR: #595959
+}
+DIV.selectbox-wrappernl UL LI.selectednl {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 5px; WIDTH: 30px
+}
+DIV.selectbox-wrappernl UL LI.currentnl {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 5px; WIDTH: 30px; COLOR: #fff
+}
+DIV.selectbox-wrappernl UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 5px; WIDTH: 30px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxnl {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 5px; WIDTH: 57px; DISPLAY: block; BACKGROUND: url(../images/images_list/sexselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+.btn {
+	MARGIN-TOP: 2px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 8px
+}
+DIV.selectbox-wrapperbaoe {
+	BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; MARGIN-TOP: -2px; BACKGROUND: #fbfbfb; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid
+}
+DIV.selectbox-wrapperbaoe UL LI.selectedbaoe {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 10px; WIDTH: 58px
+}
+DIV.selectbox-wrapperbaoe UL LI.currentbaoe {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 10px; WIDTH: 58px; COLOR: #fff
+}
+DIV.selectbox-wrapperbaoe UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 10px; WIDTH: 58px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxbaoe {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 10px; WIDTH: 85px; DISPLAY: block; BACKGROUND: url(../images/images_list/baoeselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+DIV.selectbox-wrapperjfnx {
+	SCROLLBAR-ARROW-COLOR: #ffffff; BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; SCROLLBAR-FACE-COLOR: #cfcfcf; OVERFLOW-Y: scroll; MARGIN-TOP: -2px; WIDTH: 86px; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; SCROLLBAR-BASE-COLOR: #cfcfcf; BACKGROUND: #fbfbfb; HEIGHT: 130px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #595959; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid; SCROLLBAR-3DLIGHT-COLOR: #595959
+}
+DIV.selectbox-wrapperjfnx UL LI.selectedjfnx {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 1px; WIDTH: 60px
+}
+DIV.selectbox-wrapperjfnx UL LI.currentjfnx {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 1px; WIDTH: 60px; COLOR: #fff
+}
+DIV.selectbox-wrapperjfnx UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 1px; WIDTH: 60px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxjfnx {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 3px; WIDTH: 91px; DISPLAY: block; BACKGROUND: url(../images/images_list/jfnxselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+DIV.selectbox-wrapperjffs {
+	BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; MARGIN-TOP: -2px; BACKGROUND: #fbfbfb; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid
+}
+DIV.selectbox-wrapperjffs UL LI.selectedjffs {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 1px; WIDTH: 60px
+}
+DIV.selectbox-wrapperjffs UL LI.currentjffs {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 1px; WIDTH: 60px; COLOR: #fff
+}
+DIV.selectbox-wrapperjffs UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 1px; WIDTH: 60px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxjffs {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 3px; WIDTH: 91px; DISPLAY: block; BACKGROUND: url(../images/images_list/jfnxselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+DIV.selectbox-wrapperJob {
+	SCROLLBAR-ARROW-COLOR: #ffffff; BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; SCROLLBAR-FACE-COLOR: #cfcfcf; OVERFLOW-Y: scroll; MARGIN-TOP: -2px; WIDTH: 277px; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; SCROLLBAR-BASE-COLOR: #cfcfcf; BACKGROUND: #fbfbfb; HEIGHT: 130px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #595959; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid; SCROLLBAR-3DLIGHT-COLOR: #595959
+}
+DIV.selectbox-wrapperJob UL LI.selectedJob {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 1px; WIDTH: 250px
+}
+DIV.selectbox-wrapperJob UL LI.currentJob {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 1px; WIDTH: 250px; COLOR: #fff
+}
+DIV.selectbox-wrapperJob UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 1px; WIDTH: 250px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxJob {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 3px; WIDTH: 290px; DISPLAY: block; BACKGROUND: url(../images/images_list/Jobselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+DIV.selectbox-wrapperCity {
+	SCROLLBAR-ARROW-COLOR: #ffffff; BORDER-BOTTOM: #9d9d9d 1px solid; POSITION: absolute; TEXT-ALIGN: left; BORDER-LEFT: #9d9d9d 1px solid; SCROLLBAR-FACE-COLOR: #cfcfcf; OVERFLOW-Y: scroll; MARGIN-TOP: -2px; WIDTH: 85px; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; SCROLLBAR-BASE-COLOR: #cfcfcf; BACKGROUND: #fbfbfb; HEIGHT: 130px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #595959; BORDER-TOP: medium none; BORDER-RIGHT: #9d9d9d 1px solid; SCROLLBAR-3DLIGHT-COLOR: #595959
+}
+DIV.selectbox-wrapperCity UL LI.selectedCity {
+	BACKGROUND-COLOR: #ccc; PADDING-LEFT: 1px; WIDTH: 60px
+}
+DIV.selectbox-wrapperCity UL LI.currentCity {
+	BACKGROUND-COLOR: #777777; PADDING-LEFT: 1px; WIDTH: 60px; COLOR: #fff
+}
+DIV.selectbox-wrapperCity UL LI {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 16px; PADDING-LEFT: 1px; WIDTH: 60px; PADDING-RIGHT: 3px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.selectboxCity {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-LEFT: 3px; WIDTH: 91px; DISPLAY: block; BACKGROUND: url(../images/images_list/jfnxselect.jpg) no-repeat 0px 0px; HEIGHT: 18px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 4px
+}
+.bxss_bg2 {
+	BORDER-LEFT: #d9d9d9 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; WIDTH: 749px; PADDING-RIGHT: 1px; BACKGROUND: url(../images/images_home/big_back.gif) repeat-x; HEIGHT: auto; BORDER-RIGHT: #d9d9d9 1px solid; PADDING-TOP: 0px
+}
+.bt_l {
+	FLOAT: left
+}
+.bt_r {
+	FLOAT: left
+}
+.cfqi {
+	PADDING-LEFT: 3px; FLOAT: left; MARGIN-RIGHT: 15px
+}
+.riqi_tp {
+	MARGIN: 2px 3px 0px 0px; WIDTH: 16px; DISPLAY: inline; FLOAT: left
+}
+.bt_bg {
+	BACKGROUND: url(../images/images_list/lb_bg.jpg) repeat-x; FLOAT: left; HEIGHT: 22px
+}
+.bt_bg_input {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 5px; PADDING-LEFT: 2px; WIDTH: 40px; PADDING-RIGHT: 2px; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 12px; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 5px; _margin-top: -1px
+}
+.bt_bg_input1 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 0px; PADDING-LEFT: 2px; WIDTH: 64px; PADDING-RIGHT: 2px; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 18px; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 2px; _margin-top: -1px
+}
+.hg_bzqy {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 30px; PADDING-RIGHT: 0px; COLOR: #444; FONT-SIZE: 12px; FONT-WEIGHT: bold; PADDING-TOP: 10px
+}
+.ljxs {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 25px
+}
+.ljxs SPAN {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FONT-FAMILY: Î¢ÈíÑÅºÚ, Geneva, sans-serif; COLOR: #1a6abc; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 2px
+}
+.qp_wc {
+	LINE-HEIGHT: 16px; WIDTH: 186px; ZOOM: 1; FLOAT: right; OVERFLOW: hidden
+}
+.qp_nc {
+	BORDER-BOTTOM: #fdcc7f 1px solid; BORDER-LEFT: #fdcc7f 1px solid; PADDING-BOTTOM: 3px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; ZOOM: 1; BACKGROUND: #ffffe5; OVERFLOW: hidden; BORDER-TOP: #fdcc7f 1px solid; BORDER-RIGHT: #fdcc7f 1px solid; PADDING-TOP: 3px
+}
+.qp_hj {
+	MARGIN-TOP: 3px; FLOAT: left; MARGIN-RIGHT: 5px
+}
+.qp_xx {
+	WIDTH: 150px; FLOAT: left
+}
+.qp_xx SPAN {
+	COLOR: #ff662a; FONT-WEIGHT: bold
+}
+.qp_xx A {
+	COLOR: #1b69bb; TEXT-DECORATION: underline
+}
+.qp_wcdw {
+	POSITION: absolute; TOP: -40px; LEFT: 560px; _left: 0px
+}
+.bxss_bg_ly {
+	BORDER-LEFT: #d9d9d9 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; WIDTH: 749px; PADDING-RIGHT: 1px; BACKGROUND: url(../images/images_home/xg_bg.jpg) repeat-x; HEIGHT: auto; BORDER-RIGHT: #d9d9d9 1px solid; PADDING-TOP: 0px
+}
+.xg_jrdb INPUT {
+	LINE-HEIGHT: 24px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; MARGIN-RIGHT: 3px
+}
+.xg_jrdb {
+	MARGIN: 5px 6px 0px 0px; FLOAT: right
+}
+.jttk_pdf {
+	ZOOM: 1; OVERFLOW: hidden
+}
+.jttk_pdf LI {
+	FLOAT: left; MARGIN-RIGHT: 10px
+}
+.jttk_pdf LI IMG {
+	VERTICAL-ALIGN: middle; MARGIN-RIGHT: 3px
+}
+.jttk_pdf LI A {
+	COLOR: #1d72cc; TEXT-DECORATION: underline
+}
+.cplpgp_tit1 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; FLOAT: left; COLOR: #0060a5; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 25px
+}
+.cpxq_bg {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 21px; PADDING-RIGHT: 0px; ZOOM: 1; BACKGROUND: #397ec9; COLOR: #fff; OVERFLOW: hidden; FONT-WEIGHT: bold; PADDING-TOP: 6px
+}
+.jbxx_k1 {
+	BORDER-BOTTOM: #d9d9d9 1px solid; BORDER-LEFT: #d9d9d9 1px solid; PADDING-BOTTOM: 10px; MARGIN: 0px auto; WIDTH: 736px; ZOOM: 1; OVERFLOW: hidden; BORDER-TOP: #d9d9d9 1px solid; BORDER-RIGHT: #d9d9d9 1px solid
+}
+.cpxq_bg LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 16px; MARGIN-TOP: 10px; WIDTH: 84px; DISPLAY: block; FLOAT: left; HEIGHT: 12px; CURSOR: pointer; BORDER-RIGHT: #fff 1px solid
+}
+.cpxq_bg LI.current {
+	LINE-HEIGHT: 32px; MARGIN: 0px 0px 0px -1px; BACKGROUND: #fff; HEIGHT: 30px; COLOR: #256fc4; FONT-SIZE: 14px
+}
+.cpxq_bg LI.nbr {
+	BORDER-RIGHT: medium none
+}

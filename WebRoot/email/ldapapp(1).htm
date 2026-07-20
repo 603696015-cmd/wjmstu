@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0090)http://10.40.28.70/coremail/fcg/ldapapp?funcid=folder&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB -->
+<!-- folder.htm --><HTML><HEAD><TITLE>Folders</TITLE>
+<META http-equiv=Cache-Control content=max-age=0>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK 
+href="ldapapp(1).files/simple_folder.css" type=text/css charset=iso-8859-1 
+rel=stylesheet>
+<SCRIPT src="ldapapp(1).files/layerutil.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="ldapapp(1).files/globalclass.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="ldapapp(1).files/foldmain.js" type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript>
+<!--
+var initShowLevel = 1;
+var fdritems1 = new Array();
+
+// -->
+</SCRIPT>
+
+<SCRIPT src="ldapapp(1).files/tree.js" type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript>
+// this block define the fdrItems
+var fdritems = new Array();
+
+fdritems[0]=new fdrItemOfCGI(0, 0, "0",-1, 0, "", "", "7", true, true, true);
+
+fdritems[1]=new fdrItemOfCGI(1, 1, "1",0, 1, "收件箱", "收件箱", "2", false, true, false);
+
+fdritems[2]=new fdrItemOfCGI(2, 2, "2",0, 1, "草稿箱", "草稿箱", "0", false, false, false);
+
+fdritems[3]=new fdrItemOfCGI(3, 3, "3",0, 1, "已发送", "已发送", "0", false, false, false);
+
+fdritems[4]=new fdrItemOfCGI(4, 4, "4",0, 1, "已删除邮件", "已删除邮件", "0", false, false, false);
+
+fdritems[5]=new fdrItemOfCGI(5, 5, "5",0, 1, "垃圾邮件", "垃圾邮件", "0", false, false, false);
+
+fdritems[6]=new fdrItemOfCGI(6, 6, "6",0, 1, "病毒文件夹", "病毒文件夹", "0", false, false, false);
+
+sortFdrItemArray();
+</SCRIPT>
+
+<SCRIPT language=javascript>
+  var poplist = new Array();
+  var index = 0;
+  
+</SCRIPT>
+
+<SCRIPT language=javascript>
+<!--
+var linkHeader = " ";
+var linkTarget = "main";
+var linkFdrRoot = " ";
+var nameFdrRoot = "根文件夹";
+
+// /cgi/ldapapp?funcid=foldmain&sid=BATSRLBBhRVSBZwNQqBBbjgnajSRqUnE&fid=4&confirmemptytrash=y
+// 清空操作的链接
+var emptyLinkHeader = " ";
+
+tree_info_fold = "-";
+tree_info_unfold = "+";
+fdritem_margin_left = 4;
+fdritem_indent_space = 8;
+
+function fMouseOver(oEvent, level){
+    if (level==0) {
+      oEvent.className = 'fdrrow_hover_root';
+    }
+    else {
+      oEvent.className = 'fdrrow_hover';
+  }
+}
+function fMouseOut(oEvent, level){
+    if (level==0) {
+      oEvent.className = 'fdrrow_normal_root';
+    }
+    else {
+      oEvent.className = 'fdrrow_normal';
+  }
+}
+
+//  EXTLINK<font color=#000000>EXTNAME</font>EXTLINKEND
+var g_folder_tips_emptyFolder = "清空";
+gItemStr = "\r\n"
+         + "<tr id=fdrItemID class=fdrrow_normal>\r\n"
+         + "  <td width=100% nowrap colspan=2>\r\n"
+         + "    <table width=100% border=0 cellpadding=0 cellspacing=0>\r\n"
+         + "      <tr id=fdrItemContID onmouseout='fMouseOut(this, LEVEL);' onmouseover='fMouseOver(this, LEVEL);' class=fdrrow_normal>\r\n"
+         + "        <td width=WIDTH1>&nbsp;</td>\r\n"
+         + "        <td width=WIDTH2 nowrap>\r\n"
+         + "          <span class='font'>LINK NAME LINKEND</span>\r\n"
+         + "        </td>\r\n"
+         + "        <td id=fdrExtID nowrap align='right'>"
+         + "          <span class='font' onclick='tipsEmpty(\"" + emptyLinkHeader + "_MFD_\")' style='cursor:pointer'>_EN_</span>"
+         + "        </td>"
+         + "        <td id=fdrFolderID onclick='foldFdr(CHILDID);' align='right' valign=bottom class='pucker'>折叠</td>\r\n"
+         + "        <td width=4>&nbsp;</td>\r\n"
+         + "      </tr>\r\n"
+         + "    </table>\r\n"
+         + "  </td>\r\n"
+         + "</tr>\r\nCHILD\r\n";
+
+gSubItemStr = "<!-- child ID begin -->\r\n"
+         + "<tr id=fdrSubItemID  class=fdrrow_normal style='display:DISPLAY'>\r\n"
+         + "  <td colspan=2>"
+         + "    <table width=100% border=0 cellpadding=0 cellspacing=0>\r\n"
+         + "      CONTENT\r\n"
+         + "    </table>"
+         + "  </td>"
+         + "</tr>\r\n"
+         + "<!-- child ID end -->\r\n";
+
+function setFdrOfCGI()
+{
+    if (fdritems[0].length<=0) return;
+
+    var i = 0;
+    // set url, img info
+    fdritems[0].name = nameFdrRoot;
+    fdritems[0].url = linkFdrRoot;
+    fdritems[0].img = "/images/an_04.gif";
+    fdritems[0].folderimg = "/images/an_04_01.gif";
+    fdritems[0].swapimg = "/images/an_04a.gif";
+
+    for ( i=1; i<fdritems.length; i++ ) {
+        fdritems[i].url = linkHeader + fdritems[i].fid;
+        switch (fdritems[i].id) {
+        case 1: //inbox
+            fdritems[i].img = "/images/an_05.gif";
+            fdritems[i].folderimg = "/images/an_05_01.gif";
+            fdritems[i].swapimg = "/images/an_05a.gif";
+            break;
+        case 2: //draft
+            fdritems[i].img = "/images/an_06.gif";
+            fdritems[i].folderimg = "/images/an_06_01.gif";
+            fdritems[i].swapimg = "/images/an_06a.gif";
+            break;
+        case 3: //sent
+            fdritems[i].img = "/images/an_07.gif";
+            fdritems[i].folderimg = "/images/an_07_01.gif";
+            fdritems[i].swapimg = "/images/an_07a.gif";
+            break;
+        case 4: //trash
+            fdritems[i].img = "/images/an_08.gif";
+            fdritems[i].folderimg = "/images/an_08_01.gif";
+            fdritems[i].swapimg = "/images/an_08a.gif";
+            break;
+        default://self defined
+            fdritems[i].img = "/images/an_17.gif";
+            fdritems[i].folderimg = "/images/an_17_01.gif";
+            fdritems[i].swapimg = "/images/an_17a.gif";
+            break;
+        }
+    }
+}
+setFdrOfCGI();
+
+//fdrItem(id, parentid, name, url, level, img)
+//fdritems1[0] = new fdrItem(0, -1, "收邮件", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=mails&amp;sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB&amp;checkmail=1", 0, "/images/an_02.gif", "/images/an_02.gif", "/images/an_02a.gif",linkTarget);
+/* CM_MultiMedia_Single
+if ("" != "1") {
+fdritems1[fdritems1.length] = new fdrItem(fdritems1.length, -1, "语音视频邮件", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=tipsnoaccess&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 1, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+}
+else {
+fdritems1[fdritems1.length] = new fdrItem(fdritems1.length, -1, "语音视频邮件", "/coremail/fcg/ldmmapp?funcid=compose&amp;sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB&amp;sendashtml=0&tempname=compose_media.htm", 1, "/images/an_03.gif", "/images/an_03.gif", "/images/an_03a.gif",linkTarget);
+}
+CM_MultiMedia_Single */
+var start = fdritems1.length;
+AddToFdrArray(start);
+var newstart = fdritems1.length - 1;
+//newstart++; fdritems1[newstart] = new fdrItem(newstart, -1,     "", "", 0, "", "", "", "");
+newstart++; fdritems1[newstart] = new fdrItem(newstart, -1,     "邮箱服务", "", 0, "/images/an_04.gif", "/images/an_04_01.gif", "/images/an_04a.gif", linkTarget);
+var serviceID = newstart;
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "个人通讯录", "     ", 1, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+var addrID = newstart;
+newstart++; fdritems1[newstart] = new fdrItem(newstart, addrID, "联系组", "    ", 2, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, addrID, "搜索/打印", "     ", 2, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, addrID, "导入/导出", "    ", 2, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+/* CM_OrgAddressBook
+//if ("1" == "1" ) {
+//newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "单位通讯录", "http://10.40.28.70/coremail/fcg/ldvcapp?tempname=address/corp_address2.htm&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB&funcid=prtouhib&topage_aim=toiaddr", 1, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+//}
+CM_OrgAddressBook */
+
+if ("1" == "1" ) {
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "公开邮箱", "   ", 1, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+}
+
+//newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "邮件列表demo", "http://10.40.28.70/coremail/fcg/loadpage?listpage=address/maillist.htm&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 1, "/images/an_09.gif", "/images/an_09.gif", "/images/an_09a.gif", linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "邮箱选项", "   ", 1, "/images/an_10.gif", "/images/an_10_01.gif", "/images/an_10a.gif", linkTarget);
+var configID = newstart;
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "个人资料", "    ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "密&nbsp;&nbsp;码", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "密码保护", "   ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "POP邮件",  "", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "参数设置", " ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "签名档", " ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "自动转发", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "自动回复", " ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "定时发信", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "黑名单", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "白名单", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "过滤器", " ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "反垃圾级别", "   ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+/* CM_Antix_Standard
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "反病毒", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=avsettor&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+CM_Antix_Standard */
+/* CM_Antix_ScanOnly
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "反病毒", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=avsettor&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB&tempname=avsettor_scanonly.htm", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+CM_Antix_ScanOnly */
+
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "到达通知", "   ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "手机绑定", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+
+/* CM_SmtpAlias
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID, "别名设置", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=smtpalias&optype=show&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+CM_SmtpAlias */
+var configEnd = newstart;
+newstart++; fdritems1[newstart] = new fdrItem(newstart, configID,	"PKI绑定", "  ", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "发贺卡", " ", 1, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+
+//newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "发短信", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=smscomposer&optype=show&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 1, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+
+if ( "0" != "1") {
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "网络文件夹", "", 1, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+}
+else {
+var netfdrpath = "http://10.40.28.45/netfolder/servlet/nfapp/Main?sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB&backurl=";
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID,  "网络文件夹", netfdrpath, 1, "/images/an_04.gif", "/images/an_04_01.gif", "/images/an_04a.gif",linkTarget);
+// var netfdr_fdrid = newstart;
+// newstart++; fdritems1[newstart] = new fdrItem(newstart, netfdr_fdrid, "浏&nbsp;&nbsp;览", netfdrpath + "main_list.html", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+// newstart++; fdritems1[newstart] = new fdrItem(newstart, netfdr_fdrid, "容量查看", netfdrpath + "main_quota.html", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+// newstart++; fdritems1[newstart] = new fdrItem(newstart, netfdr_fdrid, "搜&nbsp;&nbsp;索", netfdrpath + "main_search.html", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+// newstart++; fdritems1[newstart] = new fdrItem(newstart, netfdr_fdrid, "查找共享", netfdrpath + "shr_search.html", 2, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+}
+
+/* CM_Calendar
+if ( "" != "1") {
+  newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID, "日程管理", "http://10.40.28.70/coremail/fcg/ldapapp?funcid=tipsnoaccess&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 1, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+}
+else {
+  newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID, "日程管理", "/calendar/servlet/calendar.login?sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 1, "/images/an_16.gif", "/images/an_16.gif", "/images/an_16a.gif",linkTarget);
+}
+CM_Calendar */
+/* CM_NetFolder_URL
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID, "网络文件夹url方式接口demo", "http://10.40.28.70/coremail/fcg/ldutilapp?funcid=stub_urlattach&amp;optype=select&amp;sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB", 1, "/images/an_17.gif", "/images/an_17.gif", "/images/an_17a.gif",linkTarget);
+CM_NetFolder_URL */
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID, "查&nbsp;&nbsp;找", "  ", 1, "/images/an_17.gif", "/images/an_17.gif", "/images/an_17a.gif",linkTarget);
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID, "帮&nbsp;&nbsp;助", " ", 1, "/images/an_17.gif", "/images/an_17.gif", "/images/an_17a.gif","_blank");
+newstart++; fdritems1[newstart] = new fdrItem(newstart, serviceID, "退&nbsp;&nbsp;出", "   ", 1, "/images/an_17.gif", "/images/an_17.gif", "/images/an_17a.gif","_parent");
+
+
+initFdrItems();
+for ( var i=(configID+1); i<=configEnd; i++) {
+  fdritems1[i].display = false;
+}
+
+function setFdrItemCSS()
+{
+    for ( var i=0; i<fdritems1.length; i++) {
+        if (getFdtItemLevel(i)==0) {
+            var objId = 'fdrItem' + fdritems1[i].id;
+            var obj = document.getElementById(objId);
+            if (obj) {
+                obj.className = 'fdrrow_normal_root';
+            }
+            objId = 'fdrItemCont' + fdritems1[i].id;
+            obj = document.getElementById(objId);
+            if (obj) {
+                obj.className = 'fdrrow_normal_root';
+
+            }
+        }
+    }
+}
+
+
+function outPopPanel() {
+  var popItem = "<tr class='fdrrow_normal' style='font-size:12px'>"
+              + "<td width='4'>&nbsp;</td><td>　<span>"
+          + "SHORTNAME</span></td>"
+            + "<td align='right'>"
+            + "<span >"
+            + "&gt;</span></td>  </tr>";
+   var regPopName = /NAME/g;
+   var regPopFid = /FID/g;
+   var regPopShortName = /SHORTNAME/g;
+
+   var popItemCnt = poplist.length;
+   if (popItemCnt <= 0) {
+      var FolderObj = document.getElementById("popPanelFolder");
+      if (FolderObj) {
+         FolderObj.style.display = "none";
+      }
+   }
+
+   for ( var i = 0 ; i < popItemCnt; i ++ ) {
+    if ( poplist[i].fid == 0 ) poplist[i].fid = 1 ; //如果没有指定文件夹，就指定默认文件夹为：收信箱,不指定也可以的。
+    var item = popItem;
+    var thename = poplist[i].name;
+    var foldername = poplist[i].fdname;
+    var shortname = foldername;
+    if (shortname.length>10) {
+        shortname = shortname.substr(0, 10) + "...";
+    }
+    item = item.replace(regPopShortName, shortname);
+    item = item.replace(regPopName, thename);
+    item = item.replace(regPopFid,poplist[i].fid);
+    document.write(item);
+   }
+}
+function iniPageInfo() {
+
+}
+// -->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3268" name=GENERATOR></HEAD>
+<BODY style="MARGIN-TOP: 0px; MARGIN-LEFT: 0px" vLink=#3cb8b5 scroll=auto 
+onload="iniPageInfo();foldPopPanel('popPanelFolder', 'popDetailPanel');foldPopPanel('popPanelFolder', 'popDetailPanel');"><!-- ########################below is new content######################### -->
+<div style="width:100%;height:100%;position: absolute;margin: 0px;background:red; filter: alpha(opacity = 1);z-index:1000"></div>
+<TABLE class=bgcolor3 height="100%" cellSpacing=0 cellPadding=0 width=150 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=tablecolor1 vAlign=top width=148>
+      <TABLE class=css cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle height=15></TD></TR>
+        <TR>
+          <TD align=middle>
+            <SCRIPT language=javascript>
+                function receive()
+                {
+                    var obj = document.getElementById('aReceive');
+                    if (obj && obj.click) {
+                      obj.click();
+                    }
+                }
+                function compose()
+                {
+                    var obj = document.getElementById('aCompose');
+                    if (obj && obj.click) {
+                      obj.click();
+                    }
+                }
+            </SCRIPT>
+            <SPAN style="DISPLAY: none"></SPAN><SPAN title=点击可以收取邮件 
+            onclick=receive();><span id=aReceive ><INPUT class=ButtonBig type=button value="收 信" name=btnReceive></span> 
+            </SPAN><SPAN title=点击可以发送邮件 onclick=compose();><span id=aCompose 
+ ><INPUT class=ButtonBig type=button value="写 信" name=btnCompose></span> 
+            </SPAN></TD></TR>
+        <TR>
+          <TD align=middle height=5></TD></TR>
+        <TR>
+          <TD vAlign=top align=middle>
+            <TABLE class=p3 cellSpacing=0 cellPadding=0 width=121 border=0>
+              <SCRIPT>showFdrItems();updateFolderStatus();setFdrItemCSS();</SCRIPT>
+
+              <TBODY>
+              <TR width="100%">
+                <TD>
+                  <TABLE id=PopPanel cellSpacing=0 cellPadding=0 width="100%" 
+                  border=0>
+                    <THEAD>
+                    <TR class=tablecolor1>
+                      <TD width=4>&nbsp;</TD>
+                      <TD class=fdrrow_normal_root><span title=管理POP帐号列表 >Pop帐号列表 </span></TD>
+                      <TD id=popPanelFolder style="CURSOR: pointer" 
+                      onclick="foldPopPanel('popPanelFolder', 'popDetailPanel');" 
+                      align=right>-</TD></TR></THEAD>
+                    <TBODY id=popDetailPanel style="DISPLAY: block">
+                    <SCRIPT>outPopPanel();</SCRIPT>
+                    </TBODY><!-- tr>
+    <td colspan=3>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+      </table>
+    </td>
+  </tr --><!-- tr class="tablecolor1" style="display:none">
+    <td width="4pt">&nbsp;</td>
+    <td colspan="2" nowrap>
+    <span target="main" href="http://10.40.28.70/coremail/fcg/ldutilapp?funcid=popstatus&sid=CAKchXBBeehUoZKYQqBBtGpbCEXnUKZB&optype=status" >查询后台POP状态</span>
+  </td>
+  </tr --></TABLE></TD></TR>
+              <SCRIPT language=javascript>
+  <!--
+    function foldPopPanel(operid, panelid)
+    {
+        var thePanel = document.getElementById(panelid);
+        var theOper = document.getElementById(operid);
+        if (!thePanel || !theOper) return;
+        var theTail = document.getElementById("popPanelTail");
+
+  if (theOper.childNodes[0].nodeValue == tree_info_fold) {
+    // now is unfolded, let's fold it
+    theOper.childNodes[0].nodeValue = tree_info_unfold;
+    thePanel.style.display = 'none';
+  }
+  else if (theOper.childNodes[0].nodeValue == tree_info_unfold) {
+    theOper.childNodes[0].nodeValue = tree_info_fold;
+    thePanel.style.display = '';
+  }
+
+    }
+  // -->
+  </SCRIPT>
+              </TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD align=middle height=10></TD></TR></TBODY></TABLE></TD>
+    <TD width=2>&nbsp;</TD></TR></TBODY></TABLE><!-- CoreMail Version 3.0.7a Copyright (c) 2002-2011 www.mailtech.cn --></BODY></HTML>

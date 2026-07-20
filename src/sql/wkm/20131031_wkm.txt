@@ -1,0 +1,1 @@
+alter table knowledge add swf varchar2(500);

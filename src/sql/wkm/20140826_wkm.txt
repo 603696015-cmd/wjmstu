@@ -1,0 +1,5 @@
+create table fingerInfo(
+       userid number,
+       finger_info varchar2(4000)
+
+)

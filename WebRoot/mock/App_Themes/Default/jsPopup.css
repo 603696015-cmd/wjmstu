@@ -1,0 +1,135 @@
+/*
+主要针对弹出对话框的样式
+*/
+ #popUpWindow {
+	height: auto;
+	width: 100%;
+}
+#popUpTitleBar {
+	height: 45px;
+	width: 100%;
+	float: left;
+	background-repeat: repeat-x;
+	background-image: url("Images/Pop-Up_02.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_02.gif*/;
+		background-color:#fff;
+}
+#popUpTitleIcon {
+	height: 45px;
+	width: 33px;
+	float: left;
+	background-image: url("Images/Pop-Up_01.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_01.gif*/;
+	background-repeat: no-repeat;
+}
+#popUpTitleWord {
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 20px;
+	width: 250px;
+	padding-top: 12px;
+	padding-left: 10px;
+	color: #0f5e90;
+	float: left;
+}
+#popUpTitleBarRightBlock {
+	float: right;
+	height: 37px;
+	width: 43px;
+	padding-top: 8px;
+	padding-right: 12px;
+	background-image: url("Images/Pop-Up_04.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_04.gif*/;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.popUpTitleCloseButton {
+	height: 18px;
+	width: 31px;
+	background-image: url("Images/titlebarclose.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/titlebarclose.gif*/;
+	background-repeat: no-repeat;
+}
+#PopUpMain {
+	font-size: 12px;
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	background-color: #FFFFFF;
+}
+.PopUpMain {
+	font-size: 12px;
+	text-decoration: none;
+	width: 100%;
+}
+.popUpWindowLeftSide {
+	background-image: url("Images/Pop-Up_12.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_12.gif*/;
+	background-repeat: repeat-y;
+	width: 5px;
+	height: 100%;
+	background-position: left top;
+}
+.popUpWindowContent {
+	width: 92%;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+    line-height: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	vertical-align:top;
+}
+.popUpWindowRightSide {
+	background-image: url("Images/Pop-Up_12.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_12.gif*/;
+	background-repeat: repeat-y;
+	width: 5px;
+	height: 100%;
+	background-position: right top;
+}
+#popUpWindowFoot {
+	background-image: url("Images/Pop-Up_08.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_08.gif*/;
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 26px;
+	background-position: left top;
+	background-color: #FFF000;
+}
+.popUpWindowFootLeftCorner {
+	background-image: url("Images/Pop-Up_07.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_07.gif*/;
+	background-repeat: no-repeat;
+	width: 7px;
+	height: 26px;
+	background-position: top;
+	float: left;
+}
+.popUpWindowFootRightCorner {
+	background-image: url("Images/Pop-Up_11.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/Pop-Up_11.gif*/;
+	background-repeat: no-repeat;
+	background-position: top;
+	float: right;
+	height: 26px;
+	width: 7px;
+}
+.collapseBar {
+	width:100%;
+	border:none;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+}
+.collapseBarLeftSide {
+	width:5px;
+	height:20px;
+	background:url("Images/collapseBarLeft2.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/collapseBarLeft2.jpg*/ no-repeat left top;
+}
+.collapseBarMiddle {
+	background:url("Images/collapseBarBg2.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/collapseBarBg2.jpg*/ repeat-x top;
+}
+.collapseBarRigthSide {
+	width:20px;
+	background:url("Images/collapseBarRight2.jpg")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/collapseBarRight2.jpg*/ no-repeat left top;
+}
+.load{
+	background-image: url("Images/loadingAnimation.gif")/*tpa=http://mnks.cnhsk.org/Mnks/App_Themes/Default/Images/loadingAnimation.gif*/;
+	background-repeat: no-repeat;
+	height: 68px;
+	width: 68px;
+}

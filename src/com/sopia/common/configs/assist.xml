@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_assist" extends="elearning">
+		<action name="assist_plan_addInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_addInit">
+			<result name="assist_plan_add">
+				admin/assist/assist_plan_add.jsp
+			</result>
+		</action>
+		<action name="assist_plan_add"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_add">
+			<result name="assist_plan_add">
+				admin/assist/assist_plan_add.jsp
+			</result>
+			<result name="assist_planstage_addInit"
+				type="redirectAction">
+				assist_planstage_addInit?plan.id=${plan.id}
+			</result>
+		</action>
+		<action name="assist_plan_view"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_view">
+			<result name="assist_plan_view">
+				admin/assist/assist_plan_view.jsp
+			</result>
+		</action>
+		<action name="assist_plan_viewview"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_viewview">
+			<result name="assist_plan_viewview">
+				admin/assist/assist_plan_viewview.jsp
+			</result>
+		</action>
+		<action name="assist_plan_alterInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_alterInit">
+			<result name="assist_plan_alter">
+				admin/assist/assist_plan_alter.jsp
+			</result>
+		</action>
+		<action name="assist_plan_alter"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_alter">
+			<result name="assist_plan_alter_success">
+				admin/assist/assist_plan_alter_success.jsp
+			</result>
+		</action>
+		<action name="assist_planstage_addInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_planstage_addInit">
+			<result name="assist_planstage_add">
+				admin/assist/assist_planstage_add.jsp
+			</result>
+		</action>
+		<action name="assist_planstage_delete"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_planstage_delete">
+			<result name="assist_planstage_delete">
+				admin/assist/assist_planstage_view.jsp
+			</result>
+		</action>
+		<action name="assist_planstage_alterInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_planstage_alterInit">
+			<result name="assist_planstage_alter">
+				admin/assist/assist_planstage_alter.jsp
+			</result>
+		</action>
+		<action name="assist_planstage_alter"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_planstage_alter">
+			<result name="assist_planstage_alter">
+				admin/assist/assist_planstage_alter.jsp
+			</result>
+		</action>
+		<action name="assist_planstage_add"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_planstage_add">
+			<result name="assist_planstage_add_success">
+				admin/assist/assist_planstage_add_success.jsp
+			</result>
+		</action>
+		<action name="assist_plan_list"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_list">
+			<result name="assist_plan_list">
+				admin/assist/assist_plan_list.jsp
+			</result>
+		</action>
+		<action name="assist_plan_verifylist"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_verifylist">
+			<result name="assist_plan_verifylist">
+				admin/assist/assist_plan_verifylist.jsp
+			</result>
+		</action>
+		<action name="assist_plan_stuffaddInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_stuffaddInit">
+			<result name="assist_plan_stuffadd">
+				admin/assist/assist_plan_stuffadd.jsp
+			</result>
+		</action>
+		<action name="assist_plan_stuffadd"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_stuffadd">
+			<result name="assist_plan_stuffadd">
+				admin/assist/assist_plan_stuffadd.jsp
+			</result>
+			<result name="assist_plan_stuffadd_success"
+				type="redirectAction">
+				assist_plan_stufflist?plan.id=${plan.id}&amp;planStage.id=${planStage.id}
+			</result>
+		</action>
+		<action name="assist_plan_stufflist"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_stufflist">
+			<result name="assist_plan_stufflist">
+				admin/assist/assist_plan_stufflist.jsp
+			</result>
+		</action>
+		<action name="assist_plan_stuffdelete"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_stuffdelete">
+			<result name="assist_plan_stuffdelete"
+				type="redirectAction">
+				assist_plan_stufflist?plan.id=${plan.id}&amp;planStage.id=${planStage.id}
+			</result>
+		</action>
+		<action name="assist_plan_stuff_download"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_stuff_download">
+			<result type="stream" name="assist_plan_stuff_download">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="assist_plan_verifyview"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_verifyview">
+			<result name="assist_plan_verifyview">
+				admin/assist/assist_plan_verifyview.jsp
+			</result>
+		</action>
+		<action name="assist_plan_verify"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_verify">
+			<result name="assist_plan_verify_success">
+				admin/assist/assist_plan_verifyview.jsp
+			</result>
+		</action>
+		<action name="assist_plan_viewlist"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_viewlist">
+			<result name="assist_plan_viewlist">
+				admin/assist/assist_plan_viewlist.jsp
+			</result>
+		</action>
+		<action name="assist_plan_viewstufflist"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_viewstufflist">
+			<result name="assist_plan_viewstufflist">
+				admin/assist/assist_plan_viewstufflist.jsp
+			</result>
+		</action>
+		<action name="assist_plan_apply"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_apply">
+			<result name="assist_plan_list" type="redirectAction">
+				assist_plan_list?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="assist_plan_carryoutInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_carryoutInit">
+			<result name="assist_plan_carryout">
+				admin/assist/assist_plan_carryout.jsp
+			</result>
+		</action>
+		<action name="assist_plan_carryout"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_plan_carryout">
+			<result name="assist_plan_carryout">
+				admin/assist/assist_plan_carryout.jsp
+			</result>
+		</action>
+		<action name="assist_survey_addInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_addInit">
+			<result name="assist_survey_add">
+				admin/assist/assist_survey_add.jsp
+			</result>
+		</action>
+		<action name="assist_survey_add"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_add">
+			<result name="assist_survey_add_success">
+				admin/assist/assist_survey_add_success.jsp
+			</result>
+		</action>
+		<action name="assist_survey_list"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_list">
+			<result name="assist_survey_list">
+				admin/assist/assist_survey_list.jsp
+			</result>
+		</action>
+		<action name="assist_survey_alterInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_alterInit">
+			<result name="assist_survey_alter">
+				admin/assist/assist_survey_alter.jsp
+			</result>
+		</action>
+		<action name="assist_survey_alter"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_alter">
+			<result name="assist_survey_alter_success">
+				admin/assist/assist_survey_alter_success.jsp
+			</result>
+		</action>
+		<action name="assist_survey_result"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_result">
+			<result name="assist_survey_result">
+				admin/assist/assist_survey_result.jsp
+			</result>
+		</action>
+		<action name="assist_survey_delete"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_delete">
+			<result name="assist_survey_list" type="redirectAction">
+				assist_survey_list?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="assist_survey_epsearchInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_epsearchInit">
+			<result name="assist_survey_epsearchInit">
+				admin/assist/assist_survey_epsearchInit.jsp
+			</result>
+		</action>
+		<action name="assist_survey_epsearchlist"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_survey_epsearchlist">
+			<result name="assist_survey_epsearchlist">
+				admin/assist/assist_survey_epsearchlist.jsp
+			</result>
+		</action>
+		<action name="assist_poll_addInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_addInit">
+			<result name="assist_poll_add">
+				admin/assist/assist_poll_add.jsp
+			</result>
+		</action>
+		<action name="assist_poll_add"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_add">
+			<result name="assist_poll_add_success">
+				admin/assist/assist_poll_add_success.jsp
+			</result>
+		</action>
+		<action name="assist_poll_qsearchInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_qsearchInit">
+			<result name="assist_poll_qsearchInit">
+				admin/assist/assist_poll_qsearchInit.jsp
+			</result>
+		</action>
+		<action name="assist_poll_qsearchlist"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_qsearchlist">
+			<result name="assist_poll_qsearchlist">
+				admin/assist/assist_poll_qsearchlist.jsp
+			</result>
+		</action>
+		<action name="assist_poll_list"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_list">
+			<result name="assist_poll_list">
+				admin/assist/assist_poll_list.jsp
+			</result>
+		</action>
+		<action name="assist_poll_alterInit"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_alterInit">
+			<result name="assist_poll_alter">
+				admin/assist/assist_poll_alter.jsp
+			</result>
+		</action>
+		<action name="assist_poll_alter"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_alter">
+			<result name="assist_poll_alter_success">
+				admin/assist/assist_poll_alter_success.jsp
+			</result>
+		</action>
+		<action name="assist_poll_result"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_result">
+			<result name="assist_poll_result">
+				admin/assist/assist_poll_result.jsp
+			</result>
+		</action>
+		<action name="assist_poll_delete"
+			class="com.sopia.assistman.action.AssistAction"
+			method="assist_poll_delete">
+			<result name="assist_poll_list" type="redirectAction">
+				assist_poll_list?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="offline_addinit"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_addinit">
+			<result name="offline_add">
+				admin/assist/offline_add.jsp
+			</result>
+		</action>
+		<action name="offline_add"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_add">
+			<result name="offline_view" type="redirectAction">
+				offline_view?offline.id=${offline.id}
+			</result>
+		</action>
+		<action name="offline_alterinit"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_alterinit">
+			<result name="offline_alter">
+				admin/assist/offline_alter.jsp
+			</result>
+		</action>
+		<action name="offline_alter"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_alter">
+			<result name="offline_view" type="redirectAction">
+				offline_view?offline.id=${offline.id}
+			</result>
+		</action>
+		<action name="offline_view"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_view">
+			<result name="offline_view">
+				admin/assist/offline_view.jsp
+			</result>
+		</action>
+		<action name="offline_list"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_list">
+			<result name="offline_list">
+				admin/assist/offline_list.jsp
+			</result>
+		</action>
+		<action name="offline_delete"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_delete">
+			<result name="offline_list" type="redirectAction">
+				offline_list
+			</result>
+		</action>
+		<action name="offline_deleteuser"
+			class="com.sopia.assistman.action.OfflineAction"
+			method="offline_deleteuser">
+		</action>
+	</package>
+</struts>

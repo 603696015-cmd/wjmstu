@@ -1,0 +1,689 @@
+BODY {
+	TEXT-ALIGN: center; LINE-HEIGHT: 166.6%; COLOR: #000; FONT-SIZE: 12px
+}
+BODY {
+	FONT-FAMILY: Verdana, arial, sans-serif
+}
+INPUT {
+	FONT-FAMILY: Verdana, arial, sans-serif
+}
+SELECT {
+	FONT-FAMILY: Verdana, arial, sans-serif
+}
+BUTTON {
+	FONT-FAMILY: Verdana, arial, sans-serif
+}
+TEXTAREA {
+	FONT-FAMILY: Verdana, arial, sans-serif
+}
+H1 {
+	FONT-SIZE: 100%
+}
+H2 {
+	FONT-SIZE: 100%
+}
+H3 {
+	FONT-SIZE: 100%
+}
+H4 {
+	FONT-SIZE: 100%
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H6 {
+	FONT-SIZE: 100%
+}
+SELECT {
+	FONT-SIZE: 100%
+}
+INPUT {
+	FONT-SIZE: 100%
+}
+TEXTAREA {
+	FONT-SIZE: 100%
+}
+BUTTON {
+	FONT-SIZE: 100%
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+BODY {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+TABLE {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+TH {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+TD {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+LEGEND {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	LINE-HEIGHT: normal; MARGIN: 0px
+}
+BUTTON {
+	LINE-HEIGHT: normal; MARGIN: 0px
+}
+TEXTAREA {
+	LINE-HEIGHT: normal; MARGIN: 0px
+}
+SELECT {
+	LINE-HEIGHT: normal; MARGIN: 0px
+}
+IMG {
+	LINE-HEIGHT: normal; MARGIN: 0px
+}
+ABBR {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+ACRONYM {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+ADDRESS {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+CITE {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+Q {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+EM {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+CODE {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+VAR {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+DFN {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+INS {
+	FONT-STYLE: normal; TEXT-DECORATION: none
+}
+Q:before {
+	
+}
+Q:after {
+	
+}
+UL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+OL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+TABLE {
+	BORDER-SPACING: 0; BORDER-COLLAPSE: collapse
+}
+.ipt-b {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 135%; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; OVERFLOW: visible; PADDING-TOP: 0px
+}
+BUTTON {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 135%; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; OVERFLOW: visible; PADDING-TOP: 0px
+}
+SELECT {
+	VERTICAL-ALIGN: middle
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+BUTTON {
+	VERTICAL-ALIGN: middle
+}
+BUTTON IMG {
+	VERTICAL-ALIGN: middle
+}
+.ipt-r {
+	PADDING-BOTTOM: 0px; MARGIN: 2px 3px 2px 0px; PADDING-LEFT: 0px; WIDTH: 16px; PADDING-RIGHT: 0px; HEIGHT: 16px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+.ipt-c {
+	PADDING-BOTTOM: 0px; MARGIN: 2px 3px 2px 0px; PADDING-LEFT: 0px; WIDTH: 16px; PADDING-RIGHT: 0px; HEIGHT: 16px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+.page {
+	MARGIN: auto
+}
+.header {
+	MARGIN: auto
+}
+.content {
+	MARGIN: auto
+}
+.footer {
+	MARGIN: auto
+}
+.fn-noime {
+	IME-MODE: disabled
+}
+.fn-hide {
+	DISPLAY: none
+}
+.ico {
+	DISPLAY: inline-block; VERTICAL-ALIGN: middle
+}
+.fn-ib {
+	DISPLAY: inline-block; VERTICAL-ALIGN: middle
+}
+.collection-main .notice {
+	DISPLAY: inline-block; VERTICAL-ALIGN: middle
+}
+A {
+	COLOR: #1d50a2; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.txt-err {
+	COLOR: #f00
+}
+.txt-impt {
+	COLOR: #f00
+}
+.txt-info {
+	COLOR: #999
+}
+.txt-succ {
+	COLOR: #0e931c
+}
+.txt-infoNotice {
+	COLOR: #606060
+}
+#Rheader .slogan {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+#Rbody .title .crl {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+#Rbody .title .crr {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+.ico {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+.btn-reg {
+	BACKGROUND-IMAGE: url(gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+.btn-enter {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+.btn-ok {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+#Rbody .bottom .crl {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+#Rbody .bottom .crr {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+.Succ-msg .split {
+	BACKGROUND-IMAGE: url(../img/gdgat.png); BACKGROUND-REPEAT: no-repeat
+}
+#Rbody .title {
+	BACKGROUND-IMAGE: url(bgx.png); BACKGROUND-REPEAT: repeat-x
+}
+.g-ipt {
+	BACKGROUND-IMAGE: url(../img/bgx.png); BACKGROUND-REPEAT: repeat-x
+}
+.g-ipt-active {
+	BACKGROUND-IMAGE: url(../img/bgx.png); BACKGROUND-REPEAT: repeat-x
+}
+.g-ipt-err {
+	BACKGROUND-IMAGE: url(../img/bgx.png); BACKGROUND-REPEAT: repeat-x
+}
+#Rbody .bottom {
+	BACKGROUND-IMAGE: url(bgx.png); BACKGROUND-REPEAT: repeat-x
+}
+.Succ-msg-info .ct {
+	BACKGROUND-IMAGE: url(../img/bgx.png); BACKGROUND-REPEAT: repeat-x
+}
+.g-collection {
+	ZOOM: 1
+}
+.g-collection-item {
+	POSITION: relative; PADDING-BOTTOM: 10px; PADDING-LEFT: 220px; ZOOM: 1
+}
+.g-collection-label {
+	POSITION: absolute; TEXT-ALIGN: right; WIDTH: 251px; DISPLAY: block; TOP: 9px; LEFT: -41px
+}
+.g-ipt {
+	BORDER-BOTTOM: #c1c1c1 1px solid; BORDER-LEFT: #c1c1c1 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #fbfbfb; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND-POSITION: 0px -72px; COLOR: #444; FONT-SIZE: 14px; BORDER-TOP: #c1c1c1 1px solid; BORDER-RIGHT: #c1c1c1 1px solid; PADDING-TOP: 4px
+}
+.g-ipt-active {
+	BORDER-BOTTOM-COLOR: #c6c69e; BACKGROUND-COLOR: #ffc; BORDER-TOP-COLOR: #c6c69e; BACKGROUND-POSITION: 0px -108px; BORDER-RIGHT-COLOR: #c6c69e; BORDER-LEFT-COLOR: #c6c69e
+}
+.g-ipt-err {
+	BORDER-BOTTOM-COLOR: #d28c8c; BACKGROUND-COLOR: #fbe2e2; BORDER-TOP-COLOR: #d28c8c; BACKGROUND-POSITION: 0px -144px; COLOR: #a63b3b; BORDER-RIGHT-COLOR: #d28c8c; BORDER-LEFT-COLOR: #d28c8c
+}
+.g-oipt {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; WIDTH: 160px; PADDING-RIGHT: 0px; FONT-SIZE: 12px; PADDING-TOP: 3px
+}
+.ico-warning {
+	WIDTH: 24px; HEIGHT: 24px
+}
+.ico-succ {
+	WIDTH: 24px; HEIGHT: 24px
+}
+.ico-warning {
+	BACKGROUND-POSITION: -252px -72px
+}
+.ico-succ {
+	BACKGROUND-POSITION: -180px -72px
+}
+.ico-succ-big {
+	WIDTH: 52px; BACKGROUND-POSITION: -322px -70px; HEIGHT: 52px
+}
+.ico-download {
+	WIDTH: 12px; BACKGROUND-POSITION: -251px -108px; HEIGHT: 10px
+}
+.ico-free {
+	WIDTH: 55px; BACKGROUND-POSITION: -180px -144px; HEIGHT: 17px
+}
+.btn-reg {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: transparent; MARGIN-TOP: 15px; WIDTH: 104px; BACKGROUND-POSITION: 0px -179px; HEIGHT: 38px; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+.btn-enter {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: transparent; WIDTH: 162px; BACKGROUND-POSITION: -144px -179px; HEIGHT: 38px; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+.btn-ok {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: transparent; MARGIN: 10px 20px 10px 0px; WIDTH: 76px; BACKGROUND-POSITION: 0px -288px; HEIGHT: 39px; VERTICAL-ALIGN: middle; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+#Rpage {
+	TEXT-ALIGN: left;
+	WIDTH: 960px;
+	margin-top: 8px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#Rheader {
+	POSITION: relative; WIDTH: 100%; HEIGHT: 80px; FONT-SIZE: 14px; OVERFLOW: hidden
+}
+#Rheader .logo {
+	POSITION: absolute; DISPLAY: block; TOP: 24px; LEFT: 0px
+}
+#Rheader .slogan {
+	POSITION: absolute; TEXT-INDENT: 800px; WIDTH: 306px; DISPLAY: block; WHITE-SPACE: nowrap; HEIGHT: 33px; OVERFLOW: hidden; TOP: 27px; LEFT: 140px
+}
+#Rheader .ext {
+	TEXT-ALIGN: right; LINE-HEIGHT: 100px; WHITE-SPACE: nowrap
+}
+#Rbody {
+	WIDTH: 100%; HEIGHT: auto; FONT-SIZE: 14px
+}
+#Rbody .title {
+	POSITION: relative; BACKGROUND-COLOR: #458dc8; BACKGROUND-POSITION: 0px 0px; HEIGHT: 46px
+}
+#Rbody .title .ext {
+	LINE-HEIGHT: 46px; WHITE-SPACE: nowrap; FLOAT: right; COLOR: #fff; MARGIN-RIGHT: 10px
+}
+#Rbody .title .crl {
+	POSITION: absolute; DISPLAY: block; HEIGHT: 46px; TOP: 0px
+}
+#Rbody .title .crr {
+	POSITION: absolute; DISPLAY: block; HEIGHT: 46px; TOP: 0px
+}
+#Rbody .title .crl {
+	WIDTH: 42px; BACKGROUND-POSITION: -324px 0px; HEIGHT: 46px; LEFT: 0px
+}
+#Rbody .title .crr {
+	WIDTH: 4px; BACKGROUND-POSITION: -366px 0px; HEIGHT: 46px; RIGHT: 0px
+}
+#Rbody .title H1 {
+	LINE-HEIGHT: 46px; TEXT-INDENT: 60px; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: normal
+}
+#Rbody .content {
+	BORDER-BOTTOM: #dcdcdc 0px solid; BORDER-LEFT: #dcdcdc 1px solid; BACKGROUND-COLOR: #fff; OVERFLOW: hidden; BORDER-TOP: #dcdcdc 0px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.collection-main {
+	PADDING-BOTTOM: 46px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 48px
+}
+.collection-main .ipt-wraper {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; WIDTH: 700px; PADDING-RIGHT: 5px; DISPLAY: block; MARGIN-BOTTOM: 3px; MARGIN-LEFT: -5px; PADDING-TOP: 5px
+}
+.collection-main .ipt-wraper-active {
+	BACKGROUND-COLOR: #f4f4f4
+}
+.collection-main .g-ipt {
+	WIDTH: 300px
+}
+.collection-main .notice {
+	MARGIN-LEFT: 10px
+}
+.collection-main .notice .ico {
+	MARGIN-RIGHT: 8px
+}
+.collection-main .pswState .ico {
+	MARGIN: 0px 8px; WIDTH: 147px; HEIGHT: 19px
+}
+.collection-main .pswState-empty .ico {
+	BACKGROUND-POSITION: 0px -36px
+}
+.collection-main .pswState-poor .ico {
+	BACKGROUND-POSITION: 0px -72px
+}
+.collection-main .pswState-normal .ico {
+	BACKGROUND-POSITION: 0px -108px
+}
+.collection-main .pswState-strong .ico {
+	BACKGROUND-POSITION: 0px -144px
+}
+.collection-main .pswState .st1 {
+	COLOR: #f00
+}
+.collection-main .pswState .st2 {
+	COLOR: #13a821
+}
+.collection-main .txt-info {
+	MARGIN-TOP: -4px; FONT-SIZE: 12px
+}
+.collection-main .g-select {
+	WIDTH: 295px; COLOR: #555; FONT-SIZE: 14px; VERTICAL-ALIGN: middle
+}
+.collection-main .vcode_img {
+	BORDER-BOTTOM: #e7e7e7 1px solid; BORDER-LEFT: #e7e7e7 1px solid; VERTICAL-ALIGN: middle; BORDER-TOP: #e7e7e7 1px solid; CURSOR: pointer; BORDER-RIGHT: #e7e7e7 1px solid
+}
+.chose-list {
+	BORDER-BOTTOM: #c6c6a8 1px solid; POSITION: relative; BORDER-LEFT: #c6c6a8 1px solid; BACKGROUND-COLOR: #fff; MARGIN-TOP: 10px; WIDTH: 306px; HEIGHT: auto; OVERFLOW: visible; BORDER-TOP: #c6c6a8 1px solid; BORDER-RIGHT: #c6c6a8 1px solid
+}
+DIV.chose-list-onlytitle {
+	PADDING-BOTTOM: 0px
+}
+DIV.chose-list-onlytitle .tit {
+	BORDER-BOTTOM: 0px; MARGIN-BOTTOM: 0px; FONT-SIZE: 12px
+}
+DIV.chose-list-onlytitle .tit .goOn {
+	COLOR: #099e3a; FONT-WEIGHT: bold
+}
+DIV.chose-list-onlytitle .recommend {
+	DISPLAY: none
+}
+DIV.chose-list-onlytitle UL {
+	DISPLAY: none
+}
+.chose-list .arr {
+	POSITION: absolute; WIDTH: 17px; DISPLAY: block; BACKGROUND-POSITION: -324px -144px; HEIGHT: 10px; OVERFLOW: hidden; TOP: -9px; LEFT: 50px
+}
+.chose-list .tit {
+	BORDER-BOTTOM: #dcdcca 1px solid; BORDER-LEFT: 0px solid; LINE-HEIGHT: 31px; BACKGROUND-COLOR: #ffffe1; TEXT-INDENT: 12px; MARGIN-BOTTOM: 1px; HEIGHT: 31px; COLOR: #1c1c1c; FONT-SIZE: 14px; BORDER-TOP: #fff 1px solid; BORDER-RIGHT: 0px solid
+}
+.chose-list LI {
+	POSITION: relative; PADDING-BOTTOM: 2px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; HEIGHT: 23px; FONT-SIZE: 12px; PADDING-TOP: 2px
+}
+.chose-list .stat {
+	POSITION: absolute; WHITE-SPACE: nowrap; TOP: 2px; RIGHT: 5px
+}
+.chose-list LABEL {
+	WIDTH: 220px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; FLOAT: left; OVERFLOW: hidden; CURSOR: pointer
+}
+.chose-list LABEL EM {
+	COLOR: #099e00; FONT-WEIGHT: bold
+}
+.chose-list LI .stat {
+	COLOR: #099e00
+}
+.chose-list LI.disabled {
+	COLOR: #999; FONT-WEIGHT: normal
+}
+.chose-list LI.disabled EM {
+	COLOR: #999; FONT-WEIGHT: normal
+}
+.chose-list LI.disabled .stat {
+	COLOR: #999; FONT-WEIGHT: normal
+}
+.chose-list .recommend {
+	PADDING-BOTTOM: 1px; BORDER-TOP: #c4c4c4 1px dotted
+}
+.chose-list .recommend LI {
+	HEIGHT: 22px
+}
+.chose-list .recommend LI STRONG {
+	COLOR: #666
+}
+.chose-list .recommend .stat {
+	COLOR: #000
+}
+.chose-list UL {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 5px
+}
+#Rbody .bottom {
+	POSITION: relative; BACKGROUND-POSITION: 0px -180px; HEIGHT: 8px; OVERFLOW: hidden
+}
+#Rbody .bottom .crl {
+	POSITION: absolute; WIDTH: 9px; DISPLAY: block; HEIGHT: 8px; OVERFLOW: hidden; TOP: 0px
+}
+#Rbody .bottom .crr {
+	POSITION: absolute; WIDTH: 9px; DISPLAY: block; HEIGHT: 8px; OVERFLOW: hidden; TOP: 0px
+}
+#Rbody .bottom .crl {
+	BACKGROUND-POSITION: -252px -144px; LEFT: 0px
+}
+#Rbody .bottom .crr {
+	BACKGROUND-POSITION: -261px -144px; RIGHT: 0px
+}
+#Rfooter {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; LINE-HEIGHT: 26px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #666; CLEAR: both; PADDING-TOP: 10px
+}
+#Rfooter A {
+	COLOR: #666
+}
+.Succ-msg {
+	BORDER-BOTTOM: #e8e7da 1px solid; BORDER-LEFT: #e8e7da 1px solid; BACKGROUND-COLOR: #fffef0; WIDTH: 406px; HEIGHT: auto; MARGIN-LEFT: 40px; BORDER-TOP: #e8e7da 1px solid; BORDER-RIGHT: #e8e7da 1px solid; -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px
+}
+.Succ-msg-wel {
+	POSITION: relative; TEXT-ALIGN: left; PADDING-BOTTOM: 15px; PADDING-LEFT: 84px; PADDING-RIGHT: 0px; ZOOM: 1; PADDING-TOP: 25px
+}
+.Succ-msg-wel .ico-succ-big {
+	POSITION: absolute; TOP: 20px; LEFT: 20px
+}
+.Succ-msg-wel .ico-succ-big H2 {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.Succ-msg-wel .acct {
+	LINE-HEIGHT: 30px; WIDTH: 100%; TEXT-OVERFLOW: ellipsis; DISPLAY: block; HEIGHT: 30px; COLOR: #1d50a2; OVERFLOW: hidden; FONT-WEIGHT: bold
+}
+.Succ-msg .split {
+	MARGIN: 0px auto; WIDTH: 376px; BACKGROUND-POSITION: 0px -252px; HEIGHT: 1px; FONT-SIZE: 0px; OVERFLOW: hidden
+}
+.Succ-msg-info {
+	PADDING-BOTTOM: 18px; LINE-HEIGHT: 24px; PADDING-LEFT: 30px; PADDING-RIGHT: 0px; FONT-SIZE: 14px; PADDING-TOP: 18px
+}
+.Succ-msg-info .tit {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #999; PADDING-TOP: 3px
+}
+.Succ-msg-info .ct {
+	PADDING-BOTTOM: 15px; BACKGROUND-COLOR: #f5f4e7; PADDING-LEFT: 18px; WIDTH: 310px; PADDING-RIGHT: 18px; BACKGROUND-POSITION: 0px -288px; MARGIN-BOTTOM: 10px; COLOR: #5b5b5b; PADDING-TOP: 15px
+}
+.Succ-msg-info .ct DT {
+	TEXT-ALIGN: right; WIDTH: 100px; WHITE-SPACE: nowrap; FLOAT: left; HEIGHT: 24px
+}
+.Succ-msg-info .ct DD {
+	WORD-WRAP: break-word; OVERFLOW: hidden
+}
+.Succ-msg-fun {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 45px; PADDING-RIGHT: 20px; COLOR: #5b5b5b; FONT-SIZE: 12px; PADDING-TOP: 10px
+}
+.Succ-msg-fun LI {
+	POSITION: relative
+}
+.Succ-msg-fun LI .dot {
+	POSITION: absolute; FONT-FAMILY: simsun; TOP: 0px; LEFT: -15px
+}
+.Succ-mob {
+	TEXT-ALIGN: left; WIDTH: 460px; FLOAT: right; HEIGHT: auto; OVERFLOW: hidden; PADDING-TOP: 10px
+}
+.Succ-mob .t1 {
+	LINE-HEIGHT: 22px; FONT-WEIGHT: bold
+}
+.Succ-mob .t2 {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 22px; COLOR: #999
+}
+.Succ-mob .g-ipt {
+	WIDTH: 150px
+}
+.Succ-mob .g-collection-item {
+	PADDING-LEFT: 90px
+}
+.Succ-mob .g-collection-label {
+	TEXT-ALIGN: left; WIDTH: 90px
+}
+.Succ-mob .g-oipt {
+	MARGIN: 8px 0px
+}
+.Succ-mob .btn-enter {
+	MARGIN-BOTTOM: 20px
+}
+.Succ-mob .txt-err {
+	PADDING-RIGHT: 90px
+}
+.Succ-mob .txt-succ {
+	PADDING-RIGHT: 90px
+}
+.Succ-mob .ipt-wraper {
+	WIDTH: 100%
+}
+.Rtips-Cont {
+	TEXT-ALIGN: center; FONT-SIZE: 14px
+}
+.g-dialogBox-hd {
+	BACKGROUND-IMAGE: url(../img/dialog.png); BACKGROUND-REPEAT: no-repeat
+}
+.g-dialogBox-bd .ico-info {
+	BACKGROUND-IMAGE: url(../img/dialog.png); BACKGROUND-REPEAT: no-repeat
+}
+.g-dialogBox-ft INPUT {
+	BACKGROUND-IMAGE: url(../img/dialog.png); BACKGROUND-REPEAT: no-repeat
+}
+.g-dialogBox-ft A {
+	BACKGROUND-IMAGE: url(../img/dialog.png); BACKGROUND-REPEAT: no-repeat
+}
+.g-dialogBox-mask {
+	POSITION: absolute; FILTER: alpha(opacity=40); WIDTH: 100%; BACKGROUND: #000; HEIGHT: 100%; TOP: 0px; LEFT: 0px; opacity: 0.4
+}
+.g-dialogBox {
+	Z-INDEX: 500; POSITION: absolute; TEXT-ALIGN: left; WIDTH: 460px; HEIGHT: auto; MARGIN-LEFT: -230px; TOP: 20%; LEFT: 50%
+}
+.g-dialogBox-hd {
+	POSITION: relative; TEXT-ALIGN: left; WIDTH: 100%; BACKGROUND-POSITION: 0px 0px; HEIGHT: 27px
+}
+.g-dialogBox-hd H3 {
+	LINE-HEIGHT: 27px; TEXT-INDENT: 20px; COLOR: #fff; FONT-SIZE: 14px
+}
+.g-dialogBox-hd-oprt-close {
+	POSITION: absolute; FILTER: alpha(opacity=0); BACKGROUND-COLOR: #ccc; TEXT-INDENT: 20px; WIDTH: 12px; DISPLAY: block; WHITE-SPACE: nowrap; BACKGROUND-POSITION: -438px -7px; HEIGHT: 12px; OVERFLOW: hidden; TOP: 7px; RIGHT: 10px; opacity: 0; -moz-opacity: 0; -khtml-opacity: 0
+}
+.g-dialogBox-bd {
+	BORDER-BOTTOM: #6c92ad 0px solid; TEXT-ALIGN: left; BORDER-LEFT: #6c92ad 1px solid; BACKGROUND-COLOR: #fff; BORDER-TOP: #6c92ad 0px solid; BORDER-RIGHT: #6c92ad 1px solid
+}
+.g-dialogBox-bd .ico-info {
+	POSITION: absolute; WIDTH: 32px; DISPLAY: block; BACKGROUND-POSITION: 0px -72px; HEIGHT: 32px; TOP: 18px; LEFT: 28px
+}
+.g-dialogBox-iconText {
+	POSITION: relative; TEXT-ALIGN: left; PADDING-BOTTOM: 20px; PADDING-LEFT: 70px; PADDING-RIGHT: 10px; ZOOM: 1; PADDING-TOP: 23px
+}
+.g-dialogBox-ft {
+	BORDER-BOTTOM: #6c92ad 1px solid; TEXT-ALIGN: right; BORDER-LEFT: #6c92ad 1px solid; PADDING-BOTTOM: 8px; BACKGROUND-COLOR: #f6f9fc; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BORDER-TOP: #6c92ad 1px solid; BORDER-RIGHT: #6c92ad 1px solid; PADDING-TOP: 8px
+}
+.g-dialogBox-ft INPUT {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 52px; BACKGROUND-POSITION: 0px -36px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 24px; MARGIN-LEFT: 10px; BORDER-LEFT-WIDTH: 0px; CURSOR: pointer
+}
+.g-dialogBox-ft A {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; BORDER-RIGHT-WIDTH: 0px; WIDTH: 52px; DISPLAY: inline-block; BACKGROUND-POSITION: 0px -36px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 24px; COLOR: #000; MARGIN-LEFT: 10px; VERTICAL-ALIGN: middle; BORDER-LEFT-WIDTH: 0px; CURSOR: pointer; TEXT-DECORATION: none
+}
+.Rpage-main .g-ipt {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; PADDING-TOP: 4px
+}
+.Rpage-main .g-collection-label {
+	TOP: 8px
+}
+.Rpage-main .g-collection-label .txt-impt {
+	POSITION: relative; TOP: 2px
+}
+.Rpage-main .collection-main .ipt-wraper {
+	POSITION: relative
+}
+.Rpage-main .collection-main .ipt-wraper .notice {
+	POSITION: absolute; OVERFLOW: visible; TOP: 6px; LEFT: 320px
+}
+.Rpage-main .collection-main .ipt-wraper .pswState {
+	TOP: 8px
+}
+.Rpage-main .collection-main .notice .ico {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 2px
+}
+.Rpage-main .collection-main {
+	PADDING-BOTTOM: 35px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 43px
+}
+.Rpage-main .provision {
+	FONT-SIZE: 12px
+}
+.chose-list .recommend A {
+	ZOOM: 1; COLOR: #000; TEXT-DECORATION: none
+}
+.chose-list .recommend A:hover {
+	TEXT-DECORATION: underline
+}
+.chose-list .recommend LABEL {
+	CURSOR: default
+}
+.noscript {
+	BORDER-BOTTOM: #c9c9ab 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c9c9ab 1px solid; PADDING-BOTTOM: 15px; BACKGROUND-COLOR: #ffffe1; MARGIN: 0px auto 30px; PADDING-LEFT: 0px; WIDTH: 520px; PADDING-RIGHT: 0px; FONT-SIZE: 14px; BORDER-TOP: #c9c9ab 1px solid; BORDER-RIGHT: #c9c9ab 1px solid; PADDING-TOP: 15px; -moz-border-radius: 5px; border-radius: 5px
+}

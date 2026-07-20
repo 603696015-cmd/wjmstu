@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="stat_course" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="user_course"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="user_course">
+			<result name="user_course">
+				admin/statistic/user_course.jsp
+			</result>
+		</action>
+		<action name="user_course_create"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="user_course_create">
+			<result name="user_course_create">
+				admin/statistic/user_course_create.jsp
+			</result>
+		</action>
+		<action name="dep_course_list"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="dep_course_list">
+			<result name="dep_course_list">
+				admin/statistic/dep_course_list.jsp
+			</result>
+		</action>
+		<action name="course_searchInit"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="course_searchInit">
+			<result name="course_searchInit">
+				admin/statistic/course_searchInit.jsp
+			</result>
+		</action>
+		<action name="course_searchlist"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="course_searchlist">
+			<result name="course_searchlist">
+				admin/statistic/course_searchlist.jsp
+			</result>
+			<result name="course_searchlist_EXCEL">
+				admin/statistic/course_searchlist_EXCEL.jsp
+			</result>
+		</action>
+		<action name="course_stat_view"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="course_stat_view">
+			<result name="course_stat_view">
+				admin/statistic/course_stat_view.jsp
+			</result>
+		</action>
+		<action name="course_user_list"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="course_user_list">
+			<result name="course_user_list">
+				admin/statistic/course_user_list.jsp
+			</result>
+			<result name="course_userList_EXCEL">
+				admin/statistic/course_userList_EXCEL.jsp
+			</result>
+		</action>
+		<action name="course_user_detail_list"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="course_user_detail_list">
+			<result name="course_user_detail_list">
+				admin/statistic/course_user_detail_list.jsp
+			</result> 
+		</action>
+		<action name="ctime_user_searchInit"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="ctime_user_searchInit">
+			<result name="ctime_user_searchInit">
+				admin/statistic/ctime_user_search.jsp
+			</result>
+		</action>
+		<action name="ctime_user_searchlist"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="ctime_user_searchlist">
+			<result name="ctime_user_searchlist">
+				admin/statistic/ctime_user_searchlist.jsp
+			</result>
+		</action>
+		<action name="ctime_detail_searchlist"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="ctime_detail_searchlist">
+			<result name="ctime_detail_searchlist">
+				admin/statistic/ctime_detail_searchlist.jsp
+			</result>
+		</action>
+		<action name="statisticStudyLearnLocus"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="statisticStudyLearnLocus">
+			<result name="statisticStudyLearnLocus">
+				admin/statistic/statisticStudyLearnLocus.jsp
+			</result>
+		</action>
+		<action name="ctime_detail_list"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="ctime_detail_list">
+			<result name="ctime_detail_list">
+				admin/statistic/ctime_detail_list.jsp
+			</result>
+		</action>
+		<action name="ctime_user_list"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="ctime_user_list">
+			<result name="ctime_user_list">
+				admin/statistic/ctime_user_list.jsp
+			</result>
+		</action>
+		<action name="cnote_stat_searchinit"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="cnote_stat_searchinit">
+			<result name="cnote_stat_search">
+				admin/statistic/cnote_stat_search.jsp
+			</result>
+		</action>
+		<action name="cnote_stat_search"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="cnote_stat_search">
+			<result name="cnote_stat_searchlist">
+				admin/statistic/cnote_stat_searchlist.jsp
+			</result>
+		</action>
+		<action name="cnote_stat_view"
+			class="com.sopia.statman.action.StatisticCourse"
+			method="cnote_stat_view">
+			<result name="cnote_stat_view">
+				admin/statistic/cnote_stat_view.jsp
+			</result>
+		</action>
+	</package>
+</struts>

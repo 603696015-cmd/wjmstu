@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts> 
+	<package name="elearning_cms" extends="elearning">
+		<!-- 标签操作 -->		 
+		<action name="label_alterInit"
+			class="com.sopia.cms.action.LabelAction"
+			method="label_alterInit">
+			<result name="label_alter">
+				admin/cms/label_alter.jsp
+			</result> 
+		</action>
+		<action name="label_alter"
+			class="com.sopia.cms.action.LabelAction"
+			method="label_alter">
+			<result name="label_list" type="redirectAction">
+				label_list.action
+			</result>
+		</action>
+		<action name="label_addInit"
+			class="com.sopia.cms.action.LabelAction"
+			method="label_addInit">
+			<result name="label_add">
+				admin/cms/label_add.jsp
+			</result> 
+		</action>
+		<action name="label_add"
+			class="com.sopia.cms.action.LabelAction"
+			method="label_add">
+			<result name="label_list" type="redirectAction">
+				label_list.action
+			</result> 
+		</action>
+		<action name="label_list"
+			class="com.sopia.cms.action.LabelAction"
+			method="label_list">
+			<result name="label_list">
+				admin/cms/label_list.jsp
+			</result>
+		</action>
+		<action name="label_deleteById"
+			class="com.sopia.cms.action.LabelAction"
+			method="label_deleteById">
+			<result name="label_list" type="redirectAction">
+				label_list.action
+			</result>
+		</action>
+		
+		<!-- 模板操作 -->
+		<action name="template_alterInit"
+			class="com.sopia.cms.action.TemplateAction"
+			method="template_alterInit">
+			<result name="template_alter">
+				admin/cms/template_alter.jsp
+			</result> 
+		</action>
+		<action name="template_alter"
+			class="com.sopia.cms.action.TemplateAction"
+			method="template_alter">
+			<result name="template_list" type="redirectAction">
+				template_list.action
+			</result>
+		</action>
+		<action name="template_addInit"
+			class="com.sopia.cms.action.TemplateAction"
+			method="template_addInit">
+			<result name="template_add">
+				admin/cms/template_add.jsp
+			</result> 
+		</action>
+		<action name="template_add"
+			class="com.sopia.cms.action.TemplateAction"
+			method="template_add">
+			<result name="template_list" type="redirectAction">
+				template_list.action
+			</result>
+		</action>
+		<action name="template_toJsp"
+		class="com.sopia.cms.action.TemplateAction"
+			method="template_toJsp">
+			<result name="template_toJsp_success">
+				admin/cms/template_toJsp_success.jsp
+			</result> 
+		</action>
+		<action name="template_list"
+			class="com.sopia.cms.action.TemplateAction"
+			method="template_list">
+			<result name="template_list">
+				admin/cms/template_list.jsp
+			</result>
+		</action>
+		<action name="template_deleteById"
+			class="com.sopia.cms.action.TemplateAction"
+			method="template_deleteById">
+			<result name="template_list" type="redirectAction">
+				template_list.action
+			</result>
+		</action>
+		<!-- 栏目模板 -->
+		<action name="column_template"
+			class="com.sopia.cms.action.TemplateAction"
+			method="column_template">
+			<result name="column_template" >
+				admin/cms/column_template.jsp
+			</result>
+		</action>
+		<action name="column_bindTempInit"
+			class="com.sopia.cms.action.TemplateAction"
+			method="column_bindTempInit">
+			<result name="column_bindTempInit" >
+				admin/cms/column_bindTemp.jsp
+			</result>
+		</action> 
+		<action name="column_bindTemp"
+			class="com.sopia.cms.action.TemplateAction"
+			method="column_bindTemp">
+			<result name="column_template" type="redirectAction">
+				column_template.action
+			</result>
+		</action> 
+		<action name="index_bindTemp"
+			class="com.sopia.cms.action.TemplateAction"
+			method="index_bindTemp">
+			<result name="index_bindTemp" >
+				admin/cms/index_bindTemp.jsp
+			</result>
+		</action> 
+		<action name="column_alterTempInit"
+			class="com.sopia.cms.action.TemplateAction"
+			method="column_alterTempInit">
+			<result name="column_alterTempInit" >
+				admin/cms/column_alterTemp.jsp
+			</result>
+		</action> 
+		<action name="column_alterTemp"
+			class="com.sopia.cms.action.TemplateAction"
+			method="column_alterTemp">
+			<result name="column_template" type="redirectAction">
+				column_template.action
+			</result>
+		</action> 
+		<action name="column_deleteById"
+			class="com.sopia.cms.action.TemplateAction"
+			method="column_deleteById">
+			<result name="column_template" type="redirectAction">
+				column_template.action
+			</result>
+		</action>
+	</package>
+</struts>

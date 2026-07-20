@@ -1,0 +1,127 @@
+﻿@charset "utf-8";
+
+ /*通用样式*/
+
+body{font:12px/1.75 "宋体", arial, sans-serif,'DejaVu Sans','Lucida Grande',Tahoma,'Hiragino Sans GB',STHeiti,SimSun,sans-serif;color:#444;}
+
+a{text-decoration:none;color:#0099FF}
+a:hover{
+	text-decoration:underline;
+	color:#F60;
+}
+
+a img{border:none;} 
+
+em{font-style: normal;font-weight: normal;}
+
+dt,dl,dd {padding: 0px; margin: 0px;list-style-type: none;}
+form{margin:0px;padding:0px;}
+
+.clear {clear:both;height:0px; overflow:hidden;}
+.blank10{height:10px;overflow:hidden;}
+.blank20{height:20px;overflow:hidden;}
+.blank60{ background:url(http://www.kesion.com/images/comeon.gif) no-repeat center 20px;height:65px;overflow:hidden;}
+img, div { behavior: url(http://www.kesion.com/images/iepngfix.htc); }
+sup{ font-size:9px; color:#555;}
+/*网站头部通用*/
+
+
+
+
+
+.top02 .newdown a{padding-left:15px;}
+
+.wrap{
+	width:710px;
+	background:#fff;
+	height:100%;
+	overflow:hidden;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+/*头部flash*/
+
+/*slides*/
+.slides { height: 252px; background: url(http://www.kesion.com/images/slides.png) repeat-x #5CB2DB; position: relative;_position:none; overflow: hidden;}
+.slides .in { width: 710px; height: 252px; margin: 0 auto; position: relative; z-index: 99; }
+.slides .slide { width: 710px; height: 252px; color: #fff; position: relative; float: left; display: inline-block; float: none\0; +float:left;
+}
+:root .slides .slide { float: none\0/; }
+@media all and (min-width:0px) {
+.slides .slide { float: left\0; }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.slides .slide { float: none; }
+}
+
+.slides .slide .btn { position: absolute; }
+.slides .slide .info { color: #fff; position: absolute; line-height: 22px; }
+.slides .slide .icon, .slides .slide .tit, .slides .slide .link { position: absolute; }
+.slides .slide .icon, .slides .slide .tit, .slides .slide .link a{ font-family:"微软雅黑";}
+.slides .slide-1 { }
+
+.slides .slide-1 .btn-3 { left: 461px; top: 126px; }
+.slides .slide-1 .info { left: 489px; top: 126px; }
+.slides .slide-1 .icon { width: 286px; height: 174px; left: 69px; top: 26px; }
+.slides .slide-1 .tit { width: 254px; height: 48px; left: 461px; top: 36px; }
+.slides .slide-1 .link { left: 451px; top: 181px; }
+.slides .slide-1 .link a { color: #fff; }
+.slides .slide-1 .link a:hover { color: #fff; text-decoration: underline; }
+
+.slides .slide-2 { }
+
+.slides .slide-2 .btn-3 { left: 443px; top: 126px; }
+.slides .slide-2 .info { left: 459px; top: 132px; }
+.slides .slide-2 .link { left: 411px; top: 171px; }
+.slides .slide-2 .link a { color: #fff; }
+.slides .slide-2 .link a:hover { color: #fff; text-decoration: underline; }
+
+.slides .slide-3 {
+}
+
+.slides .slide-3 .btn-3x { left: 481px; top: 126px; }
+.slides .slide-3 .info { left: 459px; top: 132px; }
+.slides .slide-3 .link { left: 411px; top: 171px; }
+.slides .slide-3 .link a { color: #fff; }
+.slides .slide-3 .link a:hover { color: #FFE500; text-decoration: underline; }
+
+.slides .slide-4 { }
+
+.slides .slide-4 .info { left: 461px; top: 122px; }
+.slides .slide-4 .link { left: 421px; top: 181px; }
+.slides .slide-4 .link a { color: #fff; }
+.slides .slide-4 .link a:hover { color: #fff; text-decoration: underline; }
+
+.slides .slide-5 { background: url(http://www.kesion.com/images/slide_5.jpg) no-repeat; }
+
+.slides .slide-5 .btn-3 { left: 443px; top: 135px; }
+.slides .slide-5 .btn-6 { left: 617px; top: 135px; }
+.slides .slide-5 .btn-7 { left: 790px; top: 135px; }
+.slides .slide-5 .info { left: 459px; top: 122px; }
+.slides .slide-5 .tit { width: 254px; height: 48px; left: 461px; top: 36px; }
+.slides .slide-5 .link { left: 421px; top: 171px; }
+.slides .slide-5 .link a { color: #fff; }
+.slides .slide-5 .link a:hover { color: #FFE500; text-decoration: underline; }
+
+.slides .tab { height: 41px; position: absolute; left: 0; bottom: 0; z-index: 99; font: 18px/41px "微软雅黑"; }
+.slides .tab li { float: left; }
+.slides .tab a {
+	height: 41px;
+	float: left;
+	color: #fff;
+	border-left: 1px solid #64C2EF;
+	text-align: center;
+	width: 150px;
+}
+.slides .tab a:hover { color: #2B8EBE; }
+.slides .tab .item-1 { width: 150px; }
+.slides .tab .item-2 { width: 150px; }
+.slides .tab .item-3 { width: 150px; }
+.slides .tab .item-4 { width: 150px; }
+.slides .tab .item-5 { width: 171px; border-right: 1px solid #64C2EF; }
+.slides .tab .selected { background: #47BCEF; text-shadow: 0px 0px 1px #64C2EF; }
+.slides .tab .selected a { color: #000; }
+.slides .mask { width: 100%; height: 41px; background: #64C2EF; position: absolute; left: 0; bottom: 0; z-index: 9; filter: alpha(opacity = 70); opacity: 0.7; }

@@ -1,0 +1,170 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+{
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	font-size: 14px;
+	color: black;
+	margin: 0px auto; line-height : 150%;
+	background-color: #ffffff;
+	text-align: center;
+	height: 100%;
+	width: 825px;
+}
+
+img {
+	border: 0px;
+}
+
+ul li {
+	list-style: none;
+}
+
+a:link,a:visited {
+	text-decoration: none;
+	color: #077ac7;
+}
+
+a:hover,a:active {
+	text-decoration: none;
+}
+
+.main {
+	background-color: #FFFFFF;
+	width: 828px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.title {
+	font-family: Arial, Helvetica, sans-serif, "\u65b0\u5b8b\u4f53";
+	font-size: 28px;
+	width: 100%;
+	font-weight: bolder;
+	text-align: center;
+	color: #f30000;
+	line-height: 40px;
+}
+
+.block {
+	width: 100%;
+	border: dotted 1px buttonface;
+	text-align: center;
+}
+
+.block_name {
+	width: 100%;
+	font-weight: bolder;
+	font-size: 20px;
+	text-align: left;
+}
+
+.block_desc {
+	width: 98%;
+	background-color: #DDDDDD;
+	font-size: 15px;
+	height: 24px;
+	border: solid 1px buttonface;
+	text-align: left;
+}
+
+.question {
+	width: 95%;
+	border: dotted 1px buttonface;
+	text-align: left;
+}
+.contentcenter{
+	text-align: center;
+}
+.question1 {
+	width: 90%;
+	border: dotted 1px buttonface;
+	text-align: left;
+	font: 12px;
+}
+
+.answer {
+	background-color: #dddddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid 1px buttonface;
+}
+
+.answer_wh {
+	background-color: red;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid 1px buttonface;
+}
+
+.answer_yd {
+	background-color: #9999ff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid 1px buttonface;
+}
+
+.inputover {
+	height: 24px;
+	padding: 2px 2 0 2;
+	padding-top: 3px;
+	border: 1px solid #dea303;
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+}
+
+.input {
+	height: 24px;
+	padding: 2px 2 0 2;
+	padding-top: 3px;
+	border: 1px solid #adb9c2;
+	background: url("../images/exam/input_bg3.jpg");
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+}
+
+.regbutton3 {
+	cursor: pointer;
+	margin-top: 3px;
+	margin-bottom: 2px;
+	padding-right: 0px;
+	padding-left: 0px;
+	font-size: 18px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	font-family: "\u9ed1\u4f53"; 
+	color : #000000;
+	width: 135px;
+	border: 0px;
+	height: 40px;
+	background-image: url("../images/exam/btn_2.gif");
+}
+.menu {
+	background-color: #f7f7f7;
+	text-align: center;
+	position:fixed;
+	_position:absolute;
+	width: 100px;
+	height: 80px;
+	top : 0px;
+	_top:expression(eval(document.documentElement.scrollTop));
+	right:20px;
+	border: green 1px solid;
+	z-index: 4000;
+}
+
+#examtime {
+	background-color: #FFCC00;
+	height: 20px;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+}
+
+.opbutton {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="InsuranceCategories_PG" extends="elearning"> 
+		<!-- 自定义险种模块 -->
+		<action name="PG_IC_ListInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_ListInit">
+			<result name="IC_List">
+				shebeipinggu/InsuranceCategories/IC_List.jsp 
+			</result>
+		</action>
+		<action name="PG_IC_addInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_addInit">
+			<result name="IC_add">
+				shebeipinggu/InsuranceCategories/IC_add.jsp 
+			</result>
+		</action>
+		<action name="PG_IC_add"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_add">
+			<result name="IC_add">
+				shebeipinggu/InsuranceCategories/IC_add.jsp 
+			</result>
+			<result name="IC_add_success">
+				shebeipinggu/InsuranceCategories/IC_add_success.jsp 
+			</result>
+		</action> 
+		<action name="PG_IC_U_columns_manageInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_columns_manageInit">
+			<result name="IC_U_columns_manage">
+				shebeipinggu/InsuranceCategories/IC_U_columns_manage.jsp 
+			</result> 
+		</action> 
+		<action name="PG_updateColumnInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="updateColumnInit">
+			<result name="updateColumnInit">
+				shebeipinggu/InsuranceCategories/IC_U_columns_updateInit.jsp 
+			</result> 
+		</action> 
+		<action name="PG_updateColumn"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="updateColumn">
+			<result name="updateColumn_success" type="redirectAction">
+				PG_IC_U_columns_manageInit.action?IC.id=${IC.id}&amp;IC.tableName=${IC.tableName} 
+			</result> 
+			<result name="updateColumnInit" type="redirectAction">
+				PG_updateColumnInit.action?column_name=${column_name}&amp;tablename=${IC.tableName} 
+			</result> 
+			
+		</action> 
+		<action name="PG_IC_U_AddColumn"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_AddColumn">
+			<result name="IC_U_columns_manage">
+				shebeipinggu/InsuranceCategories/IC_U_columns_manage.jsp 
+			</result> 
+		</action>
+		<action name="PG_IC_U_UpdateDemo"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_UpdateDemo">
+			<result name="IC_U_UpdateDemo" type="redirectAction">
+				PG_IC_ListInit
+			</result> 
+		</action>
+		<action name="PG_IC_U_UpdateDemo_CSS"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_UpdateDemo_CSS">
+			<result name="IC_U_UpdateDemo_CSS" type="redirectAction">
+				PG_IC_ListInit
+			</result> 
+		</action>
+		<action name="PG_IC_U_Demo_downloadInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_Demo_downloadInit"> 
+			<result type="stream" name="IC_U_Demo_download">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="PG_IC_Delete"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_Delete">
+			<result name="IC_ListInit" type="redirectAction">
+				PG_IC_ListInit
+			</result> 
+		</action>
+		<!-- 自定义bean显示 -->
+		<action name="PG_IC_U_InfoInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_InfoInit">
+			<result name="IC_U_Info">
+				shebeipinggu/InsuranceCategories/IC_U_demo/${IC.tableName}.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean提交新增或者提交修改 -->
+		<action name="PG_IC_U_addOrAlter"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_addOrAlter">
+			<result name="IC_U_addOrAlter_success">
+				shebeipinggu/InsuranceCategories/IC_U_demo/IC_U_addOrAlter_success.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean数据修改显示 -->
+		<action name="PG_IC_U_Info_AlertInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_Info_AlertInit">
+			<result name="IC_U_Info_Alert">
+				shebeipinggu/InsuranceCategories/IC_U_demo/${policy.IC_TABLENAME}.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean数据显示 -->
+		<action name="PG_IC_U_Info_ViewInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_Info_ViewInit">
+			<result name="IC_U_Info_View">
+				shebeipinggu/InsuranceCategories/IC_U_demo/${policy.IC_TABLENAME}.jsp 
+			</result> 
+		</action>
+		<!-- 自定义bean数据显示 -->
+		<action name="PG_IC_U_Info_View_Init"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="IC_U_Info_View_Init">
+			<result name="IC_U_Info_View_">
+				shebeipinggu/InsuranceCategories/IC_U_demo/${IC.tableName}.jsp 
+			</result> 
+		</action>
+		
+		<!-- 相关表数据获取设置 -->
+		<action name="PG_searchRelateTableInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="searchRelateTableInit">
+			<result name="searchRelateTableInit">
+				shebeipinggu/InsuranceCategories/IC_searchRelateTable.jsp 
+			</result> 
+			<result name="searchRelateTable_moduleManage_init">
+				schedule/searchRelateTable_moduleManage.jsp 
+			</result> 
+		</action>
+		
+		<!-- 相关列数据获取设置 -->
+		<action name="PG_relateColumnsInit"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="relateColumnsInit">
+			<result name="relateColumnsInit">
+				shebeipinggu/InsuranceCategories/IC_searchRelateTable.jsp
+			</result> 
+		</action>
+		<action name="PG_relateColumnsInit2"
+			class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+			method="relateColumnsInit2">
+			<result name="relateColumnsInit2">
+				shebeipinggu/InsuranceCategories/IC_searchColumnByTable.jsp
+			</result> 
+		</action>
+		
+		<action name="PG_searchShebei"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="searchShebei">
+			<result name="searchShebei">
+				shebeipinggu/InsuranceCategories/IC_searchShebei.jsp
+			</result>
+		</action>
+		
+		
+		<!-- 自动获取数据 -->
+		<action name="PG_getInformationByAuto"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="getInformationByAuto">
+		</action>
+		
+		<!-- 投保时选择需要绑定数据在数据表的id -->
+		<action name="PG_searchRelateId"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="searchRelateId">
+			<result name="searchRelateId">
+				shebeipinggu/InsuranceCategories/IC_searchRelateId.jsp
+			</result>
+		</action>
+		
+		<!-- 选择求积关联字段 -->
+		<action name="PG_selectQiujiRelateColumn"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="selectQiujiRelateColumn">
+			<result name="selectQiujiRelateColumn">
+				shebeipinggu/InsuranceCategories/IC_selectQiujiRelateColumn.jsp
+			</result>
+		</action>
+		<!-- 选择求和关联字段 -->
+		<action name="PG_selectQiuheRelateColumn"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="selectQiujiRelateColumn">
+			<result name="selectQiujiRelateColumn">
+				shebeipinggu/InsuranceCategories/IC_selectQiujiRelateColumn.jsp
+			</result>
+		</action>
+		
+		
+		<action name="PG_checkColumnNameIsQiuji"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="checkColumnNameIsQiuji">
+		</action>
+		
+		<!-- 修改页面显示和范围 -->
+		<action name="PG_changeValueByCname"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="changeValueByCname">
+		</action>
+		
+		<action name="PG_findICById"
+				 class="com.sopia.shebeipinggu.action.PG_InsuranceCategoriesAction"
+				 method="PG_findICById">
+		</action>
+		
+	</package>
+</struts>

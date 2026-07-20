@@ -1,0 +1,1613 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+	"struts-2.0.dtd">
+	<!--<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"struts-2.1.7.dtd"> -->
+<struts>
+	<include file="com/sopia/common/configs/course.xml"></include>
+	<include file="com/sopia/common/configs/examman.xml"></include>
+	<include file="com/sopia/common/configs/knowledge.xml"></include>
+	<include file="com/sopia/common/configs/duman.xml"></include>
+	<include file="com/sopia/common/configs/classman.xml"></include>
+	<include file="com/sopia/common/configs/batch.xml"></include>
+	<include file="com/sopia/common/configs/questionman.xml"></include>
+	<include file="com/sopia/common/configs/study_course.xml"></include>
+	<include file="com/sopia/common/configs/study_quiz.xml"></include>
+	<include file="com/sopia/common/configs/study_class.xml"></include>
+	<include file="com/sopia/common/configs/study_assist.xml"></include>
+	<include file="com/sopia/common/configs/study.xml"></include>
+	<include file="com/sopia/common/configs/statman.xml"></include>
+	<include file="com/sopia/common/configs/stat_course.xml"></include>
+	<include file="com/sopia/common/configs/stat_quiz.xml"></include>
+	<include file="com/sopia/common/configs/stat_class.xml"></include>
+	<include file="com/sopia/common/configs/assist.xml"></include>
+	<include file="com/sopia/common/configs/forum.xml"></include>
+	<include file="com/sopia/common/configs/talent.xml"></include>
+	<include file="com/sopia/common/configs/book.xml"></include>
+	<include file="com/sopia/common/configs/examprac.xml"></include>
+	<include file="com/sopia/common/configs/stuffman.xml"></include>
+	<include file="com/sopia/common/configs/epracQustion.xml"></include>
+	<include file="com/sopia/common/configs/StatisticFlowAndResourse.xml"></include>
+	<include file="com/sopia/common/configs/cms.xml"></include>
+	<include file="com/sopia/common/configs/poll.xml"></include>
+<!-- 自定义 -->
+	<include file="com/sopia/lable/common/config/lableajax.xml"></include>
+	<include file="com/sopia/lable/common/config/customlable.xml"></include>
+	<include file="com/sopia/lable/common/config/modebind.xml"></include>
+	<include file="com/sopia/common/configs/exam.xml"></include>
+	<include file="com/sopia/common/configs/examQuestion.xml"></include>
+	<include file="com/sopia/common/configs/pfms.xml"></include>
+	<include file="com/sopia/common/configs/deviceManage.xml"></include>
+	<include file="com/sopia/common/configs/productManage.xml"></include>
+	<include file="com/sopia/common/configs/baoxianProduct.xml"></include>
+	<include file="com/sopia/common/configs/damageMember.xml"></include>
+	<include file="com/sopia/common/configs/front.xml"></include>
+	<include file="com/sopia/common/configs/pfmsNews.xml"></include>
+	<include file="com/sopia/common/configs/insure_online.xml"></include>
+	<include file="com/sopia/common/configs/lineTrainingCourse.xml"></include>
+	
+	<!-- JTM整合 -->
+	<include file="com/sopia/common/configs/JTM.xml"></include>
+	<include file="com/sopia/common/configs/JTM_JK.xml"></include>
+	
+	<!-- 下拉级别管理 -->
+	<include file="com/sopia/common/configs/selectLevel.xml"></include>
+	<!-- 知识管理 -->
+	<include file="com/sopia/common/configs/knowledgeManage.xml"></include>
+	<!-- 问答类别管理 -->
+	<include file="com/sopia/common/configs/answeringType.xml"></include>
+	<!-- 问答系统管理 -->
+	<include file="com/sopia/common/configs/answeringSystem.xml"></include>
+	
+	<!-- 新版个人中心和管理中心 -->
+	<include file="com/sopia/common/configs/newversion.xml"></include>
+	<!-- 左树 -->
+	<include file="com/sopia/common/configs/leftTreeFrame.xml"></include>
+	
+	<!-- 险种管理 -->
+	<include file="com/sopia/common/configs/InsuranceCategories.xml"></include>
+	<include file="com/sopia/common/configs/policy.xml"></include>
+	
+	<include file="com/sopia/common/configs/InsuranceCategories_PG.xml"></include>
+	<include file="com/sopia/common/configs/policy_PG.xml"></include>
+	<include file="com/sopia/common/configs/shebeipinggu.xml"></include>
+	
+	<!-- 考勤管理 -->
+	<include file="com/sopia/common/configs/attendance.xml"></include>
+	
+	 <!-- 模块复制 -->
+	<include file="com/sopia/common/configs/etcperfect.xml"></include>
+	<!-- 自定义模板管理 -->
+	<include file="com/sopia/common/configs/zidingyi_template.xml"></include>
+	<!-- 自定义报表管理 -->
+	<include file="com/sopia/common/configs/customReports.xml"></include>
+	<!-- 数据分配 -->
+	<include file="com/sopia/common/configs/dataallocation.xml"></include>
+	<!-- 模块复制综合查询 -->
+	<include file="com/sopia/common/configs/scheduleGloble.xml"></include>
+	<!-- 扬州 -->
+	<include file="com/sopia/common/configs/peice.xml"></include>
+	<include file="com/sopia/common/configs/balance.xml"></include>
+	<include file="com/sopia/common/configs/shopping.xml"></include>
+	<include file="com/sopia/common/configs/forumcourse.xml"></include>
+	<include file="com/sopia/common/configs/studentShopping.xml"></include>
+	<include file="com/sopia/common/configs/ajax.xml"></include>
+	<include file="com/sopia/common/configs/NewStudyClass.xml"></include>
+	<include file="com/sopia/common/configs/bookinfo.xml"></include>
+	<include file="com/sopia/common/configs/oedermanager.xml"></include>
+	<include file="com/sopia/common/configs/messagemanagement.xml"></include>
+	<include file="com/sopia/common/configs/statmanscose.xml"></include>
+	<!-- 培训班定价管理 -->
+	<include file="com/sopia/common/configs/elclass_peice.xml"></include>
+	<!-- 考场定价管理 -->
+	<include file="com/sopia/common/configs/examroom_peice.xml"></include>
+	<!-- 培训批次管理 -->
+	<include file="com/sopia/common/configs/peixunBatch.xml"></include>
+	<!-- 安全配置 -->
+	<include file="com/sopia/common/configs/security.xml"></include>
+	<!-- 自定义标签类别树 -->
+	<include file="com/sopia/common/configs/lableTree.xml"></include>
+	<!-- 新版用户管理模块自定义 -->
+	<include file="com/sopia/common/configs/userdemo.xml"></include>
+	<!-- 外经贸定级管理 -->
+	<include file="com/sopia/common/configs/classification.xml"></include>
+	
+	<!-- 词汇管理 -->
+	<include file="com/sopia/common/configs/words.xml"></include>
+	<!-- 智能辅导分 -->
+	<include file="com/sopia/common/configs/intelligentTutoringPoints.xml"></include>
+	
+	<!-- sd1223修改  -->
+	<include file="com/sopia/common/configs/workCourseSet.xml"></include>
+	
+	<!-- 模拟考试 -->
+	<include file="com/sopia/common/configs/mock.xml"></include>
+	<include file="com/sopia/common/configs/simulation.xml"></include>
+	
+	<constant name="struts.multipart.maxSize" value="100000000000" />
+	<constant name="struts.devMode" value="false" />
+	<package name="elearning" extends="struts-default">
+		<!-- 拦截器 -->
+		<interceptors>
+			<interceptor name="author" class="com.sopia.AuthorityIc"></interceptor>
+			<interceptor-stack name="elicp">
+				
+				<interceptor-ref name="author"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="elicp"></default-interceptor-ref>
+		<!-- 全局结果页面 -->
+		<global-results>
+			<result name="eLexception">eLexception.jsp</result>
+			<result name="noright">noright.jsp</result>
+			<result name="noregister">noregister.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="login">admin/newversion/wjm_user_center_login.jsp</result>
+			<result name="course_study_logout">study/course/course_study_logout.jsp</result>
+			<result name="error1">error1.jsp</result>
+			<result name="success1">success1.jsp</result>
+			<result name="login_jg" type="redirectAction">index_jg.action?department.id=${department.id}</result>
+			<!--手机班-->
+			<result name="error_phone">wsj_phone/error.jsp</result>
+			<result name="login_phone">wsj_phone/login.jsp</result>
+			<result name="course_study_logout_phone">wsj_phone/study/course/course_study_logout.jsp</result>
+		</global-results>
+		<!-- 异常错误配置
+			<global-exception-mappings>
+			<exception-mapping result="eLexception"
+			exception="com.sopia.common.ElException">
+			</exception-mapping>
+			</global-exception-mappings> -->
+		<action name="admin"
+			class="com.sopia.frontman.action.FrontAction" method="admin">
+			<result name="admin">admin/admin.jsp</result>
+			<result name="admin_phone">wsj_phone/admin/admin.jsp</result>
+			<result name="study" type="redirectAction">study.action</result>
+		</action>
+		<action name="admin_newversion"
+			class="com.sopia.frontman.action.FrontAction" method="admin_newversion">
+			<result name="admin">admin/user_admin.jsp</result>
+			<result name="admin_phone">wsj_phone/admin/user_admin.jsp</result>
+		</action>
+		<action name="study"
+			class="com.sopia.frontman.action.FrontAction" method="study">
+			<result name="study">study/study.jsp</result>
+			<result name="exam">study/exam.jsp</result>
+			<result name="study_phone">wsj_phone/study/study.jsp</result>
+			<result name="exam_phone">wsj_phone/study/exam.jsp</result>
+		</action>
+		<action name="courseman"
+			class="com.sopia.frontman.action.FrontAction" method="courseman">
+			<result name="courseman">admin/courseman.jsp</result>
+			<result name="courseman_phone">wsj_phone/admin/courseman.jsp</result>
+		</action>
+		<action name="index"
+			class="com.sopia.frontman.action.FrontAction" method="index">
+			<result name="login">login.jsp</result>
+			<!-- 外经贸修改20130730 -->
+			   <!-- <result name="index">admin/newversion/wjm_user_center_login.jsp</result>    -->
+			  <result name="index">elfrontman/index.jsp</result>    
+			<!-- <result name="index" type="redirectAction">
+				studentman.action
+				</result>
+				<result name="index">login.jsp</result> -->
+			<result name="index_">elfrontman/index_.jsp</result>
+			 <result name="phone_index">wsj_phone/elfrontman/index.jsp</result>
+		</action>
+		<action name="index_wsj"
+			class="com.sopia.frontman.action.FrontAction" method="index_wsj">
+			  <result name="index">elfrontman/index_wsj.jsp</result>    
+			   <result name="phone_index">wsj_phone/elfrontman/index.jsp</result>
+		</action>
+		<action name="index2"
+			class="com.sopia.frontman.action.FrontAction" method="index2">
+			<result name="index">elfrontman/index2.jsp</result>
+			<result name="index_html">index2.jsp</result>
+			<result name="index_">elfrontman/index_.jsp</result>
+			<result name="index_phone">wsj_phone/elfrontman/index2.jsp</result>
+			<result name="index__phone">wsj_phone/elfrontman/index_.jsp</result>
+		</action>
+		<action name="index_jg"
+			class="com.sopia.frontman.action.FrontAction" method="index_jg">
+			<result name="index_jg">elfrontman/index_jg.jsp</result>
+		</action>
+		<!-- 新闻类型检索 -->
+		<action name="combinationSearchNewsInit"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="combinationSearchNewsInit">
+			<result name="combinationSearchNews">
+				admin/message/combinationSearchNews.jsp
+			</result>
+			<result name="combinationSearchNews_phone">
+				wsj_phone/admin/message/combinationSearchNews.jsp
+			</result>
+		</action>
+		<!-- 新闻组合检索 -->
+		<action name="combinationSearchNews"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="combinationSearchNews">
+			<result name="news_list">
+				admin/message/combinationSearchNewslist.jsp
+			</result>
+			<result name="news_list_phone">
+				wsj_phone/admin/message/combinationSearchNewslist.jsp
+			</result>
+		</action>
+		<!-- 批量更新新闻热度 -->
+		<action name="upNewHot"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="upNewHot">
+			<result name="combinationSearchNews" type="redirectAction">
+				combinationSearchNews.action
+			</result>
+			<result name="news_end_trial_list" type="redirectAction">
+				news_end_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="newsSetpop"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newsSetpop">
+			<result name="news_setpop_list" type="redirectAction">
+				news_setpop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="news_popNo"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="news_popNo">
+			<result name="news_setpop_list" type="redirectAction">
+				news_setpop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="newsIndex"
+			class="com.sopia.frontman.action.FrontAction" method="newsIndex">
+			<result name="newsIndex">elfrontman/newsindex.jsp</result>
+			<result name="newsIndex_phone">wsj_phone/elfrontman/newsindex.jsp</result>
+			<result name="newsIndexView" type="chain">
+				<param name="actionName">newsIndexView</param>
+				<param name="method">newsIndexView</param>
+			</result>
+		</action>
+		<action name="newsIndex2"
+			class="com.sopia.frontman.action.FrontAction" method="newsIndex2">
+			<result name="newsIndex">elfrontman/success.jsp</result>
+			<result name="newsIndexView" type="chain">
+				<param name="actionName">newsIndexView</param>
+				<param name="method">newsIndexView</param>
+			</result>
+		</action>
+		<action name="newsIndex3"
+			class="com.sopia.frontman.action.FrontAction" method="newsIndex3">
+			<result name="newsIndex">elfrontman/success.jsp</result>
+			<result name="newsIndexView" type="chain">
+				<param name="actionName">newsIndexView</param>
+				<param name="method">newsIndexView</param>
+			</result>
+		</action>
+		<action name="coursetype"
+			class="com.sopia.frontman.action.FrontAction" method="coursetype">
+			<result name="coursetype">elfrontman/coursetype.jsp</result>
+		</action>
+		<action name="pxzxnewsIndex"
+			class="com.sopia.frontman.action.FrontAction"
+			method="pxzxnewsIndex">
+			<result name="pxzxnewsIndex">
+				elfrontman/pxzxnewsindex.jsp
+			</result>
+			<result name="pxzxnewsIndex_phone">
+				wsj_phone/elfrontman/pxzxnewsindex.jsp
+			</result>
+		</action>
+		<action name="sjywnewsIndex"
+			class="com.sopia.frontman.action.FrontAction"
+			method="sjywnewsIndex">
+			<result name="sjywnewsIndex">
+				elfrontman/sjywnewsindex.jsp
+			</result>
+			<result name="sjywnewsIndex_phone">
+				wsj_phone/elfrontman/sjywnewsindex.jsp
+			</result>
+		</action>
+		<action name="sjjdnewsIndex"
+			class="com.sopia.frontman.action.FrontAction"
+			method="sjjdnewsIndex">
+			<result name="sjjdnewsIndex">
+				elfrontman/sjjdnewsindex.jsp
+			</result>
+			<result name="sjjdnewsIndex_phone">
+				wsj_phone/elfrontman/sjjdnewsindex.jsp
+			</result>
+		</action>
+		<action name="newsIndexView"
+			class="com.sopia.frontman.action.FrontAction"
+			method="newsIndexView">
+			<result name="newsIndexView">
+				elfrontman/newsindexview.jsp
+			</result>
+			<result name="newsIndexView2" type="redirectAction">
+				news_end_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="newsIndexView_phone">
+				wsj_phone/elfrontman/newsindexview.jsp
+			</result>
+		</action>
+		<action name="newsIndexView2"
+			class="com.sopia.frontman.action.FrontAction"
+			method="newsIndexView2">
+			<result name="newsIndexView">
+				elfrontman/newsindexview.jsp
+			</result>
+			<result name="newsIndexView2" type="redirectAction">
+				news_end_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="newsIndexView_phone">
+				wsj_phone/elfrontman/newsindexview.jsp
+			</result>
+		</action>
+		<action name="courseIndex"
+			class="com.sopia.frontman.action.FrontAction" method="courseIndex">
+			<result name="courseIndex">
+				elfrontman/courseindex.jsp
+			</result>
+			<result name="courseIndex_phone">
+				wsj_phone/elfrontman/courseindex.jsp
+			</result>
+		</action>
+		<action name="courseIndex_isPass"
+			class="com.sopia.frontman.action.FrontAction" method="courseIndex_isPass">
+			<result name="courseIndex_isPass">
+				elfrontman/courseindex.jsp
+			</result>
+			<result name="courseIndex_isPass_phone">
+				wsj_phone/elfrontman/courseindex.jsp
+			</result>
+		</action> 
+		<action name="submitAppalyCourses"
+			class="com.sopia.frontman.action.FrontAction" method="submitAppalyCourses"> 
+			<result name="courseIndexView" type="redirectAction">
+				courseIndexView?course.id=${course.id}
+			</result>
+		</action> 
+		<action name="quizpaperIndex"
+			class="com.sopia.frontman.action.FrontAction"
+			method="quizpaperIndex">
+			<result name="quizpaperIndex">
+				elfrontman/quizpaperindex.jsp
+			</result>
+			<result name="quizpaperIndex_phone">
+				wsj_phone/elfrontman/quizpaperindex.jsp
+			</result>
+		</action>
+		<action name="quizpaperIndexView"
+			class="com.sopia.frontman.action.FrontAction"
+			method="quizpaperIndexView">
+			<result name="quizpaperIndexView">
+				elfrontman/quizpaperindexview.jsp
+			</result>
+			<result name="quizpaperIndexView_phone">
+				wsj_phone/elfrontman/quizpaperindexview.jsp
+			</result>
+		</action>
+		<action name="coursetypeIndex"
+			class="com.sopia.frontman.action.FrontAction"
+			method="coursetypeIndex">
+			<result name="coursetypeIndex">
+				elfrontman/coursetypeindex.jsp
+			</result>
+			<result name="coursetypeIndex_phone">
+				wsj_phone/elfrontman/coursetypeindex.jsp
+			</result>
+		</action>
+		<action name="coursetypelist"
+			class="com.sopia.frontman.action.FrontAction"
+			method="coursetypelist">
+			<result name="coursetypelist">
+				elfrontman/coursetypelist.jsp
+			</result>
+			<result name="coursetypelist_phone">
+				wsj_phone/elfrontman/coursetypelist.jsp
+			</result>
+		</action>
+		<action name="courseIndexView"
+			class="com.sopia.frontman.action.FrontAction"
+			method="courseIndexView">
+			<result name="courseIndexView">
+				elfrontman/courseindexview.jsp
+			</result>
+			<result name="courseIndexView_phone">
+				wsj_phone/elfrontman/courseindexview.jsp
+			</result>
+		</action>
+		<action name="course_listbytitle"
+			class="com.sopia.frontman.action.FrontAction"
+			method="course_listbytitle">
+			<result name="course_listbytitle">
+				elfrontman/course_listbytitle.jsp
+			</result>
+			<result name="course_listbytitle_phone">
+				wsj_phone/elfrontman/course_listbytitle.jsp
+			</result>
+		</action>
+		<action name="class_listbytitle"
+			class="com.sopia.frontman.action.FrontAction"
+			method="class_listbytitle">
+			<result name="class_listbytitle">
+				elfrontman/class_listbytitle.jsp
+			</result>
+			<result name="class_listbytitle_phone">
+				wsj_phone/elfrontman/class_listbytitle.jsp
+			</result>
+		</action>
+		<!-- 
+		<action name="class_listbytypeid"
+			class="com.sopia.frontman.action.FrontAction"
+			method="class_listbytypeid">
+			<result name="class_listbytypeid">
+				elfrontman/class_listbytypeid.jsp
+			</result>
+		</action> -->
+		<action name="gclass_depph_list"
+			class="com.sopia.frontman.action.FrontAction"
+			method="gclass_depph_list">
+			<result name="gclass_depph_list">
+				elfrontman/gclass_depph_list2.jsp
+			</result>
+		</action>
+		<action name="class_view"
+			class="com.sopia.frontman.action.FrontAction" method="class_view">
+			<result name="class_view">elfrontman/class_view.jsp</result>
+			<result name="class_noselected">
+				elstudentman/class_noselected.jsp
+			</result>
+			<result name="class_view_phone">wsj_phone/elfrontman/class_view.jsp</result>
+			<result name="class_noselected_phone">
+				wsj_phone/elstudentman/class_noselected.jsp
+			</result>
+			<!-- <result name="class_view">studymyclassplat.jsp</result> -->
+		</action>
+		<action name="knowledge_center_list"
+			class="com.sopia.frontman.action.FrontAction"
+			method="knowledge_center_list">
+			<result name="knowledge_center_list">
+				elfrontman/knowledge_center_list.jsp
+			</result>
+			<result name="knowledge_center_list_phone">
+				wsj_phone/elfrontman/knowledge_center_list.jsp
+			</result>
+			
+			<result name="no_user">
+				login.jsp
+			</result>
+			<result name="no_user_phone">
+				wsj_phone/login.jsp
+			</result>
+		</action>
+		<action name="knowledge_center"
+			class="com.sopia.frontman.action.FrontAction"
+			method="knowledge_center">
+			<result name="knowledge_center">
+				elfrontman/knowledge_center.jsp
+			</result>
+			<result name="knowledge_center_phone">
+				wsj_phone/elfrontman/knowledge_center.jsp
+			</result>
+		</action>
+		<action name="knowledge_center_view"
+			class="com.sopia.frontman.action.FrontAction"
+			method="knowledge_center_view">
+			<result name="knowledge_center_view">
+				elfrontman/knowledge_center_view.jsp
+			</result>
+			<result name="knowledge_center_view_phone">
+				wsj_phone/elfrontman/knowledge_center_view.jsp
+			</result>
+		</action>
+		<action name="knowledge_center_listbytitle"
+			class="com.sopia.frontman.action.FrontAction"
+			method="knowledge_center_listbytitle">
+			<result name="knowledge_center_listbytitle">
+				elfrontman/knowledge_center_listbytitle.jsp
+			</result>
+			<result name="knowledge_center_listbytitle_phone">
+				wsj_phone/elfrontman/knowledge_center_listbytitle.jsp
+			</result>
+		</action>
+		<action name="stuff_listbyTitle"
+			class="com.sopia.frontman.action.FrontAction"
+			method="stuff_listbyTitle">
+			<result name="stuff_listbyTitle">
+				elfrontman/news_search.jsp
+			</result>
+			<result name="stuff_listbyTitle_phone">
+				wsj_phone/elfrontman/news_search.jsp
+			</result>
+		</action>
+		<!-- 搜索帖子 -->
+		<action name="searchforumList"
+			class="com.sopia.frontman.action.FrontAction"
+			method="searchforumList">
+			<result name="forum_search">
+				elfrontman/forum_search.jsp
+			</result>
+			<result name="forum_search_phone">
+				wsj_phone/elfrontman/forum_search.jsp
+			</result>
+		</action>
+		<action name="forumIndex"
+			class="com.sopia.frontman.action.FrontAction" method="forumIndex">
+			<result name="forumIndex">elfrontman/forumindex.jsp</result>
+			<result name="forumIndex_phone">wsj_phone/elfrontman/forumindex.jsp</result>
+		</action>
+		<action name="forumListByBlockid"
+			class="com.sopia.frontman.action.FrontAction"
+			method="forumListByBlockid">
+			<result name="forumListByBlockid">
+				elfrontman/forumListByBlockid.jsp
+			</result>
+			<result name="forumListByBlockid_phone">
+				wsj_phone/elfrontman/forumListByBlockid.jsp
+			</result>
+		</action>
+		<action name="forumAddInit"
+			class="com.sopia.frontman.action.FrontAction"
+			method="forumAddInit">
+			<result name="forumAdd">elfrontman/forumAdd.jsp</result>
+			<result name="forumAdd_phone">wsj_phone/elfrontman/forumAdd.jsp</result>
+		</action>
+		<action name="forumAdd"
+			class="com.sopia.frontman.action.FrontAction" method="forumAdd">
+			<result name="forumAdd_success" type="redirectAction">
+				forumView?forum.id=${forum.id}&amp;pN=0&amp;pS=15
+			</result>
+		</action>
+		<action name="forumView"
+			class="com.sopia.frontman.action.FrontAction" method="forumView">
+			<result name="forumView">elfrontman/forumView.jsp</result>
+			<result name="forumView_phone">wsj_phone/elfrontman/forumView.jsp</result>
+			<result name="forumIndex" type="redirectAction">forumIndex?elmessage=${elmessage}</result>
+		</action>
+		<action name="forum_topicAdd"
+			class="com.sopia.frontman.action.FrontAction"
+			method="forum_topicAdd">
+			<result name="forumView" type="redirectAction">
+				forumView?forum.id=${forum.id}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="forum_topicDelete"
+			class="com.sopia.frontman.action.FrontAction"
+			method="forum_topicDelete">
+			<result name="forumView" type="redirectAction">
+				forumView?forum.id=${forum.id}&amp;pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<!-- 消息管理 -->
+		<action name="mess_sendUserlistInit"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_sendUserlistInit">
+			<result name="mess_sendUserlistInit">
+				admin/message/mess_sendUserlistInit.jsp
+			</result>
+		</action>
+		<action name="mess_sendElclassUserList"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_sendElclassUserList">
+			<result name="mess_sendElclassUserList">
+				admin/message/mess_sendElclassUserList.jsp
+			</result>
+		</action>
+		<action name="mess_sendExamRoomUserList"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_sendExamRoomUserList">
+			<result name="mess_sendExamRoomUserList">
+				admin/message/mess_sendExamRoomUserList.jsp
+			</result>
+		</action>
+		<action name="mess_sendDEPUserList"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_sendDEPUserList">
+			<result name="mess_sendDEPUserList">
+				admin/message/mess_sendDEPUserList.jsp
+			</result>
+		</action>
+		<action name="mess_getUserInfo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getUserInfo">
+			<result name="mess_getUserInfo">
+				admin/message/mess_getUserInfo.jsp
+			</result>
+		</action> 
+		<action name="mess_getElclassUserInfo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getElclassUserInfo">
+			<result name="mess_getElclassUserInfo">
+				admin/message/mess_getElclassUserInfo.jsp
+			</result>
+		</action>
+		<action name="mess_getExamRoomUserInfo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getExamRoomUserInfo">
+			<result name="mess_getExamRoomUserInfo">
+				admin/message/mess_getExamRoomUserInfo.jsp
+			</result>
+		</action>
+		<action name="mess_getExamRoomEpUserInfo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getExamRoomEpUserInfo">
+		</action>
+		<action name="mess_getExamRoomSQinfo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getExamRoomSQinfo">
+			<result name="mess_getExamRoomSQinfo">
+				admin/message/mess_getExamRoomSQinfo.jsp
+			</result>
+		</action>
+		<action name="mess_getDEPUserInfo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getDEPUserInfo">
+			<result name="mess_getDEPUserInfo">
+				admin/message/mess_getDEPUserInfo.jsp
+			</result>
+		</action>
+		<action name="mess_sendUserlist"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_sendUserlist">
+			<result name="mess_sendUserlist">
+				admin/message/mess_sendUserlist.jsp
+			</result>
+		</action>
+		
+		<!--  在阅卷人员列表中加上阅卷组长  -->
+		<action name="mess_getZuZhang"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getZuZhang">
+			<result name="mess_getZuZhang">
+				admin/message/mess_getZuZhang.jsp
+			</result>
+		</action> 
+		
+		<action name="mess_send2groupInit"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_send2groupInit">
+			<result name="mess_send2group">
+				admin/message/mess_send2group.jsp
+			</result>
+		</action>
+		<!-- 我的考试管理 -->
+		<action name="newstype_list"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_list">
+			<result name="newstype_list">
+				admin/message/newstype_list.jsp
+			</result>
+		</action>
+		<action name="newstype_delete"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_delete">
+			<result name="newstype_list" type="redirectAction">
+				newstype_list
+			</result>
+		</action>
+		<action name="newstype_addInit"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_addInit">
+			<result name="newstype_add">
+				admin/message/newstype_add.jsp
+			</result>
+		</action>
+		<action name="newstype_add"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_add">
+			<result name="newstype_add_success">
+				admin/message/newstype_add_success.jsp
+			</result>
+		</action>
+		<action name="newstype_alterInit"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_alterInit">
+			<result name="newstype_alter">
+				admin/message/newstype_alter.jsp
+			</result>
+		</action>
+		<action name="newstype_alter"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_alter">
+			<result name="newstype_alter_success">
+				admin/message/newstype_alter_success.jsp
+			</result>
+		</action>
+		<action name="newstype_view"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_view">
+			<result name="newstype_view">
+				admin/message/newstype_view.jsp
+			</result>
+		</action>
+		<action name="newstype_delete_user"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newstype_delete_user">
+		</action>
+		<action name="news_list"
+			class="com.sopia.newsandmess.action.NewsAction" method="news_list">
+			<result name="news_list">
+				admin/message/news_list.jsp
+			</result>
+		</action> 
+		<action name="download_nstuff"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="download_nstuff">
+			<result type="stream" name="download_nstuff">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename=${filename}
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="upNewsStatus" 
+			class="com.sopia.newsandmess.action.NewsAction" method="upNewsStatus">
+			<result name="newsList" type="redirectAction">
+				newsList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="newsManage_list" type="redirectAction">
+				newsManage_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="news_early_trial_list" type="redirectAction">
+				news_early_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="news_end_trial_list" type="redirectAction">
+				news_end_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="news_del_trial_list" type="redirectAction">
+				news_del_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="news_del_handle_list" type="redirectAction">
+				news_del_handle_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="combinationSearchNews" type="redirectAction">
+				combinationSearchNews.action
+			</result>
+			<result name="newsindexAction"
+				type="chain">
+				<param name="actionName">newsIndex</param>
+				<param name="method">newsIndex</param>
+				
+			</result>
+			<result name="newsindexviewAction"
+				type="chain">
+				<param name="actionName">newsIndexView</param>
+				<param name="method">newsIndexView</param>
+			</result>
+			
+		</action>
+		<action name="newsManage_list" 
+			class="com.sopia.newsandmess.action.NewsAction" method="newsManage_list">
+			<result name="newsManage_list">
+				admin/message/newsManage_list.jsp
+			</result>
+		</action>
+		<action name="news_early_trial_list" 
+			class="com.sopia.newsandmess.action.NewsAction" method="news_early_trial_list">
+			<result name="news_early_trial_list">
+				admin/message/news_early_trial_list.jsp
+			</result>
+		</action>
+		<action name="news_end_trial_list" 
+			class="com.sopia.newsandmess.action.NewsAction" method="news_end_trial_list">
+			<result name="news_end_trial_list">
+				admin/message/news_end_trial_list.jsp
+			</result>
+		</action>
+		<action name="news_del" 
+			class="com.sopia.newsandmess.action.NewsAction" method="news_del">
+			<result name="news_end_trial_list" type="redirectAction">
+				news_end_trial_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="news_del_trial_list" 
+			class="com.sopia.newsandmess.action.NewsAction" method="news_del_trial_list">
+			<result name="news_del_trial_list">
+				admin/message/news_del_trial_list.jsp
+			</result>
+		</action>
+		<action name="news_del_handle_list" 
+			class="com.sopia.newsandmess.action.NewsAction" method="news_del_handle_list">
+			<result name="news_del_handle_list">
+				admin/message/news_del_handle_list.jsp
+			</result>
+		</action>
+		<action name="news_setpop_list" 
+			class="com.sopia.newsandmess.action.NewsAction" method="news_setpop_list">
+			<result name="news_setpop_list">
+				admin/message/news_setpop_list.jsp
+			</result>
+		</action>
+		<action name="news_assignlist"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="news_assignlist">
+			<result name="news_assignlist">
+				admin/message/news_assignlist.jsp
+			</result>
+		</action>
+
+		<action name="newsassign"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newsassign">
+			<result name="news_assignlist">
+				admin/message/news_assignlist.jsp
+			</result>
+		</action>
+		<action name="update_status"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="update_status">
+			<result name="news_list">
+				admin/message/news_list.jsp
+			</result>
+		</action>
+		<action name="news_addInit"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="news_addInit">
+			<result name="news_add">admin/message/news_add.jsp</result>
+		</action>
+		<action name="news_add"
+			class="com.sopia.newsandmess.action.NewsAction" method="news_add">
+			<result name="news_add_success" type="redirect">
+				admin/message/news_add_success.jsp
+			</result>
+			<result name="newsManage_list" type="redirectAction">
+				newsManage_list.action
+			</result>
+		</action>
+		<action name="newsStuff_delete"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="newsStuff_delete">
+			<result name="news_alterInit" type="redirectAction">
+				news_alterInit.action?news.id=${news.id}&amp;isOk=1
+			</result>
+		</action>
+		<action name="news_alterInit"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="news_alterInit">
+			<result name="news_alter">
+				admin/message/news_alter.jsp
+			</result>
+		</action>
+		<action name="news_alter"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="news_alter">
+			<result name="news_alter_success">
+				admin/message/news_alter_success.jsp
+			</result>
+			<result name="newsManage_list" type="redirectAction">
+				newsManage_list.action
+			</result>
+			<result name="newsList" type="redirectAction">
+				newsList.action
+			</result>
+		</action>
+		<action name="news_view"
+			class="com.sopia.newsandmess.action.NewsAction" method="news_view">
+			<result name="news_view">
+				admin/message/news_view.jsp
+			</result>
+		</action>
+		<action name="mynews_view"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="mynews_view">
+			<result name="mynews_view">
+				admin/message/mynews_view.jsp
+			</result>
+		</action>
+		<action name="mynews"
+			class="com.sopia.newsandmess.action.NewsAction" method="mynews">
+			<result name="mynews">admin/message/mynews_list.jsp</result>
+		</action>
+		<action name="news_delete"
+			class="com.sopia.newsandmess.action.NewsAction"
+			method="news_delete">
+			<result name="news_delete" type="redirectAction">
+				news_list
+			</result>
+		</action>
+		<!-- 统计 -->
+		<!-- 消息管理 -->
+		<action name="mess_groupsend"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_groupsend">
+			<result name="mess_sendsuccess">
+				admin/message/messsend_success.jsp
+			</result>
+		</action>
+		<action name="pop_addInit"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_addInit">
+			<result name="pop_add">
+				admin/message/pop_add.jsp
+			</result>
+		</action>
+		<action name="pop_add"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_add">
+			<result name="pop_mylist" type="redirectAction">
+				pop_mylist.action
+			</result>
+		</action>
+		<action name="pop_alterInit"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_alterInit">
+			<result name="pop_alter">
+				admin/message/pop_alter.jsp
+			</result>
+		</action>
+		<action name="pop_user"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_user">
+			<result name="pop_user">
+				admin/message/pop_user.jsp
+			</result>
+		</action>
+		<action name="pop_alter"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_alter">
+			<result name="pop_mylist" type="redirectAction">
+				pop_mylist.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="pop_list" type="redirectAction">
+				pop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="pop_mylist"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_mylist">
+			<result name="pop_mylist">
+				admin/message/pop_mylist.jsp
+			</result>
+		</action>
+		<action name="pop_list"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_list">
+			<result name="pop_list">
+				admin/message/pop_list.jsp
+			</result>
+		</action>
+		<action name="pop_del"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_del">
+			<result name="pop_mylist" type="redirectAction">
+				pop_mylist.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="pop_list" type="redirectAction">
+				pop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="pop_dels"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_dels">
+			<result name="pop_mylist" type="redirectAction">
+				pop_mylist.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="pop_list" type="redirectAction">
+				pop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="pop_setPops"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_setPops">
+			<result name="pop_mylist" type="redirectAction">
+				pop_mylist.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="pop_list" type="redirectAction">
+				pop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="pop_setStatus"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="pop_setStatus">
+			<result name="pop_mylist" type="redirectAction">
+				pop_mylist.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="pop_list" type="redirectAction">
+				pop_list.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="messsend2groupInit"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="messsend2groupInit">
+			<result name="messsend2group">
+				admin/message/messsend2group.jsp
+			</result>
+		</action>
+		<action name="messgroupsend"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="messgroupsend">
+			<result name="messsendsuccess">
+				admin/message/messsendsuccess.jsp
+			</result>
+		</action>
+		<action name="mess_Rec"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_Rec">
+			<result name="mess_Rec">
+				admin/message/messreceivebox.jsp
+			</result>
+		</action>
+		<action name="mess_SendBox"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_SendBox">
+			<result name="mess_SendBox">
+				admin/message/messsendbox.jsp
+			</result>
+		</action>
+		<action name="mess_receiveBox"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_receiveBox">
+			<result name="mess_receiveBox">
+				admin/message/mess_receiveBox.jsp
+			</result>
+		</action>
+		<action name="mess_delete"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_delete">
+			<result name="mess_Rec">
+				admin/message/messreceivebox.jsp
+			</result>
+			<result name="mess_Send">
+				admin/message/messsendbox.jsp
+			</result>
+		</action>
+		<action name="mess_info"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_info">
+			<result name="mess_info">admin/message/messinfo.jsp</result>
+		</action>
+		<action name="mess_revertInit"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_revertInit">
+			<result name="mess_revertInit">
+				admin/message/messrevert.jsp
+			</result>
+		</action>
+		<action name="mess_revert"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_revert">
+			<result name="mess_revert_success">
+				admin/message/messsendsuccess.jsp
+			</result>
+		</action>
+		<action name="dot_setInit" class="com.sopia.SystemAction"
+			method="dot_setInit">
+			<result name="dot_set">admin/system/dot_set.jsp</result>
+		</action>
+		<action name="dot_set" class="com.sopia.SystemAction"
+			method="dot_set">
+			<result name="dot_set" type="redirectAction">
+				dot_setInit
+			</result>
+		</action>
+		<action name="registersetInit" class="com.sopia.SystemAction"
+			method="registersetInit">
+			<result name="registerset">
+				admin/system/registerset.jsp
+			</result>
+		</action>
+		<action name="registerset" class="com.sopia.SystemAction"
+			method="registerset">
+			<result name="registerset">
+				admin/system/registerset.jsp
+			</result>
+		</action>
+		<action name="othersetInit" class="com.sopia.SystemAction"
+			method="othersetInit">
+			<result name="otherset">admin/system/otherset.jsp</result>
+		</action>
+		<action name="otherset" class="com.sopia.SystemAction"
+			method="otherset">
+			<result name="otherset">admin/system/otherset.jsp</result>
+		</action>
+		<action name="intelligentsetInit" class="com.sopia.SystemAction"
+			method="intelligentsetInit">
+			<result name="intelligentsetInit">admin/system/intelligentset.jsp</result>
+		</action>
+		<action name="intelligentset" class="com.sopia.SystemAction"
+			method="intelligentset">
+			<result name="intelligentset">admin/system/intelligentset.jsp</result>
+		</action>
+		<action name="otherset_delete_index_class"
+			class="com.sopia.SystemAction"
+			method="otherset_delete_index_class">
+		</action>
+		<action name="newOthersetInit" class="com.sopia.SystemAction"
+			method="newOthersetInit">
+			<result name="newOthersetInit">admin/system/newOtherset.jsp</result>
+		</action>
+		<action name="newOtherset" class="com.sopia.SystemAction"
+			method="newOtherset">
+			<result name="newOtherset">admin/system/newOtherset.jsp</result>
+		</action>
+		<action name="coursetype_setInit" class="com.sopia.SystemAction"
+			method="coursetype_setInit">
+			<result name="coursetype_set">
+				admin/system/coursetype_set.jsp
+			</result>
+		</action>
+		<action name="coursetype_set" class="com.sopia.SystemAction"
+			method="coursetype_set">
+			<result name="coursetype_set">
+				admin/system/coursetype_set.jsp
+			</result>
+		</action>
+		<action name="score_setInit" class="com.sopia.SystemAction"
+			method="score_setInit">
+			<result name="score_set">admin/system/score_set.jsp</result>
+		</action>
+		<action name="score_set" class="com.sopia.SystemAction"
+			method="score_set">
+			<result name="score_set" type="redirectAction">
+				score_setInit
+			</result>
+		</action>
+		<action name="jian_setInit" class="com.sopia.SystemAction"
+			method="jian_setInit">
+			<result name="jian_set">admin/system/jian_set.jsp</result>
+		</action>
+		<action name="jian_set" class="com.sopia.SystemAction"
+			method="jian_set">
+			<result name="jian_set" type="redirectAction">
+				jian_setInit
+			</result>
+		</action>
+		<action name="scorechange_setInit"
+			class="com.sopia.SystemAction" method="scorechange_setInit">
+			<result name="scorechange_set">
+				admin/system/scorechange_set.jsp
+			</result>
+		</action>
+		<action name="scorechange_set" class="com.sopia.SystemAction"
+			method="scorechange_set">
+			<result name="scorechange_set" type="redirectAction">
+				scorechange_setInit
+			</result>
+		</action>
+		<action name="xfscore_setInit" class="com.sopia.SystemAction"
+			method="xfscore_setInit">
+			<result name="xfscore_set">
+				admin/system/xfscore_set.jsp
+			</result>
+		</action>
+		<action name="xfscore_set" class="com.sopia.SystemAction"
+			method="xfscore_set">
+			<result name="xfscore_set" type="redirectAction">
+				xfscore_setInit
+			</result>
+		</action>
+		<action name="system_alterInit" class="com.sopia.SystemAction"
+			method="system_alterInit">
+			<result name="system_alter">
+				admin/system/system_alter.jsp
+			</result>
+		</action>
+		<action name="system_alter" class="com.sopia.SystemAction"
+			method="system_alter">
+			<result name="system_alter_success">
+				admin/system/system_alter_success.jsp
+			</result>
+		</action>
+		<action name="system_view" class="com.sopia.SystemAction"
+			method="system_view">
+			<result name="system_view">
+				elfrontman/system_view.jsp
+			</result>
+		</action>
+		<action name="flink_addInit" class="com.sopia.SystemAction"
+			method="flink_addInit">
+			<result name="flink_add">admin/system/flink_add.jsp</result>
+		</action>
+		<action name="flink_add" class="com.sopia.SystemAction"
+			method="flink_add">
+			<result name="flink_add_success">
+				admin/system/flink_add_success.jsp
+			</result>
+		</action>
+		<action name="flink_alterInit" class="com.sopia.SystemAction"
+			method="flink_alterInit">
+			<result name="flink_alter">
+				admin/system/flink_alter.jsp
+			</result>
+		</action>
+		<action name="flink_alter" class="com.sopia.SystemAction"
+			method="flink_alter">
+			<result name="flink_alter_success">
+				admin/system/flink_alter_success.jsp
+			</result>
+		</action>
+		<action name="flink_view" class="com.sopia.SystemAction"
+			method="flink_view">
+			<result name="flink_view">
+				admin/system/flink_view.jsp
+			</result>
+		</action>
+		<action name="flink_upSort" class="com.sopia.SystemAction"
+			method="flink_upSort">
+			<result name="flink_upSort">
+				admin/system/flink_list.jsp
+			</result>
+		</action>
+		<action name="flink_list" class="com.sopia.SystemAction"
+			method="flink_list">
+			<result name="flink_list">
+				admin/system/flink_list.jsp
+			</result>
+		</action>
+		<action name="flink_delete" class="com.sopia.SystemAction"
+			method="flink_delete">
+			<result name="flink_delete">
+				admin/system/flink_list.jsp
+			</result>
+		</action>
+		<action name="course_server_list" class="com.sopia.SystemAction"
+			method="course_server_list">
+			<result name="course_server_list">
+				admin/system/courseserver_list.jsp
+			</result>
+		</action>
+		<action name="course_server_addInit">
+			<result>admin/system/courseserver_add.jsp</result>
+		</action>
+		<action name="course_server_add" class="com.sopia.SystemAction"
+			method="course_server_add">
+			<result name="course_server_list" type="redirectAction">
+				course_server_list
+			</result>
+		</action>
+		<action name="course_server_alterInit"
+			class="com.sopia.SystemAction" method="course_server_alterInit">
+			<result name="course_server_alter">
+				admin/system/courseserver_alter.jsp
+			</result>
+		</action>
+		<action name="course_server_alter"
+			class="com.sopia.SystemAction" method="course_server_alter">
+			<result name="course_server_list" type="redirectAction">
+				course_server_list
+			</result>
+		</action>
+		<action name="course_server_delete"
+			class="com.sopia.SystemAction" method="course_server_delete">
+			<result name="course_server_list" type="redirectAction">
+				course_server_list
+			</result>
+		</action>
+		<action name="busilogInfo" class="com.sopia.SystemAction"
+			method="busilogInfo">
+			<result name="busilogInfo">
+				admin/system/busilogInfo.jsp
+			</result>
+		</action>
+		<action name="busilog_list" class="com.sopia.SystemAction"
+			method="busilog_list">
+			<result name="busilog_list">
+				admin/system/busilog_list.jsp
+			</result>
+		</action>
+		<action name="syslog_list" class="com.sopia.SystemAction"
+			method="syslog_list">
+			<result name="syslog_list">
+				admin/system/syslog_list.jsp
+			</result>
+		</action>
+
+		<!-- 消息管理 -->
+		<action name="addOmRoomInit"
+			class="com.sopia.openmeetings.OmAction" method="addOmRoomInit">
+			<result name="addOmRoom">elopenm/addOmRoom.jsp</result>
+		</action>
+		<action name="addOmRoom" class="com.sopia.openmeetings.OmAction"
+			method="addOmRoom">
+			<result name="listOmRoom" type="redirectAction">
+				listOmRoom?room.roomtype=${room.roomtype}
+			</result>
+		</action>
+		<action name="listOmRoom"
+			class="com.sopia.openmeetings.OmAction" method="listOmRoom">
+			<result name="listOmRoom">elopenm/listOmRoom.jsp</result>
+		</action>
+		<action name="om_assign_list"
+			class="com.sopia.openmeetings.OmAction" method="om_assign_list">
+			<result name="om_assign_list">
+				elopenm/om_assign_list.jsp
+			</result>
+		</action>
+		<action name="om_assign_searchInit"
+			class="com.sopia.openmeetings.OmAction"
+			method="om_assign_searchInit">
+			<result name="om_assign_search">
+				elopenm/om_assign_search.jsp
+			</result>
+		</action>
+		<action name="om_assign_search"
+			class="com.sopia.openmeetings.OmAction" method="om_assign_search">
+			<result name="om_assign_search_list">
+				elopenm/om_assign_search_list.jsp
+			</result>
+		</action>
+		<action name="om_assign" class="com.sopia.openmeetings.OmAction"
+			method="om_assign">
+			<result name="om_assign_list" type="redirectAction">
+				om_assign_list?room.id=${room.id}&amp;room.roomtype=${room.roomtype}
+			</result>
+		</action>
+		<action name="om_assign_delete"
+			class="com.sopia.openmeetings.OmAction" method="om_assign_delete">
+			<result name="om_assign_list" type="redirectAction">
+				om_assign_list?room.id=${room.id}&amp;room.roomtype=${room.roomtype}
+			</result>
+		</action>
+		<action name="listMyOmRooms"
+			class="com.sopia.openmeetings.OmAction" method="listMyOmRooms">
+			<result name="listMyOmRooms">
+				elopenm/listMyOmRooms.jsp
+			</result>
+		</action>
+		<action name="intoRoom" class="com.sopia.openmeetings.OmAction"
+			method="intoRoom">
+			<result name="intoRoom">elopenm/intoRoom.jsp</result>
+		</action>
+		<action name="test" class="com.sopia.BaseAction"
+			method="test">
+		</action>
+		<action name="mess_getUserInfoJson"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="mess_getUserInfoJson">
+		</action>
+		<!-- 可申请培训班 -->
+		<action name="class_listbytypeid"
+			class="com.sopia.studyman.action.StudyClass"
+			method="class_listbytypeid">
+			<result name="class_listbytypeid">
+				elfrontman/class_listbytypeid.jsp
+			</result>
+			<result name="class_listbytypeid_isPass">
+				elfrontman/class_listbytypeid_isPass.jsp
+			</result>
+		</action>
+		<action name="class_listbytypeid_isPass"
+			class="com.sopia.studyman.action.StudyClass"
+			method="class_listbytypeid_isPass">
+			<result name="class_listbytypeid_isPass">
+				elfrontman/class_listbytypeid_isPass.jsp
+			</result>
+		</action>
+		<action name="class_view2"
+			class="com.sopia.studyman.action.StudyClass"
+			method="class_view2">
+			<result name="class_view2">
+				elfrontman/class_view2.jsp
+			</result>
+		</action>
+		<action name="msgSend"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="msgSend">
+			<result name="msgSend">
+				admin/message/msgSend.jsp
+			</result>
+		</action>
+		<action name="msgSendDo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="msgSendDo">
+			<result name="msgSendDo">
+				admin/message/msgSendDo.jsp
+			</result>
+		</action>
+		<action name="emailSend"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="emailSend">
+			<result name="emailSend">
+				admin/message/emailSend.jsp
+			</result>
+		</action>
+		<action name="emailSendDo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="emailSendDo">
+			<result name="emailSendDo">
+				admin/message/emailSendDo.jsp
+			</result>
+		</action>
+		<action name="emailSendUserCount"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="emailSendUserCount">
+		</action>
+		
+		
+		<action name="msgSend"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="msgSend">
+			<result name="msgSend">
+				admin/message/msgSend.jsp
+			</result>
+		</action>
+		<action name="msgSendDo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="msgSendDo">
+			<result name="msgSendDo">
+				admin/message/msgSendDo.jsp
+			</result>
+		</action>
+		<action name="emailSend"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="emailSend">
+			<result name="emailSend">
+				admin/message/emailSend.jsp
+			</result>
+		</action>
+		<action name="emailSendDo"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="emailSendDo">
+			<result name="emailSendDo">
+				admin/message/emailSendDo.jsp
+			</result>
+		</action>
+		<action name="emailSendUserCount"
+			class="com.sopia.newsandmess.action.MessageAction"
+			method="emailSendUserCount">
+		</action>
+
+		<!-- 首页配置 -->
+		<action name="indexOthersetInit" class="com.sopia.SystemAction"
+			method="indexOthersetInit">
+			<result name="indexOtherset">admin/system/indexOtherset.jsp</result>
+		</action>
+		<action name="indexOtherset" class="com.sopia.SystemAction"
+			method="indexOtherset">
+			<result name="indexOtherset">admin/system/indexOtherset.jsp</result>
+		</action>
+		<!-- JTM接口URL配置 -->
+		<action name="JTMOthersetInit" class="com.sopia.SystemAction"
+			method="JTMOthersetInit">
+			<result name="JTMOthersetInit">admin/system/JTMOtherset.jsp</result>
+		</action>
+		<action name="JTMOtherset" class="com.sopia.SystemAction"
+			method="JTMOtherset">
+			<result name="JTMOtherset">admin/system/JTMOtherset.jsp</result>
+		</action>
+		<!-- 自定义模块静态页配置 -->
+		<action name="zdyStaticHtmlOthersetInit" class="com.sopia.SystemAction"
+			method="zdyStaticHtmlOthersetInit">
+			<result name="zdyStaticHtmlOthersetInit">admin/system/zdyStaticHtmlOtherset.jsp</result>
+		</action>
+		<action name="zdyStaticHtmlOtherset" class="com.sopia.SystemAction"
+			method="zdyStaticHtmlOtherset">
+			<result name="zdyStaticHtmlOtherset">admin/system/zdyStaticHtmlOtherset.jsp</result>
+		</action>
+		
+		<action name="course_libraryList"
+			class="com.sopia.frontman.action.FrontAction"
+			method="course_libraryList">
+			<result name="course_libraryList">
+				elfrontman/course_libraryList.jsp
+			</result>
+		</action>
+		<action name="course_libraryView"
+			class="com.sopia.frontman.action.FrontAction"
+			method="course_libraryView">
+			<result name="course_libraryView">
+				elfrontman/course_libraryView.jsp
+			</result>
+		</action>
+		<action name="course_ImmediatelyElectiveElclass"
+			class="com.sopia.frontman.action.FrontAction"
+			method="course_ImmediatelyElectiveElclass">
+			<result name="course_ImmediatelyElectiveElclass">
+				elfrontman/course_ImmediatelyElectiveElclass.jsp
+			</result>
+		</action>
+		<action name="course_elclass_add"
+			class="com.sopia.frontman.action.FrontAction"
+			method="course_elclass_add">
+			<result name="course_libraryView" type="redirectAction">
+				course_libraryView.action?course.id=${course.id}
+			</result>
+			<result name="myelclass_view" type="redirectAction">
+				myelclass_view.action?elclass.id=${elclass.id}
+			</result>
+		</action>
+		<action name="htmlsetInit" class="com.sopia.SystemAction"
+			method="htmlsetInit">
+			<result name="htmlsetInit">admin/system/htmlset.jsp</result>
+		</action>
+		<action name="htmlset" class="com.sopia.SystemAction"
+			method="htmlset">
+			<result name="htmlset">admin/system/htmlset.jsp</result>
+		</action>
+		
+		<action name="map" class="com.sopia.frontman.action.FrontAction"
+			method="map">
+			<result name="map">elfrontman/map.jsp</result>
+		</action>
+		
+		<action name="integralInit" class="com.sopia.SystemAction"
+			method="integralInit">
+			<result name="integral">admin/system/integral.jsp</result>
+		</action>
+		<action name="integral" class="com.sopia.SystemAction"
+			method="integral">
+			<result name="integralInit" type="redirectAction">
+				integralInit
+			</result>
+		</action>
+		<action name="integral_RestoreDefault"
+			class="com.sopia.SystemAction" method="integral_RestoreDefault">
+			<result name="integralInit" type="redirectAction">
+				integralInit
+			</result>
+		</action>
+		<!-- 发布管理 -->
+		<action name="publishInit" class="com.sopia.SystemAction"
+			method="publishInit">
+			<result name="publishInit">admin/system/publishset.jsp</result>
+		</action>
+		
+		<action name="pubNew" class="com.sopia.SystemAction"
+			method="pubNew">
+			<result name="success">elfrontman/success.jsp</result>
+			<result name="newsindex2" type="redirectAction">
+				newsIndex2?number=${number}
+			</result>
+			<result name="newsindex3" type="redirectAction">
+				newsIndex3?number=${number}&amp;nid=${nid}
+			</result>
+		</action>
+		
+		<action name="studyPollList" class="com.sopia.assistman.action.PollAction" 
+			method="studyPollList">
+			<result name="studyPollList">
+				admin/assist/studyPollList.jsp
+			</result>
+		</action>
+		<action name="studyPoll" class="com.sopia.frontman.action.FrontAction" 
+			method="studyPoll">
+			<result name="studyPoll">
+				admin/assist/studyPoll.jsp
+			</result>
+		</action>
+		<action name="indexPoll" class="com.sopia.frontman.action.FrontAction" 
+			method="indexPoll">
+			<result name="pollResult" type="redirectAction">
+				pollResult.action?poll.id=${poll.id}
+			</result>
+			<result name="studyPollList" type="redirectAction">
+				studyPollList.action
+			</result>
+		</action>
+		<action name="pollResult" class="com.sopia.frontman.action.FrontAction" 
+			method="pollResult">
+			<result name="pollResult">
+				admin/assist/pollResult_fxh.jsp
+			</result>
+		</action>
+		<!-- wsj1026修改 -->
+		<action name="courseIndex_wsj"
+			class="com.sopia.frontman.action.FrontAction" method="courseIndex_wsj">
+			<result name="courseIndex_wsj">
+				elfrontman/courseindex_wsj.jsp
+			</result>
+			<result name="courseIndex_phone">
+				wsj_phone/elfrontman/courseindex.jsp
+			</result>
+		</action>
+		
+		<action name="courseIndexView_wsj"
+			class="com.sopia.frontman.action.FrontAction"
+			method="courseIndexView_wsj">
+			<result name="courseIndexView_wsj">
+				elfrontman/courseindexview_wsj.jsp
+			</result>
+			<result name="courseIndexView_phone">
+				wsj_phone/elfrontman/courseindexview.jsp
+			</result>
+		</action>
+	</package>
+</struts>

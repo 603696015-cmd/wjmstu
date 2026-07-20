@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>  
+	<package name="lableajax_s2" extends="elearning">
+	
+		  <action name="lableajax_checklablename"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_checklablename">
+			
+		</action>
+		<action name="lableajax_getFieldByTableName"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_getFieldByTableName">
+			
+		</action>
+		
+		<action name="lableajax_Fieldaddlable"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_Fieldaddlable">
+			
+		</action>
+		
+		
+		<action name="lableajax_tableFielddele"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_tableFielddele">
+			
+		</action>
+		<action name="lableajax_showfile"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_showfile">
+			
+		</action>
+		<!-- 修改排序设置 -->
+		<action name="lableajax_updorder"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_updorder">
+			
+		</action>
+		<!-- 删除排序字段 -->
+		<action name="lableajax_updorderfielddele"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_updorderfielddele">
+			
+		</action>
+		<!-- 添加排序字段 -->
+		<action name="lableajax_updorderfield"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_updorderfield">
+			
+		</action>
+		<!-- 得到所有使用表的字段 -->
+			<action name="lableajax_getallorderfield"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_getallorderfield">
+			
+		</action>
+		
+		<!-- 得到sql语句 -->
+			<action name="lableajax_getnewsql"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_getnewsql">
+			
+		</action>
+		
+		<!-- 分页语句 -->
+			<action name="lableajax_pagelable"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_pagelable">
+		</action>
+		<action name="lableajax_getallsearchfield"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_getallsearchfield">
+		</action>
+		
+		<action name="lableajax_getallsearchvalue"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_getallsearchvalue">
+		</action>
+		
+		<action name="lableajax_pagesearchlable"
+			class="com.sopia.lable.action.LableAJAXAction" 
+			method="lableajax_pagesearchlable">
+		</action>
+    </package> 
+</struts>

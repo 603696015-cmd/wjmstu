@@ -1,0 +1,3 @@
+alter table tb_module_manage add(openvisitor  number(1) default 0);
+
+commit;

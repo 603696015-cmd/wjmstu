@@ -1,0 +1,44 @@
+function checkNumber(number){
+	var reust=/^\d*$/;
+	if(reust.exec(number)){
+		return true;
+	}
+	return false;;
+}
+function toDate(str){
+	var sd=str.split("-");
+	//alert(sd);
+	return new Date(sd[0],sd[1]-1,sd[2],sd[3],sd[4],sd[5]);
+}
+function dateTimeCheck(classStarttime,classFinishtime,eroomStarttime,eroomFinishtime){
+	//alert(classStarttime+"**"+classFinishtime+"**"+eroomStarttime+"**"+eroomFinishtime);
+	if(eroomStarttime.indexOf(" ")==-1){
+		eroomStarttime=eroomStarttime+"-00-00-00";
+	}
+	while(eroomStarttime.indexOf(" ")!=-1){
+		eroomStarttime=eroomStarttime.replace(" ","-");
+	}
+	while(eroomStarttime.indexOf(":")!=-1){
+		eroomStarttime=eroomStarttime.replace(":","-");
+	}
+	if(eroomFinishtime.indexOf(" ")==-1){
+		eroomFinishtime=eroomFinishtime+"-00-00-00";
+	}
+	while(eroomFinishtime.indexOf(" ")!=-1){
+		eroomFinishtime=eroomFinishtime.replace(" ","-");
+	}
+	while(eroomFinishtime.indexOf(":")!=-1){
+		eroomFinishtime=eroomFinishtime.replace(":","-");
+	}
+	if(toDate(eroomStarttime).getTime()<toDate(classStarttime).getTime()){
+		alert("考场开始时间不能小于培训班开始时间！");
+		return false;
+	}
+	if(toDate(eroomFinishtime).getTime()>toDate(classFinishtime).getTime()){
+		alert("考场结束时间不能大于培训班结束时间！");
+		return false;
+	}
+	//alert("1:"+toDate(eroomFinishtime));
+	//alert("2:"+toDate(classFinishtime).getTime());
+	return true;
+}

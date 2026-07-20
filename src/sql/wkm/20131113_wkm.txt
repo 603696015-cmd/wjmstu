@@ -1,0 +1,41 @@
+alter table course add forumid number;
+
+
+
+
+
+
+create table training_status (
+                         id number primary key,
+                         realname varchar2(50),
+                         sex varchar2(2),
+                         xueli varchar2(50),
+                         shenfenzhenghao varchar2(50),
+                         depname varchar2(100),
+                         mobliephone varchar2(20),
+                         score number(3,1),
+                         certificateno number,
+                         examdate date,
+                         isregister number,
+                         ispaymoney number,
+                         iscertificate number,
+                         certificatestart date,
+                         certificateend date,
+                         valid number,
+                         state number
+)
+
+
+create  SEQUENCE  training_status_sequence
+  increment by 1 -- 每次加几个
+  start with 1 -- 从1开始计数
+  nomaxvalue -- 不设置最大值
+  nocycle -- 一直累加，不循环
+  cache 10 ;
+  
+  
+  
+  
+  
+  insert into elfunc (funccode,name,parentid,needcheck,target,dyimg,bgimg,linkimg) values('training_status','安全员培训状况',806,0,'rightFrame','default_dy.jpg','default_bg.jpg','default_link.jpg');
+分配给超管

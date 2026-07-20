@@ -1,0 +1,3 @@
+alter table question_stuff add STUFFPIC varchar2(100);
+alter table question_stuff add STUFFHOT number;
+添加了上传资料的对应图片IMG”（字符）、“热度属性HOT”（数字）

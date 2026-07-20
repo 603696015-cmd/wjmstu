@@ -1,0 +1,4 @@
+alter table question add media_file varchar2(100);
+
+alter table question add model_voice varchar2(50);
+alter table question add model_voice_text clob;

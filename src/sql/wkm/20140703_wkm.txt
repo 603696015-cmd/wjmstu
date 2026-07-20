@@ -1,0 +1,53 @@
+create or replace procedure checkClassExamRoomCanExam_new
+(userid_ number,classid_ number,classid2_ number,roomid_ number,flag_ out number )
+as
+count_ number;
+count2_ number;
+process_ number;
+process2_ number;
+totalpoints_ float;
+totalpoints2_ float;
+totalpoints_avg_ float;
+sql_ varchar2(4000);
+sql2_ varchar2(4000);
+standardline_ number;
+begin
+     count_:=0;
+     count2_:=0;
+     flag_:=0;
+     select count(1) into count_ from study_class where userid=userid_ and classid=classid_;
+     select count(1) into count2_ from study_class where userid=userid_ and classid=classid2_;
+     if count_>0 and count2_>0 then
+        select process into process_ from study_class where userid=userid_ and classid=classid_;
+        select process into process2_ from study_class where userid=userid_ and classid=classid2_;
+        if process_=100 and  process2_ =100 then
+           sql_ := 'select totalscore from intelligent_login_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_week_t_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_class_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_proportion_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_recoding_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_academic_t_t where userid='||userid_||' and classid='||classid_||
+                   'union all select totalscore from intelligent_academic_cou_t_t where userid='||userid_||' and classid='||classid_;
+           sql_ := 'select sum(totalscore) from ('||sql_||')';
+           execute immediate sql_ into totalpoints_;
+           totalpoints_:=round(totalpoints_,2);--智能辅导分
+           
+           sql2_ := 'select totalscore from intelligent_login_t where userid='||userid_||' and classid='||classid2_||
+                   'union all select totalscore from intelligent_week_t_t where userid='||userid_||' and classid='||classid2_||
+                   'union all select totalscore from intelligent_class_t where userid='||userid_||' and classid='||classid2_||
+                   'union all select totalscore from intelligent_proportion_t where userid='||userid_||' and classid='||classid2_||
+                   'union all select totalscore from intelligent_recoding_t where userid='||userid_||' and classid='||classid2_||
+                   'union all select totalscore from intelligent_academic_t_t where userid='||userid_||' and classid='||classid2_||
+                   'union all select totalscore from intelligent_academic_cou_t_t where userid='||userid_||' and classid='||classid2_;
+           sql2_ := 'select sum(totalscore) from ('||sql2_||')';
+           execute immediate sql2_ into totalpoints2_;
+           totalpoints2_:=round(totalpoints2_,2);--智能辅导分
+
+           select standardline into standardline_ from elclass_assign_examroom where classid=classid2_ and examroomid=roomid_;
+           totalpoints_avg_ := round((totalpoints_+totalpoints2_)/2,2);
+           if totalpoints_avg_>=standardline_ then--用户智能辅导分>等级考场必须达到的智能辅导分
+                 flag_:=1;
+           end if;
+        end if;
+     end if;
+end;

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="damageMember" extends="elearning">
+		<action name="showDamageMemberAddView"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="showDamageMemberAddView">
+			<result name="success">
+				pfms/addDamageMember.jsp
+			</result>
+		</action>
+		
+		<action name="addDamageMember"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="addDamageMember">
+			<result name="success" type="redirectAction">
+				damageMemberList.action
+			</result>
+		</action>
+		
+		<action name="damageMemberList"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="damageMemberList">
+			<result name="success">
+				pfms/damageMemberList.jsp
+			</result>
+			
+		</action>
+		
+		<action name="showDamageMemberView"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="showDamageMemberView">
+			<result name="success">
+				pfms/updateDamageMember.jsp
+			</result>
+		</action>
+		
+		
+		<action name="updateDamageMember"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="updateDamageMember">
+			<result name="success" type="redirectAction">
+				damageMemberList.action
+			</result>
+		</action>
+		
+		<action name="deleteDamageMember"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="deleteDamageMember">
+			<result name="success" type="redirectAction">
+				damageMemberList.action
+			</result>
+		</action>
+		
+		<action name="damageMemberBatchImport"
+				 class="com.sopia.pfms.action.DamageMemberAction"
+				 method="damageMemberBatchImport">
+			<result name="failure">
+				pfms/damageMember_import.jsp
+			</result>
+			<result name="account_import" type="redirectAction">
+				damageMemberList.action
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

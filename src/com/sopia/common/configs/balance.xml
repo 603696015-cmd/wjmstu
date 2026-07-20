@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="user_balance" extends="elearning">
+		<!-- 余额模块 --> 
+		<action name="getMyAllBalance" class="com.sopia.balance.action.BalanceAction" method="getMyAllBalance">
+			<result name="getMyAllBalance">
+				admin/balance/getMyAllBalance.jsp
+			</result>
+			<result name="getMyAllBalance_phone">
+				wsj_phone/admin/balance/getMyAllBalance.jsp
+			</result>
+		</action>
+		<action name="geteluser_recharge_info" class="com.sopia.balance.action.BalanceAction" method="geteluser_recharge_info">
+			<result name="geteluser_recharge_info">
+				admin/balance/geteluser_recharge_info.jsp
+			</result>
+			<result name="geteluser_recharge_info_phone">
+				wsj_phone/admin/balance/geteluser_recharge_info.jsp
+			</result>
+		</action>
+		<action name="getMyAllBalance2" class="com.sopia.balance.action.BalanceAction" method="getMyAllBalance2">
+			<result name="getMyAllBalance2">
+				admin/balance/getSubMyAllBalance.jsp
+			</result>
+			<result name="getMyAllBalance2_phone">
+				wsj_phone/admin/balance/getSubMyAllBalance.jsp
+			</result>
+		</action>		
+		
+		<action name="geteluser_subrecharge_info" class="com.sopia.balance.action.BalanceAction" method="geteluser_subrecharge_info">
+			<result name="geteluser_recharge_info">
+				admin/balance/geteluser_recharge_info.jsp
+			</result>
+			<result name="geteluser_recharge_info_phone">
+				wsj_phone/admin/balance/geteluser_recharge_info.jsp
+			</result>
+		</action>	
+		<!-- 获得用户个人余额信息 -->
+		<action name="getmybalanceinfo" class="com.sopia.balance.action.BalanceAction" method="getmybalanceinfo">
+			<result name="getmybalanceinfo_success">
+				admin/balance/getmybalance_info.jsp
+			</result>
+			<result name="getmybalanceinfo_success_phone">
+				wsj_phone/admin/balance/getmybalance_info.jsp
+			</result>
+		</action>	
+		<!-- 获得用户个人收支信息 -->
+		<action name="balance_incomeList" class="com.sopia.balance.action.BalanceAction" method="balance_incomeList">
+			<result name="balance_incomeList_success">
+				admin/balance/balance_incomeList.jsp
+			</result>
+			<result name="balance_incomeList_success_phone">
+				wsj_phone/admin/balance/balance_incomeList.jsp
+			</result>
+		</action>	
+		<!-- 获得收支信息 订单内商品信息-->						
+		<action name="balance_ordercommodity" class="com.sopia.balance.action.BalanceAction" method="balance_ordercommodity">
+			<result name="balance_ordercommodity_success">
+				admin/balance/ordercommodity_list.jsp
+			</result>
+			<result name="balance_ordercommodity_success_phone">
+				wsj_phone/admin/balance/ordercommodity_list.jsp
+			</result>
+		</action>
+			
+		<!-- 获得收支信息 订单内商品信息-->						
+		<action name="balance_incomerechargeInfo" class="com.sopia.balance.action.BalanceAction" method="balance_incomerechargeInfo">
+			<result name="balance_incomerechargeInfo_success">
+				admin/balance/balance_incomerechargeInfo.jsp
+			</result>
+			<result name="balance_incomerechargeInfo_success_phone">
+				wsj_phone/admin/balance/balance_incomerechargeInfo.jsp
+			</result>
+		</action>		
+		<!-- 获得部门消费信息-->						
+		<action name="balance_dempincomeList" class="com.sopia.balance.action.BalanceAction" method="balance_dempincomeList">
+			<result name="balance_dempincomeList_success">
+				admin/balance/balance_dempincomeList.jsp
+			</result>
+			<result name="balance_dempincomeList_success_phone">
+				wsj_phone/admin/balance/balance_dempincomeList.jsp
+			</result>
+		</action>
+		<!-- 获得部门消费个人订单详情信息-->						
+		<action name="balance_dempincomeList" class="com.sopia.balance.action.BalanceAction" method="balance_dempincomeList">
+			<result name="balance_dempincomeList_success">
+				admin/balance/balance_dempincomeList.jsp
+			</result>
+			<result name="balance_dempincomeList_success_phone">
+				wsj_phone/admin/balance/balance_dempincomeList.jsp
+			</result>
+		</action>	
+		<!-- 获得增资记录信息-->						
+		<action name="geteluserzengzi_recharge_info1" class="com.sopia.balance.action.BalanceAction" method="geteluserzengzi_recharge_info1">
+			<result name="geteluserzengzi_recharge_info1_success">
+				admin/balance/user_recharge_info_list.jsp
+			</result>
+			
+			<result name="selecteluserzengzi_recharge_info1_success">
+				admin/balance/selectuser_recharge_info_list.jsp
+			</result>
+			<result name="geteluserzengzi_recharge_info1_success_phone">
+				wsj_phone/admin/balance/user_recharge_info_list.jsp
+			</result>
+			
+			<result name="selecteluserzengzi_recharge_info1_success_phone">
+				wsj_phone/admin/balance/selectuser_recharge_info_list.jsp
+			</result>
+		</action>
+		<!-- 批量手工增资 -->	
+		<action name="allgetMyAllBalance" class="com.sopia.balance.action.BalanceAction" method="allgetMyAllBalance">
+			<result name="getMyAllBalance">
+				admin/balance/getMyAllBalance.jsp
+			</result>
+			<result name="getMyAllBalance_phone">
+				wsj_phone/admin/balance/getMyAllBalance.jsp
+			</result>
+		</action>
+			<action name="allgetMyAllBalance2" class="com.sopia.balance.action.BalanceAction" method="allgetMyAllBalance2">
+			<result name="getMyAllBalance2">
+				admin/balance/getSubMyAllBalance.jsp
+			</result>
+			<result name="getMyAllBalance2_phone">
+				wsj_phone/admin/balance/getSubMyAllBalance.jsp
+			</result>
+		</action>	
+	</package> 
+</struts>

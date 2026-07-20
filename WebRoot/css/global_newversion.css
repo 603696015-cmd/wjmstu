@@ -1,0 +1,43 @@
+/* CSS Document */
+/*------------------------  Globa ------------------------------*/
+
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	background-image: url(../images/newversion/con-bg.jpg);
+	background-repeat: repeat-y;
+	background-position: center;
+	/*添加背景固定居中了*/
+	background-attachment:fixed;
+}
+
+
+#container {
+	background-image: url(../images/newversion/top-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 870px;
+	width: 100%;
+	/*添加的*/
+	min-width:1000px;
+}
+
+#container .notice {
+	position: absolute;
+	z-index: 1000;
+	top: 145px;
+	left: 50%;
+	width: 933px;
+	line-height: 20px;
+	margin-left: -477px;
+	padding: 10px;
+	background-color: #f9fbb9;
+	color: #a8021d;
+	border:1px #afafaf solid;
+	}
+#container .notice span {
+	color: #FFFF00;
+	}
+	
+

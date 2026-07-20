@@ -1,0 +1,6 @@
+insert into elfunc(funccode,name,description,parentid,needcheck,target) values('batch_zhongshen','批次终审','4批次终审',4139,0,'rightFrame')
+insert into elfunc(funccode,name,description,parentid,needcheck,target) values('培训批次管理','培训批次管理','7培训批次管理',773,0,'rightFrame')
+insert into elfunc(funccode,name,description,parentid,needcheck,target) values('add_batch','添加批次','1添加批次',4139,0,'rightFrame')
+insert into elfunc(funccode,name,description,parentid,needcheck,target) values('my_add_batch','我添加的批次','2我添加的批次',4139,0,'rightFrame')
+insert into elfunc(funccode,name,description,parentid,needcheck,target) values('batch_chushen','批次初审','3批次初审',4139,0,'rightFrame')
+commit;

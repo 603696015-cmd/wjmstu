@@ -1,0 +1,4 @@
+alter table course_page add(pic_g varchar2(50));
+alter table course_page add(pic_l varchar2(50));
+alter table course_page add(pic_h varchar2(50));
+commit;

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="peixun_batch" extends="elearning">
+		<!-- 添加批次 --> 
+		<action name="add_batch" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="add_batch">
+			<result name="add_batch">
+				peixunBatch/add_batch.jsp
+			</result>
+		</action>
+		
+		<action name="save_batch" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="save_batch" >
+			<result name="my_add_batch" type="redirectAction">
+				my_add_batch
+			</result>
+			</action>
+			<action name="delete_batch" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="delete_batch" >
+			<result name="my_add_batch" type="redirectAction">
+				my_add_batch
+			</result>
+		</action>
+		<action name="my_add_batch" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="my_add_batch">
+			<result name="my_add_batch">
+				peixunBatch/my_add_batch.jsp
+			</result>
+		</action>
+		
+		<action name="batch_details" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_details">
+			<result name="batch_details">
+				peixunBatch/batch_details.jsp
+			</result>
+		</action>
+		
+		<action name="batch_alter" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_alter">
+			<result name="batch_alter">
+				peixunBatch/batch_alter.jsp
+			</result>
+		</action>
+		
+		<action name="batch_elclass_details" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_elclass_details">
+			<result name="batch_elclass_details">
+				peixunBatch/batch_elclass_details.jsp
+			</result>
+		</action>
+		
+		<action name="batch_eluser_details" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_eluser_details">
+			<result name="batch_eluser_details">
+				peixunBatch/batch_eluser_details.jsp
+			</result>
+		</action>
+		
+		<action name="batch_assigntoUsersInit" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_assigntoUsersInit">
+			<result name="batch_assigntoUsersInit">
+				peixunBatch/batch_assigntoUsers.jsp
+			</result>
+		</action>
+		
+		<action name="batch_eluser_add"
+			class="com.sopia.peixunBatch.action.PeixunBatchAction"
+			method="batch_eluser_add">
+			<result name="batch_assigntoUsersInit" type="redirectAction">
+				batch_assigntoUsersInit?peixunBatchId=${peixunBatchId}
+			</result>
+		</action>
+		
+		<action name="batch_elclass_List" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_elclass_List">
+			<result name="batch_elclass_List">
+				peixunBatch/batch_elclass_List.jsp
+			</result>
+		</action>
+		
+		
+		<action name="batch_elclass_add"
+			class="com.sopia.peixunBatch.action.PeixunBatchAction"
+			method="batch_elclass_add">
+			<result name="batch_elclass_List" type="redirectAction">
+				batch_elclass_List?peixunBatchId=${peixunBatchId}
+			</result>
+		</action>
+		
+		<action name="delete_elclass" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="delete_elclass" >
+			<result name="batch_alter" type="redirectAction">
+				batch_alter?peixunBatch.id=${peixunBatch.id}
+			</result>
+		</action>
+		<!-- 审核 -->
+		<action name="batch_timeover_list" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_timeover_list">
+			<result name="batch_timeover_list">
+				peixunBatch/batch_timeover_list.jsp
+			</result>
+		</action>
+		
+			<action name="batch_addNotes" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="batch_addNotes">
+			<result name="batch_addNotes">
+				peixunBatch/batch_addNotes.jsp
+			</result>
+		</action>
+		
+		<action name="my_batchs" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="my_batchs">
+			<result name="my_batchs">
+				peixunBatch/my_batchs.jsp
+			</result>
+		</action>
+		
+		<action name="elclass_upsort" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="elclass_upsort" >
+			<result name="batch_alter" type="redirectAction">
+				batch_alter?peixunBatch.id=${peixunBatch.id}
+			</result>
+		</action>
+		
+		<action name="elclass_downsort" class="com.sopia.peixunBatch.action.PeixunBatchAction" method="elclass_downsort" >
+			<result name="batch_alter" type="redirectAction">
+				batch_alter?peixunBatch.id=${peixunBatch.id}
+			</result>
+		</action>
+		
+	</package> 
+</struts>

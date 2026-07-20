@@ -1,0 +1,54 @@
+-- Create table
+create table QuestionnaireINFO
+(
+  id            NUMBER not null,
+  epid           NUMBER not null,
+  createrid     NUMBER not null,
+  title         VARCHAR2(100) not null,
+  remack        VARCHAR2(500),
+  stuviewresult NUMBER default 0 not null,
+  createtime    DATE default sysdate not null,
+  begintime     DATE not null,
+  endtime       DATE not null,
+  status        NUMBER default 0 not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  -- Create sequence 
+create sequence QuestionnaireINFO_SEQUENCE
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 11
+increment by 1
+cache 10;
+
+  
+  create or replace trigger auto_id_QuestionnaireINFO  before insert on QuestionnaireINFO for each row
+when (new.id is null)
+begin
+      select QuestionnaireINFO_sequence.nextval into :new.id from dual;
+end;
+
+
+
+
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4132,'问卷调查','问卷调查','',953,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4137,'questionnaireList','发布问卷','',4132,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4133,'addQuestionnaireInit','添加问卷','',4132,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4127,'投票管理','投票管理','',953,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4128,'addPollInit','添加投票','',4127,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4129,'pollList','发布投票','',4127,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4130,'pollShList','投票审核','',4127,0,'rightFrame')
+insert into elfunc(id,funccode,name,description,parentid,needcheck,target) values(4131,'studyPollList','参与投票','',4127,0,'rightFrame')
+commit;

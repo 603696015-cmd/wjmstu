@@ -1,0 +1,12 @@
+create or replace procedure markorderInfo
+ (orderid_ number,commodityid_ number,commoditytype_ number,price_ float,count_ number,ifdelivery_ float,ifreceiv_ float)
+ as
+ ccount_ number;
+ begin
+   ccount_:=0;
+   select count(1) into ccount_ from sp_order_info  where orderid=orderid_ and commodityid=commodityid_ and commoditytype=commoditytype_;
+   if ccount_=0 then
+      insert into sp_order_info(orderid,commodityid,Commoditytype,price,count,ifdelivery,ifreceiv)
+       values (orderid_,commodityid_,commoditytype_,price_,count_,ifdelivery_,ifreceiv_);
+   end if;
+ end;

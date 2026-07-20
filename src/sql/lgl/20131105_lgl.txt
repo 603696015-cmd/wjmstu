@@ -1,0 +1,7 @@
+alter table eluser add(bankuaimingcheng varchar(200));
+
+alter table eluser add(huiyuanleixing number);
+
+alter table eluser add(luntanbankuai number);
+
+commit

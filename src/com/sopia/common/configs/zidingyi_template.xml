@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="zidingyi_template" extends="elearning">
+		<action name="templateUploadInit"
+			class="com.sopia.schedule.action.ClientTemplateAction" 
+			method="templateUploadInit">
+			<result name="templateUploadInit">
+				admin/etcperfect/templateUploadInit.jsp
+			</result>
+		</action>
+		
+		<action name="templateUpload"
+			class="com.sopia.schedule.action.ClientTemplateAction" 
+			method="templateUpload">
+			<result name="templateUploadInit" >
+				admin/etcperfect/templateUploadInit.jsp
+			</result>
+		</action>
+		
+		<action name="tableinfo_downloadInit"
+			class="com.sopia.schedule.action.ClientTemplateAction" 
+			method="tableinfo_downloadInit">
+			<result name="templateUploadInit" type="redirectAction">
+				templateUploadInit.action?moduleManage.id=${moduleManage.id}
+			</result>
+		</action>
+		
+		<action name="userMakeHTML_downloadInit"
+			class="com.sopia.schedule.action.ClientTemplateAction" 
+			method="userMakeHTML_downloadInit">
+			<result name="templateUploadInit" type="redirectAction">
+				templateUploadInit.action?moduleManage.id=${moduleManage.id}&amp;elmessage=${elmessage}
+			</result>
+		</action>
+		
+		
+	</package> 
+</struts>

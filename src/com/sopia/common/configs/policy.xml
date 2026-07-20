@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="policy" extends="elearning">
+		 <action name="policyLibListInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="policyLibListInit">
+			<result name="policyLibList">
+				pfms/policy/policyLibList.jsp
+			</result>
+		</action> 
+		 <action name="policyLib_addInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="policyLib_addInit">
+			<result name="policyLib_add">
+				pfms/policy/policyLib_add.jsp
+			</result>
+		</action> 
+		 <action name="policyLib_add"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="policyLib_add">
+			<result name="policyLib_add_success">
+				pfms/policy/policyLib_add_success.jsp
+			</result>
+		</action> 
+		 <action name="policyLib_view"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="policyLib_view">
+			<result name="policyLib_view">
+				pfms/policy/policyLib_view.jsp
+			</result>
+		</action> 
+		 <action name="policyLib_alterInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="policyLib_alterInit">
+			<result name="policyLib_alter">
+				pfms/policy/policyLib_alter.jsp
+			</result>
+		</action> 
+		 <action name="policyLib_alter"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="policyLib_alter">
+			<result name="policyLib_alter_success">
+				pfms/policy/policyLib_alter_success.jsp
+			</result>
+		</action>  
+		<action name="policyLib_delete"
+			class="com.sopia.pfms.action.PolicyAction"
+			method="policyLib_delete">
+			<result name="policyLibListInit" type="redirectAction">
+				policyLibListInit.action
+			</result>
+		</action>
+		<!-- 投保信息 --> 
+		 <action name="buyPolicyListInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="buyPolicyListInit">
+			<result name="buyPolicyList">
+				pfms/policy/buyPolicyList.jsp
+			</result>
+		</action> 
+		 <action name="MyPolicyListInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="MyPolicyListInit">
+			<result name="MyPolicyList">
+				pfms/policy/MyPolicyList.jsp
+			</result>
+		</action> 
+		 <action name="Policy_AuditListInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="Policy_AuditListInit">
+			<result name="Policy_AuditList">
+				pfms/policy/Policy_AuditList.jsp
+			</result>
+		</action> 
+		 <action name="Policy_Audit2ListInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="Policy_Audit2ListInit">
+			<result name="Policy_Audit2List">
+				pfms/policy/Policy_Audit2List.jsp
+			</result>
+		</action> 
+		 <action name="Policy_AuditInit"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="Policy_AuditInit">
+			<result name="Policy_Audit" type="redirectAction">
+				${actionName}.action
+			</result>
+		</action> 
+		 <action name="Policy_UpdateScanning"
+				 class="com.sopia.pfms.action.PolicyAction"
+				 method="Policy_UpdateScanning">
+			<result name="Policy_UpdateScanning" type="redirectAction">
+				${actionName}.action
+			</result>
+		</action>  
+		<action name="Policy_downloadScanningInit"
+			class="com.sopia.pfms.action.PolicyAction"
+			method="Policy_downloadScanningInit"> 
+			<result type="stream" name="Policy_downloadScanning">
+				<param name="contentType">
+					application/octet-stream
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>

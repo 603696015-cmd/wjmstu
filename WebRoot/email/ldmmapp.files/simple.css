@@ -1,0 +1,117 @@
+TABLE {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+INPUT {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+SELECT {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+BODY {
+	MARGIN: 0px; OVERFLOW: auto; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+A {
+	FONT-SIZE: 12px; COLOR: #244166; TEXT-DECORATION: none
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #244166; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #244166; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #244166; TEXT-DECORATION: none
+}
+.font1 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px
+}
+.tablecolor1 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #b5cbe7
+}
+.tablecolor2 {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #ffffff
+}
+.tablecolor3 {
+	BACKGROUND-COLOR: #dddddd
+}
+.tablecolor4 {
+	BACKGROUND-COLOR: #b2b2b2
+}
+.tablecolor5 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #e7e7e7
+}
+.tablecolor6 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #f5f5f5
+}
+.tablecolor7 {
+	BACKGROUND-COLOR: #4d719e
+}
+.pagebackground {
+	BACKGROUND-COLOR: #ffffff
+}
+.pagebackground01 {
+	BACKGROUND-IMAGE: url(/simple_img/bg02.jpg)
+}
+.background {
+	BACKGROUND-IMAGE: url(/simple_img/bg01.jpg)
+}
+.Button {
+	FONT-SIZE: 10px; CURSOR: pointer
+}
+.ButtonBig {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 14px; CURSOR: pointer; PADDING-TOP: 3px
+}
+.input {
+	FONT-SIZE: 12px
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #1f3c5f; LINE-HEIGHT: 20px
+}
+.title1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #1f3c5f; LINE-HEIGHT: 20px
+}
+.font2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; LINE-HEIGHT: 22px
+}
+.InputAddrTextArea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; HEIGHT: 20px! important
+}
+.autofinish {
+	BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #000000 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; BORDER-LEFT: #000000 1px solid; COLOR: #0000cc; PADDING-TOP: 2px; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: arial
+}
+.autofinish_bg0 {
+	BACKGROUND: #eeeeee
+}
+.autofinish_bg1 {
+	BACKGROUND: #dddddd
+}
+.autofinish_over {
+	FONT-SIZE: 12px; BACKGROUND: #c4e4ff; MARGIN: 5px; COLOR: #0000cc
+}
+.autofinish TD {
+	FONT-SIZE: 12px
+}
+.linktype {
+	CURSOR: pointer; COLOR: #244166
+}
+.font_red {
+	COLOR: #ff0000
+}
+.menuskin {
+	BORDER-RIGHT: #666666 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #666666 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 12px; VISIBILITY: hidden; BORDER-LEFT: #666666 1px solid; LINE-HEIGHT: 18px; PADDING-TOP: 5px; BORDER-BOTTOM: #666666 1px solid; POSITION: absolute; BACKGROUND-COLOR: #efefef
+}
+.addressarea {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; OVERFLOW: auto; BORDER-LEFT: #cccccc 1px solid; WIDTH: 100%; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f5f5f5
+}
+.font_Unread {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0066cc
+}
+.onmouseover {
+	FONT-SIZE: 12px; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #f5faff
+}
+.onmouseout {
+	FONT-SIZE: 12px; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #ffffff
+}

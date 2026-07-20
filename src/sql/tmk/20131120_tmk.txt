@@ -1,0 +1,2 @@
+alter table course_page add(isnull  number(1) default 0 NOT NULL);
+commit;

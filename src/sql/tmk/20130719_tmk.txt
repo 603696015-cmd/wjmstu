@@ -1,0 +1,70 @@
+create or replace procedure checkClassExamIsPass(classid_ number,userid_ number,flag_ out number)
+as
+roomid_ number;--保存培训班结业考场
+ispassed_ number;--保存考场是否通过
+count_ number;--保存用户是否考过试了
+begin
+  roomid_:=0;
+  ispassed_:=0;
+  count_:=0;
+  select examroomid into roomid_ from elclass_assign_examroom where classid=classid_;
+  --dbms_output.put_line(roomid_);
+  if roomid_>0 then--存在培训班结业考场
+    select count(1) into count_ from study_room where userid=userid_ and roomid=roomid_;
+    --dbms_output.put_line(count_);
+    if count_>0 then--用户考过试
+      select ispassed into ispassed_ from study_room where userid=userid_ and roomid=roomid_;
+      --dbms_output.put_line(ispassed_);
+      if ispassed_=1 then--用户就考试通过
+        flag_:=1;
+      end if;
+    end if;
+  end if;
+end;
+
+
+
+
+
+
+
+
+
+create or replace procedure sc_setmycpage(userid_ number,
+                                              roomid_ number)
+as
+cpid_ number;--章节id
+ispassed_ number;--用户是否考试通过
+courseid_ number;--章节对应的课程id
+course_roomid_ number;--课程对应的结业考场id
+classid_ number;--章节对应课程对应的培训班id
+begin
+  cpid_:=0;
+  ispassed_:=0;
+  courseid_:=0;
+  classid_:=0;
+  course_roomid_:=0;
+  --1判断考场是否通过
+  select ispassed into ispassed_ from study_room where userid=userid_ and roomid=roomid_;
+  if ispassed_=1 then
+    select cpid into cpid_ from exam_room where id=roomid_;--章节id
+    if cpid_!=0 then
+      select courseid into courseid_ from course_page where id=cpid_;
+      --获取课程结业考场有问题
+      --如果一个课程绑定多个培训班和考场的情况
+      select classid into classid_ from study_course where courseid=courseid_ and userid=userid_;
+      --select id into course_roomid_ from exam_room where courseid=courseid_ and isnormal=1  and (cpid=0 or cpid is null);
+  	  --if course_roomid_!=0 then
+  	      --select classid into classid_ from class_course where courseid =courseid_ and eroomid=course_roomid_;
+  		  --判断该章节对应考场是否都通过
+    		  ispassed_:=get_cpage_examrooms_passed(userid_,courseid_,cpid_);
+    		  dbms_output.put_line(classid_);
+    		  if classid_>0 then
+    			 update study_cpage set passed2=1,process=100.00,process_t=50.00 where userid=userid_ and cpid=cpid_;
+    			 sc_cpage_tprocess(userid_,cpid_,classid_);
+    		  end if;
+  	  --end if;
+    end if;
+  end if;
+end;
+

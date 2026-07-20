@@ -1,0 +1,238 @@
+.NavBar1 {
+	MARGIN-TOP: 10px; Z-INDEX: 2; MARGIN-BOTTOM: -1px; POSITION: relative; HEIGHT: 35px
+}
+.NavBar1 .Logo {
+	PADDING-LEFT: 7px; FLOAT: left; WIDTH: 185px
+}
+.NavBar1 .Menu {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 3px
+}
+.NavBar1 .Menu LABEL {
+	DISPLAY: inline; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_003.gif) no-repeat 0px 0px; FLOAT: left; MARGIN-LEFT: 2px; WIDTH: 96px; CURSOR: pointer; LINE-HEIGHT: 30px; PADDING-TOP: 2px; TEXT-ALIGN: center
+}
+.NavBar1 .Menu LABEL A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+.NavBar1 .Menu LABEL.selected {
+	COLOR: #fff
+}
+.NavBar1 .Menu LABEL.selected A {
+	COLOR: #fff
+}
+.NavBar1 .Menu LABEL.selected A:hover {
+	TEXT-DECORATION: underline
+}
+.NavBar1 .N_Link {
+	MARGIN-TOP: 8px; FLOAT: right
+}
+.NavBar1 .N_Link LABEL {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 32px; BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_004.gif) no-repeat 0px 0px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #737373; LINE-HEIGHT: 24px; PADDING-TOP: 0px
+}
+.NavBar1 .N_Link LABEL A {
+	COLOR: #737373; TEXT-DECORATION: none
+}
+.NavBar1 .N_Link LABEL A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.NavBar1 .N_Link .ico_01 {
+	BACKGROUND-POSITION: 6px 0px
+}
+.NavBar1 .N_Link .ico_02 {
+	BACKGROUND-POSITION: 6px -50px
+}
+.NavBar1 .N_Link .ico_03 {
+	BACKGROUND-POSITION: 6px -100px
+}
+.NavBar2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_002.gif) repeat-x 0px 0px; PADDING-BOTTOM: 0px; COLOR: #fff; LINE-HEIGHT: 30px; PADDING-TOP: 2px; ZOOM: 1
+}
+.NavBar2 A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.NavBar2 A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.NavBar2 A:hover {
+	TEXT-DECORATION: underline
+}
+.NavBar3 {
+	HEIGHT: 37px;
+	background-image: url(../images/book_mj_005.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 1000px;
+	clear: both;
+}
+.NavBar4 {
+	HEIGHT: 37px;
+	width: 950px;
+	clear: both;
+}
+.NavBar3 .Form_L {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #6e6e6e; PADDING-TOP: 5px
+}
+.NavBar3 .Form_R {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 50px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 4px; HEIGHT: 27px
+}
+.NavBar3 .button_01 {
+	BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_006.gif) no-repeat 0px 0px; WIDTH: 51px; COLOR: #6d6d6d; BORDER-TOP-STYLE: none; LINE-HEIGHT: 20px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 19px; BORDER-BOTTOM-STYLE: none
+}
+.NavBar3 .button_02 {
+	BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_008.gif) no-repeat 0px 0px; WIDTH: 51px; COLOR: #fff; BORDER-TOP-STYLE: none; LINE-HEIGHT: 20px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 19px; BORDER-BOTTOM-STYLE: none
+}
+.NavBar3 .button_022 {
+	WIDTH: 51px;
+	COLOR: #fff;
+	BORDER-TOP-STYLE: none;
+	LINE-HEIGHT: 20px;
+	BORDER-RIGHT-STYLE: none;
+	BORDER-LEFT-STYLE: none;
+	HEIGHT: 19px;
+	BORDER-BOTTOM-STYLE: none;
+	background-image: url(../images/login_button_1.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+.NavBar3 .input_01 {
+	BORDER-RIGHT: #c8c8c8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #c8c8c8 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; BORDER-LEFT: #c8c8c8 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #c8c8c8 1px solid; HEIGHT: 14px
+}
+.NavBar3 A:link {
+	COLOR: #6e6e6e; TEXT-DECORATION: none
+}
+.NavBar3 A:visited {
+	COLOR: #6e6e6e; TEXT-DECORATION: none
+}
+.NavBar3 A:hover {
+	COLOR: #d7b15c; TEXT-DECORATION: underline
+}
+.NavBar3 .input_02 {
+	BORDER-RIGHT: #c8c8c8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #c8c8c8 1px solid; PADDING-LEFT: 20px; BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_007.gif) #fff no-repeat 5px 3px; PADDING-BOTTOM: 2px; BORDER-LEFT: #c8c8c8 1px solid; COLOR: #666; PADDING-TOP: 2px; BORDER-BOTTOM: #c8c8c8 1px solid; HEIGHT: 14px
+}
+.NavBar4 {
+	HEIGHT: 37px;
+	width: 950px;
+	clear: both;
+}
+.NavBar4 .Form_L {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #6e6e6e; PADDING-TOP: 10px
+}
+.NavBar4 .Form_R {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 50px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 10px; HEIGHT: 27px
+}
+.NavBar4 .button_01 {
+	BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_006.gif) no-repeat 0px 0px; WIDTH: 51px; COLOR: #6d6d6d; BORDER-TOP-STYLE: none; LINE-HEIGHT: 20px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 19px; BORDER-BOTTOM-STYLE: none
+}
+.NavBar4 .button_02 {
+	BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_008.gif) no-repeat 0px 0px; WIDTH: 51px; COLOR: #fff; BORDER-TOP-STYLE: none; LINE-HEIGHT: 20px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 19px; BORDER-BOTTOM-STYLE: none
+}
+.NavBar4 .button_022 {
+	WIDTH: 51px;
+	COLOR: #fff;
+	BORDER-TOP-STYLE: none;
+	LINE-HEIGHT: 20px;
+	BORDER-RIGHT-STYLE: none;
+	BORDER-LEFT-STYLE: none;
+	HEIGHT: 19px;
+	BORDER-BOTTOM-STYLE: none;
+	background-image: url(../images/login_button_1.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+.NavBar4 .input_01 {
+	BORDER-RIGHT: #c8c8c8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #c8c8c8 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; BORDER-LEFT: #c8c8c8 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #c8c8c8 1px solid; HEIGHT: 14px
+}
+.NavBar4 A:link {
+	COLOR: #6e6e6e; TEXT-DECORATION: none
+}
+.NavBar4 A:visited {
+	COLOR: #6e6e6e; TEXT-DECORATION: none
+}
+.NavBar3 A:hover {
+	COLOR: #d7b15c; TEXT-DECORATION: underline
+}
+.NavBar4 .input_02 {
+	BORDER-RIGHT: #c8c8c8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #c8c8c8 1px solid; PADDING-LEFT: 20px; BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_007.gif) #fff no-repeat 5px 3px; PADDING-BOTTOM: 2px; BORDER-LEFT: #c8c8c8 1px solid; COLOR: #666; PADDING-TOP: 2px; BORDER-BOTTOM: #c8c8c8 1px solid; HEIGHT: 14px
+}
+#N_Menu_1 {
+	BACKGROUND-POSITION: 0px -250px; WIDTH: 74px
+}
+#N_Menu_2 {
+	BACKGROUND-POSITION: 0px -250px; WIDTH: 74px
+}
+.selected#N_Menu_1 {
+	BACKGROUND-POSITION: 0px -300px
+}
+.selected#N_Menu_6 {
+	BACKGROUND-POSITION: 0px -50px
+}
+.selected#N_Menu_3 {
+	BACKGROUND-POSITION: 0px -100px
+}
+.selected#N_Menu_4 {
+	BACKGROUND-POSITION: 0px -150px
+}
+.selected#N_Menu_5 {
+	BACKGROUND-POSITION: 0px -200px
+}
+.selected#N_Menu_2 {
+	BACKGROUND-POSITION: 0px -300px
+}
+#N_Cont_2 {
+	DISPLAY: none
+}
+#N_Cont_3 {
+	DISPLAY: none
+}
+#N_Cont_1 {
+	DISPLAY: none
+}
+#N_Cont_5 {
+	DISPLAY: none
+}
+#N_Cont_6 {
+	DISPLAY: none
+}
+.NavBar32 {
+	HEIGHT: 37px;
+	background-image: url(../images/book_mj_0052.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 950px;
+	clear: both;
+}
+.NavBar32 .Form_L {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #6e6e6e; PADDING-TOP: 5px
+}
+.NavBar32 .Form_R {
+FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 4px; HEIGHT: 27px
+}
+.NavBar32 .button_01 {
+	BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_006.gif) no-repeat 0px 0px; WIDTH: 51px; COLOR: #6d6d6d; BORDER-TOP-STYLE: none; LINE-HEIGHT: 20px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 19px; BORDER-BOTTOM-STYLE: none
+}
+.NavBar32 .button_02 {
+	BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_008.gif) no-repeat 0px 0px; WIDTH: 51px; COLOR: #fff; BORDER-TOP-STYLE: none; LINE-HEIGHT: 20px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 19px; BORDER-BOTTOM-STYLE: none
+}
+.NavBar32 .input_01 {
+	BORDER-RIGHT: #c8c8c8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #c8c8c8 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; BORDER-LEFT: #c8c8c8 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #c8c8c8 1px solid; HEIGHT: 14px
+}
+.NavBar32 A:link {
+	COLOR: #6e6e6e; TEXT-DECORATION: none
+}
+.NavBar32 A:visited {
+	COLOR: #6e6e6e; TEXT-DECORATION: none
+}
+.NavBar32 A:hover {
+	COLOR: #d7b15c; TEXT-DECORATION: underline
+}
+.NavBar32 .input_02 {
+	BORDER-RIGHT: #c8c8c8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #c8c8c8 1px solid; PADDING-LEFT: 20px; BACKGROUND: url(http://www.sinaimg.cn/book/vipbook/st/book_mj_007.gif) #fff no-repeat 5px 3px; PADDING-BOTTOM: 2px; BORDER-LEFT: #c8c8c8 1px solid; COLOR: #666; PADDING-TOP: 2px; BORDER-BOTTOM: #c8c8c8 1px solid; HEIGHT: 14px
+}
+A {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+.z_title {
+	PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12px; FLOAT: left; COLOR: #bb0000; PADDING-TOP: 0px
+}

@@ -1,0 +1,552 @@
+
+-- 课程部门直达分配触发器
+CREATE or replace trigger  course_dep_add after insert on  course_dep for each row 
+declare depid_ number; courseid_ number; dlid_ number; drid_ number; userid_ number ;
+cursor dep_users is select eu.id FROM eluser eu left join department d on d.id = eu.depid where d.lid>=dlid_ and d.rid<=drid_;
+begin 
+    depid_:=:new.depid;
+    courseid_:= :new.courseid;
+    select lid ,  rid into dlid_,drid_ from department where id = depid_;
+    open dep_users ;
+    loop 
+         fetch dep_users into  userid_ ;
+         exit when dep_users%notfound; 
+         into_sc (userid_ , courseid_,0,1 ) ;
+    end loop;  
+    close dep_users ;
+end ; 
+-- 课程部门直达分配触发器(删除)
+create or replace trigger  course_dep_delete after delete  on course_dep  for each row 
+declare depid_ number; courseid_ number; dlid_ number; drid_ number; userid_ number ;cpid_ number;
+cursor dep_users is select eu.id FROM eluser eu left join department d on d.id = eu.depid where d.lid>=dlid_ and d.rid<=drid_;
+cursor c_cps is select cp.id FROM course_page cp where cp.courseid =  courseid_;
+begin   
+    depid_:=:old.depid;
+    courseid_:= :old.courseid;
+    select lid ,  rid into dlid_,drid_ from department where id = depid_;
+       open dep_users ;
+       loop 
+       fetch dep_users into  userid_ ;
+       exit when dep_users%notfound; 
+       begin 
+             delete from study_course where courseid = courseid_ and userid =  userid_;
+             open c_cps;
+             loop 
+             fetch c_cps into  cpid_ ;
+             exit when c_cps%notfound; 
+             begin 
+                  delete from study_cpage where userid =userid_ and cpid= cpid_;
+             end;
+             end loop;  
+             close c_cps ;
+       end;
+       end loop;  
+       close dep_users ;
+       
+end ;
+
+--- 培训班分配到部门
+
+CREATE or replace trigger  class_assign_add  after insert  on class_assign for each row
+declare depid_ number ; classid_ number;dlid_ number ;  drid_ number; userid_ number;  hasin_ number ; courseid_ number;status_ number; 
+cursor dep_users is select eu.id FROM eluser eu left join department d on d.id = eu.depid where d.lid>= dlid_ and d.rid<=drid_;
+cursor class_courses is select courseid,status FROM class_course where classid = classid_;
+begin 
+	 depid_ :=:new.depid;
+   classid_ :=:new.classid ;
+   select lid , rid into dlid_,drid_ from department where id = depid_;
+	 open dep_users;
+	  loop 
+      fetch dep_users into userid_;
+         exit when dep_users%notfound; 
+         begin
+              select count(*) into hasin_ from study_class where classid = classid_ and userid = userid_;
+              if hasin_ =0 then
+                  insert into study_class (classid,userid,applydate,status) values(  classid_,userid_,sysdate,2);
+              end if;
+             --分配培训班课程
+	            open class_courses ;
+              loop 
+                  fetch class_courses into courseid_,status_ ;
+                  exit when class_courses%notfound; 
+                  begin
+                       into_sc ( userid_ ,courseid_,classid_,status_);
+                  end;
+              end loop;
+              close class_courses ;
+         end;
+      end loop;
+	close dep_users;
+end ;
+--- 培训班分配到部门（删除）
+CREATE or replace trigger class_assign_delete after delete  on  class_assign for each row
+declare depid_ number ; classid_ number;dlid_ number;drid_ number;userid_ number;courseid_ number;cpid_ number; 
+cursor dep_users is select eu.id FROM eluser eu left join department d on d.id = eu.depid where d.lid>= dlid_ and d.rid<=drid_;
+cursor class_courses1 is select courseid FROM class_course where classid = classid_;
+cursor c_cps is select cp.id FROM course_page cp where cp.courseid =courseid_;
+begin 
+	 depid_ :=:old.depid;
+   classid_ :=:old.classid;
+	 select  lid , rid into dlid_,drid_ from department where id = depid_;
+	 open dep_users;
+   loop 
+	 fetch dep_users into userid_;
+	 exit when dep_users%notfound ;
+	 begin
+	 delete from study_class where classid= classid_ and userid = userid_;
+	--删除分配课程	
+			open class_courses1;
+      loop
+			fetch class_courses1 into  courseid_; 
+			exit when class_courses1%notfound;
+        begin
+          delete from study_class where userid = userid_ and classid =  classid_ ;
+          delete from study_course where userid = userid_ and courseid = courseid_;
+          --shan删除章节
+          open c_cps ;
+          loop 
+              fetch  c_cps into  cpid_ ;
+              exit when c_cps%notfound ;
+              begin
+                delete from study_cpage where userid = userid_ and cpid= cpid_;
+              end ;
+          end loop ;
+          close c_cps;
+        end ;
+        end loop;
+        close class_courses1;
+      end;
+	end loop;
+	close dep_users ;
+end ;
+---09-5 考场批次类别
+
+create table  erbatch_lib 
+   (  id  number not null  , 
+  name  varchar2(30) not null  , 
+   description  varchar2(600), 
+  parentid  number default 0 not null  , 
+   lid  number not null  , 
+   rid  number not null   
+);
+alter table erbatch_lib  add constraint erbatch_lib_pk primary key ( id ) ;
+ insert into erbatch_lib values(1,'根类别','',0,1,2);
+ 
+create  sequence erbatch_lib_sequence
+	increment by 1 -- 每次加几个
+	start with 1800 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_erbatch_lib before insert on erbatch_lib for each row 
+when (new.id is null)
+begin
+     select erbatch_lib_sequence.nextval into :new.id from dual;
+end;
+create table  erbatchlib_op_user 
+   (	"userid" number, 
+	"depid" number
+   )  ;
+   create table  erbatchlib_use_user 
+   (	"userid" number, 
+	"depid" number
+   )  ;
+   
+create table erbatch
+(
+  id          number not null,
+  title       varchar2(300) not null,
+  description varchar2(1000),
+  erblid      number default 0 not null
+)
+alter table erbatch  add constraint erbatch_lib_pk primary key ( id ) ;
+
+create sequence erbatch_sequence
+	increment by 1 -- 每次加几个
+	start with 1800 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_erbatch before insert on erbatch for each row 
+when (new.id is null)
+begin
+     select erbatch_sequence.nextval into :new.id from dual;
+end;
+
+create table erbatch_room(
+	roomid number not null,
+	erbid number not null  
+);
+--2011-9-14
+应用程序服务器 > server1 > 进程定义 > Java 虚拟机
+-Djava.compiler=NONE -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=7777
+"-Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Dfile.encoding.override=UTF-8 -Dfile.client.encoding=UTF-8"
+
+
+CREATE or replace procedure unassign_class(classid_ number,userid_ number) 
+as
+begin
+	 delete from study_class where classid = classid_ and userid =userid_;
+	 delete from study_course where classid = classid_ and userid = userid_;
+end
+
+
+create sequence mess_sequence
+	increment by 1 -- 每次加几个
+	start with 1800 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_mess before insert on message for each row 
+when (new.mess_id is null)
+begin
+     select mess_sequence.nextval into :new.mess_id from dual;
+end;
+
+---
+create table question_stuff
+(
+  id          NUMBER not null,
+  title       VARCHAR2(500),
+  description VARCHAR2(3000),
+  fileExt     VARCHAR2(10),
+  onwer       NUMBER,
+  modifytime  DATE,
+  createtime  DATE,
+  length      number not null,
+  type        NUMBER
+);
+alter table question_stuff
+  add constraint questuff_stuff_pk primary key (ID);
+alter table QUESTION_STUFF modify MODIFYTIME default sysdate;
+alter table QUESTION_STUFF modify CREATETIME default sysdate;
+create sequence question_stuff_sequence
+	increment by 1 -- 每次加几个
+	start with 1800 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_question_stuff before insert on question_stuff for each row 
+when (new.id is null)
+begin
+     select question_stuff_sequence.nextval into :new.id from dual;
+end;
+  
+alter table QUESTION_STUFF modify TYPE not null;
+alter table QUESTION_STUFF add parentid number default 0 not null;
+
+
+testing
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+alter table STUDY_QUIZINFO add jiashi number default 0 not null;
+alter table STUDY_QUIZINFO add PASSTIME_js number default 0 not null;
+ alter table course add roomid number default 0 not null;
+ alter table course add roomstart date default sysdate ;
+ alter table course add roomend date default sysdate ;
+ 
+ 
+ create table study_prac
+(
+  ppid     NUMBER not null,
+  userid   NUMBER not null,
+  myScore  NUMBER default 0 not null,
+  lasttime DATE default sysdate not null
+)
+;
+
+alter table course add teacherid number default 0;
+
+------------------日志--2012-1-8-
+create table  busilogs 
+   (  	id  number not null  , 
+  		userid number not null  , 
+   		opmod  number not null, 
+  		opcontent varchar(1000)  , 
+   		optime  date default sysdate not null  , 
+  	 	optype  number not null ,
+  	 	opresult number not null
+);
+alter table busilogs  add constraint busilogs_pk primary key ( id ) ;
+create  sequence busilogs_sequence
+	increment by 1 -- 每次加几个
+	start with 1800 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_busilogs before insert on busilogs for each row 
+when (new.id is null)
+begin
+     select busilogs_sequence.nextval into :new.id from dual;
+end;
+
+
+create table  syslogs 
+   (  	id  number not null  , 
+  		userid number not null  , 
+   		opmod  number not null, 
+  		opcontent varchar(1000)  , 
+   		optime  date default sysdate not null  , 
+  	 	optype  number not null 
+);
+alter table syslogs  add constraint syslogs_pk primary key ( id ) ;
+create  sequence syslogs_sequence
+	increment by 1 -- 每次加几个
+	start with 1 -- 从1开始计数
+	nomaxvalue -- 不设置最大值
+	nocycle -- 一直累加，不循环
+	cache 10 ;
+create trigger auto_id_syslogs before insert on syslogs for each row 
+when (new.id is null)
+begin
+     select syslogs_sequence.nextval into :new.id from dual;
+end;
+
+=------5-24----
+alter table study_course add tprocess number(20,2) default 0;
+
+CREATE OR REPLACE FUNCTION user_p_course2( courseid_ number, userid_ number,getcredit_ number,classid_ number )return number
+is sispassed_ number;cispassed_ number;passed_ number;
+BEGIN
+--  select  into sispassed_ from  where er.id = sqi.roomid and er.courseid= courseid_ and sqi.userid= userid_;
+  -- 获取课程学习是否完成，考场考试是否达标
+  select sc.passed,sr.ispassed into cispassed_,sispassed_ from study_course sc left join class_course cc on cc.courseid = sc.courseid and cc.classid = sc.classid left join study_room sr on sr.roomid = cc.eroomid  where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+  cispassed_ := nvl(cispassed_,0);
+  sispassed_ := nvl(sispassed_,0);
+  if getcredit_ = 1 and cispassed_=1 then -- 学习完成
+      passed_ := 1;
+  elsif getcredit_ = 2 and sispassed_ =1 then -- 考过
+      passed_ := 1;
+  elsif getcredit_ = 3 and cispassed_=1 then -- 考过且学过
+      if sispassed_ =1 then
+        passed_ := 1;
+      else
+        passed_ := 0;
+      end if;
+  else
+      passed_:=0;
+  end if;
+  return nvl(passed_,0) ;
+END ;
+
+
+CREATE OR REPLACE FUNCTION user_p_classcourse2( classid_ number,userid_ number,classcoursecredit_ number)return number
+is
+courseid_ number;ispassed_ number;sumcredit_ number;coursecredit_ number;setcredit_ number;getcredit_ number;
+cursor  CLASS_COURSE_B is SELECT courseid,credit,setcredit,getcredit FROM class_course where classid =classid_ and status = 0 and isdel!=-1;
+cursor  CLASS_COURSE_X is SELECT courseid,credit,setcredit,getcredit FROM class_course where classid =classid_ and status = 1 and isdel!=-1;
+BEGIN
+--   SELECT  courseid into FROM class_course where classid =classid_ and status = 0 ;
+--   select user_p_course(courseid_,userid_) into classid_ from dual;
+    open CLASS_COURSE_B;
+       loop
+       fetch CLASS_COURSE_B into courseid_,coursecredit_,setcredit_,getcredit_ ; --??
+          exit when CLASS_COURSE_B%notfound; --必修课程情况
+          select  user_p_course2( courseid_, userid_,getcredit_,classid_) into ispassed_  from dual ;
+          if ispassed_=0 then
+              return 0;
+          end if;
+       end loop;
+   close CLASS_COURSE_B;
+   sumcredit_:=0;
+   open CLASS_COURSE_X;
+       loop
+       fetch CLASS_COURSE_X into courseid_,coursecredit_,setcredit_,getcredit_ ; --??
+          exit when CLASS_COURSE_X%notfound; --选修课情况
+          select  user_p_course2( courseid_, userid_,getcredit_,classid_) into ispassed_  from dual ;
+          dbms_output.put_line(courseid_||'???=='||ispassed_||'---'||sumcredit_);
+          if ispassed_=1 then
+             sumcredit_:= sumcredit_+ setcredit_;
+          -- elsif ispassed_=2 then
+           --  sumcredit_:= sumcredit_+ setcredit_/2;
+          end if;
+       end loop;
+   close CLASS_COURSE_X;
+  if classcoursecredit_<=sumcredit_ then
+     return 1 ;
+  end if;
+  return 0 ;
+END ;
+
+create or replace procedure s_course_tprocess(  userid_ number,courseid_ number,classid_  number)
+as 
+    getcredit_ number; sispassed_ number;cispassed_ number;passed_ number;process_ number;cprocess_ number;
+begin
+    --courseid,credit,setcredit,
+    SELECT getcredit into getcredit_ FROM class_course where classid =classid_ and courseid= courseid_ and isdel!=-1;
+  -- 获取课程学习是否完成，考场考试是否达标
+  select sc.passed,sr.ispassed,sc.process into cispassed_,sispassed_,cprocess_ from study_course sc left join class_course cc on cc.courseid = sc.courseid and cc.classid = sc.classid left join study_room sr on sr.roomid = cc.eroomid where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    cispassed_ := nvl(cispassed_,0);
+    sispassed_ := nvl(sispassed_,0);
+    if getcredit_ = 1 then -- 学习完成
+        process_ := cprocess_;
+    elsif getcredit_ = 2 and sispassed_ =1 then -- 考过
+        process_:= 100;
+    elsif getcredit_ = 3 then -- 考过且学过
+        if sispassed_ =1 and cispassed_=1 then
+          process_ := 100;
+        elsif sispassed_=1 or cispassed_=1 then
+          process_ := 50;
+        end if;
+    else
+        process_:=0;
+    end if;
+    update study_course set tprocess = process_ where userid =userid_ and courseid=courseid_ and classid=classid_;
+end;
+
+create or replace procedure s_course2(   userid_ number, courseid_ number, passtime_ number,classid_ number)
+AS
+ ispassed_ number ; c_time_  number ;yxc_time_ number ; process_ number;
+BEGIN
+ select  passed into ispassed_ from study_course where userid=userid_ and courseid =courseid_ and classid=classid_;
+  if ispassed_ = 0 then
+      -- 学习未完成 记录进度
+      select during into c_time_ from course where id = courseid_;
+      select passtime into yxc_time_ from study_course where userid =  userid_ and courseid= courseid_ and classid=classid_;
+      yxc_time_ := yxc_time_+passtime_;
+      process_ := (yxc_time_*100)/(60*c_time_);
+      update study_course set passtime = yxc_time_,process= process_ where userid =  userid_ and courseid= courseid_ and classid=classid_;
+      -- 完毕
+      if  yxc_time_>=c_time_*60 then
+          update study_course set passtime = c_time_*60 ,passed = 1,process = 100,finishtime = sysdate where userid =userid_ and courseid=courseid_ and classid=classid_;
+      end if;
+      --记录总进度
+      s_course_tprocess(userid_,courseid_,classid_);
+    end if;
+END ;
+
+create or replace procedure sr_seteroom(userid_ number,roomid_ number) as
+  er_pg_ number;
+  er_tscore_ number;
+  qp_ispassed number;qp_tscore number; er_ispassed number default 0 ;
+   courseid_ number; classid_ number;
+cursor quizpassed is select ispassed from study_quizinfo where roomid = roomid_ and userid = userid_;
+--关联的培训班课程
+cursor class_courses is SELECT  cc.courseid,cc.classid FROM class_course cc left join study_room sr on sr.classid = cc.classid and  cc.eroomid=sr.roomid where sr.roomid = roomid_ and isdel!=-1;
+ begin
+     select passgrade into er_pg_ from exam_room where id = roomid_ ;
+     select sum(ep.ep_tscore) into er_tscore_ from exam_reps reps left join exampaper ep on ep.id = reps.epid where reps.roomid =roomid_;
+     select sum(myscore) into qp_tscore from study_quizinfo where roomid = roomid_ and userid = userid_;
+     open quizpassed;
+             loop
+                fetch quizpassed into qp_ispassed; --取值
+                exit when quizpassed%notfound; --当没有记录时退出循环
+                exit when qp_ispassed =0;
+             end loop;
+     close quizpassed;
+     if er_tscore_ =0 then
+        er_tscore_ := 1;
+     end if;
+     if qp_ispassed = 1 and qp_tscore * 100 / er_tscore_ >= er_pg_ then
+        er_ispassed := 1;
+     end if;
+     update study_room set myscore = nvl(qp_tscore,0),status =2,ispassed =nvl(er_ispassed,0) where roomid = roomid_ and userid = userid_;
+     --相关绑定的考场的课程进度计算
+     open class_courses;
+             loop
+                fetch class_courses into  courseid_, classid_ ; --取值
+                exit when class_courses%notfound; --当没有记录时退出循环
+                s_course_tprocess(userid_,courseid_,classid_ );
+             end loop;
+     close class_courses;
+end ;
+
+create or replace procedure s_cpage2 (userid_ number, cpid_ number,passtime_ number,classid_ number )
+ AS ispassed_ number ; cp_time_ number ; yxcp_time_ number ;  courseid_ number ;
+BEGIN
+  -- ??????
+  select  passed into ispassed_ from study_cpage where userid=userid_ and cpid =cpid_ and classid=classid_ ;
+    if ispassed_= 0 then
+      -- ??????
+      update study_cpage set passtime = passtime+passtime_ where userid = userid_ and cpid=cpid_ and classid=classid_;
+        select during,courseid into cp_time_,  courseid_ from course_page where id = cpid_;
+      select  passtime into yxcp_time_ from study_cpage where userid = userid_ and cpid=cpid_ and classid=classid_;
+      -- ????????
+      if yxcp_time_>=cp_time_*60 then
+          update study_cpage set passtime = cp_time_*60 ,passed = 1,endtime =sysdate where userid = userid_ and cpid=cpid_ and classid=classid_ ;
+      end if ;
+      -- ??????
+      s_course_cp2 (userid_,courseid_,classid_ );
+      s_course_tprocess(userid_,courseid_,classid_);
+    end if;
+END;
+
+---0615打字算法的更新
+alter table exam_room add ertype number default 0;
+alter table study_questions add opstatus number default 0;
+
+
+create or replace function getDzScoreandStatus( myanswer varchar2 ,q_rules varchar2,age number)
+return varchar2 is
+v number;r number;rwcl number;wcl number;--mt number;
+vimin number;vimax number;
+a number;b number;t number; N number;L number;
+age_b number ;age_e number;
+l_idx number ; rules_ varchar2(4000);
+status_ varchar2(4000);score_ varchar2(4000);
+begin
+    --?????1?????2??????3???
+    if q_rules is null or ''= trim(q_rules) then
+       return '0:'||'-3';
+    end if;
+    v := nvl(trim(getSub(myanswer,'-=SpEl=-',3)),0);
+    r := nvl(trim(getSub(myanswer,'-=SpEl=-',2)),0);
+    L := nvl(trim(getSub(myanswer,'-=SpEl=-',4)),0);
+    /*if mt = 0 then
+       v:=0;
+    else
+       v:= r/(mt*60) ;
+    end if;*/
+    a := nvl(trim(getSub(q_rules,'-=SpRule-',1)),0);
+    b := nvl(trim(getSub(q_rules,'-=SpRule-',2)),0);
+    t := nvl(trim(getSub(q_rules,'-=SpRule-',3)),0);
+    rules_ := trim(getSub(q_rules,'-=SpRule-',4)) ;
+    dbms_output.put_line('rules_=='||rules_);
+    l_idx :=0;
+    while l_idx<=100 loop
+        age_b := nvl(trim(getSub(rules_,':',l_idx*4+1)),0);
+        age_e := nvl(trim(getSub(rules_,':',l_idx*4+2)),0);
+        dbms_output.put_line('age_b=='||age_b||'age_e=='||age_e||'l_idx==='||l_idx);
+        if age_b <= age and age <= age_e then
+           vimin :=nvl(trim(getSub(rules_,':',l_idx*4+3)),0) ;
+           vimax :=nvl(trim(getSub(rules_,':',l_idx*4+4)),0) ;
+           exit;
+        end if;
+        l_idx:=l_idx+1;
+    end loop;
+    N := t * vimax ;--* 60;
+    if N>0 then
+        rwcl := r/N +0.6;--+0.6;
+        if rwcl>1 then
+           rwcl :=1;
+        end if;
+        wcl := r/L ;--+0.6;
+        if wcl>1 then
+           wcl :=1;
+        end if;
+        dbms_output.put_line('v=='||v||'age=='||age||'vimin=='||vimin||'vimax=='||vimax||'t=='||t||'r=='||r||'a=='||a||'b=='||b);
+        if v < vimin then
+           score_ :=  (rwcl *0.6* a * v) / vimin + b * wcl ;
+           status_:=0;
+        elsif  v >= vimin and v < vimax   then
+           score_ := rwcl *0.6* a + rwcl *0.4* a * (v - vimin) / (vimax - vimin) + b * wcl;
+           status_:=1;
+        else
+           score_ := rwcl * a + b * wcl ;
+           status_:=1;
+        end if;
+    end if;
+    if score_ <0.6*(a+b) then
+       status_:=0;
+    end if;
+    if score_> (a+b) then
+       score_:=a+b;
+    end if;
+    return score_||':'||status_;
+end ;
+

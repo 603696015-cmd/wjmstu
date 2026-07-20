@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="insure_online" extends="elearning">
+		<action name="insure_online"
+				 class="com.sopia.pfms.action.InsureAction"
+				 method="insure_online">
+			<result name="insure_online">
+				pfms/insureList_online.jsp
+			</result>
+		</action>
+		
+		<action name="insure_baodan"
+				 class="com.sopia.pfms.action.InsureAction"
+				 method="insure_baodan">
+			<result name="insure_baodan">
+				pfms/insure_baodan.jsp
+			</result>
+		</action>
+		
+		<action name="combinationSearchBaoxianProductInit"
+				 class="com.sopia.pfms.action.InsureAction"
+				 method="combinationSearchBaoxianProductInit">
+			<result name="combinationSearchBaoxianProductInit">
+				pfms/combinationSearchBaoxianProduct.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>

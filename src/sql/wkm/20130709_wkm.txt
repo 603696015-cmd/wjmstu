@@ -1,0 +1,8 @@
+alter table question add fasheng_question varchar2(100);
+alter table question add right_answer varchar2(100);
+
+
+------´óÌâĞŞ¸Ä
+
+alter table exampaperblock add answertime number;
+alter table exampaperblock add secondscore number(6,2);

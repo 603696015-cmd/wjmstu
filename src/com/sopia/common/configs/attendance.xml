@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_attendance" extends="elearning">
+		
+		<action name="updateWorkAttendanceById"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="updateWorkAttendanceById">
+			<result name="updateWorkAttendanceById" type="redirectAction">
+				viewWorkAttendance.action?id=${id}
+			</result>
+		</action>
+		
+		<action name="attendanceSetupInit"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="attendanceSetupInit">
+			<result name="attendanceSetupInit_success">
+				admin/attendance/attendanceSetup.jsp
+			</result>
+		</action>
+		
+		<action name="attendanceSetup"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="attendanceSetup">
+			<result name="attendanceSetup_success">
+				admin/attendance/attendanceSetup.jsp
+			</result>
+		</action>
+		
+		<action name="select_weekdaytime"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="select_weekdaytime">
+			<result name="select_weekdaytime">
+				admin/attendance/select_weekdaytime.jsp
+			</result>
+		</action>
+		<action name="view_weekdaytime"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="view_weekdaytime">
+			<result name="view_weekdaytime">
+				admin/attendance/view_weekdaytime.jsp
+			</result>
+		</action>
+		
+		
+		<action name="myAttendance"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="myAttendance">
+			<result name="myAttendance_success">
+				admin/attendance/myAttendance.jsp
+			</result>
+		</action>
+		
+		<action name="attendanceQuery"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="attendanceQuery">
+			<result name="attendanceQuery">
+				admin/attendance/attendanceQuery.jsp
+			</result>
+		</action>
+		
+		<action name="addWorkAttendance"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="addWorkAttendance">
+			<result name="addWorkAttendance_failure" type="redirectAction">
+				myAttendance.action?elmessage=${elmessage}
+			</result>
+			<result name="addWorkAttendance" type="redirectAction">
+				myAttendance.action?elmessage=${elmessage}
+			</result>
+		</action>
+		
+		<action name="viewWorkAttendance"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="viewWorkAttendance">
+			<result name="viewWorkAttendance" >
+				admin/attendance/viewWorkAttendance.jsp
+			</result>
+		</action>
+		
+		<action name="attendanceOrder"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="attendanceOrder">
+			<result name="attendanceOrder" >
+				admin/attendance/attendanceOrder.jsp
+			</result>
+		</action>
+		
+		<action name="getStatus"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="getStatus">
+		</action>
+		
+		<action name="fieldMark"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="fieldMark">
+			<result name="fieldMark" >
+				admin/attendance/fieldMark.jsp
+			</result>
+		</action>
+		
+		<action name="updateMacInit"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="updateMacInit">
+			<result name="updateMacInit_success" >
+				admin/attendance/updateMac.jsp
+			</result>
+		</action>
+		
+		<action name="updateMac"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="updateMac">
+			<result name="updateMac_success" type="redirectAction">
+				attendanceSetupInit.action
+			</result>
+		</action>
+		
+		<action name="selectRelateLeave"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="selectRelateLeave">
+			<result name="selectRelateLeave" >
+				admin/attendance/selectRelateLeave.jsp
+			</result>
+		</action>
+		<action name="sign"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="sign">
+			<result name="sign" type="redirectAction">
+				study_index.action
+			</result>
+		</action>
+		
+		<action name="getSignTuiResult"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="getSignTuiResult">
+		</action>
+		<action name="updateResultByUserIdAndDate"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="updateResultByUserIdAndDate">
+		</action>
+		<action name="checkMacByUserId"
+			class="com.sopia.attendance.action.AttendanceAction"
+			method="checkMacByUserId">
+		</action>
+		
+	</package>
+</struts>

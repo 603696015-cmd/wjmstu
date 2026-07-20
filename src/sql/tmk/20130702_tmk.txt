@@ -1,0 +1,77 @@
+--外经贸
+
+--保存定级信息表
+-- Create table
+create table CLASSIFICATION
+(
+  NAME       VARCHAR2(100) not null,
+  SCOREBEGIN NUMBER not null,
+  SCOREEND   NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  --章节学习顺序控制--
+  create or replace procedure checkpagecanlearn(sortid_ number,courseid_ number,userid_ number,flag_ out number)
+as
+id_ number;--保存课程章节分配表中的id
+skipable_ number;--保存是否可跳过
+passed_ number;--保存章节完成情况
+count_ number;--保存是否有该章节的学习情况
+
+begin
+  skipable_:=0;
+  passed_:=0;
+  count_:=0;
+  select id,skipable into id_,skipable_ from course_page where courseid=courseid_ and sortid=sortid_;
+  if skipable_=1 then--可跳过
+     flag_:=1;
+  else--不可跳过
+     select count(1) into count_ from STUDY_CPAGE where userid=userid_ and cpid=id_ ;
+     if count_>0 then--用户有学习情况
+          --判断是否学完该章节
+          select passed into passed_ from STUDY_CPAGE where userid=userid_ and cpid=id_;
+          if passed_=1 then --学完
+              flag_:=1;
+          else --未学完
+              flag_:=0;
+          end if;
+     else--用户无学习情况
+          flag_:=0;
+     end if;
+  end if;
+end;
+------------------------------------------------------------------
+
+
+alter table elclass_assign_examroom add(firstlearnlaterexam  number  );
+alter table elclass_assign_examroom add(standardline  number  );
+
+
+
+
+----------
+create or replace procedure assign_examroom
+(classid_ number,examroomid_ number,firstLearnLaterExam_ number,standardLine_ number)
+as
+insc number;
+begin
+     insc:=0;
+     select count(1) into insc from elclass_assign_examroom where classid=classid_ and examroomid=examroomid_;
+     if insc=0 then
+          insert into elclass_assign_examroom(classid,examroomid,firstLearnLaterExam,standardLine) values (classid_,examroomid_,firstLearnLaterExam_,standardLine_);
+     else
+          update elclass_assign_examroom set examroomid=examroomid_,firstLearnLaterExam=firstLearnLaterExam_,standardLine=standardLine_ where classid=classid_ and examroomid = examroomid_;
+     end if;
+end;
+---------

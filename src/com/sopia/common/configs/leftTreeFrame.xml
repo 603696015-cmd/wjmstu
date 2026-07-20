@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="leftTreeFrame" extends="elearning">
+		<!-- 左树 -->
+		
+		<action name="showledtTreeFrame_department"
+			class="com.sopia.LeftTreeAction"
+			method="showledtTreeFrame_department">
+			<result name="showleftTreeFrame_department">
+				admin/lefttree/showleftTreeFrame_department.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+
+</struts>

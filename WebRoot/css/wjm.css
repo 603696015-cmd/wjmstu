@@ -1,0 +1,83 @@
+/*公共样式*/
+body,div,ul,li,img,a,h2,h1,h3,p,input,form,dl,dt,dd{
+	margin:0;
+	padding:0;
+	border:0;
+	color: #FFF;}
+body{
+	font-famile:Arial, '宋体', sans-serif;
+	background-color: #000060;
+}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#fff; cursor:pointer;}
+img,input{background:none;}
+
+.clearFix:after{
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	line-height:0;
+	conter:0;
+}
+.clearFix{zoom:1;}
+
+#all{
+	width:990px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	background-image: url(../images/xybg.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+
+/*头部样式开始*/
+#bluebg_top{overflow:auto;}
+#head{background:url(../images/handbg1.png) no-repeat bottom;width:950px;height:130px;margin:0 auto;}
+#head #schedule{background:url(../images/schedule_bg.gif) no-repeat  left bottom;width:740px;height:44px; margin-left:122px;}
+#head #schedule p{background:url(../images/schedul.png) no-repeat left bottom; margin-left:7px;}
+#zhang{margin-top:20px; width:748px;float:right; overflow:hidden;zoom:1;}	
+#zhang ul li{float:left;margin-right:12px;background:url(../images/jbie_bgh.png) no-repeat;width:49px;height:42px; text-align:left;}
+#zhang ul li p{background:url(../image/jibie_bgb.png) no-repeat;width:49px; height:42px;font-size:2em; text-align:center;}
+#fanhui{float:left; width:80px;height:80px; margin-left:13px;display:inline;}
+#JZ{margin-top:5px; float:right;}	
+#JZ ul{width:748px;}
+#JZ ul li{float:left; width:31px; height:30px;background:url(../images/xing.png) no-repeat; text-align:left; margin-left:31px; display:inline;}
+#JZ ul li p{height:30px;background:url(../images/xing_z.png) no-repeat;}
+#danyuan{background:url(../images/bottom.png) no-repeat center; height:53px;}
+#danyuan_cent{width:930px;margin:0 auto;height:53px;}
+#danyuan_cent ul{margin:0 auto;}
+#danyuan_cent li{float:left; background:url(../images/xing_h.png); width:53px;margin-left:8px;}
+#danyuan_cent li p{ background:url(../images/xing_g.png);height:53px;line-height:53px;color:red; font-size:2em; font-weight:bold;}
+#danyuan_cent li p span{ display:block; width:30px;margin-left:10px;}
+/*中部样式开始*/
+#center{}	
+/*#center_l{background:url(../images/center_l.png) no-repeat;width:207px;float:left; height:493px; margin-left:15px;display:inline;}	
+#center_l p{background:url(../images/cl_anniu.png) no-repeat center;height:47px;line-height:47px;}
+#center #fudaofen{background:url(../images/score.png) no-repeat top;height:35px; float:left;width:189px;margin:0 5px;}
+#close{margin-top:18px; text-align:right;width:98%;float:left;}*/
+#center_r{width:100%; margin-top:5px;height:432px;}
+#center #center_r #center_bg{background:url(../images/center_bg.png) center no-repeat; height:420px; overflow:hidden;}
+#center #center_r #center_bg td{height:52px; line-height:52px; font:bold;}
+#center #center_r #center_bg td p{margin-left:15px;}
+/*#center_r #name{background: url(../images/xingming.gif) no-repeat; height:35px;line-height:35px; width:207px;left:35%; text-align:center; color:#fff; margin:0 auto;}
+#center_r #center_rdj{height:100px; width:540px; text-align:right; color: #FFF;}
+#center_r #center_rdj h1{ font-size:2em;}
+#center_r #anniu{margin-top:40px;}
+#center_r #anniu p{heigth:53px; line-height:53px;width:100%;}
+#center_r #anniu h1{font-size:24px;}
+#ceyan{width:116px;margin:0 auto; height:60px; text-align:center; color:#fff;}*/
+#bluebg_bot{
+	height: 450px;
+}
+
+/*底部样式开始*/
+#bottom{background:url(../images/bottom.png) no-repeat center;width:100%;height:75px;float:left; margin-top:5px;line-height:70px;text-align:center;}
+#bottom h1{ font-size:3em;}
+#bottom #bottom_b{margin-top:6px;margin-right:5px; overflow:auto;zoom:1;width:100%; }
+#bottom #bottom_b ul li{background:url(../images/bt_anh.png) no-repeat;width:63px;height:57px;float:left; text-align:left;overflow:hidden;}
+#bottom #bottom_b ul li p{background:url(../images/bt_an.png) no-repeat left;height:57px; width:63px; font-size:2em;text-align:left; }
+#bottom #bottom_b ul li p span{display:block;width:30px; margin-left:15px;}

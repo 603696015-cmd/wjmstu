@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_workCourseSet" extends="elearning">
+		<action name="work_course_set" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="work_course_set">
+			<result name="work_course_set">
+				workcourseset\work_course_set.jsp
+			</result>
+		</action>
+		<action name="work_course_alterInit" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="work_course_alterInit">
+			<result name="work_course_alter">
+				workcourseset\work_course_alter.jsp
+			</result>
+		</action>
+		<action name="work_course_alter" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="work_course_alter">
+			<result name="work_course_set"  type="redirectAction">
+				work_course_set
+			</result>
+		</action>
+		
+		<action name="work_course_addInit" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="work_course_addInit">
+			<result name="work_course_add">
+				workcourseset\work_course_add.jsp
+			</result>
+		</action>
+		<action name="work_course_add" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="work_course_add">
+			<result name="work_course_set"  type="redirectAction">
+				work_course_set
+			</result>
+		</action>
+		
+		<action name="elclass_course_select" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="elclass_course_select">
+			<result name="elclass_course_select">
+				workcourseset\elclass_course_select.jsp
+			</result>
+		</action>
+		<action name="course_select" 
+			class="com.sopia.workcourseset.action.WorkCourseAction"
+			method="course_select">
+		</action>
+	</package>
+</struts>

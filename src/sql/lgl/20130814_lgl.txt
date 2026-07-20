@@ -1,0 +1,69 @@
+
+//创建词汇表
+create table vocabulary(
+  id number NOT NULL PRIMARY KEY,
+  name varchar(200),
+  adduserid number,
+  alteruserid number,
+  addtime date,
+  altertime date,
+  wordid number,
+  pinyin varchar(300),
+  duyin varchar(300),
+  wenzijieshi varchar(500),
+  shengyinjieshi varchar(500),
+  wenziliju varchar(500),
+  lijulangdu varchar(300),
+  status number
+)
+
+
+create  SEQUENCE  vocabulary_sequence
+  increment by 1 -- 每次加几个
+  start with 1 -- 从1开始计数
+  nomaxvalue -- 不设置最大值
+  nocycle -- 一直累加，不循环
+  cache 10 ;
+  
+  create or replace trigger auto_id_vocabulary  before insert on vocabulary for each row
+when (new.id is null)
+begin
+     select vocabulary_sequence.nextval into :new.id from dual;
+end;
+
+
+
+//创建词汇例句表
+
+create table vocabulary_sentences(
+    id number NOT NULL PRIMARY KEY,
+ 	vocabularyid number,
+ 	lijuwenzi varchar(500),
+ 	shengyinwenjian varchar(300)
+ 	
+)
+
+create  SEQUENCE  vocabulary_sentences_sequence
+  increment by 1 -- 每次加几个
+  start with 1 -- 从1开始计数
+  nomaxvalue -- 不设置最大值
+  nocycle -- 一直累加，不循环
+  cache 10 ;
+  
+  create or replace trigger auto_id_vocabulary_sentences  before insert on vocabulary_sentences for each row
+when (new.id is null)
+begin
+     select vocabulary_sentences_sequence.nextval into :new.id from dual;
+end;
+
+
+
+insert into ELFUNC ( FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values ( '词汇管理', '词汇管理', null, 2740, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+insert into ELFUNC ( FUNCCODE, NAME, DESCRIPTION, PARENTID, NEEDCHECK, PARAMS, TARGET, DYIMG, BGIMG, LINKIMG)
+values ( 'vocabulary_listInit', '词汇列表', null, 4218, 0, null, 'rightFrame', 'default_dy.jpg', 'default_bg.jpg', 'default_link.jpg');
+
+
+注：词汇管理上级ID 是 “教学资源”；词汇列表上级ID是 “词汇管理”。将“词汇管理”“词汇列表”功能分配给“超级管理员”
+

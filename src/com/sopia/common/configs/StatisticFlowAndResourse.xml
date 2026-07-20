@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_StatisticFlowAndResourse" extends="elearning">
+		<action name="displayFlowInfo" 
+			class="com.sopia.statman.action.StatisticFlowAndResourse"
+			method="displayFlowInfo">
+			<result name="displayFlowInfo">
+				admin\statistic\flowAndResourse\displayFlowInfo.jsp
+			</result>
+		</action>
+		<!-- 资源统计 -->
+		<action name="resourcesstatistics"
+			class="com.sopia.statman.action.StatisticFlowAndResourse"
+			method="resourcesstatistics">
+			<result name="resourcesstatistics">
+				admin/statistic/flowAndResourse/resourcesstatistics.jsp
+			</result>
+		</action>
+		<!-- 在线学习统计 -->
+		<action name="studyCourseStatistics"
+			class="com.sopia.statman.action.StatisticFlowAndResourse"
+			method="studyCourseStatistics">
+			<result name="studyCourseStatistics">
+				admin/statistic/flowAndResourse/studyCourseStatistics.jsp
+			</result>
+		</action>
+		<!-- 根据搜索条件删除统计 -->
+		<action name="delCeRecordInfo"
+			class="com.sopia.statman.action.StatisticFlowAndResourse"
+			method="delCeRecordInfo">
+			<result name="studyCourseStatistics" type="redirectAction">
+				studyCourseStatistics.action
+			</result>
+			<result name="studyQuizStatistics" type="redirectAction">
+				studyQuizStatistics.action
+			</result>
+		</action>
+		<!-- 在线考试统计 -->
+		<action name="studyQuizStatistics"
+			class="com.sopia.statman.action.StatisticFlowAndResourse"
+			method="studyQuizStatistics">
+			<result name="studyQuizStatistics">
+				admin/statistic/flowAndResourse/studyQuizStatistics.jsp
+			</result>
+		</action>
+	</package>
+</struts>

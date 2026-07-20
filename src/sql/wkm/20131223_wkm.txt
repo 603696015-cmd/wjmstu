@@ -1,0 +1,36 @@
+-- Create table
+create table work_course
+(
+  ID          NUMBER not null,
+  work_type        NUMBER,
+  work_course_id      NUMBER,
+  isuse     NUMBER,
+   work_course_name VARCHAR2(500),
+   description VARCHAR2(4000),
+  STATUS      NUMBER
+ 
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create sequence 
+create sequence work_course_SEQUENCE
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 20;
+
+
+
+insert into basedatatype (name,remack,status) values('数据类型管理','数据类型管理',0);
+
+   alter table work_course add work_anniu_name varchar2(1000)

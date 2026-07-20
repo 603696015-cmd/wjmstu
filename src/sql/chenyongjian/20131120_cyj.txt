@@ -1,0 +1,2 @@
+alter table question_stuff add FILEINFO varchar2(2000);
+添加了上传资料的文件简介       

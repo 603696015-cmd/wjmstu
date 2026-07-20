@@ -1,0 +1,109 @@
+alter table study_course add(initcompliance  number(1) default 0 NOT NULL);
+
+
+
+
+
+create or replace procedure s_course_tprocess(  userid_ number,courseid_ number,classid_  number)
+as
+    getcredit_ number; sispassed_ number;cispassed_ number;passed_ number;process_ number;cprocess_ number ;ccredit_ number;initcompliance_ number;
+begin
+    begin
+      SELECT getcredit,setcredit into getcredit_,ccredit_ FROM class_course where classid =classid_ and courseid= courseid_ and isdel!=-1;
+      exception
+         when no_data_found then
+          cispassed_:=0;
+          cprocess_:=0;
+      end;
+    begin
+    select sc.passed,sc.process into cispassed_,cprocess_ from study_course sc where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    exception
+        when no_data_found then
+        cispassed_:=0;
+        cprocess_:=0;
+    end;
+    begin
+      select sr.ispassed into sispassed_ from study_room sr left join class_course cc on sr.roomid = cc.eroomid where  cc.courseid= courseid_ and sr.userid= userid_ and sr.classid=classid_;
+      exception
+      when no_data_found then
+          sispassed_:=0;
+    end;
+    if cprocess_ >=100 then
+       cispassed_ := 1;
+    end if;
+    sispassed_ := nvl(sispassed_,0);
+    if getcredit_ = 1 then
+        process_ := cprocess_;
+    elsif getcredit_ = 2 and sispassed_ =1 then
+        process_:= 100;
+    elsif getcredit_ = 3 then
+        if sispassed_ =1 and cispassed_=1 then
+          process_ := 100;
+        elsif sispassed_=1 or cispassed_=1 then
+          process_ := 50;
+        end if;
+    else
+        process_:=0;
+    end if;
+    sispassed_:=0;
+    if process_=100 then
+      sispassed_:=ccredit_;
+    end if;
+    --判断initCompliance是否初始化已经是1了
+    select initcompliance into initcompliance_ from study_course where  userid =userid_ and courseid=courseid_ and classid=classid_;
+    if initcompliance_=0 then
+       update study_course set tprocess = process_,mycredit=nvl(sispassed_,0)  where userid =userid_ and courseid=courseid_ and classid=classid_;
+    else
+       update study_course set tprocess = 100.00,mycredit=nvl(sispassed_,0)  where userid =userid_ and courseid=courseid_ and classid=classid_;
+    end if;
+end;
+
+
+
+
+create or replace procedure sc_cpage (userid_ number, cpid_ number,courseid_ number,classid_ number,passtime_ number)
+ AS ispassed_ number ; cp_time_ number ; yxcp_time_ number ;
+ process_ number;process__ number;process___ number;scp_getcredit number;
+ passed2_ number;passed_ number;scpcnt number;passtime2_ number;islink_ number;incomplete number;exurl_ varchar(4000);initcompliance_ number;
+BEGIN
+  -- 更新实际时长
+  if cpid_>0 then
+      select count(cpid) into scpcnt from (select * from study_cpage where userid =userid_ and classid=classid_) sc join course_page cp on cp.id = sc.cpid where cp.courseid=courseid_;
+      if scpcnt>0 then
+          --select during,getcredit into cp_time_,scp_getcredit from course_page where id = cpid_;
+          update study_cpage set endtime =sysdate,passtime_2 = passtime_2+passtime_,passtime = passtime +passtime_ where userid = userid_ and cpid=cpid_ and classid=classid_ ;
+          sc_cpage_tprocess(  userid_ ,cpid_ ,classid_ );
+       end if;
+       --process_:=0;
+       --select sum(process_t),sum(passtime),sum(passtime_2) into process_,yxcp_time_,passtime2_ from study_cpage scp left join course_page cp on cp.id=scp.cpid where scp.userid = userid_ and scp.classid=classid_ and cp.courseid=courseid_;
+       --update study_course set passtime = yxcp_time_,process=process_,passtime_2=passtime2_ where userid = userid_ and courseid=courseid_ and classid =classid_;
+       --sc_cpage_course (userid_,courseid_,classid_ );
+   else
+      select during,islink,exurl into cp_time_,islink_,exurl_ from course where id = courseid_;
+      if islink_!=100 then
+          select passtime into yxcp_time_ from study_course where userid =  userid_ and courseid= courseid_ and classid=classid_;
+          yxcp_time_ := yxcp_time_+passtime_;
+          process_ := (yxcp_time_*100)/(60*cp_time_);
+          --判断initCompliance是否初始化已经是1了
+          select initcompliance into initcompliance_ from study_course where  userid =userid_ and courseid=courseid_ and classid=classid_;
+          if initcompliance_=1 then
+               update study_course set passtime = yxcp_time_,process= 100,passtime_2 = passtime_2+passtime_,passed=1 where userid =  userid_ and courseid= courseid_ and classid=classid_;
+          else 
+               update study_course set passtime = yxcp_time_,process= process_,passtime_2 = passtime_2+passtime_ where userid =  userid_ and courseid= courseid_ and classid=classid_;
+          end if;
+          
+          -- 完毕
+          if  yxcp_time_>=cp_time_*60 then
+              update study_course set passtime = cp_time_*60 ,passed = 1,process = 100 where userid =userid_ and courseid=courseid_ and classid=classid_;
+          end if;
+      else
+          select count(*) into incomplete from (SELECT ci.identifier,ci.type,ci.title,ci.launch,sus.lessonstatus FROM (select * from sc_iteminfo where (type='sco' or type='asset') and CourseID = exurl_) ci
+           left join (select * from SC_UserSCOInfo where userid = to_char(userid_) AND CourseID = exurl_  AND CLASSID=to_char(classid_)) sus  on ci.identifier = sus.scoid order by ci.sequence)
+           where lessonstatus is null or trim(lessonstatus) in('','incomplete','failed','not attempted') ;
+          if incomplete = 0 then
+             update study_course set passtime = cp_time_,process= 100,passed=1,passtime_2 = passtime_2+passtime_ where userid =  userid_ and courseid= courseid_ and classid=classid_;
+          end if;
+      end if;
+      s_course_tprocess(userid_,courseid_,classid_);
+   end if;
+END;

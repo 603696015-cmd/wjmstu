@@ -1,0 +1,82 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+	{
+	padding: 0;
+	margin: 0;
+}
+
+html,body {
+	height: 100%;
+}
+body {
+	font-size: 13px;
+	color: black;
+	line-height: 150%;
+	background-color: #fff;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+}
+
+img {
+	border: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+a:link,a:visited {
+	text-decoration: none;
+	color: #077ac7;
+}
+
+a:hover,a:active {
+	text-decoration: none;
+}
+
+.style5 {
+	color: #ff0000
+}
+
+.style10 {
+	font-size: 12px;
+	line-height: 24px
+}
+
+.style8 {
+	font-weight: bold;
+	font-size: 14px
+}
+
+.bt {
+	font-size: 23px;
+	font-weight: bolder;
+	color: #ffffff;
+	padding-top: 10px;
+	line-height: 26px;
+	font-family: "\u9ed1\u4f53";
+	color: #ffffff;
+}
+
+.cpage_biaozhun_twjy_menu {
+	list-style:none;
+	text-align:left;
+	padding: 20px;
+}
+
+.cpage_biaozhun_twjy_menu li {
+	list-style-type: none;
+}
+
+.cpage_biaozhun_twjy_menu a {
+	line-height: 26px;
+	color: red;
+}
+
+.cpage_biaozhun_twjy_content {
+	line-height: 26px;
+	text-align:left;
+	padding:10px;
+ 	height: 550px;
+	font-family: '\u5b8b\u4f53';
+}

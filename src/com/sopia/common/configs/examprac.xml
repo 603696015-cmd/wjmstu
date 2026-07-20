@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_examprac" extends="elearning">
+		<action name="examprac_deplist" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_deplist">
+			<result name="examprac_deplist">
+				admin/exam/examprac/examprac_deplist.jsp
+			</result>
+		</action>
+		<action name="examprac_depInfo" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_depInfo">
+			<result name="examprac_depInfo">
+				admin/exam/examprac/examprac_depInfo.jsp
+			</result>
+		</action>
+		<action name="examprac_doDepInit" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_doDepInit">
+			<result name="examprac_doDepInit">
+				admin/exam/examprac/examprac_doDepInit.jsp
+			</result>
+		</action>
+		<action name="examprac_doDep" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_doDep">
+			<result name="examprac_depInfo" type="redirectAction">
+				examprac_depInfo.action?examprac.id=${examprac.id}
+			</result>
+		</action>
+		<action name="examprac_sh_list" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_sh_list">
+			<result name="examprac_sh_list">
+				admin/exam/examprac/examprac_sh_list.jsp
+			</result>
+		</action>
+		<action name="examprac_quiz_seachInit" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_quiz_seachInit">
+			<result name="examprac_quiz_seachInit">
+				admin/exam/examprac/examprac_quiz_seachInit.jsp
+			</result>
+		</action>
+		<action name="examprac_simple_list" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_simple_list">
+			<result name="examprac_simple_list">
+				admin/exam/examprac/examprac_simple_list.jsp
+			</result>
+		</action>
+		<action name="examprac_quiz_Overview" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_quiz_Overview">
+			<result name="examprac_quiz_Overview">
+				admin/exam/examprac/examprac_quiz_Overview.jsp
+			</result>
+		</action>
+		<action name="examprac_quiz_Detail" 
+			class="com.sopia.courseman.action.ExampracAction"
+			method="examprac_quiz_Detail">
+			<result name="examprac_quiz_Detail">
+				admin/exam/examprac/examprac_quiz_Detail.jsp
+			</result>
+		</action>
+	</package>
+</struts>

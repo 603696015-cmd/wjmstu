@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_batch" extends="elearning">
+		<!-- 新增培训批次 -->
+		<action name="batch_edit"
+			class="com.sopia.batchman.action.BatchAction" method="batch_edit">
+			<result name="edit">admin/batch/batch_edit.jsp</result>
+		</action>
+		<!-- 培训批次列表 -->
+		<action name="batch_list"
+			class="com.sopia.batchman.action.BatchAction" method="batch_list">
+			<result name="list">admin/batch/batch_list.jsp</result>
+		</action>
+		<!-- 培训批次保存 -->
+		<action name="batch_saveOrUpdate"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_saveOrUpdate">
+			<result name="list" type="redirectAction">
+				batch_list
+			</result>
+		</action>
+		<!-- 培训批次删除 -->
+		<action name="batch_delete"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_delete">
+			<result name="list" type="redirectAction">
+				batch_list
+			</result>
+		</action>
+		<!-- 培训批次选择培训班 -->
+		<action name="batch_elclass_list"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_elclass_list">
+			<result name="list">
+				admin/batch/batch_elclass_list.jsp
+			</result>
+		</action>
+		<!-- 培训批次可选择培训班列表 -->
+		<action name="batch_elclass_selectList"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_elclass_selectList">
+			<result name="batch_elclass_selectList">
+				admin/batch/batch_elclass_selectList.jsp
+			</result>
+		</action>
+		<!-- 培训批次添加培训班-->
+		<action name="batch_elclass_add"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_elclass_add">
+			<result name="list" type="redirectAction">
+				batch_elclass_selectList?batchId=${batchId}
+			</result>
+		</action>
+		<!-- 培训批次删除培训班-->
+		<action name="batch_elclass_del"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_elclass_del">
+			<result name="list" type="redirectAction">
+				batch_elclass_list?batchId=${batchId}
+			</result>
+		</action>
+		<!-- 培训批次统计-->
+		<action name="batch_stat_list"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_stat_list">
+			<result name="list">admin/batch/batch_stat_list.jsp</result>
+		</action>
+		<!-- 培训批次统计-->
+		<action name="batch_class_stat"
+			class="com.sopia.batchman.action.BatchAction"
+			method="batch_class_stat">
+			<result name="list">
+				admin/batch/batch_class_stat.jsp
+			</result>
+		</action>
+		<!--  流量统计 
+		-->
+		<action name="flowStatistics"
+			class="com.sopia.batchman.action.BatchAction"
+			method="flowStatistics">
+			<result name="flowStatistics">
+				admin/batch/flowStatistics.jsp
+			</result>
+		</action>
+		<action name="class_batch_addinit"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_addinit">
+			<result name="class_batch_add">
+				admin/class/class_batch_add.jsp
+			</result>
+		</action>
+		<action name="class_batch_add"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_add">
+			<result name="stat_class_batch_list" type="redirectAction">
+				stat_class_batch_list
+			</result>
+		</action>
+		<action name="class_batch_alterinit"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_alterinit">
+			<result name="class_batch_alter">
+				admin/class/class_batch_alter.jsp
+			</result>
+		</action>
+		<action name="class_batch_alter"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_alter">
+			<result name="stat_class_batch_list" type="redirectAction">
+				stat_class_batch_list
+			</result>
+		</action>
+		<action name="class_batch_delete"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_delete">
+			<result name="stat_class_batch_list" type="redirectAction">
+				stat_class_batch_list
+			</result>
+		</action>
+		<action name="class_batch_class_list"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_class_list">
+			<result name="class_batch_class_list">
+				admin/class/class_batch_class_list.jsp
+			</result>
+		</action>
+		<action name="class_batch_class_view"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_class_view">
+			<result name="class_batch_class_view">
+				admin/class/class_batch_class_view.jsp
+			</result>
+		</action>
+		<action name="class_batch_class_class_delete"
+			class="com.sopia.classman.action.ClassBatchAction"
+			method="class_batch_class_class_delete">
+		</action>
+	</package>
+
+</struts>

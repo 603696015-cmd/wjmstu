@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="student_shopping" extends="elearning">
+		<!-- 购物车操作 --> 
+		<action name="getShoppingCart" class="com.sopia.shopping.action.StudentShoppingAction" method="getShoppingCart">
+			<result name="shoppingCart_success">
+				admin/shopping/shopping_cart_list.jsp
+			</result>
+			<result name="login">
+				login.jsp
+			</result>
+		</action>
+		<!-- 生成订单，发回订单生成信息 ，支付页面-->		
+		<action name="shoppingCartToOrder" class="com.sopia.shopping.action.StudentShoppingAction" method="shoppingCartToOrder">
+			<result name="shoppingCartToOrder">
+				admin/shopping/shopping_cart_ToOrder.jsp
+			</result>
+			<result name="login">
+				login.jsp
+			</result>
+		</action>
+		
+		<!-- 支付成功页面 -->	
+		<action name="userPay" class="com.sopia.shopping.action.StudentShoppingAction" method="userPay">
+			<result name="userpay_success">
+				admin/shopping/shopping_cart_paysuccess.jsp
+			</result>
+			<result name="login">
+				login.jsp
+			</result>
+		</action>
+		<!-- 添加商品并去购物车页面 -->	
+		<action name="shopping_addandto" class="com.sopia.shopping.action.StudentShoppingAction" method="shopping_addandto">
+			<result name="shoppingCart_success">
+				admin/shopping/shopping_cart_list.jsp
+			</result>
+			<result name="login">
+				login.jsp
+			</result>
+		</action>
+		<!-- 分配订单支付 -->	
+		<action name="classcoursePay" class="com.sopia.shopping.action.StudentShoppingAction" method="classcoursePay">
+			<result name="classcoursePay_success">
+				admin/shopping/shopping_cart_paysuccess2.jsp
+			</result>
+		</action>	
+		<!-- 后台个人订单支付 -->	
+		<action name="houtaiuserPay" class="com.sopia.shopping.action.StudentShoppingAction" method="houtaiuserPay">
+			<result name="houtaiuserPay_success">
+				admin/shopping/shopping_cart_paysuccess2.jsp
+			</result>
+		</action>	
+		
+		<!-- 数量修改 --> 
+		<action name="commoditycount_upd" class="com.sopia.shopping.action.StudentShoppingAction" method="commoditycount_upd">
+			<result name="shoppingCart_success">
+				admin/shopping/shopping_cart_list.jsp
+			</result>
+			<result name="login">
+				login.jsp
+			</result>
+		</action>
+		
+		<!-- 数量修改 --> 
+		<action name="commoditycount_upd" class="com.sopia.shopping.action.StudentShoppingAction" method="commoditycount_upd">
+			<result name="shoppingCart_success">
+				admin/shopping/shopping_cart_list.jsp
+			</result>
+			<result name="login">
+				login.jsp
+			</result>
+		</action>
+	</package> 
+</struts>

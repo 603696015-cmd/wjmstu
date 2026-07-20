@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_words" extends="elearning">
+	<!-- 词汇类别管理 -->
+		<action name="word_list" class="com.sopia.wordman.action.WordAction" method="word_list">
+			<result name="word_list">
+				admin/word/word_list.jsp
+			</result>
+		</action>
+		<action name="word_view" class="com.sopia.wordman.action.WordAction" method="word_view">
+			<result name="word_view">
+				admin/word/word_view.jsp
+			</result>
+		</action>
+		<action name="wordslib_addInit" class="com.sopia.wordman.action.WordAction" method="wordslib_addInit">
+			<result name="wordslib_addInit">
+				admin/word/wordslib_addInit.jsp
+			</result>
+		</action>
+		<action name="wordslib_add" class="com.sopia.wordman.action.WordAction" method="wordslib_add">
+			<result name="wordslib_add_success" type="redirectAction">
+				word_view?word.id=${word.id}
+			</result>
+		</action>
+		<action name="wordslib_deleteInit" class="com.sopia.wordman.action.WordAction" method="wordslib_deleteInit">
+			<result name="wordslib_delete">
+				admin/word/wordslib_delete.jsp
+			</result>
+		</action>
+		<action name="wordslib_delete" class="com.sopia.wordman.action.WordAction" method="wordslib_delete">
+			<result name="wordslib_delete_success">
+				admin/word/wordslib_delete_success.jsp
+			</result>
+		</action>
+		<action name="wordlib_alterInit" class="com.sopia.wordman.action.WordAction" method="wordlib_alterInit">
+			<result name="wordlib_alter">
+				admin/word/wordlib_alter.jsp
+			</result>
+		</action>
+		<action name="wordlib_alter" class="com.sopia.wordman.action.WordAction" method="wordlib_alter">
+			<result name="wordlib_alter_success" type="redirectAction">
+				word_view?word.id=${word.id}
+			</result>
+		</action>
+		
+		<action name="word_course_list"
+			class="com.sopia.courseman.action.CourseAction"
+			method="word_course_list">
+			<result name="word_course_list">
+				admin/course/word_course_list.jsp
+			</result>
+		</action>
+		<action name="wordslib" class="com.sopia.wordman.action.WordAction" method="wordslib">
+			<result name="wordslib">
+				admin/word/wordslib.jsp
+			</result>
+		</action>
+		<action name="mess_getWordsLibInfoJson" class="com.sopia.wordman.action.WordAction" method="mess_getWordsLibInfoJson">
+		</action>
+		<action name="mess_getVocabularyJson" class="com.sopia.wordman.action.WordAction" method="mess_getVocabularyJson">
+		</action>
+		
+		<!-- 词汇管理 -->
+		
+		<action name="vocabulary_listInit" class="com.sopia.wordman.action.WordAction" method="vocabulary_listInit">
+			<result name="vocabulary_listInit">
+				admin/word/vocabulary_listInit.jsp
+			</result>
+			<result name="vocabulary_search">
+				admin/word/vocabulary_search.jsp
+			</result>
+		</action>
+		<action name="vocabulary_addInit" class="com.sopia.wordman.action.WordAction" method="vocabulary_addInit">
+			<result name="vocabulary_addInit">
+				admin/word/vocabulary_addInit.jsp
+			</result>
+		</action>
+		<action name="vocabulary_add" class="com.sopia.wordman.action.WordAction" method="vocabulary_add">
+			<result name="vocabulary_listInit" type="redirectAction">
+				vocabulary_listInit.action
+			</result>
+		</action>
+		<action name="vocabulary_shInit" class="com.sopia.wordman.action.WordAction" method="vocabulary_shInit">
+			<result name="vocabulary_shInit">
+				admin/word/vocabulary_shInit.jsp
+			</result>
+		</action>
+		<action name="vocabulary_alterInit" class="com.sopia.wordman.action.WordAction" method="vocabulary_alterInit">
+			<result name="vocabulary_alterInit">
+				admin/word/vocabulary_alterInit.jsp
+			</result>
+		</action>
+		<action name="vocabulary_delete" class="com.sopia.wordman.action.WordAction" method="vocabulary_delete">
+			<result name="vocabulary_listInit" type="redirectAction">
+				vocabulary_listInit.action
+			</result>
+			<result name="myvocabulary" type="redirectAction">
+				myvocabulary.action
+			</result>
+			<result name="vocabulary_search" type="redirectAction">
+				vocabulary_search.action?vocabulary.status=1
+			</result>
+		</action>
+		<action name="alterVocaSta" class="com.sopia.wordman.action.WordAction" method="alterVocaSta">
+			<result name="vocabulary_shInit" type="redirectAction">
+				vocabulary_shInit.action
+			</result>
+		</action>
+		<action name="vocabulary_view" class="com.sopia.wordman.action.WordAction" method="vocabulary_view">
+			<result name="vocabulary_view">
+				admin/word/vocabulary_view.jsp
+			</result>
+		</action>
+		<action name="vocabulary_view2" class="com.sopia.wordman.action.WordAction" method="vocabulary_view2">
+			<result name="vocabulary_view2">
+				admin/word/vocabulary_view2.jsp
+			</result>
+		</action>
+		<action name="vocabularyStuff_delete" class="com.sopia.wordman.action.WordAction" method="vocabularyStuff_delete">
+			<result name="vocabulary_alterInit" type="redirectAction">
+				vocabulary_alterInit.action?vocabulary.id=${vocabulary.id}
+			</result>
+		</action>
+		<action name="vocabulary_alter" class="com.sopia.wordman.action.WordAction" method="vocabulary_alter">
+			<result name="vocabulary_listInit" type="redirectAction">
+				vocabulary_listInit.action
+			</result>
+			<result name="vocabulary_shInit" type="redirectAction">
+				vocabulary_shInit.action
+			</result>
+			<result name="myvocabulary" type="redirectAction">
+				myvocabulary.action
+			</result>
+			<result name="vocabulary_search" type="redirectAction">
+				vocabulary_search.action?vocabulary.status=1
+			</result>
+		</action>
+		<action name="vocabulary_search" class="com.sopia.wordman.action.WordAction" method="vocabulary_search">
+			<result name="vocabulary_search">
+				admin/word/vocabulary_search.jsp
+			</result>
+		</action>
+		<action name="vocabulary_search2" class="com.sopia.wordman.action.WordAction" method="vocabulary_search2">
+			<result name="vocabulary_search2">
+				admin/word/vocabulary_search2.jsp
+			</result>
+		</action>
+		<action name="myvocabulary" class="com.sopia.wordman.action.WordAction" method="myvocabulary">
+			<result name="myvocabulary">
+				admin/word/myvocabulary.jsp
+			</result>
+		</action>
+		
+		<!-- 学习计划 -->
+		<action name="plan_addInit" class="com.sopia.wordman.action.WordAction" method="plan_addInit">
+			<result name="plan_addInit">
+				admin/learningplan/plan_addInit.jsp
+			</result>
+		</action>
+		
+		<action name="plan_add" class="com.sopia.wordman.action.WordAction" method="plan_add">
+			<result name="plan_add">
+				admin/learningplan/plan_addInit.jsp
+			</result>
+		</action>
+		<action name="plan_alterlist" class="com.sopia.wordman.action.WordAction" method="plan_alterlist">
+			<result name="plan_alterlist">
+				admin/learningplan/plan_alterlist.jsp
+			</result>
+		</action>
+		<action name="plan_alterInit" class="com.sopia.wordman.action.WordAction" method="plan_alterInit">
+			<result name="plan_alterInit">
+				admin/learningplan/plan_alterInit.jsp
+			</result>
+		</action>
+		<action name="plan_alter" class="com.sopia.wordman.action.WordAction" method="plan_alter">
+			<result name="plan_alterlist" type="redirectAction">
+				plan_alterlist.action
+			</result>
+		</action>
+		<action name="plan_viewlist" class="com.sopia.wordman.action.WordAction" method="plan_viewlist">
+			<result name="plan_viewlist">
+				admin/learningplan/plan_viewlist.jsp
+			</result>
+		</action>
+		<action name="plan_view" class="com.sopia.wordman.action.WordAction" method="plan_view">
+			<result name="plan_view">
+				admin/learningplan/plan_view.jsp
+			</result>
+		</action>
+		
+		<!-- 词汇导入 -->
+		<action name="word_importInit"
+			class="com.sopia.wordman.action.WordAction"
+			method="word_importInit">
+			<result name="word_import">
+				admin/word/word_import.jsp
+			</result>
+		</action>
+		
+		<action name="word_importCheck"
+			class="com.sopia.wordman.action.WordAction"
+			method="word_importCheck">
+			<result name="word_importCheck">
+				admin/word/word_import_check.jsp
+			</result>
+		</action>
+		
+		<action name="word_import"
+			class="com.sopia.wordman.action.WordAction"
+			method="word_import">
+			<result name="word_importInit">
+					admin/word/word_import.jsp
+			</result>
+			<result name="voc_import_result">
+				admin/word/voc_import_result.jsp
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="shebeipinggu_PG" extends="elearning">
+		 <action name="PG_baoxianProductList"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="baoxianProductList">
+			<result name="success">
+				shebeipinggu/baoxianProductList.jsp
+			</result>
+		</action>
+		
+		<action name="PG_baoxianAllProductList"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="baoxianAllProductList">
+			<result name="success">
+				shebeipinggu/baoxianAllProductList.jsp
+			</result>
+		</action>
+		
+		<action name="PG_shenheBaoxianProduct"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="shenheBaoxianProduct">
+			<result name="success" type="redirectAction">
+				PG_baoxianAllProductList.action
+			</result>
+		</action>
+		
+		<action name="PG_shenheBaoxianProductNotPass"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="shenheBaoxianProductNotPass">
+			<result name="success" type="redirectAction">
+				PG_baoxianAllProductList.action
+			</result>
+		</action>
+		
+		
+		
+		<action name="PG_updateBaoxianProductView"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="updateBaoxianProductView">
+			<result name="success">
+				shebeipinggu/updateBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		<action name="PG_updateBaoxianProduct"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="updateBaoxianProduct">
+			<result name="updateBaoxianProduct_success_in_List" type="redirectAction">
+				PG_baoxianProductList.action
+			</result>
+			<result name="updateBaoxianProduct_success_in_allList" type="redirectAction">
+				PG_baoxianAllProductList.action
+			</result>
+			
+		</action>
+		
+		<action name="PG_deleteBaoxianProduct"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="deleteBaoxianProduct">
+			<result name="baoxianProductList" type="redirectAction">
+				PG_baoxianProductList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="allBaoxianProductList" type="redirectAction">
+				PG_baoxianAllProductList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		
+		<action name="PG_addBaoxianProductView"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="addBaoxianProductView">
+			<result name="success">
+				shebeipinggu/addBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		<action name="PG_addBaoxianProduct"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="addBaoxianProduct">
+			<result name="success" type="redirectAction">
+				PG_baoxianProductList.action?product_sh=${product_sh}
+			</result>
+			<result name="failure">
+				shebeipinggu/addBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		<action name="PG_showBaoxianProduct"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="updateBaoxianProductView">
+			<result name="success">
+				shebeipinggu/showBaoxianProduct.jsp
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="PG_getBaoxianProductTypeList"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="getBaoxianProductTypeList">
+			<result name="baoxianProductTypeList">
+				shebeipinggu/baoxianProductTypeList.jsp
+			</result>
+		</action>
+		
+		
+		<action name="PG_baoxianProductType_view"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="baoxianProductType_view">
+			<result name="baoxianProductType_view">
+				shebeipinggu/baoxianProductType_view.jsp
+			</result>
+		</action>
+		
+		
+		<action name="PG_baoxianProductType_addInit"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="baoxianProductType_addInit">
+			<result name="baoxianProductType_add">
+				shebeipinggu/baoxianProductType_add.jsp
+			</result>
+		</action>
+		
+		<action name="PG_baoxianProductType_add"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="baoxianProductType_add">
+			<result name="baoxianProductType_add_success">
+				shebeipinggu/baoxianProductType_add_success.jsp
+			</result>
+		</action>
+		
+		<action name="PG_baoxianProductType_alterInit"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="baoxianProductType_alterInit">
+			<result name="baoxianProductType_alter">
+				shebeipinggu/baoxianProductType_alter.jsp
+			</result>
+		</action>
+		
+		<action name="PG_baoxianProductType_alter"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="baoxianProductType_alter">
+			<result name="baoxianProductType_alter_success">
+				shebeipinggu/baoxianProductType_alter_success.jsp
+			</result>
+		</action>
+		
+		
+		<action name="PG_baoxianProductType_delete"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="baoxianProductType_delete">
+			<result name="baoxianProductType_list" type="redirectAction">
+				PG_getBaoxianProductTypeList.action
+			</result>
+		</action>
+		
+		<action name="PG_searchLanmu_baoxianProductInit"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="searchLanmu_baoxianProductInit">
+			<result name="searchLanmu_baoxianProductInit">
+				shebeipinggu/searchBaoxianLanmuDio.jsp
+			</result>
+		</action>
+		
+		<action name="PG_insuranceCategoriesTree"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="insuranceCategoriesTree">
+			<result name="insuranceCategoriesTree">
+				shebeipinggu/insuranceCategoriesTree.jsp
+			</result>
+		</action>
+		
+		<action name="PG_insuranceCategory_view"
+			class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+			method="insuranceCategory_view">
+		</action>
+		
+		<action name="PG_checkShztBeforeDelete_baoxianProduct"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="checkShztBeforeDelete_baoxianProduct">
+		</action>
+		
+		<action name="PG_change_tuijian"
+				 class="com.sopia.shebeipinggu.action.PG_shebeipingguAction"
+				 method="change_tuijian">
+			<result name="success" type="redirectAction">
+				PG_baoxianAllProductList.action
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

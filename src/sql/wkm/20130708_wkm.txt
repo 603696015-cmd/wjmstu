@@ -1,0 +1,1 @@
+insert into basedatatype (name,remack,status) values('培训批次类型','培训批次类型...',0);	

@@ -1,0 +1,373 @@
+alter table exampaper add(questiontotalcount  number default 0 NOT NULL);
+
+
+
+
+
+create or replace procedure set_epq_totalcount(exampaperid_ number)
+--设置试卷总题目数量
+as
+blockid_ number;
+count_ number;
+totalcount_ number;
+cursor blocks is
+   select id from exampaperblock  where exampaperid=exampaperid_;
+cursor blockquestionscount is
+   select count(1) from exampaperblockquestion where blockid=blockid_;
+begin
+   totalcount_:=0;
+   open blocks;
+     loop
+        fetch blocks into blockid_ ;
+        exit when blocks%notfound;
+        if blockid_>0 then
+           open blockquestionscount;
+             loop
+                fetch blockquestionscount into count_ ;
+                exit when blockquestionscount%notfound;
+                totalcount_:=totalcount_+count_;
+             end loop;
+           close blockquestionscount;
+        end if;
+     end loop;
+    close blocks;
+    if totalcount_>0 then
+       update exampaper set questiontotalcount=totalcount_ where id=exampaperid_;
+    end if;
+end;
+
+
+
+create or replace procedure set_exampapers(id_ number)
+as
+exampaperid_ number;
+cursor exampapers is
+   select id from exampaper;
+begin
+   open exampapers;
+     loop
+        fetch exampapers into exampaperid_ ;
+        exit when exampapers%notfound;
+        if exampaperid_>0 then
+            set_epq_totalcount(exampaperid_);
+        end if;
+     end loop;
+   close exampapers;
+end;
+
+
+alter table study_questions add(proportion  number default 0 NOT NULL);
+
+
+
+
+create or replace procedure intelligent_proportion_pro
+(userid_ number,            --??ID
+myexampaperid_ number,      --????ID
+exampaperid_ number,        --??ID
+blockid_ number,            --??ID
+questionid_ number,         --??ID
+classid_ number,            --???ID
+courseid_ number,           --??ID
+pageid_ number,             --??ID
+roomid_ number,             --????ID
+scoreproportionprocess_ float,
+scoreproportionprocessper_ float,
+scoreproportiontime_ float,
+scoreproportiontimeper_ float,
+qtype_ number)
+as
+count_ number;
+totalcount_ number;         --?????????????????????????
+proporcount_ number;        --????
+proporprocess_ number;      --??????
+score1_ number;
+score2_ number;
+totalscore_ number;
+ep_ number;
+proportcount_ number;           --????
+proportprocess_ number;     --??????
+bl_ float;
+dingjiroomid_ number;
+cursor eps is
+      select erps.epid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_
+      union all
+      select erps.epid from
+      (select cc.courseid from class_course cc ,exam_room er,exam_reps erps
+      where cc.classid=er.classid and cc.courseid=er.courseid and er.id=erps.roomid and cc.classid=classid_ ) t,course_page cp
+      ,exam_room er,exam_reps erps
+      where t.courseid=cp.courseid and cp.id=er.cpid and erps.roomid=er.id;
+
+begin
+     select roomid into dingjiroomid_ from exam_room_sys where sys=1 ;
+     --如果为角色扮演
+     --更新答题表
+     if qtype_ = 17 then
+        update study_questions set proportion=1 where sqid=myexampaperid_ and blockid=blockid_ and qid=questionid_;
+     end if;
+     if dingjiroomid_!=roomid_ then
+       --??????????
+       count_:=0;
+       totalcount_:=0;
+       proporcount_:=0;
+       proporprocess_:=0.00f;
+       totalscore_:=0.0;
+       score1_:=0.0;
+       score2_:=0.0;
+       proportcount_:=0;
+       proportprocess_:=0.00f;
+       bl_:=0.0f;
+       select count(1) into count_ from INTELLIGENT_PROPORTION
+              where userid=userid_ and myexampaperid=myexampaperid_
+              and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+              and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+       if count_=0 then
+          insert into INTELLIGENT_PROPORTION(userid,myexampaperid,exampaperid,blockid,questionid,
+                 classid,courseid,pageid,roomid,count,proportime)
+              values (userid_,myexampaperid_,exampaperid_,blockid_,questionid_,
+                     classid_,courseid_,pageid_,roomid_,1,sysdate);
+       else
+           update INTELLIGENT_PROPORTION set count=count+1,proportime=sysdate
+              where userid=userid_ and myexampaperid=myexampaperid_
+              and exampaperid=exampaperid_ and blockid=blockid_ and questionid=questionid_
+              and classid=classid_ and courseid=courseid_ and pageid=pageid_ and roomid=roomid;
+       end if;
+       --?????????????????????????????????????
+       --???
+       open eps;
+           loop
+              fetch eps into ep_ ;
+              exit when eps%notfound;
+              totalcount_:=totalcount_+getquestioncountbyepid(ep_);--???
+           end loop;
+       close eps;
+       --??????
+       select count(1) into proporcount_ from (select distinct(questionid) from INTELLIGENT_PROPORTION where userid=userid_ and classid=classid_);
+       proporprocess_:=round(proporcount_/totalcount_,2);--????????
+       score1_:=round(proporcount_/totalcount_ * scoreproportionprocessper_ * 100,1);--????
+       if score1_>round(scoreproportionprocess_,1) then
+          score1_:=round(scoreproportionprocess_,1);
+       end if;
+       --????
+       select sum(count) into proportcount_ from INTELLIGENT_PROPORTION where userid=userid_ and classid=classid_;
+       proportprocess_:=round(proportcount_/totalcount_,2);
+       bl_:=proportcount_/totalcount_;
+       if bl_>=3 then
+          score2_:=round(scoreproportiontime_,1);
+       else
+          score2_:=round(bl_* 100 * scoreproportiontimeper_,1);
+          if score2_>round(scoreproportiontime_,1) then
+             score2_ := round(scoreproportiontime_,1);
+          end if;
+       end if;
+       --????????
+       totalscore_:=score1_ + score2_;
+       count_:=0;
+       select count(1) into count_ from INTELLIGENT_PROPORTION_T where userid=userid_ and classid=classid_;
+       if count_=0 then
+          insert into INTELLIGENT_PROPORTION_T(userid,totalscore,classid,
+                 totalcount,Proportionqcount,proportionqprocess,Proportiontcount,proportiontprocess,qscore,tscore)
+                 values(userid_,totalscore_,classid_,
+                 totalcount_,proporcount_,proporprocess_,proportcount_,proportprocess_,score1_,score2_);
+       else
+           update INTELLIGENT_PROPORTION_T
+                  set totalscore=totalscore_ ,
+                  totalcount = totalcount_,Proportionqcount=proporcount_,
+                  proportionqprocess=proporprocess_,
+                  Proportiontcount=proportcount_,
+                  proportiontprocess=proportprocess_ ,
+                  qscore=score1_,
+                  tscore=score2_
+                  where userid=userid_ and classid=classid_;
+       end if;
+     end if;
+end;
+
+
+
+create or replace procedure sr_questionscore_set_save
+( sqid_ number,blockid_ number,qid_ number ,qindex_ number,voice_ number,similary_ number ,defaultsimilary_ number) as
+--qindex_ number
+--TMK??,????????????????
+--?????,????,????????????????????
+status_ number default 0;score_ number;q_answeri varchar2(4000);q_rulestri varchar2(4000); u_myanswer varchar2(4000);
+u_myansweri varchar2(4000);l_idx number ;u_age number;qcid_ number;qctype_ number;qcanswer_ varchar(4000);qscoreper_ number;
+qtype_ number;q_rulestr varchar(4000);random_ number;qscore_ number;q_answer varchar(4000);secondscore_ number;atime_ number;oldscore_ number;standard_answer_ varchar2(4000);
+proportion_ number;
+cursor question_subs is select id,qtype,answer,scoreper from question where parentid = qid_;
+begin
+      score_:=0;
+      l_idx:=1;
+      --if qindex_ = 1 then --?????
+         select random, rulestring, eachscore, type,secondscore into random_,q_rulestr,qscore_,qtype_,secondscore_ from exampaperblock where id = blockid_;
+     -- else  --?????
+         --select random, rulestring, secondscore, type into random_,q_rulestr,qscore_,qtype_ from exampaperblock where id = blockid_;
+      --end if;
+      if random_=0 then
+        select rulestring into q_rulestr from exampaperblockquestion where blockid = blockid_ and questionid = qid_;
+      end if;
+
+
+      select answer,qtype,standard_answer into q_answer,qtype_,standard_answer_ from question where id = qid_;
+
+
+      select myanswer,atime,myscore,proportion into u_myanswer,atime_,oldscore_,proportion_  from study_questions where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+
+
+
+      if qtype_ =1 or qtype_ =2 or qtype_ =3 or qtype_  =4 or qtype_ =5 or qtype_=10  then
+             if q_answer=u_myanswer then
+                score_:=qscore_;
+                status_:=1;
+             else
+                status_:=0;
+             end if;
+        elsif qtype_=15 or qtype_=16 or qtype_=18 then--????,?????,????
+             if atime_<2 then
+                if q_answer=u_myanswer then
+                   if atime_=0 then
+                      score_:=qscore_;
+                   else
+                      score_:=secondscore_;
+                   end if;
+                   status_:=1;
+                else
+                   status_:=0;
+                end if;
+             end if;
+             update study_questions set atime=atime+1 where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+        elsif qtype_=19 or qtype_=20 then
+             if atime_<2 then
+                if standard_answer_=u_myanswer then
+                   if atime_=0 then
+                      score_:=qscore_;
+                   else
+                      score_:=secondscore_;
+                   end if;
+                   status_:=1;
+                else
+                   status_:=0;
+                end if;
+             end if;
+             update study_questions set atime=atime+1 where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+
+        elsif  qtype_=17  then---????
+        --?????????,????????????
+             dbms_output.put_line(voice_);
+             score_:=oldscore_;
+             if atime_<2 then
+               if voice_=1 then
+                  if similary_>=defaultsimilary_ then
+                     score_:=qscore_;
+                     status_:=1;
+                     proportion_:=0;
+                  else
+                     if proportion_=1 then
+                         score_:=secondscore_;
+                         status_:=1;
+                         proportion_:=0;
+                     else
+                         status_:=0;
+                         proportion_:=0;
+                     end if;
+                  end if;
+               else
+                  if proportion_=1 then
+                     score_:=secondscore_;
+                     status_:=1;
+                     proportion_:=0;
+                  else
+                     status_:=0;
+                     proportion_:=0;
+                  end if;
+               end if;
+             end if;
+             /**
+             if atime_<2 then
+
+                 if voice_=1 then
+                     if similary_>=defaultsimilary_ then
+                         if atime_=0 then
+                            score_:=qscore_;
+                         else
+                            score_:=secondscore_;
+                         end if;
+                         status_:=1;
+                     else
+                       status_:=0;
+                     end if;
+                 else
+                     dbms_output.put_line(q_answer);
+
+                     if q_answer=u_myanswer then
+                        dbms_output.put_line(atime_);
+                        dbms_output.put_line(secondscore_);
+                         if atime_=0 then
+                            score_:=qscore_;
+                         else
+                            score_:=secondscore_;
+                         end if;
+                         status_:=1;
+                     else
+                         status_:=0;
+                     end if;
+                 end if;
+             end if;
+             */
+             update study_questions set atime=atime+1 where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+       elsif qtype_ = 7 then
+             open question_subs;
+             loop
+                fetch question_subs into qcid_,qctype_,qcanswer_,qscoreper_;
+                exit when question_subs%notfound;
+                sr_questionsubscore_set( sqid_,blockid_,qcid_,qctype_,qscore_*qscoreper_/100,qcanswer_);
+                l_idx:=l_idx+1;
+             end loop;
+             CLOSE question_subs;
+             select sum(sq.myscore) into score_ from study_questions sq left join question q on q.id = sq.qid where q.parentid = qid_ and
+                                 sq.sqid =sqid_ and sq.blockid=blockid_;
+             status_:=0;
+       elsif qtype_ = 8 then
+             select nvl( floor(to_char(sysdate,'yyyy' ))-floor(to_char(u.shengri,'yyyy')),-1) into u_age from eluser u join study_quizinfo sqi on sqi.userid=u.id where sqi.id = sqid_;
+             if u_age =-1 then
+                status_:=-4 ;
+                score_:=0;
+             else
+               if trim(q_rulestr)='' then
+                  score_:=0;
+                  status_:=-7;
+               else
+                 u_myansweri := getdzscoreandstatus( u_myanswer ,q_rulestr ,u_age,qscore_);
+                 score_:= getsub(u_myansweri,':',1) ;
+                 status_:= nvl( getsub(u_myansweri,':',2),0) ;
+               end if;
+             end if;
+       elsif qtype_ = 9 then
+            while l_idx <=6 loop
+                   q_answeri := trim(getSub(q_answer,'-=SpEl=-',l_idx));
+                   u_myansweri := trim(getSub(u_myanswer,'-=SpEl=-',l_idx));
+                   q_rulestri := trim(getSub(q_rulestr,'-=SpRule-',l_idx));
+                   l_idx:=l_idx+1;
+                   if q_answeri = u_myansweri then
+                       score_:=score_+to_number( q_rulestri );
+                   end if;
+             end loop;
+             status_:=1;
+       elsif qtype_ = 11 or  qtype_ = 6 then
+             status_:=-1;
+       else
+             status_:=-2;
+       end if;
+       if  qtype_ != 11 and qtype_ != 6 then
+       --dbms_output.put_line(qscore_);
+       update study_questions set myscore = nvl(score_,0) ,status= nvl(status_,0),proportion=nvl(proportion_,0) where sqid =sqid_ and blockid=blockid_ and qid= qid_;
+       end if;
+       sr_questionscore_block_set(sqid_ ,blockid_ );
+end ;
+
+
+
+
+
+commit;

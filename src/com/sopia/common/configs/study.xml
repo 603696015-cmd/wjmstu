@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="study" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="study_index"
+			class="com.sopia.studyman.action.Study" method="study_index">
+			<result name="study_index">
+				study/study_index.jsp
+			</result>
+			<result name="myinfo_complete" type="redirectAction">
+				myinfo_completeinit.action
+			</result>
+			<result name="study_index_phone">
+				wsj_phone/study/study_index.jsp
+			</result>
+		</action>
+		<action name="exam_index"
+			class="com.sopia.studyman.action.Study" method="exam_index">
+			<result name="exam_index">
+				study/exam_index.jsp
+			</result>
+		</action>
+		
+		<action name="myCredit_result"
+			class="com.sopia.studyman.action.Study" method="myCredit_result">
+			<result name="myCredit_result">
+				study/myCredit_result.jsp
+			</result>
+		</action>
+		<action name="student_myinfo"
+			class="com.sopia.studyman.action.Study"
+			method="student_myinfo">
+			<result name="student_myinfo">
+				study/student_myinfo.jsp
+			</result>
+			<result name="student_myinfo_cisco">
+				study/student_myinfo_cisco.jsp
+			</result>
+			
+		</action>
+		<action name="student_myalterInit"
+			class="com.sopia.studyman.action.Study"
+			method="student_myalterInit">
+			<result name="student_myalter">
+				study/student_myalter.jsp
+			</result>
+			<result name="student_myalter_noall">
+				study/student_myalter_noall.jsp
+			</result>
+			<result name="student_myalter_cisco">
+				study/student_myalter_cisco.jsp
+			</result>
+		</action>
+		<action name="student_myalter"
+			class="com.sopia.studyman.action.Study"
+			method="student_myalter">
+			<result name="student_myalter_success">
+				study/student_myalter_success.jsp
+			</result>
+			<result name="student_myalter">
+				study/student_myalter.jsp
+			</result>
+		</action>
+		<action name="student_mypwdalterInit"
+			class="com.sopia.studyman.action.Study"
+			method="student_mypwdalterInit">
+			<result name="student_mypwdalter">
+				study/student_mypwdalter.jsp
+			</result>
+		</action>
+		<action name="student_mypwdalter"
+			class="com.sopia.studyman.action.Study"
+			method="student_mypwdalter">
+			<result name="student_mypwdalter">
+				study/student_mypwdalter.jsp
+			</result>
+			<result name="student_mypwdalter_success">
+				study/student_mypwdalter_success.jsp
+			</result>
+		</action>
+		<!-- 北京二次开发 -->
+		<action name="student_myinfo2"
+			class="com.sopia.studyman.action.Study"
+			method="student_myinfo2">
+			<result name="student_myinfo2">
+				study/student_myinfo2.jsp
+			</result>
+		</action>
+		<action name="student_myalterInit2"
+			class="com.sopia.studyman.action.Study"
+			method="student_myalterInit2">
+			<result name="student_myalter2">
+				study/student_myalter2.jsp
+			</result> 
+		</action>
+		<action name="student_myalter2"
+			class="com.sopia.studyman.action.Study"
+			method="student_myalter2">
+			<result name="student_myalter_success2">
+				study/student_myalter_success2.jsp
+			</result>
+		</action>
+		<!-- 北京二次开发End  -->
+		<!-- 我的基本信息 -->
+		<action name="myscore_dot_view"
+			class="com.sopia.studyman.action.Study" method="myscore_dot_view">
+			<result name="myscore_dot_view">
+				study/myscore_dot_view.jsp
+			</result>
+		</action>
+		<action name="myscore_score_view"
+			class="com.sopia.studyman.action.Study"
+			method="myscore_score_view">
+			<result name="myscore_score_view">
+				study/myscore_score_view.jsp
+			</result>
+		</action>
+		<action name="myOverviewInfo"
+			class="com.sopia.studyman.action.Study" method="myOverviewInfo">
+			<result name="myOverviewInfo">
+				study/myOverviewInfo.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

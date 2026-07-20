@@ -1,0 +1,39 @@
+# Compiled class files
+*.class
+WebRoot/WEB-INF/classes/
+
+# Build output
+dist/
+build/
+
+# IDE files
+.myeclipse/
+.settings/
+.externalToolBuilders/
+RemoteSystemsTempFiles/
+.classpath
+.project
+.mymetadata
+.xdoclet
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.bak
+*.tmp
+*.swp
+*~
+
+# Package files (don't commit built WARs in repo)
+*.war
+*.tar.gz
+*.zip
+
+# SSH keys (security)
+ssh
+ssh.pub

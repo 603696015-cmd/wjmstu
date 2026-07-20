@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="deviceManage" extends="elearning">
+		
+		<action name="deviceList"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="deviceList">
+			<result name="success">
+				pfms/shebeilist.jsp
+			</result>
+		</action>
+		
+		<action name="allShebeiList"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="allShebeiList">
+			<result name="success">
+				pfms/allshebeilist.jsp
+			</result>
+		</action>
+		
+		<action name="shenheShebei"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="shenheShebei">
+			<result name="success" type="redirectAction">
+				allShebeiList.action
+			</result>
+		</action>
+		
+		<action name="shenheShebeiNotPass"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="shenheShebeiNotPass">
+			<result name="success" type="redirectAction">
+				allShebeiList.action
+			</result>
+		</action>
+		
+		<action name="addShebeiView"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="addShebeiView">
+			<result name="success">
+				pfms/tianjiashebei.jsp
+			</result>
+		</action>
+		
+		<action name="addShebei"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="addShebei">
+			<result name="success" type="redirect">
+				deviceList.action?product_sh=${product_sh}
+			</result>
+		</action>
+		
+		<action name="deleteShebei"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="deleteShebei">
+			<result name="allShebeiList" type="redirectAction">
+				allShebeiList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+			<result name="deviceList" type="redirectAction">
+				deviceList.action?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		
+		<action name="showShebei"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="showShebei">
+			<result name="success">
+				pfms/chakanshebei.jsp
+			</result>
+		</action>
+		
+		<action name="updateShebeiView"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="updateShebeiView">
+			<result name="success">
+				pfms/xiugaishebei.jsp
+			</result>
+		</action>
+		
+		<action name="updateShebei"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="updateShebei">
+			<result name="updateShebei_success_in_list" type="redirectAction">
+				deviceList.action
+			</result>
+			<result name="updateShebei_success_in_allList" type="redirectAction">
+				allShebeiList.action
+			</result>
+		</action>
+		
+		<action name="checkShztBeforeDelete"
+				 class="com.sopia.pfms.action.DeviceManage"
+				 method="checkShztBeforeDelete">
+		</action>
+		
+	</package>
+</struts>

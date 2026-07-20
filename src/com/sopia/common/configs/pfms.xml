@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="pfms" extends="elearning">
+		 <action name="getBaseInfo"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="getBaseInfo">
+			<result name="success">
+				pfms/user01.jsp
+			</result>
+			<result name="manage_success">
+				pfms/updatePfmsUser.jsp
+			</result>
+		</action>
+		
+		<action name="queryBaseInfo"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="queryBaseInfo">
+			<result name="success">
+				pfms/look_user01.jsp
+			</result>
+			<result name="manage_success">
+				pfms/showBasePfmsUser.jsp
+			</result>
+		</action>
+		
+		
+		<action name="alterBaseInfo"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="alterBaseInfo">
+			<result name="success" type="redirectAction">
+				getBaseInfo.action?showType=${showType}&amp;elUser.id=${pfmsUser.userId}&amp;number=${number}
+			</result>
+			<result name="personal_success" type="redirectAction">
+				getBaseInfo.action?number=${number}
+			</result>
+			
+		</action>
+		
+		<action name="alterMemberProfile"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="alterMemberProfile">
+			<result name="success" type="redirectAction">
+				getBaseInfo.action?showType=${showType}&amp;elUser.id=${pfmsUser.userId }&amp;number=${number}
+			</result>
+			<result name="personal_success" type="redirectAction">
+				getBaseInfo.action?number=${number}
+			</result>
+		</action>
+		
+		<action name="alterPassword"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="alterPassword">
+			<result name="success" type="redirectAction" >
+				getBaseInfo.action?showType=${showType}&amp;elUser.id=${pfmsUser.userId }&amp;number=${number}
+			</result>
+			<result name="personal_success" type="redirectAction">
+				getBaseInfo.action?number=${number}
+			</result>
+		</action>
+		
+		<action name="deviceList"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="deviceList">
+			<result name="success">
+				pfms/shebeilist.jsp
+			</result>
+		</action>
+		
+		<action name="uploadFile"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="uploadFile">
+			<result name="success" type="redirectAction">
+				getBaseInfo.action?showType=${showType}&amp;elUser.id=${id}&amp;number=${number}
+			</result>
+			<result name="personal_success" type="redirectAction">
+				getBaseInfo.action?number=${number}
+			</result>
+			
+		</action>
+		
+		<action name="userlist" 
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="userlist">
+			<result name="userlist">
+				pfms/userlist.jsp
+			</result>
+		</action>
+		
+		<action name="pfmsUser_addInit" 
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="pfmsUser_addInit">
+			<result name="pfmsUser_addInit">
+				pfms/addPfmsUser.jsp
+			</result>
+		</action>
+		
+		<action name="add_pfmsUser" 
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="add_pfmsUser">
+			<result name="add_pfmsUser_success" type="redirectAction">
+				userlist.action
+			</result>
+		</action>
+		
+		
+		<action name="updatePfmsUser_init" 
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="getBaseInfo">
+			<result name="manage_success">
+				pfms/updatePfmsUser.jsp
+			</result>
+		</action>
+		
+		<!-- <action name="updateBaseInfo" 
+				 class="com.sopia.pfms.action.PfmsAction" 
+				method="alterBaseInfo">
+			<result name="success" type="redirectAction">
+				userlist.action
+			</result>
+		</action> -->
+		
+		<action name="pfmsUser_importByDepInit" 
+				 class="com.sopia.pfms.action.PfmsAction" 
+				method="pfmsUser_importByDepInit">
+			<result name="pfmsUser_importByDepInit">
+				pfms/pfmsUser_import.jsp
+			</result>
+		</action>
+		
+		
+		<action name="pfmsUser_import" 
+				 class="com.sopia.pfms.action.PfmsAction" 
+				method="pfmsUser_import">
+			<result name="pfmsUser_import_success">
+				pfms/pfmsUser_import_success.jsp
+			</result>
+			<result name="failure">
+				pfms/pfmsUser_import.jsp
+			</result>
+		</action>
+		
+		<action name="getCity_ajax" 
+			 class="com.sopia.pfms.action.PfmsAction" 
+			method="getCity_ajax">
+		</action>
+		
+		<action name="checkPassword" 
+			 class="com.sopia.pfms.action.PfmsAction" 
+			method="checkPassword">
+		</action>
+		
+		<action name="change_tuijian_pfmsuser"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="change_tuijian">
+			<result name="success" type="redirectAction">
+				userlist.action
+			</result>
+		</action>
+		
+		<action name="delPfmsUser"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="delPfmsUser">
+			<result name="delPfmsUser_success" type="redirectAction">
+				userlist.action
+			</result>
+		</action>
+		
+		<action name="queryUserInfo"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="queryUserInfo">
+			<result name="queryUserInfo" >
+				pfms/showBasePfmsUser.jsp
+			</result>
+		</action>
+		<action name="alterUserInfo"
+				 class="com.sopia.pfms.action.PfmsAction"
+				 method="alterUserInfo">
+			<result name="alterUserInfo" type="redirectAction">
+				userlist.action
+			</result>
+		</action>
+		
+	</package>
+	
+	
+</struts>

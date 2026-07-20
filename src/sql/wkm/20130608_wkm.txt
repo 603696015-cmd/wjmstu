@@ -1,0 +1,19 @@
+-- Create table    
+create table ELCLASS_PRICE
+(  
+  ELCLASSID       NUMBER not null,
+  ELCLASSNOWPRICE NUMBER(14,4),
+  ELCLASSOLDPRICE NUMBER(14,4),
+  STATUS          NUMBER,
+  USERID          NUMBER
+) 
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );

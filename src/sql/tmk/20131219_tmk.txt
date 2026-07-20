@@ -1,0 +1,9 @@
+-- Create table
+create table tb_pic
+(
+  tablename    varchar2(200) not null,
+  columnname   varchar2(200) not null,
+  entityid     number not null,
+  width        number not null,
+  height       number not null
+);

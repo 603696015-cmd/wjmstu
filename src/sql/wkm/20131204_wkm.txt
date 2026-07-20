@@ -1,0 +1,118 @@
+alter table study_questions add piyu varchar2(500);
+alter table multiUserPapers add piyu varchar2(500);
+
+
+create or replace procedure sr_setscore_marking(mepid number) as
+roomid_ number; epid_ number;userid_ number;ep_score number;ep_tscore_ number;passgrade_ number;
+ispassed_ number default 0;blockid_ number;classid_ number;courseid_ number;btype_ number;rulestring_ varchar2(1000);
+cursor epblocks is select id,type,rulestring from exampaperblock where exampaperid = epid_;
+begin
+     -- 第一步骤 读取考生考卷信息
+     select roomid,epid,userid,classid into roomid_,epid_,userid_,classid_ from study_quizinfo where id = mepid;
+     --2 设置试卷各个大题分值
+         open epblocks;
+             loop
+                fetch epblocks into blockid_,btype_,rulestring_ ; --取值
+                exit when epblocks%notfound; --当没有记录时退出循环
+                if btype_!=12 then
+                   sr_blockscore_set_marking(mepid,blockid_ );
+                else
+                   sr_blockscore_set_marking_xz(mepid,blockid_,rulestring_);
+                end if;
+             end loop;
+         close epblocks;
+     -- 3 得到大题总分值
+     select sum(myscore) into ep_score from study_blocks where sqid = mepid;
+     select ep_tscore into ep_tscore_ from exampaper where id = epid_;
+     select rep.passgrade into passgrade_ from study_quizinfo sqi,exam_reps rep where rep.epid=sqi.epid and rep.roomid= sqi.roomid and sqi.id = mepid;
+     if ((ep_score * 100) / ep_tscore_) >= passgrade_ then
+        ispassed_ := 1;
+     end if;
+     -- 4 记录试卷分值
+     update study_quizinfo set myscore = nvl(ep_score,0),status =3,ispassed =nvl(ispassed_,0) where id = mepid ;
+     --5设置试卷总体得分
+     sr_setep_score(userid_,roomid_,epid_);
+     -- 5 记录考场分值
+     --sr_seteroom(userid_ ,roomid_);
+     --sr_seteroom_record(userid_ ,roomid_,mrrid_);
+     if classid_ > 0 then
+         sr_seteroom_score_class(userid_ ,roomid_,classid_);
+        else
+        sr_seteroom_score(userid_ ,roomid_);
+     end if;
+     
+     --6 调用设置学分的过程
+     -----1首先查看该答卷有没有培训班
+     -----2如果有就调用
+     if classid_ > 0 then
+        user_ispass_class2(classid_,userid_);
+     end if;
+end ;
+
+
+
+
+create or replace procedure sr_seteroom_score_class(userid_ number,
+                                              roomid_ number,classid__ number) as
+  er_pg_      number;
+  er_tscore_  number;
+  qp_ispassed number; --答卷试卷通过
+  qp_tscore   number; --答卷试卷总分
+  er_ispassed number default 0;
+  courseid_   number;
+  classid_    number;
+  er_score    float;
+  er_time     date;
+  --关联的培训班课程
+  cursor class_courses is
+    SELECT cc.courseid, cc.classid
+      FROM class_course cc
+      left join study_room sr on sr.classid = cc.classid
+                             and cc.eroomid = sr.roomid
+     where sr.roomid = roomid_
+       and isdel != -1;
+  cursor seppassed is select ispassed from study_exampaper where roomid = roomid_ and userid = userid_ and isdel!=1;
+begin
+  select passgrade
+    into er_pg_
+    from exam_room
+    where id = roomid_;
+  --获取答卷总体信息
+    select sum(ep.ep_tscore) into er_tscore_ from (select * from study_exampaper where roomid=roomid_ and userid=userid_ and isdel!=1) reps  left join exampaper ep on ep.id = reps.epid where reps.roomid =roomid_;
+     select sum(myscore) into qp_tscore from study_exampaper where roomid = roomid_ and userid = userid_  and isdel!=1;
+     open seppassed;
+             loop
+                fetch seppassed into qp_ispassed;
+                exit when seppassed%notfound;
+                exit when qp_ispassed =0;
+             end loop;
+     close seppassed;
+     if er_tscore_ =0 then
+        er_tscore_ := 1;
+     end if;
+     if qp_ispassed = 1 and qp_tscore * 100 / er_tscore_ >= er_pg_ then
+        er_ispassed := 1;
+     end if;
+  --判断这次成绩是否大于原来成绩
+  select myscore,begintime into er_score,er_time from study_room where roomid=roomid_ and userid=userid_ and classid=classid__;
+  if er_score < nvl(qp_tscore, 0) then
+     er_time:=sysdate;
+  end if;
+  --更新学员考场信息
+  update study_room
+     set myscore    = nvl(qp_tscore, 0),
+         status     = 2,
+         ispassed   = nvl(er_ispassed, 0),
+         begintime = er_time
+   where roomid = roomid_
+     and userid = userid_;
+  --相关绑定的考场的课程进度计算
+  open class_courses;
+  loop
+    fetch class_courses
+      into courseid_, classid_; --取值
+    exit when class_courses%notfound; --当没有记录时退出循环
+    s_course_tprocess(userid_, courseid_, classid_);
+  end loop;
+  close class_courses;
+end;

@@ -1,0 +1,3 @@
+alter table question_stuff add(generatejpg  number(1) default 0);
+
+commit;

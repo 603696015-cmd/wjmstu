@@ -1,0 +1,1806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_exam" extends="elearning">
+		<!-- 课程管理 -->
+
+		<action name="examroom_listInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_listInit">
+			<result name="examroom_listInit">
+				admin/exam/examroom_listInit.jsp
+			</result>
+		</action>
+		<action name="examroomwithoutcourse_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroomwithoutcourse_list">
+			<result name="examroomwithoutcourse_list">
+				admin/exam/examroomwithoutcourse_list.jsp
+			</result>
+		</action>
+		<action name="examroom_deletelist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_deletelist">
+			<result name="examroom_deletelist">
+				admin/exam/examroom_deletelist.jsp
+			</result>
+		</action>
+		<action name="examroom_deletes"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_deletes">
+			<result name="examroom_deletelist" type="redirectAction">
+				examroom_deletelist?pN=${pN}&amp;pS=${pS}
+			</result>
+		</action>
+		<action name="examroomwithoutcourse_readlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroomwithoutcourse_readlist">
+			<result name="examroomwithoutcourse_readlist">
+				admin/exampaper/examroomwithoutcourse_readlist.jsp
+			</result>
+		</action> 
+		<action name="examroomwithoutcourse_elclass_readlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroomwithoutcourse_elclass_readlist">
+			<result name="examroomwithoutcourse_elclass_readlist">
+				admin/exampaper/examroomwithoutcourse_elclass_readlist.jsp
+			</result>
+		</action> 
+		<action name="erwithout_addInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_addInit">
+			<result name="erwithout_add">
+				admin/exam/erwithout_add.jsp
+			</result>
+		</action>
+		<action name="erwithout_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_add">
+			<result name="examroomwithoutcourse_list"
+				type="redirectAction">
+				examroomwithoutcourse_list
+			</result> 
+			<result name="examroom_view"
+				type="redirectAction">
+				erwithout_view?examRoom.id=${examRoom.id}
+			</result> 
+			<result name="examroom_alllist"
+				type="redirectAction">
+				examroom_alllist
+			</result> 
+			<result name="examroom_mylist"
+				type="redirectAction">
+				examroom_mylist
+			</result>
+			<result name="examroom_listbyc"
+				type="redirectAction">
+				examroom_listbyc.action?course.id=${course.id}
+			</result> 
+			<result name="examroom_choose_listbycInit"
+				type="redirectAction">
+				examroom_choose_listbycInit.action?course.id=${course.id}&amp;classId=${course.classid}&amp;Return=${Return}
+			</result>
+			<!-- <result name="examroomwithoutcourse_list"
+				type="redirectAction">
+				examroom_validlist
+				</result> -->
+		</action>
+		<action name="erwithout_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_alterInit">
+			<result name="erwithout_alter">
+				admin/exam/erwithout_alter.jsp
+			</result>
+		</action>
+		<action name="eroomEpsort"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomEpsort">
+			<result name="erwithout_alterInit" type="redirectAction">
+				erwithout_alterInit.action?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="erwithout_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_alter">
+			<result name="examroomwithoutcourse_list"
+				type="redirectAction">
+				examroomwithoutcourse_list
+			</result>
+			<result name="examroom_mylist"
+				type="redirectAction">
+				examroom_mylist
+			</result>
+			<result name="examroom_alllist"
+				type="redirectAction">
+				examroom_alllist
+			</result>
+			<result name="examroom_view"
+				type="redirectAction">
+				erwithout_view?examRoom.id=${examRoom.id}
+			</result> 
+			<result name="examroom_choose_listbycInit"
+				type="redirectAction">
+				examroom_choose_listbycInit.action?course.id=${examRoom.course.id}&amp;classId=${examRoom.classid}&amp;Return=${Return}
+			</result>
+		</action>
+		<action name="erwithout_prima_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_prima_alterInit">
+			<result name="erwithout_prima_alter">
+				admin/exam/erwithout_prima_alter.jsp
+			</result>
+		</action> 
+		<action name="erwithout_prima_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_prima_alter">
+			<result name="erwithout_prima_alter"
+				type="redirectAction">
+				erwithout_prima_alterInit?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="eroom_delete_user"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_delete_user">
+		</action>
+		<action name="eroom_delete_ep"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_delete_ep">
+		</action>
+		<action name="eroom_huifu_ep"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_huifu_ep">
+		</action>
+		<action name="eroom_delete_eplx"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_delete_eplx">
+		</action>
+		<action name="examroom_mylist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_mylist">
+			<result name="examroom_mylist">
+				admin/exam/examroom_mylist.jsp
+			</result>
+		</action> 
+		<action name="examroom_alllist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_alllist">
+			<result name="examroom_alllist">
+				admin/exam/examroom_alllist.jsp
+			</result>
+		</action> 
+		<action name="examroom_myalllist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_myalllist">
+			<result name="examroom_myalllist">
+				admin/exam/examroom_myalllist.jsp
+			</result> 
+		</action>
+		<action name="examroom_my_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_my_delete">
+			<result name="examroom_mylist" type="redirectAction">
+				examroom_mylist
+			</result> 
+		</action>
+		<action name="examroom_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_list">
+			<result name="examroom_list">
+				admin/exam/examroom_list.jsp
+			</result> 
+		</action>
+		<action name="examroom_addInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_addInit">
+			<result name="examroom_add">
+				admin/exam/examroom_add.jsp
+			</result> 
+		</action>
+		<action name="examroom_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_add">
+			<result name="examroom_add_success">
+				admin/exam/examroom_add_success.jsp
+			</result>
+			<result name="examroom_choose_listbycInit" type="redirectAction">
+			
+			</result>
+		</action>
+		<action name="erwithout_delete" class="com.sopia.courseman.action.EroomAction" method="erwithout_delete">
+			<result name="erwithout_delete" type="redirectAction">
+				examroom_choose_listbycInit.action?course.id=${examRoom.course.id}&amp;classId=${examRoom.classid}&amp;Return=${Return}
+			</result>
+		</action>
+		<action name="examroom_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_alterInit">
+			<result name="examroom_alter">
+				admin/exam/examroom_alter.jsp
+			</result>
+		</action>
+		<action name="examroom_validlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_validlist">
+			<result name="examroom_validlist">
+				admin/exam/examroom_validlist.jsp
+			</result>
+		</action> 
+		<action name="examroom_selectinglist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_selectinglist">
+			<result name="examroom_selectinglist">
+				admin/exam/examroom_selectinglist.jsp
+			</result>
+		</action>
+		<action name="examroom_validview"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_validview">
+			<result name="examroom_validview">
+				admin/exam/examroom_validview.jsp
+			</result>
+		</action>
+		<action name="examroom_valid"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_valid">
+			<result name="examroom_validview" type="redirectAction">
+				examroom_validview?examRoom.id=${examRoom.id}
+			</result>
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="elclass_examroom_validlist" type="redirectAction">
+				elclass_examroom_validlist
+			</result>
+			<result name="examroomwithoutcourse_list" type="redirectAction">
+				examroomwithoutcourse_list
+			</result>
+			<result name="examroom_alllist" type="redirectAction">
+				examroom_alllist.action
+			</result>
+			<result name="questionnaireList" type="redirectAction">
+				questionnaireList.action
+			</result>
+			<result name="examroom_view"
+				type="redirectAction">
+				erwithout_view?examRoom.id=${examRoom.id}
+			</result> 
+		</action>
+		<action name="course_examroom_valid"
+			class="com.sopia.courseman.action.EroomAction"
+			method="course_examroom_valid">
+			<result name="elclass_details_sh" type="redirectAction"> 
+				elclass_assignlist2
+			</result> 
+			<result name="course_return" type="redirectAction">
+				elclass_assignlist2
+			</result>
+			<result name="elclass_examroom_validlist" type="redirectAction">
+				elclass_examroom_validlist
+			</result>
+			<result name="elclass_examroom_selectinglist" type="redirectAction">
+				elclass_examroom_selectinglist
+			</result>
+		</action>
+		<action name="erwithout_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erwithout_view">
+			<result name="erwithout_view">
+				admin/exam/erwithout_view.jsp
+			</result>
+		</action>
+		<action name="course_erwithout_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="course_erwithout_view">
+			<result name="course_erwithout_view">
+				admin/exam/course_erwithout_view.jsp
+			</result>
+			<result name="course_erwithout_view_details">
+				admin/exam/course_erwithout_view_details.jsp
+			</result>
+			<result name="course_erwithout_view_delete">
+				admin/exam/course_erwithout_view_delete.jsp
+			</result>
+			<result name="course_erwithout_view_fuxuan">
+				admin/exam/course_erwithout_view_fuxuan.jsp
+			</result>
+		</action>
+		<action name="examroom_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_shlist">
+			<result name="examroom_shlist">
+				admin/exam/examroom_shlist.jsp
+			</result>
+		</action> 
+		<action name="examroom_selectings_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_selectings_shlist">
+			<result name="examroom_selectings_shlist">
+				admin/exam/examroom_selectings_shlist.jsp
+			</result>
+		</action>
+		<action name="eroom_timeover_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_timeover_list">
+			<result name="eroom_timeover_list">
+				admin/exam/eroom_timeover_list.jsp
+			</result>
+		</action>
+		<action name="examroom_prima_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_prima_shlist">
+			<result name="examroom_prima_shlist">
+				admin/exam/examroom_prima_shlist.jsp
+			</result>
+		</action>
+		<action name="examroom_selectings_prima_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_selectings_prima_shlist">
+			<result name="examroom_selectings_prima_shlist">
+				admin/exam/examroom_selectings_prima_shlist.jsp
+			</result>
+		</action> 
+		<action name="examroom_applyfor_revision"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_applyfor_revision">
+			<result name="examroom_applyfor_revision">
+				admin/exam/examroom_applyfor_revision.jsp
+			</result>
+		</action> 
+		<action name="examroom_suspended_recovery"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_suspended_recovery">
+			<result name="examroom_suspended_recovery">
+				admin/exam/examroom_suspended_recovery.jsp
+			</result>
+		</action> 
+		<action name="examroom_application_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_application_delete">
+			<result name="examroom_application_delete">
+				admin/exam/examroom_application_delete.jsp
+			</result>
+		</action> 
+		<action name="examroom_application_delete_shlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_application_delete_shlist">
+			<result name="examroom_application_delete_shlist">
+				admin/exam/examroom_application_delete_shlist.jsp
+			</result>
+		</action> 
+		<action name="examroom_audit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_audit">
+			<result name="examroom_audit_success">
+				admin/exam/examroom_modify_application_success.jsp
+			</result>
+			<result name="examroom_audit">
+				admin/exam/examroom_audit.jsp
+			</result>
+		</action>
+		<action name="examroom_alter_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_alter_list">
+			<result name="examroom_alter_list">
+				admin/exam/examroom_alter_list.jsp
+			</result> 
+		</action>
+		<action name="examroom_sh_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_sh_alter">
+			<result name="examroom_sh_alter">
+				admin/exam/examroom_sh_alter_success.jsp
+			</result> 
+			<result name="examroom_prima_shlist">
+				admin/exam/examroom_prima_shlist.jsp
+			</result>
+		</action>
+		<action name="examroom_sh_alter_Init"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_sh_alter_Init">
+			<result name="examroom_sh_alter_Init">
+				admin/exam/examroom_sh_alter.jsp
+			</result> 
+		</action>
+		<action name="examroom_modify_application"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_modify_application">
+			<result name="examroom_modify_application">
+				admin/exam/examroom_modify_application_success.jsp
+			</result>
+		</action>
+		<action name="examroom_modify_throughthe"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_modify_throughthe">
+			<result name="examroom_modify_throughthe">
+				admin/exam/examroom_modify_throughthe_success.jsp
+			</result>
+		</action>
+		<action name="examroom_sh_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_sh_view">
+			<result name="examroom_sh_view">
+				admin/exam/examroom_sh_view.jsp
+			</result>
+		</action>
+		<!-- 复制考场 -->
+		<action name="copy_Eroom"
+			class="com.sopia.courseman.action.EroomAction"
+			method="copy_Eroom">
+			<result name="copy_Eroom" type="redirectAction">
+				erwithout_alterInit.action?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="assignRoomInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="assignRoomInit">
+			<result name="assignRoomInit">
+				admin/exam/assignRoomInit.jsp
+			</result>
+		</action>
+		<action name="assignRoom"
+			class="com.sopia.courseman.action.EroomAction"
+			method="assignRoom">
+			<result name="assignRoom" type="redirectAction">
+				${resultPage}.action
+			</result>
+		</action>
+		<action name="examroom_sh_p"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_sh_p">
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="examroom_selectinglist" type="redirectAction">
+				examroom_selectinglist
+			</result>
+			<result name="examroom_shlist" type="redirectAction">
+				examroom_shlist
+			</result>
+			<result name="examroom_prima_shlist" type="redirectAction">
+				examroom_prima_shlist
+			</result>
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="examroom_applyfor_revision" type="redirectAction">
+				examroom_applyfor_revision
+			</result>
+			<result name="examroom_alter_list" type="redirectAction">
+				examroom_alter_list
+			</result>
+			<result name="examroom_application_delete" type="redirectAction">
+				examroom_application_delete
+			</result>
+			<result name="examroom_application_delete_shlist" type="redirectAction">
+				examroom_application_delete_shlist
+			</result>
+			<result name="examroom_suspended_recovery" type="redirectAction">
+				examroom_suspended_recovery
+			</result>
+			<result name="combinationSearchExamroom" type="redirectAction">
+				combinationSearchExamroom?str=&amp;examRoom.eroomLib.id=1
+			</result>
+			<!-- 培训班考场 -->
+			<result name="course_return" type="redirectAction">
+				elclass_assignlist2
+			</result>
+			<result name="elclass_assignlist2" type="redirectAction">
+				elclass_assignlist2
+			</result>
+			<result name="course_erwithout_view" type="redirectAction">
+				course_erwithout_view?examRoom.id=${examRoom.id}&amp;Return=falsa
+			</result>
+			<result name="elclass_primash_list" type="redirectAction">
+				elclass_primash_list
+			</result>
+			<result name="elclass_sh_list" type="redirectAction">
+				elclass_sh_list
+			</result>
+			<result name="elclass_applyAlter_list" type="redirectAction">
+				elclass_applyAlter_list
+			</result>
+			<result name="elclass_alter_list" type="redirectAction">
+				elclass_alter_list
+			</result>
+			<result name="elclass_delete_apply_list" type="redirectAction">
+				elclass_delete_apply_list
+			</result>
+			<result name="elclass_applyDelete_list" type="redirectAction">
+				elclass_applyDelete_list
+			</result>
+			<result name="elclass_examroom_validlist" type="redirectAction">
+				elclass_examroom_validlist
+			</result>
+			<result name="elclass_examroom_selectinglist" type="redirectAction">
+				elclass_examroom_selectinglist
+			</result>
+			<result name="combinationSearchclassInit" type="redirectAction">
+				combinationSearchclassInit
+			</result>
+			<result name="examroom_view"
+				type="redirectAction">
+				erwithout_view?examRoom.id=${examRoom.id}
+			</result> 
+			<result name="elclass_alllist" type="redirectAction">
+				elclass_alllist
+			</result>
+			<result name="elclass_applyAlter_list" type="redirectAction">
+				elclass_applyAlter_list
+			</result>
+			<result name="elclass_applyDelete_list" type="redirectAction">
+				elclass_applyDelete_list
+			</result>
+		</action>
+		<action name="examroom_sh_s"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_sh_s">
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="examroom_selectinglist" type="redirectAction">
+				examroom_selectinglist
+			</result>
+			<result name="examroom_selectings_prima_shlist" type="redirectAction">
+				examroom_selectings_prima_shlist
+			</result>
+			<result name="examroom_selectings_shlist" type="redirectAction">
+				examroom_selectings_shlist
+			</result>
+			<!-- 培训班 -->
+			<result name="elclass_examroom_validlist" type="redirectAction">
+				elclass_examroom_validlist
+			</result>
+			<result name="elclass_examroom_selectinglist" type="redirectAction">
+				elclass_examroom_selectinglist
+			</result>
+			<result name="elclass_examroom_selecting_prima_shlist" type="redirectAction">
+				elclass_examroom_selecting_prima_shlist
+			</result>
+			<result name="elclass_examroom_selecting_shlist" type="redirectAction">
+				elclass_examroom_selecting_shlist
+			</result>
+		</action>
+		<action name="examroom_sh_np"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_sh_np">
+			<result name="examroom_shlist" type="redirectAction">
+				examroom_shlist
+			</result>
+		</action>
+		<action name="examroom_validuserlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_validuserlist">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignuserlist?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_assign">
+				admin/exam/examroom_assign.jsp
+			</result>
+		</action>
+		<action name="examroom_selectingslist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_selectingslist">
+			<result name="examroom_selectings"
+				type="redirectAction">
+				examroom_selectings?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_selectassign">
+				admin/exam/examroom_selectassign.jsp
+			</result>
+		</action>
+		<action name="myExamroom_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="myExamroom_list">
+			<result name="myExamroom_list">
+				admin/exam/myExamroom_list.jsp
+			</result>
+		</action>
+		<action name="eroomStudyInfo"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomStudyInfo">
+			<result name="eroomStudyInfo">
+				admin/exam/eroomStudyInfo.jsp
+			</result>
+		</action>
+		<action name="myExamroom_man"
+			class="com.sopia.courseman.action.EroomAction"
+			method="myExamroom_man">
+			<result name="myExamroom_man">
+				admin/exam/myExamroom_man.jsp
+			</result>
+		</action>
+		<action name="delMacAddr"
+			class="com.sopia.courseman.action.EroomAction"
+			method="delMacAddr">
+			<result name="delMacAddr"  type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="eroom_pwdalter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_pwdalter">
+			<result name="eroom_pwdalter"  type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="setTesterSuspend"
+			class="com.sopia.courseman.action.EroomAction"
+			method="setTesterSuspend">
+			<result name="myExamroom_man" type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="setTesterReinstate"
+			class="com.sopia.courseman.action.EroomAction"
+			method="setTesterReinstate">
+			<result name="myExamroom_man" type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="setTesterContinue"
+			class="com.sopia.courseman.action.EroomAction"
+			method="setTesterContinue">
+			<result name="myExamroom_man" type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="setTesterSubmit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="setTesterSubmit">
+			<result name="myExamroom_man" type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="examroom_addtime"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_addtime">
+			<result name="myExamroom_man" type="redirectAction">
+				myExamroom_man?examRoom.id=${examRoom.id}&amp;pN=${pN}
+			</result>
+		</action>
+		<action name="exampaperreadInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperreadInit">
+			<result name="exampaperreadInit">
+				admin/exam/exampaperreadInit.jsp
+			</result>
+		</action>
+		<action name="exampaperread_roomlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperread_roomlist">
+			<result name="exampaperread_roomlist">
+				admin/exam/exampaperread_roomlist.jsp
+			</result>
+		</action>
+		<action name="exampaperreadlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperreadlist">
+			<result name="exampaperreadlist">
+				admin/exam/exampaperreadlist.jsp
+			</result>
+		</action>
+		<action name="exampaperreadlist_meps"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperreadlist_meps">
+			<result name="exampaperreadlist_meps">
+				admin/exam/exampaperreadlist_meps.jsp
+			</result>
+		</action>
+		<action name="listStudyRoomRecord"
+			class="com.sopia.courseman.action.EroomAction"
+			method="listStudyRoomRecord">
+			<result name="listStudyRoomRecord">
+				admin/exam/listStudyRoomRecord.jsp
+			</result>
+		</action>
+		<action name="requiz"
+			class="com.sopia.courseman.action.EroomAction" method="requiz">
+			<result name="exampaperreadlist" type="redirectAction">
+				exampaperreadlist?pN=${pN}&amp;pS=${pS}&amp;examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="exampaperread"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperread">
+			<result name="exampaperread">
+				admin/exam/exampaperread.jsp
+			</result>
+		</action>
+		<action name="exampaper_read"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaper_read">
+			<result name="exampaper_read">
+				admin/exam/exampaper_read.jsp
+			</result>
+		</action>
+		<action name="exampaperread_submit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperread_submit">
+			<result name="exampaperread_submit">success.jsp</result>
+			<result name="exampaperread_next" type="redirectAction">
+				exampaperread_next.action?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<action name="exampaperread_next"
+			class="com.sopia.courseman.action.EroomAction"
+			method="exampaperread_next">
+			<result name="exampaper_read" type="redirectAction">
+				exampaper_read.action?myExamPaper.id=${myExamPaper.id}
+			</result>
+		</action>
+		<!--场次类别 -->
+		<action name="eroomlib_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_list">
+			<result name="eroomlib_list">
+				admin/exam/eroomlib_list.jsp
+			</result>
+		</action>
+		<action name="eroomlib_addInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_addInit">
+			<result name="eroomlib_add">
+				admin/exam/eroomlib_add.jsp
+			</result>
+		</action>
+		<action name="eroomlib_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_add">
+			<!-- <result name="eroomlib_add_success">
+				admin/exam/eroomlib_add_success.jsp
+			</result> -->
+			<result name="eroomlib_add_success" type="redirectAction">
+				eroomlib_view.action?eroomLib.id=${eroomLib.id}
+			</result>
+		</action>
+		<action name="eroomlib_deleteInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_deleteInit">
+			<result name="eroomlib_delete">
+				admin/exam/eroomlib_delete.jsp
+			</result>
+		</action>
+
+		<action name="eroomlib_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_delete">
+			<result name="eroomlib_delete_success">
+				admin/exam/eroomlib_delete_success.jsp
+			</result>
+		</action>
+		<action name="eroomlib_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_view">
+			<result name="eroomlib_view">
+				admin/exam/eroomlib_view.jsp
+			</result>
+		</action>
+		<action name="eroomlib_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_alterInit">
+			<result name="eroomlib_alter">
+				admin/exam/eroomlib_alter.jsp
+			</result>
+		</action>
+		<action name="eroomlib_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomlib_alter">
+			<!-- <result name="eroomlib_alter_success">
+				admin/exam/eroomlib_alter_success.jsp
+			</result> -->
+			<result name="eroomlib_alter_success" type="redirectAction">
+				eroomlib_view.action?eroomLib.id=${eroomLib.id}
+			</result>
+		</action>
+		<action name="erlib_delete_user"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erlib_delete_user">
+		</action>
+		<action name="examprac_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_list">
+			<result name="examprac_list">
+				admin/exam/examprac_list.jsp
+			</result>
+		</action>
+		<action name="examprac_validlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_validlist">
+			<result name="examprac_validlist">
+				admin/exam/examprac_validlist.jsp
+			</result>
+		</action>
+		<action name="examprac_del"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_del">
+			<result name="examprac_validlist" type="redirectAction">
+				examprac_validlist.action
+			</result>
+		</action>
+		<action name="examprac_suspended_recovery"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_suspended_recovery">
+			<result name="examprac_suspended_recovery">
+				admin/exam/examprac_suspended_recovery.jsp
+			</result>
+		</action>
+		<action name="examprac_validview"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_validview">
+			<result name="examprac_validview">
+				admin/exam/examprac_validview.jsp
+			</result>
+		</action>
+		<action name="examprac_validsuspended"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_validsuspended">
+			<result name="examprac_suspended_recovery" type="redirectAction">
+				examprac_suspended_recovery
+			</result>
+			<result name="examprac_validlist" type="redirectAction">
+				examprac_validlist.action
+			</result>
+			<result name="examprac_sh_list" type="redirectAction">
+				examprac_sh_list.action
+			</result>
+		</action>
+		<action name="examprac_validrecovery"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_validrecovery">
+			<result name="examprac_suspended_recovery" type="redirectAction">
+				examprac_suspended_recovery
+			</result>
+			<result name="examprac_validlist" type="redirectAction">
+				examprac_validlist.action
+			</result>
+			<result name="examprac_sh_list" type="redirectAction">
+				examprac_sh_list.action
+			</result>
+		</action>
+		<action name="examprac_validpass"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_validpass">
+			<result name="examprac_validview" type="redirectAction">
+				examprac_validview?examprac.id=${examprac.id}
+			</result>
+			<result name="examprac_sh_list" type="redirectAction">
+				examprac_sh_list.action
+			</result>
+		</action>
+		<action name="examprac_validunpass"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_validunpass">
+			<result name="examprac_validview" type="redirectAction">
+				examprac_validview?examprac.id=${examprac.id}
+			</result>
+			<result name="examprac_sh_list" type="redirectAction">
+				examprac_sh_list.action
+			</result>
+		</action>
+		<action name="examprac_addinit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_addinit">
+			<result name="examprac_add">
+				admin/exam/examprac_add.jsp
+			</result>
+		</action>
+		<action name="examprac_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_add">
+			<result name="examprac_list" type="redirectAction">
+				examprac_list?pN=${pN}
+			</result>
+		</action>
+		<action name="examprac_alterinit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_alterinit">
+			<result name="examprac_alter">
+				admin/exam/examprac_alter.jsp
+			</result>
+		</action>
+		<action name="examprac_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_alter">
+			<result name="examprac_list" type="redirectAction">
+				examprac_list?pN=${pN}
+			</result>
+		</action>
+		<action name="examprac_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_delete">
+			<result name="examprac_list" type="redirectAction">
+				examprac_list?pN=${pN}
+			</result>
+		</action>
+		<action name="examprac_assign_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assign_list">
+			<result name="examprac_assign_list">
+				admin/exam/examprac_assign_list.jsp
+			</result>
+		</action>
+		<action name="examprac_assign_addinit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assign_addinit">
+			<result name="examprac_assign_addinit">
+				admin/exam/examprac_assign_addinit.jsp
+			</result>
+		</action>
+		<action name="examprac_assign_addlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assign_addlist">
+			<result name="examprac_assign_addlist">
+				admin/exam/examprac_assign_addlist.jsp
+			</result>
+		</action>
+		<action name="examprac_assign_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assign_add">
+			<result name="examprac_assign_addlist">
+				admin/exam/examprac_assign_addlist.jsp
+			</result>
+		</action>
+		<action name="examprac_assign_adds"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assign_adds">
+			<result name="examprac_assign_addlist">
+				admin/exam/examprac_assign_addlist.jsp
+			</result>
+		</action>
+		<action name="examprac_assign_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assign_delete">
+			<result name="examprac_assign_list" type="redirectAction">
+				examprac_assign_list?examprac.id=${examprac.id}
+			</result>
+		</action>
+		<action name="examprac_assigndeplist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assigndeplist">
+			<result name="examprac_assigndeplist">
+				admin/exam/examprac_assigndeplist.jsp
+			</result>
+		</action>
+		<action name="examprac_assigndep_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assigndep_add">
+			<result name="examprac_assigndeplist"
+				type="redirectAction">
+				examprac_assigndeplist?examprac.id=${examprac.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="examprac_assigndep_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examprac_assigndep_delete">
+			<result name="examprac_assigndeplist"
+				type="redirectAction">
+				examprac_assigndeplist?examprac.id=${examprac.id}&amp;elmessage=success
+			</result>
+		</action>
+		<!--  场次类别 -->
+		<action name="examroom_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_alter">
+			<result name="examroom_alter_success">
+				admin/exam/examroom_alter_success.jsp
+			</result>
+		</action>
+		<action name="examroom_listbyc"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_listbyc">
+			<result name="examroom_listbyc">
+				admin/exam/examroom_listbyc.jsp
+			</result>
+		</action>
+		<action name="examroom_assign_bkInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assign_bkInit">
+			<result name="examroom_assign_bk">
+				admin/exam/examroom_assign_bk.jsp
+			</result>
+		</action>
+		<action name="examroom_assignuserlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignuserlist">
+			<result name="examroom_assignuserlist">
+				admin/exam/examroom_assignuserlist.jsp
+			</result>
+		</action>
+		<action name="examroom_selectings"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_selectings">
+			<result name="examroom_selectings">
+				admin/exam/examroom_selectings.jsp
+			</result>
+		</action>
+		<action name="examroom_assignuser_deletes"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignuser_deletes">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignuserlist?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_selectings"
+				type="redirectAction">
+				examroom_selectings?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+		</action>
+		<action name="examroom_assignInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignInit">
+			<result name="examroom_assign">
+				admin/exam/examroom_assign.jsp
+			</result>
+			<result name="examroom_assignSearchInit"
+				type="redirectAction">
+				examroom_assignSearchInit?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;course.id=${course.id}&amp;course.classid=${course.classid}
+			</result>
+		</action>
+		<action name="examroom_assignwcInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignwcInit">
+			<result name="examroom_assignwc">
+				admin/exam/examroom_assign.jsp
+			</result>
+			<result name="examroom_assign">
+				admin/exam/examroom_assign2.jsp
+			</result>
+			<result name="examroom_assignwcSearchInit"
+				type="redirectAction">
+				examroom_assignwcSearchInit?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;course.id=${course.id}
+			</result>
+		</action> 
+		<action name="examroom_importScoreInit" class="com.sopia.courseman.action.EroomAction" method="examroom_importScoreInit">
+			<result name="examroom_importScoreInit">
+				admin/exam/examroom_importScoreInit.jsp
+			</result>
+		</action>
+		<action name="examroomScoreImportCheck" class="com.sopia.courseman.action.EroomAction" method="examroomScoreImportCheck">
+			<result name="accountImportInfo">
+				admin/exam/importInfo.jsp
+			</result>
+			<result name="coursemes_import">
+				admin/exam/coursemes_import.jsp
+			</result>
+		</action>
+		<action name="examRoomScoreImport" class="com.sopia.courseman.action.EroomAction" method="examRoomScoreImport">
+			<result name="elclass_course">
+				admin/exam/success.jsp
+			</result>
+		</action>
+		<action name="elclass_examroom_assignwcInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="elclass_examroom_assignwcInit">
+			<result name="examroom_assignwc">
+				admin/exam/examroom_assign.jsp
+			</result>
+			<result name="examroom_assign">
+				admin/exam/examroom_assign2.jsp
+			</result>
+			<result name="examroom_assignwcSearchInit"
+				type="redirectAction">
+				examroom_assignwcSearchInit?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="examroom_prima_assignwcInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_prima_assignwcInit">
+			<result name="examroom_prima_assignwc">
+				admin/exam/examroom_prima_assign.jsp
+			</result>
+			<result name="examroom_assignwcSearchInit" type="redirectAction">
+				examroom_assignwcSearchInit?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="examroom_assignwcSearchInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignwcSearchInit">
+			<result name="examroom_assignwcSearch">
+				admin/exam/examroom_assignwcSearch.jsp
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+			<result name="examroom_assignSearchlist"
+				type="redirectAction">
+				examroom_assignSearchlist?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;course.id=${course.id}
+			</result>
+		</action>
+		<action name="examroom_assignSelectings"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignSelectings">
+			<result name="examroom_assignSelectings">
+				admin/exam/examroom_assignSelectings.jsp
+			</result>
+		</action> 
+		<action name="examroom_assignwc"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignwc">
+			<result name="examroom_assignwcSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+		</action>
+		<action name="examroom_assignwcSelectings"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignwcSelectings">
+			<result name="examroom_selectings" type="redirectAction"> 
+				examroom_selectings?examRoom.id=${examRoom.id}
+			</result>
+		</action> 
+		<action name="examroom_assignSelectingsList"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignSelectingsList">
+			<result name="examroom_assignSelectings">
+				admin/exam/examroom_assignSelectings.jsp
+			</result>
+		</action>
+		<action name="examroom_assignwcs"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignwcs">
+			<result name="examroom_assignwcSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+		</action>
+		<action name="examroom_assignwcsAjax"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignwcsAjax">
+		</action>
+		<action name="elclass_seachUser"
+			class="com.sopia.courseman.action.EroomAction"
+			method="elclass_seachUser">
+		</action>
+		<action name="examroom_seachUser"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_seachUser">
+			<result name="examroom_assignwcSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+		</action>
+		<action name="examroom_unassignwc"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_unassignwc">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignuserlist?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_selectings"
+				type="redirectAction">
+				examroom_selectings?examRoom.id=${examRoom.id}
+			</result>
+			<result name="examroom_assignwcSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+		</action>
+		<action name="examroom_assign"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assign">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignInit?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_assignSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+		</action>
+		<action name="examroom_assignuser"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignuser">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignInit?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_assignSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+			<result name="examroom_listAssignedUser">
+				admin/exam/examroom_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="examroom_unassignuser"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_unassignuser">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignuserlist?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+			<result name="examroom_listAssignedUser">
+				admin/exam/examroom_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="examroom_unassign"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_unassign">
+			<result name="examroom_assignuserlist"
+				type="redirectAction">
+				examroom_assignuserlist?examRoom.id=${examRoom.id}&amp;examPaper.id=${examPaper.id}
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+		</action>
+		<action name="examroom_assigndepInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assigndepInit">
+			<result name="examroom_assign">
+				admin/exam/examroom_assign.jsp
+			</result>
+			<result name="examroom_assigndeplist"
+				type="redirectAction">
+				examroom_assigndeplist?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="examroom_assigndeplist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assigndeplist">
+			<result name="examroom_assigndeplist">
+				admin/exam/examroom_assigndeplist.jsp
+			</result>
+		</action>
+		<action name="examroom_assigndep_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assigndep_add">
+			<result name="examroom_assigndeplist"
+				type="redirectAction">
+				examroom_assigndeplist?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="examroom_assigndep_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assigndep_delete">
+			<result name="examroom_assigndeplist"
+				type="redirectAction">
+				examroom_assigndeplist?examPaper.id=${examPaper.id}&amp;examRoom.id=${examRoom.id}&amp;elmessage=success
+			</result>
+		</action>
+		<action name="examroom_assignSearchInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignSearchInit">
+			<result name="examroom_assignSearch">
+				admin/exam/examroom_assignSearch.jsp
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+			<result name="examroom_listAssignedUser">
+				admin/exam/examroom_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="examroom_assignSearchAll"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignSearchAll">
+			<result name="examroom_assignSearch">
+				admin/exam/examroom_assignSearch.jsp
+			</result>
+			<result name="examroom_assigntoUsers">
+				admin/exam/eroom_assigntoUsers.jsp
+			</result>
+			<result name="examroom_listAssignedUser">
+				admin/exam/examroom_listAssignedUser.jsp
+			</result>
+		</action>
+		<action name="examroom_assignSearchlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_assignSearchlist">
+			<result name="examroom_assignSearchlist">
+				admin/exam/examroom_assignSearchlist.jsp
+			</result>
+		</action>
+		<!-- 场次批次管理 -->
+		<action name="eroom_batchlib_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_list">
+			<result name="eroom_batchlib_list">
+				admin/exam/eroom_batchlib_list.jsp
+			</result>
+		</action>
+		<action name="eroom_batchlib_addInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_addInit">
+			<result name="eroom_batchlib_add">
+				admin/exam/eroom_batchlib_add.jsp
+			</result>
+		</action>
+		<action name="eroom_batchlib_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_add">
+			<result name="eroom_batchlib_add_success">
+				admin/exam/eroom_batchlib_add_success.jsp
+			</result>
+		</action>
+		<action name="eroom_batchlib_deleteInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_deleteInit">
+			<result name="eroom_batchlib_delete">
+				admin/exam/eroom_batchlib_delete.jsp
+			</result>
+		</action>
+
+		<action name="eroom_batchlib_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_delete">
+			<result name="eroom_batchlib_delete_success">
+				admin/exam/eroom_batchlib_delete_success.jsp
+			</result>
+		</action>
+		<action name="eroom_batchlib_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_view">
+			<result name="eroom_batchlib_view">
+				admin/exam/eroom_batchlib_view.jsp
+			</result>
+		</action>
+		<action name="eroom_batchlib_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_alterInit">
+			<result name="eroom_batchlib_alter">
+				admin/exam/eroom_batchlib_alter.jsp
+			</result>
+		</action>
+		<action name="eroom_batchlib_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batchlib_alter">
+			<result name="eroom_batchlib_alter_success">
+				admin/exam/eroom_batchlib_alter_success.jsp
+			</result>
+		</action>
+		<action name="erblib_delete_user"
+			class="com.sopia.courseman.action.EroomAction"
+			method="erblib_delete_user">
+		</action>
+		<action name="eroom_batch_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_list">
+			<result name="eroom_batch_list">
+				admin/exam/eroom_batch_list.jsp
+			</result>
+		</action>
+		<action name="eroom_batch_addInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_addInit">
+			<result name="eroom_batch_add">
+				admin/exam/eroom_batch_add.jsp
+			</result>
+		</action>
+		<action name="eroom_batch_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_add">
+			<result name="eroom_batch_list" type="redirectAction">
+				stat_eroom_batch_list
+			</result>
+		</action>
+		<action name="eroom_batch_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_delete">
+			<result name="eroom_batch_list" type="redirectAction">
+				stat_eroom_batch_list
+			</result>
+		</action>
+		<action name="eroom_batch_view"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_view">
+			<result name="eroom_batch_view">
+				admin/exam/eroom_batch_view.jsp
+			</result>
+		</action>
+		<action name="eroom_batch_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_alterInit">
+			<result name="eroom_batch_alter">
+				admin/exam/eroom_batch_alter.jsp
+			</result>
+		</action>
+		<action name="eroom_batch_alter"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_alter">
+			<result name="eroom_batch_list" type="redirectAction">
+				stat_eroom_batch_list
+			</result>
+		</action>
+		<action name="eroom_batch2room_delete"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch2room_delete">
+			<result name="eroom_batch_view" type="redirectAction">
+				eroom_batch_view?erbatch.id=${erbatch.id}
+			</result>
+		</action>
+		<action name="eroom_batch_room"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_room">
+			<result name="eroom_batch_room">
+				admin/exam/eroom_batch_room.jsp
+			</result>
+		</action>
+		<action name="eroom_batch_room_list"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroom_batch_room_list">
+			<result name="eroom_batch_room_list">
+				admin/exam/eroom_batch_room_list.jsp
+			</result>
+		</action>
+		<action name="dazi_test"
+			class="com.sopia.courseman.action.EroomAction" method="dazi_test">
+			<result name="dazi_test">admin/exam/dazi_test.jsp</result>
+		</action>
+		<action name="dazi_test_sub"
+			class="com.sopia.courseman.action.EroomAction" method="dazi_test_sub">
+		</action>
+		<!-- 考场组合搜索 -->
+		<action name="combinationSearchExamroomInit"
+			class="com.sopia.courseman.action.EroomAction" method="combinationSearchExamroomInit">
+			<result name="combinationSearchExamroomInit">admin/exam/combinationSearchExamroom.jsp</result>
+		</action>
+		
+		<action name="combinationSearchExamroom"
+			class="com.sopia.courseman.action.EroomAction" method="combinationSearchExamroom">
+			<result name="combinationSearchExamroom">
+			admin/exam/combinationSearchExamroomlist.jsp
+			</result>
+		</action>
+		
+		
+		<action name="examroom_choose_listbycInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_choose_listbycInit">
+			<result name="examroom_choose_listbycInit">
+				admin/exam/examroom_choose_listbycInit.jsp
+			</result>
+		</action>
+		<action name="class_choose_examroom"
+			class="com.sopia.courseman.action.EroomAction"
+			method="class_choose_examroom">
+			<result name="class_choose_examroom" type="redirectAction">
+				elclass_addInit?elclassId=${classId}
+			</result>
+			<result name="elclass_details_sh" type="redirectAction">
+				elclass_details_sh?elclassId=${classId}&amp;PageStatus=-2&amp;PageStatusint=-2
+			</result>
+			<result name="examroom_listbyc" type="redirectAction">
+				examroom_listbyc?course.id=${course.id}
+			</result>
+			<result name="elclass_alterInit" type="redirectAction">
+				elclass_alterInit?elclass.id=${classId}
+			</result>
+			<result name="examroom_choose_listbycInit" type="redirectAction">
+				examroom_choose_listbycInit.action?course.id=${course.id}&amp;classId=${classId}
+			</result>
+		</action> 
+		<action name="examroom_prima_sh_alterInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_prima_sh_alterInit">
+			<result name="examroom_prima_sh_alter">
+				admin/exam/examroom_prima_sh_alter.jsp 
+			</result>
+		</action>
+		
+		<!-- 备注 -->
+		<action name="CRE_noteInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="CRE_noteInit">
+			<result name="CRE_note">
+				admin/exam/CRE_note.jsp 
+			</result>
+		</action>
+		<action name="CRE_notelistInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="CRE_notelistInit">
+			<result name="CRE_notelist">
+				admin/exam/CRE_notelist.jsp 
+			</result>
+		</action>
+		<action name="CRE_note_addInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="CRE_note_addInit">
+			<result name="CRE_note_add">
+				admin/exam/CRE_note_add.jsp 
+			</result>
+		</action>
+		<action name="CRE_addNotes"
+			class="com.sopia.courseman.action.EroomAction"
+			method="CRE_addNotes">
+			<result name="CRE_addNotes">
+				admin/class/CRE_addNotes.jsp
+			</result>
+		</action>
+		<action name="CRE_note_add"
+			class="com.sopia.courseman.action.EroomAction"
+			method="CRE_note_add">
+			<!-- 考核场备注 -->
+			<result name="examroom_prima_shlist" type="redirectAction">
+				examroom_prima_shlist
+			</result>
+			<result name="examroom_shlist" type="redirectAction">
+				examroom_shlist
+			</result>
+			<result name="examroom_selectings_shlist" type="redirectAction">
+				examroom_selectings_shlist
+			</result>
+			<result name="examroom_selectings_prima_shlist" type="redirectAction">
+				examroom_selectings_prima_shlist
+			</result>
+			<result name="examroom_selectinglist" type="redirectAction">
+				examroom_selectinglist
+			</result>
+			<result name="examroom_validlist" type="redirectAction">
+				examroom_validlist
+			</result>
+			<result name="examroom_applyfor_revision" type="redirectAction">
+				examroom_applyfor_revision
+			</result>
+			<result name="examroom_alter_list" type="redirectAction">
+				examroom_alter_list
+			</result>
+			<result name="examroom_application_delete" type="redirectAction">
+				examroom_application_delete
+			</result>
+			<result name="elclass_examroom_selecting_shlist" type="redirectAction">
+				elclass_examroom_selecting_shlist
+			</result> 
+			<!-- 培训班备注 -->
+			<result name="elclass_primash_list" type="redirectAction">
+				elclass_primash_list
+			</result> 
+			<result name="elclass_sh_list" type="redirectAction">
+				elclass_sh_list
+			</result> 
+			<result name="elclass_applyAlter_list" type="redirectAction">
+				elclass_applyAlter_list
+			</result> 
+			<result name="elclass_alter_list" type="redirectAction">
+				elclass_alter_list
+			</result> 
+			<result name="elclass_applyDelete_list" type="redirectAction">
+				elclass_applyDelete_list
+			</result> 
+			<result name="elclass_delete_apply_list" type="redirectAction">
+				elclass_delete_apply_list
+			</result> 
+			<result name="combinationSearchClass" type="redirectAction">
+				combinationSearchClass
+			</result> 
+			
+			<!-- 培训班考场备注 -->
+			<result name="close">
+				close
+			</result> 
+			<result name="CRE_notelistInit" type="redirectAction">
+				CRE_notelistInit?examRoom.id=${examRoom.id}&amp;elclass.id=${elclass.id}&amp;course.id=${course.id}
+			</result> 
+		</action>
+		<action name="eroomEpDeleteUserInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomEpDeleteUserInit">
+			<result name="importUserDelEroomEp">
+				admin/exam/importUserDelEroomEp.jsp
+			</result>
+		</action>
+		<action name="eroomEpWriteUserInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomEpWriteUserInit">
+			<result name="importUserToEroomEp">
+				admin/exam/importUserToEroomEp.jsp
+			</result>
+		</action>
+		<action name="eroomEpDeleteUser"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomEpDeleteUser">
+			<result name="importUserDelEroomEp">
+				admin/exam/importUserDelEroomEp.jsp
+			</result>
+		</action>
+		<action name="eroomEpWriteUser"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomEpWriteUser">
+			<result name="importUserToEroomEp">
+				admin/exam/importUserToEroomEp.jsp
+			</result>
+		</action>
+		<action name="examroom_userAudit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_userAudit">
+			<result name="examroom_userAudit">
+				admin/exam/examroom_userAudit.jsp
+			</result>
+		</action>
+		<action name="examroom_auditUserlist"
+			class="com.sopia.courseman.action.EroomAction"
+			method="examroom_auditUserlist">
+			<result name="examroom_auditUserlist">
+				admin/exam/examroom_auditUserlist.jsp
+			</result>
+		</action>
+		<action name="addSimpleRemackInit"
+			class="com.sopia.courseman.action.EroomAction"
+			method="addSimpleRemackInit">
+			<result name="addSimpleRemack">
+				admin/exam/addSimpleRemack.jsp
+			</result>
+		</action>
+		<action name="addSimpleRemack"
+			class="com.sopia.courseman.action.EroomAction"
+			method="addSimpleRemack">
+			<result name="examroom_auditUserlist" type="redirectAction">
+				examroom_auditUserlist.action?examRoom.id=${simpleRemack.typeid}
+			</result>
+			<result name="class_auditUserlist" type="redirectAction">
+				class_auditUserlist.action?elClass.id=${simpleRemack.typeid}
+			</result>
+		</action>
+		<action name="listSimpleRemack"
+			class="com.sopia.courseman.action.EroomAction"
+			method="listSimpleRemack">
+			<result name="listSimpleRemack">
+				admin/exam/listSimpleRemack.jsp
+			</result>
+		</action>
+		<action name="updateStudyRoomStatus"
+			class="com.sopia.courseman.action.EroomAction"
+			method="updateStudyRoomStatus">
+			<result name="examroom_auditUserlist" type="redirectAction">
+				examroom_auditUserlist.action?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="updateStudysRoomStatus"
+			class="com.sopia.courseman.action.EroomAction"
+			method="updateStudysRoomStatus">
+			<result name="examroom_auditUserlist" type="redirectAction">
+				examroom_auditUserlist.action?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="deleteStudyRoomApply"
+			class="com.sopia.courseman.action.EroomAction"
+			method="deleteStudyRoomApply">
+			<result name="examroom_auditUserlist" type="redirectAction">
+				examroom_auditUserlist.action?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="deleteStudysRoomApply"
+			class="com.sopia.courseman.action.EroomAction"
+			method="deleteStudysRoomApply">
+			<result name="examroom_auditUserlist" type="redirectAction">
+				examroom_auditUserlist.action?examRoom.id=${examRoom.id}
+			</result>
+		</action>
+		<action name="eroomQuestionList"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomQuestionList">
+			<result name="eroomQuestionList">
+				admin/exam/eroomQuestionList.jsp
+			</result>
+		</action>
+		<action name="setStudyQuestionScore"
+			class="com.sopia.courseman.action.EroomAction"
+			method="setStudyQuestionScore">
+			<result name="eroomQuestionList" type="redirectAction">
+				eroomQuestionList.action?examRoom.id=${examRoom.id}&amp;question.title=${question.title}&amp;question.id=${question.id}
+			</result>
+		</action>
+		<!-- 考场分配给警种 -->
+		<action name="eroomAssignJingzhongList"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAssignJingzhongList">
+			<result name="eroomAssignJingzhongList">
+				admin/exam/eroomAssignJingzhongList.jsp
+			</result>
+		</action>
+		<!-- 考场分配给警种内容页 -->
+		<action name="eroomAssignJingzhong"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAssignJingzhong">
+			<result name="eroomAssignJingzhong">
+				admin/exam/eroomAssignJingzhong.jsp
+			</result>
+		</action>
+		<!-- 考场分配给警种处理 -->
+		<action name="eroomAssignJingzhongProcess"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAssignJingzhongProcess">
+			<result name="eroomAssignJingzhong" type="redirectAction">
+				eroomAssignJingzhong.action?examRoom.id=${examRoom.id}&amp;updateOk=1
+			</result>
+		</action>
+		<action name="eroomStatusUpdate"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomStatusUpdate">
+			<result name="eroomAssignJingzhongList" type="redirectAction">
+				eroomAssignJingzhongList.action
+			</result>
+			<result name="eroomAuditJingzhongList" type="redirectAction">
+				eroomAuditJingzhongList.action
+			</result>
+		</action>
+		<!-- 考场警种审核 -->
+		<action name="eroomAuditJingzhongList"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAuditJingzhongList">
+			<result name="eroomAuditJingzhongList">
+				admin/exam/eroomAuditJingzhongList.jsp
+			</result>
+		</action>
+		<!-- 考场警种审核内容页 -->
+		<action name="eroomAuditJingzhong"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAuditJingzhong">
+			<result name="eroomAuditJingzhong">
+				admin/exam/eroomAuditJingzhong.jsp
+			</result>
+		</action>
+		<!-- 考场警种审核处理 -->
+		<action name="eroomAuditJingzhongProcess"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAuditJingzhongProcess">
+			<result name="eroomAuditJingzhong" type="redirectAction">
+				eroomAuditJingzhong.action?examRoom.id=${examRoom.id}&amp;updateOk=1
+			</result>
+		</action>
+		<!-- 考场分配给工种 -->
+		<action name="eroomAssignJingzhongList"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAssignJingzhongList">
+			<result name="eroomAssignJingzhongList">
+				admin/exam/eroomAssignJingzhongList.jsp
+			</result>
+		</action>
+		<!-- 考场分配给工种内容页 -->
+		<action name="eroomAssignJingzhong"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAssignJingzhong">
+			<result name="eroomAssignJingzhong">
+				admin/exam/eroomAssignJingzhong.jsp
+			</result>
+		</action>
+		<!-- 考场分配给工种处理 -->
+		<action name="eroomAssignJingzhongProcess"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAssignJingzhongProcess">
+			<result name="eroomAssignJingzhong" type="redirectAction">
+				eroomAssignJingzhong.action?examRoom.id=${examRoom.id}&amp;updateOk=1
+			</result>
+		</action>
+		<action name="eroomStatusUpdate"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomStatusUpdate">
+			<result name="eroomAssignJingzhongList" type="redirectAction">
+				eroomAssignJingzhongList.action
+			</result>
+			<result name="eroomAuditJingzhongList" type="redirectAction">
+				eroomAuditJingzhongList.action
+			</result>
+		</action>
+		<!-- 考场工种审核 -->
+		<action name="eroomAuditJingzhongList"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAuditJingzhongList">
+			<result name="eroomAuditJingzhongList">
+				admin/exam/eroomAuditJingzhongList.jsp
+			</result>
+		</action>
+		<!-- 考场工种审核内容页 -->
+		<action name="eroomAuditJingzhong"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAuditJingzhong">
+			<result name="eroomAuditJingzhong">
+				admin/exam/eroomAuditJingzhong.jsp
+			</result>
+		</action>
+		<!-- 考场工种审核处理 -->
+		<action name="eroomAuditJingzhongProcess"
+			class="com.sopia.courseman.action.EroomAction"
+			method="eroomAuditJingzhongProcess">
+			<result name="eroomAuditJingzhong" type="redirectAction">
+				eroomAuditJingzhong.action?examRoom.id=${examRoom.id}&amp;updateOk=1
+			</result>
+		</action>
+	</package>
+</struts>

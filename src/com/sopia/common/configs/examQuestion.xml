@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="elearning_examQuestion" extends="elearning">
+		<action name="exam_question_seachInit" 
+			class="com.sopia.courseman.action.ExamQuestionAction"
+			method="exam_question_seachInit">
+			<result name="exam_question_seach">
+				admin/exam/exam_question_seach.jsp
+			</result>
+		</action>
+		<action name="exam_question_list" 
+			class="com.sopia.courseman.action.ExamQuestionAction"
+			method="exam_question_list">
+			<result name="exam_question_list">
+				admin/exam/exam_question_list.jsp
+			</result>
+		</action>
+		<action name="exam_question_info" 
+			class="com.sopia.courseman.action.ExamQuestionAction"
+			method="exam_question_info">
+			<result name="exam_question_info">
+				admin/exam/exam_question_info.jsp
+			</result>
+		</action>
+	</package>
+</struts>

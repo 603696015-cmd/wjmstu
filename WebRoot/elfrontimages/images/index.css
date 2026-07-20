@@ -1,0 +1,21 @@
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; BACKGROUND-COLOR: #fdfdfd
+}
+P {
+	FONT-SIZE: 12px; COLOR: #8a8a8a; LINE-HEIGHT: 22px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+LABEL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+A.navdh001:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.navdh001:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.navdh001:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ff0000; TEXT-ALIGN: center; TEXT-DECORATION: none
+}

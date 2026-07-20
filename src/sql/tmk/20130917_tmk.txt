@@ -1,0 +1,160 @@
+alter table erbatch_lib add(status  number(1) default 0 NOT NULL);
+
+insert into erbatch_lib(id,name,description,parentid,lid,rid,status) values (1,'考场批次根','考场批次根',0,0,0,0);
+
+commit;
+
+
+-- Create table
+create table ERBATCH_USER_FENPEI
+(
+  BATCHID NUMBER not null,
+  USERID  NUMBER not null,
+  PROCESS NUMBER(12,2) default 0.00 not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  
+ 
+ create or replace procedure geterbatchprocess
+(batchid_ number,userid_ number, process_ out float)
+as
+count_ number;
+total_rooms_ number;
+rooms_ number;
+begin
+     select count(1) into count_ from erbatch_user_fenpei where batchid=batchid_ and userid=userid_;
+     select count(1) into total_rooms_ from erbatch_room where erbid=batchid_;
+     select count(1) into rooms_ from
+            (select distinct(er.id) from exam_room er
+            left join study_room sr on er.id=sr.roomid
+            left join study_exampaper se on er.id=se.roomid
+            left join study_quizinfo sqi on er.id=sqi.roomid and se.epid=sqi.epid
+            where sr.userid=userid_ and se.userid=userid_ and sqi.userid=userid_
+            and er.id in (select roomid from erbatch_room where erbid=batchid_));
+     if count_ =1 then
+        --更新考场批次进度
+        if rooms_>0 and total_rooms_>0 then
+           update erbatch_user_fenpei set process=round(rooms_/total_rooms_ * 100,2) where batchid=batchid_ and userid=userid_;
+        end if;
+     end if;
+     select process into process_ from erbatch_user_fenpei where batchid=batchid_ and userid=userid_;
+end;
+ 
+ 
+ 
+  
+  create or replace procedure assignerbatchuserfenpei
+(userid_ number)
+as
+count_ number;
+cursor erbatchs is select id from erbatch;
+batchid_ number;
+cursor erooms is select roomid from erbatch_room where erbid=batchid_;
+roomid_ number;
+cursor exampapers is select epid from exam_reps where roomid=roomid_;
+epid_ number;
+begin
+     open erbatchs;
+         loop
+            fetch erbatchs into batchid_ ;
+            exit when erbatchs%notfound;
+            select count(1) into count_ from erbatch_user_fenpei where batchid=batchid_ and userid=userid_;
+            if count_=0 then
+               --插入考场批次分配表
+               insert into erbatch_user_fenpei (batchid,userid,process) values (batchid_,userid_,0.00);
+               --将考场批次中所有考场分配给用户
+               open erooms;
+                   loop
+                      fetch erooms into roomid_ ;
+                      exit when erooms%notfound;
+                      select count(1) into count_ from study_room where roomid=roomid_ and userid=userid_;
+                      if count_=0 then
+                         insert into study_room(roomid,userid,status,classid,joinway)
+                           values(roomid_,userid_,0,-1,0);
+                         --将考场中的所有试卷分配给用户
+                         open exampapers;
+                             loop
+                                fetch exampapers into epid_ ;
+                                exit when exampapers%notfound;
+                                select count(1) into count_ from study_exampaper where roomid=roomid_ and userid=userid_ and epid=epid_ and classid=-1;
+                                if count_=0 then
+                                   insert into study_exampaper(userid,epid,roomid,classid) values(userid_,epid_,roomid_,-1);
+                                end if;
+                             end loop;
+                         close exampapers;
+                      end if;
+                   end loop;
+               close erooms;
+            end if;
+         end loop;
+     close erbatchs;
+end;
+
+
+
+
+create or replace procedure addpinyinclass
+ (userid_ number,classid_ number)
+ as
+ count_ number;
+ cursor courses is select courseid from  class_course where classid=classid_;
+ courseid_ number;
+ begin
+      select count(1) into count_ from study_class where userid=userid_ and classid=classid_;
+      if count_=0 then
+         insert into study_class (classid,userid,process) values (classid_,userid_,0.00);
+      end if;
+      open courses;
+         loop
+            fetch courses into courseid_ ;
+            exit when courses%notfound;
+            select count(1) into count_ from study_course where classid=classid_ and courseid=courseid_ and userid=userid_;
+            if count_=0 then
+               insert into study_course(userid,courseid,classid) values(userid_,courseid_,classid_);
+            end if;
+         end loop;
+      close courses;
+ end;
+
+  
+
+  
+  create or replace procedure getnextcpid
+ (classid_ number,courseid_ number,cpid_ number,nextcpid_ out number)
+ as
+ cursor cpids is select id,sortid from course_page where courseid=courseid_ order by sortid asc;
+ id_ number;
+ sortid_ number;
+ nowsortid_ number;
+ maxsortid_ number;
+ begin
+      select sortid into nowsortid_ from course_page where courseid=courseid_ and id=cpid_;
+      select max(sortid) into maxsortid_ from course_page where courseid=courseid_; 
+       open cpids;
+         loop
+            fetch cpids into id_,sortid_ ;
+            exit when cpids%notfound;
+            if sortid_>nowsortid_ then
+               nextcpid_:=id_;
+               exit;
+            else if sortid_=maxsortid_ then
+               nextcpid_:=-1;
+               exit;
+            end if;
+            end if;
+         end loop;
+       close cpids;
+ end;
+  

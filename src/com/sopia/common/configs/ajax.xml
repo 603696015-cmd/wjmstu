@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>  
+	<package name="ajxa_buy" extends="elearning">
+	<!-- 添加进购物车 -->
+        <action name="executeaa" class="com.sopia.shopping.action.JsonAction" method="executeaa">
+        </action>  
+<!-- 查询购物车货物数量 -->
+		        <action name="getShoppingCarCount" 
+		        class="com.sopia.shopping.action.JsonAction" 
+		        method="getShoppingCarCount">
+        </action> 	
+        <!-- 图书类别名称 -->
+		 <action name="booktype_ajaxview" 
+		        class="com.sopia.shopping.action.JsonAction" 
+		        method="booktype_ajaxview">
+        </action> 	
+          <!-- 线下培训学分设置 -->
+         <action name="setlinetrainrecord" 
+		        class="com.sopia.shopping.action.JsonAction" 
+		        method="setlinetrainrecord">
+        </action> 	
+        
+    </package> 
+</struts>

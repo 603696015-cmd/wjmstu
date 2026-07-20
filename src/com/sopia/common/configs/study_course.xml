@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="study_course" extends="elearning">
+		<!-- 部门管理 -->
+		<action name="myCredit_result"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="myCredit_result">
+			<result name="myCredit_result">
+				study/myCredit_result.jsp
+			</result>
+		</action>
+		<action name="study_course_delete"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="study_course_delete">
+			<result name="mycourse_list" type="redirectAction">
+				mycourselist?elmessage=${elmessage}
+			</result>
+		</action>
+		<!-- 
+		<action name="course_study"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study">
+			// <result name="course_study_bzkc" type="redirectAction">
+			//	course_study_bzkc?course.id=${course.id}
+			//</result>
+			//由于现在和班级绑定了 ，所以要把classid传过去
+			<result name="course_study_bzkc_index" type="redirectAction">
+				course_study_bzkc_index?course.id=${course.id}&amp;course.classid=${course.classid}
+			</result>
+			<result name="course_study_wbkc" type="redirectAction">
+				course_study_wbkc?course.id=${course.id}&amp;course.classid=${course.classid}
+			</result>
+			<result name="course_study_zhwb" type="redirectAction"> 
+				course_study_zhwb?course.id=${course.id}&amp;course.classid=${course.classid}
+			</result>
+			<result name="course_study_dysp" type="redirectAction">
+				course_study_dysp?course.id=${course.id}&amp;course.classid=${course.classid}
+			</result>
+			<result name="course_study_tbkt" type="redirectAction">
+				course_study_tbkt?course.id=${course.id}&amp;course.classid=${course.classid}
+			</result>
+			<result name="course_study_scorm" type="redirectAction">course_study_scorm?course.id=${course.id}&amp;course.classid=${course.classid}</result>
+			<result name="course_noselected">
+				study/course_noselected.jsp
+			</result>
+		</action>
+		 -->
+		 <action name="course_study" class="com.sopia.studyman.action.StudyCourse" method="course_study">
+			<result name="course_study_bzkc_index">
+				study/course/course_study_bzkc_index.jsp
+			</result>
+			<result name="course_study_wbkc">
+				study/course/course_study_wbkc.jsp
+			</result>
+			<result name="course_study_dysp">
+				study/course/course_study_dysp.jsp
+			</result>
+			<result name="course_study_tbkt">
+				study/course/course_study_tbkt.jsp
+			</result>
+			<result name="course_study_scorm">
+				study/course/course_study_scorm.jsp
+			</result>
+			
+			<result name="cpage_study_wbkc">
+				study/course/cpage_study_wbkc.jsp
+			</result>
+			<result name="cpage_study_csp">
+				study/course/cpage_study_csp.jsp
+			</result>
+			
+			<result name="cpage_study_twspjy">
+				study/course/cpage_study_twspjy.jsp
+			</result>
+			<result name="course_noselected">
+				study/course_noselected.jsp
+			</result>
+			<!-- 商务汉语学习系统 -->
+			<result name="cpage_study_spxx">
+				study/course/cpage_study_spxx.jsp
+			</result>
+			<!-- wsj0213修改 -->
+			<result name="cpage_study_spxx_phone">
+				study/course/cpage_study_spxx.jsp
+			</result>
+			<!-- 商务汉语学习系统学拼音、学汉字 -->
+			<result name="cpage_study_spxx_1">
+				study/course/cpage_study_spxx_1.jsp
+			</result>
+			<!-- 宽频学习 -->
+			<result name="cpage_study_kpxx">
+				study/course/cpage_study_kpxx.jsp
+			</result>
+			<!-- 外部宽频学习 -->
+			<result name="cpage_study_wbkpxx">
+				study/course/cpage_study_wbkpxx.jsp
+			</result>
+			<result name="cpage_study_wbkpxx_phone">
+				study/course/cpage_study_wbkpxx.jsp
+			</result>
+			
+			<!-- 20140325修改商务汉语词汇学习 -->
+			<result name="cpage_study_chspxx">
+				study/course/cpage_study_chspxx.jsp
+			</result>
+			
+			<!-- 手机端 -->
+			<result name="course_study_bzkc_index_phone">
+				wsj_phone/study/course/course_study_bzkc_index.jsp
+			</result>
+			<result name="course_study_wbkc_phone">
+				wsj_phone/study/course/course_study_wbkc.jsp
+			</result>
+			<result name="course_study_dysp_phone">
+				wsj_phone/study/course/course_study_dysp.jsp
+			</result>
+			<result name="course_study_tbkt_phone">
+				wsj_phone/study/course/course_study_tbkt.jsp
+			</result>
+			<result name="course_study_scorm_phone">
+				wsj_phone/study/course/course_study_scorm.jsp
+			</result>
+			
+			<result name="cpage_study_wbkc_phone">
+				wsj_phone/study/course/cpage_study_wbkc.jsp
+			</result>
+			<result name="cpage_study_csp_phone">
+				wsj_phone/study/course/cpage_study_csp.jsp
+			</result>
+			
+			<result name="cpage_study_twspjy_phone">
+				wsj_phone/study/course/cpage_study_twspjy.jsp
+			</result>
+			<result name="course_noselected_phone">
+				wsj_phone/study/course_noselected.jsp
+			</result>
+		</action>
+		<!-- 混合学习 -->
+		<action name="mixcourse_studyInit" class="com.sopia.studyman.action.StudyCourse" method="mixcourse_studyInit">
+			<result name="mixcourse_studyInit">
+				study/course/mixcourse_studyInit.jsp
+			</result>
+		</action>
+		<action name="cpagelist" class="com.sopia.studyman.action.StudyCourse" method="cpagelist">
+			<result name="cpagelist">
+				study/course/cpagelist.jsp
+			</result>
+			<result name="cpagestuff">
+				study/course/cpagestuff.jsp
+			</result>
+		</action>
+		<action name="course_study_logout"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_logout">
+			<result name="course_study_logout" type="redirectAction">
+				${course_study_to}
+			</result>
+		</action>
+		<action name="course_study_bzkc_index"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_bzkc_index">
+			<result name="course_study_bzkc_index">
+				study/course/course_study_bzkc_index.jsp?course.classid=${course.classid}
+			</result>
+			<result name="course_study_bzkc" type="redirectAction">
+				course_study_bzkc.action?course.id=${course.id}&amp;course.classid=${course.classid}&amp;coursePage.id=${coursePage.id}
+			</result>
+		</action>
+		<action name="course_study_wbkc"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_wbkc">
+			<result name="course_study_wbkc">
+				study/course/course_study_wbkc.jsp
+			</result>
+			<result name="course_study_wbkc_phone">
+				wsj_phone/study/course/course_study_wbkc.jsp
+			</result>
+		</action>
+		<action name="course_study_dysp"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_dysp">
+			<result name="course_study_dysp">
+				study/course/course_study_dysp.jsp
+			</result>
+			<result name="course_study_dysp_phone">
+				wsj_phone/study/course/course_study_dysp.jsp
+			</result>
+		</action>
+		<action name="course_study_tbkt"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_tbkt">
+			<result name="course_study_tbkt">
+				study/course/course_study_tbkt.jsp
+			</result>
+			
+			<result name="course_study_tbkt_phone">
+				wsj_phone/study/course/course_study_tbkt.jsp
+			</result>
+		</action>
+		<action name="course_study_scorm"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_scorm">
+			<result name="course_study_scorm">
+				study/course/course_study_scorm.jsp
+			</result>
+			
+			<result name="course_study_scorm_phone">
+				wsj_phone/study/course/course_study_scorm.jsp
+			</result>
+		</action>
+		<action name="course_study_bzkc"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_bzkc">
+			<result name="cpage_study_twspjy">
+				study/course/cpage_study_twspjy.jsp
+			</result>
+			<result name="cpage_study_csp">
+				study/course/cpage_study_csp.jsp
+			</result>
+			<result name="cpage_study_wbkc">
+				study/course/cpage_study_wbkc.jsp
+			</result>
+			
+			<result name="cpage_study_twspjy_phone">
+				wsj_phone/study/course/cpage_study_twspjy.jsp
+			</result>
+			<result name="cpage_study_csp_phone">
+				wsj_phone/study/course/cpage_study_csp.jsp
+			</result>
+			<result name="cpage_study_wbkc_phone">
+				wsj_phone/study/course/cpage_study_wbkc.jsp
+			</result>
+		</action>
+		<action name="displayStudyCpageInfo"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="displayStudyCpageInfo">
+			<result name="displayStudyCpageInfo">
+				study/course/displayStudyCpageInfo.jsp
+			</result>
+			<result name="displayStudyCpageInfo_phone">
+				wsj_phone/study/course/displayStudyCpageInfo.jsp
+			</result>
+		</action>
+		<action name="course_study_zhwb"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_zhwb">
+			<result name="course_study_zhwb">
+				study/course/course_study_zhwb.jsp
+			</result>
+			
+			<result name="course_study_zhwb_phone">
+				wsj_phone/study/course/course_study_zhwb.jsp
+			</result>
+		</action>
+		<action name="course_study_zhwb_page"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_zhwb_page">
+			<result name="course_study_zhwb_page">
+				study/course/course_study_zhwb_page.jsp
+			</result>
+			
+			<result name="course_study_zhwb_page_phone">
+				wsj_phone/study/course/course_study_zhwb_page.jsp
+			</result>
+		</action>
+		<action name="course_study_save"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_save">
+			<result name="course_study_save">
+				study/course_study_save.jsp
+			</result>
+			
+			<result name="course_study_save_phone">
+				wsj_phone/study/course_study_save.jsp
+			</result>
+		</action>
+		<action name="course_studysave"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_studysave">
+		</action>
+		<action name="course_studyexit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_studyexit">
+		</action>
+		<action name="course_studyinfo"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_studyinfo">
+		</action>
+		<action name="course_study_save2"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_save2">
+			<result name="course_study_save2">
+				study/course_study_save.jsp
+			</result>
+			
+			<result name="course_study_save2_phone">
+				wsj_phone/study/course_study_save.jsp
+			</result>
+		</action>
+		<action name="cpage_study_save"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="cpage_study_save">
+			<result name="cpage_study_save">
+				study/cpage_study_save.jsp
+			</result>
+			
+			<result name="cpage_study_save_phone">
+				wsj_phone/study/cpage_study_save.jsp
+			</result>
+		</action>
+		<action name="cpage_study_save2"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="cpage_study_save2">
+			<result name="cpage_study_save2">
+				study/cpage_study_save.jsp
+			</result>
+			
+			<result name="cpage_study_save2_phone">
+				wsj_phone/study/cpage_study_save.jsp
+			</result>
+		</action>
+		<action name="pracPaperinto"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="pracPaperinto">
+			<result name="pracPaper_view">
+				study/pracPaper_view.jsp
+			</result>
+			
+			<result name="pracPaper_view_phone">
+				wsj_phone/study/pracPaper_view.jsp
+			</result>
+		</action>
+		<action name="pracPaperquestioninitinto"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="pracPaperquestioninitinto">
+			<result name="pracPaper_view">
+				study/pracPaper_view.jsp
+			</result>
+			<result name="quizquestion_email">
+				study/quiz/quizquestion_email.jsp
+			</result>
+			<result name="quizquestion_dazi">
+				study/quiz/quizquestion_dazi.jsp
+			</result>
+			<result name="quizquestion_search">
+				study/quiz/quizquestion_search.jsp
+			</result>
+			
+			<result name="pracPaper_view_phone">
+				wsj_phone/study/pracPaper_view.jsp
+			</result>
+			<result name="quizquestion_email_phone">
+				wsj_phone/study/quiz/quizquestion_email.jsp
+			</result>
+			<result name="quizquestion_dazi_phone">
+				wsj_phone/study/quiz/quizquestion_dazi.jsp
+			</result>
+			<result name="quizquestion_search_phone">
+				wsj_phone/study/quiz/quizquestion_search.jsp
+			</result>
+		</action>
+		<action name="mycourselist"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="mycourselist">
+			<result name="mycourselist">
+				study/course/mycourselist.jsp
+			</result>
+			
+			<result name="mycourselist_phone">
+				wsj_phone/study/course/mycourselist.jsp
+			</result>
+		</action>
+		<action name="mycourseAlllist"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="mycourseAlllist">
+			<result name="mycoursealllist">
+				study/course/mycoursealllist.jsp
+			</result>
+			
+			<result name="mycoursealllist_phone">
+				wsj_phone/study/course/mycoursealllist.jsp
+			</result>
+		</action>
+		<action name="myobcourse"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="myobcourse">
+			<result name="myobcourse">
+				study/course/myobcourse.jsp
+			</result>
+			
+			<result name="myobcourse_phone">
+				wsj_phone/study/course/myobcourse.jsp
+			</result>
+		</action>
+		<action name="mycourselistbystatus"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="mycourselistbystatus">
+			<result name="mycourselistbystatus">
+				study/course/mycourselistbystatus.jsp
+			</result>
+			
+			<result name="mycourselistbystatus_phone">
+				wsj_phone/study/course/mycourselistbystatus.jsp
+			</result>
+		</action>
+		<action name="listCanAppalyCourseInit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="listCanAppalyCourseInit">
+			<result name="listCanAppalyCourseInit">
+				study/listCanAppalyCourseInit.jsp
+			</result>
+			
+			<result name="listCanAppalyCourseInit_phone">
+				wsj_phone/study/listCanAppalyCourseInit.jsp
+			</result>
+		</action>
+
+		<action name="submitAppalyCourse"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="submitAppalyCourse">
+			<result name="submitAppalyCourse">
+				study/listCanAppalyCourse.jsp
+			</result>
+			
+			<result name="submitAppalyCourse_phone">
+				wsj_phone/study/listCanAppalyCourse.jsp
+			</result>
+		</action>
+		<action name="listCanAppalyCourse"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="listCanAppalyCourse">
+			<result name="listCanAppalyCourse">
+				study/listCanAppalyCourse.jsp
+			</result>
+			
+			<result name="listCanAppalyCourse_phone">
+				wsj_phone/study/listCanAppalyCourse.jsp
+			</result>
+		</action>
+		<action name="mynotecourselist"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="mynotecourselist">
+			<result name="mynotecourselist">
+				study/course/mynotecourselist.jsp
+			</result>
+			
+			<result name="mynotecourselist_phone">
+				wsj_phone/study/course/mynotecourselist.jsp
+			</result>
+		</action>
+		<action name="courseNote_addInit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="courseNote_addInit">
+			<result name="courseNote_add">
+				study/course/courseNote_add.jsp
+			</result>
+			
+			<result name="courseNote_add_phone">
+				wsj_phone/study/course/courseNote_add.jsp
+			</result>
+		</action>
+		<action name="newcourseNote_addInit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="newcourseNote_addInit">
+			<result name="newcourseNote_add">
+				study/course/newcourseNote_add.jsp
+			</result>
+			
+			<result name="newcourseNote_add_phone">
+				wsj_phone/study/course/newcourseNote_add.jsp
+			</result>
+		</action>
+		<action name="courseNote_add"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="courseNote_add">
+			<result name="courseNote_add_success">
+				study/course/courseNote_add_success.jsp
+			</result>
+			
+			<result name="courseNote_add_success_phone">
+				wsj_phone/study/course/courseNote_add_success.jsp
+			</result>
+		</action>
+		<action name="courseNote_list"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="courseNote_list">
+			<result name="courseNote_list">
+				study/course/courseNote_list.jsp
+			</result>
+			
+				<result name="courseNote_list_phone">
+				wsj_phone/study/course/courseNote_list.jsp
+			</result>
+		</action>
+		<action name="newcourseNote_list"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="newcourseNote_list">
+			<result name="newcourseNote_list">
+				study/course/newcourseNote_list.jsp
+			</result>
+			
+			<result name="newcourseNote_list_phone">
+				wsj_phone/study/course/newcourseNote_list.jsp
+			</result>
+		</action>
+		<action name="courseNote_delete"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="courseNote_delete">
+			<result name="courseNote_delete">
+				study/course/courseNote_list.jsp
+			</result>
+			
+			<result name="courseNote_delete_phone">
+				wsj_phone/study/course/courseNote_list.jsp
+			</result>
+		</action>
+		<action name="newcourseNote_delete"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="newcourseNote_delete">
+			<result name="newcourseNote_list">
+				study/course/newcourseNote_list.jsp
+			</result>
+			
+			<result name="newcourseNote_list_phone">
+				wsj_phone/study/course/newcourseNote_list.jsp
+			</result>
+		</action>
+		<action name="course_tandsp"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_tandsp">
+			<result name="course_tandsp">
+				study/course_tandsp.jsp
+			</result>
+			
+			<result name="course_tandsp_phone">
+				wsj_phone/study/course_tandsp.jsp
+			</result>
+		</action>
+		<action name="course_phlist"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_phlist">
+			<result name="course_phlist">
+				study/course_phlist.jsp
+			</result>
+			
+			<result name="course_phlist_phone">
+				wsj_phone/study/course_phlist.jsp
+			</result>
+		</action>
+		<action name="submitAppalyCourse_front"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="submitAppalyCourse_front">
+			<result name="submitAppalyCourse_front">
+				study/submitAppalyCourse_front.jsp
+			</result>
+			
+			<result name="submitAppalyCourse_front_phone">
+				wsj_phone/study/submitAppalyCourse_front.jsp
+			</result>
+		</action>
+		<action name="course_study_notelist"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_notelist">
+			<result name="course_study_notelist">
+				study/course/course_study_notelist.jsp
+			</result>
+			
+			<result name="course_study_notelist_phone">
+				wsj_phone/study/course/course_study_notelist.jsp
+			</result>
+		</action>
+		<action name="course_study_noteAddInit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_noteAddInit">
+			<result name="course_study_noteAdd">
+				study/course/course_study_noteAdd.jsp
+			</result>
+			
+			<result name="course_study_noteAdd_phone">
+				wsj_phone/study/course/course_study_noteAdd.jsp
+			</result>
+		</action>
+		<action name="course_study_noteAdd"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_noteAdd">
+			<result name="course_study_notelist"
+				type="redirectAction">
+				course_study_notelist?course.id=${course.id}&amp;elclass.id=${elclass.id}&amp;Return=${Return}
+			</result>
+		</action>
+		<action name="course_study_noteAlterInit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_noteAlterInit">
+			<result name="course_study_noteAlter">
+				study/course/course_study_noteAlter.jsp
+			</result>
+			
+			<result name="course_study_noteAlter_phone">
+				wsj_phone/study/course/course_study_noteAlter.jsp
+			</result>
+		</action>
+		<action name="course_study_noteAlter"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_noteAlter">
+			<result name="course_study_notelist"
+				type="redirectAction">
+				course_study_notelist?course.id=${course.id}&amp;elclass.id=${elclass.id}&amp;Return=${Return}
+			</result>
+		</action>
+		<action name="course_study_noteDelete"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_noteDelete">
+			<result name="course_study_notelist"
+				type="redirectAction">
+				course_study_notelist?course.id=${course.id}&amp;elclass.id=${elclass.id}&amp;Return=${Return}
+			</result>
+		</action>
+		<action name="course_study_notesubmit"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_study_notesubmit">
+			<result name="course_study_notelist"
+				type="redirectAction">
+				course_study_notelist?course.id=${course.id}&amp;elclass.id=${elclass.id}&amp;Return=${Return}
+			</result>
+		</action> 
+		<action name="course_appendix_list"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_appendix_list">
+			<result name="course_appendix_list">
+				study/course_appendix_list.jsp
+			</result>
+			
+				<result name="course_appendix_list_phone">
+				wsj_phone/study/course_appendix_list.jsp
+			</result>
+		</action>
+		<action name="cserver_list"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="cserver_list">
+			<result name="cserver_list">study/cserver_list.jsp</result>
+		</action>
+		<action name="updateStudyCourseRecordEndtime"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="updateStudyCourseRecordEndtime">
+		</action>
+		<action name="course_checkPass"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_checkPass">
+		</action>
+		<action name="course_checkExamRoom"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="course_checkExamRoom">
+		</action>
+		
+		<action name="intelligent_learn_begin"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="intelligent_learn_begin">
+		</action>
+		<action name="intelligent_learn_end"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="intelligent_learn_end">
+		</action>
+		
+		<!-- 宽屏学习课程讲义 -->
+		<action name="study_kcjy"
+			class="com.sopia.studyman.action.StudyCourse"
+			method="study_kcjy">
+			<result name="study_kcjy">
+				study/course/cpage_study_kcjy.jsp
+			</result>
+		</action>
+		<!-- 宽屏学习课程讲义结束 -->
+	</package>
+</struts>
+<!--37 个-->

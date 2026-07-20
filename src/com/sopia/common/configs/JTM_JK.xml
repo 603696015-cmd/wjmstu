@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="JTM_JK" extends="struts-default">
+		<!-- 修改测评进度接口 -->
+		<action name="updateCepingjindu"
+			class="com.sopia.JTM.action.JTMAction" method="updateCepingjindu">
+		</action>
+	</package>
+</struts>

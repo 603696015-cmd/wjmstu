@@ -1,0 +1,118 @@
+CREATE OR REPLACE FUNCTION user_p_course2_1( courseid_ number, userid_ number,getcredit_ number,classid_ number,roomid_ number )return number
+is sispassed_ number;cispassed_ number;scispassed_ number;passed_ number;
+BEGIN
+  begin
+    select sc.passed into cispassed_ from study_course sc where  sc.courseid= courseid_ and sc.userid= userid_ and sc.classid=classid_;
+    exception
+       when no_data_found then
+       cispassed_:=0;
+
+  end;
+  begin
+    select sr.ispassed into sispassed_ from study_room sr left join class_course cc on sr.roomid = cc.eroomid where  cc.courseid= courseid_ and sr.userid= userid_ and sr.classid=classid_;
+    exception
+          when no_data_found then
+          sispassed_:=0;
+  end;
+   begin
+    select sr.ispassed into scispassed_ from study_room sr where  sr.userid= userid_ and sr.classid=classid_ and sr.roomid=roomid_;
+    exception
+          when no_data_found then
+          scispassed_:=0;
+  end;
+  cispassed_ := nvl(cispassed_,0);
+  sispassed_ := nvl(sispassed_,0);
+  scispassed_:= nvl(scispassed_,0);
+  if getcredit_ = 1 and cispassed_=1 and roomid_ != 0 then
+      if scispassed_ =1 then
+        passed_ := 1;
+      else
+        passed_ := 0;
+      end if;
+  elsif getcredit_ = 1 and cispassed_=1 and roomid_ = 0 then
+      passed_ := 1;
+  elsif getcredit_ = 2 and sispassed_ =1 then
+      passed_ := 1;
+  elsif getcredit_ = 3 and cispassed_=1 then
+      if sispassed_ =1 then
+        passed_ := 1;
+      else
+        passed_ := 0;
+      end if;
+  else
+      passed_:=0;
+  end if;
+  return nvl(passed_,0) ;
+END ;
+
+
+
+
+
+
+
+
+create or replace procedure user_ispass_class2_1(classid_ number,userid_ number)
+as
+ classcoursecredit_ number;diplomatime_ date;diplomatime1_ date;ispassed_ number;certificateno_ number;bxcredit_ number;xxcredit_ number;roomid_ number;
+begin
+     begin
+     select examroomid into roomid_ from elclass_assign_examroom where classid= classid_;
+       exception
+       when no_data_found then
+       roomid_:=0;
+       end;
+      select  optionalcredit,  diplomatime into classcoursecredit_, diplomatime_ from elclass where id = classid_;
+      select max(certificateno) into certificateno_ from study_class where classid = classid_;
+      select user_p_classcourse2_1(classid_,userid_,classcoursecredit_,roomid_) into ispassed_ from dual;
+      select sum(cc.setcredit) into bxcredit_ from class_course cc ,study_course sc where sc.classid = cc.classid and sc.courseid =cc.courseid and sc.userid =userid_ and  sc.classid =classid_ and cc.status = 0 and cc.isdel!=-1 and sc.tprocess=100;
+      select sum(cc.setcredit) into xxcredit_ from class_course cc ,study_course sc where sc.classid = cc.classid and sc.courseid =cc.courseid and sc.userid =userid_ and  sc.classid =classid_ and cc.status = 1 and cc.isdel!=-1 and sc.tprocess=100;
+      update study_class set bcredit = nvl(bxcredit_,0),xcredit=nvl(xxcredit_,0),tcredit = (nvl(bxcredit_ ,0)+nvl(xxcredit_,0)) where userid = userid_ and classid = classid_;
+      diplomatime1_ := sysdate;
+      if ispassed_=1 then
+         user_p_class_set2( classid_ ,userid_ ,diplomatime1_,certificateno_ ) ;
+      else
+         update study_class set status = 1 where classid= classid_ and userid = userid_;
+      end if;
+end ;
+
+
+
+
+
+
+
+create or replace function user_p_classcourse2_1( classid_ number,userid_ number,classcoursecredit_ number,roomid_ number)return number
+is
+courseid_ number;ispassed_ number;sumcredit_ number;coursecredit_ number;setcredit_ number;getcredit_ number;
+cursor  class_course_b is select courseid,credit,setcredit,getcredit from class_course where classid =classid_ and status = 0 and isdel!=-1;
+cursor  class_course_x is select courseid,credit,setcredit,getcredit from class_course where classid =classid_ and status = 1 and isdel!=-1;
+begin
+    open class_course_b;
+       loop
+       fetch class_course_b into courseid_,coursecredit_,setcredit_,getcredit_ ; --??
+          exit when class_course_b%notfound;
+          select  user_p_course2_1( courseid_, userid_,getcredit_,classid_,roomid_) into ispassed_  from dual ;
+          if ispassed_=0 then
+              return 0;
+          end if;
+       end loop;
+   close class_course_b;
+   sumcredit_:=0;
+   open class_course_x;
+       loop
+       fetch class_course_x into courseid_,coursecredit_,setcredit_,getcredit_ ; --??
+          exit when class_course_x%notfound;
+          select  user_p_course2_1( courseid_, userid_,getcredit_,classid_,roomid_) into ispassed_  from dual ;
+          if ispassed_=1 then
+             sumcredit_:= sumcredit_+ setcredit_;
+          -- elsif ispassed_=2 then
+           --  sumcredit_:= sumcredit_+ setcredit_/2;
+          end if;
+       end loop;
+   close class_course_x;
+  if classcoursecredit_<=sumcredit_ then
+     return 1 ;
+  end if;
+  return 0 ;
+end ;

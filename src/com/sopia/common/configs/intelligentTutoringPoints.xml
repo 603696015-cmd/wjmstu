@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="intelligentTutoringPoints" extends="elearning">
+		<action name="intelligentStatistics"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="intelligentStatistics">
+			<result name="intelligentStatistics">
+				admin/intelligent/intelligentStatistics.jsp
+			</result>
+		</action>
+		<action name="viewIntelligentByUserid"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="viewIntelligentByUserid">
+			<result name="viewIntelligentByUserid">
+				admin/intelligent/viewIntelligentByUserid.jsp
+			</result>
+		</action>
+		
+		<action name="loginInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="loginInfo">
+			<result name="loginInfo">
+				admin/intelligent/info/loginInfo.jsp
+			</result>
+		</action>
+		<action name="weekInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="weekInfo">
+			<result name="weekInfo">
+				admin/intelligent/info/weekInfo.jsp
+			</result>
+		</action>
+		<action name="classInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="classInfo">
+			<result name="classInfo">
+				admin/intelligent/info/classInfo.jsp
+			</result>
+		</action>
+		<action name="proportionQInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="proportionQInfo">
+			<result name="proportionQInfo">
+				admin/intelligent/info/proportionQInfo.jsp
+			</result>
+		</action>
+		<action name="proportionTInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="proportionTInfo">
+			<result name="proportionTInfo">
+				admin/intelligent/info/proportionTInfo.jsp
+			</result>
+		</action>
+		<action name="recodingQInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="recodingQInfo">
+			<result name="recodingQInfo">
+				admin/intelligent/info/recodingQInfo.jsp
+			</result>
+		</action>
+		<action name="recodingTInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="recodingTInfo">
+			<result name="recodingTInfo">
+				admin/intelligent/info/recodingTInfo.jsp
+			</result>
+		</action>
+		<action name="academicInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="academicInfo">
+			<result name="academicInfo">
+				admin/intelligent/info/academicInfo.jsp
+			</result>
+		</action>
+		<action name="academicCourseInfo"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="academicCourseInfo">
+			<result name="academicCourseInfo">
+				admin/intelligent/info/academicCourseInfo.jsp
+			</result>
+		</action>
+		<action name="createSelect2Elements"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="createSelect2Elements">
+			<result name="createSelect2Elements">
+				admin/intelligent/info/createSelect2Elements.jsp
+			</result>
+		</action>
+		<action name="createSelect3Elements"
+			class="com.sopia.intelligentTutoringPoints.action.IntelligentTutoringPointsAction" method="createSelect3Elements">
+			<result name="createSelect3Elements">
+				admin/intelligent/info/createSelect3Elements.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>

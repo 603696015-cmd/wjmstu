@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>  
+
+	<package name="NewStudyClass" extends="elearning">
+	<!-- 返回班级内容页 -->
+        <action name="newclass_view2" class="com.sopia.classnew.action.NewStudyClassAction" method="newclass_view2">
+        <result name="newclass_view2" >
+        	elfrontman/newclass_view2.jsp
+        </result>
+        </action>  
+        <!-- 班级评论 -->
+	<action name="saveClassComment" class="com.sopia.classnew.action.NewStudyClassAction" method="saveClassComment">
+        <result name="newclass_view2" >
+        	elfrontman/newclass_view2.jsp
+        </result>
+        </action>  
+    </package> 
+</struts>

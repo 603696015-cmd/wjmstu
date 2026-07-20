@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>录音功能(record)</title>
+<script type="text/javascript">
+
+  var isSoundWave = false;
+  var cha=null;
+  function recordFunc(){
+	  if(isSoundWave==false){
+		  startRecord();
+		  changeSoundwave(1);
+		  isSoundWave=true;
+	  }else{
+		  uploadRecord();
+		  isSoundWave=false;
+		  clearTimeout(cha);
+	  }
+  }
+  
+  //开始录音的方法
+  function startRecord(){
+	  //两个参数：第一个参数是录音文件的名称，必须是pcm结尾的文件；第二个参数是上传录音的请求地址
+	  var start = getApplet().startRecord("1_test_01.pcm","http://10.1.1.40:8080/wjm/recordUpload");
+	  //alert(start);
+  }
+  
+  //结束录音的方法
+  function endRecord(){
+	 var end = getApplet().endRecord();
+	 uploadRecord();
+	 alert(end);
+  }
+  
+  function uploadRecord(){
+	  var upload = getApplet().uploadRecord();
+	  alert(upload);
+  }
+
+  function changeSoundwave(count){
+      var wave = document.getElementById("soundwave");
+      wave.src="img/mic_0"+count+".png";
+      if(count==6){
+    	 count=0;
+      }
+      count++;
+      cha=setTimeout("changeSoundwave("+count+")", "200");
+  }
+  
+  //获取页面上传applet对象
+  function getApplet(){
+	  if(document.applets.length > 0){
+	      return document.applets[0];  
+	  }
+	} 
+</script>
+</head>
+<body>
+<APPLET ID="录音功能(record)" CODE="com.msc.applet.RecognizeApplet.class" CODEBASE = "./" ARCHIVE = "mscclient.jar" WIDTH = "0" HEIGHT = "0">   
+		<PARAM NAME = "type" VALUE="application/x-java-applet;version=1.2.2">
+		<PARAM NAME = "scriptable" VALUE="false">
+		</APPLET>
+<img name="soundwave" id="soundwave" src="img/mic_01.png" onclick="recordFunc();">
+
+</body>
+</html>

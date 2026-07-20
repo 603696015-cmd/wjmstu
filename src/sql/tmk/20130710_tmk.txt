@@ -1,0 +1,107 @@
+--单独执行--
+create or replace procedure sc_setmycpage(userid_ number,
+                                              roomid_ number)
+as
+cpid_ number;
+ispassed_ number;
+courseid_ number;
+classid_ number;
+begin
+  cpid_:=0;
+  ispassed_:=0;
+  courseid_:=0;
+  classid_:=0;
+  --1判断考场是否通过
+  select ispassed into ispassed_ from study_room where userid=userid_ and roomid=roomid_;
+  if ispassed_=1 then
+    select cpid into cpid_ from exam_room where id=roomid_;--章节id
+    if cpid_!=0 then
+      update study_cpage set passed2=1,process=100.00,process_t=50.00 where userid=userid_ and cpid=cpid_;
+      select courseid into courseid_ from course_page where id=cpid_;
+      select classid into classid_ from class_course where courseid =courseid_;
+      if classid_>0 then
+         sc_cpage_tprocess(userid_,cpid_,classid_);
+      else
+         classid_:=0;
+      end if;
+    else
+        cpid_:=0;
+    end if;
+  else
+      ispassed_:=0;
+  end if;
+end;
+---------------------------
+
+
+
+
+
+
+
+
+
+
+-----单独执行-----
+create or replace procedure set_classprocess_(classid_ number,userid_ number)
+as
+passed_ number;
+countpassed_ number;
+countall_ number;
+courseid_ number;
+cursor mycourses is
+ select passed,courseid  from study_course where classid=classid_ and userid=userid_;
+begin
+      passed_:=0;
+      countpassed_:=0;
+      courseid_:=0;
+      select count(1) into countall_ from study_course where classid=classid_ and userid=userid_;
+      if countall_>0 then
+        open mycourses;
+            loop
+                fetch mycourses into passed_,courseid_;
+                exit when mycourses%notfound;
+                if passed_=1 then
+                   countpassed_ :=countpassed_ + 1;
+                else
+                   countpassed_:=countpassed_;
+                end if;
+            end loop;
+        close mycourses;
+        update study_class set process=round(countpassed_/countall_*100,2) where classid=classid_ and userid=userid_;
+      end if;
+end;
+
+
+-------------------
+
+
+
+
+
+-----单独执行-----
+create or replace procedure set_classprocess(batchid_ number,userid_ number)
+as
+classid_ number;
+cursor myclasses is
+    select bef.elclassid from
+    batch_elclass_fenpei bef
+    left join study_class sc on bef.elclassid=sc.classid and sc.userid=userid_
+    where bef.batchid = batchid_ order by bef.sortid asc ;
+begin
+     classid_:=0;
+     open myclasses;
+         loop
+            fetch myclasses into classid_;
+            exit when myclasses%notfound;
+            if classid_>0 then 
+               set_classprocess_(classid_,userid_);
+            end if;
+         end loop;
+       close myclasses;
+end;
+
+
+
+
+-------------------

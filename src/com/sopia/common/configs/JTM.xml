@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="JTM" extends="elearning">
+		<!-- JTM 整合 -->
+		
+		<action name="My_EvaluationInit"
+			class="com.sopia.JTM.action.JTMAction" method="My_EvaluationInit">
+			<result name="JTM_DEMO">
+				admin/jtm/JTM_DEMO.jsp
+			</result>
+		</action>
+		<action name="peoplePostInit"
+			class="com.sopia.JTM.action.JTMAction" method="peoplePostInit">
+			<result name="JTM_DEMO">
+				admin/jtm/JTM_DEMO.jsp
+			</result>
+		</action>
+		<action name="My_ReportInit"
+			class="com.sopia.JTM.action.JTMAction" method="My_ReportInit">
+			<result name="JTM_DEMO">
+				admin/jtm/JTM_DEMO.jsp
+			</result>
+		</action>
+		<action name="reportEval"
+			class="com.sopia.JTM.action.JTMAction" method="reportEval">
+			<result name="JTM_DEMO">
+				admin/jtm/JTM_DEMO.jsp
+			</result>
+		</action>
+		<action name="courses_synchronization"
+			class="com.sopia.JTM.action.JTMAction" method="courses_synchronization">
+			<result name="JTM_DEMO" type="redirectAction">
+				course_view.action?course.id=${course.id}
+			</result>
+		</action>
+		<action name="statisticalAnalysis"
+			class="com.sopia.JTM.action.JTMAction" method="statisticalAnalysis">
+			<result name="statisticalAnalysis_success" >
+				admin/jtm/statisticalAnalysis.jsp
+			</result>
+		</action>
+		<action name="myCepingCourses"
+			class="com.sopia.JTM.action.JTMAction" method="myCepingCourses">
+			<result name="myCepingCourses_success" >
+				admin/jtm/myCepingCourses.jsp
+			</result>
+		</action>
+		
+		<action name="tongbuCourseWeiduInit"
+			class="com.sopia.JTM.action.JTMAction" method="tongbuCourseWeiduInit">
+			<result name="tongbuCourseWeiduInit" >
+				admin/jtm/tongbuCourseWeiduInit.jsp
+			</result>
+		</action>
+		<action name="tongbuCourseWeidu"
+			class="com.sopia.JTM.action.JTMAction" method="tongbuCourseWeidu">
+			<result name="tongbuCourseWeidu" type="redirectAction">
+				course_list.action?elmessage=${elmessage}
+			</result>
+			<result name="tongbuCourseWeiduInit" >
+				admin/jtm/tongbuCourseWeiduInit.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>

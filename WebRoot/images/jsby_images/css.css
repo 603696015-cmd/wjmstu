@@ -1,0 +1,134 @@
+body,div,ul,li,img,a,h2,h1,h3,p,input,form,dl,dt,dd{margin:0;padding:0;border:0;}
+body{font-size:12px;font-famile:Arial, 'ËÎÌו', sans-serif; background-image:url(../../images/px_images/bg.png);}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#fff;}
+
+
+.clearFix:after{
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	line-height:0;
+	conter:0;
+}
+.clearFix{zoom:1;}
+
+.clearFix;after{
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	line-height:0;
+	content:"";
+}
+#main_l,#content,#main_r,#content_l,#bfq_l,#bfq_r,#m_bl{
+	float:left;
+}
+
+
+#content_zhong{
+	position:relative;
+	background-image:url(../../images/px_images/bfq_bg.png);
+	width:1000px;
+	height:648px;
+	margin:0 auto;
+	background-repeat: no-repeat;
+}
+#tigan{
+	width:802px;
+	position:absolute;
+	left:50%;
+	margin-left:-401px;
+	margin-top:30px;
+	float:left;
+	}
+#bottom{
+	background-image:url(../../images/px_images/bottom_bg.png);
+	width:1164px;
+	height:33px;
+}
+
+#last{
+	width:74px;
+	height:74px; 
+	margin-top:250px;
+	 margin-left:20px;
+	float:left;}
+#next{
+	width:74px;
+	height:74px;
+	margin-top:250px; 
+	 margin-right:20px;
+	 float:right;
+	}
+#main_t{
+	float:left;
+	width:701px;
+	height:35px;
+	background-image:url(../../images/px_images/main_bgt.png);
+	background-repeat:repeat-x;
+	}
+#m_z{
+	height:446px;
+	width: 800px;
+	}
+#m_zl{
+	background-image:url(../../images/px_images/main_bgl.png);
+	background-repeat:repeat-y;
+	height:446px;
+	width:52px;
+	float:left;
+}
+#m_zz{
+	width:701px;
+	float:left;
+	height: 446px;
+	font-size: 14px;
+	}
+#m_zr{
+	float:left;
+	background-color:#7e9fae;
+	background-image:url(../../images/px_images/main_bgr.png);
+	background-repeat:repeat-y;
+	width:47px;
+	height:446px;
+	}
+#m_bz{
+	float:left;
+	width:701px;
+	height:46px;
+	background-image:url(../../images/px_images/main_bgb.png);
+	background-repeat:repeat-x;}
+#bfq{
+	width:850px;
+	position:absolute;
+	margin-top:555px;
+	left:50%;
+	margin-left:-405px;
+	}
+#bfq_l{
+	width:63px;
+	}
+#bfq_z{
+	float:left;	
+	width:700px;
+	height:64px;
+	background-image:url(../../images/px_images/bf_bg.gif);
+	background-repeat:repeat-x;
+	vertical-align:bottom;
+
+	}
+#fenshu{
+border:1px solid #666;	
+width:61px;
+height:30px; 
+background-color: #CCC; 
+margin-right:100px;
+margin-top:150px; 
+float:right; 
+text-align:center;
+line-height:30px; 
+font-weight:bold;
+font-size:16px
+}

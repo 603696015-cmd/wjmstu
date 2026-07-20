@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuation 2.0 //EN"
+"struts-2.0.dtd">
+<struts>
+	<package name="forumcourseadmin" extends="elearning">
+		<!-- 课程中心返回课程列表 --> 
+		<action name="newcourseIndex" class="com.sopia.forumman.action.ForumCourseAction" method="newcourseIndex">
+			<result name="courseIndex_success">
+				elfrontman/newcourseindex.jsp
+			</result>
+		</action>
+		
+		<action name="newcourseIndexhuiyuanfuwu" class="com.sopia.forumman.action.ForumCourseAction" method="newcourseIndexhuiyuanfuwu">
+			<result name="courseIndex_success">
+				front/shopIndex_newcourseindex.jsp
+			</result>
+		</action>
+		<!-- 课程中心返回课程详细内容 --> 
+		<action name="getCourseIndexview" class="com.sopia.forumman.action.ForumCourseAction" method="getCourseIndexview">
+			<result name="getCourseIndexview_success">
+				elfrontman/newcourseindexview.jsp
+			</result>
+			<result name="courseview">
+				elfrontman/courseview.jsp
+			</result>
+		</action>
+		<!-- 新课程中心返回课程详细内容 --> 
+		<action name="getCourseMessage" class="com.sopia.forumman.action.ForumCourseAction" method="getCourseMessage">
+			<result name="brief">
+				elfrontman/course_desc.jsp
+			</result>
+			<result name="comment">
+				elfrontman/course_comment.jsp
+			</result>
+			<result name="teacher">
+				elfrontman/course_teacher.jsp
+			</result>
+			<result name="student">
+				elfrontman/course_student.jsp
+			</result>
+			<result name="courseware">
+				elfrontman/course_courseware.jsp
+			</result>
+		</action>
+
+		<action name="saveCourseComment" class="com.sopia.forumman.action.ForumCourseAction" method="saveCourseComment">
+			<result name="getCourseIndexview_success">
+				elfrontman/newcourseindexview.jsp
+			</result>
+		</action>
+		
+		<action name="saveShopComment" class="com.sopia.forumman.action.ForumCourseAction" method="saveShopComment">
+			<result name="success" type="redirectAction">
+				shopIndex_messageBoard.action?id=${userComment.pfmsUser.userId}
+			</result>
+			<result name="content" type="redirectAction">
+				shopIndex_content.action?id=${userComment.pfmsUser.userId}&amp;productId=${userComment.courseid}
+			</result>
+		</action>
+		<!-- 总搜索--> 
+		<action name="bookinfocourseclass" class="com.sopia.forumman.action.ForumCourseAction" method="bookinfocourseclass">
+			<result name="bookinfocourseclass_success">
+				elfrontman/book/bookindex.jsp
+			</result>
+			<result name="courseIndex_success">
+				elfrontman/newcourseindex.jsp
+			</result>
+			<result name="forum_getAllclass_success">
+				elfrontman/newclass_listbytypeid_isPass.jsp
+			</result>
+		</action>
+		<!-- 培训班导航中心返回培训班列表 --> 
+		<action name="forum_getAllclass" class="com.sopia.forumman.action.ForumCourseAction" method="forum_getAllclass">
+			<result name="forum_getAllclass_success">
+				elfrontman/newclass_listbytypeid_isPass.jsp
+			</result>
+		</action>
+		<action name="forum_getAllclasshuiyuanfuwu" class="com.sopia.forumman.action.ForumCourseAction" method="forum_getAllclasshuiyuanfuwu">
+			<result name="forum_getAllclass_success">
+				front/shopIndex_newclassindex.jsp
+			</result>
+		</action>
+		
+		<!-- 培训班导航中心返回培训班列表 --> 
+		<action name="forum_courseclub" class="com.sopia.forumman.action.ForumCourseAction" method="forum_courseclub">
+			<result name="forum_courseclub_success">
+				elfrontman/newcourseindex2.jsp
+			</result>
+		</action>
+		<!-- 培训班导航中心返回培训班列表 --> 
+		<action name="forum_classclub" class="com.sopia.forumman.action.ForumCourseAction" method="forum_classclub">
+			<result name="forum_classclub_success">
+				elfrontman/newclassindex2.jsp
+			</result>
+		</action>	
+	</package> 
+</struts>

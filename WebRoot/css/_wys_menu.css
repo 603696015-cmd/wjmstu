@@ -1,0 +1,11 @@
+/* CSS Document */
+body{font:12px/22px tahoma,arial,'\5B8B\4F53',sans-serif;background-color:#fff; color:#000; margin:0px; padding:0px;}
+table{border-collapse:collapse;border-spacing:0;}
+.wysDialog{padding:0px; width:350px;height:200px; border:5px solid #aaa; background-color:#fff;}
+.wysDialog h3{ overflow:hidden; height:20px; padding-bottom:10px; background:url(../images/supsbg.gif) repeat-x 0 0; color:#fff; font-weight:normal;}
+.wysDialog h3 .fl{ float:left; background:url(../images/bg.gif) no-repeat 0 0; padding-left:20px; background-position:-184px -327px}
+.wysDialog h3 .fr{ float:right; color:#fff!important;cursor: hand;}
+.wysDialog td{ line-height:24px; padding-top:3px;}
+.c_80{ color:#808080}
+.wysDialogInpt{ width:140px; height:14px; padding:2px 5px; line-height:14px; border:1px solid #b4b4b4; color:#333}
+.wysDialogBtn{ margin:2px 15px;padding:2px 5px; background-color:#e6e6e6; border:0px; cursor:pointer}

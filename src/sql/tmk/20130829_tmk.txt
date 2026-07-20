@@ -1,0 +1,115 @@
+create or replace procedure intelligent_different_points
+(userid_ number,classid_ number,
+scoretotal_ out float,
+scorelogin_ out float,
+scoreweek_ out float,
+scoreclass_ out float,
+scoreproportion_ out float,
+scorerecoding_ out float,
+scoreacademic_ out float,
+scoreacademiccourse_ out float)
+as
+count_ number;
+begin
+     /**
+     scoretotal_:=0.0f;
+     scorelogin_:=0.0f;
+     scoreweek_:=0.0f;
+     scoreclass_:=0.0f;
+     scoreproportion_:=0.0f;
+     scorerecoding_:=0.0f;
+     scoreacademic_:=0.0f;
+     scoreacademiccourse_:=0.0f;
+     */
+     
+     count_:=0;
+     select count(1) into count_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scorelogin_ from intelligent_login_t where userid=userid_ and classid=classid_;
+     else
+         scorelogin_:=0.0f;
+     end if;
+     
+     count_:=0;
+     select count(1) into count_ from intelligent_week_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreweek_ from intelligent_week_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreweek_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_class_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreclass_ from intelligent_class_t where userid=userid_ and classid=classid_;
+     else
+         scoreclass_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreproportion_ from intelligent_proportion_t where userid=userid_ and classid=classid_;
+     else
+         scoreproportion_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scorerecoding_ from intelligent_recoding_t where userid=userid_ and classid=classid_;
+     else
+         scorerecoding_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_academic_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreacademic_ from intelligent_academic_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreacademic_:=0.0f;
+     end if;
+     count_:=0;
+     select count(1) into count_ from intelligent_academic_cou_t_t where userid=userid_ and classid=classid_;
+     if count_>0 then
+        select round(sum(totalscore),1) into scoreacademiccourse_ from intelligent_academic_cou_t_t where userid=userid_ and classid=classid_;
+     else
+         scoreacademiccourse_:=0.0f;
+     end if;
+     
+     scoretotal_:=scorelogin_+scoreweek_+scoreclass_+scoreproportion_+scorerecoding_+scoreacademic_+scoreacademiccourse_;
+     
+     
+end;
+
+
+
+
+
+
+-- Create table
+create table ELUSER_CLASSIFICATION
+(
+  USERID             NUMBER not null,
+  ROOMID             NUMBER not null,
+  CLASSIFICATIONNAME VARCHAR2(100) not null,
+  TYPE               NUMBER not null,
+  TIME               NUMBER not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column ELUSER_CLASSIFICATION.USERID
+  is '用户id';
+comment on column ELUSER_CLASSIFICATION.ROOMID
+  is '定级考场id';
+comment on column ELUSER_CLASSIFICATION.CLASSIFICATIONNAME
+  is '定的等级';
+comment on column ELUSER_CLASSIFICATION.TYPE
+  is '1=已定级、0未定级或者申请重新定级';
+comment on column ELUSER_CLASSIFICATION.TIME
+  is '第几次定级';

@@ -1,0 +1,7 @@
+/* CSS Document */
+body{ margin:0px; padding:0px; line-height:22px;}
+.loginbg{ background-image:url(../images/login_bg.jpg); background-repeat:no-repeat;}
+.regbg{ background-image:url(../images/reg_bg.jpg); background-repeat:no-repeat;}
+.logink{ margin-top:284px; margin-left:320px; color:#000; font-size:13px;}
+.logink a{ padding:0px; margin:0px;}
+.loinput{ width:152px; height:18px; border:1px solid #FFFFFF; padding:0px; margin:0px; }

@@ -1,0 +1,36 @@
+.bg {
+	BACKGROUND: #d12323
+}
+.m0l0iout {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT-FAMILY: tahoma, verdana, geneva, arial, helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 10pt; TEXT-DECORATION: none; PADDING-TOP: 3px
+}
+.m0l0iover {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT: 10pt tahoma, verdana, geneva, arial, helvetica, sans-serif; COLOR: #ffffff; TEXT-DECORATION: underline; PADDING-TOP: 3px
+}
+.m0l0oout {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BACKGROUND: #d12323; FONT-SIZE: 10pt; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; TEXT-DECORATION: none
+}
+.m0l0oover {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BACKGROUND: #f73030; FONT-SIZE: 10pt; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; TEXT-DECORATION: none
+}
+.m0l1iout {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT: 10pt tahoma, verdana, geneva, arial, helvetica, sans-serif; COLOR: #ffffff; TEXT-DECORATION: none; PADDING-TOP: 4px
+}
+.m0l1iover {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT: bold 10pt tahoma, verdana, geneva, arial, helvetica, sans-serif; COLOR: #ffffff; TEXT-DECORATION: none; PADDING-TOP: 4px
+}
+.m0l1oout {
+	BORDER-BOTTOM: #ffffff 1px solid; FILTER: alpha(opacity = 100); BORDER-LEFT: #ffffff 1px solid; BACKGROUND: #f35743; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; TEXT-DECORATION: none
+}
+.m0l1oover {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BACKGROUND: orange; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; TEXT-DECORATION: none
+}
+.m0l2iover {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT: 12px tahoma, verdana, geneva, arial, helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none; PADDING-TOP: 4px
+}
+.m0l2oout {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BACKGROUND: #b44646; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; TEXT-DECORATION: none
+}
+.m0l2oover {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BACKGROUND: #e55a5a; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; TEXT-DECORATION: none
+}

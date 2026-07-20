@@ -1,0 +1,176 @@
+BODY {
+	COLOR: #000000;
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 1.8;
+}
+A {
+	COLOR: #747474
+}
+A:hover {
+	COLOR: #ff0000
+}
+.floatl {
+	FLOAT: left
+}
+.floatr {
+	FLOAT: right
+}
+.editor UL {
+	PADDING-LEFT: 30px
+}
+.editor OL {
+	PADDING-LEFT: 30px
+}
+.clear {
+	CLEAR: both
+}
+#metinfo {
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	WIDTH: 1000px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#metinfo2 {
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#top {
+	BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/topbg.gif) no-repeat left top; OVERFLOW: hidden; HEIGHT: 96px
+}
+#top .sidebar {
+	PADDING-RIGHT: 15px; MIN-HEIGHT: 60px; FLOAT: right; COLOR: #fff; PADDING-TOP: 15px; TEXT-ALIGN: right
+}
+#top .sidebar A {
+	COLOR: #fff
+}
+
+#main {
+	PADDING-RIGHT: 15px; BORDER-TOP: #e6e6e6 5px solid; PADDING-LEFT: 0px; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/minbg.png) repeat-y left top; PADDING-BOTTOM: 10px; PADDING-TOP: 0px; BORDER-BOTTOM: #e6e6e6 5px solid
+}
+#main #left {
+	FLOAT: right; OVERFLOW: hidden; WIDTH: 265px
+}
+#main #right {
+	MARGIN-TOP: -5px; FLOAT: left; OVERFLOW: hidden; WIDTH: 695px
+}
+#main #left DIV.Btbutton {
+	BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/left2.gif) no-repeat left top; MARGIN: 10px 0px; OVERFLOW: hidden; HEIGHT: 60px
+}
+#main #left DIV.Btbutton A {
+	DISPLAY: inline; FLOAT: left; WIDTH: 132px; CURSOR: pointer; LINE-HEIGHT: 16px; PADDING-TOP: 12px
+}
+#main #left DIV.Btbutton A.lb {
+	COLOR: #fff
+}
+#main #left DIV.Btbutton A.rb {
+	COLOR: #fffeff
+}
+#main #left DIV.Btbutton A SPAN {
+	FONT-SIZE: 9px
+}
+#main #left DIV.Btbutton A B {
+	FONT-WEIGHT: normal
+}
+#main #left DIV.Btbutton A SPAN {
+	PADDING-LEFT: 58px
+}
+#main #left DIV.Btbutton A B {
+	PADDING-LEFT: 58px
+}
+#main #left H3.title {
+	FONT-SIZE: 100%; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/title.gif) no-repeat left top; OVERFLOW: hidden; LINE-HEIGHT: 19px; HEIGHT: 27px
+}
+#main #left H3.title SPAN {
+	PADDING-LEFT: 25px
+}
+#main #left H3.title B {
+	PADDING-LEFT: 7px; FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #fd6800
+}
+#main #left H3.title A.more {
+	MARGIN-TOP: 5px; FONT-SIZE: 5px; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/more.gif) no-repeat left top; FLOAT: right; OVERFLOW: hidden; WIDTH: 43px; LINE-HEIGHT: 60px; HEIGHT: 13px
+}
+#main #left H3.titlec {
+	MARGIN-TOP: 6px; FONT-WEIGHT: normal; FONT-SIZE: 100%; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/CTi.gif) no-repeat left top; OVERFLOW: hidden; LINE-HEIGHT: 53px; HEIGHT: 53px
+}
+#main #left H3.titlec SPAN {
+	PADDING-LEFT: 80px; COLOR: #000
+}
+#main #left H3.titlec B {
+	PADDING-LEFT: 8px; FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #ff9900
+}
+#main #left .list1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; LIST-STYLE-TYPE: none
+}
+#main #left UL.list2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; LIST-STYLE-TYPE: none
+}
+#main #left UL.list2 LI {
+	OVERFLOW: hidden;
+	LINE-HEIGHT: 28px;
+	HEIGHT: 35px;
+	background-image: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/lines.gif);
+	background-repeat: no-repeat;
+	background-position: left 13px;
+}
+#main #left UL.list2 LI SPAN {
+	PADDING-LEFT: 20px; FLOAT: right
+}
+#main #left DIV.text {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/CTi.gif) no-repeat left bottom; PADDING-BOTTOM: 12px; PADDING-TOP: 12px
+}
+#main #left DIV.link UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; LIST-STYLE-TYPE: none
+}
+#main #left DIV.link LI {
+	MARGIN-BOTTOM: 5px; OVERFLOW: hidden; TEXT-ALIGN: center
+}
+#main #right H3.title {
+	PADDING-LEFT: 15px; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/titlel.gif) no-repeat left top; OVERFLOW: hidden; COLOR: #fff; LINE-HEIGHT: 35px; HEIGHT: 35px
+}
+#main #right H3.title SPAN {
+	FONT-SIZE: 14px; FLOAT: left; OVERFLOW: hidden; WIDTH: 137px; HEIGHT: 35px; TEXT-ALIGN: center
+}
+#main #right H3.title B {
+	FONT-SIZE: 20px; FLOAT: left; MARGIN-LEFT: 30px; WIDTH: 166px; HEIGHT: 35px; TEXT-ALIGN: center
+}
+#main #right H3.title A.more {
+	FONT-SIZE: 5px; BACKGROUND: url(http://www.metinfo.cn/demo/met069/templates/met069/images/imga/more.gif) no-repeat left top; FLOAT: right; MARGIN: 18px 20px 0px; OVERFLOW: hidden; WIDTH: 43px; LINE-HEIGHT: 60px; HEIGHT: 13px
+}
+#main #right DIV.text .editor {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 20px; PADDING-BOTTOM: 20px; PADDING-TOP: 20px
+}
+#main #right #caseimg {
+	MARGIN-TOP: 20px; MARGIN-LEFT: 15px; OVERFLOW: hidden; WIDTH: 611px; HEIGHT: 188px
+}
+#main #right #indemo {
+	FLOAT: left; WIDTH: 800%; HEIGHT: 188px
+}
+#main #right DIV.list UL {
+	LIST-STYLE-TYPE: none
+}
+#main #right #demo1 {
+	FLOAT: left; HEIGHT: 188px
+}
+#main #right #demo2 {
+	FLOAT: left; HEIGHT: 188px
+}
+#main #right DIV.list LI {
+	DISPLAY: inline; FLOAT: left; MARGIN: 0px 5px; OVERFLOW: hidden; TEXT-ALIGN: center
+}
+#main #right DIV.list LI A.imgbox {
+	BORDER-RIGHT: #e6e6e6 1px solid; BORDER-TOP: #e6e6e6 1px solid; DISPLAY: block; OVERFLOW: hidden; BORDER-LEFT: #e6e6e6 1px solid; BORDER-BOTTOM: #e6e6e6 1px solid; TEXT-ALIGN: left
+}
+#main #right DIV.list LI A {
+	COLOR: #515151
+}
+#main #right DIV.list LI H4 {
+	FONT-WEIGHT: normal; FONT-SIZE: 100%; BACKGROUND: #e6e6e6; OVERFLOW: hidden; LINE-HEIGHT: 30px; HEIGHT: 30px
+}

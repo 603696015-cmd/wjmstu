@@ -1,0 +1,312 @@
+/*公共部份*/
+
+form {
+	margin:0;
+	padding:0
+}
+input {
+	vertical-align:middle;
+}
+
+
+;
+.ad {
+	text-align:center;
+}
+#header {
+	height:67px;
+	border-bottom:solid 4px #B3C9D7;
+}
+#logo {
+	border-left:solid 1px #B3C9D7;
+	border-top:solid 1px #B3C9D7;
+	padding:10px 20px;
+	float:left;
+}
+#nav {
+	float:right;
+	width:741px;
+}
+#navtop {
+	background-color:#DAECF8;
+	/*
+	height:30px;
+	border-left:solid 1px #B8B8B8;
+	border-bottom:solid 1px #B8B8B8;
+	line-height:28px;
+	padding-left:10px;
+	_padding-top:5px;
+	_height:25px;
+	*/
+}
+#ifUserInfo {
+	background-color:#DAECF8;
+	margin:0;
+	padding:0;
+	border:0;
+	width:966px;
+	_width:965px;
+	height:30px;
+	
+}
+#navtop a {
+	margin:0 5px;
+}
+#navtop #userinfo {
+	float:left
+}
+#navtop #func {
+	float:right;
+}
+#navlist {
+	height:38px;
+	border-right:solid 1px #B3C9D7;
+	line-height:35px;
+	white-space:nowrap;
+	overflow:hidden;
+	width:740px;
+}
+#navlist a {
+	padding:0 8px;
+	border-right:solid 1px #B3C9D7;
+}
+#navlist .first {
+	padding-left:0;
+}
+#navlist .last {
+	padding-right:0;
+	border:none;
+}
+#map {
+	line-height:30px;
+	padding-left:5px;
+}
+#footer {
+	clear:both;
+	line-height:25px;
+}
+#footer #footer_links {
+	width:680px;
+	margin:0 auto;
+}
+#footer_links #zdmlogo {
+	float:left;
+	padding:30px 20px;
+}
+#footer_links #links {
+	float:left;
+	margin-left:20px;
+}
+#footer #copyright {
+	margin:10px 0;
+	border-top:solid 1px #B3C9D7;
+	text-align:center;
+	padding:20px;
+}
+.clear {
+	clear:both
+}
+/*文章部份*/
+#marquee {
+	border:solid 1px #B3C9D7;
+	background-color:#F3F9FC;
+	line-height:30px;
+	padding:0 33px 0 20px;
+	width:911px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+#marquee a {
+	margin:0 10px;
+}
+#left {
+	float:left;
+	width:710px;
+}
+#artbody {
+	border:solid 1px #B3C9D7;
+	background-color:#F3F9FC;
+	padding:10px 35px;
+	line-height:20px;
+	font-size:14px;
+}
+#artbody #ad_nested {
+	width:365px;
+	border:1px solid #B3C9D7;
+	float:left;
+	margin:0 15px 3px 0;
+	background-color:#fff;
+	text-align:center;
+	padding:8px 5px 0px 5px;
+}
+#artbody #ad_nested #adtext_l a, #artbody #ad_nested #adtext_r a {
+	display:block;
+}
+#artbody #ad_nested #adtext_l, #artbody #ad_nested #adtext_r {
+	font-size:12px;
+	width:180px;
+	overflow:hidden;
+	height:50px;
+	text-align:left;
+	line-height:22px;
+	white-space:nowrap;
+	float:left;
+	margin-top:5px;
+}
+#artbody #ad_nested #adtext_r {
+	float:right;
+	text-align:right;
+}
+#artbody h1 {
+	text-align:center;
+	font-size:24px;
+}
+#artbody .other {
+	text-align:center;
+}
+#summary {
+	font-size:13px;
+	border:1px solid #B3C9D7;
+	background:#FFF;
+	color:#39658C;
+	padding:8px;
+	margin:5px 0px;
+	text-indent:2em;
+}
+#content {
+	line-height:25px;
+	margin-top:15px;
+}
+#content p {
+	margin:10px 0;
+}
+#artfooter, #arttoolbar {
+	text-align:right;
+	font-size:12px;
+}
+#editor {
+	padding-right:5px;
+}
+#searchbar {
+	text-align:center;
+	font-weight:bold;
+	margin:5px 0;
+}
+#other {
+	padding:0;
+}
+#other .if {
+	border:solid 1px #B3C9D7;
+	width:708px;
+	margin:10px 0;
+}
+#other .o_title {
+	line-height:30px;
+	padding-left:10px;
+	font-size:14px;
+	font-weight:bold;
+	color:#0067DB;
+	background-color:#E8F3FF;
+}
+#right {
+	margin:10px 0;
+	width:245px;
+	float:right;
+}
+#right .ad {
+	margin:10px auto;
+}
+.rblock {
+	border:solid 1px #B3C9D7;
+	margin-bottom:10px;
+	font-size:12px;
+}
+.rblock .rblock_t {
+	font-size:14px;
+	font-weight:bold;
+	background-color:#C6E2FF;
+	line-height:30px;
+	color:#0067DB;
+	padding-left:10px;
+}
+.rblock .rblock_t a {
+	color:#0067DB;
+}
+.rblock ul {
+	margin:8px 10px 8px 8px;
+	width:225px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	list-style:none;
+	line-height:22px;
+}
+.rblock ul li {
+	padding-left:12px;
+	background:url(http://www.sopia.com.cn/images/dotted.gif) no-repeat left;
+}
+.dotted li {
+	border-bottom:dotted 1px #B3C9D7;
+}
+#emag {
+	padding:10px;
+}
+/*关键字部份*/
+.keyword {
+	text-decoration: underline;
+	cursor: pointer;
+}
+#tooltip {
+	position: absolute;
+	display: block;
+	z-index: 50;
+	clip: rect(auto, auto, auto, auto);
+	border: solid 1px #B3C9D7;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 12px;
+	line-height: 20px;
+	text-align:left;
+	min-width:200px;
+	max-width:350px;
+}
+#tooltip .head {
+	border-bottom: solid 1px #B3C9D7;
+}
+#tooltip .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor:pointer;
+}
+#tooltip h4 {
+	margin: 0 40px 5px 0;
+	font-size:15px;
+}
+#tooltip h4 a {
+	color:#000;
+	/*text-decoration: none;*/
+}
+#tooltip .content a {
+	color:#000;
+	/*text-decoration: none;*/
+}
+#tooltip .content {
+	padding: 5px 5px 0 5px;/*text-indent:2em;*/
+}
+#embednews {
+	width: 270px;
+	height: 420px;
+	float: left;
+	/*border: 1px solid #BE0000;*/
+	margin-right:10px;
+}
+#iframe_embednews {
+	height:100%;
+	width:100%
+}
+.mainsd{margin:0 auto;width:966px;}
+.pickuang{ width:96px;height:116px;border:1pt solid #DEDEDE;padding:2px; float:left;margin-left:6px!important;margin-left:3px;margin-top:10px;margin-right:4px;}
+.zd-sdf-new{ font-weight:bold;
+ 
+}
