@@ -106,6 +106,82 @@ a {
 	position: static;
 	height: 100%;
 } /*for ie6*/
+
+/* 自适应布局：背景、顶部操作和四个学习入口按视口同步缩放。 */
+html,
+body {
+	width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #078aa6;
+	background-position: center top;
+	background-size: cover;
+}
+
+.main,
+.main .main_1 {
+	min-height: 100vh;
+	min-height: 100svh;
+	background-position: center top;
+	background-size: cover;
+}
+
+#top_three {
+	width: min(100%, 1000px) !important;
+	table-layout: fixed;
+}
+
+#top_three a img {
+	width: clamp(48px, 5.6vw, 80px) !important;
+	height: auto !important;
+}
+
+#all {
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	transform: translateX(-50%);
+	width: clamp(400px, 42vw, 760px);
+	max-width: 92vw;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+
+#all > table {
+	width: 100% !important;
+	margin-top: clamp(0.75rem, 3vh, 36px) !important;
+	table-layout: fixed;
+}
+
+#all > table td {
+	width: 25% !important;
+	height: auto !important;
+	padding: 0 clamp(2px, 0.6vw, 10px);
+	box-sizing: border-box;
+}
+
+#all > table img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: auto;
+	margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+	#all {
+		top: 53%;
+	}
+
+	#all > table {
+		margin-top: 3vh !important;
+	}
+}
 </style>
 		<script type="text/javascript">
 function load(){

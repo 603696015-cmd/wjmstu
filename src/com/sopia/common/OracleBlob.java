@@ -2,6 +2,11 @@ package com.sopia.common;
 
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.ByteBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CodingErrorAction;
 import java.sql.Blob;
 import java.sql.Clob;
 import java.sql.Connection;
@@ -37,6 +42,23 @@ import org.apache.commons.logging.LogFactory;
  */
 public class OracleBlob {
 	private static final Log logger = LogFactory.getLog(OracleBlob.class);
+	private static final Charset LEGACY_BLOB_CHARSET = Charset.forName("GBK");
+
+	/**
+	 * 课程资料来自旧 Oracle 数据库，其中一部分 BLOB 按 GBK 保存，另一部分
+	 * 资料已是 UTF-8。先严格尝试 UTF-8，失败时再按 GBK 读取，以兼容两类数据。
+	 */
+	private String decodeBlobContent(byte[] content) throws Exception {
+		CharsetDecoder utf8 = Charset.forName("UTF-8").newDecoder();
+		utf8.onMalformedInput(CodingErrorAction.REPORT);
+		utf8.onUnmappableCharacter(CodingErrorAction.REPORT);
+		try {
+			return utf8.decode(ByteBuffer.wrap(content)).toString();
+		} catch (CharacterCodingException e) {
+			return new String(content, LEGACY_BLOB_CHARSET);
+		}
+	}
+
 	String tableName = null; // 表名
 	String primaryKey = null; // 表的主键名
 	String sequence = null; // 序列
@@ -242,7 +264,7 @@ public class OracleBlob {
 				do {
 					i= input.read(content, 0, content.length);
 				} while (i!=-1);
-				cont = new String(content);
+				cont = decodeBlobContent(content);
 			}
 		} catch (Exception e) {
 			logger.error("获取大字节内容错误", e);
@@ -274,7 +296,7 @@ public class OracleBlob {
 						int n=1;
 						do{
 							i=input.read(content, (n-1)*1024, 1024*n);
-							cont = StringUtil.htmlParse_(new String(content));
+							cont = StringUtil.htmlParse_(decodeBlobContent(content));
 							n++;
 						}while(cont.trim().length()<200);
 					} else {
@@ -282,7 +304,7 @@ public class OracleBlob {
 						do {
 							i= input.read(content, 0, content.length);
 						} while (i!=-1);
-						cont = StringUtil.htmlParse_(new String(content));
+						cont = StringUtil.htmlParse_(decodeBlobContent(content));
 					}
 //					cont = StringUtil.htmlParse_(new String(content));
 			}
@@ -315,7 +337,7 @@ public class OracleBlob {
 					int n=1;
 					do{
 						i=input.read(content, (n-1)*1024, 1024*n);
-						cont = StringUtil.htmlParse_(new String(content));
+						cont = StringUtil.htmlParse_(decodeBlobContent(content));
 						n++;
 					}while(cont.trim().length()<100);
 				} else {
@@ -323,7 +345,7 @@ public class OracleBlob {
 					do {
 						i= input.read(content, 0, content.length);
 					} while (i!=-1);
-					cont = StringUtil.htmlParse_(new String(content));
+					cont = StringUtil.htmlParse_(decodeBlobContent(content));
 				}
 //				cont = new String(content);
 			}

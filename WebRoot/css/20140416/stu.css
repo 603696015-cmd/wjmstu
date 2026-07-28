@@ -1,16 +1,68 @@
-html,
 body {
-	min-width: 1440px;
-	min-height: 900px;
+	margin: 0;
+	min-width: 320px;
+	background: #fff;
 }
 
-body {
-	background-image: url(../../images/20140416/bg-login0903.jpg);
-	background-repeat: no-repeat;
-	background-position: center top;
+.login-canvas {
+	position: relative;
+	width: min(100vw, 1440px);
+	aspect-ratio: 1440 / 900;
+	margin: 0 auto;
+	background: url(../../images/20140416/bg-login0903.jpg) center top / 100% 100% no-repeat;
 }
 .print{
 	background-image: url(../../images/20140416/print.gif);
 	background-repeat: no-repeat;
 	background-position: center top;
+}
+
+.login-form {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+}
+
+.login-form input,
+.login-form button,
+.fingerprint-trigger {
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+	left: 78.125%;
+	width: 15.278%;
+	height: 3.889%;
+	padding: 0 0.7%;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	font: 400 clamp(12px, 1.53vw, 22px) Arial, sans-serif;
+}
+
+.login-form input[type="text"] {
+	top: 35.556%;
+}
+
+.login-form input[type="password"] {
+	top: 42.333%;
+}
+
+.login-form button {
+	left: 72.569%;
+	top: 48.889%;
+	width: 20.833%;
+	height: 5.667%;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.fingerprint-trigger {
+	left: 70%;
+	top: 58%;
+	width: 29%;
+	height: 14%;
 }

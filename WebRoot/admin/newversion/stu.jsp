@@ -17,7 +17,7 @@
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
 		
-		<link href="css/20140416/stu.css?v=local2" type="text/css" rel=stylesheet>
+		<link href="css/20140416/stu.css?v=responsive1" type="text/css" rel=stylesheet>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
 			function load(){
@@ -237,7 +237,7 @@ function openFinger()
 
 
 </HEAD>
-<body  style="overflow-x:hidden;overflow-y:hidden" onLoad="">
+<body onLoad="">
 
 
 
@@ -274,51 +274,16 @@ function openFinger()
 	</div>
 
 
-
-<form name="myform" method="post" action="wjm_user_center_login.action" autocomplete="off" style="padding: 0px;margin: 0px;">
+<div class="login-canvas">
+<form name="myform" class="login-form" method="post" action="wjm_user_center_login.action" autocomplete="off">
 				<input type="hidden" name="ipAddress" id="ipAddress"/>
 				<input type="hidden" name="myLogin.ipAddr" id="ipAddr" value="${requestScope.myLogin.ipAddr }" />
-
-	
-
-	<table width="1250" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td height="190">&nbsp;</td>
-      </tr>
-      <tr>
-        <td align="right">
-		  <a href="javascript:window.opener=null;window.open('','_self');window.close();" style="font-size:12px;"><img src="images/20140416/kongtu.gif" width="90" height="60" border="0"></a>		</td>
-      </tr>
-      <tr>
-        <td height="70">&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="34" align="right">
-		<INPUT id=username type="text" maxLength=30 name="elUser.username" value="${elUser.username}" autocomplete="off" data-lpignore="true" spellcheck="false" style="width:220px;height:35px;border:none;background:none;padding-left:10px;padding-top:5px;font-size:22px;">		</td>
-      </tr>
-      <tr>
-        <td height="26">&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="26" align="right">
-		<INPUT type="password" maxLength=30 name="elUser.password" autocomplete="new-password" data-lpignore="true" style="width:220px;height:35px;border:none;background:none;padding-left:10px;padding-bottom:18px;font-size:20px;">		</td>
-      </tr>
-      <tr>
-        <td height="23">&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="53" align="right">
-		<INPUT type=submit value="" name=submit style="width:300px;height:51px;background:none;border:none;">		</td>
-      </tr>
-      <tr>
-        <td height="25" align="right">&nbsp;</td>
-      </tr>
-      <tr>
-		<td height="53" align="right"><a href="javascript:void(0);" class="showbox" onClick="openFinger();"><img src="images/20140416/kongtu.gif" width="400" height="110" border="0"></a></td>
-      </tr>
-  </table>
-	
+		<INPUT id="username" type="text" maxLength="30" name="elUser.username" value="${elUser.username}" autocomplete="off" data-lpignore="true" spellcheck="false" aria-label="用户名" />
+		<INPUT type="password" maxLength="30" name="elUser.password" autocomplete="new-password" data-lpignore="true" aria-label="密码" />
+		<button type="submit" name="submit" aria-label="登录"></button>
 </form>
+	<a href="javascript:void(0);" class="fingerprint-trigger showbox" onClick="openFinger();" aria-label="指纹登录"></a>
+</div>
 
 
 	
