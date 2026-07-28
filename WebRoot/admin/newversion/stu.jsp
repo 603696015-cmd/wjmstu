@@ -17,7 +17,7 @@
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
 		
-		<link href="css/20140416/stu.css" type="text/css" rel=stylesheet>
+		<link href="css/20140416/stu.css?v=local2" type="text/css" rel=stylesheet>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
 			function load(){
@@ -246,7 +246,7 @@ function openFinger()
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#3366cc">
   <tr>
     <td height="35" align="left" style="padding-left:15px;font-size:14px;line-height:35px;color:#fff;letter-spacing:2px;">请按指纹（finger print）</td>
-    <td width="50" align="center"><a href="#" class="close" style="color:white;"><img src="http://www.fhse.net/wjm/images/20140416/shutdown001.png"></a></td>
+    <td width="50" align="center"><a href="#" class="close" style="color:white;"><img src="images/20140416/shutdown001.png"></a></td>
   </tr>
 </table>
 
@@ -275,7 +275,7 @@ function openFinger()
 
 
 
-<form name="myform" method="post" action="wjm_user_center_login.action" style="padding: 0px;margin: 0px;">
+<form name="myform" method="post" action="wjm_user_center_login.action" autocomplete="off" style="padding: 0px;margin: 0px;">
 				<input type="hidden" name="ipAddress" id="ipAddress"/>
 				<input type="hidden" name="myLogin.ipAddr" id="ipAddr" value="${requestScope.myLogin.ipAddr }" />
 
@@ -294,14 +294,14 @@ function openFinger()
       </tr>
       <tr>
         <td height="34" align="right">
-		<INPUT id=username type="text" maxLength=30 name="elUser.username" value="${elUser.username}" style="width:220px;height:35px;border:none;background:none;padding-left:10px;padding-top:5px;font-size:22px;">		</td>
+		<INPUT id=username type="text" maxLength=30 name="elUser.username" value="${elUser.username}" autocomplete="off" data-lpignore="true" spellcheck="false" style="width:220px;height:35px;border:none;background:none;padding-left:10px;padding-top:5px;font-size:22px;">		</td>
       </tr>
       <tr>
         <td height="26">&nbsp;</td>
       </tr>
       <tr>
         <td height="26" align="right">
-		<INPUT type="password" maxLength=30 name="elUser.password" style="width:220px;height:35px;border:none;background:none;padding-left:10px;padding-bottom:18px;font-size:20px;">		</td>
+		<INPUT type="password" maxLength=30 name="elUser.password" autocomplete="new-password" data-lpignore="true" style="width:220px;height:35px;border:none;background:none;padding-left:10px;padding-bottom:18px;font-size:20px;">		</td>
       </tr>
       <tr>
         <td height="23">&nbsp;</td>
@@ -314,7 +314,7 @@ function openFinger()
         <td height="25" align="right">&nbsp;</td>
       </tr>
       <tr>
-        <td height="53" align="right"><a href="javascript:void(0);" class="showbox" onClick="openFinger();"><img src="http://www.fhse.net/wjm/images/20140416/kongtu.gif" width="400" height="110" border="0"></a></td>
+		<td height="53" align="right"><a href="javascript:void(0);" class="showbox" onClick="openFinger();"><img src="images/20140416/kongtu.gif" width="400" height="110" border="0"></a></td>
       </tr>
   </table>
 	
