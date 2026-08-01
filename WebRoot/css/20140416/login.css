@@ -55,9 +55,11 @@ body {
 	border: 0;
 	outline: 0;
 	background: transparent;
-	padding: 0.2% 0.7%;
-	font-size: clamp(12px, 1.74vw, 25px);
-	line-height: 1.2;
+	padding: 0 1.05%;
+	font-family: Arial, "Microsoft YaHei", sans-serif;
+	font-size: clamp(12px, 1.25vw, 20px);
+	font-weight: 400;
+	line-height: normal;
 	color: #222;
 }
 
@@ -67,6 +69,15 @@ body {
 
 .teacher-login-password {
 	top: 42.36%;
+}
+
+.teacher-login-input:-webkit-autofill,
+.teacher-login-input:-webkit-autofill:hover,
+.teacher-login-input:-webkit-autofill:focus {
+	-webkit-text-fill-color: #222;
+	-webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.01) inset;
+	box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.01) inset;
+	transition: background-color 9999s ease-out 0s;
 }
 
 .teacher-login-submit {
@@ -137,6 +148,7 @@ body {
 		background: #fff;
 		padding: 8px 10px;
 		font-size: 18px;
+		line-height: 1.2;
 	}
 
 	.teacher-login-submit {

@@ -17,7 +17,7 @@
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
 		
-		<link href="css/20140416/login.css?v=20260731-responsive" type="text/css" rel="stylesheet">
+		<link href="css/20140416/login.css?v=20260731-text2" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
 			function load(){
 				if(window.name=='rightFrame' && window.parent && window.parent !== window) {
@@ -53,9 +53,9 @@ body {
 				<img src="images/20140416/kongtu.gif" alt="" />
 			</a>
 			<label class="teacher-login-label teacher-login-user-label" for="username">用户名</label>
-			<input id="username" class="teacher-login-input teacher-login-username" type="text" maxLength="30" name="elUser.username" value="${elUser.username}" autocomplete="username" />
+			<input id="username" class="teacher-login-input teacher-login-username" type="text" maxLength="30" name="elUser.username" value="${elUser.username}" autocomplete="off" />
 			<label class="teacher-login-label teacher-login-password-label" for="password">密码</label>
-			<input id="password" class="teacher-login-input teacher-login-password" type="password" maxLength="30" name="elUser.password" autocomplete="current-password" />
+			<input id="password" class="teacher-login-input teacher-login-password" type="password" maxLength="30" name="elUser.password" autocomplete="off" />
 			<input class="teacher-login-submit" type="submit" value="登录" name="submit" />
 		</form>
 	</div>
