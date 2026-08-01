@@ -17,6 +17,7 @@
 		<script src="js/jquery.alerts.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery/jquery-ui-1.9.2.js"></script>
 		<script type="text/javascript" src="js/jquery/jquery.form.js"></script>
+		<script type="text/javascript" src="js/ruffle/ruffle.js"></script>
 		<script type="text/javascript" src="js/course.js"></script>
 		<script type="text/javascript" src="js/jquery.countdown.js"></script>
 		<script type="text/javascript" src="js/jquery.blockUI.js"></script>
@@ -475,6 +476,14 @@ function MM_preloadImages() { //v3.0
    
    //判断第一个视频是否已经播放完成,完成操作
    function checkFirstVideoIsPlayOver(type,atime,wrongCount){
+	   // Ruffle 不提供旧 Flash ActiveX 的逐帧接口；现代浏览器中直接进入答题阶段。
+	   if(window.wjmRuffleVideo || window.wjmFlashFallback){
+		clearTimeout(vedio_state);
+		if(type == 0 && atime == 0 && document.getElementById("counter").innerHTML==""){
+			loadCountdown('counter',returnToHHSSString(<s:property value="question.epblock.answerTime" />));
+		}
+		return;
+	   }
 	   var video = getFlashMovieObject("video");
    		 if(video.totalFrames == video.CurrentFrame()+1){
    		 	clearTimeout(vedio_state);
@@ -646,7 +655,11 @@ function MM_preloadImages() { //v3.0
    }
    //判断第二个视频是否已经播放完成,完成操作
    function checkSecondVideoIsPlayOver(type,atime,wrongCount){
-   		var view = <s:property value="view" />;
+	   if(window.wjmRuffleVideo || window.wjmFlashFallback){
+		clearTimeout(vedio_state2);
+		return;
+	   }
+	   var view = <s:property value="view" />;
 		var video = getFlashMovieObject("video");
    		if(video.totalFrames == video.CurrentFrame()+1){
    			clearTimeout(vedio_state2);

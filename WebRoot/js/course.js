@@ -4,6 +4,45 @@ function CourseVideo(type,url,from,fromchange){
 	this.from = from;
 	this.fromchange = fromchange;
 }
+
+function showFlashFallback(objid, url){
+	var target = document.getElementById(objid);
+	if(!target){
+		return false;
+	}
+	window.wjmFlashFallback = true;
+	target.innerHTML = "<div style='box-sizing:border-box;height:100%;padding:110px 36px;text-align:center;background:#f4fbfd;color:#24546d;font:18px/1.8 Microsoft YaHei,Arial,sans-serif;'>"
+		+ "<strong style='display:block;font-size:24px;margin-bottom:12px;'>互动课件暂时无法播放</strong>"
+		+ "<span>该内容使用已停用的 Flash 格式，且本机未找到对应课件素材。</span>"
+		+ "<span style='display:block;margin-top:10px;font-size:14px;color:#577787;'>题干与答题区仍可继续使用；补齐 <code>elstuffs</code> 课件目录后将自动尝试兼容播放。</span>"
+		+ "</div>";
+	return false;
+}
+
+function ruffleVideo(objid, url){
+	var target = document.getElementById(objid);
+	if(!target || !window.RufflePlayer || !window.RufflePlayer.newest){
+		return showFlashFallback(objid, url);
+	}
+	try{
+		var player = window.RufflePlayer.newest().createPlayer();
+		player.id = "video";
+		player.style.width = "100%";
+		player.style.height = "100%";
+		target.innerHTML = "";
+		target.appendChild(player);
+		window.wjmRuffleVideo = player;
+		window.wjmFlashFallback = false;
+		var loading = player.load(url);
+		if(loading && loading.catch){
+			loading.catch(function(){ showFlashFallback(objid, url); });
+		}
+		return true;
+	}catch(e){
+		return showFlashFallback(objid, url);
+	}
+}
+
 CourseVideo.prototype.show=function(objid){
 	url = this.url;
 	type = this.type;
@@ -26,14 +65,7 @@ CourseVideo.prototype.show=function(objid){
 			bol=true;
 		}
 		if(ext=="swf"){
-			if(fromchange == 1){
-				var x = url.substring(0,url.lastIndexOf("."));
-				docVideo(objid,x+".swf");
-				bol=true;
-			}else{
-				document.getElementById(objid).innerHTML=swfVideo(url,this.from);
-				bol=true;
-			}
+			bol=ruffleVideo(objid, url);
 		}
 		if(ext=="flv"||ext=='mp4'||ext=='f4v'){
 			//$("#"+objid).html(flvVideo(url,this.from));
