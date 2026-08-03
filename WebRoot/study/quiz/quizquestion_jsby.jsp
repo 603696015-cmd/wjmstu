@@ -13,16 +13,16 @@
 		<basefont face="楷体" size="13px"  /> 
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script src="js/jquery.alerts.js" type="text/javascript"></script>
-		<script type="text/javascript" src="js/jquery/jquery-ui-1.9.2.js"></script>
-		<script type="text/javascript" src="js/jquery/jquery.form.js"></script>
-		<script type="text/javascript" src="js/ruffle/ruffle.js"></script>
-		<script type="text/javascript" src="js/course.js"></script>
-		<script type="text/javascript" src="js/jquery.countdown.js"></script>
-		<script type="text/javascript" src="js/jquery.blockUI.js"></script>
-		<script type="text/javascript" src="js/listen_keydown.js"></script>
-		<script type="text/javascript" src="js/tinybox2.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jquery.js"></script>
+		<script src="<%=basePath%>js/jquery.alerts.js" type="text/javascript"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jquery/jquery-ui-1.9.2.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jquery/jquery.form.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/ruffle/ruffle.js?v=20260803"></script>
+		<script type="text/javascript" src="<%=basePath%>js/course.js?v=20260803"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jquery.countdown.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/listen_keydown.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/tinybox2.js"></script>
 		<script type="text/javascript">
 			function swfVideo__(url,passtime){
 			
